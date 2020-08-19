@@ -1,0 +1,13 @@
+d:\SKYNET\Documents\Visual Studio 2017\Projects\CuttingBusiness\CapaDeDatos\obj\Debug\CapaDeDatos.csproj.CoreCompileInputs.cache
+d:\SKYNET\Documents\Visual Studio 2017\Projects\CuttingBusiness\CapaDeDatos\bin\Debug\CapaDeDatos.dll
+d:\SKYNET\Documents\Visual Studio 2017\Projects\CuttingBusiness\CapaDeDatos\bin\Debug\CapaDeDatos.pdb
+d:\SKYNET\Documents\Visual Studio 2017\Projects\CuttingBusiness\CapaDeDatos\obj\Debug\CapaDeDatos.dll
+d:\SKYNET\Documents\Visual Studio 2017\Projects\CuttingBusiness\CapaDeDatos\obj\Debug\CapaDeDatos.pdb
+d:\SKYNET\Documents\Visual Studio 2017\Projects\CuttingBusiness\CapaDeDatos\obj\Debug\CapaDeDatos.csprojAssemblyReference.cache
+D:\SKYNET\Documents\GitHub\Empresa_De_Corte\Software\CuttingBusiness\CapaDeDatos\bin\Debug\CapaDeDatos.dll
+D:\SKYNET\Documents\GitHub\Empresa_De_Corte\Software\CuttingBusiness\CapaDeDatos\bin\Debug\CapaDeDatos.pdb
+D:\SKYNET\Documents\GitHub\Empresa_De_Corte\Software\CuttingBusiness\CapaDeDatos\obj\Debug\CapaDeDatos.csprojAssemblyReference.cache
+D:\SKYNET\Documents\GitHub\Empresa_De_Corte\Software\CuttingBusiness\CapaDeDatos\obj\Debug\CapaDeDatos.csproj.ResolveComReference.cache
+D:\SKYNET\Documents\GitHub\Empresa_De_Corte\Software\CuttingBusiness\CapaDeDatos\obj\Debug\CapaDeDatos.csproj.CoreCompileInputs.cache
+D:\SKYNET\Documents\GitHub\Empresa_De_Corte\Software\CuttingBusiness\CapaDeDatos\obj\Debug\CapaDeDatos.dll
+D:\SKYNET\Documents\GitHub\Empresa_De_Corte\Software\CuttingBusiness\CapaDeDatos\obj\Debug\CapaDeDatos.pdb
