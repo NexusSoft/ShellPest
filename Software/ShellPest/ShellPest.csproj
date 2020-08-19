@@ -37,8 +37,16 @@
     <Reference Include="DevExpress.Data.v19.1" />
     <Reference Include="DevExpress.Utils.v19.1" />
     <Reference Include="DevExpress.Sparkline.v19.1.Core" />
+    <Reference Include="DevExpress.XtraBars.v19.1, Version=19.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\DevExpress 19.1\Components\Bin\Framework\DevExpress.XtraBars.v19.1.dll</HintPath>
+    </Reference>
     <Reference Include="DevExpress.XtraEditors.v19.1" />
     <Reference Include="DevExpress.Printing.v19.1.Core" />
+    <Reference Include="DevExpress.XtraGrid.v19.1, Version=19.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\DevExpress 19.1\Components\Bin\Framework\DevExpress.XtraGrid.v19.1.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -51,6 +59,29 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Clases\Crypto.cs" />
+    <Compile Include="Clases\GridCheckMarksSelection.cs" />
+    <Compile Include="Clases\GridMarksSelecioncs.cs" />
+    <Compile Include="Clases\MSRegistro.cs" />
+    <Compile Include="Clases\Validar_Campos.cs" />
+    <Compile Include="Conexion\Frm_Conexiones.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Conexion\Frm_Conexiones.designer.cs">
+      <DependentUpon>Frm_Conexiones.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Conexion\Frm_DataBaseSQL.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Conexion\Frm_DataBaseSQL.designer.cs">
+      <DependentUpon>Frm_DataBaseSQL.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Conexion\Frm_InstanciaSQL.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Conexion\Frm_InstanciaSQL.designer.cs">
+      <DependentUpon>Frm_InstanciaSQL.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -59,6 +90,15 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Conexion\Frm_Conexiones.resx">
+      <DependentUpon>Frm_Conexiones.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Conexion\Frm_DataBaseSQL.resx">
+      <DependentUpon>Frm_DataBaseSQL.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Conexion\Frm_InstanciaSQL.resx">
+      <DependentUpon>Frm_InstanciaSQL.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
