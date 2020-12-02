@@ -13,8 +13,8 @@ D:\SKYNET\Documents\GitHub\Empresa_De_Corte\Software\CuttingBusiness\CapaDeDatos
 D:\SKYNET\Documents\GitHub\Empresa_De_Corte\Software\CuttingBusiness\CapaDeDatos\obj\Debug\CapaDeDatos.pdb
 D:\SKYNET\Documents\GitHub\ShellPest\Software\CapaDeDatos\bin\Debug\CapaDeDatos.dll
 D:\SKYNET\Documents\GitHub\ShellPest\Software\CapaDeDatos\bin\Debug\CapaDeDatos.pdb
-D:\SKYNET\Documents\GitHub\ShellPest\Software\CapaDeDatos\obj\Debug\CapaDeDatos.csprojAssemblyReference.cache
 D:\SKYNET\Documents\GitHub\ShellPest\Software\CapaDeDatos\obj\Debug\CapaDeDatos.csproj.ResolveComReference.cache
 D:\SKYNET\Documents\GitHub\ShellPest\Software\CapaDeDatos\obj\Debug\CapaDeDatos.csproj.CoreCompileInputs.cache
 D:\SKYNET\Documents\GitHub\ShellPest\Software\CapaDeDatos\obj\Debug\CapaDeDatos.dll
 D:\SKYNET\Documents\GitHub\ShellPest\Software\CapaDeDatos\obj\Debug\CapaDeDatos.pdb
+D:\SKYNET\Documents\GitHub\ShellPest\Software\CapaDeDatos\obj\Debug\CapaDeDatos.csprojAssemblyReference.cache

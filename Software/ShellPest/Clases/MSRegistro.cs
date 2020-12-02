@@ -12,7 +12,7 @@ namespace ShellPest
 {
     class MSRegistro
     {
-        const string NombreProyecto = "CuttingBusiness";
+        const string NombreProyecto = "ShellPest";
         public string GetSetting(string section, string key, string sDefault)
         {
             RegistryKey rk = Registry.CurrentUser.OpenSubKey(@"Software\" + NombreProyecto + "\\" + section);

@@ -1,9 +1,12 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.28307.1231
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30406.217
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShellPest", "ShellPest\ShellPest.csproj", "{1514959B-0ED4-47B7-8490-B22A1858DDCB}"
+	ProjectSection(ProjectDependencies) = postProject
+		{FCBA5AD3-4388-4EE1-BF05-0EE3653A69C5} = {FCBA5AD3-4388-4EE1-BF05-0EE3653A69C5}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CapaDeDatos", "CapaDeDatos\CapaDeDatos.csproj", "{FCBA5AD3-4388-4EE1-BF05-0EE3653A69C5}"
 EndProject

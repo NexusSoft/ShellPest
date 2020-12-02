@@ -1,6 +1,6 @@
-﻿namespace ShellPest
+﻿namespace ShellPest.Catalogos
 {
-    partial class Form1
+    partial class Frm_Bloques
     {
         /// <summary>
         /// Required designer variable.
@@ -28,21 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.SuspendLayout();
-            // 
-            // Form1
-            // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.components = new System.ComponentModel.Container();
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(632, 331);
-            this.Name = "Form1";
-            this.Text = "Form1";
-            this.ResumeLayout(false);
-
+            this.Text = "Frm_Bloques";
         }
 
         #endregion
-
     }
 }
-

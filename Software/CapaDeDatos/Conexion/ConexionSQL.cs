@@ -14,7 +14,7 @@ namespace CapaDeDatos
     
     public class ConexionSQL
     {
-        const string NombreProyecto = "CuttingBusiness";
+        const string NombreProyecto = "ShellPest";
         static public string LeerConexion()
         {
             string StrConexion = string.Empty;
