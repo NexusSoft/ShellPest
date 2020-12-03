@@ -18,6 +18,7 @@ namespace ShellPest
         public string IdPais { get; set; }
         public string Pais { get; set; }
         public Boolean PaSel { get; set; }
+        public string Id_Usuario { get; set; }
 
         public Frm_Pais(Boolean BPasel)
         {
@@ -27,13 +28,13 @@ namespace ShellPest
 
         private void CargarPais()
         {
-            gridControl1.DataSource = null;
+            dtgPais.DataSource = null;
             CLS_Pais Pais = new CLS_Pais();
 
             Pais.MtdSeleccionarPais();
             if (Pais.Exito)
             {
-                gridControl1.DataSource = Pais.Datos;
+                dtgPais.DataSource = Pais.Datos;
             }
         }
 
@@ -44,10 +45,10 @@ namespace ShellPest
             CLS_Pais Pais = new CLS_Pais();
             Pais.Id_Pais = textId.Text.Trim();
             Pais.Nombre_Pais = textNombre.Text.Trim();
+            Pais.Id_Usuario = Id_Usuario;
             Pais.MtdInsertarPais();
             if (Pais.Exito)
             {
-
                 CargarPais();
                 XtraMessageBox.Show("Se ha Insertado el registro con exito");
                 LimpiarCampos();
@@ -57,7 +58,6 @@ namespace ShellPest
                 XtraMessageBox.Show(Pais.Mensaje);
             }
         }
-
         private void EliminarPais()
         {
             CLS_Pais Pais = new CLS_Pais();
@@ -85,9 +85,9 @@ namespace ShellPest
         {
             try
             {
-                foreach (int i in this.gridView1.GetSelectedRows())
+                foreach (int i in this.dtgValPais.GetSelectedRows())
                 {
-                    DataRow row = this.gridView1.GetDataRow(i);
+                    DataRow row = this.dtgValPais.GetDataRow(i);
                     textId.Text = row["Id_Pais"].ToString();
                     textNombre.Text = row["Nombre_Pais"].ToString();
                 }
@@ -115,8 +115,6 @@ namespace ShellPest
         {
             if (textNombre.Text.ToString().Trim().Length > 0)
             {
-
-
                 InsertarPais();
             }
             else
