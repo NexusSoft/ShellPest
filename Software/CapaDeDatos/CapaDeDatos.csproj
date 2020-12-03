@@ -53,6 +53,7 @@
     <Compile Include="Formularios\CLS_Calidades.cs" />
     <Compile Include="Formularios\CLS_Ciudades.cs" />
     <Compile Include="Formularios\CLS_Cultivo.cs" />
+    <Compile Include="Formularios\CLS_Deteccion.cs" />
     <Compile Include="Formularios\CLS_Duenio.cs" />
     <Compile Include="Formularios\CLS_Estado.cs" />
     <Compile Include="Formularios\CLS_Huerta.cs" />
@@ -93,6 +94,9 @@
       <Isolated>False</Isolated>
       <EmbedInteropTypes>True</EmbedInteropTypes>
     </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Catalogos\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
