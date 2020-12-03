@@ -106,6 +106,12 @@
     <Compile Include="Catalogos\Frm_Huertas.designer.cs">
       <DependentUpon>Frm_Huertas.cs</DependentUpon>
     </Compile>
+    <Compile Include="Catalogos\Frm_Humbral.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Catalogos\Frm_Humbral.Designer.cs">
+      <DependentUpon>Frm_Humbral.cs</DependentUpon>
+    </Compile>
     <Compile Include="Catalogos\Frm_Pais.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -196,6 +202,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Catalogos\Frm_Huertas.resx">
       <DependentUpon>Frm_Huertas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Catalogos\Frm_Humbral.resx">
+      <DependentUpon>Frm_Humbral.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Catalogos\Frm_Pais.resx">
       <DependentUpon>Frm_Pais.cs</DependentUpon>

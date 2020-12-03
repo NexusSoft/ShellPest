@@ -57,6 +57,7 @@
     <Compile Include="Formularios\CLS_Duenio.cs" />
     <Compile Include="Formularios\CLS_Estado.cs" />
     <Compile Include="Formularios\CLS_Huerta.cs" />
+    <Compile Include="Formularios\CLS_Humbral.cs" />
     <Compile Include="Formularios\CLS_Pais.cs" />
     <Compile Include="Seguridad\CLS_Pantallas.cs" />
     <Compile Include="Seguridad\CLS_Perfiles.cs" />
