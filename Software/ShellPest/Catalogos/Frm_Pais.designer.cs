@@ -239,7 +239,7 @@
             this.dtgPais.TabIndex = 0;
             this.dtgPais.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.dtgValPais});
-            this.dtgPais.Click += new System.EventHandler(this.gridControl1_Click);
+            this.dtgPais.Click += new System.EventHandler(this.dtgPais_Click);
             // 
             // dtgValPais
             // 

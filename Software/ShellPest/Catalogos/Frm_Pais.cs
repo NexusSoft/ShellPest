@@ -81,7 +81,7 @@ namespace ShellPest
             textNombre.Text = "";
         }
 
-        private void gridControl1_Click(object sender, EventArgs e)
+        private void dtgPais_Click(object sender, EventArgs e)
         {
             try
             {
