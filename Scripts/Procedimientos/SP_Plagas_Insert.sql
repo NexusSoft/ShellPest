@@ -5,20 +5,18 @@ SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
-IF  EXISTS (SELECT * FROM SYS.OBJECTS WHERE TYPE = 'P' AND NAME = 'SP_Humbral_Insert')
-DROP PROCEDURE SP_Humbral_Insert
+IF  EXISTS (SELECT * FROM SYS.OBJECTS WHERE TYPE = 'P' AND NAME = 'SP_Plagas_Insert')
+DROP PROCEDURE SP_Plagas_Insert
 GO
 -- =============================================
 -- Author:		<Author,,Name>
 -- Create date: <Create Date,,>
 -- Description:	<Description,,>
 -- =============================================
-create PROCEDURE [dbo].[SP_Humbral_Insert] 
+create PROCEDURE [dbo].[SP_Plagas_Insert] 
 	-- Add the parameters for the stored procedure here
-	@Id_Humbral char(4),
-	@Valor_Humbral int,
-	@Nombre_Humbral varchar(70),
-	@Color_Humbral varchar(10),
+	@Id_Plagas char(4),
+	@Nombre_Plagas varchar(70),
 	@Id_Usuario varchar(10)
 AS
 BEGIN
@@ -33,36 +31,30 @@ BEGIN
 	begin try
 
 		declare @maximo int
-		select @maximo= right(Concat('0000',isnull(max(Id_Humbral),0)+1),4) from dbo.t_Humbral
+		select @maximo= right(Concat('0000',isnull(max(Id_Plagas),0)+1),4) from dbo.t_Plagas
 
 		declare @Existe int
-		select @Existe = count(Id_Humbral) from dbo.t_Humbral a where (a.Id_Humbral=@Id_Humbral)
+		select @Existe = count(Id_Plagas) from dbo.t_Plagas a where (a.Id_Plagas=@Id_Plagas)
 
 		if @Existe>0 
 		
-			UPDATE dbo.t_Humbral
-		        SET Nombre_Humbral=@Nombre_Humbral,
-		        Valor_Humbral=@Valor_Humbral,
-		        Color_Humbral=@Color_Humbral,
+			UPDATE dbo.t_Plagas
+		        SET Nombre_Plagas=@Nombre_Plagas,
 		        Id_Usuario_Mod=@Id_Usuario,
 		        F_Usuario_Mod=getdate()
 		    WHERE
-		    	Id_Humbral=@Id_Humbral
+		    	Id_Plagas=@Id_Plagas
 				
 		else
 		
-			INSERT INTO dbo.t_Humbral
-	           (Id_Humbral
-	           ,Nombre_Humbral
-	           ,Valor_Humbral
-	           ,Color_Humbral
+			INSERT INTO dbo.t_Plagas
+	           (Id_Plagas
+	           ,Nombre_Plagas
 	           ,Id_Usuario_Crea
 	           ,F_Usuario_Crea)
 	     	VALUES
 	           (@maximo
-	           ,@Nombre_Humbral
-	           ,@Valor_Humbral
-	           ,@Color_Humbral
+	           ,@Nombre_Plagas
 	           ,@Id_Usuario
 	           ,getdate())
 		
