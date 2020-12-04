@@ -55,9 +55,9 @@
             this.Modificador = new DevExpress.XtraGrid.Columns.GridColumn();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
-            this.textNombre = new DevExpress.XtraEditors.TextEdit();
+            this.txtNombre = new DevExpress.XtraEditors.TextEdit();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
-            this.textId = new DevExpress.XtraEditors.TextEdit();
+            this.txtId = new DevExpress.XtraEditors.TextEdit();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit1)).BeginInit();
@@ -69,8 +69,8 @@
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.textNombre.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textId.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtNombre.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtId.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // barManager1
@@ -319,9 +319,9 @@
             // 
             // groupControl1
             // 
-            this.groupControl1.Controls.Add(this.textNombre);
+            this.groupControl1.Controls.Add(this.txtNombre);
             this.groupControl1.Controls.Add(this.labelControl2);
-            this.groupControl1.Controls.Add(this.textId);
+            this.groupControl1.Controls.Add(this.txtId);
             this.groupControl1.Controls.Add(this.labelControl1);
             this.groupControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupControl1.Location = new System.Drawing.Point(12, 12);
@@ -330,13 +330,13 @@
             this.groupControl1.TabIndex = 0;
             this.groupControl1.Text = "Detección";
             // 
-            // textNombre
+            // txtNombre
             // 
-            this.textNombre.Location = new System.Drawing.Point(100, 54);
-            this.textNombre.MenuManager = this.barManager1;
-            this.textNombre.Name = "textNombre";
-            this.textNombre.Size = new System.Drawing.Size(231, 20);
-            this.textNombre.TabIndex = 3;
+            this.txtNombre.Location = new System.Drawing.Point(100, 54);
+            this.txtNombre.MenuManager = this.barManager1;
+            this.txtNombre.Name = "txtNombre";
+            this.txtNombre.Size = new System.Drawing.Size(231, 20);
+            this.txtNombre.TabIndex = 3;
             // 
             // labelControl2
             // 
@@ -346,14 +346,14 @@
             this.labelControl2.TabIndex = 2;
             this.labelControl2.Text = "Nombre Deteccion";
             // 
-            // textId
+            // txtId
             // 
-            this.textId.Enabled = false;
-            this.textId.Location = new System.Drawing.Point(100, 28);
-            this.textId.MenuManager = this.barManager1;
-            this.textId.Name = "textId";
-            this.textId.Size = new System.Drawing.Size(100, 20);
-            this.textId.TabIndex = 1;
+            this.txtId.Enabled = false;
+            this.txtId.Location = new System.Drawing.Point(100, 28);
+            this.txtId.MenuManager = this.barManager1;
+            this.txtId.Name = "txtId";
+            this.txtId.Size = new System.Drawing.Size(100, 20);
+            this.txtId.TabIndex = 1;
             // 
             // labelControl1
             // 
@@ -388,8 +388,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
             this.groupControl1.ResumeLayout(false);
             this.groupControl1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.textNombre.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textId.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtNombre.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtId.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -420,9 +420,9 @@
         private DevExpress.XtraGrid.Columns.GridColumn Creador;
         private DevExpress.XtraEditors.PanelControl panelControl1;
         private DevExpress.XtraEditors.GroupControl groupControl1;
-        private DevExpress.XtraEditors.TextEdit textNombre;
+        private DevExpress.XtraEditors.TextEdit txtNombre;
         private DevExpress.XtraEditors.LabelControl labelControl2;
-        private DevExpress.XtraEditors.TextEdit textId;
+        private DevExpress.XtraEditors.TextEdit txtId;
         private DevExpress.XtraEditors.LabelControl labelControl1;
         private DevExpress.XtraGrid.Columns.GridColumn Id_Usuario_Mod;
         private DevExpress.XtraGrid.Columns.GridColumn Modificador;

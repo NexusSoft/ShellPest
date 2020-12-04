@@ -28,8 +28,8 @@ namespace ShellPest
 
         private void LimpiarCampos()
         {
-            textId.Text = "";
-            textNombre.Text = "";
+            txtId.Text = "";
+            txtNombre.Text = "";
             
         }
 
@@ -49,8 +49,8 @@ namespace ShellPest
         {
             CLS_Deteccion Clase = new CLS_Deteccion();
 
-            Clase.Id_Deteccion = textId.Text.Trim();
-            Clase.Nombre_Deteccion= textNombre.Text.Trim();
+            Clase.Id_Deteccion = txtId.Text.Trim();
+            Clase.Nombre_Deteccion= txtNombre.Text.Trim();
             Clase.Id_Usuario = "";
 
             Clase.MtdInsertarDeteccion();
@@ -70,7 +70,7 @@ namespace ShellPest
         private void EliminarDeteccion()
         {
             CLS_Deteccion Clase = new CLS_Deteccion();
-            Clase.Id_Deteccion = textId.Text.Trim();
+            Clase.Id_Deteccion = txtId.Text.Trim();
             Clase.MtdEliminarDeteccion();
             if (Clase.Exito)
             {
@@ -91,8 +91,9 @@ namespace ShellPest
                 foreach (int i in this.dtgValDeteccion.GetSelectedRows())
                 {
                     DataRow row = this.dtgValDeteccion.GetDataRow(i);
-                    textId.Text = row["Id_Deteccion"].ToString();
-                    textNombre.Text = row["Nombre_Deteccion"].ToString();
+                    txtId.Text = row["Id_Deteccion"].ToString();
+                    txtNombre.Text = row["Nombre_Deteccion"].ToString();
+
                    
                 }
             }
@@ -118,7 +119,7 @@ namespace ShellPest
 
         private void btnGuardar_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            if (textNombre.Text.ToString().Trim().Length > 0)
+            if (txtNombre.Text.ToString().Trim().Length > 0)
             {
                 InsertarDeteccion();
             }
@@ -130,7 +131,7 @@ namespace ShellPest
 
         private void btnEliminar_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            if (textId.Text.Trim().Length > 0)
+            if (txtId.Text.Trim().Length > 0)
             {
                 EliminarDeteccion();
             }
@@ -152,8 +153,8 @@ namespace ShellPest
 
         private void btnSeleccionar_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            IdDeteccion = textId.Text.Trim();
-            Deteccion = textNombre.Text.Trim();
+            IdDeteccion = txtId.Text.Trim();
+            Deteccion = txtNombre.Text.Trim();
             
             this.Close();
         }

@@ -45,32 +45,40 @@
             this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
             this.repositoryItemTextEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemTextEdit();
             this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
-            this.dtgDeteccion = new DevExpress.XtraGrid.GridControl();
-            this.dtgValDeteccion = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.Id_Deteccion = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.Nombre_Deteccion = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.dtgHumbral = new DevExpress.XtraGrid.GridControl();
+            this.dtgValHumbral = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.Id_Humbral = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Nombre_Humbral = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Id_Usuario_Crea = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Creador = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Id_Usuario_Mod = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Modificador = new DevExpress.XtraGrid.Columns.GridColumn();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
-            this.textNombre = new DevExpress.XtraEditors.TextEdit();
+            this.txtNombre = new DevExpress.XtraEditors.TextEdit();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
-            this.textId = new DevExpress.XtraEditors.TextEdit();
+            this.txtId = new DevExpress.XtraEditors.TextEdit();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
+            this.Valor_Humbral = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.txtColor = new DevExpress.XtraEditors.TextEdit();
+            this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
+            this.Color_Humbral = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.txtValor = new DevExpress.XtraEditors.TextEdit();
+            this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).BeginInit();
             this.panelControl2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dtgDeteccion)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dtgValDeteccion)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgHumbral)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgValHumbral)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.textNombre.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textId.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtNombre.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtId.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtColor.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtValor.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // barManager1
@@ -128,6 +136,7 @@
             this.btnLimpiar.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnLimpiar.ImageOptions.Image")));
             this.btnLimpiar.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnLimpiar.ImageOptions.LargeImage")));
             this.btnLimpiar.Name = "btnLimpiar";
+            this.btnLimpiar.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnLimpiar_ItemClick);
             // 
             // btnGuardar
             // 
@@ -136,6 +145,7 @@
             this.btnGuardar.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnGuardar.ImageOptions.Image")));
             this.btnGuardar.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnGuardar.ImageOptions.LargeImage")));
             this.btnGuardar.Name = "btnGuardar";
+            this.btnGuardar.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnGuardar_ItemClick);
             // 
             // btnEliminar
             // 
@@ -144,6 +154,7 @@
             this.btnEliminar.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnEliminar.ImageOptions.Image")));
             this.btnEliminar.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnEliminar.ImageOptions.LargeImage")));
             this.btnEliminar.Name = "btnEliminar";
+            this.btnEliminar.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnEliminar_ItemClick);
             // 
             // btnSalir
             // 
@@ -152,6 +163,7 @@
             this.btnSalir.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnSalir.ImageOptions.Image")));
             this.btnSalir.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnSalir.ImageOptions.LargeImage")));
             this.btnSalir.Name = "btnSalir";
+            this.btnSalir.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnSalir_ItemClick);
             // 
             // btnSeleccionar
             // 
@@ -160,6 +172,7 @@
             this.btnSeleccionar.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnSeleccionar.ImageOptions.Image")));
             this.btnSeleccionar.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnSeleccionar.ImageOptions.LargeImage")));
             this.btnSeleccionar.Name = "btnSeleccionar";
+            this.btnSeleccionar.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnSeleccionar_ItemClick);
             // 
             // bEstado
             // 
@@ -219,7 +232,7 @@
             // 
             // panelControl2
             // 
-            this.panelControl2.Controls.Add(this.dtgDeteccion);
+            this.panelControl2.Controls.Add(this.dtgHumbral);
             this.panelControl2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelControl2.Location = new System.Drawing.Point(71, 106);
             this.panelControl2.Name = "panelControl2";
@@ -227,47 +240,50 @@
             this.panelControl2.Size = new System.Drawing.Size(668, 287);
             this.panelControl2.TabIndex = 11;
             // 
-            // dtgDeteccion
+            // dtgHumbral
             // 
-            this.dtgDeteccion.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dtgDeteccion.Location = new System.Drawing.Point(12, 12);
-            this.dtgDeteccion.MainView = this.dtgValDeteccion;
-            this.dtgDeteccion.MenuManager = this.barManager1;
-            this.dtgDeteccion.Name = "dtgDeteccion";
-            this.dtgDeteccion.Size = new System.Drawing.Size(644, 263);
-            this.dtgDeteccion.TabIndex = 0;
-            this.dtgDeteccion.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.dtgValDeteccion});
+            this.dtgHumbral.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dtgHumbral.Location = new System.Drawing.Point(12, 12);
+            this.dtgHumbral.MainView = this.dtgValHumbral;
+            this.dtgHumbral.MenuManager = this.barManager1;
+            this.dtgHumbral.Name = "dtgHumbral";
+            this.dtgHumbral.Size = new System.Drawing.Size(644, 263);
+            this.dtgHumbral.TabIndex = 0;
+            this.dtgHumbral.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.dtgValHumbral});
+            this.dtgHumbral.Click += new System.EventHandler(this.dtgHumbral_Click);
             // 
-            // dtgValDeteccion
+            // dtgValHumbral
             // 
-            this.dtgValDeteccion.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.Id_Deteccion,
-            this.Nombre_Deteccion,
+            this.dtgValHumbral.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.Id_Humbral,
+            this.Nombre_Humbral,
+            this.Valor_Humbral,
             this.Id_Usuario_Crea,
             this.Creador,
             this.Id_Usuario_Mod,
-            this.Modificador});
-            this.dtgValDeteccion.GridControl = this.dtgDeteccion;
-            this.dtgValDeteccion.Name = "dtgValDeteccion";
-            this.dtgValDeteccion.OptionsView.ShowGroupPanel = false;
+            this.Modificador,
+            this.Color_Humbral});
+            this.dtgValHumbral.GridControl = this.dtgHumbral;
+            this.dtgValHumbral.Name = "dtgValHumbral";
+            this.dtgValHumbral.OptionsView.ShowGroupPanel = false;
             // 
-            // Id_Deteccion
+            // Id_Humbral
             // 
-            this.Id_Deteccion.Caption = "Id Deteccion";
-            this.Id_Deteccion.FieldName = "Id_Deteccion";
-            this.Id_Deteccion.Name = "Id_Deteccion";
-            this.Id_Deteccion.OptionsColumn.AllowEdit = false;
-            this.Id_Deteccion.Visible = true;
-            this.Id_Deteccion.VisibleIndex = 0;
+            this.Id_Humbral.Caption = "Id Humbral";
+            this.Id_Humbral.FieldName = "Id_Humbral";
+            this.Id_Humbral.Name = "Id_Humbral";
+            this.Id_Humbral.OptionsColumn.AllowEdit = false;
+            this.Id_Humbral.Visible = true;
+            this.Id_Humbral.VisibleIndex = 0;
             // 
-            // Nombre_Deteccion
+            // Nombre_Humbral
             // 
-            this.Nombre_Deteccion.Caption = "Nombre Deteccion";
-            this.Nombre_Deteccion.FieldName = "Nombre_Deteccion";
-            this.Nombre_Deteccion.Name = "Nombre_Deteccion";
-            this.Nombre_Deteccion.Visible = true;
-            this.Nombre_Deteccion.VisibleIndex = 1;
+            this.Nombre_Humbral.Caption = "Humbral";
+            this.Nombre_Humbral.FieldName = "Nombre_Humbral";
+            this.Nombre_Humbral.Name = "Nombre_Humbral";
+            this.Nombre_Humbral.Visible = true;
+            this.Nombre_Humbral.VisibleIndex = 1;
             // 
             // Id_Usuario_Crea
             // 
@@ -275,7 +291,7 @@
             this.Id_Usuario_Crea.FieldName = "Id_Usuario_Crea";
             this.Id_Usuario_Crea.Name = "Id_Usuario_Crea";
             this.Id_Usuario_Crea.Visible = true;
-            this.Id_Usuario_Crea.VisibleIndex = 2;
+            this.Id_Usuario_Crea.VisibleIndex = 3;
             // 
             // Creador
             // 
@@ -283,7 +299,7 @@
             this.Creador.FieldName = "Creador";
             this.Creador.Name = "Creador";
             this.Creador.Visible = true;
-            this.Creador.VisibleIndex = 3;
+            this.Creador.VisibleIndex = 4;
             // 
             // Id_Usuario_Mod
             // 
@@ -291,7 +307,7 @@
             this.Id_Usuario_Mod.FieldName = "Id_Usuario_Mod";
             this.Id_Usuario_Mod.Name = "Id_Usuario_Mod";
             this.Id_Usuario_Mod.Visible = true;
-            this.Id_Usuario_Mod.VisibleIndex = 4;
+            this.Id_Usuario_Mod.VisibleIndex = 5;
             // 
             // Modificador
             // 
@@ -299,7 +315,7 @@
             this.Modificador.FieldName = "Modificador";
             this.Modificador.Name = "Modificador";
             this.Modificador.Visible = true;
-            this.Modificador.VisibleIndex = 5;
+            this.Modificador.VisibleIndex = 6;
             // 
             // panelControl1
             // 
@@ -313,9 +329,13 @@
             // 
             // groupControl1
             // 
-            this.groupControl1.Controls.Add(this.textNombre);
+            this.groupControl1.Controls.Add(this.txtValor);
+            this.groupControl1.Controls.Add(this.labelControl4);
+            this.groupControl1.Controls.Add(this.txtColor);
+            this.groupControl1.Controls.Add(this.labelControl3);
+            this.groupControl1.Controls.Add(this.txtNombre);
             this.groupControl1.Controls.Add(this.labelControl2);
-            this.groupControl1.Controls.Add(this.textId);
+            this.groupControl1.Controls.Add(this.txtId);
             this.groupControl1.Controls.Add(this.labelControl1);
             this.groupControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupControl1.Location = new System.Drawing.Point(12, 12);
@@ -324,38 +344,86 @@
             this.groupControl1.TabIndex = 0;
             this.groupControl1.Text = "Detección";
             // 
-            // textNombre
+            // txtNombre
             // 
-            this.textNombre.Location = new System.Drawing.Point(100, 54);
-            this.textNombre.MenuManager = this.barManager1;
-            this.textNombre.Name = "textNombre";
-            this.textNombre.Size = new System.Drawing.Size(231, 20);
-            this.textNombre.TabIndex = 3;
+            this.txtNombre.Location = new System.Drawing.Point(79, 54);
+            this.txtNombre.MenuManager = this.barManager1;
+            this.txtNombre.Name = "txtNombre";
+            this.txtNombre.Size = new System.Drawing.Size(231, 20);
+            this.txtNombre.TabIndex = 3;
             // 
             // labelControl2
             // 
             this.labelControl2.Location = new System.Drawing.Point(19, 59);
             this.labelControl2.Name = "labelControl2";
-            this.labelControl2.Size = new System.Drawing.Size(87, 13);
+            this.labelControl2.Size = new System.Drawing.Size(43, 13);
             this.labelControl2.TabIndex = 2;
-            this.labelControl2.Text = "Nombre Deteccion";
+            this.labelControl2.Text = "Humbral:";
             // 
-            // textId
+            // txtId
             // 
-            this.textId.Enabled = false;
-            this.textId.Location = new System.Drawing.Point(100, 28);
-            this.textId.MenuManager = this.barManager1;
-            this.textId.Name = "textId";
-            this.textId.Size = new System.Drawing.Size(100, 20);
-            this.textId.TabIndex = 1;
+            this.txtId.Enabled = false;
+            this.txtId.Location = new System.Drawing.Point(79, 28);
+            this.txtId.MenuManager = this.barManager1;
+            this.txtId.Name = "txtId";
+            this.txtId.Size = new System.Drawing.Size(100, 20);
+            this.txtId.TabIndex = 1;
             // 
             // labelControl1
             // 
             this.labelControl1.Location = new System.Drawing.Point(19, 32);
             this.labelControl1.Name = "labelControl1";
-            this.labelControl1.Size = new System.Drawing.Size(62, 13);
+            this.labelControl1.Size = new System.Drawing.Size(59, 13);
             this.labelControl1.TabIndex = 0;
-            this.labelControl1.Text = "Id Detecion: ";
+            this.labelControl1.Text = "Id Humbral: ";
+            // 
+            // Valor_Humbral
+            // 
+            this.Valor_Humbral.Caption = "Valor";
+            this.Valor_Humbral.FieldName = "Valor_Humbral";
+            this.Valor_Humbral.Name = "Valor_Humbral";
+            this.Valor_Humbral.Visible = true;
+            this.Valor_Humbral.VisibleIndex = 2;
+            // 
+            // txtColor
+            // 
+            this.txtColor.Location = new System.Drawing.Point(477, 54);
+            this.txtColor.MenuManager = this.barManager1;
+            this.txtColor.Name = "txtColor";
+            this.txtColor.Size = new System.Drawing.Size(96, 20);
+            this.txtColor.TabIndex = 5;
+            // 
+            // labelControl3
+            // 
+            this.labelControl3.Location = new System.Drawing.Point(444, 57);
+            this.labelControl3.Name = "labelControl3";
+            this.labelControl3.Size = new System.Drawing.Size(29, 13);
+            this.labelControl3.TabIndex = 4;
+            this.labelControl3.Text = "Color:";
+            // 
+            // Color_Humbral
+            // 
+            this.Color_Humbral.Caption = "Color";
+            this.Color_Humbral.FieldName = "Color_Humbral";
+            this.Color_Humbral.Name = "Color_Humbral";
+            this.Color_Humbral.Visible = true;
+            this.Color_Humbral.VisibleIndex = 7;
+            // 
+            // txtValor
+            // 
+            this.txtValor.Location = new System.Drawing.Point(365, 54);
+            this.txtValor.MenuManager = this.barManager1;
+            this.txtValor.Name = "txtValor";
+            this.txtValor.Size = new System.Drawing.Size(51, 20);
+            this.txtValor.TabIndex = 7;
+            // 
+            // labelControl4
+            // 
+            this.labelControl4.Location = new System.Drawing.Point(332, 57);
+            this.labelControl4.Name = "labelControl4";
+            this.labelControl4.Size = new System.Drawing.Size(28, 13);
+            this.labelControl4.TabIndex = 6;
+            this.labelControl4.Text = "Valor:";
             // 
             // Frm_Humbral
             // 
@@ -370,19 +438,22 @@
             this.Controls.Add(this.barDockControlTop);
             this.Name = "Frm_Humbral";
             this.Text = "Frm_Humbral";
+            this.Load += new System.EventHandler(this.Frm_Humbral_Load);
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).EndInit();
             this.panelControl2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dtgDeteccion)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dtgValDeteccion)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgHumbral)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgValHumbral)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
             this.panelControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
             this.groupControl1.ResumeLayout(false);
             this.groupControl1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.textNombre.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textId.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtNombre.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtId.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtColor.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtValor.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -405,19 +476,25 @@
         private DevExpress.XtraBars.BarDockControl barDockControlRight;
         private DevExpress.XtraEditors.Repository.RepositoryItemTextEdit repositoryItemTextEdit1;
         private DevExpress.XtraEditors.PanelControl panelControl2;
-        private DevExpress.XtraGrid.GridControl dtgDeteccion;
-        private DevExpress.XtraGrid.Views.Grid.GridView dtgValDeteccion;
-        private DevExpress.XtraGrid.Columns.GridColumn Id_Deteccion;
-        private DevExpress.XtraGrid.Columns.GridColumn Nombre_Deteccion;
+        private DevExpress.XtraGrid.GridControl dtgHumbral;
+        private DevExpress.XtraGrid.Views.Grid.GridView dtgValHumbral;
+        private DevExpress.XtraGrid.Columns.GridColumn Id_Humbral;
+        private DevExpress.XtraGrid.Columns.GridColumn Nombre_Humbral;
         private DevExpress.XtraGrid.Columns.GridColumn Id_Usuario_Crea;
         private DevExpress.XtraGrid.Columns.GridColumn Creador;
         private DevExpress.XtraGrid.Columns.GridColumn Id_Usuario_Mod;
         private DevExpress.XtraGrid.Columns.GridColumn Modificador;
         private DevExpress.XtraEditors.PanelControl panelControl1;
         private DevExpress.XtraEditors.GroupControl groupControl1;
-        private DevExpress.XtraEditors.TextEdit textNombre;
+        private DevExpress.XtraEditors.TextEdit txtNombre;
         private DevExpress.XtraEditors.LabelControl labelControl2;
-        private DevExpress.XtraEditors.TextEdit textId;
+        private DevExpress.XtraEditors.TextEdit txtId;
         private DevExpress.XtraEditors.LabelControl labelControl1;
+        private DevExpress.XtraGrid.Columns.GridColumn Valor_Humbral;
+        private DevExpress.XtraGrid.Columns.GridColumn Color_Humbral;
+        private DevExpress.XtraEditors.TextEdit txtValor;
+        private DevExpress.XtraEditors.LabelControl labelControl4;
+        private DevExpress.XtraEditors.TextEdit txtColor;
+        private DevExpress.XtraEditors.LabelControl labelControl3;
     }
 }

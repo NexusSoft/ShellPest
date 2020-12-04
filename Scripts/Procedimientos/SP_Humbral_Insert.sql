@@ -18,6 +18,7 @@ create PROCEDURE [dbo].[SP_Humbral_Insert]
 	@Id_Humbral char(4),
 	@Valor_Humbral int,
 	@Nombre_Humbral varchar(70),
+	@Color_Humbral varchar(10),
 	@Id_Usuario varchar(10)
 AS
 BEGIN
@@ -41,7 +42,8 @@ BEGIN
 		
 			UPDATE dbo.t_Humbral
 		        SET Nombre_Humbral=@Nombre_Humbral,
-		        Valor_Humbral=@Valor_Humbral
+		        Valor_Humbral=@Valor_Humbral,
+		        Color_Humbral=@Color_Humbral,
 		        Id_Usuario_Mod=@Id_Usuario,
 		        F_Usuario_Mod=getdate()
 		    WHERE
@@ -53,11 +55,13 @@ BEGIN
 	           (Id_Humbral
 	           ,Nombre_Humbral
 	           ,Valor_Humbral
+	           ,Color_Humbral
 	           ,Id_Usuario_Crea
 	           ,F_Usuario_Crea)
 	     	VALUES
 	           (@maximo
 	           ,@Nombre_Humbral
+	           ,@Color_Humbral
 	           ,@Valor_Humbral
 	           ,@Id_Usuario
 	           ,getdate())
