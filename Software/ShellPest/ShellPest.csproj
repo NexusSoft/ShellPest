@@ -94,6 +94,12 @@
     <Compile Include="Catalogos\Frm_Deteccion.Designer.cs">
       <DependentUpon>Frm_Deteccion.cs</DependentUpon>
     </Compile>
+    <Compile Include="Catalogos\Frm_Enfermedades.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Catalogos\Frm_Enfermedades.Designer.cs">
+      <DependentUpon>Frm_Enfermedades.cs</DependentUpon>
+    </Compile>
     <Compile Include="Catalogos\Frm_Estado.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -185,6 +191,9 @@
     <Compile Include="Seguridad\Frm_Usuarios.designer.cs">
       <DependentUpon>Frm_Usuarios.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Catalogos\Frm_Bloques.resx">
+      <DependentUpon>Frm_Bloques.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Catalogos\Frm_Calidad.resx">
       <DependentUpon>Frm_Calidad.cs</DependentUpon>
     </EmbeddedResource>
@@ -196,6 +205,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Catalogos\Frm_Deteccion.resx">
       <DependentUpon>Frm_Deteccion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Catalogos\Frm_Enfermedades.resx">
+      <DependentUpon>Frm_Enfermedades.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Catalogos\Frm_Estado.resx">
       <DependentUpon>Frm_Estado.cs</DependentUpon>

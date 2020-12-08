@@ -1,6 +1,6 @@
 ﻿namespace ShellPest
 {
-    partial class Frm_Humbral
+    partial class Frm_Enfermedades
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_Humbral));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_Enfermedades));
             this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
             this.bIconos = new DevExpress.XtraBars.Bar();
             this.btnLimpiar = new DevExpress.XtraBars.BarLargeButtonItem();
@@ -45,22 +45,16 @@
             this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
             this.repositoryItemTextEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemTextEdit();
             this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
-            this.dtgHumbral = new DevExpress.XtraGrid.GridControl();
-            this.dtgValHumbral = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.Id_Humbral = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.Nombre_Humbral = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.Valor_Humbral = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.dtgEnfermedad = new DevExpress.XtraGrid.GridControl();
+            this.dtgValEnfermedad = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.Id_Enfermedad = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Nombre_Enfermedad = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Id_Usuario_Crea = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Creador = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Id_Usuario_Mod = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Modificador = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.Color_Humbral = new DevExpress.XtraGrid.Columns.GridColumn();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
-            this.txtValor = new DevExpress.XtraEditors.TextEdit();
-            this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
-            this.txtColor = new DevExpress.XtraEditors.TextEdit();
-            this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.txtNombre = new DevExpress.XtraEditors.TextEdit();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.txtId = new DevExpress.XtraEditors.TextEdit();
@@ -69,14 +63,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).BeginInit();
             this.panelControl2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dtgHumbral)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dtgValHumbral)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgEnfermedad)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgValEnfermedad)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.txtValor.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtColor.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtNombre.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtId.Properties)).BeginInit();
             this.SuspendLayout();
@@ -200,15 +192,15 @@
             this.barDockControlTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.barDockControlTop.Location = new System.Drawing.Point(0, 0);
             this.barDockControlTop.Manager = this.barManager1;
-            this.barDockControlTop.Size = new System.Drawing.Size(739, 0);
+            this.barDockControlTop.Size = new System.Drawing.Size(654, 0);
             // 
             // barDockControlBottom
             // 
             this.barDockControlBottom.CausesValidation = false;
             this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.barDockControlBottom.Location = new System.Drawing.Point(0, 393);
+            this.barDockControlBottom.Location = new System.Drawing.Point(0, 419);
             this.barDockControlBottom.Manager = this.barManager1;
-            this.barDockControlBottom.Size = new System.Drawing.Size(739, 25);
+            this.barDockControlBottom.Size = new System.Drawing.Size(654, 25);
             // 
             // barDockControlLeft
             // 
@@ -216,15 +208,15 @@
             this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
             this.barDockControlLeft.Location = new System.Drawing.Point(0, 0);
             this.barDockControlLeft.Manager = this.barManager1;
-            this.barDockControlLeft.Size = new System.Drawing.Size(71, 393);
+            this.barDockControlLeft.Size = new System.Drawing.Size(71, 419);
             // 
             // barDockControlRight
             // 
             this.barDockControlRight.CausesValidation = false;
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
-            this.barDockControlRight.Location = new System.Drawing.Point(739, 0);
+            this.barDockControlRight.Location = new System.Drawing.Point(654, 0);
             this.barDockControlRight.Manager = this.barManager1;
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 393);
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 419);
             // 
             // repositoryItemTextEdit1
             // 
@@ -232,66 +224,56 @@
             // 
             // panelControl2
             // 
-            this.panelControl2.Controls.Add(this.dtgHumbral);
+            this.panelControl2.Controls.Add(this.dtgEnfermedad);
             this.panelControl2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelControl2.Location = new System.Drawing.Point(71, 106);
             this.panelControl2.Name = "panelControl2";
             this.panelControl2.Padding = new System.Windows.Forms.Padding(10);
-            this.panelControl2.Size = new System.Drawing.Size(668, 287);
-            this.panelControl2.TabIndex = 11;
+            this.panelControl2.Size = new System.Drawing.Size(583, 313);
+            this.panelControl2.TabIndex = 13;
             // 
-            // dtgHumbral
+            // dtgEnfermedad
             // 
-            this.dtgHumbral.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dtgHumbral.Location = new System.Drawing.Point(12, 12);
-            this.dtgHumbral.MainView = this.dtgValHumbral;
-            this.dtgHumbral.MenuManager = this.barManager1;
-            this.dtgHumbral.Name = "dtgHumbral";
-            this.dtgHumbral.Size = new System.Drawing.Size(644, 263);
-            this.dtgHumbral.TabIndex = 0;
-            this.dtgHumbral.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.dtgValHumbral});
-            this.dtgHumbral.Click += new System.EventHandler(this.dtgHumbral_Click);
+            this.dtgEnfermedad.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dtgEnfermedad.Location = new System.Drawing.Point(12, 12);
+            this.dtgEnfermedad.MainView = this.dtgValEnfermedad;
+            this.dtgEnfermedad.MenuManager = this.barManager1;
+            this.dtgEnfermedad.Name = "dtgEnfermedad";
+            this.dtgEnfermedad.Size = new System.Drawing.Size(559, 289);
+            this.dtgEnfermedad.TabIndex = 0;
+            this.dtgEnfermedad.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.dtgValEnfermedad});
+            this.dtgEnfermedad.Click += new System.EventHandler(this.dtgEnfermedad_Click);
             // 
-            // dtgValHumbral
+            // dtgValEnfermedad
             // 
-            this.dtgValHumbral.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.Id_Humbral,
-            this.Nombre_Humbral,
-            this.Valor_Humbral,
+            this.dtgValEnfermedad.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.Id_Enfermedad,
+            this.Nombre_Enfermedad,
             this.Id_Usuario_Crea,
             this.Creador,
             this.Id_Usuario_Mod,
-            this.Modificador,
-            this.Color_Humbral});
-            this.dtgValHumbral.GridControl = this.dtgHumbral;
-            this.dtgValHumbral.Name = "dtgValHumbral";
-            this.dtgValHumbral.OptionsView.ShowGroupPanel = false;
+            this.Modificador});
+            this.dtgValEnfermedad.GridControl = this.dtgEnfermedad;
+            this.dtgValEnfermedad.Name = "dtgValEnfermedad";
+            this.dtgValEnfermedad.OptionsView.ShowGroupPanel = false;
             // 
-            // Id_Humbral
+            // Id_Enfermedad
             // 
-            this.Id_Humbral.Caption = "Id Humbral";
-            this.Id_Humbral.FieldName = "Id_Humbral";
-            this.Id_Humbral.Name = "Id_Humbral";
-            this.Id_Humbral.OptionsColumn.AllowEdit = false;
-            this.Id_Humbral.Visible = true;
-            this.Id_Humbral.VisibleIndex = 0;
+            this.Id_Enfermedad.Caption = "Id Enfermedad";
+            this.Id_Enfermedad.FieldName = "Id_Enfermedad";
+            this.Id_Enfermedad.Name = "Id_Enfermedad";
+            this.Id_Enfermedad.OptionsColumn.AllowEdit = false;
+            this.Id_Enfermedad.Visible = true;
+            this.Id_Enfermedad.VisibleIndex = 0;
             // 
-            // Nombre_Humbral
+            // Nombre_Enfermedad
             // 
-            this.Nombre_Humbral.Caption = "Humbral";
-            this.Nombre_Humbral.FieldName = "Nombre_Humbral";
-            this.Nombre_Humbral.Name = "Nombre_Humbral";
-            this.Nombre_Humbral.Visible = true;
-            this.Nombre_Humbral.VisibleIndex = 1;
-            // 
-            // Valor_Humbral
-            // 
-            this.Valor_Humbral.Caption = "Valor";
-            this.Valor_Humbral.FieldName = "Valor_Humbral";
-            this.Valor_Humbral.Name = "Valor_Humbral";
-            this.Valor_Humbral.Visible = true;
-            this.Valor_Humbral.VisibleIndex = 2;
+            this.Nombre_Enfermedad.Caption = "Enfermedad";
+            this.Nombre_Enfermedad.FieldName = "Nombre_Enfermedad";
+            this.Nombre_Enfermedad.Name = "Nombre_Enfermedad";
+            this.Nombre_Enfermedad.Visible = true;
+            this.Nombre_Enfermedad.VisibleIndex = 1;
             // 
             // Id_Usuario_Crea
             // 
@@ -299,7 +281,7 @@
             this.Id_Usuario_Crea.FieldName = "Id_Usuario_Crea";
             this.Id_Usuario_Crea.Name = "Id_Usuario_Crea";
             this.Id_Usuario_Crea.Visible = true;
-            this.Id_Usuario_Crea.VisibleIndex = 3;
+            this.Id_Usuario_Crea.VisibleIndex = 2;
             // 
             // Creador
             // 
@@ -307,7 +289,7 @@
             this.Creador.FieldName = "Creador";
             this.Creador.Name = "Creador";
             this.Creador.Visible = true;
-            this.Creador.VisibleIndex = 4;
+            this.Creador.VisibleIndex = 3;
             // 
             // Id_Usuario_Mod
             // 
@@ -315,7 +297,7 @@
             this.Id_Usuario_Mod.FieldName = "Id_Usuario_Mod";
             this.Id_Usuario_Mod.Name = "Id_Usuario_Mod";
             this.Id_Usuario_Mod.Visible = true;
-            this.Id_Usuario_Mod.VisibleIndex = 5;
+            this.Id_Usuario_Mod.VisibleIndex = 4;
             // 
             // Modificador
             // 
@@ -323,15 +305,7 @@
             this.Modificador.FieldName = "Modificador";
             this.Modificador.Name = "Modificador";
             this.Modificador.Visible = true;
-            this.Modificador.VisibleIndex = 6;
-            // 
-            // Color_Humbral
-            // 
-            this.Color_Humbral.Caption = "Color";
-            this.Color_Humbral.FieldName = "Color_Humbral";
-            this.Color_Humbral.Name = "Color_Humbral";
-            this.Color_Humbral.Visible = true;
-            this.Color_Humbral.VisibleIndex = 7;
+            this.Modificador.VisibleIndex = 5;
             // 
             // panelControl1
             // 
@@ -340,15 +314,11 @@
             this.panelControl1.Location = new System.Drawing.Point(71, 0);
             this.panelControl1.Name = "panelControl1";
             this.panelControl1.Padding = new System.Windows.Forms.Padding(10);
-            this.panelControl1.Size = new System.Drawing.Size(668, 106);
-            this.panelControl1.TabIndex = 10;
+            this.panelControl1.Size = new System.Drawing.Size(583, 106);
+            this.panelControl1.TabIndex = 12;
             // 
             // groupControl1
             // 
-            this.groupControl1.Controls.Add(this.txtValor);
-            this.groupControl1.Controls.Add(this.labelControl4);
-            this.groupControl1.Controls.Add(this.txtColor);
-            this.groupControl1.Controls.Add(this.labelControl3);
             this.groupControl1.Controls.Add(this.txtNombre);
             this.groupControl1.Controls.Add(this.labelControl2);
             this.groupControl1.Controls.Add(this.txtId);
@@ -356,45 +326,13 @@
             this.groupControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupControl1.Location = new System.Drawing.Point(12, 12);
             this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(644, 82);
+            this.groupControl1.Size = new System.Drawing.Size(559, 82);
             this.groupControl1.TabIndex = 0;
-            this.groupControl1.Text = "Humbral";
-            // 
-            // txtValor
-            // 
-            this.txtValor.Location = new System.Drawing.Point(365, 54);
-            this.txtValor.MenuManager = this.barManager1;
-            this.txtValor.Name = "txtValor";
-            this.txtValor.Size = new System.Drawing.Size(51, 20);
-            this.txtValor.TabIndex = 7;
-            // 
-            // labelControl4
-            // 
-            this.labelControl4.Location = new System.Drawing.Point(332, 57);
-            this.labelControl4.Name = "labelControl4";
-            this.labelControl4.Size = new System.Drawing.Size(28, 13);
-            this.labelControl4.TabIndex = 6;
-            this.labelControl4.Text = "Valor:";
-            // 
-            // txtColor
-            // 
-            this.txtColor.Location = new System.Drawing.Point(477, 54);
-            this.txtColor.MenuManager = this.barManager1;
-            this.txtColor.Name = "txtColor";
-            this.txtColor.Size = new System.Drawing.Size(96, 20);
-            this.txtColor.TabIndex = 5;
-            // 
-            // labelControl3
-            // 
-            this.labelControl3.Location = new System.Drawing.Point(444, 57);
-            this.labelControl3.Name = "labelControl3";
-            this.labelControl3.Size = new System.Drawing.Size(29, 13);
-            this.labelControl3.TabIndex = 4;
-            this.labelControl3.Text = "Color:";
+            this.groupControl1.Text = "Enfermedad";
             // 
             // txtNombre
             // 
-            this.txtNombre.Location = new System.Drawing.Point(79, 54);
+            this.txtNombre.Location = new System.Drawing.Point(98, 54);
             this.txtNombre.MenuManager = this.barManager1;
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(231, 20);
@@ -404,14 +342,14 @@
             // 
             this.labelControl2.Location = new System.Drawing.Point(19, 59);
             this.labelControl2.Name = "labelControl2";
-            this.labelControl2.Size = new System.Drawing.Size(43, 13);
+            this.labelControl2.Size = new System.Drawing.Size(62, 13);
             this.labelControl2.TabIndex = 2;
-            this.labelControl2.Text = "Humbral:";
+            this.labelControl2.Text = "Enfermedad:";
             // 
             // txtId
             // 
             this.txtId.Enabled = false;
-            this.txtId.Location = new System.Drawing.Point(79, 28);
+            this.txtId.Location = new System.Drawing.Point(98, 28);
             this.txtId.MenuManager = this.barManager1;
             this.txtId.Name = "txtId";
             this.txtId.Size = new System.Drawing.Size(100, 20);
@@ -421,37 +359,35 @@
             // 
             this.labelControl1.Location = new System.Drawing.Point(19, 32);
             this.labelControl1.Name = "labelControl1";
-            this.labelControl1.Size = new System.Drawing.Size(59, 13);
+            this.labelControl1.Size = new System.Drawing.Size(78, 13);
             this.labelControl1.TabIndex = 0;
-            this.labelControl1.Text = "Id Humbral: ";
+            this.labelControl1.Text = "Id Enfermedad: ";
             // 
-            // Frm_Humbral
+            // Frm_Enfermedades
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(739, 418);
+            this.ClientSize = new System.Drawing.Size(654, 444);
             this.Controls.Add(this.panelControl2);
             this.Controls.Add(this.panelControl1);
             this.Controls.Add(this.barDockControlLeft);
             this.Controls.Add(this.barDockControlRight);
             this.Controls.Add(this.barDockControlBottom);
             this.Controls.Add(this.barDockControlTop);
-            this.Name = "Frm_Humbral";
-            this.Text = "Humbral";
-            this.Load += new System.EventHandler(this.Frm_Humbral_Load);
+            this.Name = "Frm_Enfermedades";
+            this.Text = "Enfermedades";
+            this.Load += new System.EventHandler(this.Frm_Enfermedades_Load);
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).EndInit();
             this.panelControl2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dtgHumbral)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dtgValHumbral)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgEnfermedad)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgValEnfermedad)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
             this.panelControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
             this.groupControl1.ResumeLayout(false);
             this.groupControl1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.txtValor.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtColor.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtNombre.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtId.Properties)).EndInit();
             this.ResumeLayout(false);
@@ -476,10 +412,10 @@
         private DevExpress.XtraBars.BarDockControl barDockControlRight;
         private DevExpress.XtraEditors.Repository.RepositoryItemTextEdit repositoryItemTextEdit1;
         private DevExpress.XtraEditors.PanelControl panelControl2;
-        private DevExpress.XtraGrid.GridControl dtgHumbral;
-        private DevExpress.XtraGrid.Views.Grid.GridView dtgValHumbral;
-        private DevExpress.XtraGrid.Columns.GridColumn Id_Humbral;
-        private DevExpress.XtraGrid.Columns.GridColumn Nombre_Humbral;
+        private DevExpress.XtraGrid.GridControl dtgEnfermedad;
+        private DevExpress.XtraGrid.Views.Grid.GridView dtgValEnfermedad;
+        private DevExpress.XtraGrid.Columns.GridColumn Id_Enfermedad;
+        private DevExpress.XtraGrid.Columns.GridColumn Nombre_Enfermedad;
         private DevExpress.XtraGrid.Columns.GridColumn Id_Usuario_Crea;
         private DevExpress.XtraGrid.Columns.GridColumn Creador;
         private DevExpress.XtraGrid.Columns.GridColumn Id_Usuario_Mod;
@@ -490,11 +426,5 @@
         private DevExpress.XtraEditors.LabelControl labelControl2;
         private DevExpress.XtraEditors.TextEdit txtId;
         private DevExpress.XtraEditors.LabelControl labelControl1;
-        private DevExpress.XtraGrid.Columns.GridColumn Valor_Humbral;
-        private DevExpress.XtraGrid.Columns.GridColumn Color_Humbral;
-        private DevExpress.XtraEditors.TextEdit txtValor;
-        private DevExpress.XtraEditors.LabelControl labelControl4;
-        private DevExpress.XtraEditors.TextEdit txtColor;
-        private DevExpress.XtraEditors.LabelControl labelControl3;
     }
 }

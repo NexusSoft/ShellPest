@@ -50,11 +50,13 @@
     <Compile Include="Conexion\MSRegistro.cs" />
     <Compile Include="Conexion\TipoDato.cs" />
     <Compile Include="Conexion\UtileriasCodigo.cs" />
+    <Compile Include="Formularios\CLS_Bloque.cs" />
     <Compile Include="Formularios\CLS_Calidades.cs" />
     <Compile Include="Formularios\CLS_Ciudades.cs" />
     <Compile Include="Formularios\CLS_Cultivo.cs" />
     <Compile Include="Formularios\CLS_Deteccion.cs" />
     <Compile Include="Formularios\CLS_Duenio.cs" />
+    <Compile Include="Formularios\CLS_Enfermedad.cs" />
     <Compile Include="Formularios\CLS_Estado.cs" />
     <Compile Include="Formularios\CLS_Huerta.cs" />
     <Compile Include="Formularios\CLS_Humbral.cs" />

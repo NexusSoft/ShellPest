@@ -12,52 +12,51 @@ using CapaDeDatos;
 
 namespace ShellPest
 {
-    public partial class Frm_Humbral : DevExpress.XtraEditors.XtraForm
+    public partial class Frm_Enfermedades : DevExpress.XtraEditors.XtraForm
     {
-        public Frm_Humbral()
+        public Frm_Enfermedades()
         {
             InitializeComponent();
         }
 
         public Boolean PaSel { get; set; }
 
-        public string IdHumbral { get; set; }
-        public string Humbral { get; set; }
+        public string IdEnfermedad { get; set; }
+        public string Enfermedad { get; set; }
         public string Id_Usuario { get; set; }
 
         private void LimpiarCampos()
         {
             txtId.Text = "";
             txtNombre.Text = "";
-            txtValor.Text = "";
-            txtColor.Text = "";
+           
         }
 
-        private void CargarHumbral()
+        private void CargarEnfermedad()
         {
-            dtgHumbral.DataSource = null;
-            CLS_Humbral Clase = new CLS_Humbral();
+            dtgEnfermedad.DataSource = null;
+            CLS_Enfermedad Clase = new CLS_Enfermedad();
 
-            Clase.MtdSeleccionarHumbral();
+            Clase.MtdSeleccionarEnfermedad();
             if (Clase.Exito)
             {
-                dtgHumbral.DataSource = Clase.Datos;
+                dtgEnfermedad.DataSource = Clase.Datos;
             }
         }
 
-        private void InsertarHumbral()
+        private void InsertarEnfermedad()
         {
-            CLS_Humbral Clase = new CLS_Humbral();
+            CLS_Enfermedad Clase = new CLS_Enfermedad();
 
-            Clase.Id_Humbral = txtId.Text.Trim();
-            Clase.Nombre_Humbral = txtNombre.Text.Trim();
+            Clase.Id_Enfermedad = txtId.Text.Trim();
+            Clase.Nombre_Enfermedad = txtNombre.Text.Trim();
             Clase.Id_Usuario = "";
 
-            Clase.MtdInsertarHumbral();
+            Clase.MtdInsertarEnfermedad();
 
             if (Clase.Exito)
             {
-                CargarHumbral();
+                CargarEnfermedad();
                 XtraMessageBox.Show("Se ha Insertado el registro con exito");
                 LimpiarCampos();
             }
@@ -67,14 +66,14 @@ namespace ShellPest
             }
         }
 
-        private void EliminarHumbral()
+        private void EliminarEnfermedad()
         {
-            CLS_Humbral Clase = new CLS_Humbral();
-            Clase.Id_Humbral = txtId.Text.Trim();
-            Clase.MtdEliminarHumbral();
+            CLS_Enfermedad Clase = new CLS_Enfermedad();
+            Clase.Id_Enfermedad = txtId.Text.Trim();
+            Clase.MtdEliminarEnfermedad();
             if (Clase.Exito)
             {
-                CargarHumbral();
+                CargarEnfermedad();
                 XtraMessageBox.Show("Se ha Eliminado el registro con exito");
                 LimpiarCampos();
             }
@@ -84,17 +83,16 @@ namespace ShellPest
             }
         }
 
-        private void dtgHumbral_Click(object sender, EventArgs e)
+        private void dtgEnfermedad_Click(object sender, EventArgs e)
         {
             try
             {
-                foreach (int i in this.dtgValHumbral.GetSelectedRows())
+                foreach (int i in this.dtgValEnfermedad.GetSelectedRows())
                 {
-                    DataRow row = this.dtgValHumbral.GetDataRow(i);
-                    txtId.Text = row["Id_Humbral"].ToString();
-                    txtNombre.Text = row["Nombre_Humbral"].ToString();
-                    txtValor.Text = row["Valor_Humbral"].ToString();
-                    txtColor.Text = row["Color_Humbral"].ToString();
+                    DataRow row = this.dtgValEnfermedad.GetDataRow(i);
+                    txtId.Text = row["Id_Enfermedad"].ToString();
+                    txtNombre.Text = row["Nombre_Enfermedad"].ToString();
+                   
                 }
             }
             catch (Exception ex)
@@ -103,7 +101,7 @@ namespace ShellPest
             }
         }
 
-        private void Frm_Humbral_Load(object sender, EventArgs e)
+        private void Frm_Enfermedades_Load(object sender, EventArgs e)
         {
             if (PaSel == true)
             {
@@ -113,7 +111,7 @@ namespace ShellPest
             {
                 btnSeleccionar.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
             }
-            CargarHumbral();
+            CargarEnfermedad();
             LimpiarCampos();
         }
 
@@ -121,11 +119,11 @@ namespace ShellPest
         {
             if (txtNombre.Text.ToString().Trim().Length > 0)
             {
-                InsertarHumbral();
+                InsertarEnfermedad();
             }
             else
             {
-                XtraMessageBox.Show("Es necesario Agregar un nombre del Humbral.");
+                XtraMessageBox.Show("Es necesario Agregar un nombre del Enfermedad.");
             }
         }
 
@@ -133,11 +131,11 @@ namespace ShellPest
         {
             if (txtId.Text.Trim().Length > 0)
             {
-                EliminarHumbral();
+                EliminarEnfermedad();
             }
             else
             {
-                XtraMessageBox.Show("Es necesario seleccionar un Humbral.");
+                XtraMessageBox.Show("Es necesario seleccionar un Enfermedad.");
             }
         }
 
@@ -153,11 +151,10 @@ namespace ShellPest
 
         private void btnSeleccionar_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            IdHumbral = txtId.Text.Trim();
-            Humbral = txtNombre.Text.Trim();
+            IdEnfermedad = txtId.Text.Trim();
+            Enfermedad = txtNombre.Text.Trim();
 
             this.Close();
         }
-
     }
 }
