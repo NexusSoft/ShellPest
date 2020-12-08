@@ -20,7 +20,7 @@ namespace CapaDeDatos
             Exito = true;
             try
             {
-                _conexion.NombreProcedimiento = "SP_Calidades_Select";
+                _conexion.NombreProcedimiento = "SP_Calidad_Select";
 
                 _conexion.EjecutarDataset();
 
@@ -52,7 +52,7 @@ namespace CapaDeDatos
             Exito = true;
             try
             {
-                _conexion.NombreProcedimiento = "SP_Calidades_Insert";
+                _conexion.NombreProcedimiento = "SP_Calidad_Insert";
                 _dato.CadenaTexto = Id_Calidad;
                 _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Id_Calidad");
                 _dato.CadenaTexto = Nombre_Calidad;
@@ -84,7 +84,7 @@ namespace CapaDeDatos
             Exito = true;
             try
             {
-                _conexion.NombreProcedimiento = "SP_Calidades_Delete";
+                _conexion.NombreProcedimiento = "SP_Calidad_Delete";
                 _dato.CadenaTexto = Id_Calidad;
                 _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Id_Calidad");
                 _conexion.EjecutarDataset();
