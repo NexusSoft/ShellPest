@@ -50,7 +50,7 @@ namespace ShellPest
 
             Clase.Id_Enfermedad = txtId.Text.Trim();
             Clase.Nombre_Enfermedad = txtNombre.Text.Trim();
-            Clase.Id_Usuario = "";
+            Clase.Id_Usuario = Id_Usuario;
 
             Clase.MtdInsertarEnfermedad();
 

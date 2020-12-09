@@ -12,43 +12,51 @@ using CapaDeDatos;
 
 namespace ShellPest
 {
-    public partial class Frm_Cultivo : DevExpress.XtraEditors.XtraForm
+    public partial class Frm_Plagas : DevExpress.XtraEditors.XtraForm
     {
-        public Boolean PaSel { get; set; }
-
-        public Frm_Cultivo()
+        public Frm_Plagas()
         {
             InitializeComponent();
         }
 
-        public string IdCultivo { get; set; }
-        public string Cultivo { get; set; }
+        public Boolean PaSel { get; set; }
+
+        public string IdPlagas { get; set; }
+        public string Plagas { get; set; }
         public string Id_Usuario { get; set; }
 
-        private void CargarCultivo()
+        private void LimpiarCampos()
         {
-            gridControl1.DataSource = null;
-            CLS_Cultivo Clase = new CLS_Cultivo();
+            txtId.Text = "";
+            txtNombre.Text = "";
 
-            Clase.MtdSeleccionarCultivo();
+        }
+
+        private void CargarPlagas()
+        {
+            dtgPlaga.DataSource = null;
+            CLS_Plagas Clase = new CLS_Plagas();
+
+            Clase.MtdSeleccionarPlagas();
             if (Clase.Exito)
             {
-                gridControl1.DataSource = Clase.Datos;
+                dtgPlaga.DataSource = Clase.Datos;
             }
         }
 
-        private void InsertarCultivo()
+        private void InsertarPlagas()
         {
-            CLS_Cultivo Clase = new CLS_Cultivo();
+            CLS_Plagas Clase = new CLS_Plagas();
 
-            Clase.Id_Cultivo = textId.Text.Trim();
-            Clase.Nombre_Cultivo = textNombre.Text.Trim();
+            Clase.Id_Plagas = txtId.Text.Trim();
+            Clase.Nombre_Plagas = txtNombre.Text.Trim();
             Clase.Id_Usuario = Id_Usuario;
-            Clase.MtdInsertarCultivo();
+
+            Clase.MtdInsertarPlagas();
 
             if (Clase.Exito)
             {
-                CargarCultivo();
+                CargarPlagas();
                 XtraMessageBox.Show("Se ha Insertado el registro con exito");
                 LimpiarCampos();
             }
@@ -58,14 +66,14 @@ namespace ShellPest
             }
         }
 
-        private void EliminarCultivo()
+        private void EliminarPlagas()
         {
-            CLS_Cultivo Clase = new CLS_Cultivo();
-            Clase.Id_Cultivo = textId.Text.Trim();
-            Clase.MtdEliminarCultivo();
+            CLS_Plagas Clase = new CLS_Plagas();
+            Clase.Id_Plagas = txtId.Text.Trim();
+            Clase.MtdEliminarPlagas();
             if (Clase.Exito)
             {
-                CargarCultivo();
+                CargarPlagas();
                 XtraMessageBox.Show("Se ha Eliminado el registro con exito");
                 LimpiarCampos();
             }
@@ -75,21 +83,16 @@ namespace ShellPest
             }
         }
 
-        private void LimpiarCampos()
-        {
-            textId.Text = "";
-            textNombre.Text = "";
-        }
-
-        private void gridControl1_Click(object sender, EventArgs e)
+        private void dtgPlaga_Click(object sender, EventArgs e)
         {
             try
             {
-                foreach (int i in this.gridView1.GetSelectedRows())
+                foreach (int i in this.dtgValPlaga.GetSelectedRows())
                 {
-                    DataRow row = this.gridView1.GetDataRow(i);
-                    textId.Text = row["Id_Cultivo"].ToString();
-                    textNombre.Text = row["Nombre_Cultivo"].ToString();
+                    DataRow row = this.dtgValPlaga.GetDataRow(i);
+                    txtId.Text = row["Id_Plagas"].ToString();
+                    txtNombre.Text = row["Nombre_Plagas"].ToString();
+
                 }
             }
             catch (Exception ex)
@@ -98,7 +101,7 @@ namespace ShellPest
             }
         }
 
-        private void Frm_Cultivo_Load(object sender, EventArgs e)
+        private void Frm_Plagas_Load(object sender, EventArgs e)
         {
             if (PaSel == true)
             {
@@ -108,30 +111,31 @@ namespace ShellPest
             {
                 btnSeleccionar.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
             }
-            CargarCultivo();
+            CargarPlagas();
+            LimpiarCampos();
         }
 
         private void btnGuardar_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            if (textNombre.Text.ToString().Trim().Length > 0)
+            if (txtNombre.Text.ToString().Trim().Length > 0)
             {
-                InsertarCultivo();
+                InsertarPlagas();
             }
             else
             {
-                XtraMessageBox.Show("Es necesario Agregar un nombre de un cultivo.");
+                XtraMessageBox.Show("Es necesario Agregar un nombre del Plagas.");
             }
         }
 
         private void btnEliminar_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            if (textId.Text.Trim().Length > 0)
+            if (txtId.Text.Trim().Length > 0)
             {
-                EliminarCultivo();
+                EliminarPlagas();
             }
             else
             {
-                XtraMessageBox.Show("Es necesario seleccionar un cultivo.");
+                XtraMessageBox.Show("Es necesario seleccionar un Plagas.");
             }
         }
 
@@ -147,8 +151,9 @@ namespace ShellPest
 
         private void btnSeleccionar_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            IdCultivo = textId.Text.Trim();
-            Cultivo = textNombre.Text.Trim();
+            IdPlagas = txtId.Text.Trim();
+            Plagas = txtNombre.Text.Trim();
+
             this.Close();
         }
     }

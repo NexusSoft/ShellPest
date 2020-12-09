@@ -206,9 +206,9 @@
             // 
             this.barDockControlBottom.CausesValidation = false;
             this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.barDockControlBottom.Location = new System.Drawing.Point(0, 393);
+            this.barDockControlBottom.Location = new System.Drawing.Point(0, 391);
             this.barDockControlBottom.Manager = this.barManager1;
-            this.barDockControlBottom.Size = new System.Drawing.Size(739, 25);
+            this.barDockControlBottom.Size = new System.Drawing.Size(739, 27);
             // 
             // barDockControlLeft
             // 
@@ -216,7 +216,7 @@
             this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
             this.barDockControlLeft.Location = new System.Drawing.Point(0, 0);
             this.barDockControlLeft.Manager = this.barManager1;
-            this.barDockControlLeft.Size = new System.Drawing.Size(71, 393);
+            this.barDockControlLeft.Size = new System.Drawing.Size(69, 391);
             // 
             // barDockControlRight
             // 
@@ -224,7 +224,7 @@
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
             this.barDockControlRight.Location = new System.Drawing.Point(739, 0);
             this.barDockControlRight.Manager = this.barManager1;
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 393);
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 391);
             // 
             // repositoryItemTextEdit1
             // 
@@ -234,10 +234,10 @@
             // 
             this.panelControl2.Controls.Add(this.dtgHumbral);
             this.panelControl2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelControl2.Location = new System.Drawing.Point(71, 106);
+            this.panelControl2.Location = new System.Drawing.Point(69, 106);
             this.panelControl2.Name = "panelControl2";
             this.panelControl2.Padding = new System.Windows.Forms.Padding(10);
-            this.panelControl2.Size = new System.Drawing.Size(668, 287);
+            this.panelControl2.Size = new System.Drawing.Size(670, 285);
             this.panelControl2.TabIndex = 11;
             // 
             // dtgHumbral
@@ -247,7 +247,7 @@
             this.dtgHumbral.MainView = this.dtgValHumbral;
             this.dtgHumbral.MenuManager = this.barManager1;
             this.dtgHumbral.Name = "dtgHumbral";
-            this.dtgHumbral.Size = new System.Drawing.Size(644, 263);
+            this.dtgHumbral.Size = new System.Drawing.Size(646, 261);
             this.dtgHumbral.TabIndex = 0;
             this.dtgHumbral.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.dtgValHumbral});
@@ -266,6 +266,7 @@
             this.Color_Humbral});
             this.dtgValHumbral.GridControl = this.dtgHumbral;
             this.dtgValHumbral.Name = "dtgValHumbral";
+            this.dtgValHumbral.OptionsBehavior.Editable = false;
             this.dtgValHumbral.OptionsView.ShowGroupPanel = false;
             // 
             // Id_Humbral
@@ -337,10 +338,10 @@
             // 
             this.panelControl1.Controls.Add(this.groupControl1);
             this.panelControl1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelControl1.Location = new System.Drawing.Point(71, 0);
+            this.panelControl1.Location = new System.Drawing.Point(69, 0);
             this.panelControl1.Name = "panelControl1";
             this.panelControl1.Padding = new System.Windows.Forms.Padding(10);
-            this.panelControl1.Size = new System.Drawing.Size(668, 106);
+            this.panelControl1.Size = new System.Drawing.Size(670, 106);
             this.panelControl1.TabIndex = 10;
             // 
             // groupControl1
@@ -356,7 +357,7 @@
             this.groupControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupControl1.Location = new System.Drawing.Point(12, 12);
             this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(644, 82);
+            this.groupControl1.Size = new System.Drawing.Size(646, 82);
             this.groupControl1.TabIndex = 0;
             this.groupControl1.Text = "Humbral";
             // 
@@ -366,7 +367,7 @@
             this.txtValor.MenuManager = this.barManager1;
             this.txtValor.Name = "txtValor";
             this.txtValor.Size = new System.Drawing.Size(51, 20);
-            this.txtValor.TabIndex = 7;
+            this.txtValor.TabIndex = 3;
             // 
             // labelControl4
             // 
@@ -382,7 +383,7 @@
             this.txtColor.MenuManager = this.barManager1;
             this.txtColor.Name = "txtColor";
             this.txtColor.Size = new System.Drawing.Size(96, 20);
-            this.txtColor.TabIndex = 5;
+            this.txtColor.TabIndex = 4;
             // 
             // labelControl3
             // 
@@ -398,7 +399,7 @@
             this.txtNombre.MenuManager = this.barManager1;
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(231, 20);
-            this.txtNombre.TabIndex = 3;
+            this.txtNombre.TabIndex = 2;
             // 
             // labelControl2
             // 

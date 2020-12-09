@@ -14,7 +14,15 @@ GO
 -- Create date: <Create Date,,>
 -- Description:	<Description,,>
 -- =============================================
-CREATE PROCEDURE [dbo].[SP_Pais_Insert] 
+IF  EXISTS (SELECT * FROM SYS.OBJECTS WHERE TYPE = 'P' AND NAME = 'SP_Pais_Insert')
+DROP PROCEDURE SP_Pais_Insert
+GO
+-- =============================================
+-- Author:		<Author,,Name>
+-- Create date: <Create Date,,>
+-- Description:	<Description,,>
+-- =============================================
+create PROCEDURE [dbo].[SP_Pais_Insert] 
 	-- Add the parameters for the stored procedure here
 	@Id_Pais char(3),
 	@Nombre_Pais varchar(30),

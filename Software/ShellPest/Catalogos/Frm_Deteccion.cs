@@ -51,7 +51,7 @@ namespace ShellPest
 
             Clase.Id_Deteccion = txtId.Text.Trim();
             Clase.Nombre_Deteccion= txtNombre.Text.Trim();
-            Clase.Id_Usuario = "";
+            Clase.Id_Usuario = Id_Usuario;
 
             Clase.MtdInsertarDeteccion();
 

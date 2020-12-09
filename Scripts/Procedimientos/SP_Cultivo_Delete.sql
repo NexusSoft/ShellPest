@@ -1,24 +1,21 @@
 USE [ShellPest]
 GO
-
-/****** Object:  StoredProcedure [dbo].[SP_Pais_Delete]    Script Date: 03/12/2020 01:44:36 p. m. ******/
+/****** Object:  StoredProcedure [dbo].[SP_BSC_ClienteInsert]    Script Date: 25/08/2018 12:39:13 p. m. ******/
 SET ANSI_NULLS ON
 GO
-
 SET QUOTED_IDENTIFIER ON
 GO
-
-IF  EXISTS (SELECT * FROM SYS.OBJECTS WHERE TYPE = 'P' AND NAME = 'SP_Pais_Delete')
-DROP PROCEDURE SP_Pais_Delete
+IF  EXISTS (SELECT * FROM SYS.OBJECTS WHERE TYPE = 'P' AND NAME = 'SP_Cultivo_Delete')
+DROP PROCEDURE SP_Cultivo_Delete
 GO
 -- =============================================
 -- Author:		<Author,,Name>
 -- Create date: <Create Date,,>
 -- Description:	<Description,,>
 -- =============================================
-create PROCEDURE [dbo].[SP_Pais_Delete] 
+create PROCEDURE [dbo].[SP_Cultivo_Delete] 
 	-- Add the parameters for the stored procedure here
-	@Id_Pais char(3)
+	@Id_Cultivo char(2)
 AS
 BEGIN
 	-- SET NOCOUNT ON added to prevent extra result sets from
@@ -31,7 +28,7 @@ BEGIN
 	begin transaction T2;
 	begin try
 		
-		delete from dbo.t_Pais where Id_Pais=@Id_Pais
+		delete from dbo.t_Cultivo where Id_Cultivo=@Id_Cultivo
 
 		commit transaction T2;
 		set @correcto=1
@@ -43,8 +40,3 @@ BEGIN
 
 	select @correcto resultado
 END
-
-
-
-GO
-

@@ -11,6 +11,7 @@ namespace CapaDeDatos
 
         public string Id_Cultivo { get; set; }
         public string Nombre_Cultivo { get; set; }
+        public string Id_Usuario { get; set; }
 
         public void MtdSeleccionarCultivo()
         {
@@ -57,6 +58,8 @@ namespace CapaDeDatos
                 _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Id_Cultivo");
                 _dato.CadenaTexto = Nombre_Cultivo;
                 _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Nombre_Cultivo");
+                _dato.CadenaTexto = Id_Usuario;
+                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Id_Usuario");
                 _conexion.EjecutarDataset();
 
                 if (_conexion.Exito)

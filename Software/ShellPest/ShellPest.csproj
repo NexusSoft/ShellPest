@@ -124,11 +124,23 @@
     <Compile Include="Catalogos\Frm_Pais.designer.cs">
       <DependentUpon>Frm_Pais.cs</DependentUpon>
     </Compile>
+    <Compile Include="Catalogos\Frm_Plagas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Catalogos\Frm_Plagas.Designer.cs">
+      <DependentUpon>Frm_Plagas.cs</DependentUpon>
+    </Compile>
     <Compile Include="Catalogos\Frm_Productor.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Catalogos\Frm_Productor.designer.cs">
       <DependentUpon>Frm_Productor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Catalogos\Frm_PuntoControl.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Catalogos\Frm_PuntoControl.Designer.cs">
+      <DependentUpon>Frm_PuntoControl.cs</DependentUpon>
     </Compile>
     <Compile Include="Clases\Crypto.cs" />
     <Compile Include="Clases\GridCheckMarksSelection.cs" />
@@ -221,8 +233,14 @@
     <EmbeddedResource Include="Catalogos\Frm_Pais.resx">
       <DependentUpon>Frm_Pais.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Catalogos\Frm_Plagas.resx">
+      <DependentUpon>Frm_Plagas.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Catalogos\Frm_Productor.resx">
       <DependentUpon>Frm_Productor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Catalogos\Frm_PuntoControl.resx">
+      <DependentUpon>Frm_PuntoControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Conexion\Frm_Conexiones.resx">
       <DependentUpon>Frm_Conexiones.cs</DependentUpon>

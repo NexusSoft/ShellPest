@@ -41,6 +41,10 @@
             this.btn_Pantallas = new DevExpress.XtraBars.BarButtonItem();
             this.btn_Usuarios = new DevExpress.XtraBars.BarButtonItem();
             this.btn_Permisos = new DevExpress.XtraBars.BarButtonItem();
+            this.btn_Deteccion = new DevExpress.XtraBars.BarButtonItem();
+            this.btn_Enfermedad = new DevExpress.XtraBars.BarButtonItem();
+            this.btn_Cultivo = new DevExpress.XtraBars.BarButtonItem();
+            this.btn_Pais = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPage4 = new DevExpress.XtraBars.Ribbon.RibbonPage();
@@ -69,9 +73,13 @@
             this.btn_Perfiles,
             this.btn_Pantallas,
             this.btn_Usuarios,
-            this.btn_Permisos});
+            this.btn_Permisos,
+            this.btn_Deteccion,
+            this.btn_Enfermedad,
+            this.btn_Cultivo,
+            this.btn_Pais});
             this.ribbonControl1.Location = new System.Drawing.Point(0, 0);
-            this.ribbonControl1.MaxItemId = 11;
+            this.ribbonControl1.MaxItemId = 15;
             this.ribbonControl1.Name = "ribbonControl1";
             this.ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage1,
@@ -168,6 +176,42 @@
             this.btn_Permisos.Name = "btn_Permisos";
             this.btn_Permisos.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_Permisos_ItemClick);
             // 
+            // btn_Deteccion
+            // 
+            this.btn_Deteccion.Caption = "Detección";
+            this.btn_Deteccion.Id = 11;
+            this.btn_Deteccion.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnDeteccion.ImageOptions.Image")));
+            this.btn_Deteccion.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnDeteccion.ImageOptions.LargeImage")));
+            this.btn_Deteccion.Name = "btn_Deteccion";
+            this.btn_Deteccion.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnDeteccion_ItemClick);
+            // 
+            // btn_Enfermedad
+            // 
+            this.btn_Enfermedad.Caption = "Enfermedades";
+            this.btn_Enfermedad.Id = 12;
+            this.btn_Enfermedad.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnEnfermedad.ImageOptions.Image")));
+            this.btn_Enfermedad.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnEnfermedad.ImageOptions.LargeImage")));
+            this.btn_Enfermedad.Name = "btn_Enfermedad";
+            this.btn_Enfermedad.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnEnfermedad_ItemClick);
+            // 
+            // btn_Cultivo
+            // 
+            this.btn_Cultivo.Caption = "Cultivo";
+            this.btn_Cultivo.Id = 13;
+            this.btn_Cultivo.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnCultivo.ImageOptions.Image")));
+            this.btn_Cultivo.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnCultivo.ImageOptions.LargeImage")));
+            this.btn_Cultivo.Name = "btn_Cultivo";
+            this.btn_Cultivo.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnCultivo_ItemClick);
+            // 
+            // btn_Pais
+            // 
+            this.btn_Pais.Caption = "Paises";
+            this.btn_Pais.Id = 14;
+            this.btn_Pais.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnPais.ImageOptions.Image")));
+            this.btn_Pais.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnPais.ImageOptions.LargeImage")));
+            this.btn_Pais.Name = "btn_Pais";
+            this.btn_Pais.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnPais_ItemClick);
+            // 
             // ribbonPage1
             // 
             this.ribbonPage1.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
@@ -184,6 +228,10 @@
             this.ribbonPageGroup1.ItemLinks.Add(this.btn_Plagas);
             this.ribbonPageGroup1.ItemLinks.Add(this.btn_NivelPresencia);
             this.ribbonPageGroup1.ItemLinks.Add(this.btn_PuntoControl);
+            this.ribbonPageGroup1.ItemLinks.Add(this.btn_Deteccion);
+            this.ribbonPageGroup1.ItemLinks.Add(this.btn_Enfermedad);
+            this.ribbonPageGroup1.ItemLinks.Add(this.btn_Cultivo);
+            this.ribbonPageGroup1.ItemLinks.Add(this.btn_Pais);
             this.ribbonPageGroup1.Name = "ribbonPageGroup1";
             this.ribbonPageGroup1.ShowCaptionButton = false;
             this.ribbonPageGroup1.Text = "Catalogos";
@@ -285,6 +333,10 @@
         private DevExpress.XtraBars.BarButtonItem btn_Permisos;
         private DevExpress.XtraTabbedMdi.XtraTabbedMdiManager xtraTabbedMdiManager1;
         private DevExpress.LookAndFeel.DefaultLookAndFeel SkinForm;
+        private DevExpress.XtraBars.BarButtonItem btn_Deteccion;
+        private DevExpress.XtraBars.BarButtonItem btn_Enfermedad;
+        private DevExpress.XtraBars.BarButtonItem btn_Cultivo;
+        private DevExpress.XtraBars.BarButtonItem btn_Pais;
     }
 }
 

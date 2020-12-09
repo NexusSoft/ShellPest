@@ -15,15 +15,15 @@ SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
-IF  EXISTS (SELECT * FROM SYS.OBJECTS WHERE TYPE = 'P' AND NAME = 'SP_Humbral_Select')
-DROP PROCEDURE SP_Humbral_Select
+IF  EXISTS (SELECT * FROM SYS.OBJECTS WHERE TYPE = 'P' AND NAME = 'SP_Cultivo_Select')
+DROP PROCEDURE SP_Cultivo_Select
 GO
 -- =============================================
 -- Author:		<Author,,Name>
 -- Create date: <Create Date,,>
 -- Description:	<Description,,>
 -- =============================================
-CREATE PROCEDURE SP_Humbral_Select
+CREATE PROCEDURE SP_Cultivo_Select
 	-- Add the parameters for the stored procedure here
 	
 AS
@@ -34,15 +34,13 @@ BEGIN
 
     -- Insert statements for procedure here
 	
-		select dt.Id_Humbral
-	      ,dt.Nombre_Humbral
-	      ,dt.Valor_Humbral
-	      ,dt.Color_Humbral
+		select dt.Id_Cultivo
+	      ,dt.Nombre_Cultivo
 	      ,dt.Id_Usuario_Crea
 	      ,us.Nombre_Usuario as Creador
 	      ,dt.Id_Usuario_Mod 
 	      ,usm.Nombre_Usuario as Modificador
-		from t_Humbral as dt
+		from t_Cultivo as dt
 		inner join t_Usuarios as us on us.Id_Usuario=dt.Id_Usuario_Crea 
 		left join t_Usuarios as usm on usm.Id_Usuario=dt.Id_Usuario_Mod 
 

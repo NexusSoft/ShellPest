@@ -18,3 +18,9 @@ D:\SKYNET\Documents\GitHub\ShellPest\Software\CapaDeDatos\obj\Debug\CapaDeDatos.
 D:\SKYNET\Documents\GitHub\ShellPest\Software\CapaDeDatos\obj\Debug\CapaDeDatos.dll
 D:\SKYNET\Documents\GitHub\ShellPest\Software\CapaDeDatos\obj\Debug\CapaDeDatos.pdb
 D:\SKYNET\Documents\GitHub\ShellPest\Software\CapaDeDatos\obj\Debug\CapaDeDatos.csprojAssemblyReference.cache
+E:\JORGE\Documents\GitHub\ShellPest\Software\CapaDeDatos\obj\Debug\CapaDeDatos.csproj.ResolveComReference.cache
+E:\JORGE\Documents\GitHub\ShellPest\Software\CapaDeDatos\obj\Debug\CapaDeDatos.dll
+E:\JORGE\Documents\GitHub\ShellPest\Software\CapaDeDatos\obj\Debug\CapaDeDatos.pdb
+E:\JORGE\Documents\GitHub\ShellPest\Software\CapaDeDatos\bin\Debug\CapaDeDatos.dll
+E:\JORGE\Documents\GitHub\ShellPest\Software\CapaDeDatos\bin\Debug\CapaDeDatos.pdb
+E:\JORGE\Documents\GitHub\ShellPest\Software\CapaDeDatos\obj\Debug\CapaDeDatos.csprojResolveAssemblyReference.cache

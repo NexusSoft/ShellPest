@@ -198,9 +198,9 @@
             // 
             this.barDockControlBottom.CausesValidation = false;
             this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.barDockControlBottom.Location = new System.Drawing.Point(0, 419);
+            this.barDockControlBottom.Location = new System.Drawing.Point(0, 417);
             this.barDockControlBottom.Manager = this.barManager1;
-            this.barDockControlBottom.Size = new System.Drawing.Size(654, 25);
+            this.barDockControlBottom.Size = new System.Drawing.Size(654, 27);
             // 
             // barDockControlLeft
             // 
@@ -208,7 +208,7 @@
             this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
             this.barDockControlLeft.Location = new System.Drawing.Point(0, 0);
             this.barDockControlLeft.Manager = this.barManager1;
-            this.barDockControlLeft.Size = new System.Drawing.Size(71, 419);
+            this.barDockControlLeft.Size = new System.Drawing.Size(69, 417);
             // 
             // barDockControlRight
             // 
@@ -216,7 +216,7 @@
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
             this.barDockControlRight.Location = new System.Drawing.Point(654, 0);
             this.barDockControlRight.Manager = this.barManager1;
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 419);
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 417);
             // 
             // repositoryItemTextEdit1
             // 
@@ -226,10 +226,10 @@
             // 
             this.panelControl2.Controls.Add(this.dtgEnfermedad);
             this.panelControl2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelControl2.Location = new System.Drawing.Point(71, 106);
+            this.panelControl2.Location = new System.Drawing.Point(69, 106);
             this.panelControl2.Name = "panelControl2";
             this.panelControl2.Padding = new System.Windows.Forms.Padding(10);
-            this.panelControl2.Size = new System.Drawing.Size(583, 313);
+            this.panelControl2.Size = new System.Drawing.Size(585, 311);
             this.panelControl2.TabIndex = 13;
             // 
             // dtgEnfermedad
@@ -239,7 +239,7 @@
             this.dtgEnfermedad.MainView = this.dtgValEnfermedad;
             this.dtgEnfermedad.MenuManager = this.barManager1;
             this.dtgEnfermedad.Name = "dtgEnfermedad";
-            this.dtgEnfermedad.Size = new System.Drawing.Size(559, 289);
+            this.dtgEnfermedad.Size = new System.Drawing.Size(561, 287);
             this.dtgEnfermedad.TabIndex = 0;
             this.dtgEnfermedad.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.dtgValEnfermedad});
@@ -311,10 +311,10 @@
             // 
             this.panelControl1.Controls.Add(this.groupControl1);
             this.panelControl1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelControl1.Location = new System.Drawing.Point(71, 0);
+            this.panelControl1.Location = new System.Drawing.Point(69, 0);
             this.panelControl1.Name = "panelControl1";
             this.panelControl1.Padding = new System.Windows.Forms.Padding(10);
-            this.panelControl1.Size = new System.Drawing.Size(583, 106);
+            this.panelControl1.Size = new System.Drawing.Size(585, 106);
             this.panelControl1.TabIndex = 12;
             // 
             // groupControl1
@@ -326,7 +326,7 @@
             this.groupControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupControl1.Location = new System.Drawing.Point(12, 12);
             this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(559, 82);
+            this.groupControl1.Size = new System.Drawing.Size(561, 82);
             this.groupControl1.TabIndex = 0;
             this.groupControl1.Text = "Enfermedad";
             // 

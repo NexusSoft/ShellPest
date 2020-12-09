@@ -6,15 +6,17 @@ using System.Threading.Tasks;
 
 namespace CapaDeDatos
 {
-    public class CLS_Bloque : ConexionBase
+    public class CLS_PuntoControl : ConexionBase
     {
 
+        public string Id_PuntoControl { get; set; }
         public string Id_Bloque { get; set; }
-        public string Nombre_Bloque { get; set; }
-        public string Id_Huerta { get; set; }
+        public string Nombre_PuntoControl { get; set; }
+        public string n_coordenadaX { get; set; }
+        public string n_coordenadaY { get; set; }
         public string Id_Usuario { get; set; }
 
-        public void MtdSeleccionarBloque()
+        public void MtdSeleccionarPuntoControl()
         {
             TipoDato _dato = new TipoDato();
             Conexion _conexion = new Conexion(cadenaConexion);
@@ -22,7 +24,7 @@ namespace CapaDeDatos
             Exito = true;
             try
             {
-                _conexion.NombreProcedimiento = "SP_Bloque_Select";
+                _conexion.NombreProcedimiento = "SP_PuntoControl_Select";
 
                 _conexion.EjecutarDataset();
 
@@ -43,10 +45,7 @@ namespace CapaDeDatos
             }
 
         }
-
-
-
-        public void MtdInsertarBloque()
+        public void MtdInsertarPuntoControl()
         {
             TipoDato _dato = new TipoDato();
             Conexion _conexion = new Conexion(cadenaConexion);
@@ -54,13 +53,17 @@ namespace CapaDeDatos
             Exito = true;
             try
             {
-                _conexion.NombreProcedimiento = "SP_Bloque_Insert";
+                _conexion.NombreProcedimiento = "SP_PuntoControl_Insert";
+                _dato.CadenaTexto = Id_PuntoControl;
+                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Id_PuntoControl");
                 _dato.CadenaTexto = Id_Bloque;
                 _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Id_Bloque");
-                _dato.CadenaTexto = Nombre_Bloque;
-                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Nombre_Bloque");
-                _dato.CadenaTexto = Id_Huerta;
-                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Id_Huerta");
+                _dato.CadenaTexto = Nombre_PuntoControl;
+                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Nombre_PuntoControl");
+                _dato.CadenaTexto = n_coordenadaX;
+                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "n_coordenadaX");
+                _dato.CadenaTexto = n_coordenadaY;
+                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "n_coordenadaY");
                 _dato.CadenaTexto = Id_Usuario;
                 _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Id_Usuario");
                 _conexion.EjecutarDataset();
@@ -81,8 +84,7 @@ namespace CapaDeDatos
                 Exito = false;
             }
         }
-
-        public void MtdEliminarBloque()
+        public void MtdEliminarPuntoControl()
         {
             TipoDato _dato = new TipoDato();
             Conexion _conexion = new Conexion(cadenaConexion);
@@ -90,9 +92,9 @@ namespace CapaDeDatos
             Exito = true;
             try
             {
-                _conexion.NombreProcedimiento = "SP_Bloque_Delete";
-                _dato.CadenaTexto = Id_Bloque;
-                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Id_Bloque");
+                _conexion.NombreProcedimiento = "SP_PuntoControl_Delete";
+                _dato.CadenaTexto = Id_PuntoControl;
+                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Id_PuntoControl");
                 _conexion.EjecutarDataset();
 
                 if (_conexion.Exito)
@@ -110,7 +112,7 @@ namespace CapaDeDatos
                 Mensaje = e.Message;
                 Exito = false;
             }
-
         }
+
     }
 }

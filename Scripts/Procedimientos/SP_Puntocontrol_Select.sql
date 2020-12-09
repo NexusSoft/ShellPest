@@ -1,4 +1,4 @@
-USE [Transportes]
+USE [ShellPest]
 GO
 -- ================================================
 -- Template generated from Template Explorer using:
@@ -49,7 +49,7 @@ BEGIN
 		from t_Puntocontrol as dt
 		inner join t_Usuarios as us on us.Id_Usuario=dt.Id_Usuario_Crea 
 		left join t_Usuarios as usm on usm.Id_Usuario=dt.Id_Usuario_Mod 
-		left join t_Bloque as bl on bl.Id_Bloques=dt.Id_Bloque
+		left join t_Bloque as bl on bl.Id_Bloque=dt.Id_Bloque
 		left join t_Huerta as hue on hue.Id_Huerta=bl.Id_Huerta
 END
 GO

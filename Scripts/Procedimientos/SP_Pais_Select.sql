@@ -14,9 +14,15 @@ GO
 -- Create date: <Create Date,,>
 -- Description:	<Description,,>
 -- =============================================
-CREATE PROCEDURE [dbo].[SP_Pais_Select]
-	-- Add the parameters for the stored procedure here
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF  EXISTS (SELECT * FROM SYS.OBJECTS WHERE TYPE = 'P' AND NAME = 'SP_Pais_Select')
+DROP PROCEDURE SP_Pais_Select
+GO
 	
+CREATE PROCEDURE SP_Pais_Select	
 AS
 BEGIN
 	-- SET NOCOUNT ON added to prevent extra result sets from
@@ -25,9 +31,15 @@ BEGIN
 
     -- Insert statements for procedure here
 	
-		select Id_Pais
-	      ,Nombre_Pais 
-		from t_Pais
+		select dt.Id_Pais
+	      ,dt.Nombre_Pais
+	      ,dt.Id_Usuario_Crea
+	      ,us.Nombre_Usuario as Creador
+	      ,dt.Id_Usuario_Mod 
+	      ,usm.Nombre_Usuario as Modificador
+		from t_Pais as dt
+		inner join t_Usuarios as us on us.Id_Usuario=dt.Id_Usuario_Crea 
+		left join t_Usuarios as usm on usm.Id_Usuario=dt.Id_Usuario_Mod 
 
 END
 

@@ -51,7 +51,9 @@ namespace ShellPest
 
             Clase.Id_Humbral = txtId.Text.Trim();
             Clase.Nombre_Humbral = txtNombre.Text.Trim();
-            Clase.Id_Usuario = "";
+            Clase.Valor_Humbral = txtValor.Text.Trim();
+            Clase.Color_Humbral = txtColor.Text.Trim();
+            Clase.Id_Usuario = Id_Usuario;
 
             Clase.MtdInsertarHumbral();
 

@@ -6,15 +6,14 @@ using System.Threading.Tasks;
 
 namespace CapaDeDatos
 {
-    public class CLS_Bloque : ConexionBase
+    public class CLS_Plagas : ConexionBase
     {
 
-        public string Id_Bloque { get; set; }
-        public string Nombre_Bloque { get; set; }
-        public string Id_Huerta { get; set; }
+        public string Id_Plagas { get; set; }
+        public string Nombre_Plagas { get; set; }
         public string Id_Usuario { get; set; }
 
-        public void MtdSeleccionarBloque()
+        public void MtdSeleccionarPlagas()
         {
             TipoDato _dato = new TipoDato();
             Conexion _conexion = new Conexion(cadenaConexion);
@@ -22,7 +21,7 @@ namespace CapaDeDatos
             Exito = true;
             try
             {
-                _conexion.NombreProcedimiento = "SP_Bloque_Select";
+                _conexion.NombreProcedimiento = "SP_Plagas_Select";
 
                 _conexion.EjecutarDataset();
 
@@ -43,10 +42,7 @@ namespace CapaDeDatos
             }
 
         }
-
-
-
-        public void MtdInsertarBloque()
+        public void MtdInsertarPlagas()
         {
             TipoDato _dato = new TipoDato();
             Conexion _conexion = new Conexion(cadenaConexion);
@@ -54,13 +50,11 @@ namespace CapaDeDatos
             Exito = true;
             try
             {
-                _conexion.NombreProcedimiento = "SP_Bloque_Insert";
-                _dato.CadenaTexto = Id_Bloque;
-                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Id_Bloque");
-                _dato.CadenaTexto = Nombre_Bloque;
-                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Nombre_Bloque");
-                _dato.CadenaTexto = Id_Huerta;
-                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Id_Huerta");
+                _conexion.NombreProcedimiento = "SP_Plagas_Insert";
+                _dato.CadenaTexto = Id_Plagas;
+                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Id_Plagas");
+                _dato.CadenaTexto = Nombre_Plagas;
+                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Nombre_Plagas");
                 _dato.CadenaTexto = Id_Usuario;
                 _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Id_Usuario");
                 _conexion.EjecutarDataset();
@@ -81,8 +75,7 @@ namespace CapaDeDatos
                 Exito = false;
             }
         }
-
-        public void MtdEliminarBloque()
+        public void MtdEliminarPlagas()
         {
             TipoDato _dato = new TipoDato();
             Conexion _conexion = new Conexion(cadenaConexion);
@@ -90,9 +83,9 @@ namespace CapaDeDatos
             Exito = true;
             try
             {
-                _conexion.NombreProcedimiento = "SP_Bloque_Delete";
-                _dato.CadenaTexto = Id_Bloque;
-                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Id_Bloque");
+                _conexion.NombreProcedimiento = "SP_Plagas_Delete";
+                _dato.CadenaTexto = Id_Plagas;
+                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Id_Plagas");
                 _conexion.EjecutarDataset();
 
                 if (_conexion.Exito)
@@ -110,7 +103,7 @@ namespace CapaDeDatos
                 Mensaje = e.Message;
                 Exito = false;
             }
-
         }
+
     }
 }
