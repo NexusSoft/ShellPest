@@ -1,4 +1,4 @@
-USE [Transportes]
+USE [ShellPest]
 GO
 /****** Object:  StoredProcedure [dbo].[SP_BSC_ClienteGeneral]    Script Date: 25/08/2018 12:40:29 p. m. ******/
 SET ANSI_NULLS ON
@@ -31,14 +31,14 @@ BEGIN
 	begin try
 
 		declare @maximo char(3)
-		select @maximo=right(Concat('000', isnull(max(Id_Perfil),0)+1),3) from dbo.Perfiles
+		select @maximo=right(Concat('000', isnull(max(Id_Perfil),0)+1),3) from dbo.t_Perfiles
 
 		declare @Existe int
-		select @Existe = count(Id_Perfil) from dbo.Perfiles a where (a.Id_Perfil=@Id_Perfil)
+		select @Existe = count(Id_Perfil) from dbo.t_Perfiles a where (a.Id_Perfil=@Id_Perfil)
 
 		if @Existe>0 
 		
-			UPDATE dbo.Perfiles
+			UPDATE dbo.t_Perfiles
 		        SET Nombre_Perfil=@Nombre_Perfil,
 				Id_Usuario_Mod=@Id_Usuario,
 				F_Usuario_Mod=getdate()
@@ -47,7 +47,7 @@ BEGIN
 				
 		else
 		
-			INSERT INTO dbo.Perfiles
+			INSERT INTO dbo.t_Perfiles
 	           (Id_Perfil
 	           ,Nombre_Perfil
 			   ,Id_Usuario_Crea

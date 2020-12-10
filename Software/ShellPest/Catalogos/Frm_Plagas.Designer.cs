@@ -375,6 +375,7 @@
             this.Controls.Add(this.barDockControlBottom);
             this.Controls.Add(this.barDockControlTop);
             this.Name = "Frm_Plagas";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Plagas";
             this.Load += new System.EventHandler(this.Frm_Plagas_Load);
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();

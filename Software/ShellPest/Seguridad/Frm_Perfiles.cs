@@ -60,7 +60,7 @@ namespace ShellPest
             CLS_Perfiles Perfil = new CLS_Perfiles();
             Perfil.Id_Perfil = textId.Text.Trim();
             Perfil.Nombre_Perfil = textNombre.Text.Trim();
-            Perfil.Usuario = UsuariosLogin.Trim();
+            Perfil.Id_Usuario = UsuariosLogin.Trim();
             Perfil.MtdInsertarPerfiles();
             if (Perfil.Exito)
             {

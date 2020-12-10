@@ -12,7 +12,7 @@ namespace CapaDeDatos
         public string Id_Perfil { get; set; }
         public string Nombre_Perfil { get; set; }
 
-        public string Usuario { get; set; }
+        public string Id_Usuario { get; set; }
 
         public void MtdSeleccionarPerfiles()
         {
@@ -60,8 +60,8 @@ namespace CapaDeDatos
                 _dato.CadenaTexto = Nombre_Perfil;
                 _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Nombre_Perfil");
 
-                _dato.CadenaTexto = Usuario;
-                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Usuario");
+                _dato.CadenaTexto = Id_Usuario;
+                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Id_Usuario");
                 _conexion.EjecutarDataset();
 
                 if (_conexion.Exito)

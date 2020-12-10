@@ -116,10 +116,7 @@ namespace ShellPest
         {
             if (TieneAcceso("005"))
             {
-                Frm_Pantallas Ventana = new Frm_Pantallas();
-                Frm_Pantallas.DefInstance.MdiParent = this;
-                Frm_Pantallas.DefInstance.UsuariosLogin = UsuariosLogin;
-                Frm_Pantallas.DefInstance.Show();
+               
             }
             else
             {

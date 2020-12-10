@@ -1,4 +1,4 @@
-USE [Transportes]
+USE [ShellPest]
 GO
 -- ================================================
 -- Template generated from Template Explorer using:
@@ -40,7 +40,7 @@ BEGIN
 	      ,us.Nombre_Usuario as Creador
 	      ,dt.Id_Usuario_Mod 
 	      ,usm.Nombre_Usuario as Modificador
-		from Perfiles
+		from t_Perfiles as dt
 		inner join t_Usuarios as us on us.Id_Usuario=dt.Id_Usuario_Crea 
 		left join t_Usuarios as usm on usm.Id_Usuario=dt.Id_Usuario_Mod 
 
