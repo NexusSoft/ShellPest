@@ -59,6 +59,8 @@
             this.ribbonPage2 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.xtraTabbedMdiManager1 = new DevExpress.XtraTabbedMdi.XtraTabbedMdiManager(this.components);
             this.SkinForm = new DevExpress.LookAndFeel.DefaultLookAndFeel(this.components);
+            this.btnProductor = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabbedMdiManager1)).BeginInit();
             this.SuspendLayout();
@@ -83,9 +85,11 @@
             this.btnCultivo,
             this.btnPais,
             this.btnEstados,
-            this.btnCiudad});
+            this.btnCiudad,
+            this.btnProductor,
+            this.barButtonItem1});
             this.ribbonControl1.Location = new System.Drawing.Point(0, 0);
-            this.ribbonControl1.MaxItemId = 17;
+            this.ribbonControl1.MaxItemId = 19;
             this.ribbonControl1.Name = "ribbonControl1";
             this.ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage1,
@@ -224,6 +228,7 @@
             this.btnEstados.Id = 15;
             this.btnEstados.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.LargeImage")));
             this.btnEstados.Name = "btnEstados";
+            this.btnEstados.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnEstados_ItemClick);
             // 
             // btnCiudad
             // 
@@ -244,10 +249,12 @@
             // 
             // ribbonPageGroup5
             // 
+            this.ribbonPageGroup5.ItemLinks.Add(this.btnProductor);
             this.ribbonPageGroup5.ItemLinks.Add(this.btnHuertas);
             this.ribbonPageGroup5.ItemLinks.Add(this.btnBloques);
             this.ribbonPageGroup5.ItemLinks.Add(this.btnPuntoControl);
             this.ribbonPageGroup5.ItemLinks.Add(this.btnCultivo);
+            this.ribbonPageGroup5.ItemLinks.Add(this.barButtonItem1);
             this.ribbonPageGroup5.Name = "ribbonPageGroup5";
             this.ribbonPageGroup5.Text = "Catalogos de Ubicacion";
             // 
@@ -325,6 +332,20 @@
             this.SkinForm.EnableBonusSkins = true;
             this.SkinForm.LookAndFeel.SkinName = "Office 2010 Silver";
             // 
+            // btnProductor
+            // 
+            this.btnProductor.Caption = "Productor";
+            this.btnProductor.Id = 17;
+            this.btnProductor.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.LargeImage1")));
+            this.btnProductor.Name = "btnProductor";
+            // 
+            // barButtonItem1
+            // 
+            this.barButtonItem1.Caption = "Calidades";
+            this.barButtonItem1.Id = 18;
+            this.barButtonItem1.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.LargeImage2")));
+            this.barButtonItem1.Name = "barButtonItem1";
+            // 
             // Frm_Principal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -375,6 +396,8 @@
         private DevExpress.XtraBars.BarButtonItem btnCiudad;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup5;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup2;
+        private DevExpress.XtraBars.BarButtonItem btnProductor;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem1;
     }
 }
 

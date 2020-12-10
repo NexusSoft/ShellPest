@@ -216,5 +216,9 @@ namespace ShellPest
             Ventana.ShowDialog();
         }
 
+        private void btnEstados_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+
+        }
     }
 }
