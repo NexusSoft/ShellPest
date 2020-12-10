@@ -93,6 +93,10 @@ namespace ShellPest
                     DataRow row = this.dtgValPuntoControl.GetDataRow(i);
                     textId.Text = row["Id_PuntoControl"].ToString();
                     textNombre.Text = row["Nombre_PuntoControl"].ToString();
+                    txtBloque.Tag = row["Id_Bloque"].ToString();
+                    txtBloque.Text = row["Nombre_Bloque"].ToString();
+                    txtX.Text = row["n_coordenadaX"].ToString();
+                    txtY.Text = row["n_coordenadaY"].ToString();
                 }
             }
             catch (Exception ex)

@@ -256,6 +256,7 @@
             this.Modificador});
             this.dtgValEnfermedad.GridControl = this.dtgEnfermedad;
             this.dtgValEnfermedad.Name = "dtgValEnfermedad";
+            this.dtgValEnfermedad.OptionsBehavior.Editable = false;
             this.dtgValEnfermedad.OptionsView.ShowGroupPanel = false;
             // 
             // Id_Enfermedad
@@ -375,6 +376,7 @@
             this.Controls.Add(this.barDockControlBottom);
             this.Controls.Add(this.barDockControlTop);
             this.Name = "Frm_Enfermedades";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Enfermedades";
             this.Load += new System.EventHandler(this.Frm_Enfermedades_Load);
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();

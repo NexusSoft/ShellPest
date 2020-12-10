@@ -264,6 +264,7 @@
             this.Modificador});
             this.dtgValBloque.GridControl = this.dtgBloque;
             this.dtgValBloque.Name = "dtgValBloque";
+            this.dtgValBloque.OptionsBehavior.Editable = false;
             this.dtgValBloque.OptionsView.ShowGroupPanel = false;
             // 
             // Id_Bloque
@@ -355,7 +356,7 @@
             this.groupControl1.Name = "groupControl1";
             this.groupControl1.Size = new System.Drawing.Size(637, 112);
             this.groupControl1.TabIndex = 0;
-            this.groupControl1.Text = "Humbral";
+            this.groupControl1.Text = "Bloque";
             // 
             // btnHuerta
             // 
@@ -426,6 +427,7 @@
             this.Controls.Add(this.barDockControlBottom);
             this.Controls.Add(this.barDockControlTop);
             this.Name = "Frm_Bloques";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Bloques";
             this.Load += new System.EventHandler(this.Frm_Bloques_Load);
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();

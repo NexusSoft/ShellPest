@@ -47,8 +47,8 @@
             this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
             this.dtgPuntoControl = new DevExpress.XtraGrid.GridControl();
             this.dtgValPuntoControl = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.Id_PuntoControl = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.Nombre_PuntoControl = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Id_Puntocontrol = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Nombre_Puntocontrol = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Id_Bloque = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Nombre_Bloque = new DevExpress.XtraGrid.Columns.GridColumn();
             this.n_coordenadaX = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -66,6 +66,8 @@
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.textId = new DevExpress.XtraEditors.TextEdit();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
+            this.Id_Huerta = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Nombre_Huerta = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).BeginInit();
@@ -258,32 +260,34 @@
             // dtgValPuntoControl
             // 
             this.dtgValPuntoControl.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.Id_PuntoControl,
-            this.Nombre_PuntoControl,
+            this.Id_Puntocontrol,
+            this.Nombre_Puntocontrol,
             this.Id_Bloque,
             this.Nombre_Bloque,
             this.n_coordenadaX,
-            this.n_coordenadaY});
+            this.n_coordenadaY,
+            this.Id_Huerta,
+            this.Nombre_Huerta});
             this.dtgValPuntoControl.GridControl = this.dtgPuntoControl;
             this.dtgValPuntoControl.Name = "dtgValPuntoControl";
             this.dtgValPuntoControl.OptionsBehavior.Editable = false;
             this.dtgValPuntoControl.OptionsView.ShowGroupPanel = false;
             // 
-            // Id_PuntoControl
+            // Id_Puntocontrol
             // 
-            this.Id_PuntoControl.Caption = "Id Punto";
-            this.Id_PuntoControl.FieldName = "Id_PuntoControl";
-            this.Id_PuntoControl.Name = "Id_PuntoControl";
-            this.Id_PuntoControl.Visible = true;
-            this.Id_PuntoControl.VisibleIndex = 0;
+            this.Id_Puntocontrol.Caption = "Id Punto";
+            this.Id_Puntocontrol.FieldName = "Id_Puntocontrol";
+            this.Id_Puntocontrol.Name = "Id_Puntocontrol";
+            this.Id_Puntocontrol.Visible = true;
+            this.Id_Puntocontrol.VisibleIndex = 0;
             // 
-            // Nombre_PuntoControl
+            // Nombre_Puntocontrol
             // 
-            this.Nombre_PuntoControl.Caption = "Punto";
-            this.Nombre_PuntoControl.FieldName = "Nombre_PuntoControl";
-            this.Nombre_PuntoControl.Name = "Nombre_PuntoControl";
-            this.Nombre_PuntoControl.Visible = true;
-            this.Nombre_PuntoControl.VisibleIndex = 1;
+            this.Nombre_Puntocontrol.Caption = "Punto";
+            this.Nombre_Puntocontrol.FieldName = "Nombre_Puntocontrol";
+            this.Nombre_Puntocontrol.Name = "Nombre_Puntocontrol";
+            this.Nombre_Puntocontrol.Visible = true;
+            this.Nombre_Puntocontrol.VisibleIndex = 1;
             // 
             // Id_Bloque
             // 
@@ -437,6 +441,22 @@
             this.labelControl1.TabIndex = 0;
             this.labelControl1.Text = "Id punto: ";
             // 
+            // Id_Huerta
+            // 
+            this.Id_Huerta.Caption = "Id_Huerta";
+            this.Id_Huerta.FieldName = "Id_Huerta";
+            this.Id_Huerta.Name = "Id_Huerta";
+            this.Id_Huerta.Visible = true;
+            this.Id_Huerta.VisibleIndex = 6;
+            // 
+            // Nombre_Huerta
+            // 
+            this.Nombre_Huerta.Caption = "Huerta";
+            this.Nombre_Huerta.FieldName = "Nombre_Huerta";
+            this.Nombre_Huerta.Name = "Nombre_Huerta";
+            this.Nombre_Huerta.Visible = true;
+            this.Nombre_Huerta.VisibleIndex = 7;
+            // 
             // Frm_PuntoControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -449,6 +469,7 @@
             this.Controls.Add(this.barDockControlBottom);
             this.Controls.Add(this.barDockControlTop);
             this.Name = "Frm_PuntoControl";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Puntos de Control";
             this.Load += new System.EventHandler(this.Frm_PuntoControl_Load);
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
@@ -491,8 +512,8 @@
         private DevExpress.XtraEditors.PanelControl panelControl2;
         private DevExpress.XtraGrid.GridControl dtgPuntoControl;
         private DevExpress.XtraGrid.Views.Grid.GridView dtgValPuntoControl;
-        private DevExpress.XtraGrid.Columns.GridColumn Id_PuntoControl;
-        private DevExpress.XtraGrid.Columns.GridColumn Nombre_PuntoControl;
+        private DevExpress.XtraGrid.Columns.GridColumn Id_Puntocontrol;
+        private DevExpress.XtraGrid.Columns.GridColumn Nombre_Puntocontrol;
         private DevExpress.XtraEditors.PanelControl panelControl1;
         private DevExpress.XtraEditors.GroupControl groupControl1;
         private DevExpress.XtraEditors.TextEdit txtY;
@@ -510,5 +531,7 @@
         private DevExpress.XtraGrid.Columns.GridColumn n_coordenadaX;
         private DevExpress.XtraGrid.Columns.GridColumn n_coordenadaY;
         private DevExpress.XtraEditors.SimpleButton btn_Bloque;
+        private DevExpress.XtraGrid.Columns.GridColumn Id_Huerta;
+        private DevExpress.XtraGrid.Columns.GridColumn Nombre_Huerta;
     }
 }
