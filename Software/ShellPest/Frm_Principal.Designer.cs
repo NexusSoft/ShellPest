@@ -96,7 +96,7 @@
             this.ribbonPage4,
             this.ribbonPage3});
             this.ribbonControl1.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonControlStyle.Office2007;
-            this.ribbonControl1.Size = new System.Drawing.Size(772, 147);
+            this.ribbonControl1.Size = new System.Drawing.Size(893, 147);
             this.ribbonControl1.StatusBar = this.ribbonStatusBar1;
             // 
             // skinRibbonGalleryBarItem1
@@ -109,7 +109,7 @@
             // 
             this.btnPlagas.Caption = "Plagas";
             this.btnPlagas.Id = 2;
-            this.btnPlagas.ImageOptions.Image = global::ShellPest.Properties.Resources.editwrappoints_16x16;
+            this.btnPlagas.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_Plagas.ImageOptions.Image")));
             this.btnPlagas.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btn_Plagas.ImageOptions.LargeImage")));
             this.btnPlagas.Name = "btnPlagas";
             this.btnPlagas.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_Plagas_ItemClick);
@@ -226,6 +226,7 @@
             // 
             this.btnEstados.Caption = "Estados";
             this.btnEstados.Id = 15;
+            this.btnEstados.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.Image")));
             this.btnEstados.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.LargeImage")));
             this.btnEstados.Name = "btnEstados";
             this.btnEstados.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnEstados_ItemClick);
@@ -234,6 +235,7 @@
             // 
             this.btnCiudad.Caption = "Ciudad";
             this.btnCiudad.Id = 16;
+            this.btnCiudad.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem2.ImageOptions.Image")));
             this.btnCiudad.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem2.ImageOptions.LargeImage")));
             this.btnCiudad.Name = "btnCiudad";
             // 
@@ -316,7 +318,7 @@
             this.ribbonStatusBar1.Location = new System.Drawing.Point(0, 389);
             this.ribbonStatusBar1.Name = "ribbonStatusBar1";
             this.ribbonStatusBar1.Ribbon = this.ribbonControl1;
-            this.ribbonStatusBar1.Size = new System.Drawing.Size(772, 32);
+            this.ribbonStatusBar1.Size = new System.Drawing.Size(893, 32);
             // 
             // ribbonPage2
             // 
@@ -343,6 +345,7 @@
             // 
             this.barButtonItem1.Caption = "Calidades";
             this.barButtonItem1.Id = 18;
+            this.barButtonItem1.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.Image1")));
             this.barButtonItem1.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.LargeImage2")));
             this.barButtonItem1.Name = "barButtonItem1";
             // 
@@ -350,7 +353,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(772, 421);
+            this.ClientSize = new System.Drawing.Size(893, 421);
             this.Controls.Add(this.ribbonStatusBar1);
             this.Controls.Add(this.ribbonControl1);
             this.IsMdiContainer = true;
