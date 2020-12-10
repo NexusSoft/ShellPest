@@ -47,6 +47,8 @@
             this.btnPais = new DevExpress.XtraBars.BarButtonItem();
             this.btnEstados = new DevExpress.XtraBars.BarButtonItem();
             this.btnCiudad = new DevExpress.XtraBars.BarButtonItem();
+            this.btnProductor = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup5 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -59,8 +61,6 @@
             this.ribbonPage2 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.xtraTabbedMdiManager1 = new DevExpress.XtraTabbedMdi.XtraTabbedMdiManager(this.components);
             this.SkinForm = new DevExpress.LookAndFeel.DefaultLookAndFeel(this.components);
-            this.btnProductor = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabbedMdiManager1)).BeginInit();
             this.SuspendLayout();
@@ -109,8 +109,8 @@
             // 
             this.btnPlagas.Caption = "Plagas";
             this.btnPlagas.Id = 2;
-            this.btnPlagas.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_Plagas.ImageOptions.Image")));
-            this.btnPlagas.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btn_Plagas.ImageOptions.LargeImage")));
+            this.btnPlagas.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnPlagas.ImageOptions.Image")));
+            this.btnPlagas.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnPlagas.ImageOptions.LargeImage")));
             this.btnPlagas.Name = "btnPlagas";
             this.btnPlagas.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_Plagas_ItemClick);
             // 
@@ -118,8 +118,8 @@
             // 
             this.btnNivelPresencia.Caption = "Humbrales";
             this.btnNivelPresencia.Id = 3;
-            this.btnNivelPresencia.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_NivelPresencia.ImageOptions.Image")));
-            this.btnNivelPresencia.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btn_NivelPresencia.ImageOptions.LargeImage")));
+            this.btnNivelPresencia.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnNivelPresencia.ImageOptions.Image")));
+            this.btnNivelPresencia.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnNivelPresencia.ImageOptions.LargeImage")));
             this.btnNivelPresencia.Name = "btnNivelPresencia";
             this.btnNivelPresencia.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_NivelPresencia_ItemClick);
             // 
@@ -127,8 +127,8 @@
             // 
             this.btnBloques.Caption = "Bloques";
             this.btnBloques.Id = 4;
-            this.btnBloques.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_Bloques.ImageOptions.Image")));
-            this.btnBloques.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btn_Bloques.ImageOptions.LargeImage")));
+            this.btnBloques.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnBloques.ImageOptions.Image")));
+            this.btnBloques.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnBloques.ImageOptions.LargeImage")));
             this.btnBloques.Name = "btnBloques";
             this.btnBloques.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_Bloques_ItemClick);
             // 
@@ -145,8 +145,8 @@
             // 
             this.btnPuntoControl.Caption = "Puntos de Control";
             this.btnPuntoControl.Id = 6;
-            this.btnPuntoControl.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_PuntoControl.ImageOptions.Image")));
-            this.btnPuntoControl.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btn_PuntoControl.ImageOptions.LargeImage")));
+            this.btnPuntoControl.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnPuntoControl.ImageOptions.Image")));
+            this.btnPuntoControl.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnPuntoControl.ImageOptions.LargeImage")));
             this.btnPuntoControl.Name = "btnPuntoControl";
             this.btnPuntoControl.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_PuntoControl_ItemClick);
             // 
@@ -190,8 +190,8 @@
             // 
             this.btnDeteccion.Caption = "Detección";
             this.btnDeteccion.Id = 11;
-            this.btnDeteccion.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_Deteccion.ImageOptions.Image")));
-            this.btnDeteccion.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btn_Deteccion.ImageOptions.LargeImage")));
+            this.btnDeteccion.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnDeteccion.ImageOptions.Image")));
+            this.btnDeteccion.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnDeteccion.ImageOptions.LargeImage")));
             this.btnDeteccion.Name = "btnDeteccion";
             this.btnDeteccion.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnDeteccion_ItemClick);
             // 
@@ -199,8 +199,8 @@
             // 
             this.btnEnfermedad.Caption = "Enfermedades";
             this.btnEnfermedad.Id = 12;
-            this.btnEnfermedad.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_Enfermedad.ImageOptions.Image")));
-            this.btnEnfermedad.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btn_Enfermedad.ImageOptions.LargeImage")));
+            this.btnEnfermedad.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnEnfermedad.ImageOptions.Image")));
+            this.btnEnfermedad.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnEnfermedad.ImageOptions.LargeImage")));
             this.btnEnfermedad.Name = "btnEnfermedad";
             this.btnEnfermedad.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnEnfermedad_ItemClick);
             // 
@@ -208,8 +208,8 @@
             // 
             this.btnCultivo.Caption = "Cultivo";
             this.btnCultivo.Id = 13;
-            this.btnCultivo.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_Cultivo.ImageOptions.Image")));
-            this.btnCultivo.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btn_Cultivo.ImageOptions.LargeImage")));
+            this.btnCultivo.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnCultivo.ImageOptions.Image")));
+            this.btnCultivo.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnCultivo.ImageOptions.LargeImage")));
             this.btnCultivo.Name = "btnCultivo";
             this.btnCultivo.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnCultivo_ItemClick);
             // 
@@ -217,8 +217,8 @@
             // 
             this.btnPais.Caption = "Paises";
             this.btnPais.Id = 14;
-            this.btnPais.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_Pais.ImageOptions.Image")));
-            this.btnPais.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btn_Pais.ImageOptions.LargeImage")));
+            this.btnPais.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnPais.ImageOptions.Image")));
+            this.btnPais.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnPais.ImageOptions.LargeImage")));
             this.btnPais.Name = "btnPais";
             this.btnPais.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnPais_ItemClick);
             // 
@@ -226,8 +226,8 @@
             // 
             this.btnEstados.Caption = "Estados";
             this.btnEstados.Id = 15;
-            this.btnEstados.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.Image")));
-            this.btnEstados.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.LargeImage")));
+            this.btnEstados.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnEstados.ImageOptions.Image")));
+            this.btnEstados.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnEstados.ImageOptions.LargeImage")));
             this.btnEstados.Name = "btnEstados";
             this.btnEstados.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnEstados_ItemClick);
             // 
@@ -235,9 +235,24 @@
             // 
             this.btnCiudad.Caption = "Ciudad";
             this.btnCiudad.Id = 16;
-            this.btnCiudad.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem2.ImageOptions.Image")));
-            this.btnCiudad.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem2.ImageOptions.LargeImage")));
+            this.btnCiudad.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnCiudad.ImageOptions.Image")));
+            this.btnCiudad.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnCiudad.ImageOptions.LargeImage")));
             this.btnCiudad.Name = "btnCiudad";
+            // 
+            // btnProductor
+            // 
+            this.btnProductor.Caption = "Productor";
+            this.btnProductor.Id = 17;
+            this.btnProductor.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnProductor.ImageOptions.LargeImage")));
+            this.btnProductor.Name = "btnProductor";
+            // 
+            // barButtonItem1
+            // 
+            this.barButtonItem1.Caption = "Calidades";
+            this.barButtonItem1.Id = 18;
+            this.barButtonItem1.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.Image")));
+            this.barButtonItem1.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.LargeImage")));
+            this.barButtonItem1.Name = "barButtonItem1";
             // 
             // ribbonPage1
             // 
@@ -334,21 +349,6 @@
             this.SkinForm.EnableBonusSkins = true;
             this.SkinForm.LookAndFeel.SkinName = "Office 2010 Silver";
             // 
-            // btnProductor
-            // 
-            this.btnProductor.Caption = "Productor";
-            this.btnProductor.Id = 17;
-            this.btnProductor.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.LargeImage1")));
-            this.btnProductor.Name = "btnProductor";
-            // 
-            // barButtonItem1
-            // 
-            this.barButtonItem1.Caption = "Calidades";
-            this.barButtonItem1.Id = 18;
-            this.barButtonItem1.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.Image1")));
-            this.barButtonItem1.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.LargeImage2")));
-            this.barButtonItem1.Name = "barButtonItem1";
-            // 
             // Frm_Principal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -361,6 +361,7 @@
             this.Ribbon = this.ribbonControl1;
             this.StatusBar = this.ribbonStatusBar1;
             this.Text = "Principal";
+            this.Load += new System.EventHandler(this.Frm_Principal_Load);
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabbedMdiManager1)).EndInit();
             this.ResumeLayout(false);

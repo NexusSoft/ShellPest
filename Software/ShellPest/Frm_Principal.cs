@@ -220,5 +220,10 @@ namespace ShellPest
         {
 
         }
+
+        private void Frm_Principal_Load(object sender, EventArgs e)
+        {
+            CargarAccesos();
+        }
     }
 }
