@@ -48,7 +48,7 @@
             this.btnEstados = new DevExpress.XtraBars.BarButtonItem();
             this.btnCiudad = new DevExpress.XtraBars.BarButtonItem();
             this.btnProductor = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
+            this.btnCalidades = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup5 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -87,7 +87,7 @@
             this.btnEstados,
             this.btnCiudad,
             this.btnProductor,
-            this.barButtonItem1});
+            this.btnCalidades});
             this.ribbonControl1.Location = new System.Drawing.Point(0, 0);
             this.ribbonControl1.MaxItemId = 19;
             this.ribbonControl1.Name = "ribbonControl1";
@@ -238,6 +238,7 @@
             this.btnCiudad.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnCiudad.ImageOptions.Image")));
             this.btnCiudad.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnCiudad.ImageOptions.LargeImage")));
             this.btnCiudad.Name = "btnCiudad";
+            this.btnCiudad.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnCiudad_ItemClick);
             // 
             // btnProductor
             // 
@@ -245,14 +246,16 @@
             this.btnProductor.Id = 17;
             this.btnProductor.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnProductor.ImageOptions.LargeImage")));
             this.btnProductor.Name = "btnProductor";
+            this.btnProductor.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnProductor_ItemClick);
             // 
-            // barButtonItem1
+            // btnCalidades
             // 
-            this.barButtonItem1.Caption = "Calidades";
-            this.barButtonItem1.Id = 18;
-            this.barButtonItem1.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.Image")));
-            this.barButtonItem1.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.LargeImage")));
-            this.barButtonItem1.Name = "barButtonItem1";
+            this.btnCalidades.Caption = "Calidades";
+            this.btnCalidades.Id = 18;
+            this.btnCalidades.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.Image")));
+            this.btnCalidades.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.LargeImage")));
+            this.btnCalidades.Name = "btnCalidades";
+            this.btnCalidades.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnCalidades_ItemClick);
             // 
             // ribbonPage1
             // 
@@ -271,7 +274,7 @@
             this.ribbonPageGroup5.ItemLinks.Add(this.btnBloques);
             this.ribbonPageGroup5.ItemLinks.Add(this.btnPuntoControl);
             this.ribbonPageGroup5.ItemLinks.Add(this.btnCultivo);
-            this.ribbonPageGroup5.ItemLinks.Add(this.barButtonItem1);
+            this.ribbonPageGroup5.ItemLinks.Add(this.btnCalidades);
             this.ribbonPageGroup5.Name = "ribbonPageGroup5";
             this.ribbonPageGroup5.Text = "Catalogos de Ubicacion";
             // 
@@ -401,7 +404,7 @@
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup5;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup2;
         private DevExpress.XtraBars.BarButtonItem btnProductor;
-        private DevExpress.XtraBars.BarButtonItem barButtonItem1;
+        private DevExpress.XtraBars.BarButtonItem btnCalidades;
     }
 }
 

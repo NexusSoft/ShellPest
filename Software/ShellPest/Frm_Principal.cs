@@ -128,102 +128,169 @@ namespace ShellPest
         }
         private void btn_Bloques_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            //if (TieneAcceso("006"))
-            //{
-            //    Frm_Usuarios Ventana = new Frm_Usuarios();
-            //    Frm_Usuarios.DefInstance.MdiParent = this;
-            //    Frm_Usuarios.DefInstance.UsuariosLogin = UsuariosLogin;
-            //    Frm_Usuarios.DefInstance.Show();
-            //}
-            //else
-            //{
-            //    XtraMessageBox.Show("No Cuentas con acceso a esta Opcion [006]");
-            //}
-            Frm_Bloques Ventana = new Frm_Bloques();
-            Ventana.Id_Usuario = UsuariosLogin;
-            Ventana.ShowDialog();
+            if (TieneAcceso("006"))
+            {
+                Frm_Bloques Ventana = new Frm_Bloques();
+                Ventana.Id_Usuario = UsuariosLogin;
+                Ventana.ShowDialog();
+            }
+            else
+            {
+                XtraMessageBox.Show("No Cuentas con acceso a esta Opcion [006]");
+            }
+    
         }
 
         private void btn_Plagas_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            //if (TieneAcceso("007"))
-            //{
-            Frm_Plagas Ventana = new Frm_Plagas();
+            if (TieneAcceso("007"))
+            {
+                Frm_Plagas Ventana = new Frm_Plagas();
             Ventana.Id_Usuario = UsuariosLogin;
             Ventana.ShowDialog();
-            //}
-            //else
-            //{
-            //    XtraMessageBox.Show("No Cuentas con acceso a esta Opcion [007]");
-            //}
+            }
+            else
+            {
+                XtraMessageBox.Show("No Cuentas con acceso a esta Opcion [007]");
+            }
         }
 
         private void btn_NivelPresencia_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            //if (TieneAcceso("008"))
-            //{
+            if (TieneAcceso("011"))
+            {
                 Frm_Humbral Ventana = new Frm_Humbral();
                 Ventana.Id_Usuario = UsuariosLogin;
                 Ventana.ShowDialog();
-            //}
-            //else
-            //{
-            //    XtraMessageBox.Show("No Cuentas con acceso a esta Opcion [008]");
-            //}
+            }
+            else
+            {
+                XtraMessageBox.Show("No Cuentas con acceso a esta Opcion [011]");
+            }
         }
 
         private void btn_PuntoControl_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            //if (TieneAcceso("009"))
-            //{
-            Frm_PuntoControl Ventana = new Frm_PuntoControl();
+            if (TieneAcceso("009"))
+            {
+                Frm_PuntoControl Ventana = new Frm_PuntoControl();
             Ventana.Id_Usuario = UsuariosLogin;
             Ventana.ShowDialog();
-            //}
-            //else
-            //{
-            //    XtraMessageBox.Show("No Cuentas con acceso a esta Opcion [009]");
-            //}
+            }
+            else
+            {
+                XtraMessageBox.Show("No Cuentas con acceso a esta Opcion [009]");
+            }
         }
 
         private void btnDeteccion_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            Frm_Deteccion Ventana = new Frm_Deteccion();
-            Ventana.Id_Usuario = UsuariosLogin;
-            Ventana.ShowDialog();
-            
+            if (TieneAcceso("012"))
+            {
+                Frm_Deteccion Ventana = new Frm_Deteccion();
+                Ventana.Id_Usuario = UsuariosLogin;
+                Ventana.ShowDialog();
+            }
+            else
+            {
+                XtraMessageBox.Show("No Cuentas con acceso a esta Opcion [012]");
+            }
 
         }
 
         private void btnEnfermedad_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            Frm_Enfermedades Ventana = new Frm_Enfermedades();
-            Ventana.Id_Usuario = UsuariosLogin;
-            Ventana.ShowDialog();
+            if (TieneAcceso("013"))
+            {
+                Frm_Enfermedades Ventana = new Frm_Enfermedades();
+                Ventana.Id_Usuario = UsuariosLogin;
+                Ventana.ShowDialog();
+            }
+            else
+            {
+                XtraMessageBox.Show("No Cuentas con acceso a esta Opcion [013]");
+            }
         }
 
         private void btnCultivo_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            Frm_Cultivo Ventana = new Frm_Cultivo();
+            if (TieneAcceso("010"))
+            {
+                Frm_Cultivo Ventana = new Frm_Cultivo();
             Ventana.Id_Usuario = UsuariosLogin;
             Ventana.ShowDialog();
+            }
+            else
+            {
+                XtraMessageBox.Show("No Cuentas con acceso a esta Opcion [010]");
+            }
         }
 
         private void btnPais_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            Frm_Pais Ventana = new Frm_Pais(false);
-            Ventana.Id_Usuario = UsuariosLogin;
-            Ventana.ShowDialog();
+            if (TieneAcceso("014"))
+            {
+                Frm_Pais Ventana = new Frm_Pais(false);
+                Ventana.Id_Usuario = UsuariosLogin;
+                Ventana.ShowDialog();
+            }
+            else
+            {
+                XtraMessageBox.Show("No Cuentas con acceso a esta Opcion [014]");
+            }
         }
 
         private void btnEstados_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-
+            if (TieneAcceso("015"))
+            {
+               
+            }
+            else
+            {
+                XtraMessageBox.Show("No Cuentas con acceso a esta Opcion [015]");
+            }
         }
 
         private void Frm_Principal_Load(object sender, EventArgs e)
         {
             CargarAccesos();
+        }
+
+        private void btnCiudad_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            if (TieneAcceso("016"))
+            {
+
+            }
+            else
+            {
+                XtraMessageBox.Show("No Cuentas con acceso a esta Opcion [016]");
+            }
+        }
+
+        private void btnProductor_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            if (TieneAcceso("017"))
+            {
+
+            }
+            else
+            {
+                XtraMessageBox.Show("No Cuentas con acceso a esta Opcion [017]");
+            }
+        }
+
+        private void btnCalidades_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            if (TieneAcceso("018"))
+            {
+
+            }
+            else
+            {
+                XtraMessageBox.Show("No Cuentas con acceso a esta Opcion [018]");
+            }
         }
     }
 }

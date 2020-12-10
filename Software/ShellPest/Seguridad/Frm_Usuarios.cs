@@ -77,7 +77,7 @@ namespace ShellPest
             Clase.Nombre_Usuario =textNombre.Text.Trim();
             Clase.Contrasena =encryp.Encriptar(textContrasena.Text.Trim());
             Clase.Id_Perfil = gridLookUpEdit1.EditValue.ToString();
-            Clase.Usuario = UsuariosLogin;
+            Clase.Id_Usuario_Crea = UsuariosLogin;
             Clase.MtdInsertarUsuarios();
             if (Clase.Exito)
             {
