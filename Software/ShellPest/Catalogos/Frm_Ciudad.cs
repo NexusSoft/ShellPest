@@ -174,6 +174,7 @@ namespace ShellPest
         {
             Frm_Estado Estado = new Frm_Estado();
             Estado.PaSel = true;
+            Estado.Id_Usuario = Id_Usuario;
             Estado.ShowDialog();
 
             textEstado.Tag = Estado.IdEstado;

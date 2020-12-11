@@ -19,6 +19,7 @@ namespace ShellPest
 
         public string IdHuerta { get; set; }
         public string Huerta { get; set; }
+        public string Id_Usuario { get; set; }
 
         public Frm_Huertas()
         {
@@ -178,6 +179,7 @@ namespace ShellPest
             frm.IdProductor = string.Empty;
             frm.Productor = string.Empty;
             frm.PaSel = true;
+            frm.Id_Usuario = Id_Usuario;
             frm.ShowDialog();
             txtNombreProductor.Tag = frm.IdProductor;
             txtNombreProductor.Text = frm.Productor;
@@ -186,6 +188,7 @@ namespace ShellPest
         private void btnEstado_Click(object sender, EventArgs e)
         {
             Frm_Estado frm = new Frm_Estado();
+            frm.Id_Usuario = Id_Usuario;
             frm.ShowDialog();
             CargarEstado(null);
         }
@@ -193,6 +196,7 @@ namespace ShellPest
         private void btnCiudad_Click(object sender, EventArgs e)
         {
             Frm_Ciudad frm = new Frm_Ciudad();
+            frm.Id_Usuario = Id_Usuario;
             frm.ShowDialog();
             CargarCiudad(null);
         }
@@ -200,6 +204,7 @@ namespace ShellPest
         private void btnCalidad_Click(object sender, EventArgs e)
         {
             Frm_Calidad frm = new Frm_Calidad();
+            frm.Id_Usuario = Id_Usuario;
             frm.ShowDialog();
             CargarCalidad(null);
         }
@@ -207,6 +212,7 @@ namespace ShellPest
         private void btnCultivo_Click(object sender, EventArgs e)
         {
             Frm_Cultivo frm = new Frm_Cultivo();
+            frm.Id_Usuario = Id_Usuario;
             frm.ShowDialog();
             CargarCultivo(null);
         }
@@ -298,6 +304,7 @@ namespace ShellPest
             Clase.asnm_Huerta = Convert.ToDecimal(txtASMN.Text);
             Clase.latitud_Huerta = Convert.ToDecimal(txtLatitud.Text);
             Clase.longitud_Huerta = Convert.ToDecimal(txtLonguitud.Text);
+            Clase.Id_Usuario = Id_Usuario;
             Clase.MtdInsertarHuerta();
 
             if (Clase.Exito)
@@ -386,8 +393,8 @@ namespace ShellPest
                     txtCodigo.Text = row["Id_Huerta"].ToString();
                     txtNombreHuerta.Text = row["Nombre_Huerta"].ToString();
                     txtRegistro.Text = row["Registro_Huerta"].ToString();
-                    txtNombreProductor.Tag = row["Id_Productor"].ToString();
-                    CargarProductor(row["Id_Productor"].ToString());
+                    txtNombreProductor.Tag = row["Id_Duenio"].ToString();
+                    CargarProductor(row["Id_Duenio"].ToString());
                     cboEstado.EditValue = row["Id_Estado"].ToString();
                     cboCiudad.EditValue = row["Id_Ciudad"].ToString();
                     cboCalidad.EditValue = row["Id_Calidad"].ToString();

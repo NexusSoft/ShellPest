@@ -43,7 +43,7 @@ namespace ShellPest
         private void btnbuscar_Click(object sender, EventArgs e)
         {
             Frm_Pais Pais = new Frm_Pais(true);
-
+            Pais.Id_Usuario = Id_Usuario;
             Pais.ShowDialog();
 
             textIdPais.Text = Pais.IdPais;

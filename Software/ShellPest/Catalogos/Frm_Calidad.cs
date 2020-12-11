@@ -24,6 +24,7 @@ namespace ShellPest
 
         public string IdCalidad { get; set; }
         public string Calidad { get; set; }
+        public string Id_Usuario { get; set; }
 
         private void CargarCalidad()
         {
@@ -43,7 +44,7 @@ namespace ShellPest
 
             Clase.Id_Calidad = textId.Text.Trim();
             Clase.Nombre_Calidad = textNombre.Text.Trim();
-
+            Clase.Id_Usuario = Id_Usuario;
             Clase.MtdInsertarCalidad();
 
             if (Clase.Exito)

@@ -116,7 +116,10 @@ namespace ShellPest
         {
             if (TieneAcceso("005"))
             {
-               
+                Frm_Huertas Ventana = new Frm_Huertas();
+                Frm_Huertas.DefInstance.MdiParent = this;
+                Frm_Huertas.DefInstance.Id_Usuario = UsuariosLogin;
+                Frm_Huertas.DefInstance.Show();
             }
             else
             {
@@ -170,9 +173,12 @@ namespace ShellPest
         {
             if (TieneAcceso("009"))
             {
+                
+
                 Frm_PuntoControl Ventana = new Frm_PuntoControl();
-            Ventana.Id_Usuario = UsuariosLogin;
-            Ventana.ShowDialog();
+                Frm_PuntoControl.DefInstance.MdiParent = this;
+                Frm_PuntoControl.DefInstance.Id_Usuario = UsuariosLogin;
+                Frm_PuntoControl.DefInstance.Show();
             }
             else
             {
@@ -288,7 +294,9 @@ namespace ShellPest
         {
             if (TieneAcceso("018"))
             {
-
+                Frm_Calidad Ventana = new Frm_Calidad();
+                Ventana.Id_Usuario = UsuariosLogin;
+                Ventana.ShowDialog();
             }
             else
             {

@@ -11,6 +11,7 @@ namespace CapaDeDatos
 
         public string Id_Calidad { get; set; }
         public string Nombre_Calidad { get; set; }
+        public string Id_Usuario { get; set; }
 
         public void MtdSeleccionarCalidad()
         {
@@ -57,6 +58,8 @@ namespace CapaDeDatos
                 _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Id_Calidad");
                 _dato.CadenaTexto = Nombre_Calidad;
                 _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Nombre_Calidad");
+                _dato.CadenaTexto = Id_Usuario;
+                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Id_Usuario");
                 _conexion.EjecutarDataset();
 
                 if (_conexion.Exito)

@@ -25,6 +25,7 @@ namespace CapaDeDatos
         public decimal latitud_Huerta { get; set; }
         public decimal longitud_Huerta { get; set; }
         public string Activo { get; set; }
+        public string Id_Usuario { get; set; }
 
 
         public void MtdSeleccionarHuerta()
@@ -96,6 +97,8 @@ namespace CapaDeDatos
                 _conexion.agregarParametro(EnumTipoDato.Tipodecimal, _dato, "latitud_Huerta");
                 _dato.DecimalValor = longitud_Huerta;
                 _conexion.agregarParametro(EnumTipoDato.Tipodecimal, _dato, "longitud_Huerta");
+                _dato.CadenaTexto = Id_Usuario;
+                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Id_Usuario");
                 _conexion.EjecutarDataset();
 
                 if (_conexion.Exito)

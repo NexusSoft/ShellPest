@@ -365,9 +365,11 @@
             this.btnHuerta.Size = new System.Drawing.Size(24, 23);
             this.btnHuerta.TabIndex = 6;
             this.btnHuerta.Text = "...";
+            this.btnHuerta.Click += new System.EventHandler(this.btnHuerta_Click);
             // 
             // txtHuerta
             // 
+            this.txtHuerta.Enabled = false;
             this.txtHuerta.Location = new System.Drawing.Point(93, 57);
             this.txtHuerta.MenuManager = this.barManager1;
             this.txtHuerta.Name = "txtHuerta";
@@ -426,6 +428,8 @@
             this.Controls.Add(this.barDockControlRight);
             this.Controls.Add(this.barDockControlBottom);
             this.Controls.Add(this.barDockControlTop);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "Frm_Bloques";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Bloques";

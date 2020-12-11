@@ -329,6 +329,7 @@
             // 
             // textEstado
             // 
+            this.textEstado.Enabled = false;
             this.textEstado.Location = new System.Drawing.Point(100, 80);
             this.textEstado.MenuManager = this.barManager1;
             this.textEstado.Name = "textEstado";

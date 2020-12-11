@@ -19,6 +19,21 @@ namespace ShellPest
             InitializeComponent();
         }
 
+        private static Frm_PuntoControl m_FormDefInstance;
+        public static Frm_PuntoControl DefInstance
+        {
+            get
+            {
+                if (m_FormDefInstance == null || m_FormDefInstance.IsDisposed)
+                    m_FormDefInstance = new Frm_PuntoControl();
+                return m_FormDefInstance;
+            }
+            set
+            {
+                m_FormDefInstance = value;
+            }
+        }
+
         public string IdPuntoControl { get; set; }
         public string PuntoControl { get; set; }
         public Boolean PaSel { get; set; }
@@ -163,6 +178,7 @@ namespace ShellPest
         {
             Frm_Bloques Ventana = new Frm_Bloques();
             Ventana.PaSel = true;
+            Ventana.Id_Usuario = Id_Usuario;
             Ventana.ShowDialog();
             txtBloque.Tag = Ventana.IdBloque;
             txtBloque.Text = Ventana.Bloque;

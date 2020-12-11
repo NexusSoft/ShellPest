@@ -159,5 +159,15 @@ namespace ShellPest
 
             this.Close();
         }
+
+        private void btnHuerta_Click(object sender, EventArgs e)
+        {
+            Frm_Huertas frm = new Frm_Huertas();
+            frm.PaSel = true;
+            frm.Id_Usuario = Id_Usuario;
+            frm.ShowDialog();
+            txtHuerta.Tag = frm.IdHuerta;
+            txtHuerta.Text = frm.Huerta;
+        }
     }
 }
