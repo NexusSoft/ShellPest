@@ -21,33 +21,34 @@ namespace ShellPest
             InitializeComponent();
         }
 
-        public string IdDuenio { get; set; }
-        public string Duenio { get; set; }
-     
-        private void CargarDuenio()
+        public string IdProductor { get; set; }
+        public string Productor { get; set; }
+        public string Id_Usuario { get; set; }
+
+        private void CargarProductor()
         {
             gridControl1.DataSource = null;
-            CLS_Duenio Clase = new CLS_Duenio();
+            CLS_Productor Clase = new CLS_Productor();
 
-            Clase.MtdSeleccionarDuenio();
+            Clase.MtdSeleccionarProductor();
             if (Clase.Exito)
             {
                 gridControl1.DataSource = Clase.Datos;
             }
         }
 
-        private void InsertarDuenio()
+        private void InsertarProductor()
         {
-            CLS_Duenio Clase = new CLS_Duenio();
+            CLS_Productor Clase = new CLS_Productor();
 
-            Clase.Id_Duenio = textId.Text.Trim();
-            Clase.Nombre_Duenio = textNombre.Text.Trim();
-
-            Clase.MtdInsertarDuenio();
+            Clase.Id_Productor = textId.Text.Trim();
+            Clase.Nombre_Productor = textNombre.Text.Trim();
+            Clase.Id_Usuario = Id_Usuario;
+            Clase.MtdInsertarProductor();
 
             if (Clase.Exito)
             {
-                CargarDuenio();
+                CargarProductor();
                 XtraMessageBox.Show("Se ha Insertado el registro con exito");
                 LimpiarCampos();
             }
@@ -57,14 +58,14 @@ namespace ShellPest
             }
         }
 
-        private void EliminarDuenio()
+        private void EliminarProductor()
         {
-            CLS_Duenio Clase = new CLS_Duenio();
-            Clase.Id_Duenio = textId.Text.Trim();
-            Clase.MtdEliminarDuenio();
+            CLS_Productor Clase = new CLS_Productor();
+            Clase.Id_Productor = textId.Text.Trim();
+            Clase.MtdEliminarProductor();
             if (Clase.Exito)
             {
-                CargarDuenio();
+                CargarProductor();
                 XtraMessageBox.Show("Se ha Eliminado el registro con exito");
                 LimpiarCampos();
             }
@@ -87,8 +88,8 @@ namespace ShellPest
                 foreach (int i in this.gridView1.GetSelectedRows())
                 {
                     DataRow row = this.gridView1.GetDataRow(i);
-                    textId.Text = row["Id_Duenio"].ToString();
-                    textNombre.Text = row["Nombre_Duenio"].ToString();
+                    textId.Text = row["Id_Productor"].ToString();
+                    textNombre.Text = row["Nombre_Productor"].ToString();
                 }
             }
             catch (Exception ex)
@@ -107,7 +108,7 @@ namespace ShellPest
             {
                 btnSeleccionar.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
             }
-            CargarDuenio();
+            CargarProductor();
         }
 
         private void btnGuardar_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -116,11 +117,11 @@ namespace ShellPest
             {
 
 
-                InsertarDuenio();
+                InsertarProductor();
             }
             else
             {
-                XtraMessageBox.Show("Es necesario Agregar un nombre del dueño.");
+                XtraMessageBox.Show("Es necesario Agregar un nombre del Productor.");
             }
         }
 
@@ -128,11 +129,11 @@ namespace ShellPest
         {
             if (textId.Text.Trim().Length > 0 )
             {
-                EliminarDuenio();
+                EliminarProductor();
             }
             else
             {
-                XtraMessageBox.Show("Es necesario seleccionar un dueño.");
+                XtraMessageBox.Show("Es necesario seleccionar un Productor.");
             }
         }
 
@@ -148,8 +149,8 @@ namespace ShellPest
 
         private void btnSeleccionar_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            IdDuenio = textId.Text.Trim();
-            Duenio = textNombre.Text.Trim();
+            IdProductor = textId.Text.Trim();
+            Productor = textNombre.Text.Trim();
             this.Close();
         }
     }

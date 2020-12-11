@@ -47,8 +47,8 @@
             this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.Id_Duenio = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.Nombre_duenio = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Id_Productor = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Nombre_Productor = new DevExpress.XtraGrid.Columns.GridColumn();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
             this.textNombre = new DevExpress.XtraEditors.TextEdit();
@@ -244,31 +244,31 @@
             // gridView1
             // 
             this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.Id_Duenio,
-            this.Nombre_duenio});
+            this.Id_Productor,
+            this.Nombre_Productor});
             this.gridView1.GridControl = this.gridControl1;
             this.gridView1.Name = "gridView1";
             this.gridView1.OptionsView.ShowGroupPanel = false;
             // 
-            // Id_Duenio
+            // Id_Productor
             // 
-            this.Id_Duenio.Caption = "Id Productor";
-            this.Id_Duenio.FieldName = "Id_Duenio";
-            this.Id_Duenio.Name = "Id_Duenio";
-            this.Id_Duenio.OptionsColumn.AllowEdit = false;
-            this.Id_Duenio.Visible = true;
-            this.Id_Duenio.VisibleIndex = 0;
-            this.Id_Duenio.Width = 121;
+            this.Id_Productor.Caption = "Id Productor";
+            this.Id_Productor.FieldName = "Id_Productor";
+            this.Id_Productor.Name = "Id_Productor";
+            this.Id_Productor.OptionsColumn.AllowEdit = false;
+            this.Id_Productor.Visible = true;
+            this.Id_Productor.VisibleIndex = 0;
+            this.Id_Productor.Width = 121;
             // 
-            // Nombre_duenio
+            // Nombre_Productor
             // 
-            this.Nombre_duenio.Caption = "Nombre Productor";
-            this.Nombre_duenio.FieldName = "Nombre_Duenio";
-            this.Nombre_duenio.Name = "Nombre_duenio";
-            this.Nombre_duenio.OptionsColumn.AllowEdit = false;
-            this.Nombre_duenio.Visible = true;
-            this.Nombre_duenio.VisibleIndex = 1;
-            this.Nombre_duenio.Width = 279;
+            this.Nombre_Productor.Caption = "Nombre Productor";
+            this.Nombre_Productor.FieldName = "Nombre_Productor";
+            this.Nombre_Productor.Name = "Nombre_Productor";
+            this.Nombre_Productor.OptionsColumn.AllowEdit = false;
+            this.Nombre_Productor.Visible = true;
+            this.Nombre_Productor.VisibleIndex = 1;
+            this.Nombre_Productor.Width = 279;
             // 
             // panelControl1
             // 
@@ -380,8 +380,8 @@
         private DevExpress.XtraEditors.PanelControl panelControl2;
         private DevExpress.XtraGrid.GridControl gridControl1;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
-        private DevExpress.XtraGrid.Columns.GridColumn Id_Duenio;
-        private DevExpress.XtraGrid.Columns.GridColumn Nombre_duenio;
+        private DevExpress.XtraGrid.Columns.GridColumn Id_Productor;
+        private DevExpress.XtraGrid.Columns.GridColumn Nombre_Productor;
         private DevExpress.XtraEditors.PanelControl panelControl1;
         private DevExpress.XtraEditors.GroupControl groupControl1;
         private DevExpress.XtraEditors.TextEdit textNombre;

@@ -62,6 +62,7 @@
     <Compile Include="Formularios\CLS_Humbral.cs" />
     <Compile Include="Formularios\CLS_Pais.cs" />
     <Compile Include="Formularios\CLS_Plagas.cs" />
+    <Compile Include="Formularios\CLS_Productor.cs" />
     <Compile Include="Formularios\CLS_PuntoControl.cs" />
     <Compile Include="Seguridad\CLS_Pantallas.cs" />
     <Compile Include="Seguridad\CLS_Perfiles.cs" />

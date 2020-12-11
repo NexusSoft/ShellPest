@@ -175,12 +175,12 @@ namespace ShellPest
         private void btnProductor_Click(object sender, EventArgs e)
         {
             Frm_Productor frm = new Frm_Productor();
-            frm.IdDuenio = string.Empty;
-            frm.Duenio = string.Empty;
+            frm.IdProductor = string.Empty;
+            frm.Productor = string.Empty;
             frm.PaSel = true;
             frm.ShowDialog();
-            txtNombreProductor.Tag = frm.IdDuenio;
-            txtNombreProductor.Text = frm.Duenio;
+            txtNombreProductor.Tag = frm.IdProductor;
+            txtNombreProductor.Text = frm.Productor;
         }
 
         private void btnEstado_Click(object sender, EventArgs e)
@@ -386,8 +386,8 @@ namespace ShellPest
                     txtCodigo.Text = row["Id_Huerta"].ToString();
                     txtNombreHuerta.Text = row["Nombre_Huerta"].ToString();
                     txtRegistro.Text = row["Registro_Huerta"].ToString();
-                    txtNombreProductor.Tag = row["Id_Duenio"].ToString();
-                    CargarProductor(row["Id_Duenio"].ToString());
+                    txtNombreProductor.Tag = row["Id_Productor"].ToString();
+                    CargarProductor(row["Id_Productor"].ToString());
                     cboEstado.EditValue = row["Id_Estado"].ToString();
                     cboCiudad.EditValue = row["Id_Ciudad"].ToString();
                     cboCalidad.EditValue = row["Id_Calidad"].ToString();
@@ -424,14 +424,14 @@ namespace ShellPest
 
         private void CargarProductor(string v)
         {
-            CLS_Duenio sel = new CLS_Duenio();
-            sel.Id_Duenio = v;
-            sel.MtdSeleccionarDuenioId();
+            CLS_Productor sel = new CLS_Productor();
+            sel.Id_Productor = v;
+            sel.MtdSeleccionarProductor();
             if(sel.Exito)
             {
                 if(sel.Datos.Rows.Count>0)
                 {
-                    txtNombreProductor.Text = sel.Datos.Rows[0]["Nombre_Duenio"].ToString();
+                    txtNombreProductor.Text = sel.Datos.Rows[0]["Nombre_Productor"].ToString();
                 }
             }
         }

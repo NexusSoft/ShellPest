@@ -252,8 +252,8 @@
             // 
             this.btnCalidades.Caption = "Calidades";
             this.btnCalidades.Id = 18;
-            this.btnCalidades.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.Image")));
-            this.btnCalidades.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.LargeImage")));
+            this.btnCalidades.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnCalidades.ImageOptions.Image")));
+            this.btnCalidades.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnCalidades.ImageOptions.LargeImage")));
             this.btnCalidades.Name = "btnCalidades";
             this.btnCalidades.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnCalidades_ItemClick);
             // 
@@ -365,6 +365,7 @@
             this.StatusBar = this.ribbonStatusBar1;
             this.Text = "Principal";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Frm_Principal_FormClosed);
             this.Load += new System.EventHandler(this.Frm_Principal_Load);
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabbedMdiManager1)).EndInit();

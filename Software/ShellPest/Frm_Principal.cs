@@ -274,7 +274,9 @@ namespace ShellPest
         {
             if (TieneAcceso("017"))
             {
-
+                Frm_Productor Ventana = new Frm_Productor();
+                Ventana.Id_Usuario = UsuariosLogin;
+                Ventana.ShowDialog();
             }
             else
             {
@@ -292,6 +294,11 @@ namespace ShellPest
             {
                 XtraMessageBox.Show("No Cuentas con acceso a esta Opcion [018]");
             }
+        }
+
+        private void Frm_Principal_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
         }
     }
 }
