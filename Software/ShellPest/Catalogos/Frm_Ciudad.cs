@@ -28,6 +28,7 @@ namespace ShellPest
         public string Ciudad { get; set; }
         public string IdEstado { get; set; }
         public string Estado { get; set; }
+        public string Id_Usuario { get; set; }
 
         private void CargarCiudad()
         {
@@ -48,7 +49,7 @@ namespace ShellPest
             Clase.Id_Ciudad = textId.Text.Trim();
             Clase.Nombre_Ciudad = textNombre.Text.Trim();
             Clase.Id_Estado = textEstado.Tag.ToString();
-
+            Clase.Id_Usuario = Id_Usuario;
             Clase.MtdInsertarCiudad();
 
             if (Clase.Exito)

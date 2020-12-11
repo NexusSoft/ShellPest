@@ -241,7 +241,9 @@ namespace ShellPest
         {
             if (TieneAcceso("015"))
             {
-               
+                Frm_Estado Ventana = new Frm_Estado();
+                Ventana.Id_Usuario = UsuariosLogin;
+                Ventana.ShowDialog();
             }
             else
             {
@@ -258,7 +260,9 @@ namespace ShellPest
         {
             if (TieneAcceso("016"))
             {
-
+                Frm_Ciudad Ventana = new Frm_Ciudad();
+                Ventana.Id_Usuario = UsuariosLogin;
+                Ventana.ShowDialog();
             }
             else
             {

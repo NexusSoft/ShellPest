@@ -38,6 +38,7 @@ namespace ShellPest
 
         public string IdEstado { get; set; }
         public string Estado { get; set; }
+        public string Id_Usuario { get; set; }
 
         private void btnbuscar_Click(object sender, EventArgs e)
         {
@@ -69,6 +70,7 @@ namespace ShellPest
             Estado.Id_Estado = textIdEstado.Text.Trim();
             Estado.Nombre_Estado = textEstado.Text.Trim();
             Estado.Id_Pais = textIdPais.Text.Trim();
+            Estado.Id_Usuario = Id_Usuario;
             Estado.MtdInsertarEstado();
             if (Estado.Exito)
             {
