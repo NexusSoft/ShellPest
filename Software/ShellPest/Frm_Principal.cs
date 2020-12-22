@@ -308,5 +308,12 @@ namespace ShellPest
         {
             Application.Exit();
         }
+
+        private void btnRiego_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            Frm_Riego Ventana = new Frm_Riego();
+            Ventana.Id_Usuario = UsuariosLogin;
+            Ventana.ShowDialog();
+        }
     }
 }

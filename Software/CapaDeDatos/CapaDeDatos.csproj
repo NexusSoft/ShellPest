@@ -64,6 +64,7 @@
     <Compile Include="Formularios\CLS_Plagas.cs" />
     <Compile Include="Formularios\CLS_Productor.cs" />
     <Compile Include="Formularios\CLS_PuntoControl.cs" />
+    <Compile Include="Formularios\CLS_Riego.cs" />
     <Compile Include="Seguridad\CLS_Pantallas.cs" />
     <Compile Include="Seguridad\CLS_Perfiles.cs" />
     <Compile Include="Seguridad\CLS_Perfiles_Pantallas.cs" />

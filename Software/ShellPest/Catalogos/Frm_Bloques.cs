@@ -109,6 +109,7 @@ namespace ShellPest
             if (PaSel == true)
             {
                 btnSeleccionar.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
+                dtgValBloque.OptionsFind.AlwaysVisible = true;
             }
             else
             {
