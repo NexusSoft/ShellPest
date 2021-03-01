@@ -72,6 +72,7 @@
     <Compile Include="Seguridad\CLS_Usuarios.cs" />
     <Compile Include="Seguridad\SEG_Login.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="WebService\WS_Catalogos_PuntoControl.cs" />
     <Compile Include="WebService\WS_Catalogos_Productor.cs" />
     <Compile Include="WebService\WS_Catalogos_Plagas.cs" />
     <Compile Include="WebService\WS_Catalogos_Pais.cs" />

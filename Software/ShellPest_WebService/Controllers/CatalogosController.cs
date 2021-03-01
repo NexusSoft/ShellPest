@@ -252,6 +252,23 @@ namespace ShellPest_WebService
                 return Json(cadena, JsonRequestBehavior.AllowGet);
             }
         }
+        public ActionResult PuntoControl(string Fecha)
+        {
+            string cadena = string.Empty;
+            WS_Catalogos_PuntoControl sel = new WS_Catalogos_PuntoControl();
+            sel.Fecha = Fecha;
+
+            sel.MtdSeleccionarPuntoControl();
+            if (sel.Exito)
+            {
+                GetJson(sel.Datos);
+                return Json(rows, JsonRequestBehavior.AllowGet);
+            }
+            else
+            {
+                return Json(cadena, JsonRequestBehavior.AllowGet);
+            }
+        }
         public void GetJson(DataTable dt)
         {
             Dictionary<string, object> row;
