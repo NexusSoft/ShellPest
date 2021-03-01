@@ -72,6 +72,13 @@
     <Compile Include="Seguridad\CLS_Usuarios.cs" />
     <Compile Include="Seguridad\SEG_Login.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="WebService\WS_Catalogos_Productor.cs" />
+    <Compile Include="WebService\WS_Catalogos_Plagas.cs" />
+    <Compile Include="WebService\WS_Catalogos_Pais.cs" />
+    <Compile Include="WebService\WS_Catalogos_Humbral.cs" />
+    <Compile Include="WebService\WS_Catalogos_Huerta.cs" />
+    <Compile Include="WebService\WS_Catalogos_Estado.cs" />
+    <Compile Include="WebService\WS_Catalogos_Enfermedad.cs" />
     <Compile Include="WebService\WS_Catalogos_Duenio.cs" />
     <Compile Include="WebService\WS_Catalogos_Deteccion.cs" />
     <Compile Include="WebService\WS_Catalogos_Cultivo.cs" />

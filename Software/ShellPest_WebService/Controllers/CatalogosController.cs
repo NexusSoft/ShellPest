@@ -133,6 +133,125 @@ namespace ShellPest_WebService
                 return Json(cadena, JsonRequestBehavior.AllowGet);
             }
         }
+        public ActionResult Enfermedad(string Fecha)
+        {
+            string cadena = string.Empty;
+            WS_Catalogos_Enfermedad sel = new WS_Catalogos_Enfermedad();
+            sel.Fecha = Fecha;
+
+            sel.MtdSeleccionarEnfermedad();
+            if (sel.Exito)
+            {
+                GetJson(sel.Datos);
+                return Json(rows, JsonRequestBehavior.AllowGet);
+            }
+            else
+            {
+                return Json(cadena, JsonRequestBehavior.AllowGet);
+            }
+        }
+        public ActionResult Estado(string Fecha)
+        {
+            string cadena = string.Empty;
+            WS_Catalogos_Estado sel = new WS_Catalogos_Estado();
+            sel.Fecha = Fecha;
+
+            sel.MtdSeleccionarEstado();
+            if (sel.Exito)
+            {
+                GetJson(sel.Datos);
+                return Json(rows, JsonRequestBehavior.AllowGet);
+            }
+            else
+            {
+                return Json(cadena, JsonRequestBehavior.AllowGet);
+            }
+        }
+        public ActionResult Huerta(string Fecha)
+        {
+            string cadena = string.Empty;
+            WS_Catalogos_Huerta sel = new WS_Catalogos_Huerta();
+            sel.Fecha = Fecha;
+
+            sel.MtdSeleccionarHuerta();
+            if (sel.Exito)
+            {
+                GetJson(sel.Datos);
+                return Json(rows, JsonRequestBehavior.AllowGet);
+            }
+            else
+            {
+                return Json(cadena, JsonRequestBehavior.AllowGet);
+            }
+        }
+        public ActionResult Humbral(string Fecha)
+        {
+            string cadena = string.Empty;
+            WS_Catalogos_Humbral sel = new WS_Catalogos_Humbral();
+            sel.Fecha = Fecha;
+
+            sel.MtdSeleccionarHumbral();
+            if (sel.Exito)
+            {
+                GetJson(sel.Datos);
+                return Json(rows, JsonRequestBehavior.AllowGet);
+            }
+            else
+            {
+                return Json(cadena, JsonRequestBehavior.AllowGet);
+            }
+        }
+        public ActionResult Pais(string Fecha)
+        {
+            string cadena = string.Empty;
+            WS_Catalogos_Pais sel = new WS_Catalogos_Pais();
+            sel.Fecha = Fecha;
+
+            sel.MtdSeleccionarPais();
+            if (sel.Exito)
+            {
+                GetJson(sel.Datos);
+                return Json(rows, JsonRequestBehavior.AllowGet);
+            }
+            else
+            {
+                return Json(cadena, JsonRequestBehavior.AllowGet);
+            }
+        }
+        public ActionResult Plagas(string Fecha)
+        {
+            string cadena = string.Empty;
+            WS_Catalogos_Plagas sel = new WS_Catalogos_Plagas();
+            sel.Fecha = Fecha;
+
+            sel.MtdSeleccionarPlagas();
+            if (sel.Exito)
+            {
+                GetJson(sel.Datos);
+                return Json(rows, JsonRequestBehavior.AllowGet);
+            }
+            else
+            {
+                return Json(cadena, JsonRequestBehavior.AllowGet);
+            }
+        }
+        public ActionResult Productor(string Fecha)
+        {
+            string cadena = string.Empty;
+            WS_Catalogos_Productor sel = new WS_Catalogos_Productor();
+            sel.Fecha = Fecha;
+
+            sel.MtdSeleccionarProductor();
+            if (sel.Exito)
+            {
+                GetJson(sel.Datos);
+                return Json(rows, JsonRequestBehavior.AllowGet);
+            }
+            else
+            {
+                return Json(cadena, JsonRequestBehavior.AllowGet);
+            }
+        }
         public void GetJson(DataTable dt)
         {
             Dictionary<string, object> row;
