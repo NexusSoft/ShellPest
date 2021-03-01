@@ -48,6 +48,7 @@ namespace ShellPest_WebService
                 return Json(cadena, JsonRequestBehavior.AllowGet);
             }
         }
+        [System.Web.Mvc.HttpGet]
         public ActionResult Calidad(string Fecha)
         {
             string cadena = string.Empty;
@@ -65,6 +66,7 @@ namespace ShellPest_WebService
                 return Json(cadena, JsonRequestBehavior.AllowGet);
             }
         }
+        [System.Web.Mvc.HttpGet]
         public ActionResult Ciudad(string Fecha)
         {
             string cadena = string.Empty;
@@ -82,6 +84,7 @@ namespace ShellPest_WebService
                 return Json(cadena, JsonRequestBehavior.AllowGet);
             }
         }
+        [System.Web.Mvc.HttpGet]
         public ActionResult Cultivo(string Fecha)
         {
             string cadena = string.Empty;
@@ -99,6 +102,7 @@ namespace ShellPest_WebService
                 return Json(cadena, JsonRequestBehavior.AllowGet);
             }
         }
+        [System.Web.Mvc.HttpGet]
         public ActionResult Deteccion(string Fecha)
         {
             string cadena = string.Empty;
@@ -116,6 +120,7 @@ namespace ShellPest_WebService
                 return Json(cadena, JsonRequestBehavior.AllowGet);
             }
         }
+        [System.Web.Mvc.HttpGet]
         public ActionResult Duenio(string Fecha)
         {
             string cadena = string.Empty;
@@ -133,6 +138,7 @@ namespace ShellPest_WebService
                 return Json(cadena, JsonRequestBehavior.AllowGet);
             }
         }
+        [System.Web.Mvc.HttpGet]
         public ActionResult Enfermedad(string Fecha)
         {
             string cadena = string.Empty;
@@ -167,6 +173,7 @@ namespace ShellPest_WebService
                 return Json(cadena, JsonRequestBehavior.AllowGet);
             }
         }
+        [System.Web.Mvc.HttpGet]
         public ActionResult Huerta(string Fecha)
         {
             string cadena = string.Empty;
@@ -184,6 +191,7 @@ namespace ShellPest_WebService
                 return Json(cadena, JsonRequestBehavior.AllowGet);
             }
         }
+        [System.Web.Mvc.HttpGet]
         public ActionResult Humbral(string Fecha)
         {
             string cadena = string.Empty;
@@ -201,6 +209,7 @@ namespace ShellPest_WebService
                 return Json(cadena, JsonRequestBehavior.AllowGet);
             }
         }
+        [System.Web.Mvc.HttpGet]
         public ActionResult Pais(string Fecha)
         {
             string cadena = string.Empty;
@@ -218,6 +227,7 @@ namespace ShellPest_WebService
                 return Json(cadena, JsonRequestBehavior.AllowGet);
             }
         }
+        [System.Web.Mvc.HttpGet]
         public ActionResult Plagas(string Fecha)
         {
             string cadena = string.Empty;
@@ -235,6 +245,7 @@ namespace ShellPest_WebService
                 return Json(cadena, JsonRequestBehavior.AllowGet);
             }
         }
+        [System.Web.Mvc.HttpGet]
         public ActionResult Productor(string Fecha)
         {
             string cadena = string.Empty;
@@ -252,6 +263,7 @@ namespace ShellPest_WebService
                 return Json(cadena, JsonRequestBehavior.AllowGet);
             }
         }
+        [System.Web.Mvc.HttpGet]
         public ActionResult PuntoControl(string Fecha)
         {
             string cadena = string.Empty;
@@ -269,6 +281,7 @@ namespace ShellPest_WebService
                 return Json(cadena, JsonRequestBehavior.AllowGet);
             }
         }
+       
         public void GetJson(DataTable dt)
         {
             Dictionary<string, object> row;
