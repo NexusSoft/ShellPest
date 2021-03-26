@@ -123,7 +123,14 @@ namespace ShellPest
         {
             if (txtNombre.Text.ToString().Trim().Length > 0)
             {
-                InsertarBloque();
+                if (txtHuerta.Text != string.Empty)
+                {
+                    InsertarBloque();
+                }
+                else
+                {
+                    XtraMessageBox.Show("Es necesario Seleccionar una Huerta.");
+                }
             }
             else
             {

@@ -1,6 +1,6 @@
 ﻿namespace ShellPest
 {
-    partial class Frm_Cultivo
+    partial class Frm_Zona
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_Cultivo));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_Zona));
             this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
             this.bIconos = new DevExpress.XtraBars.Bar();
             this.btnLimpiar = new DevExpress.XtraBars.BarLargeButtonItem();
@@ -45,10 +45,10 @@
             this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
             this.repositoryItemTextEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemTextEdit();
             this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
-            this.gridControl1 = new DevExpress.XtraGrid.GridControl();
-            this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.Id_Cultivo = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.Nombre_Cultivo = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.dtgZona = new DevExpress.XtraGrid.GridControl();
+            this.dtgValZona = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.Id_Zona = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Nombre_Zona = new DevExpress.XtraGrid.Columns.GridColumn();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
             this.textNombre = new DevExpress.XtraEditors.TextEdit();
@@ -59,8 +59,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).BeginInit();
             this.panelControl2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgZona)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgValZona)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
@@ -178,7 +178,7 @@
             // 
             // lblProveedor
             // 
-            this.lblProveedor.Caption = "Cultivo:";
+            this.lblProveedor.Caption = "Zona:";
             this.lblProveedor.Id = 48;
             this.lblProveedor.Name = "lblProveedor";
             // 
@@ -194,9 +194,9 @@
             // 
             this.barDockControlBottom.CausesValidation = false;
             this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.barDockControlBottom.Location = new System.Drawing.Point(0, 347);
+            this.barDockControlBottom.Location = new System.Drawing.Point(0, 345);
             this.barDockControlBottom.Manager = this.barManager1;
-            this.barDockControlBottom.Size = new System.Drawing.Size(507, 25);
+            this.barDockControlBottom.Size = new System.Drawing.Size(507, 27);
             // 
             // barDockControlLeft
             // 
@@ -204,7 +204,7 @@
             this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
             this.barDockControlLeft.Location = new System.Drawing.Point(0, 0);
             this.barDockControlLeft.Manager = this.barManager1;
-            this.barDockControlLeft.Size = new System.Drawing.Size(71, 347);
+            this.barDockControlLeft.Size = new System.Drawing.Size(69, 345);
             // 
             // barDockControlRight
             // 
@@ -212,7 +212,7 @@
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
             this.barDockControlRight.Location = new System.Drawing.Point(507, 0);
             this.barDockControlRight.Manager = this.barManager1;
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 347);
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 345);
             // 
             // repositoryItemTextEdit1
             // 
@@ -220,62 +220,62 @@
             // 
             // panelControl2
             // 
-            this.panelControl2.Controls.Add(this.gridControl1);
+            this.panelControl2.Controls.Add(this.dtgZona);
             this.panelControl2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelControl2.Location = new System.Drawing.Point(71, 108);
+            this.panelControl2.Location = new System.Drawing.Point(69, 108);
             this.panelControl2.Name = "panelControl2";
             this.panelControl2.Padding = new System.Windows.Forms.Padding(10);
-            this.panelControl2.Size = new System.Drawing.Size(436, 239);
+            this.panelControl2.Size = new System.Drawing.Size(438, 237);
             this.panelControl2.TabIndex = 7;
             // 
-            // gridControl1
+            // dtgZona
             // 
-            this.gridControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gridControl1.Location = new System.Drawing.Point(12, 12);
-            this.gridControl1.MainView = this.gridView1;
-            this.gridControl1.MenuManager = this.barManager1;
-            this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(412, 215);
-            this.gridControl1.TabIndex = 0;
-            this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.gridView1});
-            this.gridControl1.Click += new System.EventHandler(this.gridControl1_Click);
+            this.dtgZona.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dtgZona.Location = new System.Drawing.Point(12, 12);
+            this.dtgZona.MainView = this.dtgValZona;
+            this.dtgZona.MenuManager = this.barManager1;
+            this.dtgZona.Name = "dtgZona";
+            this.dtgZona.Size = new System.Drawing.Size(414, 213);
+            this.dtgZona.TabIndex = 0;
+            this.dtgZona.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.dtgValZona});
+            this.dtgZona.Click += new System.EventHandler(this.gridControl1_Click);
             // 
-            // gridView1
+            // dtgValZona
             // 
-            this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.Id_Cultivo,
-            this.Nombre_Cultivo});
-            this.gridView1.GridControl = this.gridControl1;
-            this.gridView1.Name = "gridView1";
-            this.gridView1.OptionsView.ShowGroupPanel = false;
+            this.dtgValZona.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.Id_Zona,
+            this.Nombre_Zona});
+            this.dtgValZona.GridControl = this.dtgZona;
+            this.dtgValZona.Name = "dtgValZona";
+            this.dtgValZona.OptionsView.ShowGroupPanel = false;
             // 
-            // Id_Cultivo
+            // Id_Zona
             // 
-            this.Id_Cultivo.Caption = "Id Cultivo";
-            this.Id_Cultivo.FieldName = "Id_Cultivo";
-            this.Id_Cultivo.Name = "Id_Cultivo";
-            this.Id_Cultivo.OptionsColumn.AllowEdit = false;
-            this.Id_Cultivo.Visible = true;
-            this.Id_Cultivo.VisibleIndex = 0;
+            this.Id_Zona.Caption = "Id Zona";
+            this.Id_Zona.FieldName = "Id_zona";
+            this.Id_Zona.Name = "Id_Zona";
+            this.Id_Zona.OptionsColumn.AllowEdit = false;
+            this.Id_Zona.Visible = true;
+            this.Id_Zona.VisibleIndex = 0;
             // 
-            // Nombre_Cultivo
+            // Nombre_Zona
             // 
-            this.Nombre_Cultivo.Caption = "Cultivo";
-            this.Nombre_Cultivo.FieldName = "Nombre_Cultivo";
-            this.Nombre_Cultivo.Name = "Nombre_Cultivo";
-            this.Nombre_Cultivo.OptionsColumn.AllowEdit = false;
-            this.Nombre_Cultivo.Visible = true;
-            this.Nombre_Cultivo.VisibleIndex = 1;
+            this.Nombre_Zona.Caption = "Zona";
+            this.Nombre_Zona.FieldName = "Nombre_zona";
+            this.Nombre_Zona.Name = "Nombre_Zona";
+            this.Nombre_Zona.OptionsColumn.AllowEdit = false;
+            this.Nombre_Zona.Visible = true;
+            this.Nombre_Zona.VisibleIndex = 1;
             // 
             // panelControl1
             // 
             this.panelControl1.Controls.Add(this.groupControl1);
             this.panelControl1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelControl1.Location = new System.Drawing.Point(71, 0);
+            this.panelControl1.Location = new System.Drawing.Point(69, 0);
             this.panelControl1.Name = "panelControl1";
             this.panelControl1.Padding = new System.Windows.Forms.Padding(10);
-            this.panelControl1.Size = new System.Drawing.Size(436, 108);
+            this.panelControl1.Size = new System.Drawing.Size(438, 108);
             this.panelControl1.TabIndex = 6;
             // 
             // groupControl1
@@ -287,9 +287,9 @@
             this.groupControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupControl1.Location = new System.Drawing.Point(12, 12);
             this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(412, 84);
+            this.groupControl1.Size = new System.Drawing.Size(414, 84);
             this.groupControl1.TabIndex = 0;
-            this.groupControl1.Text = "Datos Cultivo";
+            this.groupControl1.Text = "Datos Zona";
             // 
             // textNombre
             // 
@@ -303,9 +303,9 @@
             // 
             this.labelControl2.Location = new System.Drawing.Point(19, 59);
             this.labelControl2.Name = "labelControl2";
-            this.labelControl2.Size = new System.Drawing.Size(37, 13);
+            this.labelControl2.Size = new System.Drawing.Size(28, 13);
             this.labelControl2.TabIndex = 2;
-            this.labelControl2.Text = "Cultivo:";
+            this.labelControl2.Text = "Zona:";
             // 
             // textId
             // 
@@ -320,11 +320,11 @@
             // 
             this.labelControl1.Location = new System.Drawing.Point(19, 32);
             this.labelControl1.Name = "labelControl1";
-            this.labelControl1.Size = new System.Drawing.Size(53, 13);
+            this.labelControl1.Size = new System.Drawing.Size(44, 13);
             this.labelControl1.TabIndex = 0;
-            this.labelControl1.Text = "Id Cultivo: ";
+            this.labelControl1.Text = "Id Zona: ";
             // 
-            // Frm_Cultivo
+            // Frm_Zona
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -338,16 +338,16 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "Frm_Cultivo";
+            this.Name = "Frm_Zona";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Cultivo";
-            this.Load += new System.EventHandler(this.Frm_Cultivo_Load);
+            this.Text = "Zonas";
+            this.Load += new System.EventHandler(this.Frm_Zona_Load);
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).EndInit();
             this.panelControl2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgZona)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgValZona)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
             this.panelControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
@@ -376,10 +376,10 @@
         private DevExpress.XtraBars.BarDockControl barDockControlRight;
         private DevExpress.XtraEditors.Repository.RepositoryItemTextEdit repositoryItemTextEdit1;
         private DevExpress.XtraEditors.PanelControl panelControl2;
-        private DevExpress.XtraGrid.GridControl gridControl1;
-        private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
-        private DevExpress.XtraGrid.Columns.GridColumn Id_Cultivo;
-        private DevExpress.XtraGrid.Columns.GridColumn Nombre_Cultivo;
+        private DevExpress.XtraGrid.GridControl dtgZona;
+        private DevExpress.XtraGrid.Views.Grid.GridView dtgValZona;
+        private DevExpress.XtraGrid.Columns.GridColumn Id_Zona;
+        private DevExpress.XtraGrid.Columns.GridColumn Nombre_Zona;
         private DevExpress.XtraEditors.PanelControl panelControl1;
         private DevExpress.XtraEditors.GroupControl groupControl1;
         private DevExpress.XtraEditors.TextEdit textNombre;

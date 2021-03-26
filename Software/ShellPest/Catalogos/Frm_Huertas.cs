@@ -96,6 +96,22 @@ namespace ShellPest
                 CargarComboCultivo(comboCultivo.Datos, Valor);
             }
         }
+        public void CargarZona(string Valor)
+        {
+            CLS_Zona comboZona = new CLS_Zona();
+            comboZona.MtdSeleccionarZona();
+            if (comboZona.Exito)
+            {
+                CargarComboZona(comboZona.Datos, Valor);
+            }
+        }
+        private void CargarComboZona(DataTable Datos, string Valor)
+        {
+            cboZona.Properties.DisplayMember = "Nombre_zona";
+            cboZona.Properties.ValueMember = "Id_zona";
+            cboZona.EditValue = Valor;
+            cboZona.Properties.DataSource = Datos;
+        }
         private void CargarComboCultivo(DataTable Datos, string Valor)
         {
             cboCultivo.Properties.DisplayMember = "Nombre_Cultivo";
@@ -144,6 +160,7 @@ namespace ShellPest
             CargarCiudad(null);
             CargarCalidad(null);
             CargarCultivo(null);
+            CargarZona(null);
             DarFormatoCampos();
             CargarHuertas();
         }
@@ -238,7 +255,14 @@ namespace ShellPest
                                 {
                                     if (cboCultivo.EditValue != null)
                                     {
-                                        InsertarHuerta();
+                                        if (cboZona.EditValue != null)
+                                        {
+                                            InsertarHuerta();
+                                        }
+                                        else
+                                        {
+                                            XtraMessageBox.Show("Falta de seleccionar un Zona Clima");
+                                        }
                                     }
                                     else
                                     {
@@ -292,11 +316,12 @@ namespace ShellPest
             Clase.Id_Huerta = txtCodigo.Text;
             Clase.Nombre_Huerta = txtNombreHuerta.Text;
             Clase.Registro_Huerta = txtRegistro.Text;
-            Clase.Id_Duenio = txtNombreProductor.Tag.ToString();
+            Clase.Id_Productor = txtNombreProductor.Tag.ToString();
             Clase.Id_Estado = cboEstado.EditValue.ToString();
             Clase.Id_Ciudad = cboCiudad.EditValue.ToString();
             Clase.Id_Calidad = cboCalidad.EditValue.ToString();
             Clase.Id_Cultivo = cboCultivo.EditValue.ToString();
+            Clase.Id_zona = cboZona.EditValue.ToString();
             Clase.zona_Huerta =Convert.ToDecimal(txtZona.Text);
             Clase.banda_Huerta = txtBanda.Text;
             Clase.este_Huerta =Convert.ToDecimal(txtEste.Text);
@@ -399,6 +424,7 @@ namespace ShellPest
                     cboCiudad.EditValue = row["Id_Ciudad"].ToString();
                     cboCalidad.EditValue = row["Id_Calidad"].ToString();
                     cboCultivo.EditValue = row["Id_Cultivo"].ToString();
+                    cboZona.EditValue = row["Id_zona"].ToString();
                     txtZona.Text= row["zona_Huerta"].ToString();
                     txtBanda.Text = row["banda_Huerta"].ToString();
                     txtEste.Text= row["este_Huerta"].ToString();
@@ -448,6 +474,14 @@ namespace ShellPest
             IdHuerta = txtCodigo.Text.Trim();
             Huerta = txtNombreHuerta.Text.Trim();
             this.Close();
+        }
+
+        private void btnZona_Click(object sender, EventArgs e)
+        {
+            Frm_Zona frm = new Frm_Zona();
+            frm.Id_Usuario = Id_Usuario;
+            frm.ShowDialog();
+            CargarZona(null);
         }
     }
 }

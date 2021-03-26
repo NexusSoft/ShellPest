@@ -1,6 +1,6 @@
 ﻿namespace ShellPest
 {
-    partial class Frm_Riego
+    partial class Frm_Individuos
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_Riego));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_Individuos));
             this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
             this.bIconos = new DevExpress.XtraBars.Bar();
             this.btnLimpiar = new DevExpress.XtraBars.BarLargeButtonItem();
@@ -45,35 +45,30 @@
             this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
             this.repositoryItemTextEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemTextEdit();
             this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
-            this.dtgRiego = new DevExpress.XtraGrid.GridControl();
-            this.dtgValRiego = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.Id_Bloque = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.Nombre_Bloque = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.Fecha_Riego = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.Horas_Riego = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridControl1 = new DevExpress.XtraGrid.GridControl();
+            this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.Id_Individuo = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Nombre_Individuo = new DevExpress.XtraGrid.Columns.GridColumn();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
-            this.dtFecha = new DevExpress.XtraEditors.DateEdit();
-            this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
-            this.btnBloque = new DevExpress.XtraEditors.SimpleButton();
-            this.txtHoras = new DevExpress.XtraEditors.TextEdit();
+            this.textNombre = new DevExpress.XtraEditors.TextEdit();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
-            this.txtBloque = new DevExpress.XtraEditors.TextEdit();
+            this.textId = new DevExpress.XtraEditors.TextEdit();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
+            this.Id_Cultivo = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).BeginInit();
             this.panelControl2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dtgRiego)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dtgValRiego)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dtFecha.Properties.CalendarTimeProperties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dtFecha.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtHoras.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtBloque.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textNombre.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textId.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // barManager1
@@ -94,7 +89,7 @@
             this.btnSalir,
             this.btnSeleccionar});
             this.barManager1.MainMenu = this.bIconos;
-            this.barManager1.MaxItemId = 67;
+            this.barManager1.MaxItemId = 65;
             this.barManager1.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItemTextEdit1});
             this.barManager1.StatusBar = this.bEstado;
@@ -163,7 +158,7 @@
             // btnSeleccionar
             // 
             this.btnSeleccionar.Caption = "Seleccionar";
-            this.btnSeleccionar.Id = 66;
+            this.btnSeleccionar.Id = 64;
             this.btnSeleccionar.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnSeleccionar.ImageOptions.Image")));
             this.btnSeleccionar.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnSeleccionar.ImageOptions.LargeImage")));
             this.btnSeleccionar.Name = "btnSeleccionar";
@@ -185,7 +180,7 @@
             // 
             // lblProveedor
             // 
-            this.lblProveedor.Caption = "Proveedor:";
+            this.lblProveedor.Caption = "Cultivo:";
             this.lblProveedor.Id = 48;
             this.lblProveedor.Name = "lblProveedor";
             // 
@@ -195,15 +190,15 @@
             this.barDockControlTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.barDockControlTop.Location = new System.Drawing.Point(0, 0);
             this.barDockControlTop.Manager = this.barManager1;
-            this.barDockControlTop.Size = new System.Drawing.Size(783, 0);
+            this.barDockControlTop.Size = new System.Drawing.Size(507, 0);
             // 
             // barDockControlBottom
             // 
             this.barDockControlBottom.CausesValidation = false;
             this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.barDockControlBottom.Location = new System.Drawing.Point(0, 456);
+            this.barDockControlBottom.Location = new System.Drawing.Point(0, 345);
             this.barDockControlBottom.Manager = this.barManager1;
-            this.barDockControlBottom.Size = new System.Drawing.Size(783, 25);
+            this.barDockControlBottom.Size = new System.Drawing.Size(507, 27);
             // 
             // barDockControlLeft
             // 
@@ -211,15 +206,15 @@
             this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
             this.barDockControlLeft.Location = new System.Drawing.Point(0, 0);
             this.barDockControlLeft.Manager = this.barManager1;
-            this.barDockControlLeft.Size = new System.Drawing.Size(71, 456);
+            this.barDockControlLeft.Size = new System.Drawing.Size(69, 345);
             // 
             // barDockControlRight
             // 
             this.barDockControlRight.CausesValidation = false;
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
-            this.barDockControlRight.Location = new System.Drawing.Point(783, 0);
+            this.barDockControlRight.Location = new System.Drawing.Point(507, 0);
             this.barDockControlRight.Manager = this.barManager1;
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 456);
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 345);
             // 
             // repositoryItemTextEdit1
             // 
@@ -227,196 +222,159 @@
             // 
             // panelControl2
             // 
-            this.panelControl2.Controls.Add(this.dtgRiego);
+            this.panelControl2.Controls.Add(this.gridControl1);
             this.panelControl2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelControl2.Location = new System.Drawing.Point(71, 120);
+            this.panelControl2.Location = new System.Drawing.Point(69, 108);
             this.panelControl2.Name = "panelControl2";
             this.panelControl2.Padding = new System.Windows.Forms.Padding(10);
-            this.panelControl2.Size = new System.Drawing.Size(712, 336);
-            this.panelControl2.TabIndex = 19;
+            this.panelControl2.Size = new System.Drawing.Size(438, 237);
+            this.panelControl2.TabIndex = 7;
             // 
-            // dtgRiego
+            // gridControl1
             // 
-            this.dtgRiego.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dtgRiego.Location = new System.Drawing.Point(12, 12);
-            this.dtgRiego.MainView = this.dtgValRiego;
-            this.dtgRiego.MenuManager = this.barManager1;
-            this.dtgRiego.Name = "dtgRiego";
-            this.dtgRiego.Size = new System.Drawing.Size(688, 312);
-            this.dtgRiego.TabIndex = 0;
-            this.dtgRiego.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.dtgValRiego});
-            this.dtgRiego.Click += new System.EventHandler(this.dtgRiego_Click);
+            this.gridControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gridControl1.Location = new System.Drawing.Point(12, 12);
+            this.gridControl1.MainView = this.gridView1;
+            this.gridControl1.MenuManager = this.barManager1;
+            this.gridControl1.Name = "gridControl1";
+            this.gridControl1.Size = new System.Drawing.Size(414, 213);
+            this.gridControl1.TabIndex = 0;
+            this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gridView1});
+            this.gridControl1.Click += new System.EventHandler(this.gridControl1_Click);
             // 
-            // dtgValRiego
+            // gridView1
             // 
-            this.dtgValRiego.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.Id_Bloque,
-            this.Nombre_Bloque,
-            this.Fecha_Riego,
-            this.Horas_Riego});
-            this.dtgValRiego.GridControl = this.dtgRiego;
-            this.dtgValRiego.GroupSummary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
-            new DevExpress.XtraGrid.GridGroupSummaryItem(DevExpress.Data.SummaryItemType.Sum, "Horas_Riego", this.Horas_Riego, "{0:#.##}")});
-            this.dtgValRiego.Name = "dtgValRiego";
-            this.dtgValRiego.OptionsBehavior.Editable = false;
-            this.dtgValRiego.OptionsView.ShowFooter = true;
-            this.dtgValRiego.OptionsView.ShowGroupPanel = false;
+            this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.Id_Individuo,
+            this.Nombre_Individuo});
+            this.gridView1.GridControl = this.gridControl1;
+            this.gridView1.Name = "gridView1";
+            this.gridView1.OptionsView.ShowGroupPanel = false;
             // 
-            // Id_Bloque
+            // Id_Individuo
             // 
-            this.Id_Bloque.Caption = "Id_Bloque";
-            this.Id_Bloque.FieldName = "Id_Bloque";
-            this.Id_Bloque.Name = "Id_Bloque";
-            this.Id_Bloque.Visible = true;
-            this.Id_Bloque.VisibleIndex = 0;
+            this.Id_Individuo.Caption = "Id Individuo";
+            this.Id_Individuo.FieldName = "Id_Individuo";
+            this.Id_Individuo.Name = "Id_Individuo";
+            this.Id_Individuo.OptionsColumn.AllowEdit = false;
+            this.Id_Individuo.Visible = true;
+            this.Id_Individuo.VisibleIndex = 0;
             // 
-            // Nombre_Bloque
+            // Nombre_Individuo
             // 
-            this.Nombre_Bloque.Caption = "Boque";
-            this.Nombre_Bloque.FieldName = "Nombre_Bloque";
-            this.Nombre_Bloque.Name = "Nombre_Bloque";
-            this.Nombre_Bloque.Visible = true;
-            this.Nombre_Bloque.VisibleIndex = 1;
-            // 
-            // Fecha_Riego
-            // 
-            this.Fecha_Riego.Caption = "Fecha";
-            this.Fecha_Riego.FieldName = "Fecha_Riego";
-            this.Fecha_Riego.Name = "Fecha_Riego";
-            this.Fecha_Riego.Visible = true;
-            this.Fecha_Riego.VisibleIndex = 2;
-            // 
-            // Horas_Riego
-            // 
-            this.Horas_Riego.Caption = "Horas";
-            this.Horas_Riego.FieldName = "Horas_Riego";
-            this.Horas_Riego.Name = "Horas_Riego";
-            this.Horas_Riego.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
-            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "Horas_Riego", "{0:#.##}")});
-            this.Horas_Riego.Visible = true;
-            this.Horas_Riego.VisibleIndex = 3;
+            this.Nombre_Individuo.Caption = "Individuo";
+            this.Nombre_Individuo.FieldName = "No_Individuo";
+            this.Nombre_Individuo.Name = "Nombre_Individuo";
+            this.Nombre_Individuo.OptionsColumn.AllowEdit = false;
+            this.Nombre_Individuo.Visible = true;
+            this.Nombre_Individuo.VisibleIndex = 1;
             // 
             // panelControl1
             // 
             this.panelControl1.Controls.Add(this.groupControl1);
             this.panelControl1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelControl1.Location = new System.Drawing.Point(71, 0);
+            this.panelControl1.Location = new System.Drawing.Point(69, 0);
             this.panelControl1.Name = "panelControl1";
             this.panelControl1.Padding = new System.Windows.Forms.Padding(10);
-            this.panelControl1.Size = new System.Drawing.Size(712, 120);
-            this.panelControl1.TabIndex = 18;
+            this.panelControl1.Size = new System.Drawing.Size(438, 108);
+            this.panelControl1.TabIndex = 6;
             // 
             // groupControl1
             // 
-            this.groupControl1.Controls.Add(this.dtFecha);
-            this.groupControl1.Controls.Add(this.labelControl3);
-            this.groupControl1.Controls.Add(this.btnBloque);
-            this.groupControl1.Controls.Add(this.txtHoras);
+            this.groupControl1.Controls.Add(this.textNombre);
             this.groupControl1.Controls.Add(this.labelControl2);
-            this.groupControl1.Controls.Add(this.txtBloque);
+            this.groupControl1.Controls.Add(this.textId);
             this.groupControl1.Controls.Add(this.labelControl1);
             this.groupControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupControl1.Location = new System.Drawing.Point(12, 12);
             this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(688, 96);
+            this.groupControl1.Size = new System.Drawing.Size(414, 84);
             this.groupControl1.TabIndex = 0;
-            this.groupControl1.Text = "Riego";
+            this.groupControl1.Text = "Datos Individuo";
             // 
-            // dtFecha
+            // textNombre
             // 
-            this.dtFecha.EditValue = null;
-            this.dtFecha.Location = new System.Drawing.Point(54, 63);
-            this.dtFecha.MenuManager = this.barManager1;
-            this.dtFecha.Name = "dtFecha";
-            this.dtFecha.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.dtFecha.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.dtFecha.Size = new System.Drawing.Size(100, 20);
-            this.dtFecha.TabIndex = 6;
-            this.dtFecha.EditValueChanged += new System.EventHandler(this.dtFecha_EditValueChanged);
-            // 
-            // labelControl3
-            // 
-            this.labelControl3.Location = new System.Drawing.Point(15, 67);
-            this.labelControl3.Name = "labelControl3";
-            this.labelControl3.Size = new System.Drawing.Size(33, 13);
-            this.labelControl3.TabIndex = 5;
-            this.labelControl3.Text = "Fecha:";
-            // 
-            // btnBloque
-            // 
-            this.btnBloque.Location = new System.Drawing.Point(54, 29);
-            this.btnBloque.Name = "btnBloque";
-            this.btnBloque.Size = new System.Drawing.Size(36, 23);
-            this.btnBloque.TabIndex = 4;
-            this.btnBloque.Text = "...";
-            this.btnBloque.Click += new System.EventHandler(this.btnBloque_Click);
-            // 
-            // txtHoras
-            // 
-            this.txtHoras.Location = new System.Drawing.Point(227, 63);
-            this.txtHoras.MenuManager = this.barManager1;
-            this.txtHoras.Name = "txtHoras";
-            this.txtHoras.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
-            this.txtHoras.Size = new System.Drawing.Size(92, 20);
-            this.txtHoras.TabIndex = 3;
+            this.textNombre.Location = new System.Drawing.Point(82, 54);
+            this.textNombre.MenuManager = this.barManager1;
+            this.textNombre.Name = "textNombre";
+            this.textNombre.Size = new System.Drawing.Size(231, 20);
+            this.textNombre.TabIndex = 3;
             // 
             // labelControl2
             // 
-            this.labelControl2.Location = new System.Drawing.Point(169, 67);
+            this.labelControl2.Location = new System.Drawing.Point(19, 59);
             this.labelControl2.Name = "labelControl2";
-            this.labelControl2.Size = new System.Drawing.Size(54, 13);
+            this.labelControl2.Size = new System.Drawing.Size(48, 13);
             this.labelControl2.TabIndex = 2;
-            this.labelControl2.Text = "Hrs. Riego:";
+            this.labelControl2.Text = "Individuo:";
             // 
-            // txtBloque
+            // textId
             // 
-            this.txtBloque.Enabled = false;
-            this.txtBloque.Location = new System.Drawing.Point(98, 31);
-            this.txtBloque.MenuManager = this.barManager1;
-            this.txtBloque.Name = "txtBloque";
-            this.txtBloque.Size = new System.Drawing.Size(221, 20);
-            this.txtBloque.TabIndex = 1;
+            this.textId.Enabled = false;
+            this.textId.Location = new System.Drawing.Point(82, 28);
+            this.textId.MenuManager = this.barManager1;
+            this.textId.Name = "textId";
+            this.textId.Size = new System.Drawing.Size(100, 20);
+            this.textId.TabIndex = 1;
             // 
             // labelControl1
             // 
-            this.labelControl1.Location = new System.Drawing.Point(16, 35);
+            this.labelControl1.Location = new System.Drawing.Point(19, 32);
             this.labelControl1.Name = "labelControl1";
-            this.labelControl1.Size = new System.Drawing.Size(39, 13);
+            this.labelControl1.Size = new System.Drawing.Size(64, 13);
             this.labelControl1.TabIndex = 0;
-            this.labelControl1.Text = "Bloque: ";
+            this.labelControl1.Text = "Id Individuo: ";
             // 
-            // Frm_Riego
+            // Id_Cultivo
+            // 
+            this.Id_Cultivo.Caption = "Id Cultivo";
+            this.Id_Cultivo.FieldName = "Id_Cultivo";
+            this.Id_Cultivo.Name = "Id_Cultivo";
+            this.Id_Cultivo.OptionsColumn.AllowEdit = false;
+            this.Id_Cultivo.Visible = true;
+            this.Id_Cultivo.VisibleIndex = 0;
+            // 
+            // gridColumn1
+            // 
+            this.gridColumn1.Caption = "Id Cultivo";
+            this.gridColumn1.FieldName = "Id_Cultivo";
+            this.gridColumn1.Name = "gridColumn1";
+            this.gridColumn1.OptionsColumn.AllowEdit = false;
+            this.gridColumn1.Visible = true;
+            this.gridColumn1.VisibleIndex = 0;
+            // 
+            // Frm_Individuos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(783, 481);
+            this.ClientSize = new System.Drawing.Size(507, 372);
             this.Controls.Add(this.panelControl2);
             this.Controls.Add(this.panelControl1);
             this.Controls.Add(this.barDockControlLeft);
             this.Controls.Add(this.barDockControlRight);
             this.Controls.Add(this.barDockControlBottom);
             this.Controls.Add(this.barDockControlTop);
-            this.Name = "Frm_Riego";
-            this.Text = "Riego";
-            this.Load += new System.EventHandler(this.Frm_Riego_Load);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
+            this.Name = "Frm_Individuos";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Individuos";
+            this.Load += new System.EventHandler(this.Frm_Cultivo_Load);
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).EndInit();
             this.panelControl2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dtgRiego)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dtgValRiego)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
             this.panelControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
             this.groupControl1.ResumeLayout(false);
             this.groupControl1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dtFecha.Properties.CalendarTimeProperties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dtFecha.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtHoras.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtBloque.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textNombre.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textId.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -430,7 +388,6 @@
         private DevExpress.XtraBars.BarLargeButtonItem btnGuardar;
         private DevExpress.XtraBars.BarLargeButtonItem btnEliminar;
         private DevExpress.XtraBars.BarLargeButtonItem btnSalir;
-        private DevExpress.XtraBars.BarLargeButtonItem btnSeleccionar;
         private DevExpress.XtraBars.Bar bEstado;
         private DevExpress.XtraBars.BarStaticItem lblProveedor;
         private DevExpress.XtraBars.BarDockControl barDockControlTop;
@@ -439,20 +396,18 @@
         private DevExpress.XtraBars.BarDockControl barDockControlRight;
         private DevExpress.XtraEditors.Repository.RepositoryItemTextEdit repositoryItemTextEdit1;
         private DevExpress.XtraEditors.PanelControl panelControl2;
-        private DevExpress.XtraGrid.GridControl dtgRiego;
-        private DevExpress.XtraGrid.Views.Grid.GridView dtgValRiego;
-        private DevExpress.XtraGrid.Columns.GridColumn Id_Bloque;
-        private DevExpress.XtraGrid.Columns.GridColumn Nombre_Bloque;
+        private DevExpress.XtraGrid.GridControl gridControl1;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
+        private DevExpress.XtraGrid.Columns.GridColumn Id_Individuo;
+        private DevExpress.XtraGrid.Columns.GridColumn Nombre_Individuo;
         private DevExpress.XtraEditors.PanelControl panelControl1;
         private DevExpress.XtraEditors.GroupControl groupControl1;
-        private DevExpress.XtraEditors.DateEdit dtFecha;
-        private DevExpress.XtraEditors.LabelControl labelControl3;
-        private DevExpress.XtraEditors.SimpleButton btnBloque;
-        private DevExpress.XtraEditors.TextEdit txtHoras;
+        private DevExpress.XtraEditors.TextEdit textNombre;
         private DevExpress.XtraEditors.LabelControl labelControl2;
-        private DevExpress.XtraEditors.TextEdit txtBloque;
+        private DevExpress.XtraEditors.TextEdit textId;
         private DevExpress.XtraEditors.LabelControl labelControl1;
-        private DevExpress.XtraGrid.Columns.GridColumn Fecha_Riego;
-        private DevExpress.XtraGrid.Columns.GridColumn Horas_Riego;
+        private DevExpress.XtraBars.BarLargeButtonItem btnSeleccionar;
+        private DevExpress.XtraGrid.Columns.GridColumn Id_Cultivo;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn1;
     }
 }

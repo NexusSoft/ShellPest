@@ -55,6 +55,10 @@
             this.Nombre_Perfil = new DevExpress.XtraGrid.Columns.GridColumn();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
+            this.btnHuerta = new DevExpress.XtraEditors.SimpleButton();
+            this.labelControl6 = new DevExpress.XtraEditors.LabelControl();
+            this.cmbHuerta = new DevExpress.XtraEditors.GridLookUpEdit();
+            this.gridView2 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.btnPerfil = new DevExpress.XtraEditors.SimpleButton();
             this.labelActivo = new DevExpress.XtraEditors.LabelControl();
             this.textConfirmaContra = new DevExpress.XtraEditors.TextEdit();
@@ -66,9 +70,11 @@
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
-            this.gridLookUpEdit1 = new DevExpress.XtraEditors.GridLookUpEdit();
+            this.cmbPerfil = new DevExpress.XtraEditors.GridLookUpEdit();
             this.gridLookUpEdit1View = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.behaviorManager1 = new DevExpress.Utils.Behaviors.BehaviorManager(this.components);
+            this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).BeginInit();
@@ -81,11 +87,13 @@
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.cmbHuerta.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textConfirmaContra.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textContrasena.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textNombre.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textUsuario.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit1.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cmbPerfil.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit1View)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.behaviorManager1)).BeginInit();
             this.SuspendLayout();
@@ -198,15 +206,15 @@
             this.barDockControlTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.barDockControlTop.Location = new System.Drawing.Point(0, 0);
             this.barDockControlTop.Manager = this.barManager1;
-            this.barDockControlTop.Size = new System.Drawing.Size(592, 0);
+            this.barDockControlTop.Size = new System.Drawing.Size(660, 0);
             // 
             // barDockControlBottom
             // 
             this.barDockControlBottom.CausesValidation = false;
             this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.barDockControlBottom.Location = new System.Drawing.Point(0, 459);
+            this.barDockControlBottom.Location = new System.Drawing.Point(0, 461);
             this.barDockControlBottom.Manager = this.barManager1;
-            this.barDockControlBottom.Size = new System.Drawing.Size(592, 27);
+            this.barDockControlBottom.Size = new System.Drawing.Size(660, 25);
             // 
             // barDockControlLeft
             // 
@@ -214,15 +222,15 @@
             this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
             this.barDockControlLeft.Location = new System.Drawing.Point(0, 0);
             this.barDockControlLeft.Manager = this.barManager1;
-            this.barDockControlLeft.Size = new System.Drawing.Size(57, 459);
+            this.barDockControlLeft.Size = new System.Drawing.Size(59, 461);
             // 
             // barDockControlRight
             // 
             this.barDockControlRight.CausesValidation = false;
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
-            this.barDockControlRight.Location = new System.Drawing.Point(592, 0);
+            this.barDockControlRight.Location = new System.Drawing.Point(660, 0);
             this.barDockControlRight.Manager = this.barManager1;
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 459);
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 461);
             // 
             // repositoryItemTextEdit1
             // 
@@ -233,10 +241,10 @@
             this.panelControl2.Controls.Add(this.checkActivo);
             this.panelControl2.Controls.Add(this.gridControl1);
             this.panelControl2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelControl2.Location = new System.Drawing.Point(57, 191);
+            this.panelControl2.Location = new System.Drawing.Point(59, 216);
             this.panelControl2.Name = "panelControl2";
             this.panelControl2.Padding = new System.Windows.Forms.Padding(5, 30, 5, 5);
-            this.panelControl2.Size = new System.Drawing.Size(535, 268);
+            this.panelControl2.Size = new System.Drawing.Size(601, 245);
             this.panelControl2.TabIndex = 23;
             // 
             // checkActivo
@@ -258,7 +266,7 @@
             this.gridControl1.Name = "gridControl1";
             this.gridControl1.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItemTextEdit2});
-            this.gridControl1.Size = new System.Drawing.Size(521, 229);
+            this.gridControl1.Size = new System.Drawing.Size(587, 206);
             this.gridControl1.TabIndex = 0;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -273,7 +281,9 @@
             this.Nombre_Usuario,
             this.Contrasena,
             this.Id_Perfil,
-            this.Nombre_Perfil});
+            this.Nombre_Perfil,
+            this.gridColumn1,
+            this.gridColumn2});
             this.gridView1.GridControl = this.gridControl1;
             this.gridView1.Name = "gridView1";
             this.gridView1.OptionsBehavior.Editable = false;
@@ -331,14 +341,17 @@
             // 
             this.panelControl1.Controls.Add(this.groupControl1);
             this.panelControl1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelControl1.Location = new System.Drawing.Point(57, 0);
+            this.panelControl1.Location = new System.Drawing.Point(59, 0);
             this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Padding = new System.Windows.Forms.Padding(10, 10, 10, 10);
-            this.panelControl1.Size = new System.Drawing.Size(535, 191);
+            this.panelControl1.Padding = new System.Windows.Forms.Padding(10);
+            this.panelControl1.Size = new System.Drawing.Size(601, 216);
             this.panelControl1.TabIndex = 22;
             // 
             // groupControl1
             // 
+            this.groupControl1.Controls.Add(this.btnHuerta);
+            this.groupControl1.Controls.Add(this.labelControl6);
+            this.groupControl1.Controls.Add(this.cmbHuerta);
             this.groupControl1.Controls.Add(this.btnPerfil);
             this.groupControl1.Controls.Add(this.labelActivo);
             this.groupControl1.Controls.Add(this.textConfirmaContra);
@@ -350,13 +363,50 @@
             this.groupControl1.Controls.Add(this.labelControl3);
             this.groupControl1.Controls.Add(this.labelControl2);
             this.groupControl1.Controls.Add(this.labelControl1);
-            this.groupControl1.Controls.Add(this.gridLookUpEdit1);
+            this.groupControl1.Controls.Add(this.cmbPerfil);
             this.groupControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupControl1.Location = new System.Drawing.Point(12, 12);
             this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(511, 167);
+            this.groupControl1.Size = new System.Drawing.Size(577, 192);
             this.groupControl1.TabIndex = 0;
             this.groupControl1.Text = "Perfil - Pantalla";
+            // 
+            // btnHuerta
+            // 
+            this.btnHuerta.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnHuerta.ImageOptions.Image")));
+            this.btnHuerta.Location = new System.Drawing.Point(362, 160);
+            this.btnHuerta.Name = "btnHuerta";
+            this.btnHuerta.Size = new System.Drawing.Size(24, 23);
+            this.btnHuerta.TabIndex = 32;
+            this.btnHuerta.Click += new System.EventHandler(this.btnHuerta_Click);
+            // 
+            // labelControl6
+            // 
+            this.labelControl6.Location = new System.Drawing.Point(18, 167);
+            this.labelControl6.Name = "labelControl6";
+            this.labelControl6.Size = new System.Drawing.Size(37, 13);
+            this.labelControl6.TabIndex = 31;
+            this.labelControl6.Text = "Huerta:";
+            // 
+            // cmbHuerta
+            // 
+            this.cmbHuerta.EditValue = "-Seleccionar-";
+            this.cmbHuerta.Location = new System.Drawing.Point(137, 161);
+            this.cmbHuerta.MenuManager = this.barManager1;
+            this.cmbHuerta.Name = "cmbHuerta";
+            this.cmbHuerta.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.cmbHuerta.Properties.NullText = "-Seleccionar-";
+            this.cmbHuerta.Properties.PopupView = this.gridView2;
+            this.cmbHuerta.Size = new System.Drawing.Size(219, 20);
+            this.cmbHuerta.TabIndex = 30;
+            // 
+            // gridView2
+            // 
+            this.gridView2.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
+            this.gridView2.Name = "gridView2";
+            this.gridView2.OptionsSelection.EnableAppearanceFocusedCell = false;
+            this.gridView2.OptionsView.ShowGroupPanel = false;
             // 
             // btnPerfil
             // 
@@ -453,18 +503,18 @@
             this.labelControl1.TabIndex = 2;
             this.labelControl1.Text = "Perfil:";
             // 
-            // gridLookUpEdit1
+            // cmbPerfil
             // 
-            this.gridLookUpEdit1.EditValue = "-Seleccionar-";
-            this.gridLookUpEdit1.Location = new System.Drawing.Point(137, 135);
-            this.gridLookUpEdit1.MenuManager = this.barManager1;
-            this.gridLookUpEdit1.Name = "gridLookUpEdit1";
-            this.gridLookUpEdit1.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            this.cmbPerfil.EditValue = "-Seleccionar-";
+            this.cmbPerfil.Location = new System.Drawing.Point(137, 135);
+            this.cmbPerfil.MenuManager = this.barManager1;
+            this.cmbPerfil.Name = "cmbPerfil";
+            this.cmbPerfil.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.gridLookUpEdit1.Properties.NullText = "-Seleccionar-";
-            this.gridLookUpEdit1.Properties.PopupView = this.gridLookUpEdit1View;
-            this.gridLookUpEdit1.Size = new System.Drawing.Size(219, 20);
-            this.gridLookUpEdit1.TabIndex = 0;
+            this.cmbPerfil.Properties.NullText = "-Seleccionar-";
+            this.cmbPerfil.Properties.PopupView = this.gridLookUpEdit1View;
+            this.cmbPerfil.Size = new System.Drawing.Size(219, 20);
+            this.cmbPerfil.TabIndex = 0;
             // 
             // gridLookUpEdit1View
             // 
@@ -473,11 +523,25 @@
             this.gridLookUpEdit1View.OptionsSelection.EnableAppearanceFocusedCell = false;
             this.gridLookUpEdit1View.OptionsView.ShowGroupPanel = false;
             // 
+            // gridColumn1
+            // 
+            this.gridColumn1.Caption = "Id Huerta";
+            this.gridColumn1.FieldName = "Id_Huerta";
+            this.gridColumn1.Name = "gridColumn1";
+            // 
+            // gridColumn2
+            // 
+            this.gridColumn2.Caption = "Huerta";
+            this.gridColumn2.FieldName = "Nombre_Huerta";
+            this.gridColumn2.Name = "gridColumn2";
+            this.gridColumn2.Visible = true;
+            this.gridColumn2.VisibleIndex = 4;
+            // 
             // Frm_Usuarios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(592, 486);
+            this.ClientSize = new System.Drawing.Size(660, 486);
             this.Controls.Add(this.panelControl2);
             this.Controls.Add(this.panelControl1);
             this.Controls.Add(this.barDockControlLeft);
@@ -500,11 +564,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
             this.groupControl1.ResumeLayout(false);
             this.groupControl1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.cmbHuerta.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textConfirmaContra.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textContrasena.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textNombre.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textUsuario.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit1.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cmbPerfil.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit1View)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.behaviorManager1)).EndInit();
             this.ResumeLayout(false);
@@ -544,7 +610,7 @@
         private DevExpress.XtraEditors.LabelControl labelControl3;
         private DevExpress.XtraEditors.LabelControl labelControl2;
         private DevExpress.XtraEditors.LabelControl labelControl1;
-        private DevExpress.XtraEditors.GridLookUpEdit gridLookUpEdit1;
+        private DevExpress.XtraEditors.GridLookUpEdit cmbPerfil;
         private DevExpress.XtraGrid.Views.Grid.GridView gridLookUpEdit1View;
         private DevExpress.XtraGrid.Columns.GridColumn Id_Perfil;
         private DevExpress.XtraGrid.Columns.GridColumn Nombre_Perfil;
@@ -553,5 +619,11 @@
         private DevExpress.XtraEditors.LabelControl labelActivo;
         private DevExpress.XtraEditors.Repository.RepositoryItemTextEdit repositoryItemTextEdit2;
         private DevExpress.XtraEditors.SimpleButton btnPerfil;
+        private DevExpress.XtraEditors.SimpleButton btnHuerta;
+        private DevExpress.XtraEditors.LabelControl labelControl6;
+        private DevExpress.XtraEditors.GridLookUpEdit cmbHuerta;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridView2;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn1;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn2;
     }
 }

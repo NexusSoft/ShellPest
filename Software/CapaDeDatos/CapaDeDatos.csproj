@@ -53,6 +53,9 @@
     <Compile Include="Formularios\CLS_Bloque.cs" />
     <Compile Include="Formularios\CLS_Calidades.cs" />
     <Compile Include="Formularios\CLS_Ciudades.cs" />
+    <Compile Include="Formularios\CLS_Monitoreo.cs" />
+    <Compile Include="Formularios\CLS_Individuo.cs" />
+    <Compile Include="Formularios\CLS_Zona.cs" />
     <Compile Include="Formularios\CLS_Cultivo.cs" />
     <Compile Include="Formularios\CLS_Deteccion.cs" />
     <Compile Include="Formularios\CLS_Duenio.cs" />
@@ -72,6 +75,9 @@
     <Compile Include="Seguridad\CLS_Usuarios.cs" />
     <Compile Include="Seguridad\SEG_Login.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="WebService\WS_Catalogos_Individuo.cs" />
+    <Compile Include="WebService\WS_Catalogos_Monitoreo.cs" />
+    <Compile Include="WebService\WS_Catalogos_Zona.cs" />
     <Compile Include="WebService\WS_Catalogos_PuntoControl.cs" />
     <Compile Include="WebService\WS_Catalogos_Productor.cs" />
     <Compile Include="WebService\WS_Catalogos_Plagas.cs" />

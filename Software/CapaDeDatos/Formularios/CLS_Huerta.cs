@@ -12,7 +12,7 @@ namespace CapaDeDatos
         public string Id_Huerta { get; set; }
         public string Nombre_Huerta { get; set; }
         public string Registro_Huerta { get; set; }
-        public string Id_Duenio { get; set; }
+        public string Id_Productor { get; set; }
         public string Id_Estado { get; set; }
         public string Id_Ciudad { get; set; }
         public string Id_Calidad { get; set; }
@@ -26,7 +26,7 @@ namespace CapaDeDatos
         public decimal longitud_Huerta { get; set; }
         public string Activo { get; set; }
         public string Id_Usuario { get; set; }
-
+        public string Id_zona { get; set; }
 
         public void MtdSeleccionarHuerta()
         {
@@ -73,8 +73,8 @@ namespace CapaDeDatos
                 _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Nombre_Huerta");
                 _dato.CadenaTexto = Registro_Huerta;
                 _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Registro_Huerta");
-                _dato.CadenaTexto = Id_Duenio;
-                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Id_Duenio");
+                _dato.CadenaTexto = Id_Productor;
+                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Id_Productor");
                 _dato.CadenaTexto = Id_Estado;
                 _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Id_Estado");
                 _dato.CadenaTexto = Id_Ciudad;
@@ -83,6 +83,8 @@ namespace CapaDeDatos
                 _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Id_Calidad");
                 _dato.CadenaTexto = Id_Cultivo;
                 _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Id_Cultivo");
+                _dato.CadenaTexto = Id_zona;
+                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Id_zona");
                 _dato.DecimalValor = zona_Huerta;
                 _conexion.agregarParametro(EnumTipoDato.Tipodecimal, _dato, "zona_Huerta");
                 _dato.CadenaTexto = banda_Huerta;

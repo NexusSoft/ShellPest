@@ -173,8 +173,6 @@ namespace ShellPest
         {
             if (TieneAcceso("009"))
             {
-                
-
                 Frm_PuntoControl Ventana = new Frm_PuntoControl();
                 Frm_PuntoControl.DefInstance.MdiParent = this;
                 Frm_PuntoControl.DefInstance.Id_Usuario = UsuariosLogin;
@@ -314,6 +312,49 @@ namespace ShellPest
             Frm_Riego Ventana = new Frm_Riego();
             Ventana.Id_Usuario = UsuariosLogin;
             Ventana.ShowDialog();
+        }
+
+        private void btnMonitoreo_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            if (TieneAcceso("020"))
+            {
+                Frm_Monitoreo Ventana = new Frm_Monitoreo();
+                Frm_Monitoreo.DefInstance.MdiParent = this;
+                Frm_Monitoreo.DefInstance.Id_Usuario = UsuariosLogin;
+                Frm_Monitoreo.DefInstance.Show();
+            }
+            else
+            {
+                XtraMessageBox.Show("No Cuentas con acceso a esta Opcion [020]");
+            }
+        }
+
+        private void btnIndividuos_CheckedChanged(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            if (TieneAcceso("021"))
+            {
+                Frm_Individuos Ventana = new Frm_Individuos();
+                Ventana.Id_Usuario = UsuariosLogin;
+                Ventana.ShowDialog();
+            }
+            else
+            {
+                XtraMessageBox.Show("No Cuentas con acceso a esta Opcion [021]");
+            }
+        }
+
+        private void btnZonasClima_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            if (TieneAcceso("019"))
+            {
+                Frm_Zona Ventana = new Frm_Zona();
+                Ventana.Id_Usuario = UsuariosLogin;
+                Ventana.ShowDialog();
+            }
+            else
+            {
+                XtraMessageBox.Show("No Cuentas con acceso a esta Opcion [019]");
+            }
         }
     }
 }

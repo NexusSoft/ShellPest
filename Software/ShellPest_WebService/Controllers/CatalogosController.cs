@@ -3,21 +3,6 @@ using System.Collections.Generic;
 using CapaDeDatos;
 using System.Web.Mvc;
 using System.Data;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.Data;
-using System.IO;
-using System.Linq;
-using System.Net;
-using System.Net.Http;
-using System.Net.Http.Headers;
-using System.Security.Cryptography;
-using System.Text;
-using System.Web;
-using System.Web.Mvc;
-using System.ServiceModel;
-using CapaDeDatos;
 
 
 
@@ -92,6 +77,24 @@ namespace ShellPest_WebService
             sel.Fecha = Fecha;
 
             sel.MtdSeleccionarCultivo();
+            if (sel.Exito)
+            {
+                GetJson(sel.Datos);
+                return Json(rows, JsonRequestBehavior.AllowGet);
+            }
+            else
+            {
+                return Json(cadena, JsonRequestBehavior.AllowGet);
+            }
+        }
+        [System.Web.Mvc.HttpGet]
+        public ActionResult Zona(string Fecha)
+        {
+            string cadena = string.Empty;
+            WS_Catalogos_Zona sel = new WS_Catalogos_Zona();
+            sel.Fecha = Fecha;
+
+            sel.MtdSeleccionarZona();
             if (sel.Exito)
             {
                 GetJson(sel.Datos);
@@ -281,7 +284,43 @@ namespace ShellPest_WebService
                 return Json(cadena, JsonRequestBehavior.AllowGet);
             }
         }
-       
+        [System.Web.Mvc.HttpGet]
+        public ActionResult Individuo(string Fecha)
+        {
+            string cadena = string.Empty;
+            WS_Catalogos_Individuo sel = new WS_Catalogos_Individuo();
+            sel.Fecha = Fecha;
+
+            sel.MtdSeleccionarIndividuo();
+            if (sel.Exito)
+            {
+                GetJson(sel.Datos);
+                return Json(rows, JsonRequestBehavior.AllowGet);
+            }
+            else
+            {
+                return Json(cadena, JsonRequestBehavior.AllowGet);
+            }
+        }
+        [System.Web.Mvc.HttpGet]
+        public ActionResult Monitoreo(string Fecha)
+        {
+            string cadena = string.Empty;
+            WS_Catalogos_Monitoreo sel = new WS_Catalogos_Monitoreo();
+            sel.Fecha = Fecha;
+
+            sel.MtdSeleccionarMonitoreo();
+            if (sel.Exito)
+            {
+                GetJson(sel.Datos);
+                return Json(rows, JsonRequestBehavior.AllowGet);
+            }
+            else
+            {
+                return Json(cadena, JsonRequestBehavior.AllowGet);
+            }
+        }
+
         public void GetJson(DataTable dt)
         {
             Dictionary<string, object> row;
@@ -291,7 +330,7 @@ namespace ShellPest_WebService
                 row = new Dictionary<string, object>();
                 foreach (DataColumn col in dt.Columns)
                 {
-                    row.Add(col.ColumnName, dr[col].ToString());
+                    row.Add(col.ColumnName, Convert.ToString(dr[col].ToString()));
                 }
                 rows.Add(row);
             }

@@ -63,10 +63,23 @@ namespace ShellPest
             Clase.MtdSeleccionarPerfiles();
             if (Clase.Exito)
             {
-                gridLookUpEdit1.Properties.DisplayMember = "Nombre_Perfil";
-                gridLookUpEdit1.Properties.ValueMember = "Id_Perfil";
-                gridLookUpEdit1.EditValue = Valor;
-                gridLookUpEdit1.Properties.DataSource = Clase.Datos;
+                cmbPerfil.Properties.DisplayMember = "Nombre_Perfil";
+                cmbPerfil.Properties.ValueMember = "Id_Perfil";
+                cmbPerfil.EditValue = Valor;
+                cmbPerfil.Properties.DataSource = Clase.Datos;
+            }
+        }
+        private void CargarHuerta(string Valor)
+        {
+            CLS_Huerta Clase = new CLS_Huerta();
+
+            Clase.MtdSeleccionarHuerta();
+            if (Clase.Exito)
+            {
+                cmbPerfil.Properties.DisplayMember = "Nombre_Huerta";
+                cmbPerfil.Properties.ValueMember = "Id_Huerta";
+                cmbPerfil.EditValue = Valor;
+                cmbPerfil.Properties.DataSource = Clase.Datos;
             }
         }
         private void InsertarUsuarios()
@@ -76,7 +89,8 @@ namespace ShellPest
             Clase.Id_Usuario = textUsuario.Text.Trim();
             Clase.Nombre_Usuario =textNombre.Text.Trim();
             Clase.Contrasena =encryp.Encriptar(textContrasena.Text.Trim());
-            Clase.Id_Perfil = gridLookUpEdit1.EditValue.ToString();
+            Clase.Id_Perfil = cmbPerfil.EditValue.ToString();
+            Clase.Id_Huerta = cmbHuerta.EditValue.ToString();
             Clase.Id_Usuario_Crea = UsuariosLogin;
             Clase.MtdInsertarUsuarios();
             if (Clase.Exito)
@@ -116,7 +130,7 @@ namespace ShellPest
             textNombre.Text = "";
             textContrasena.Text = "";
             textConfirmaContra.Text = "";
-            gridLookUpEdit1.EditValue = null;
+            cmbPerfil.EditValue = null;
             labelActivo.Visible = false;
             inabilitar(true);
         }
@@ -146,7 +160,8 @@ namespace ShellPest
                     textNombre.Text = row["Nombre_Usuario"].ToString();
                     textContrasena.Text =desencryp.Desencriptar(row["Contrasena"].ToString());
                     textConfirmaContra.Text= desencryp.Desencriptar(row["Contrasena"].ToString());
-                    gridLookUpEdit1.EditValue = row["Id_Perfil"].ToString();
+                    cmbPerfil.EditValue = row["Id_Perfil"].ToString();
+                    cmbHuerta.EditValue = row["Id_Huerta"].ToString();
 
                     labelActivo.Visible = true;
 
@@ -225,6 +240,14 @@ namespace ShellPest
             frm.PaSel = true;
             frm.ShowDialog();
             CargarPerfiles(null);
+        }
+
+        private void btnHuerta_Click(object sender, EventArgs e)
+        {
+            Frm_Huertas frm = new Frm_Huertas();
+            frm.PaSel = true;
+            frm.ShowDialog();
+            CargarHuerta(null);
         }
     }
 }

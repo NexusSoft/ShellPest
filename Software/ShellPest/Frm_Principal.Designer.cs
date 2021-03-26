@@ -49,6 +49,9 @@
             this.btnCiudad = new DevExpress.XtraBars.BarButtonItem();
             this.btnProductor = new DevExpress.XtraBars.BarButtonItem();
             this.btnCalidades = new DevExpress.XtraBars.BarButtonItem();
+            this.btnRiego = new DevExpress.XtraBars.BarButtonItem();
+            this.btnMonitoreo = new DevExpress.XtraBars.BarButtonItem();
+            this.btnIndividuos = new DevExpress.XtraBars.BarCheckItem();
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup5 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -57,13 +60,13 @@
             this.ribbonPageGroup4 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPage3 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup3 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.ribbonPage5 = new DevExpress.XtraBars.Ribbon.RibbonPage();
+            this.ribbonPageGroup6 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonStatusBar1 = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
             this.ribbonPage2 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.xtraTabbedMdiManager1 = new DevExpress.XtraTabbedMdi.XtraTabbedMdiManager(this.components);
             this.SkinForm = new DevExpress.LookAndFeel.DefaultLookAndFeel(this.components);
-            this.ribbonPage5 = new DevExpress.XtraBars.Ribbon.RibbonPage();
-            this.ribbonPageGroup6 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.btnRiego = new DevExpress.XtraBars.BarButtonItem();
+            this.btnZonasClima = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabbedMdiManager1)).BeginInit();
             this.SuspendLayout();
@@ -91,9 +94,12 @@
             this.btnCiudad,
             this.btnProductor,
             this.btnCalidades,
-            this.btnRiego});
+            this.btnRiego,
+            this.btnMonitoreo,
+            this.btnIndividuos,
+            this.btnZonasClima});
             this.ribbonControl1.Location = new System.Drawing.Point(0, 0);
-            this.ribbonControl1.MaxItemId = 20;
+            this.ribbonControl1.MaxItemId = 23;
             this.ribbonControl1.Name = "ribbonControl1";
             this.ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage1,
@@ -249,6 +255,7 @@
             // 
             this.btnProductor.Caption = "Productor";
             this.btnProductor.Id = 17;
+            this.btnProductor.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnProductor.ImageOptions.Image")));
             this.btnProductor.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnProductor.ImageOptions.LargeImage")));
             this.btnProductor.Name = "btnProductor";
             this.btnProductor.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnProductor_ItemClick);
@@ -261,6 +268,33 @@
             this.btnCalidades.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnCalidades.ImageOptions.LargeImage")));
             this.btnCalidades.Name = "btnCalidades";
             this.btnCalidades.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnCalidades_ItemClick);
+            // 
+            // btnRiego
+            // 
+            this.btnRiego.Caption = "Riego";
+            this.btnRiego.Id = 19;
+            this.btnRiego.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnRiego.ImageOptions.Image")));
+            this.btnRiego.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnRiego.ImageOptions.LargeImage")));
+            this.btnRiego.Name = "btnRiego";
+            this.btnRiego.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnRiego_ItemClick);
+            // 
+            // btnMonitoreo
+            // 
+            this.btnMonitoreo.Caption = "Monitoreo";
+            this.btnMonitoreo.Id = 20;
+            this.btnMonitoreo.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnMonitoreo.ImageOptions.Image")));
+            this.btnMonitoreo.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnMonitoreo.ImageOptions.LargeImage")));
+            this.btnMonitoreo.Name = "btnMonitoreo";
+            this.btnMonitoreo.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnMonitoreo_ItemClick);
+            // 
+            // btnIndividuos
+            // 
+            this.btnIndividuos.Caption = "Individuos";
+            this.btnIndividuos.Id = 21;
+            this.btnIndividuos.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnIndividuos.ImageOptions.Image")));
+            this.btnIndividuos.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnIndividuos.ImageOptions.LargeImage")));
+            this.btnIndividuos.Name = "btnIndividuos";
+            this.btnIndividuos.CheckedChanged += new DevExpress.XtraBars.ItemClickEventHandler(this.btnIndividuos_CheckedChanged);
             // 
             // ribbonPage1
             // 
@@ -280,6 +314,7 @@
             this.ribbonPageGroup5.ItemLinks.Add(this.btnPuntoControl);
             this.ribbonPageGroup5.ItemLinks.Add(this.btnCultivo);
             this.ribbonPageGroup5.ItemLinks.Add(this.btnCalidades);
+            this.ribbonPageGroup5.ItemLinks.Add(this.btnZonasClima);
             this.ribbonPageGroup5.Name = "ribbonPageGroup5";
             this.ribbonPageGroup5.Text = "Catalogos de Ubicacion";
             // 
@@ -290,6 +325,8 @@
             this.ribbonPageGroup1.ItemLinks.Add(this.btnNivelPresencia);
             this.ribbonPageGroup1.ItemLinks.Add(this.btnDeteccion);
             this.ribbonPageGroup1.ItemLinks.Add(this.btnEnfermedad);
+            this.ribbonPageGroup1.ItemLinks.Add(this.btnIndividuos);
+            this.ribbonPageGroup1.ItemLinks.Add(this.btnMonitoreo);
             this.ribbonPageGroup1.Name = "ribbonPageGroup1";
             this.ribbonPageGroup1.ShowCaptionButton = false;
             this.ribbonPageGroup1.Text = "Catalogos de Deteccion";
@@ -335,6 +372,19 @@
             this.ribbonPageGroup3.ShowCaptionButton = false;
             this.ribbonPageGroup3.Text = "Asignacion de Permisos";
             // 
+            // ribbonPage5
+            // 
+            this.ribbonPage5.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
+            this.ribbonPageGroup6});
+            this.ribbonPage5.Name = "ribbonPage5";
+            this.ribbonPage5.Text = "Capturas";
+            // 
+            // ribbonPageGroup6
+            // 
+            this.ribbonPageGroup6.ItemLinks.Add(this.btnRiego);
+            this.ribbonPageGroup6.Name = "ribbonPageGroup6";
+            this.ribbonPageGroup6.Text = "ribbonPageGroup6";
+            // 
             // ribbonStatusBar1
             // 
             this.ribbonStatusBar1.ItemLinks.Add(this.skinRibbonGalleryBarItem1);
@@ -357,27 +407,14 @@
             this.SkinForm.EnableBonusSkins = true;
             this.SkinForm.LookAndFeel.SkinName = "Office 2010 Silver";
             // 
-            // ribbonPage5
+            // btnZonasClima
             // 
-            this.ribbonPage5.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
-            this.ribbonPageGroup6});
-            this.ribbonPage5.Name = "ribbonPage5";
-            this.ribbonPage5.Text = "Capturas";
-            // 
-            // ribbonPageGroup6
-            // 
-            this.ribbonPageGroup6.ItemLinks.Add(this.btnRiego);
-            this.ribbonPageGroup6.Name = "ribbonPageGroup6";
-            this.ribbonPageGroup6.Text = "ribbonPageGroup6";
-            // 
-            // btnRiego
-            // 
-            this.btnRiego.Caption = "Riego";
-            this.btnRiego.Id = 19;
-            this.btnRiego.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.Image")));
-            this.btnRiego.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.LargeImage")));
-            this.btnRiego.Name = "btnRiego";
-            this.btnRiego.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnRiego_ItemClick);
+            this.btnZonasClima.Caption = "Zonas Clima";
+            this.btnZonasClima.Id = 22;
+            this.btnZonasClima.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.Image")));
+            this.btnZonasClima.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.LargeImage")));
+            this.btnZonasClima.Name = "btnZonasClima";
+            this.btnZonasClima.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnZonasClima_ItemClick);
             // 
             // Frm_Principal
             // 
@@ -437,6 +474,9 @@
         private DevExpress.XtraBars.BarButtonItem btnRiego;
         private DevExpress.XtraBars.Ribbon.RibbonPage ribbonPage5;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup6;
+        private DevExpress.XtraBars.BarButtonItem btnMonitoreo;
+        private DevExpress.XtraBars.BarCheckItem btnIndividuos;
+        private DevExpress.XtraBars.BarButtonItem btnZonasClima;
     }
 }
 

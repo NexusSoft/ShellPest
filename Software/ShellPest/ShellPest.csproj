@@ -82,6 +82,24 @@
     <Compile Include="Catalogos\Frm_Ciudad.designer.cs">
       <DependentUpon>Frm_Ciudad.cs</DependentUpon>
     </Compile>
+    <Compile Include="Catalogos\Frm_Individuos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Catalogos\Frm_Individuos.designer.cs">
+      <DependentUpon>Frm_Individuos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Catalogos\Frm_Monitoreo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Catalogos\Frm_Monitoreo.Designer.cs">
+      <DependentUpon>Frm_Monitoreo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Catalogos\Frm_Zona.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Catalogos\Frm_Zona.designer.cs">
+      <DependentUpon>Frm_Zona.cs</DependentUpon>
+    </Compile>
     <Compile Include="Catalogos\Frm_Cultivo.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -165,12 +183,6 @@
     <Compile Include="Conexion\Frm_InstanciaSQL.designer.cs">
       <DependentUpon>Frm_InstanciaSQL.cs</DependentUpon>
     </Compile>
-    <Compile Include="Formularios\Frm_Riego.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Formularios\Frm_Riego.Designer.cs">
-      <DependentUpon>Frm_Riego.cs</DependentUpon>
-    </Compile>
     <Compile Include="Frm_Principal.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -218,6 +230,15 @@
     <EmbeddedResource Include="Catalogos\Frm_Ciudad.resx">
       <DependentUpon>Frm_Ciudad.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Catalogos\Frm_Individuos.resx">
+      <DependentUpon>Frm_Individuos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Catalogos\Frm_Monitoreo.resx">
+      <DependentUpon>Frm_Monitoreo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Catalogos\Frm_Zona.resx">
+      <DependentUpon>Frm_Zona.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Catalogos\Frm_Cultivo.resx">
       <DependentUpon>Frm_Cultivo.cs</DependentUpon>
     </EmbeddedResource>
@@ -256,9 +277,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Conexion\Frm_InstanciaSQL.resx">
       <DependentUpon>Frm_InstanciaSQL.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Formularios\Frm_Riego.resx">
-      <DependentUpon>Frm_Riego.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Frm_Principal.resx">
       <DependentUpon>Frm_Principal.cs</DependentUpon>
@@ -300,7 +318,9 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Formularios\" />
+  </ItemGroup>
   <ItemGroup>
     <None Include="Resources\editwrappoints_32x32.png" />
   </ItemGroup>

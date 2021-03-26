@@ -6,14 +6,14 @@ using System.Threading.Tasks;
 
 namespace CapaDeDatos
 {
-    public class CLS_Cultivo : ConexionBase
+    public class CLS_Individuo : ConexionBase
     {
 
-        public string Id_Cultivo { get; set; }
-        public string Nombre_Cultivo { get; set; }
+        public string Id_Individuo { get; set; }
+        public string No_Individuo { get; set; }
         public string Id_Usuario { get; set; }
 
-        public void MtdSeleccionarCultivo()
+        public void MtdSeleccionarIndividuo()
         {
             TipoDato _dato = new TipoDato();
             Conexion _conexion = new Conexion(cadenaConexion);
@@ -21,8 +21,10 @@ namespace CapaDeDatos
             Exito = true;
             try
             {
-                _conexion.NombreProcedimiento = "SP_Cultivo_Select";
+                _conexion.NombreProcedimiento = "SP_Individuo_Select";
+
                 _conexion.EjecutarDataset();
+
                 if (_conexion.Exito)
                 {
                     Datos = _conexion.Datos;
@@ -40,7 +42,10 @@ namespace CapaDeDatos
             }
 
         }
-        public void MtdInsertarCultivo()
+
+
+
+        public void MtdInsertarIndividuo()
         {
             TipoDato _dato = new TipoDato();
             Conexion _conexion = new Conexion(cadenaConexion);
@@ -48,11 +53,11 @@ namespace CapaDeDatos
             Exito = true;
             try
             {
-                _conexion.NombreProcedimiento = "SP_Cultivo_Insert";
-                _dato.CadenaTexto = Id_Cultivo;
-                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Id_Cultivo");
-                _dato.CadenaTexto = Nombre_Cultivo;
-                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Nombre_Cultivo");
+                _conexion.NombreProcedimiento = "SP_Individuo_Insert";
+                _dato.CadenaTexto = Id_Individuo;
+                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Id_Individuo");
+                _dato.CadenaTexto = No_Individuo;
+                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "No_Individuo");
                 _dato.CadenaTexto = Id_Usuario;
                 _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Id_Usuario");
                 _conexion.EjecutarDataset();
@@ -73,7 +78,8 @@ namespace CapaDeDatos
                 Exito = false;
             }
         }
-        public void MtdEliminarCultivo()
+
+        public void MtdEliminarIndividuo()
         {
             TipoDato _dato = new TipoDato();
             Conexion _conexion = new Conexion(cadenaConexion);
@@ -81,9 +87,9 @@ namespace CapaDeDatos
             Exito = true;
             try
             {
-                _conexion.NombreProcedimiento = "SP_Cultivo_Delete";
-                _dato.CadenaTexto = Id_Cultivo;
-                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Id_Cultivo");
+                _conexion.NombreProcedimiento = "SP_Individuo_Delete";
+                _dato.CadenaTexto = Id_Individuo;
+                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Id_Individuo");
                 _conexion.EjecutarDataset();
 
                 if (_conexion.Exito)
