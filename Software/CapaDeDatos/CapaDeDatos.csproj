@@ -54,6 +54,7 @@
     <Compile Include="Formularios\CLS_Bloque.cs" />
     <Compile Include="Formularios\CLS_Calidades.cs" />
     <Compile Include="Formularios\CLS_Ciudades.cs" />
+    <Compile Include="Formularios\CLS_Tratamiento.cs" />
     <Compile Include="Formularios\CLS_Monitoreo.cs" />
     <Compile Include="Formularios\CLS_Individuo.cs" />
     <Compile Include="Formularios\CLS_Zona.cs" />

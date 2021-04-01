@@ -198,9 +198,9 @@
             // 
             this.barDockControlBottom.CausesValidation = false;
             this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.barDockControlBottom.Location = new System.Drawing.Point(0, 391);
+            this.barDockControlBottom.Location = new System.Drawing.Point(0, 393);
             this.barDockControlBottom.Manager = this.barManager1;
-            this.barDockControlBottom.Size = new System.Drawing.Size(687, 27);
+            this.barDockControlBottom.Size = new System.Drawing.Size(687, 25);
             // 
             // barDockControlLeft
             // 
@@ -208,7 +208,7 @@
             this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
             this.barDockControlLeft.Location = new System.Drawing.Point(0, 0);
             this.barDockControlLeft.Manager = this.barManager1;
-            this.barDockControlLeft.Size = new System.Drawing.Size(69, 391);
+            this.barDockControlLeft.Size = new System.Drawing.Size(71, 393);
             // 
             // barDockControlRight
             // 
@@ -216,7 +216,7 @@
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
             this.barDockControlRight.Location = new System.Drawing.Point(687, 0);
             this.barDockControlRight.Manager = this.barManager1;
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 391);
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 393);
             // 
             // repositoryItemTextEdit1
             // 
@@ -226,10 +226,10 @@
             // 
             this.panelControl2.Controls.Add(this.dtgPlaga);
             this.panelControl2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelControl2.Location = new System.Drawing.Point(69, 106);
+            this.panelControl2.Location = new System.Drawing.Point(71, 106);
             this.panelControl2.Name = "panelControl2";
             this.panelControl2.Padding = new System.Windows.Forms.Padding(10);
-            this.panelControl2.Size = new System.Drawing.Size(618, 285);
+            this.panelControl2.Size = new System.Drawing.Size(616, 287);
             this.panelControl2.TabIndex = 15;
             // 
             // dtgPlaga
@@ -239,7 +239,7 @@
             this.dtgPlaga.MainView = this.dtgValPlaga;
             this.dtgPlaga.MenuManager = this.barManager1;
             this.dtgPlaga.Name = "dtgPlaga";
-            this.dtgPlaga.Size = new System.Drawing.Size(594, 261);
+            this.dtgPlaga.Size = new System.Drawing.Size(592, 263);
             this.dtgPlaga.TabIndex = 0;
             this.dtgPlaga.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.dtgValPlaga});
@@ -256,7 +256,10 @@
             this.Modificador});
             this.dtgValPlaga.GridControl = this.dtgPlaga;
             this.dtgValPlaga.Name = "dtgValPlaga";
+            this.dtgValPlaga.OptionsFind.AlwaysVisible = true;
             this.dtgValPlaga.OptionsView.ShowGroupPanel = false;
+            this.dtgValPlaga.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
+            this.dtgValPlaga.OptionsSelection.EnableAppearanceFocusedCell = false;
             // 
             // Id_Plagas
             // 
@@ -280,41 +283,33 @@
             this.Id_Usuario_Crea.Caption = "Id Creador";
             this.Id_Usuario_Crea.FieldName = "Id_Usuario_Crea";
             this.Id_Usuario_Crea.Name = "Id_Usuario_Crea";
-            this.Id_Usuario_Crea.Visible = true;
-            this.Id_Usuario_Crea.VisibleIndex = 2;
             // 
             // Creador
             // 
             this.Creador.Caption = "Creador";
             this.Creador.FieldName = "Creador";
             this.Creador.Name = "Creador";
-            this.Creador.Visible = true;
-            this.Creador.VisibleIndex = 3;
             // 
             // Id_Usuario_Mod
             // 
             this.Id_Usuario_Mod.Caption = "Id Modificador";
             this.Id_Usuario_Mod.FieldName = "Id_Usuario_Mod";
             this.Id_Usuario_Mod.Name = "Id_Usuario_Mod";
-            this.Id_Usuario_Mod.Visible = true;
-            this.Id_Usuario_Mod.VisibleIndex = 4;
             // 
             // Modificador
             // 
             this.Modificador.Caption = "Modificador";
             this.Modificador.FieldName = "Modificador";
             this.Modificador.Name = "Modificador";
-            this.Modificador.Visible = true;
-            this.Modificador.VisibleIndex = 5;
             // 
             // panelControl1
             // 
             this.panelControl1.Controls.Add(this.groupControl1);
             this.panelControl1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelControl1.Location = new System.Drawing.Point(69, 0);
+            this.panelControl1.Location = new System.Drawing.Point(71, 0);
             this.panelControl1.Name = "panelControl1";
             this.panelControl1.Padding = new System.Windows.Forms.Padding(10);
-            this.panelControl1.Size = new System.Drawing.Size(618, 106);
+            this.panelControl1.Size = new System.Drawing.Size(616, 106);
             this.panelControl1.TabIndex = 14;
             // 
             // groupControl1
@@ -326,7 +321,7 @@
             this.groupControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupControl1.Location = new System.Drawing.Point(12, 12);
             this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(594, 82);
+            this.groupControl1.Size = new System.Drawing.Size(592, 82);
             this.groupControl1.TabIndex = 0;
             this.groupControl1.Text = "Plaga";
             // 

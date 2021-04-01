@@ -57,13 +57,16 @@
             this.Modificador = new DevExpress.XtraGrid.Columns.GridColumn();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
-            this.btnHuerta = new DevExpress.XtraEditors.SimpleButton();
-            this.txtHuerta = new DevExpress.XtraEditors.TextEdit();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.txtNombre = new DevExpress.XtraEditors.TextEdit();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.txtId = new DevExpress.XtraEditors.TextEdit();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
+            this.cboHuerta = new DevExpress.XtraEditors.GridLookUpEdit();
+            this.gridLookUpEdit1View = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.btnHuerta = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).BeginInit();
@@ -74,9 +77,10 @@
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.txtHuerta.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtNombre.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtId.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cboHuerta.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit1View)).BeginInit();
             this.SuspendLayout();
             // 
             // barManager1
@@ -262,9 +266,12 @@
             this.Creador,
             this.Id_Usuario_Mod,
             this.Modificador});
+            this.dtgValBloque.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
             this.dtgValBloque.GridControl = this.dtgBloque;
             this.dtgValBloque.Name = "dtgValBloque";
             this.dtgValBloque.OptionsBehavior.Editable = false;
+            this.dtgValBloque.OptionsFind.AlwaysVisible = true;
+            this.dtgValBloque.OptionsSelection.EnableAppearanceFocusedCell = false;
             this.dtgValBloque.OptionsView.ShowGroupPanel = false;
             // 
             // Id_Bloque
@@ -305,32 +312,24 @@
             this.Id_Usuario_Crea.Caption = "Id_Usuario_Crea";
             this.Id_Usuario_Crea.FieldName = "Id_Usuario_Crea";
             this.Id_Usuario_Crea.Name = "Id_Usuario_Crea";
-            this.Id_Usuario_Crea.Visible = true;
-            this.Id_Usuario_Crea.VisibleIndex = 7;
             // 
             // Creador
             // 
             this.Creador.Caption = "Creador";
             this.Creador.FieldName = "Creador";
             this.Creador.Name = "Creador";
-            this.Creador.Visible = true;
-            this.Creador.VisibleIndex = 4;
             // 
             // Id_Usuario_Mod
             // 
             this.Id_Usuario_Mod.Caption = "Id Modificador";
             this.Id_Usuario_Mod.FieldName = "Id_Usuario_Mod";
             this.Id_Usuario_Mod.Name = "Id_Usuario_Mod";
-            this.Id_Usuario_Mod.Visible = true;
-            this.Id_Usuario_Mod.VisibleIndex = 5;
             // 
             // Modificador
             // 
             this.Modificador.Caption = "Modificador";
             this.Modificador.FieldName = "Modificador";
             this.Modificador.Name = "Modificador";
-            this.Modificador.Visible = true;
-            this.Modificador.VisibleIndex = 6;
             // 
             // panelControl1
             // 
@@ -345,7 +344,7 @@
             // groupControl1
             // 
             this.groupControl1.Controls.Add(this.btnHuerta);
-            this.groupControl1.Controls.Add(this.txtHuerta);
+            this.groupControl1.Controls.Add(this.cboHuerta);
             this.groupControl1.Controls.Add(this.labelControl3);
             this.groupControl1.Controls.Add(this.txtNombre);
             this.groupControl1.Controls.Add(this.labelControl2);
@@ -358,24 +357,6 @@
             this.groupControl1.TabIndex = 0;
             this.groupControl1.Text = "Bloque";
             // 
-            // btnHuerta
-            // 
-            this.btnHuerta.Location = new System.Drawing.Point(64, 55);
-            this.btnHuerta.Name = "btnHuerta";
-            this.btnHuerta.Size = new System.Drawing.Size(24, 23);
-            this.btnHuerta.TabIndex = 6;
-            this.btnHuerta.Text = "...";
-            this.btnHuerta.Click += new System.EventHandler(this.btnHuerta_Click);
-            // 
-            // txtHuerta
-            // 
-            this.txtHuerta.Enabled = false;
-            this.txtHuerta.Location = new System.Drawing.Point(93, 57);
-            this.txtHuerta.MenuManager = this.barManager1;
-            this.txtHuerta.Name = "txtHuerta";
-            this.txtHuerta.Size = new System.Drawing.Size(201, 20);
-            this.txtHuerta.TabIndex = 5;
-            // 
             // labelControl3
             // 
             this.labelControl3.Location = new System.Drawing.Point(10, 60);
@@ -383,6 +364,7 @@
             this.labelControl3.Size = new System.Drawing.Size(37, 13);
             this.labelControl3.TabIndex = 4;
             this.labelControl3.Text = "Huerta:";
+            this.labelControl3.Click += new System.EventHandler(this.labelControl3_Click);
             // 
             // txtNombre
             // 
@@ -417,6 +399,55 @@
             this.labelControl1.TabIndex = 0;
             this.labelControl1.Text = "Id Bloque: ";
             // 
+            // cboHuerta
+            // 
+            this.cboHuerta.EditValue = "-Seleccionar-";
+            this.cboHuerta.Location = new System.Drawing.Point(63, 55);
+            this.cboHuerta.MenuManager = this.barManager1;
+            this.cboHuerta.Name = "cboHuerta";
+            this.cboHuerta.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.cboHuerta.Properties.NullText = "-Seleccionar-";
+            this.cboHuerta.Properties.PopupView = this.gridLookUpEdit1View;
+            this.cboHuerta.Size = new System.Drawing.Size(195, 20);
+            this.cboHuerta.TabIndex = 7;
+            this.cboHuerta.EditValueChanged += new System.EventHandler(this.cboHuerta_EditValueChanged);
+            // 
+            // gridLookUpEdit1View
+            // 
+            this.gridLookUpEdit1View.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.gridColumn1,
+            this.gridColumn2});
+            this.gridLookUpEdit1View.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
+            this.gridLookUpEdit1View.Name = "gridLookUpEdit1View";
+            this.gridLookUpEdit1View.OptionsSelection.EnableAppearanceFocusedCell = false;
+            this.gridLookUpEdit1View.OptionsView.ShowGroupPanel = false;
+            // 
+            // gridColumn1
+            // 
+            this.gridColumn1.Caption = "Id Huerta";
+            this.gridColumn1.FieldName = "Id_Huerta";
+            this.gridColumn1.Name = "gridColumn1";
+            this.gridColumn1.Visible = true;
+            this.gridColumn1.VisibleIndex = 0;
+            // 
+            // gridColumn2
+            // 
+            this.gridColumn2.Caption = "Nombre Huerta";
+            this.gridColumn2.FieldName = "Nombre_Huerta";
+            this.gridColumn2.Name = "gridColumn2";
+            this.gridColumn2.Visible = true;
+            this.gridColumn2.VisibleIndex = 1;
+            // 
+            // btnHuerta
+            // 
+            this.btnHuerta.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnzona.ImageOptions.Image")));
+            this.btnHuerta.Location = new System.Drawing.Point(270, 54);
+            this.btnHuerta.Name = "btnHuerta";
+            this.btnHuerta.Size = new System.Drawing.Size(24, 23);
+            this.btnHuerta.TabIndex = 31;
+            this.btnHuerta.Click += new System.EventHandler(this.btnHuerta_Click);
+            // 
             // Frm_Bloques
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -434,6 +465,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Bloques";
             this.Load += new System.EventHandler(this.Frm_Bloques_Load);
+            this.Shown += new System.EventHandler(this.Frm_Bloques_Shown);
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).EndInit();
@@ -445,9 +477,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
             this.groupControl1.ResumeLayout(false);
             this.groupControl1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.txtHuerta.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtNombre.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtId.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cboHuerta.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit1View)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -482,12 +515,15 @@
         private DevExpress.XtraGrid.Columns.GridColumn Modificador;
         private DevExpress.XtraEditors.PanelControl panelControl1;
         private DevExpress.XtraEditors.GroupControl groupControl1;
-        private DevExpress.XtraEditors.SimpleButton btnHuerta;
-        private DevExpress.XtraEditors.TextEdit txtHuerta;
         private DevExpress.XtraEditors.LabelControl labelControl3;
         private DevExpress.XtraEditors.TextEdit txtNombre;
         private DevExpress.XtraEditors.LabelControl labelControl2;
         private DevExpress.XtraEditors.TextEdit txtId;
         private DevExpress.XtraEditors.LabelControl labelControl1;
+        private DevExpress.XtraEditors.GridLookUpEdit cboHuerta;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridLookUpEdit1View;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn1;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn2;
+        private DevExpress.XtraEditors.SimpleButton btnHuerta;
     }
 }

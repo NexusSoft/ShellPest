@@ -59,7 +59,7 @@ namespace ShellPest
         {
             CLS_PuntoControl PuntoControl = new CLS_PuntoControl();
             PuntoControl.Id_PuntoControl = textId.Text.Trim();
-            PuntoControl.Id_Bloque = txtBloque.Tag.ToString();
+            PuntoControl.Id_Bloque = cboBloque.EditValue.ToString();
             PuntoControl.Nombre_PuntoControl = textNombre.Text.Trim();
             PuntoControl.n_coordenadaX = txtX.Text;
             PuntoControl.n_coordenadaY = txtY.Text;
@@ -97,6 +97,10 @@ namespace ShellPest
         {
             textId.Text = "";
             textNombre.Text = "";
+            CargarHuertas(null);
+            cboBloque.Properties.DataSource = null;
+            txtX.Text = string.Empty;
+            txtY.Text = string.Empty;
         }
 
         private void dtgPuntoControl_Click(object sender, EventArgs e)
@@ -108,8 +112,8 @@ namespace ShellPest
                     DataRow row = this.dtgValPuntoControl.GetDataRow(i);
                     textId.Text = row["Id_PuntoControl"].ToString();
                     textNombre.Text = row["Nombre_PuntoControl"].ToString();
-                    txtBloque.Tag = row["Id_Bloque"].ToString();
-                    txtBloque.Text = row["Nombre_Bloque"].ToString();
+                    CargarHuertas(row["Id_Huerta"].ToString());
+                    CargarBloques(row["Id_Huerta"].ToString(), row["Id_Bloque"].ToString());
                     txtX.Text = row["n_coordenadaX"].ToString();
                     txtY.Text = row["n_coordenadaY"].ToString();
                 }
@@ -180,8 +184,80 @@ namespace ShellPest
             Ventana.PaSel = true;
             Ventana.Id_Usuario = Id_Usuario;
             Ventana.ShowDialog();
-            txtBloque.Tag = Ventana.IdBloque;
-            txtBloque.Text = Ventana.Bloque;
+            if (cboHuerta.EditValue != null)
+            {
+                CargarBloques(cboHuerta.EditValue.ToString(), null);
+            }
+            else
+            {
+                cboBloque.Properties.DataSource = null;
+            }
+        }
+
+        private void Frm_PuntoControl_Shown(object sender, EventArgs e)
+        {
+            CargarHuertas(null);
+            cboBloque.Properties.DataSource = null;
+        }
+        private void CargarHuertas(string Valor)
+        {
+            CLS_Huerta Clase = new CLS_Huerta();
+            Clase.Activo = "1";
+            Clase.MtdSeleccionarHuerta();
+            if (Clase.Exito)
+            {
+                cboHuerta.Properties.DisplayMember = "Nombre_Huerta";
+                cboHuerta.Properties.ValueMember = "Id_Huerta";
+                cboHuerta.EditValue = Valor;
+                cboHuerta.Properties.DataSource = Clase.Datos;
+            }
+        }
+        private void CargarBloques(string Id_Huerta,string Valor)
+        {
+            CLS_Bloque Clase = new CLS_Bloque();
+            Clase.Id_Huerta = Id_Huerta;
+            
+            Clase.MtdSeleccionarBloquesHuerta();
+            if (Clase.Exito)
+            {
+                cboBloque.Properties.DisplayMember = "Nombre_Bloque";
+                cboBloque.Properties.ValueMember = "Id_Bloque";
+                cboBloque.EditValue = Valor;
+                cboBloque.Properties.DataSource = Clase.Datos;
+            }
+        }
+        private void btnHuerta_Click(object sender, EventArgs e)
+        {
+            Frm_Huertas frm = new Frm_Huertas();
+            frm.PaSel = true;
+            frm.Id_Usuario = Id_Usuario;
+            frm.ShowDialog();
+            CargarHuertas(null);
+            cboBloque.Properties.DataSource = null;
+        }
+
+        private void btnBloque_Click(object sender, EventArgs e)
+        {
+            Frm_Bloques frm = new Frm_Bloques();
+            frm.PaSel = true;
+            frm.Id_Usuario = Id_Usuario;
+            frm.ShowDialog();
+            if (cboHuerta.EditValue != null)
+            {
+                CargarBloques(cboHuerta.EditValue.ToString(), null);
+            }
+            else
+            {
+                cboBloque.Properties.DataSource = null;
+            }
+        }
+
+        private void cboHuerta_EditValueChanged(object sender, EventArgs e)
+        {
+            if (cboHuerta.EditValue != null)
+            {
+                CargarBloques(cboHuerta.EditValue.ToString(), null);
+            }
         }
     }
 }

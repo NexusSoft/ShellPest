@@ -250,6 +250,8 @@
             this.dtgValPais.Name = "dtgValPais";
             this.dtgValPais.OptionsBehavior.Editable = false;
             this.dtgValPais.OptionsView.ShowGroupPanel = false;
+            this.dtgValPais.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
+            this.dtgValPais.OptionsSelection.EnableAppearanceFocusedCell = false;
             // 
             // Id_Pais
             // 

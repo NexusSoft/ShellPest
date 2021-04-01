@@ -277,7 +277,6 @@
             this.btnRiego.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnRiego.ImageOptions.Image")));
             this.btnRiego.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnRiego.ImageOptions.LargeImage")));
             this.btnRiego.Name = "btnRiego";
-            
             // 
             // btnMonitoreo
             // 
@@ -410,6 +409,7 @@
             // 
             // xtraTabbedMdiManager1
             // 
+            this.xtraTabbedMdiManager1.ClosePageButtonShowMode = DevExpress.XtraTab.ClosePageButtonShowMode.InTabControlHeader;
             this.xtraTabbedMdiManager1.MdiParent = this;
             // 
             // SkinForm

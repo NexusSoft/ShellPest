@@ -82,6 +82,12 @@
     <Compile Include="Catalogos\Frm_Ciudad.designer.cs">
       <DependentUpon>Frm_Ciudad.cs</DependentUpon>
     </Compile>
+    <Compile Include="Catalogos\Frm_Tratamiento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Catalogos\Frm_Tratamiento.designer.cs">
+      <DependentUpon>Frm_Tratamiento.cs</DependentUpon>
+    </Compile>
     <Compile Include="Catalogos\Frm_Individuos.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -235,6 +241,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Catalogos\Frm_Ciudad.resx">
       <DependentUpon>Frm_Ciudad.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Catalogos\Frm_Tratamiento.resx">
+      <DependentUpon>Frm_Tratamiento.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Catalogos\Frm_Individuos.resx">
       <DependentUpon>Frm_Individuos.cs</DependentUpon>

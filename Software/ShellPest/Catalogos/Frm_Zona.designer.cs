@@ -194,9 +194,9 @@
             // 
             this.barDockControlBottom.CausesValidation = false;
             this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.barDockControlBottom.Location = new System.Drawing.Point(0, 345);
+            this.barDockControlBottom.Location = new System.Drawing.Point(0, 347);
             this.barDockControlBottom.Manager = this.barManager1;
-            this.barDockControlBottom.Size = new System.Drawing.Size(507, 27);
+            this.barDockControlBottom.Size = new System.Drawing.Size(507, 25);
             // 
             // barDockControlLeft
             // 
@@ -204,7 +204,7 @@
             this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
             this.barDockControlLeft.Location = new System.Drawing.Point(0, 0);
             this.barDockControlLeft.Manager = this.barManager1;
-            this.barDockControlLeft.Size = new System.Drawing.Size(69, 345);
+            this.barDockControlLeft.Size = new System.Drawing.Size(71, 347);
             // 
             // barDockControlRight
             // 
@@ -212,7 +212,7 @@
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
             this.barDockControlRight.Location = new System.Drawing.Point(507, 0);
             this.barDockControlRight.Manager = this.barManager1;
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 345);
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 347);
             // 
             // repositoryItemTextEdit1
             // 
@@ -222,10 +222,10 @@
             // 
             this.panelControl2.Controls.Add(this.dtgZona);
             this.panelControl2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelControl2.Location = new System.Drawing.Point(69, 108);
+            this.panelControl2.Location = new System.Drawing.Point(71, 108);
             this.panelControl2.Name = "panelControl2";
             this.panelControl2.Padding = new System.Windows.Forms.Padding(10);
-            this.panelControl2.Size = new System.Drawing.Size(438, 237);
+            this.panelControl2.Size = new System.Drawing.Size(436, 239);
             this.panelControl2.TabIndex = 7;
             // 
             // dtgZona
@@ -235,7 +235,7 @@
             this.dtgZona.MainView = this.dtgValZona;
             this.dtgZona.MenuManager = this.barManager1;
             this.dtgZona.Name = "dtgZona";
-            this.dtgZona.Size = new System.Drawing.Size(414, 213);
+            this.dtgZona.Size = new System.Drawing.Size(412, 215);
             this.dtgZona.TabIndex = 0;
             this.dtgZona.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.dtgValZona});
@@ -248,7 +248,10 @@
             this.Nombre_Zona});
             this.dtgValZona.GridControl = this.dtgZona;
             this.dtgValZona.Name = "dtgValZona";
+            this.dtgValZona.OptionsFind.AlwaysVisible = true;
             this.dtgValZona.OptionsView.ShowGroupPanel = false;
+            this.dtgValZona.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
+            this.dtgValZona.OptionsSelection.EnableAppearanceFocusedCell = false;
             // 
             // Id_Zona
             // 
@@ -272,10 +275,10 @@
             // 
             this.panelControl1.Controls.Add(this.groupControl1);
             this.panelControl1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelControl1.Location = new System.Drawing.Point(69, 0);
+            this.panelControl1.Location = new System.Drawing.Point(71, 0);
             this.panelControl1.Name = "panelControl1";
             this.panelControl1.Padding = new System.Windows.Forms.Padding(10);
-            this.panelControl1.Size = new System.Drawing.Size(438, 108);
+            this.panelControl1.Size = new System.Drawing.Size(436, 108);
             this.panelControl1.TabIndex = 6;
             // 
             // groupControl1
@@ -287,7 +290,7 @@
             this.groupControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupControl1.Location = new System.Drawing.Point(12, 12);
             this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(414, 84);
+            this.groupControl1.Size = new System.Drawing.Size(412, 84);
             this.groupControl1.TabIndex = 0;
             this.groupControl1.Text = "Datos Zona";
             // 

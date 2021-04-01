@@ -131,8 +131,9 @@ namespace ShellPest
             if (TieneAcceso("006"))
             {
                 Frm_Bloques Ventana = new Frm_Bloques();
-                Ventana.Id_Usuario = UsuariosLogin;
-                Ventana.ShowDialog();
+                Frm_Bloques.DefInstance.MdiParent = this;
+                Frm_Bloques.DefInstance.Id_Usuario = UsuariosLogin;
+                Frm_Bloques.DefInstance.Show();
             }
             else
             {

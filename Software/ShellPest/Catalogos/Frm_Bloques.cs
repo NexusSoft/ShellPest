@@ -18,7 +18,20 @@ namespace ShellPest
         {
             InitializeComponent();
         }
-
+        private static Frm_Bloques m_FormDefInstance;
+        public static Frm_Bloques DefInstance
+        {
+            get
+            {
+                if (m_FormDefInstance == null || m_FormDefInstance.IsDisposed)
+                    m_FormDefInstance = new Frm_Bloques();
+                return m_FormDefInstance;
+            }
+            set
+            {
+                m_FormDefInstance = value;
+            }
+        }
         public Boolean PaSel { get; set; }
 
         public string IdBloque { get; set; }
@@ -29,8 +42,7 @@ namespace ShellPest
         {
             txtId.Text = "";
             txtNombre.Text = "";
-            txtHuerta.Text = "";
-            txtHuerta.Tag = "";
+            CargarHuertas(null);
         }
 
         private void CargarBloque()
@@ -51,8 +63,8 @@ namespace ShellPest
 
             Clase.Id_Bloque = txtId.Text.Trim();
             Clase.Nombre_Bloque = txtNombre.Text.Trim();
-            Clase.Id_Huerta = txtHuerta.Tag.ToString();
-            Clase.Id_Usuario = "";
+            Clase.Id_Huerta = cboHuerta.EditValue.ToString();
+            Clase.Id_Usuario = Id_Usuario;
 
             Clase.MtdInsertarBloque();
 
@@ -94,8 +106,7 @@ namespace ShellPest
                     DataRow row = this.dtgValBloque.GetDataRow(i);
                     txtId.Text = row["Id_Bloque"].ToString();
                     txtNombre.Text = row["Nombre_Bloque"].ToString();
-                    txtHuerta.Tag = row["Id_Huerta"].ToString();
-                    txtHuerta.Text = row["Nombre_huerta"].ToString();
+                    CargarHuertas(row["Id_Huerta"].ToString());
                 }
             }
             catch (Exception ex)
@@ -123,7 +134,7 @@ namespace ShellPest
         {
             if (txtNombre.Text.ToString().Trim().Length > 0)
             {
-                if (txtHuerta.Text != string.Empty)
+                if (cboHuerta.EditValue != null)
                 {
                     InsertarBloque();
                 }
@@ -174,8 +185,37 @@ namespace ShellPest
             frm.PaSel = true;
             frm.Id_Usuario = Id_Usuario;
             frm.ShowDialog();
-            txtHuerta.Tag = frm.IdHuerta;
-            txtHuerta.Text = frm.Huerta;
+            CargarHuertas(null);
+        }
+
+        private void Frm_Bloques_Shown(object sender, EventArgs e)
+        {
+            CargarHuertas(null);
+        }
+
+        
+        private void CargarHuertas(string Valor)
+        {
+            CLS_Huerta Clase = new CLS_Huerta();
+            Clase.Activo = "1";
+            Clase.MtdSeleccionarHuerta();
+            if (Clase.Exito)
+            {
+                cboHuerta.Properties.DisplayMember = "Nombre_Huerta";
+                cboHuerta.Properties.ValueMember = "Id_Huerta";
+                cboHuerta.EditValue = Valor;
+                cboHuerta.Properties.DataSource = Clase.Datos;
+            }
+        }
+
+        private void cboHuerta_EditValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void labelControl3_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

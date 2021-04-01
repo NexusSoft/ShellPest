@@ -6,15 +6,14 @@ using System.Threading.Tasks;
 
 namespace CapaDeDatos
 {
-    public class CLS_Bloque : ConexionBase
+    public class CLS_Tratamiento : ConexionBase
     {
 
-        public string Id_Bloque { get; set; }
-        public string Nombre_Bloque { get; set; }
-        public string Id_Huerta { get; set; }
+        public string Id_Tratamiento { get; set; }
+        public string Nombre_Tratamiento { get; set; }
         public string Id_Usuario { get; set; }
 
-        public void MtdSeleccionarBloque()
+        public void MtdSeleccionarTratamiento()
         {
             TipoDato _dato = new TipoDato();
             Conexion _conexion = new Conexion(cadenaConexion);
@@ -22,10 +21,8 @@ namespace CapaDeDatos
             Exito = true;
             try
             {
-                _conexion.NombreProcedimiento = "SP_Bloque_Select";
-
+                _conexion.NombreProcedimiento = "SP_Tratamiento_Select";
                 _conexion.EjecutarDataset();
-
                 if (_conexion.Exito)
                 {
                     Datos = _conexion.Datos;
@@ -43,7 +40,7 @@ namespace CapaDeDatos
             }
 
         }
-        public void MtdSeleccionarBloquesHuerta()
+        public void MtdInsertarTratamiento()
         {
             TipoDato _dato = new TipoDato();
             Conexion _conexion = new Conexion(cadenaConexion);
@@ -51,45 +48,11 @@ namespace CapaDeDatos
             Exito = true;
             try
             {
-                _conexion.NombreProcedimiento = "SP_BloquesHuerta_Select";
-                _dato.CadenaTexto = Id_Huerta;
-                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Id_Huerta");
-                _conexion.EjecutarDataset();
-
-                if (_conexion.Exito)
-                {
-                    Datos = _conexion.Datos;
-                }
-                else
-                {
-                    Mensaje = _conexion.Mensaje;
-                    Exito = false;
-                }
-            }
-            catch (Exception e)
-            {
-                Mensaje = e.Message;
-                Exito = false;
-            }
-
-        }
-
-
-        public void MtdInsertarBloque()
-        {
-            TipoDato _dato = new TipoDato();
-            Conexion _conexion = new Conexion(cadenaConexion);
-
-            Exito = true;
-            try
-            {
-                _conexion.NombreProcedimiento = "SP_Bloque_Insert";
-                _dato.CadenaTexto = Id_Bloque;
-                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Id_Bloque");
-                _dato.CadenaTexto = Nombre_Bloque;
-                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Nombre_Bloque");
-                _dato.CadenaTexto = Id_Huerta;
-                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Id_Huerta");
+                _conexion.NombreProcedimiento = "SP_Tratamiento_Insert";
+                _dato.CadenaTexto = Id_Tratamiento;
+                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Id_Tratamiento");
+                _dato.CadenaTexto = Nombre_Tratamiento;
+                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Nombre_Tratamiento");
                 _dato.CadenaTexto = Id_Usuario;
                 _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Id_Usuario");
                 _conexion.EjecutarDataset();
@@ -110,8 +73,7 @@ namespace CapaDeDatos
                 Exito = false;
             }
         }
-
-        public void MtdEliminarBloque()
+        public void MtdEliminarTratamiento()
         {
             TipoDato _dato = new TipoDato();
             Conexion _conexion = new Conexion(cadenaConexion);
@@ -119,9 +81,9 @@ namespace CapaDeDatos
             Exito = true;
             try
             {
-                _conexion.NombreProcedimiento = "SP_Bloque_Delete";
-                _dato.CadenaTexto = Id_Bloque;
-                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Id_Bloque");
+                _conexion.NombreProcedimiento = "SP_Tratamiento_Delete";
+                _dato.CadenaTexto = Id_Tratamiento;
+                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Id_Tratamiento");
                 _conexion.EjecutarDataset();
 
                 if (_conexion.Exito)
@@ -139,7 +101,7 @@ namespace CapaDeDatos
                 Mensaje = e.Message;
                 Exito = false;
             }
-
         }
+
     }
 }

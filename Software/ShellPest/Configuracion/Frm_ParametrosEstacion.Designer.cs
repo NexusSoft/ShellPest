@@ -138,15 +138,15 @@
             this.barDockControlTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.barDockControlTop.Location = new System.Drawing.Point(0, 0);
             this.barDockControlTop.Manager = this.barManager1;
-            this.barDockControlTop.Size = new System.Drawing.Size(567, 0);
+            this.barDockControlTop.Size = new System.Drawing.Size(561, 0);
             // 
             // barDockControlBottom
             // 
             this.barDockControlBottom.CausesValidation = false;
             this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.barDockControlBottom.Location = new System.Drawing.Point(0, 222);
+            this.barDockControlBottom.Location = new System.Drawing.Point(0, 216);
             this.barDockControlBottom.Manager = this.barManager1;
-            this.barDockControlBottom.Size = new System.Drawing.Size(567, 27);
+            this.barDockControlBottom.Size = new System.Drawing.Size(561, 27);
             // 
             // barDockControlLeft
             // 
@@ -154,15 +154,15 @@
             this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
             this.barDockControlLeft.Location = new System.Drawing.Point(0, 0);
             this.barDockControlLeft.Manager = this.barManager1;
-            this.barDockControlLeft.Size = new System.Drawing.Size(54, 222);
+            this.barDockControlLeft.Size = new System.Drawing.Size(54, 216);
             // 
             // barDockControlRight
             // 
             this.barDockControlRight.CausesValidation = false;
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
-            this.barDockControlRight.Location = new System.Drawing.Point(567, 0);
+            this.barDockControlRight.Location = new System.Drawing.Point(561, 0);
             this.barDockControlRight.Manager = this.barManager1;
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 222);
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 216);
             // 
             // panelControl1
             // 
@@ -171,7 +171,7 @@
             this.panelControl1.Location = new System.Drawing.Point(54, 0);
             this.panelControl1.Name = "panelControl1";
             this.panelControl1.Padding = new System.Windows.Forms.Padding(10);
-            this.panelControl1.Size = new System.Drawing.Size(513, 222);
+            this.panelControl1.Size = new System.Drawing.Size(507, 216);
             this.panelControl1.TabIndex = 9;
             // 
             // xtraTabControl1
@@ -180,7 +180,7 @@
             this.xtraTabControl1.Location = new System.Drawing.Point(12, 12);
             this.xtraTabControl1.Name = "xtraTabControl1";
             this.xtraTabControl1.SelectedTabPage = this.xtraTabPage1;
-            this.xtraTabControl1.Size = new System.Drawing.Size(489, 198);
+            this.xtraTabControl1.Size = new System.Drawing.Size(483, 192);
             this.xtraTabControl1.TabIndex = 1;
             this.xtraTabControl1.TabPages.AddRange(new DevExpress.XtraTab.XtraTabPage[] {
             this.xtraTabPage1});
@@ -198,7 +198,7 @@
             this.xtraTabPage1.Controls.Add(this.labelControl2);
             this.xtraTabPage1.Controls.Add(this.labelControl1);
             this.xtraTabPage1.Name = "xtraTabPage1";
-            this.xtraTabPage1.Size = new System.Drawing.Size(483, 170);
+            this.xtraTabPage1.Size = new System.Drawing.Size(477, 164);
             this.xtraTabPage1.Text = "Carga Excel Estacion M.";
             // 
             // spFilaInicio
@@ -340,7 +340,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(567, 249);
+            this.ClientSize = new System.Drawing.Size(561, 243);
             this.Controls.Add(this.panelControl1);
             this.Controls.Add(this.barDockControlLeft);
             this.Controls.Add(this.barDockControlRight);

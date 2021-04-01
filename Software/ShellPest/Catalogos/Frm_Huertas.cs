@@ -96,6 +96,15 @@ namespace ShellPest
                 CargarComboCultivo(comboCultivo.Datos, Valor);
             }
         }
+        public void CargarTratamiento(string Valor)
+        {
+            CLS_Tratamiento comboTratamiento = new CLS_Tratamiento();
+            comboTratamiento.MtdSeleccionarTratamiento();
+            if (comboTratamiento.Exito)
+            {
+                CargarComboTratamiento(comboTratamiento.Datos, Valor);
+            }
+        }
         public void CargarZona(string Valor)
         {
             CLS_Zona comboZona = new CLS_Zona();
@@ -118,6 +127,13 @@ namespace ShellPest
             cboCultivo.Properties.ValueMember = "Id_Cultivo";
             cboCultivo.EditValue = Valor;
             cboCultivo.Properties.DataSource = Datos;
+        }
+        private void CargarComboTratamiento(DataTable Datos, string Valor)
+        {
+            cboTratamiento.Properties.DisplayMember = "Nombre_Tratamiento";
+            cboTratamiento.Properties.ValueMember = "Id_Tratamiento";
+            cboTratamiento.EditValue = Valor;
+            cboTratamiento.Properties.DataSource = Datos;
         }
         private void DarFormatoCampos()
         {
@@ -160,9 +176,10 @@ namespace ShellPest
             CargarCiudad(null);
             CargarCalidad(null);
             CargarCultivo(null);
+            CargarTratamiento(null);
             CargarZona(null);
             DarFormatoCampos();
-            CargarHuertas();
+            CargarHuertas("1");
         }
 
         private void btnLimpiar_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -180,6 +197,8 @@ namespace ShellPest
             cboCalidad.Text = null;
             cboCiudad.Text = null;
             cboCultivo.Text = null;
+            cboTratamiento.Text = null;
+            cboZona.Text = null;
             cboEstado.Text = null;
             txtZona.Text = string.Empty;
             txtBanda.Text = string.Empty;
@@ -255,13 +274,20 @@ namespace ShellPest
                                 {
                                     if (cboCultivo.EditValue != null)
                                     {
-                                        if (cboZona.EditValue != null)
+                                        if (cboTratamiento.EditValue != null)
                                         {
-                                            InsertarHuerta();
+                                            if (cboZona.EditValue != null)
+                                            {
+                                                InsertarHuerta();
+                                            }
+                                            else
+                                            {
+                                                XtraMessageBox.Show("Falta de seleccionar un Zona Clima");
+                                            }
                                         }
                                         else
                                         {
-                                            XtraMessageBox.Show("Falta de seleccionar un Zona Clima");
+                                            XtraMessageBox.Show("Falta de seleccionar un Tratamiento");
                                         }
                                     }
                                     else
@@ -299,11 +325,11 @@ namespace ShellPest
                 XtraMessageBox.Show("Falta de colocar un registro de huerta");
             }
         }
-        void CargarHuertas()
+        void CargarHuertas(string Activo)
         {
             dtgHuertas.DataSource = null;
             CLS_Huerta Clase = new CLS_Huerta();
-            Clase.Activo = "1";
+            Clase.Activo = Activo;
             Clase.MtdSeleccionarHuerta();
             if (Clase.Exito)
             {
@@ -334,7 +360,7 @@ namespace ShellPest
 
             if (Clase.Exito)
             {
-                CargarHuertas();
+                CargarHuertas("1");
                 XtraMessageBox.Show("Se ha Insertado el registro con exito");
                 LimpiarCampos();
             }
@@ -351,7 +377,7 @@ namespace ShellPest
             Clase.MtdEliminarHuerta();
             if (Clase.Exito)
             {
-                CargarHuertas();
+                CargarHuertas("1");
                 XtraMessageBox.Show("Se ha modificado el estado del registro con exito");
                 LimpiarCampos();
                 bloquear(true);
@@ -418,12 +444,13 @@ namespace ShellPest
                     txtCodigo.Text = row["Id_Huerta"].ToString();
                     txtNombreHuerta.Text = row["Nombre_Huerta"].ToString();
                     txtRegistro.Text = row["Registro_Huerta"].ToString();
-                    txtNombreProductor.Tag = row["Id_Duenio"].ToString();
-                    CargarProductor(row["Id_Duenio"].ToString());
+                    txtNombreProductor.Tag = row["Id_Productor"].ToString();
+                    CargarProductor(row["Id_Productor"].ToString());
                     cboEstado.EditValue = row["Id_Estado"].ToString();
                     cboCiudad.EditValue = row["Id_Ciudad"].ToString();
                     cboCalidad.EditValue = row["Id_Calidad"].ToString();
                     cboCultivo.EditValue = row["Id_Cultivo"].ToString();
+                    cboTratamiento.EditValue = row["Id_Tratamiento"].ToString();
                     cboZona.EditValue = row["Id_zona"].ToString();
                     txtZona.Text= row["zona_Huerta"].ToString();
                     txtBanda.Text = row["banda_Huerta"].ToString();
@@ -482,6 +509,27 @@ namespace ShellPest
             frm.Id_Usuario = Id_Usuario;
             frm.ShowDialog();
             CargarZona(null);
+        }
+
+        private void btnTratamiento_Click(object sender, EventArgs e)
+        {
+            Frm_Tratamiento frm = new Frm_Tratamiento();
+            frm.Id_Usuario = Id_Usuario;
+            frm.ShowDialog();
+            CargarTratamiento(null);
+        }
+
+        private void chkInactiva_CheckedChanged(object sender, EventArgs e)
+        {
+            if (chkInactiva.Checked == true)
+            {
+                CargarHuertas("0");
+            }
+            else
+            {
+                CargarHuertas("1");
+            }
+
         }
     }
 }

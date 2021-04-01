@@ -55,6 +55,81 @@ namespace ShellPest_WebService
             }
         }
         [HttpGet]
+        public ActionResult MonitoreoPEEncabezado(string Fecha, string Hora, string Id_Huerta, 
+                                string Id_PuntoControl,string Id_Usuario, string n_CoordenadaX, string n_CoordenadaY)
+        {
+            string cadena = string.Empty;
+            CLS_Monitoreo sel = new CLS_Monitoreo();
+            sel.Id_PuntoControl = Id_PuntoControl;
+            sel.Fecha = Fecha;
+            sel.Hora = Hora;
+            sel.Id_Huerta = Id_Huerta;
+            sel.n_CoordenadaX = decimal.Parse(n_CoordenadaX);
+            sel.n_CoordenadaY = decimal.Parse(n_CoordenadaY);
+            sel.Id_Usuario = Id_Usuario;
+
+            sel.MtdInsertarMonitoreoPE();
+            DataTable dt = new DataTable();
+            dt.Clear();
+            dt.Columns.Add("Mensaje", typeof(string));
+            DataRow _ravi = dt.NewRow();
+            if (sel.Exito)
+            {
+                _ravi["Mensaje"] = "1";
+                dt.Rows.Add(_ravi);
+                GetJson(dt);
+                return Json(rows, JsonRequestBehavior.AllowGet);
+            }
+            else
+            {
+                _ravi["Mensaje"] = sel.Mensaje;
+                dt.Rows.Add(_ravi);
+                GetJson(dt);
+                return Json(rows, JsonRequestBehavior.AllowGet);
+            }
+        }
+        [HttpGet]
+        public ActionResult MonitoreoPEDetalle(string Fecha, string Hora, string Id_Huerta, string Id_Plagas, string Id_Enfermedad,
+                                string Id_Deteccion, string Id_Individuo, string Id_Humbral, string Id_PuntoControl,
+                                string Id_Usuario, string n_CoordenadaX, string n_CoordenadaY)
+        {
+            string cadena = string.Empty;
+            CLS_Monitoreo sel = new CLS_Monitoreo();
+            sel.Fecha = Fecha;
+            sel.Hora = Hora;
+            sel.Id_Huerta = Id_Huerta;
+            sel.Id_Plagas = Id_Plagas;
+            sel.Id_Enfermedad = Id_Enfermedad;
+            sel.Id_Deteccion = Id_Deteccion;
+            sel.Id_Individuo = Id_Individuo;
+            sel.Id_Humbral = Id_Humbral;
+            sel.Id_PuntoControl = Id_PuntoControl;
+            sel.Id_Usuario = Id_Usuario;
+            sel.n_CoordenadaX = decimal.Parse(n_CoordenadaX);
+            sel.n_CoordenadaY = decimal.Parse(n_CoordenadaY);
+
+
+            sel.MtdInsertarMonitoreoPE();
+            DataTable dt = new DataTable();
+            dt.Clear();
+            dt.Columns.Add("Mensaje", typeof(string));
+            DataRow _ravi = dt.NewRow();
+            if (sel.Exito)
+            {
+                _ravi["Mensaje"] = "1";
+                dt.Rows.Add(_ravi);
+                GetJson(dt);
+                return Json(rows, JsonRequestBehavior.AllowGet);
+            }
+            else
+            {
+                _ravi["Mensaje"] = sel.Mensaje;
+                dt.Rows.Add(_ravi);
+                GetJson(dt);
+                return Json(rows, JsonRequestBehavior.AllowGet);
+            }
+        }
+        [HttpGet]
         public ActionResult MonitoreoPEEliminado(string Fecha, string Hora
                                , string Id_Huerta, string Id_Plagas, string Id_Enfermedad,
                                 string Id_Deteccion, string Id_Individuo, string Id_Humbral, string Id_PuntoControl,

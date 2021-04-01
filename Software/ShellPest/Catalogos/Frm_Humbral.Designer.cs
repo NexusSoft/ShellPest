@@ -268,6 +268,8 @@
             this.dtgValHumbral.Name = "dtgValHumbral";
             this.dtgValHumbral.OptionsBehavior.Editable = false;
             this.dtgValHumbral.OptionsView.ShowGroupPanel = false;
+            this.dtgValHumbral.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
+            this.dtgValHumbral.OptionsSelection.EnableAppearanceFocusedCell = false;
             // 
             // Id_Humbral
             // 

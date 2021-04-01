@@ -22,6 +22,7 @@ namespace CapaDeDatos
         public string Id_PuntoControl { get;  set; }
         public decimal? n_CoordenadaX { get; set; }
         public decimal? n_CoordenadaY { get;  set; }
+        public decimal? n_DistanciaPuntoControl { get; set; }
 
         public void MtdSeleccionarMonitoreo()
         {
@@ -208,6 +209,176 @@ namespace CapaDeDatos
                 _conexion.agregarParametro(EnumTipoDato.Tipodecimal, _dato, "n_CoordenadaX");
                 _dato.DecimalValor = n_CoordenadaY;
                 _conexion.agregarParametro(EnumTipoDato.Tipodecimal, _dato, "n_CoordenadaY");
+                _conexion.EjecutarDataset();
+
+                if (_conexion.Exito)
+                {
+                    Datos = _conexion.Datos;
+                }
+                else
+                {
+                    Mensaje = _conexion.Mensaje;
+                    Exito = false;
+                }
+            }
+            catch (Exception e)
+            {
+                Mensaje = e.Message;
+                Exito = false;
+            }
+        }
+
+        public void MtdInsertarMonitoreoPEEncabezado()
+        {
+            TipoDato _dato = new TipoDato();
+            Conexion _conexion = new Conexion(cadenaConexion);
+
+            Exito = true;
+            try
+            {
+                _conexion.NombreProcedimiento = "SP_WS_Control_MonitoreoPE_Encabezado_Insert";
+                _dato.CadenaTexto = Id_PuntoControl;
+                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Id_PuntoControl");
+                _dato.CadenaTexto = Fecha;
+                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Fecha");
+                _dato.CadenaTexto = Hora;
+                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Hora");
+                _dato.CadenaTexto = Id_Huerta;
+                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Id_Huerta");
+                _dato.DecimalValor = n_CoordenadaX;
+                _conexion.agregarParametro(EnumTipoDato.Tipodecimal, _dato, "n_CoordenadaX");
+                _dato.DecimalValor = n_CoordenadaY;
+                _conexion.agregarParametro(EnumTipoDato.Tipodecimal, _dato, "n_CoordenadaY");
+                _dato.CadenaTexto = Id_Usuario;
+                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Id_Usuario");
+                
+                _conexion.EjecutarDataset();
+
+                if (_conexion.Exito)
+                {
+                    Datos = _conexion.Datos;
+                }
+                else
+                {
+                    Mensaje = _conexion.Mensaje;
+                    Exito = false;
+                }
+            }
+            catch (Exception e)
+            {
+                Mensaje = e.Message;
+                Exito = false;
+            }
+        }
+        public void MtdInsertarMonitoreoPEDetalle()
+        {
+            TipoDato _dato = new TipoDato();
+            Conexion _conexion = new Conexion(cadenaConexion);
+
+            Exito = true;
+            try
+            {
+                _conexion.NombreProcedimiento = "SP_WS_Control_MonitoreoPE_Detalle_Insert";
+                _dato.CadenaTexto = Id_PuntoControl;
+                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Id_PuntoControl");
+                _dato.CadenaTexto = Fecha;
+                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Fecha");
+                _dato.CadenaTexto = Id_Plagas;
+                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Id_Plagas");
+                _dato.CadenaTexto = Id_Enfermedad;
+                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Id_Enfermedad");
+                _dato.CadenaTexto = Id_Deteccion;
+                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Id_Deteccion");
+                _dato.CadenaTexto = Id_Individuo;
+                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Id_Individuo");
+                _dato.CadenaTexto = Id_Humbral;
+                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Id_Humbral");
+                _conexion.EjecutarDataset();
+
+                if (_conexion.Exito)
+                {
+                    Datos = _conexion.Datos;
+                }
+                else
+                {
+                    Mensaje = _conexion.Mensaje;
+                    Exito = false;
+                }
+            }
+            catch (Exception e)
+            {
+                Mensaje = e.Message;
+                Exito = false;
+            }
+        }
+
+        public void MtdInsertarMonitoreoPEEncabezadoEliminado()
+        {
+            TipoDato _dato = new TipoDato();
+            Conexion _conexion = new Conexion(cadenaConexion);
+
+            Exito = true;
+            try
+            {
+                _conexion.NombreProcedimiento = "SP_WS_Control_MonitoreoPE_Encabezado_Eliminado_Insert";
+                _dato.CadenaTexto = Id_PuntoControl;
+                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Id_PuntoControl");
+                _dato.CadenaTexto = Fecha;
+                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Fecha");
+                _dato.CadenaTexto = Hora;
+                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Hora");
+                _dato.CadenaTexto = Id_Huerta;
+                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Id_Huerta");
+                _dato.DecimalValor = n_CoordenadaX;
+                _conexion.agregarParametro(EnumTipoDato.Tipodecimal, _dato, "n_CoordenadaX");
+                _dato.DecimalValor = n_CoordenadaY;
+                _conexion.agregarParametro(EnumTipoDato.Tipodecimal, _dato, "n_CoordenadaY");
+                _dato.CadenaTexto = Id_Usuario;
+                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Id_Usuario");
+                _conexion.EjecutarDataset();
+
+                if (_conexion.Exito)
+                {
+                    Datos = _conexion.Datos;
+                }
+                else
+                {
+                    Mensaje = _conexion.Mensaje;
+                    Exito = false;
+                }
+            }
+            catch (Exception e)
+            {
+                Mensaje = e.Message;
+                Exito = false;
+            }
+        }
+        public void MtdInsertarMonitoreoPEDetalleEliminado()
+        {
+            TipoDato _dato = new TipoDato();
+            Conexion _conexion = new Conexion(cadenaConexion);
+
+            Exito = true;
+            try
+            {
+                _conexion.NombreProcedimiento = "SP_WS_Control_MonitoreoPE_Eliminado_Insert";
+                _dato.CadenaTexto = Id_PuntoControl;
+                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Id_PuntoControl");
+                _dato.CadenaTexto = Fecha;
+                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Fecha");
+                _dato.CadenaTexto = Hora;
+                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Hora");
+                _dato.CadenaTexto = Id_Plagas;
+                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Id_Plagas");
+                _dato.CadenaTexto = Id_Enfermedad;
+                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Id_Enfermedad");
+                _dato.CadenaTexto = Id_Deteccion;
+                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Id_Deteccion");
+                _dato.CadenaTexto = Id_Individuo;
+                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Id_Individuo");
+                _dato.CadenaTexto = Id_Humbral;
+                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Id_Humbral");
+               
                 _conexion.EjecutarDataset();
 
                 if (_conexion.Exito)
