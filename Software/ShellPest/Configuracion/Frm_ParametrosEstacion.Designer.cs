@@ -1,4 +1,4 @@
-﻿namespace ShellPest.Configuracion
+﻿namespace ShellPest
 {
     partial class Frm_ParametrosEstacion
     {
@@ -52,6 +52,8 @@
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
+            this.spHora = new DevExpress.XtraEditors.SpinEdit();
+            this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
@@ -63,6 +65,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.spET.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.spTempOut.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.spFecha.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.spHora.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // barManager1
@@ -144,9 +147,9 @@
             // 
             this.barDockControlBottom.CausesValidation = false;
             this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.barDockControlBottom.Location = new System.Drawing.Point(0, 216);
+            this.barDockControlBottom.Location = new System.Drawing.Point(0, 262);
             this.barDockControlBottom.Manager = this.barManager1;
-            this.barDockControlBottom.Size = new System.Drawing.Size(561, 27);
+            this.barDockControlBottom.Size = new System.Drawing.Size(561, 25);
             // 
             // barDockControlLeft
             // 
@@ -154,7 +157,7 @@
             this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
             this.barDockControlLeft.Location = new System.Drawing.Point(0, 0);
             this.barDockControlLeft.Manager = this.barManager1;
-            this.barDockControlLeft.Size = new System.Drawing.Size(54, 216);
+            this.barDockControlLeft.Size = new System.Drawing.Size(56, 262);
             // 
             // barDockControlRight
             // 
@@ -162,16 +165,16 @@
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
             this.barDockControlRight.Location = new System.Drawing.Point(561, 0);
             this.barDockControlRight.Manager = this.barManager1;
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 216);
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 262);
             // 
             // panelControl1
             // 
             this.panelControl1.Controls.Add(this.xtraTabControl1);
             this.panelControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelControl1.Location = new System.Drawing.Point(54, 0);
+            this.panelControl1.Location = new System.Drawing.Point(56, 0);
             this.panelControl1.Name = "panelControl1";
             this.panelControl1.Padding = new System.Windows.Forms.Padding(10);
-            this.panelControl1.Size = new System.Drawing.Size(507, 216);
+            this.panelControl1.Size = new System.Drawing.Size(505, 262);
             this.panelControl1.TabIndex = 9;
             // 
             // xtraTabControl1
@@ -180,13 +183,15 @@
             this.xtraTabControl1.Location = new System.Drawing.Point(12, 12);
             this.xtraTabControl1.Name = "xtraTabControl1";
             this.xtraTabControl1.SelectedTabPage = this.xtraTabPage1;
-            this.xtraTabControl1.Size = new System.Drawing.Size(483, 192);
+            this.xtraTabControl1.Size = new System.Drawing.Size(481, 238);
             this.xtraTabControl1.TabIndex = 1;
             this.xtraTabControl1.TabPages.AddRange(new DevExpress.XtraTab.XtraTabPage[] {
             this.xtraTabPage1});
             // 
             // xtraTabPage1
             // 
+            this.xtraTabPage1.Controls.Add(this.spHora);
+            this.xtraTabPage1.Controls.Add(this.labelControl5);
             this.xtraTabPage1.Controls.Add(this.spFilaInicio);
             this.xtraTabPage1.Controls.Add(this.labelControl15);
             this.xtraTabPage1.Controls.Add(this.spRain);
@@ -198,13 +203,13 @@
             this.xtraTabPage1.Controls.Add(this.labelControl2);
             this.xtraTabPage1.Controls.Add(this.labelControl1);
             this.xtraTabPage1.Name = "xtraTabPage1";
-            this.xtraTabPage1.Size = new System.Drawing.Size(477, 164);
+            this.xtraTabPage1.Size = new System.Drawing.Size(475, 210);
             this.xtraTabPage1.Text = "Carga Excel Estacion M.";
             // 
             // spFilaInicio
             // 
             this.spFilaInicio.EditValue = new decimal(new int[] {
-            0,
+            1,
             0,
             0,
             0});
@@ -214,6 +219,11 @@
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.spFilaInicio.Properties.MaxValue = new decimal(new int[] {
             14,
+            0,
+            0,
+            0});
+            this.spFilaInicio.Properties.MinValue = new decimal(new int[] {
+            1,
             0,
             0,
             0});
@@ -231,16 +241,21 @@
             // spRain
             // 
             this.spRain.EditValue = new decimal(new int[] {
-            0,
+            1,
             0,
             0,
             0});
-            this.spRain.Location = new System.Drawing.Point(199, 125);
+            this.spRain.Location = new System.Drawing.Point(199, 151);
             this.spRain.Name = "spRain";
             this.spRain.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.spRain.Properties.MaxValue = new decimal(new int[] {
             14,
+            0,
+            0,
+            0});
+            this.spRain.Properties.MinValue = new decimal(new int[] {
+            1,
             0,
             0,
             0});
@@ -250,16 +265,21 @@
             // spET
             // 
             this.spET.EditValue = new decimal(new int[] {
-            0,
+            1,
             0,
             0,
             0});
-            this.spET.Location = new System.Drawing.Point(199, 99);
+            this.spET.Location = new System.Drawing.Point(199, 125);
             this.spET.Name = "spET";
             this.spET.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.spET.Properties.MaxValue = new decimal(new int[] {
             14,
+            0,
+            0,
+            0});
+            this.spET.Properties.MinValue = new decimal(new int[] {
+            1,
             0,
             0,
             0});
@@ -269,16 +289,21 @@
             // spTempOut
             // 
             this.spTempOut.EditValue = new decimal(new int[] {
-            0,
+            1,
             0,
             0,
             0});
-            this.spTempOut.Location = new System.Drawing.Point(199, 73);
+            this.spTempOut.Location = new System.Drawing.Point(199, 99);
             this.spTempOut.Name = "spTempOut";
             this.spTempOut.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.spTempOut.Properties.MaxValue = new decimal(new int[] {
             14,
+            0,
+            0,
+            0});
+            this.spTempOut.Properties.MinValue = new decimal(new int[] {
+            1,
             0,
             0,
             0});
@@ -288,7 +313,7 @@
             // spFecha
             // 
             this.spFecha.EditValue = new decimal(new int[] {
-            0,
+            1,
             0,
             0,
             0});
@@ -301,12 +326,17 @@
             0,
             0,
             0});
+            this.spFecha.Properties.MinValue = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.spFecha.Size = new System.Drawing.Size(51, 20);
             this.spFecha.TabIndex = 20;
             // 
             // labelControl4
             // 
-            this.labelControl4.Location = new System.Drawing.Point(25, 129);
+            this.labelControl4.Location = new System.Drawing.Point(25, 155);
             this.labelControl4.Name = "labelControl4";
             this.labelControl4.Size = new System.Drawing.Size(97, 13);
             this.labelControl4.TabIndex = 3;
@@ -314,7 +344,7 @@
             // 
             // labelControl3
             // 
-            this.labelControl3.Location = new System.Drawing.Point(25, 103);
+            this.labelControl3.Location = new System.Drawing.Point(25, 129);
             this.labelControl3.Name = "labelControl3";
             this.labelControl3.Size = new System.Drawing.Size(88, 13);
             this.labelControl3.TabIndex = 2;
@@ -322,7 +352,7 @@
             // 
             // labelControl2
             // 
-            this.labelControl2.Location = new System.Drawing.Point(26, 77);
+            this.labelControl2.Location = new System.Drawing.Point(26, 103);
             this.labelControl2.Name = "labelControl2";
             this.labelControl2.Size = new System.Drawing.Size(123, 13);
             this.labelControl2.TabIndex = 1;
@@ -336,11 +366,43 @@
             this.labelControl1.TabIndex = 0;
             this.labelControl1.Text = "Columna Excel Fecha:";
             // 
+            // spHora
+            // 
+            this.spHora.EditValue = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.spHora.Location = new System.Drawing.Point(199, 73);
+            this.spHora.Name = "spHora";
+            this.spHora.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.spHora.Properties.MaxValue = new decimal(new int[] {
+            14,
+            0,
+            0,
+            0});
+            this.spHora.Properties.MinValue = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.spHora.Size = new System.Drawing.Size(51, 20);
+            this.spHora.TabIndex = 42;
+            // 
+            // labelControl5
+            // 
+            this.labelControl5.Location = new System.Drawing.Point(24, 77);
+            this.labelControl5.Name = "labelControl5";
+            this.labelControl5.Size = new System.Drawing.Size(99, 13);
+            this.labelControl5.TabIndex = 41;
+            this.labelControl5.Text = "Columna Excel Hora:";
+            // 
             // Frm_ParametrosEstacion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(561, 243);
+            this.ClientSize = new System.Drawing.Size(561, 287);
             this.Controls.Add(this.panelControl1);
             this.Controls.Add(this.barDockControlLeft);
             this.Controls.Add(this.barDockControlRight);
@@ -351,6 +413,7 @@
             this.MinimizeBox = false;
             this.Name = "Frm_ParametrosEstacion";
             this.Text = "Parametros Excel Estacion";
+            this.Shown += new System.EventHandler(this.Frm_ParametrosEstacion_Shown);
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
             this.panelControl1.ResumeLayout(false);
@@ -363,6 +426,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.spET.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.spTempOut.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.spFecha.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.spHora.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -392,5 +456,7 @@
         private DevExpress.XtraEditors.LabelControl labelControl3;
         private DevExpress.XtraEditors.LabelControl labelControl2;
         private DevExpress.XtraEditors.LabelControl labelControl1;
+        private DevExpress.XtraEditors.SpinEdit spHora;
+        private DevExpress.XtraEditors.LabelControl labelControl5;
     }
 }

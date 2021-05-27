@@ -283,6 +283,8 @@ namespace CapaDeDatos
                 _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Id_PuntoControl");
                 _dato.CadenaTexto = Fecha;
                 _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Fecha");
+                _dato.CadenaTexto = Hora;
+                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Hora");
                 _dato.CadenaTexto = Id_Plagas;
                 _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Id_Plagas");
                 _dato.CadenaTexto = Id_Enfermedad;
@@ -361,7 +363,7 @@ namespace CapaDeDatos
             Exito = true;
             try
             {
-                _conexion.NombreProcedimiento = "SP_WS_Control_MonitoreoPE_Eliminado_Insert";
+                _conexion.NombreProcedimiento = "SP_WS_Control_MonitoreoPE_Detalle_Eliminado_Insert";
                 _dato.CadenaTexto = Id_PuntoControl;
                 _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Id_PuntoControl");
                 _dato.CadenaTexto = Fecha;

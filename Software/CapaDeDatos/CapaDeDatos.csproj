@@ -54,6 +54,7 @@
     <Compile Include="Formularios\CLS_Bloque.cs" />
     <Compile Include="Formularios\CLS_Calidades.cs" />
     <Compile Include="Formularios\CLS_Ciudades.cs" />
+    <Compile Include="Formularios\CLS_Estacion.cs" />
     <Compile Include="Formularios\CLS_Tratamiento.cs" />
     <Compile Include="Formularios\CLS_Monitoreo.cs" />
     <Compile Include="Formularios\CLS_Individuo.cs" />
@@ -70,6 +71,7 @@
     <Compile Include="Formularios\CLS_Productor.cs" />
     <Compile Include="Formularios\CLS_PuntoControl.cs" />
     <Compile Include="Formularios\CLS_Riego.cs" />
+    <Compile Include="Formularios\ColumnasExcel.cs" />
     <Compile Include="Seguridad\CLS_Pantallas.cs" />
     <Compile Include="Seguridad\CLS_Perfiles.cs" />
     <Compile Include="Seguridad\CLS_Perfiles_Pantallas.cs" />

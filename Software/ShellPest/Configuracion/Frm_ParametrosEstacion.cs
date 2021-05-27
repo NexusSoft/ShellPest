@@ -10,7 +10,7 @@ using System.Windows.Forms;
 using DevExpress.XtraEditors;
 using CapaDeDatos;
 
-namespace ShellPest.Configuracion
+namespace ShellPest
 {
     public partial class Frm_ParametrosEstacion : DevExpress.XtraEditors.XtraForm
     {
@@ -84,11 +84,17 @@ namespace ShellPest.Configuracion
                 {
                     spFilaInicio.Value = Convert.ToInt32(param.Datos.Rows[0]["Row_Est_Inicio"].ToString());
                     spFecha.Value = Convert.ToInt32(param.Datos.Rows[0]["Col_Est_Fecha"].ToString());
+                    spHora.Value = Convert.ToInt32(param.Datos.Rows[0]["Col_Est_Hora"].ToString());
                     spTempOut.Value = Convert.ToInt32(param.Datos.Rows[0]["Col_Est_TempOut"].ToString());
                     spET.Value = Convert.ToInt32(param.Datos.Rows[0]["Col_Est_ET"].ToString());
                     spRain.Value = Convert.ToInt32(param.Datos.Rows[0]["Col_Est_Rain"].ToString());
                 }
             }
+        }
+
+        private void Frm_ParametrosEstacion_Shown(object sender, EventArgs e)
+        {
+            CargarParametros();
         }
     }
 }
