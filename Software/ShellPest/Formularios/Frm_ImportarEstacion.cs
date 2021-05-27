@@ -30,7 +30,13 @@ namespace ShellPest
         public int Col_PSC_JefeArea { get; set; }
         public int Col_PSC_ClaveDia { get; set; }
 
-        private static Frm_ImportarEstacion m_FormDefInstance;
+     public int Col_PSC_Fecha { get; set; }
+    public int Col_PSC_ODC { get; set; }
+    public int Col_PSC_Ubicacion { get; set; }
+    public int Col_PSC_Pesada { get; set; }
+  
+
+    private static Frm_ImportarEstacion m_FormDefInstance;
         public static Frm_ImportarEstacion DefInstance
         {
             get
@@ -292,7 +298,7 @@ namespace ShellPest
                         string vET = dtgValServicios.GetRowCellValue(xRow, "col_ET").ToString();
                         string vRain = dtgValServicios.GetRowCellValue(xRow, "col_Rain").ToString();
                         
-                        if (!BuscarRegistro(vFecha, vODC))
+                       /* if (!BuscarRegistro(vFecha, vODC))
                         {
                             CLS_Estacion ins = new CLS_Estacion();
                             DateTime DFecha = Convert.ToDateTime(vFecha);
@@ -303,7 +309,7 @@ namespace ShellPest
                             ins.PSC_Pesada = vPesada;
                             ins.PSC_Placas = vPlacas;
                             ins.PSC_Huertas = vHuertas;
-                            ins.PSC_Productor = vProductor;
+                            ins.PSC_Productor = vProductor;                                                         LO COMENTE POR QUE MARCABA ERROR
                             ins.PSC_Cajas = vCajas;
                             ins.PSC_Kilos = vKilos;
                             ins.PSC_Variedad = vVariedad;
@@ -321,7 +327,7 @@ namespace ShellPest
                             {
                                 contadorins++;
                             }
-                        }
+                        }*/
                     }
                     XtraMessageBox.Show("Se importaron " + contadorins + " de " + dtgValServicios.RowCount);
                     btnLimpiar.PerformClick();
@@ -343,9 +349,9 @@ namespace ShellPest
             DateTime fecha = Convert.ToDateTime(vFecha);
             vFecha = fecha.Year.ToString() + DosCeros(fecha.Month.ToString()) + DosCeros(fecha.Day.ToString());
             CLS_Estacion sel = new CLS_Estacion();
-            sel.PSC_Fecha = vFecha;
-            sel.PSC_ODC = vODC;
-            sel.MtdSeleccionarServicioCorteODC();
+            /*sel.PSC_Fecha = vFecha;
+            sel.PSC_ODC = vODC;     COMENTE POR QUE MARCABA ERROR
+            sel.MtdSeleccionarServicioCorteODC();*/
             if(sel.Exito)
             {
                 if (sel.Datos.Rows.Count > 0)

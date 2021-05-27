@@ -69,17 +69,17 @@ namespace ShellPest
                 cmbPerfil.Properties.DataSource = Clase.Datos;
             }
         }
-        private void CargarHuerta(string Valor)
+        private void CargarHuerta()
         {
             CLS_Huerta Clase = new CLS_Huerta();
-
-            Clase.MtdSeleccionarHuerta();
+            
+            Clase.MtdSeleccionarHuertaCorto();
             if (Clase.Exito)
             {
-                cmbPerfil.Properties.DisplayMember = "Nombre_Huerta";
-                cmbPerfil.Properties.ValueMember = "Id_Huerta";
-                cmbPerfil.EditValue = Valor;
-                cmbPerfil.Properties.DataSource = Clase.Datos;
+                cmbHuerta.Properties.DisplayMember = "Nombre_Huerta";
+                cmbHuerta.Properties.ValueMember = "Id_Huerta";
+                cmbHuerta.EditValue = null;
+                cmbHuerta.Properties.DataSource = Clase.Datos;
             }
         }
         private void InsertarUsuarios()
@@ -145,7 +145,7 @@ namespace ShellPest
         {
             CargarPerfiles(null);
             CargarUsuarios();
-            
+            CargarHuerta();
         }
 
         private void gridControl1_Click(object sender, EventArgs e)
@@ -247,7 +247,7 @@ namespace ShellPest
             Frm_Huertas frm = new Frm_Huertas();
             frm.PaSel = true;
             frm.ShowDialog();
-            CargarHuerta(null);
+            CargarHuerta();
         }
     }
 }
