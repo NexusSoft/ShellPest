@@ -80,6 +80,10 @@ namespace ShellPest
                 cmbHuerta.Properties.ValueMember = "Id_Huerta";
                 cmbHuerta.EditValue = null;
                 cmbHuerta.Properties.DataSource = Clase.Datos;
+                listBoxControl1.DataSource = Clase.Datos;
+                listBoxControl1.DisplayMember = "Nombre_Huerta";
+                listBoxControl1.ValueMember = "Id_Huerta";
+                listBoxControl1.SelectedIndex = -1;
             }
         }
         private void InsertarUsuarios()
@@ -90,7 +94,18 @@ namespace ShellPest
             Clase.Nombre_Usuario =textNombre.Text.Trim();
             Clase.Contrasena =encryp.Encriptar(textContrasena.Text.Trim());
             Clase.Id_Perfil = cmbPerfil.EditValue.ToString();
-            Clase.Id_Huerta = cmbHuerta.EditValue.ToString();
+            int ciclo = 0;
+            foreach (DataRowView ObjHuerta in listBoxControl1.SelectedItems)
+            { 
+                if (ciclo == 0) {
+                    Clase.Id_Huertas = ObjHuerta["Id_Huerta"].ToString(); }
+                else
+                {
+                    Clase.Id_Huertas += (Clase.Id_Huertas == "" ? "" : ",") + ObjHuerta["Id_Huerta"];
+                }
+                ciclo++;
+            }
+            
             Clase.Id_Usuario_Crea = UsuariosLogin;
             Clase.MtdInsertarUsuarios();
             if (Clase.Exito)
@@ -249,5 +264,7 @@ namespace ShellPest
             frm.ShowDialog();
             CargarHuerta();
         }
+
+       
     }
 }
