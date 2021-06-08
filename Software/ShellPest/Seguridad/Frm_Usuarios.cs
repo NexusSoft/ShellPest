@@ -9,11 +9,20 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using DevExpress.XtraEditors;
 using CapaDeDatos;
+//using GridLookUpEditCBMultipleSelection;
+using GridControlEditCBMultipleSelection;
+using DevExpress.XtraEditors.Repository;
 
 namespace ShellPest
 {
     public partial class Frm_Usuarios : DevExpress.XtraEditors.XtraForm
     {
+        //GridCheckMarksSelection gridCheckMarksHuerta;
+        //StringBuilder sb = new StringBuilder();
+        string CadenaHuerta = string.Empty;
+        int TotalRegHuerta = 0;
+        string CadenaEspHuerta = string.Empty;
+
         public string UsuariosLogin { get; set; }
 
 
@@ -32,6 +41,8 @@ namespace ShellPest
             }
         }
 
+        public string vCodigoHuerta { get; private set; }
+
         public Frm_Usuarios()
         {
             InitializeComponent();
@@ -45,7 +56,8 @@ namespace ShellPest
             if (checkActivo.Checked)
             {
                 Clase.Activo = "0";
-            }else
+            }
+            else
             {
                 Clase.Activo = "1";
             }
@@ -69,21 +81,17 @@ namespace ShellPest
                 cmbPerfil.Properties.DataSource = Clase.Datos;
             }
         }
-        private void CargarHuerta()
+        private void CargarHuerta(string Usuario)
         {
             CLS_Huerta Clase = new CLS_Huerta();
-            
-            Clase.MtdSeleccionarHuertaCorto();
+            Clase.Id_Usuario = Usuario;
+            Clase.MtdSeleccionarHuertaUsuarios();
             if (Clase.Exito)
             {
                 cmbHuerta.Properties.DisplayMember = "Nombre_Huerta";
                 cmbHuerta.Properties.ValueMember = "Id_Huerta";
                 cmbHuerta.EditValue = null;
                 cmbHuerta.Properties.DataSource = Clase.Datos;
-                listBoxControl1.DataSource = Clase.Datos;
-                listBoxControl1.DisplayMember = "Nombre_Huerta";
-                listBoxControl1.ValueMember = "Id_Huerta";
-                listBoxControl1.SelectedIndex = -1;
             }
         }
         private void InsertarUsuarios()
@@ -91,29 +99,19 @@ namespace ShellPest
             Crypto encryp = new Crypto();
             CLS_Usuarios Clase = new CLS_Usuarios();
             Clase.Id_Usuario = textUsuario.Text.Trim();
-            Clase.Nombre_Usuario =textNombre.Text.Trim();
-            Clase.Contrasena =encryp.Encriptar(textContrasena.Text.Trim());
+            Clase.Nombre_Usuario = textNombre.Text.Trim();
+            Clase.Contrasena = encryp.Encriptar(textContrasena.Text.Trim());
             Clase.Id_Perfil = cmbPerfil.EditValue.ToString();
-            int ciclo = 0;
-            foreach (DataRowView ObjHuerta in listBoxControl1.SelectedItems)
-            { 
-                if (ciclo == 0) {
-                    Clase.Id_Huertas = ObjHuerta["Id_Huerta"].ToString(); }
-                else
-                {
-                    Clase.Id_Huertas += (Clase.Id_Huertas == "" ? "" : ",") + ObjHuerta["Id_Huerta"];
-                }
-                ciclo++;
-            }
             
+
             Clase.Id_Usuario_Crea = UsuariosLogin;
             Clase.MtdInsertarUsuarios();
             if (Clase.Exito)
             {
-               
-                    CargarUsuarios();
-                    XtraMessageBox.Show("Se ha Insertado el registro con exito");
-                    LimpiarCampos();
+
+                CargarUsuarios();
+                XtraMessageBox.Show("Se ha Insertado el registro con exito");
+                LimpiarCampos();
             }
             else
             {
@@ -148,6 +146,16 @@ namespace ShellPest
             cmbPerfil.EditValue = null;
             labelActivo.Visible = false;
             inabilitar(true);
+            BloquearSecHuertas(false);
+        }
+
+        private void BloquearSecHuertas(Boolean Habilitar)
+        {
+            cmbHuerta.Enabled = Habilitar;
+            btnHuerta.Enabled = Habilitar;
+            btnAgregar.Enabled = Habilitar;
+            btnEliminarHue.Enabled = Habilitar;
+            dtgHuertas.Enabled = Habilitar;
         }
 
         private void inabilitar(Boolean sino)
@@ -160,7 +168,8 @@ namespace ShellPest
         {
             CargarPerfiles(null);
             CargarUsuarios();
-            CargarHuerta();
+            CargarHuerta(null);
+            
         }
 
         private void gridControl1_Click(object sender, EventArgs e)
@@ -173,10 +182,10 @@ namespace ShellPest
                     DataRow row = this.gridView1.GetDataRow(i);
                     textUsuario.Text = row["Id_Usuario"].ToString();
                     textNombre.Text = row["Nombre_Usuario"].ToString();
-                    textContrasena.Text =desencryp.Desencriptar(row["Contrasena"].ToString());
-                    textConfirmaContra.Text= desencryp.Desencriptar(row["Contrasena"].ToString());
+                    textContrasena.Text = desencryp.Desencriptar(row["Contrasena"].ToString());
+                    textConfirmaContra.Text = desencryp.Desencriptar(row["Contrasena"].ToString());
                     cmbPerfil.EditValue = row["Id_Perfil"].ToString();
-                    cmbHuerta.EditValue = row["Id_Huerta"].ToString();
+                    //cmbHuerta.EditValue = row["Id_Huerta"].ToString();
 
                     labelActivo.Visible = true;
 
@@ -193,6 +202,9 @@ namespace ShellPest
                         labelActivo.Text = "Activo";
                         btnEliminar.Caption = "Inabilitar";
                         inabilitar(true);
+                        CargarGridHuertas(row["Id_Usuario"].ToString());
+                        CargarHuerta(row["Id_Usuario"].ToString());
+                        BloquearSecHuertas(true);
                     }
                 }
             }
@@ -202,9 +214,20 @@ namespace ShellPest
             }
         }
 
+        private void CargarGridHuertas(string id_usuario)
+        {
+            CLS_Usuarios sel = new CLS_Usuarios();
+            sel.Id_Usuario = id_usuario;
+            sel.MtdSeleccionarUsuariosHuerta();
+            if(sel.Exito)
+            {
+                dtgHuertas.DataSource = sel.Datos;
+            }
+        }
+
         private void btnGuardar_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            if (textUsuario.Text!=String.Empty)
+            if (textUsuario.Text != String.Empty)
             {
                 if (textContrasena.Text.Trim().Equals(textConfirmaContra.Text.Trim()))
                 {
@@ -214,7 +237,7 @@ namespace ShellPest
                 {
                     XtraMessageBox.Show("La contraseña no coincide con la ingresada");
                 }
-                
+
             }
             else
             {
@@ -224,7 +247,7 @@ namespace ShellPest
 
         private void btnEliminar_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            if (textUsuario.Text!=String.Empty)
+            if (textUsuario.Text != String.Empty)
             {
                 EliminarUsuarios();
             }
@@ -262,9 +285,60 @@ namespace ShellPest
             Frm_Huertas frm = new Frm_Huertas();
             frm.PaSel = true;
             frm.ShowDialog();
-            CargarHuerta();
+            CargarHuerta(textUsuario.Text);
         }
 
-       
+        private void btnAgregar_Click(object sender, EventArgs e)
+        {
+            CLS_Usuarios Clase = new CLS_Usuarios();
+            Clase.Id_Usuario = textUsuario.Text.Trim();
+            Clase.Id_Huerta = cmbHuerta.EditValue.ToString();
+            Clase.Id_Usuario_Crea = UsuariosLogin;
+            Clase.MtdInsertarUsuariosHuerta();
+            if (Clase.Exito)
+            {
+                XtraMessageBox.Show("Se ha Insertado la huerta con exito");
+                CargarGridHuertas(textUsuario.Text.Trim());
+                CargarHuerta(textUsuario.Text.Trim());
+            }
+            else
+            {
+                XtraMessageBox.Show(Clase.Mensaje);
+            }
+        }
+
+        private void btnEliminarHue_Click(object sender, EventArgs e)
+        {
+            CLS_Usuarios Clase = new CLS_Usuarios();
+            Clase.Id_Usuario = textUsuario.Text.Trim();
+            Clase.Id_Huerta = vCodigoHuerta;
+            Clase.MtdEliminarUsuariosHuerta();
+            if (Clase.Exito)
+            {
+                XtraMessageBox.Show("Se ha Eliminado la huerta con exito");
+                CargarGridHuertas(textUsuario.Text.Trim());
+                CargarHuerta(textUsuario.Text.Trim());
+            }
+            else
+            {
+                XtraMessageBox.Show(Clase.Mensaje);
+            }
+        }
+
+        private void dtgHuertas_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                foreach (int i in this.dtgValHuertas.GetSelectedRows())
+                {
+                    DataRow row = this.dtgValHuertas.GetDataRow(i);
+                    vCodigoHuerta = row["Id_Huerta"].ToString();
+                }
+            }
+            catch (Exception ex)
+            {
+                XtraMessageBox.Show(ex.Message);
+            }
+        }
     }
 }
