@@ -195,6 +195,22 @@ namespace ShellPest_WebService
             }
         }
         [System.Web.Mvc.HttpGet]
+        public ActionResult Huerta_Usuarios()
+        {
+            string cadena = string.Empty;
+            WS_Catalogos_Huerta sel = new WS_Catalogos_Huerta();
+            sel.MtdSeleccionarHuertaUsuario();
+            if (sel.Exito)
+            {
+                GetJson(sel.Datos);
+                return Json(rows, JsonRequestBehavior.AllowGet);
+            }
+            else
+            {
+                return Json(cadena, JsonRequestBehavior.AllowGet);
+            }
+        }
+        [System.Web.Mvc.HttpGet]
         public ActionResult Humbral(string Fecha)
         {
             string cadena = string.Empty;

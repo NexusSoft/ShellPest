@@ -425,6 +425,7 @@
             this.gridColumn5.Caption = "Codigo";
             this.gridColumn5.FieldName = "Id_Huerta";
             this.gridColumn5.Name = "gridColumn5";
+            this.gridColumn5.OptionsColumn.AllowEdit = false;
             this.gridColumn5.Visible = true;
             this.gridColumn5.VisibleIndex = 0;
             // 
@@ -433,6 +434,7 @@
             this.gridColumn6.Caption = "Huerta";
             this.gridColumn6.FieldName = "Nombre_Huerta";
             this.gridColumn6.Name = "gridColumn6";
+            this.gridColumn6.OptionsColumn.AllowEdit = false;
             this.gridColumn6.Visible = true;
             this.gridColumn6.VisibleIndex = 1;
             // 

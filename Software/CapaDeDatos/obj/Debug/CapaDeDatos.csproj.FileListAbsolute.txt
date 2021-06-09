@@ -17,12 +17,6 @@ E:\JORGE\Documents\GitHub\ShellPest\Software\CapaDeDatos\obj\Debug\CapaDeDatos.p
 E:\JORGE\Documents\GitHub\ShellPest\Software\CapaDeDatos\bin\Debug\CapaDeDatos.dll
 E:\JORGE\Documents\GitHub\ShellPest\Software\CapaDeDatos\bin\Debug\CapaDeDatos.pdb
 E:\JORGE\Documents\GitHub\ShellPest\Software\CapaDeDatos\obj\Debug\CapaDeDatos.csprojResolveAssemblyReference.cache
-D:\SKYNET\Documents\GitHub\ShellPest\Software\CapaDeDatos\bin\Debug\CapaDeDatos.dll
-D:\SKYNET\Documents\GitHub\ShellPest\Software\CapaDeDatos\bin\Debug\CapaDeDatos.pdb
-D:\SKYNET\Documents\GitHub\ShellPest\Software\CapaDeDatos\obj\Debug\CapaDeDatos.csproj.ResolveComReference.cache
-D:\SKYNET\Documents\GitHub\ShellPest\Software\CapaDeDatos\obj\Debug\CapaDeDatos.csproj.CoreCompileInputs.cache
-D:\SKYNET\Documents\GitHub\ShellPest\Software\CapaDeDatos\obj\Debug\CapaDeDatos.dll
-D:\SKYNET\Documents\GitHub\ShellPest\Software\CapaDeDatos\obj\Debug\CapaDeDatos.pdb
 G:\JORGE\Documents\GitHub\ShellPest\Software\CapaDeDatos\bin\Debug\CapaDeDatos.dll
 G:\JORGE\Documents\GitHub\ShellPest\Software\CapaDeDatos\bin\Debug\CapaDeDatos.pdb
 G:\JORGE\Documents\GitHub\ShellPest\Software\CapaDeDatos\obj\Debug\CapaDeDatos.csproj.ResolveComReference.cache
@@ -30,4 +24,10 @@ G:\JORGE\Documents\GitHub\ShellPest\Software\CapaDeDatos\obj\Debug\CapaDeDatos.c
 G:\JORGE\Documents\GitHub\ShellPest\Software\CapaDeDatos\obj\Debug\CapaDeDatos.dll
 G:\JORGE\Documents\GitHub\ShellPest\Software\CapaDeDatos\obj\Debug\CapaDeDatos.pdb
 G:\JORGE\Documents\GitHub\ShellPest\Software\CapaDeDatos\obj\Debug\CapaDeDatos.csprojAssemblyReference.cache
+D:\SKYNET\Documents\GitHub\ShellPest\Software\CapaDeDatos\bin\Debug\CapaDeDatos.dll
+D:\SKYNET\Documents\GitHub\ShellPest\Software\CapaDeDatos\bin\Debug\CapaDeDatos.pdb
 D:\SKYNET\Documents\GitHub\ShellPest\Software\CapaDeDatos\obj\Debug\CapaDeDatos.csprojAssemblyReference.cache
+D:\SKYNET\Documents\GitHub\ShellPest\Software\CapaDeDatos\obj\Debug\CapaDeDatos.csproj.ResolveComReference.cache
+D:\SKYNET\Documents\GitHub\ShellPest\Software\CapaDeDatos\obj\Debug\CapaDeDatos.csproj.CoreCompileInputs.cache
+D:\SKYNET\Documents\GitHub\ShellPest\Software\CapaDeDatos\obj\Debug\CapaDeDatos.dll
+D:\SKYNET\Documents\GitHub\ShellPest\Software\CapaDeDatos\obj\Debug\CapaDeDatos.pdb
