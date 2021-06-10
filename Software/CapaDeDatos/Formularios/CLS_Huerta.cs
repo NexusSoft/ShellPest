@@ -17,6 +17,7 @@ namespace CapaDeDatos
         public string Id_Ciudad { get; set; }
         public string Id_Calidad { get; set; }
         public string Id_Cultivo { get; set; }
+        public string Id_Tratamiento { get; set; }
         public decimal zona_Huerta { get; set; }
         public string banda_Huerta { get; set; }
         public decimal este_Huerta { get; set; }
@@ -144,6 +145,8 @@ namespace CapaDeDatos
                 _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Id_Calidad");
                 _dato.CadenaTexto = Id_Cultivo;
                 _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Id_Cultivo");
+                _dato.CadenaTexto = Id_Tratamiento;
+                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Id_Tratamiento");
                 _dato.CadenaTexto = Id_zona;
                 _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Id_zona");
                 _dato.DecimalValor = zona_Huerta;

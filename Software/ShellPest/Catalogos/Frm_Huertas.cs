@@ -347,6 +347,7 @@ namespace ShellPest
             Clase.Id_Ciudad = cboCiudad.EditValue.ToString();
             Clase.Id_Calidad = cboCalidad.EditValue.ToString();
             Clase.Id_Cultivo = cboCultivo.EditValue.ToString();
+            Clase.Id_Tratamiento= cboTratamiento.EditValue.ToString();
             Clase.Id_zona = cboZona.EditValue.ToString();
             Clase.zona_Huerta =Convert.ToDecimal(txtZona.Text);
             Clase.banda_Huerta = txtBanda.Text;
