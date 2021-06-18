@@ -46,19 +46,18 @@
             this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
             this.repositoryItemTextEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemTextEdit();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
-            this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
-            this.txtClave = new DevExpress.XtraEditors.TextEdit();
             this.pgbProgreso = new DevExpress.XtraEditors.ProgressBarControl();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.txtRutaArchivo = new DevExpress.XtraEditors.TextEdit();
             this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
             this.listBoxControl1 = new DevExpress.XtraEditors.ListBoxControl();
-            this.dtgServicios = new DevExpress.XtraGrid.GridControl();
-            this.dtgValServicios = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.dtgEstacion = new DevExpress.XtraGrid.GridControl();
+            this.dtgValEstacion = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.col_Fecha = new DevExpress.XtraGrid.Columns.GridColumn();
             this.col_TimeOut = new DevExpress.XtraGrid.Columns.GridColumn();
             this.col_ET = new DevExpress.XtraGrid.Columns.GridColumn();
             this.col_Rain = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.spreadsheetBarController1 = new DevExpress.XtraSpreadsheet.UI.SpreadsheetBarController();
             this.OpenDialog = new DevExpress.XtraEditors.XtraOpenFileDialog(this.components);
             this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -66,14 +65,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.txtClave.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pgbProgreso.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtRutaArchivo.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).BeginInit();
             this.panelControl2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.listBoxControl1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dtgServicios)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dtgValServicios)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgEstacion)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgValEstacion)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.spreadsheetBarController1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -239,8 +237,6 @@
             // 
             // panelControl1
             // 
-            this.panelControl1.Controls.Add(this.labelControl3);
-            this.panelControl1.Controls.Add(this.txtClave);
             this.panelControl1.Controls.Add(this.pgbProgreso);
             this.panelControl1.Controls.Add(this.labelControl1);
             this.panelControl1.Controls.Add(this.txtRutaArchivo);
@@ -249,22 +245,6 @@
             this.panelControl1.Name = "panelControl1";
             this.panelControl1.Size = new System.Drawing.Size(993, 72);
             this.panelControl1.TabIndex = 4;
-            // 
-            // labelControl3
-            // 
-            this.labelControl3.Location = new System.Drawing.Point(580, 18);
-            this.labelControl3.Name = "labelControl3";
-            this.labelControl3.Size = new System.Drawing.Size(31, 13);
-            this.labelControl3.TabIndex = 7;
-            this.labelControl3.Text = "Clave:";
-            // 
-            // txtClave
-            // 
-            this.txtClave.Location = new System.Drawing.Point(617, 14);
-            this.txtClave.MenuManager = this.barManager1;
-            this.txtClave.Name = "txtClave";
-            this.txtClave.Size = new System.Drawing.Size(100, 20);
-            this.txtClave.TabIndex = 5;
             // 
             // pgbProgreso
             // 
@@ -295,7 +275,7 @@
             // panelControl2
             // 
             this.panelControl2.Controls.Add(this.listBoxControl1);
-            this.panelControl2.Controls.Add(this.dtgServicios);
+            this.panelControl2.Controls.Add(this.dtgEstacion);
             this.panelControl2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelControl2.Location = new System.Drawing.Point(72, 72);
             this.panelControl2.Name = "panelControl2";
@@ -310,29 +290,30 @@
             this.listBoxControl1.Size = new System.Drawing.Size(120, 22);
             this.listBoxControl1.TabIndex = 8;
             // 
-            // dtgServicios
+            // dtgEstacion
             // 
-            this.dtgServicios.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dtgServicios.Location = new System.Drawing.Point(7, 7);
-            this.dtgServicios.MainView = this.dtgValServicios;
-            this.dtgServicios.MenuManager = this.barManager1;
-            this.dtgServicios.Name = "dtgServicios";
-            this.dtgServicios.Size = new System.Drawing.Size(979, 435);
-            this.dtgServicios.TabIndex = 0;
-            this.dtgServicios.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.dtgValServicios});
+            this.dtgEstacion.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dtgEstacion.Location = new System.Drawing.Point(7, 7);
+            this.dtgEstacion.MainView = this.dtgValEstacion;
+            this.dtgEstacion.MenuManager = this.barManager1;
+            this.dtgEstacion.Name = "dtgEstacion";
+            this.dtgEstacion.Size = new System.Drawing.Size(979, 435);
+            this.dtgEstacion.TabIndex = 0;
+            this.dtgEstacion.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.dtgValEstacion});
             // 
-            // dtgValServicios
+            // dtgValEstacion
             // 
-            this.dtgValServicios.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.dtgValEstacion.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.col_Fecha,
             this.col_TimeOut,
             this.col_ET,
-            this.col_Rain});
-            this.dtgValServicios.GridControl = this.dtgServicios;
-            this.dtgValServicios.Name = "dtgValServicios";
-            this.dtgValServicios.OptionsView.ShowFooter = true;
-            this.dtgValServicios.OptionsView.ShowGroupPanel = false;
+            this.col_Rain,
+            this.gridColumn2});
+            this.dtgValEstacion.GridControl = this.dtgEstacion;
+            this.dtgValEstacion.Name = "dtgValEstacion";
+            this.dtgValEstacion.OptionsView.ShowFooter = true;
+            this.dtgValEstacion.OptionsView.ShowGroupPanel = false;
             // 
             // col_Fecha
             // 
@@ -345,12 +326,12 @@
             // 
             // col_TimeOut
             // 
-            this.col_TimeOut.Caption = "Time_Out";
-            this.col_TimeOut.FieldName = "Time_Out_Estacion";
+            this.col_TimeOut.Caption = "Temp_Out";
+            this.col_TimeOut.FieldName = "Temp_Out_Estacion";
             this.col_TimeOut.Name = "col_TimeOut";
             this.col_TimeOut.OptionsColumn.AllowEdit = false;
             this.col_TimeOut.Visible = true;
-            this.col_TimeOut.VisibleIndex = 1;
+            this.col_TimeOut.VisibleIndex = 2;
             // 
             // col_ET
             // 
@@ -359,7 +340,7 @@
             this.col_ET.Name = "col_ET";
             this.col_ET.OptionsColumn.AllowEdit = false;
             this.col_ET.Visible = true;
-            this.col_ET.VisibleIndex = 2;
+            this.col_ET.VisibleIndex = 3;
             // 
             // col_Rain
             // 
@@ -368,7 +349,15 @@
             this.col_Rain.Name = "col_Rain";
             this.col_Rain.OptionsColumn.AllowEdit = false;
             this.col_Rain.Visible = true;
-            this.col_Rain.VisibleIndex = 3;
+            this.col_Rain.VisibleIndex = 4;
+            // 
+            // gridColumn2
+            // 
+            this.gridColumn2.Caption = "Time";
+            this.gridColumn2.FieldName = "T_Estacion";
+            this.gridColumn2.Name = "gridColumn2";
+            this.gridColumn2.Visible = true;
+            this.gridColumn2.VisibleIndex = 1;
             // 
             // OpenDialog
             // 
@@ -393,7 +382,7 @@
             this.Controls.Add(this.barDockControlBottom);
             this.Controls.Add(this.barDockControlTop);
             this.Name = "Frm_ImportarEstacion";
-            this.Text = "Importar ODC";
+            this.Text = "Importar Estacion";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Shown += new System.EventHandler(this.Frm_ImportarODC_Shown);
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
@@ -401,14 +390,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
             this.panelControl1.ResumeLayout(false);
             this.panelControl1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.txtClave.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pgbProgreso.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtRutaArchivo.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).EndInit();
             this.panelControl2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.listBoxControl1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dtgServicios)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dtgValServicios)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgEstacion)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgValEstacion)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.spreadsheetBarController1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -430,8 +418,6 @@
         private DevExpress.XtraBars.BarDockControl barDockControlRight;
         private DevExpress.XtraEditors.PanelControl panelControl2;
         private DevExpress.XtraEditors.PanelControl panelControl1;
-        private DevExpress.XtraEditors.LabelControl labelControl3;
-        private DevExpress.XtraEditors.TextEdit txtClave;
         private DevExpress.XtraEditors.ProgressBarControl pgbProgreso;
         private DevExpress.XtraEditors.LabelControl labelControl1;
         private DevExpress.XtraEditors.TextEdit txtRutaArchivo;
@@ -440,8 +426,8 @@
         private DevExpress.XtraEditors.Repository.RepositoryItemTextEdit repositoryItemTextEdit1;
         private DevExpress.XtraSpreadsheet.UI.SpreadsheetBarController spreadsheetBarController1;
         private DevExpress.XtraEditors.XtraOpenFileDialog OpenDialog;
-        private DevExpress.XtraGrid.GridControl dtgServicios;
-        private DevExpress.XtraGrid.Views.Grid.GridView dtgValServicios;
+        private DevExpress.XtraGrid.GridControl dtgEstacion;
+        private DevExpress.XtraGrid.Views.Grid.GridView dtgValEstacion;
         private DevExpress.XtraGrid.Columns.GridColumn col_Fecha;
         private DevExpress.XtraGrid.Columns.GridColumn col_TimeOut;
         private DevExpress.XtraGrid.Columns.GridColumn col_ET;
@@ -449,5 +435,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn1;
         private DevExpress.XtraBars.BarLargeButtonItem btnBuscarServicios;
         private DevExpress.XtraEditors.ListBoxControl listBoxControl1;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn2;
     }
 }

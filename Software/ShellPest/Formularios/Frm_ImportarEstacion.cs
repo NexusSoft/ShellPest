@@ -4,7 +4,6 @@ using DevExpress.XtraEditors;
 using CapaDeDatos;
 using SpreadsheetLight;
 using System.Data;
-using CapaDeDatos;
 
 namespace ShellPest
 {
@@ -12,29 +11,13 @@ namespace ShellPest
     public partial class Frm_ImportarEstacion : DevExpress.XtraEditors.XtraForm
     {
         int rCnt = 0;
-        int cCnt = 0;
         public int Row_PSC_Inicio { get; set; }
-        public int Col_Fecha { get; set; }
-        public int Col_TimeOut { get; set; }
-        public int Col_ET { get; set; }
-        public int Col_Rain { get; set; }
-        public int Col_PSC_Placas { get; set; }
-        public int Col_PSC_Huertas { get; set; } 
-        public int Col_PSC_Productor { get; set; }
-        public int Col_PSC_Cajas { get; set; }
-        public int Col_PSC_Kilos { get; set; }
-        public int Col_PSC_Variedad { get; set; }
-        public int Col_PSC_JefeCuadrilla { get; set; }
-        public int Col_PSC_CajasZ { get; set; }
-        public int Col_PSC_FolioZ { get; set; }
-        public int Col_PSC_JefeArea { get; set; }
-        public int Col_PSC_ClaveDia { get; set; }
-
-     public int Col_PSC_Fecha { get; set; }
-    public int Col_PSC_ODC { get; set; }
-    public int Col_PSC_Ubicacion { get; set; }
-    public int Col_PSC_Pesada { get; set; }
-  
+        public int Col_PSC_Fecha { get;  set; }
+        public int Col_PSC_Time { get;  set; }
+        public int Col_PSC_TempOut { get; set; }
+        public int Col_PSC_ET { get; set; }
+        public int Col_PSC_Rain { get; private set; }
+       
 
     private static Frm_ImportarEstacion m_FormDefInstance;
         public static Frm_ImportarEstacion DefInstance
@@ -50,6 +33,8 @@ namespace ShellPest
                 m_FormDefInstance = value;
             }
         }
+
+
 
         public Frm_ImportarEstacion()
         {
@@ -72,7 +57,7 @@ namespace ShellPest
 
             // DataRow row;
             column.DataType = typeof(DateTime);
-            column.ColumnName = "col_Fecha";
+            column.ColumnName = "F_Estacion";
             column.AutoIncrement = false;
             column.Caption = "Fecha";
             column.ReadOnly = false;
@@ -82,7 +67,7 @@ namespace ShellPest
 
             column = new DataColumn();
             column.DataType = typeof(string);
-            column.ColumnName = "col_ODC";
+            column.ColumnName = "T_Estacion";
             column.AutoIncrement = false;
             column.Caption = "ODC";
             column.ReadOnly = false;
@@ -92,7 +77,7 @@ namespace ShellPest
 
             column = new DataColumn();
             column.DataType = typeof(string);
-            column.ColumnName = "col_Ubicacion";
+            column.ColumnName = "Temp_Out_Estacion";
             column.AutoIncrement = false;
             column.Caption = "Ubicacion";
             column.ReadOnly = false;
@@ -102,7 +87,7 @@ namespace ShellPest
 
             column = new DataColumn();
             column.DataType = typeof(string);
-            column.ColumnName = "col_Pesada";
+            column.ColumnName = "ET_Estacion";
             column.AutoIncrement = false;
             column.Caption = "Pesada";
             column.ReadOnly = false;
@@ -112,7 +97,7 @@ namespace ShellPest
 
             column = new DataColumn();
             column.DataType = typeof(string);
-            column.ColumnName = "col_Placas";
+            column.ColumnName = "Rain_Estacion";
             column.AutoIncrement = false;
             column.Caption = "Placas";
             column.ReadOnly = false;
@@ -120,105 +105,20 @@ namespace ShellPest
 
             table.Columns.Add(column);
 
-            column = new DataColumn();
-            column.DataType = typeof(string);
-            column.ColumnName = "col_Huertas";
-            column.AutoIncrement = false;
-            column.Caption = "Huertas";
-            column.ReadOnly = false;
-            column.Unique = false;
-
-            table.Columns.Add(column);
-
-            column = new DataColumn();
-            column.DataType = typeof(string);
-            column.ColumnName = "col_Productor";
-            column.AutoIncrement = false;
-            column.Caption = "Productor";
-            column.ReadOnly = false;
-            column.Unique = false;
-
-            table.Columns.Add(column);
-
-            column = new DataColumn();
-            column.DataType = typeof(string);
-            column.ColumnName = "col_Cajas";
-            column.AutoIncrement = false;
-            column.Caption = "Cajas";
-            column.ReadOnly = false;
-            column.Unique = false;
-
-            table.Columns.Add(column);
-
-            column = new DataColumn();
-            column.DataType = typeof(string);
-            column.ColumnName = "col_Kilos";
-            column.AutoIncrement = false;
-            column.Caption = "Kilos";
-            column.ReadOnly = false;
-            column.Unique = false;
-
-            table.Columns.Add(column);
-
-            column = new DataColumn();
-            column.DataType = typeof(string);
-            column.ColumnName = "col_Variedad";
-            column.AutoIncrement = false;
-            column.Caption = "Variedad";
-            column.ReadOnly = false;
-            column.Unique = false;
-
-            table.Columns.Add(column);
-            column = new DataColumn();
-            column.DataType = typeof(string);
-            column.ColumnName = "col_JefeCuadrilla";
-            column.AutoIncrement = false;
-            column.Caption = "Jefe Cuadrilla";
-            column.ReadOnly = false;
-            column.Unique = false;
-
-            table.Columns.Add(column);
-            column = new DataColumn();
-            column.DataType = typeof(string);
-            column.ColumnName = "col_CajasZ";
-            column.AutoIncrement = false;
-            column.Caption = "CajasZ";
-            column.ReadOnly = false;
-            column.Unique = false;
-
-            table.Columns.Add(column);
-            column = new DataColumn();
-            column.DataType = typeof(string);
-            column.ColumnName = "col_FolioZ";
-            column.AutoIncrement = false;
-            column.Caption = "FolioZ";
-            column.ReadOnly = false;
-            column.Unique = false;
-
-            table.Columns.Add(column);
-            column = new DataColumn();
-            column.DataType = typeof(string);
-            column.ColumnName = "col_JefeArea";
-            column.AutoIncrement = false;
-            column.Caption = "Jefe Area";
-            column.ReadOnly = false;
-            column.Unique = false;
-
-            table.Columns.Add(column);
-
-            dtgServicios.DataSource = table;
+            dtgEstacion.DataSource = table;
         }
-        private void CreatNewRowArticulo(string Col_Fecha ,string Col_TimeOut,string Col_ET ,string Col_Rain)
+        private void CreatNewRowArticulo(string Col_Fecha , string Col_Hora ,string Col_TimeOut,string Col_ET ,string Col_Rain)
         {
-            dtgValServicios.AddNewRow();
+            dtgValEstacion.AddNewRow();
 
-            int rowHandle = dtgValServicios.GetRowHandle(dtgValServicios.DataRowCount);
-            if (dtgValServicios.IsNewItemRow(rowHandle))
+            int rowHandle = dtgValEstacion.GetRowHandle(dtgValEstacion.DataRowCount);
+            if (dtgValEstacion.IsNewItemRow(rowHandle))
             {
-                dtgValServicios.SetRowCellValue(rowHandle, dtgValServicios.Columns["F_Estacion"], Col_Fecha);
-                dtgValServicios.SetRowCellValue(rowHandle, dtgValServicios.Columns["Time_Out_Estacion"], Col_TimeOut);
-                dtgValServicios.SetRowCellValue(rowHandle, dtgValServicios.Columns["ET_Estacion"], Col_ET);
-                dtgValServicios.SetRowCellValue(rowHandle, dtgValServicios.Columns["Rain_Estacion"], Col_Rain);
+                dtgValEstacion.SetRowCellValue(rowHandle, dtgValEstacion.Columns["F_Estacion"], Col_Fecha);
+                dtgValEstacion.SetRowCellValue(rowHandle, dtgValEstacion.Columns["T_Estacion"], Col_Hora);
+                dtgValEstacion.SetRowCellValue(rowHandle, dtgValEstacion.Columns["Temp_Out_Estacion"], Col_TimeOut);
+                dtgValEstacion.SetRowCellValue(rowHandle, dtgValEstacion.Columns["ET_Estacion"], Col_ET);
+                dtgValEstacion.SetRowCellValue(rowHandle, dtgValEstacion.Columns["Rain_Estacion"], Col_Rain);
             }
         }
 
@@ -245,22 +145,13 @@ namespace ShellPest
             {
                 if (sel.Datos.Rows.Count > 0)
                 {
-                    Row_PSC_Inicio= Convert.ToInt32(sel.Datos.Rows[0]["Row_PSC_Inicio"].ToString());
-                    Col_PSC_Fecha = Convert.ToInt32(sel.Datos.Rows[0]["Col_PSC_Fecha"].ToString());
-                    Col_PSC_ODC = Convert.ToInt32(sel.Datos.Rows[0]["Col_PSC_ODC"].ToString());
-                    Col_PSC_Ubicacion = Convert.ToInt32(sel.Datos.Rows[0]["Col_PSC_Ubicacion"].ToString());
-                    Col_PSC_Pesada = Convert.ToInt32(sel.Datos.Rows[0]["Col_PSC_Pesada"].ToString());
-                    Col_PSC_Pesada = Convert.ToInt32(sel.Datos.Rows[0]["Col_PSC_Pesada"].ToString());
-                    Col_PSC_Placas = Convert.ToInt32(sel.Datos.Rows[0]["Col_PSC_Placas"].ToString());
-                    Col_PSC_Huertas = Convert.ToInt32(sel.Datos.Rows[0]["Col_PSC_Huertas"].ToString());
-                    Col_PSC_Productor = Convert.ToInt32(sel.Datos.Rows[0]["Col_PSC_Productor"].ToString());
-                    Col_PSC_Cajas = Convert.ToInt32(sel.Datos.Rows[0]["Col_PSC_Cajas"].ToString());
-                    Col_PSC_Kilos = Convert.ToInt32(sel.Datos.Rows[0]["Col_PSC_Kilos"].ToString());
-                    Col_PSC_Variedad = Convert.ToInt32(sel.Datos.Rows[0]["Col_PSC_Variedad"].ToString());
-                    Col_PSC_JefeCuadrilla = Convert.ToInt32(sel.Datos.Rows[0]["Col_PSC_JefeCuadrilla"].ToString());
-                    Col_PSC_CajasZ = Convert.ToInt32(sel.Datos.Rows[0]["Col_PSC_CajasZ"].ToString());
-                    Col_PSC_FolioZ = Convert.ToInt32(sel.Datos.Rows[0]["Col_PSC_FolioZ"].ToString());
-                    Col_PSC_JefeArea = Convert.ToInt32(sel.Datos.Rows[0]["Col_PSC_JefeArea"].ToString());
+                    Row_PSC_Inicio= Convert.ToInt32(sel.Datos.Rows[0]["Row_Est_Inicio"].ToString());
+                    Col_PSC_Fecha = Convert.ToInt32(sel.Datos.Rows[0]["Col_Est_Fecha"].ToString());
+                    Col_PSC_Time = Convert.ToInt32(sel.Datos.Rows[0]["Col_Est_Hora"].ToString());
+                    Col_PSC_TempOut = Convert.ToInt32(sel.Datos.Rows[0]["Col_Est_TempOut"].ToString());
+                    Col_PSC_ET = Convert.ToInt32(sel.Datos.Rows[0]["Col_Est_ET"].ToString());
+                    Col_PSC_Rain = Convert.ToInt32(sel.Datos.Rows[0]["Col_Est_Rain"].ToString());
+                   
                     Valor = true;
                 }
             }
@@ -275,28 +166,27 @@ namespace ShellPest
         private void btnLimpiar_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             MakeTablaPedidos();
-            txtClave.Text = string.Empty;
+            
         }
 
         private void btnImportar_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             int contadorins = 0;
-            if (txtClave.Text!=string.Empty)
-            {
-                if (dtgValServicios.RowCount > 0)
+            
+                if (dtgValEstacion.RowCount > 0)
                 {
-                    pgbProgreso.Properties.Maximum = dtgValServicios.RowCount;
+                    pgbProgreso.Properties.Maximum = dtgValEstacion.RowCount;
                     pgbProgreso.Position = 0;
                     
-                    for (int x = 0; x < dtgValServicios.RowCount; x++)
+                    for (int x = 0; x < dtgValEstacion.RowCount; x++)
                     {
-                        int xRow = dtgValServicios.GetVisibleRowHandle(x);
+                        int xRow = dtgValEstacion.GetVisibleRowHandle(x);
                         pgbProgreso.Position = x + 1;
                         Application.DoEvents();
-                        string vFecha = dtgValServicios.GetRowCellValue(xRow, "col_Fecha").ToString();
-                        string vTimeOut = dtgValServicios.GetRowCellValue(xRow, "col_TimeOut").ToString();
-                        string vET = dtgValServicios.GetRowCellValue(xRow, "col_ET").ToString();
-                        string vRain = dtgValServicios.GetRowCellValue(xRow, "col_Rain").ToString();
+                        string vFecha = dtgValEstacion.GetRowCellValue(xRow, "col_Fecha").ToString();
+                        string vTimeOut = dtgValEstacion.GetRowCellValue(xRow, "col_TimeOut").ToString();
+                        string vET = dtgValEstacion.GetRowCellValue(xRow, "col_ET").ToString();
+                        string vRain = dtgValEstacion.GetRowCellValue(xRow, "col_Rain").ToString();
                         
                        /* if (!BuscarRegistro(vFecha, vODC))
                         {
@@ -329,18 +219,14 @@ namespace ShellPest
                             }
                         }*/
                     }
-                    XtraMessageBox.Show("Se importaron " + contadorins + " de " + dtgValServicios.RowCount);
+                    XtraMessageBox.Show("Se importaron " + contadorins + " de " + dtgValEstacion.RowCount);
                     btnLimpiar.PerformClick();
                 }
                 else
                 {
                     XtraMessageBox.Show("No existen registros para importar");
                 }
-            }
-            else
-            {
-                XtraMessageBox.Show("Se debe capturar Hoja y Clave");
-            }
+            
         }
 
         private bool BuscarRegistro(string vFecha, string vODC)
@@ -378,7 +264,6 @@ namespace ShellPest
                     txtRutaArchivo.Text = OpenDialog.FileName;
                     var str = string.Empty;
                     rCnt = Row_PSC_Inicio;
-                    cCnt = 0;
                     try
                     {
                         rCnt = Row_PSC_Inicio;
@@ -395,12 +280,13 @@ namespace ShellPest
                         {
                             pgbProgreso.Position = rCnt;
                             Application.DoEvents();
-                            string vFecha = s1.GetCellValueAsDateTime(rCnt, Col_Fecha).ToString();
-                            string vTimeOut = s1.GetCellValueAsString(rCnt, Col_TimeOut);
-                            string vET = s1.GetCellValueAsString(rCnt, Col_ET);
-                            string vRain = s1.GetCellValueAsString(rCnt, Col_Rain);
+                            string vFecha = s1.GetCellValueAsDateTime(rCnt, Col_PSC_Fecha).ToString();
+                            string vHora = s1.GetCellValueAsString(rCnt, Col_PSC_Time).ToString();
+                            string vTempOut = s1.GetCellValueAsString(rCnt, Col_PSC_TempOut);
+                            string vET = s1.GetCellValueAsString(rCnt, Col_PSC_ET);
+                            string vRain = s1.GetCellValueAsString(rCnt, Col_PSC_Rain);
                            
-                            CreatNewRowArticulo(vFecha, vTimeOut, vET, vRain);
+                            CreatNewRowArticulo(vFecha,vHora, vTempOut, vET, vRain);
                             rCnt++;
                         }
                         pgbProgreso.Position = 0;
