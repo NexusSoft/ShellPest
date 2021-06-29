@@ -210,6 +210,12 @@
     <Compile Include="Configuracion\Frm_ParametrosEstacion.Designer.cs">
       <DependentUpon>Frm_ParametrosEstacion.cs</DependentUpon>
     </Compile>
+    <Compile Include="Control\Frm_Recetas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Control\Frm_Recetas.Designer.cs">
+      <DependentUpon>Frm_Recetas.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formularios\Frm_ImportarEstacion.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -316,6 +322,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Configuracion\Frm_ParametrosEstacion.resx">
       <DependentUpon>Frm_ParametrosEstacion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Control\Frm_Recetas.resx">
+      <DependentUpon>Frm_Recetas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Frm_ImportarEstacion.resx">
       <DependentUpon>Frm_ImportarEstacion.cs</DependentUpon>
