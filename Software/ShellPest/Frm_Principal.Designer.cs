@@ -67,6 +67,7 @@
             this.ribbonPage2 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.xtraTabbedMdiManager1 = new DevExpress.XtraTabbedMdi.XtraTabbedMdiManager(this.components);
             this.SkinForm = new DevExpress.LookAndFeel.DefaultLookAndFeel(this.components);
+            this.btn_Recetas = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabbedMdiManager1)).BeginInit();
             this.SuspendLayout();
@@ -98,9 +99,10 @@
             this.btnMonitoreo,
             this.btnIndividuos,
             this.btnZonasClima,
-            this.barButtonItem1});
+            this.barButtonItem1,
+            this.btn_Recetas});
             this.ribbonControl1.Location = new System.Drawing.Point(0, 0);
-            this.ribbonControl1.MaxItemId = 24;
+            this.ribbonControl1.MaxItemId = 25;
             this.ribbonControl1.Name = "ribbonControl1";
             this.ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage1,
@@ -330,6 +332,7 @@
             this.ribbonPageGroup5.ItemLinks.Add(this.btnCultivo);
             this.ribbonPageGroup5.ItemLinks.Add(this.btnCalidades);
             this.ribbonPageGroup5.ItemLinks.Add(this.btnZonasClima);
+            this.ribbonPageGroup5.ItemLinks.Add(this.btn_Recetas);
             this.ribbonPageGroup5.Name = "ribbonPageGroup5";
             this.ribbonPageGroup5.Text = "Catalogos de Ubicacion";
             // 
@@ -417,6 +420,15 @@
             this.SkinForm.EnableBonusSkins = true;
             this.SkinForm.LookAndFeel.SkinName = "Office 2010 Silver";
             // 
+            // btn_Recetas
+            // 
+            this.btn_Recetas.Caption = "Recetas";
+            this.btn_Recetas.Id = 24;
+            this.btn_Recetas.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem2.ImageOptions.Image")));
+            this.btn_Recetas.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem2.ImageOptions.LargeImage")));
+            this.btn_Recetas.Name = "btn_Recetas";
+            this.btn_Recetas.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_Recetas_ItemClick);
+            // 
             // Frm_Principal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -478,6 +490,7 @@
         private DevExpress.XtraBars.BarButtonItem barButtonItem1;
         private DevExpress.XtraBars.Ribbon.RibbonPage ribbonPage5;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup6;
+        private DevExpress.XtraBars.BarButtonItem btn_Recetas;
     }
 }
 

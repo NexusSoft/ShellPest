@@ -350,5 +350,20 @@ namespace ShellPest
                 XtraMessageBox.Show("No Cuentas con acceso a esta Opcion [019]");
             }
         }
+
+        private void btn_Recetas_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            if (TieneAcceso("020"))
+            {
+                Frm_Recetas Ventana = new Frm_Recetas();
+                Frm_Recetas.DefInstance.MdiParent = this;
+                Frm_Recetas.DefInstance.Id_Usuario = UsuariosLogin;
+                Frm_Recetas.DefInstance.Show();
+            }
+            else
+            {
+                XtraMessageBox.Show("No Cuentas con acceso a esta Opcion [020]");
+            }
+        }
     }
 }
