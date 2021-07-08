@@ -5,18 +5,20 @@ SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
-IF  EXISTS (SELECT * FROM SYS.OBJECTS WHERE TYPE = 'P' AND NAME = 'SP_Cultivo_Insert')
-DROP PROCEDURE SP_Cultivo_Insert
+IF  EXISTS (SELECT * FROM SYS.OBJECTS WHERE TYPE = 'P' AND NAME = 'SP_Presentacion_Insert')
+DROP PROCEDURE SP_Presentacion_Insert
 GO
 -- =============================================
 -- Author:		<Author,,Name>
 -- Create date: <Create Date,,>
 -- Description:	<Description,,>
 -- =============================================
-create PROCEDURE [dbo].[SP_Cultivo_Insert] 
+create PROCEDURE [dbo].[SP_Presentacion_Insert] 
 	-- Add the parameters for the stored procedure here
-	@Id_Cultivo char(2),
-	@Nombre_Cultivo varchar(30),
+	@Id_Presentacion char(4),
+	@Nombre_Presentacion varchar(100),
+	@Id_Unidad char(2),
+	@Id_TipoAplicacion char(3),
 	@Id_Usuario varchar(10)
 AS
 BEGIN
@@ -31,32 +33,38 @@ BEGIN
 	begin try
 
 
-			declare @maximo char(2)
-			select @maximo=right(Concat('00', isnull(max(Id_Cultivo),0)+1),2) from dbo.Cultivo
+			declare @maximo char(4)
+			select @maximo=right(Concat('0000', isnull(max(Id_Presentacion),0)+1),4) from dbo.t_Presentacion
 
 			declare @Existe int
-			select @Existe = count(Id_Cultivo) from dbo.Cultivo a where (a.Id_Cultivo=@Id_Cultivo)
+			select @Existe = count(Id_Presentacion) from dbo.t_Presentacion a where (a.Id_Presentacion=@Id_Presentacion)
 
 			if @Existe>0 
 			
-				UPDATE dbo.Cultivo
-			        SET Nombre_Cultivo=@Nombre_Cultivo,
+				UPDATE dbo.t_Presentacion
+			        SET Nombre_Presentacion=@Nombre_Presentacion,
+					Id_TipoAplicacion=@Id_TipoAplicacion,
+					Id_Unidad=@Id_Unidad,
 			        Id_Usuario_Mod=@Id_Usuario,
 		       		F_Usuario_Mod=getdate()
 			    WHERE
-			    	Id_Cultivo=@Id_Cultivo
+			    	Id_Presentacion=@Id_Presentacion
 					
 			else
 			
-				INSERT INTO dbo.Cultivo
-		           (Id_Cultivo
-		           ,Nombre_Cultivo
+				INSERT INTO dbo.t_Presentacion
+		           (Id_Presentacion
+		           ,Nombre_Presentacion
+				   ,Id_TipoAplicacion
+				   ,Id_Unidad
 		           ,Id_Usuario_Crea
 	           		,F_Usuario_Crea
 					,Activo)
 		     	VALUES
 		           (@maximo
-		           ,@Nombre_Cultivo
+		           ,@Nombre_Presentacion
+				   ,@Id_TipoAplicacion
+				   ,@Id_Unidad
 		           ,@Id_Usuario
 	           		,getdate()
 					,'1')

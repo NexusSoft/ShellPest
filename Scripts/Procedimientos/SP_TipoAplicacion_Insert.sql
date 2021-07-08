@@ -5,18 +5,18 @@ SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
-IF  EXISTS (SELECT * FROM SYS.OBJECTS WHERE TYPE = 'P' AND NAME = 'SP_Cultivo_Insert')
-DROP PROCEDURE SP_Cultivo_Insert
+IF  EXISTS (SELECT * FROM SYS.OBJECTS WHERE TYPE = 'P' AND NAME = 'SP_TipoAplicacion_Insert')
+DROP PROCEDURE SP_TipoAplicacion_Insert
 GO
 -- =============================================
 -- Author:		<Author,,Name>
 -- Create date: <Create Date,,>
 -- Description:	<Description,,>
 -- =============================================
-create PROCEDURE [dbo].[SP_Cultivo_Insert] 
+create PROCEDURE [dbo].[SP_TipoAplicacion_Insert] 
 	-- Add the parameters for the stored procedure here
-	@Id_Cultivo char(2),
-	@Nombre_Cultivo varchar(30),
+	@Id_TipoAplicacion char(3),
+	@Nombre_TipoAplicacion varchar(30),
 	@Id_Usuario varchar(10)
 AS
 BEGIN
@@ -31,32 +31,32 @@ BEGIN
 	begin try
 
 
-			declare @maximo char(2)
-			select @maximo=right(Concat('00', isnull(max(Id_Cultivo),0)+1),2) from dbo.Cultivo
+			declare @maximo char(3)
+			select @maximo=right(Concat('000', isnull(max(Id_TipoAplicacion),0)+1),3) from dbo.t_TipoAplicacion
 
 			declare @Existe int
-			select @Existe = count(Id_Cultivo) from dbo.Cultivo a where (a.Id_Cultivo=@Id_Cultivo)
+			select @Existe = count(Id_TipoAplicacion) from dbo.t_TipoAplicacion a where (a.Id_TipoAplicacion=@Id_TipoAplicacion)
 
 			if @Existe>0 
 			
-				UPDATE dbo.Cultivo
-			        SET Nombre_Cultivo=@Nombre_Cultivo,
+				UPDATE dbo.t_TipoAplicacion
+			        SET Nombre_TipoAplicacion=@Nombre_TipoAplicacion,
 			        Id_Usuario_Mod=@Id_Usuario,
 		       		F_Usuario_Mod=getdate()
 			    WHERE
-			    	Id_Cultivo=@Id_Cultivo
+			    	Id_TipoAplicacion=@Id_TipoAplicacion
 					
 			else
 			
-				INSERT INTO dbo.Cultivo
-		           (Id_Cultivo
-		           ,Nombre_Cultivo
+				INSERT INTO dbo.t_TipoAplicacion
+		           (Id_TipoAplicacion
+		           ,Nombre_TipoAplicacion
 		           ,Id_Usuario_Crea
 	           		,F_Usuario_Crea
 					,Activo)
 		     	VALUES
 		           (@maximo
-		           ,@Nombre_Cultivo
+		           ,@Nombre_TipoAplicacion
 		           ,@Id_Usuario
 	           		,getdate()
 					,'1')

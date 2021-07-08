@@ -42,6 +42,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Catalogos\CLS_Asesor_Tecnico.cs" />
+    <Compile Include="Catalogos\CLS_Presentacion.cs" />
+    <Compile Include="Catalogos\CLS_TipoAplicacion.cs" />
     <Compile Include="Class1.cs" />
     <Compile Include="Conexion\Conexion.cs" />
     <Compile Include="Conexion\ConexionBase.cs" />
@@ -126,8 +129,6 @@
       <EmbedInteropTypes>True</EmbedInteropTypes>
     </COMReference>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Catalogos\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

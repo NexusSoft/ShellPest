@@ -1,6 +1,6 @@
 ﻿namespace ShellPest
 {
-    partial class Frm_Cultivo
+    partial class Frm_TipoAplicacion
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_Cultivo));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_TipoAplicacion));
             this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
             this.bIconos = new DevExpress.XtraBars.Bar();
             this.btnLimpiar = new DevExpress.XtraBars.BarLargeButtonItem();
@@ -37,42 +37,44 @@
             this.btnEliminar = new DevExpress.XtraBars.BarLargeButtonItem();
             this.btnSalir = new DevExpress.XtraBars.BarLargeButtonItem();
             this.btnSeleccionar = new DevExpress.XtraBars.BarLargeButtonItem();
-            this.bEstado = new DevExpress.XtraBars.Bar();
-            this.lblProveedor = new DevExpress.XtraBars.BarStaticItem();
             this.barDockControlTop = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
+            this.lblProveedor = new DevExpress.XtraBars.BarStaticItem();
             this.repositoryItemTextEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemTextEdit();
             this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
-            this.gridControl1 = new DevExpress.XtraGrid.GridControl();
-            this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.Id_Cultivo = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.Nombre_Cultivo = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
-            this.textNombre = new DevExpress.XtraEditors.TextEdit();
-            this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
-            this.textId = new DevExpress.XtraEditors.TextEdit();
-            this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.check_Activo = new DevExpress.XtraEditors.CheckEdit();
+            this.dtgTipo = new DevExpress.XtraGrid.GridControl();
+            this.dtgValAsesor = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.Id_TipoAplicacion = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Nombre_TipoAplicacion = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Id_Usuario_Crea = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.F_Usuario_Crea = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Id_Usuario_Mod = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.F_Usuario_Mod = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
+            this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
+            this.txtId = new DevExpress.XtraEditors.TextEdit();
+            this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
+            this.txtNombre = new DevExpress.XtraEditors.TextEdit();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).BeginInit();
             this.panelControl2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.check_Activo.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgTipo)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgValAsesor)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.textNombre.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textId.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.check_Activo.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtId.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtNombre.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // barManager1
             // 
             this.barManager1.Bars.AddRange(new DevExpress.XtraBars.Bar[] {
-            this.bIconos,
-            this.bEstado});
+            this.bIconos});
             this.barManager1.DockControls.Add(this.barDockControlTop);
             this.barManager1.DockControls.Add(this.barDockControlBottom);
             this.barManager1.DockControls.Add(this.barDockControlLeft);
@@ -89,7 +91,6 @@
             this.barManager1.MaxItemId = 65;
             this.barManager1.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItemTextEdit1});
-            this.barManager1.StatusBar = this.bEstado;
             // 
             // bIconos
             // 
@@ -161,41 +162,21 @@
             this.btnSeleccionar.Name = "btnSeleccionar";
             this.btnSeleccionar.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnSeleccionar_ItemClick);
             // 
-            // bEstado
-            // 
-            this.bEstado.BarName = "Barra de estado";
-            this.bEstado.CanDockStyle = DevExpress.XtraBars.BarCanDockStyle.Bottom;
-            this.bEstado.DockCol = 0;
-            this.bEstado.DockRow = 0;
-            this.bEstado.DockStyle = DevExpress.XtraBars.BarDockStyle.Bottom;
-            this.bEstado.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
-            new DevExpress.XtraBars.LinkPersistInfo(this.lblProveedor)});
-            this.bEstado.OptionsBar.AllowQuickCustomization = false;
-            this.bEstado.OptionsBar.DrawDragBorder = false;
-            this.bEstado.OptionsBar.UseWholeRow = true;
-            this.bEstado.Text = "Barra de estado";
-            // 
-            // lblProveedor
-            // 
-            this.lblProveedor.Caption = "Cultivo:";
-            this.lblProveedor.Id = 48;
-            this.lblProveedor.Name = "lblProveedor";
-            // 
             // barDockControlTop
             // 
             this.barDockControlTop.CausesValidation = false;
             this.barDockControlTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.barDockControlTop.Location = new System.Drawing.Point(0, 0);
             this.barDockControlTop.Manager = this.barManager1;
-            this.barDockControlTop.Size = new System.Drawing.Size(507, 0);
+            this.barDockControlTop.Size = new System.Drawing.Size(610, 0);
             // 
             // barDockControlBottom
             // 
             this.barDockControlBottom.CausesValidation = false;
             this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.barDockControlBottom.Location = new System.Drawing.Point(0, 345);
+            this.barDockControlBottom.Location = new System.Drawing.Point(0, 449);
             this.barDockControlBottom.Manager = this.barManager1;
-            this.barDockControlBottom.Size = new System.Drawing.Size(507, 27);
+            this.barDockControlBottom.Size = new System.Drawing.Size(610, 0);
             // 
             // barDockControlLeft
             // 
@@ -203,15 +184,21 @@
             this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
             this.barDockControlLeft.Location = new System.Drawing.Point(0, 0);
             this.barDockControlLeft.Manager = this.barManager1;
-            this.barDockControlLeft.Size = new System.Drawing.Size(69, 345);
+            this.barDockControlLeft.Size = new System.Drawing.Size(69, 449);
             // 
             // barDockControlRight
             // 
             this.barDockControlRight.CausesValidation = false;
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
-            this.barDockControlRight.Location = new System.Drawing.Point(507, 0);
+            this.barDockControlRight.Location = new System.Drawing.Point(610, 0);
             this.barDockControlRight.Manager = this.barManager1;
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 345);
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 449);
+            // 
+            // lblProveedor
+            // 
+            this.lblProveedor.Caption = "Ciudad:";
+            this.lblProveedor.Id = 48;
+            this.lblProveedor.Name = "lblProveedor";
             // 
             // repositoryItemTextEdit1
             // 
@@ -220,143 +207,167 @@
             // panelControl2
             // 
             this.panelControl2.Controls.Add(this.check_Activo);
-            this.panelControl2.Controls.Add(this.gridControl1);
+            this.panelControl2.Controls.Add(this.dtgTipo);
             this.panelControl2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelControl2.Location = new System.Drawing.Point(69, 69);
+            this.panelControl2.Location = new System.Drawing.Point(69, 73);
             this.panelControl2.Name = "panelControl2";
             this.panelControl2.Padding = new System.Windows.Forms.Padding(5, 20, 5, 5);
-            this.panelControl2.Size = new System.Drawing.Size(438, 276);
-            this.panelControl2.TabIndex = 7;
-            // 
-            // gridControl1
-            // 
-            this.gridControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gridControl1.Location = new System.Drawing.Point(7, 22);
-            this.gridControl1.MainView = this.gridView1;
-            this.gridControl1.MenuManager = this.barManager1;
-            this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(424, 247);
-            this.gridControl1.TabIndex = 0;
-            this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.gridView1});
-            this.gridControl1.Click += new System.EventHandler(this.gridControl1_Click);
-            // 
-            // gridView1
-            // 
-            this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.Id_Cultivo,
-            this.Nombre_Cultivo});
-            this.gridView1.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
-            this.gridView1.GridControl = this.gridControl1;
-            this.gridView1.Name = "gridView1";
-            this.gridView1.OptionsFind.AlwaysVisible = true;
-            this.gridView1.OptionsSelection.EnableAppearanceFocusedCell = false;
-            this.gridView1.OptionsView.ShowGroupPanel = false;
-            // 
-            // Id_Cultivo
-            // 
-            this.Id_Cultivo.Caption = "Id Cultivo";
-            this.Id_Cultivo.FieldName = "Id_Cultivo";
-            this.Id_Cultivo.Name = "Id_Cultivo";
-            this.Id_Cultivo.OptionsColumn.AllowEdit = false;
-            this.Id_Cultivo.Visible = true;
-            this.Id_Cultivo.VisibleIndex = 0;
-            // 
-            // Nombre_Cultivo
-            // 
-            this.Nombre_Cultivo.Caption = "Cultivo";
-            this.Nombre_Cultivo.FieldName = "Nombre_Cultivo";
-            this.Nombre_Cultivo.Name = "Nombre_Cultivo";
-            this.Nombre_Cultivo.OptionsColumn.AllowEdit = false;
-            this.Nombre_Cultivo.Visible = true;
-            this.Nombre_Cultivo.VisibleIndex = 1;
-            // 
-            // panelControl1
-            // 
-            this.panelControl1.Controls.Add(this.textNombre);
-            this.panelControl1.Controls.Add(this.labelControl2);
-            this.panelControl1.Controls.Add(this.textId);
-            this.panelControl1.Controls.Add(this.labelControl1);
-            this.panelControl1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelControl1.Location = new System.Drawing.Point(69, 0);
-            this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Padding = new System.Windows.Forms.Padding(10);
-            this.panelControl1.Size = new System.Drawing.Size(438, 69);
-            this.panelControl1.TabIndex = 6;
-            // 
-            // textNombre
-            // 
-            this.textNombre.Location = new System.Drawing.Point(74, 38);
-            this.textNombre.MenuManager = this.barManager1;
-            this.textNombre.Name = "textNombre";
-            this.textNombre.Size = new System.Drawing.Size(231, 20);
-            this.textNombre.TabIndex = 3;
-            // 
-            // labelControl2
-            // 
-            this.labelControl2.Location = new System.Drawing.Point(15, 43);
-            this.labelControl2.Name = "labelControl2";
-            this.labelControl2.Size = new System.Drawing.Size(37, 13);
-            this.labelControl2.TabIndex = 2;
-            this.labelControl2.Text = "Cultivo:";
-            // 
-            // textId
-            // 
-            this.textId.Enabled = false;
-            this.textId.Location = new System.Drawing.Point(74, 12);
-            this.textId.MenuManager = this.barManager1;
-            this.textId.Name = "textId";
-            this.textId.Size = new System.Drawing.Size(100, 20);
-            this.textId.TabIndex = 1;
-            // 
-            // labelControl1
-            // 
-            this.labelControl1.Location = new System.Drawing.Point(15, 16);
-            this.labelControl1.Name = "labelControl1";
-            this.labelControl1.Size = new System.Drawing.Size(53, 13);
-            this.labelControl1.TabIndex = 0;
-            this.labelControl1.Text = "Id Cultivo: ";
+            this.panelControl2.Size = new System.Drawing.Size(541, 376);
+            this.panelControl2.TabIndex = 21;
             // 
             // check_Activo
             // 
-            this.check_Activo.Location = new System.Drawing.Point(19, 3);
+            this.check_Activo.Location = new System.Drawing.Point(21, 1);
             this.check_Activo.MenuManager = this.barManager1;
             this.check_Activo.Name = "check_Activo";
             this.check_Activo.Properties.Caption = "Inactivos";
             this.check_Activo.Size = new System.Drawing.Size(75, 19);
-            this.check_Activo.TabIndex = 2;
+            this.check_Activo.TabIndex = 1;
             this.check_Activo.CheckedChanged += new System.EventHandler(this.check_Activo_CheckedChanged);
             // 
-            // Frm_Cultivo
+            // dtgTipo
+            // 
+            this.dtgTipo.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dtgTipo.Location = new System.Drawing.Point(7, 22);
+            this.dtgTipo.MainView = this.dtgValAsesor;
+            this.dtgTipo.MenuManager = this.barManager1;
+            this.dtgTipo.Name = "dtgTipo";
+            this.dtgTipo.Size = new System.Drawing.Size(527, 347);
+            this.dtgTipo.TabIndex = 0;
+            this.dtgTipo.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.dtgValAsesor});
+            this.dtgTipo.Click += new System.EventHandler(this.dtgTipo_Click);
+            // 
+            // dtgValAsesor
+            // 
+            this.dtgValAsesor.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.Id_TipoAplicacion,
+            this.Nombre_TipoAplicacion,
+            this.Id_Usuario_Crea,
+            this.F_Usuario_Crea,
+            this.Id_Usuario_Mod,
+            this.F_Usuario_Mod});
+            this.dtgValAsesor.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
+            this.dtgValAsesor.GridControl = this.dtgTipo;
+            this.dtgValAsesor.Name = "dtgValAsesor";
+            this.dtgValAsesor.OptionsBehavior.Editable = false;
+            this.dtgValAsesor.OptionsFind.AlwaysVisible = true;
+            this.dtgValAsesor.OptionsSelection.EnableAppearanceFocusedCell = false;
+            this.dtgValAsesor.OptionsView.ShowGroupPanel = false;
+            // 
+            // Id_TipoAplicacion
+            // 
+            this.Id_TipoAplicacion.Caption = "Id Tipo Aplicacion";
+            this.Id_TipoAplicacion.FieldName = "Id_TipoAplicacion";
+            this.Id_TipoAplicacion.Name = "Id_TipoAplicacion";
+            this.Id_TipoAplicacion.OptionsColumn.AllowEdit = false;
+            this.Id_TipoAplicacion.Visible = true;
+            this.Id_TipoAplicacion.VisibleIndex = 0;
+            // 
+            // Nombre_TipoAplicacion
+            // 
+            this.Nombre_TipoAplicacion.Caption = "Tipo de Aplicación";
+            this.Nombre_TipoAplicacion.FieldName = "Nombre_TipoAplicacion";
+            this.Nombre_TipoAplicacion.Name = "Nombre_TipoAplicacion";
+            this.Nombre_TipoAplicacion.Visible = true;
+            this.Nombre_TipoAplicacion.VisibleIndex = 1;
+            // 
+            // Id_Usuario_Crea
+            // 
+            this.Id_Usuario_Crea.Caption = "Id Creador";
+            this.Id_Usuario_Crea.FieldName = "Id_Usuario_Crea";
+            this.Id_Usuario_Crea.Name = "Id_Usuario_Crea";
+            // 
+            // F_Usuario_Crea
+            // 
+            this.F_Usuario_Crea.Caption = "F. Creación";
+            this.F_Usuario_Crea.FieldName = "F_Usuario_Crea";
+            this.F_Usuario_Crea.Name = "F_Usuario_Crea";
+            // 
+            // Id_Usuario_Mod
+            // 
+            this.Id_Usuario_Mod.Caption = "Id Modificador";
+            this.Id_Usuario_Mod.FieldName = "Id_Usuario_Mod";
+            this.Id_Usuario_Mod.Name = "Id_Usuario_Mod";
+            // 
+            // F_Usuario_Mod
+            // 
+            this.F_Usuario_Mod.Caption = "F. Modificación";
+            this.F_Usuario_Mod.FieldName = "F_Usuario_Mod";
+            this.F_Usuario_Mod.Name = "F_Usuario_Mod";
+            // 
+            // panelControl1
+            // 
+            this.panelControl1.Controls.Add(this.labelControl1);
+            this.panelControl1.Controls.Add(this.txtId);
+            this.panelControl1.Controls.Add(this.labelControl2);
+            this.panelControl1.Controls.Add(this.txtNombre);
+            this.panelControl1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelControl1.Location = new System.Drawing.Point(69, 0);
+            this.panelControl1.Name = "panelControl1";
+            this.panelControl1.Padding = new System.Windows.Forms.Padding(5);
+            this.panelControl1.Size = new System.Drawing.Size(541, 73);
+            this.panelControl1.TabIndex = 20;
+            // 
+            // labelControl1
+            // 
+            this.labelControl1.Location = new System.Drawing.Point(21, 14);
+            this.labelControl1.Name = "labelControl1";
+            this.labelControl1.Size = new System.Drawing.Size(87, 13);
+            this.labelControl1.TabIndex = 0;
+            this.labelControl1.Text = "Id Tipo Aplicación:";
+            // 
+            // txtId
+            // 
+            this.txtId.Enabled = false;
+            this.txtId.Location = new System.Drawing.Point(111, 12);
+            this.txtId.MenuManager = this.barManager1;
+            this.txtId.Name = "txtId";
+            this.txtId.Size = new System.Drawing.Size(100, 20);
+            this.txtId.TabIndex = 1;
+            // 
+            // labelControl2
+            // 
+            this.labelControl2.Location = new System.Drawing.Point(21, 45);
+            this.labelControl2.Name = "labelControl2";
+            this.labelControl2.Size = new System.Drawing.Size(74, 13);
+            this.labelControl2.TabIndex = 2;
+            this.labelControl2.Text = "Tipo Aplicación:";
+            // 
+            // txtNombre
+            // 
+            this.txtNombre.Location = new System.Drawing.Point(111, 42);
+            this.txtNombre.MenuManager = this.barManager1;
+            this.txtNombre.Name = "txtNombre";
+            this.txtNombre.Size = new System.Drawing.Size(306, 20);
+            this.txtNombre.TabIndex = 3;
+            // 
+            // Frm_TipoAplicacion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(507, 372);
+            this.ClientSize = new System.Drawing.Size(610, 449);
             this.Controls.Add(this.panelControl2);
             this.Controls.Add(this.panelControl1);
             this.Controls.Add(this.barDockControlLeft);
             this.Controls.Add(this.barDockControlRight);
             this.Controls.Add(this.barDockControlBottom);
             this.Controls.Add(this.barDockControlTop);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
-            this.MaximizeBox = false;
-            this.MinimizeBox = false;
-            this.Name = "Frm_Cultivo";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Cultivo";
-            this.Load += new System.EventHandler(this.Frm_Cultivo_Load);
+            this.Name = "Frm_TipoAplicacion";
+            this.Text = "Tipo de Aplicaciones";
+            this.Load += new System.EventHandler(this.Frm_TipoAplicacion_Load);
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).EndInit();
             this.panelControl2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.check_Activo.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgTipo)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgValAsesor)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
             this.panelControl1.ResumeLayout(false);
             this.panelControl1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.textNombre.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textId.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.check_Activo.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtId.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtNombre.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -370,24 +381,27 @@
         private DevExpress.XtraBars.BarLargeButtonItem btnGuardar;
         private DevExpress.XtraBars.BarLargeButtonItem btnEliminar;
         private DevExpress.XtraBars.BarLargeButtonItem btnSalir;
-        private DevExpress.XtraBars.Bar bEstado;
-        private DevExpress.XtraBars.BarStaticItem lblProveedor;
+        private DevExpress.XtraBars.BarLargeButtonItem btnSeleccionar;
         private DevExpress.XtraBars.BarDockControl barDockControlTop;
         private DevExpress.XtraBars.BarDockControl barDockControlBottom;
         private DevExpress.XtraBars.BarDockControl barDockControlLeft;
         private DevExpress.XtraBars.BarDockControl barDockControlRight;
+        private DevExpress.XtraBars.BarStaticItem lblProveedor;
         private DevExpress.XtraEditors.Repository.RepositoryItemTextEdit repositoryItemTextEdit1;
         private DevExpress.XtraEditors.PanelControl panelControl2;
-        private DevExpress.XtraGrid.GridControl gridControl1;
-        private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
-        private DevExpress.XtraGrid.Columns.GridColumn Id_Cultivo;
-        private DevExpress.XtraGrid.Columns.GridColumn Nombre_Cultivo;
-        private DevExpress.XtraEditors.PanelControl panelControl1;
-        private DevExpress.XtraEditors.TextEdit textNombre;
-        private DevExpress.XtraEditors.LabelControl labelControl2;
-        private DevExpress.XtraEditors.TextEdit textId;
-        private DevExpress.XtraEditors.LabelControl labelControl1;
-        private DevExpress.XtraBars.BarLargeButtonItem btnSeleccionar;
         private DevExpress.XtraEditors.CheckEdit check_Activo;
+        private DevExpress.XtraGrid.GridControl dtgTipo;
+        private DevExpress.XtraGrid.Views.Grid.GridView dtgValAsesor;
+        private DevExpress.XtraGrid.Columns.GridColumn Id_TipoAplicacion;
+        private DevExpress.XtraGrid.Columns.GridColumn Nombre_TipoAplicacion;
+        private DevExpress.XtraGrid.Columns.GridColumn Id_Usuario_Crea;
+        private DevExpress.XtraGrid.Columns.GridColumn F_Usuario_Crea;
+        private DevExpress.XtraGrid.Columns.GridColumn Id_Usuario_Mod;
+        private DevExpress.XtraGrid.Columns.GridColumn F_Usuario_Mod;
+        private DevExpress.XtraEditors.PanelControl panelControl1;
+        private DevExpress.XtraEditors.LabelControl labelControl1;
+        private DevExpress.XtraEditors.TextEdit txtId;
+        private DevExpress.XtraEditors.LabelControl labelControl2;
+        private DevExpress.XtraEditors.TextEdit txtNombre;
     }
 }

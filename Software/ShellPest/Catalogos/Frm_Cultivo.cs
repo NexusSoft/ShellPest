@@ -25,11 +25,11 @@ namespace ShellPest
         public string Cultivo { get; set; }
         public string Id_Usuario { get; set; }
 
-        private void CargarCultivo()
+        private void CargarCultivo(string Activo)
         {
             gridControl1.DataSource = null;
             CLS_Cultivo Clase = new CLS_Cultivo();
-
+            Clase.Activo = Activo;
             Clase.MtdSeleccionarCultivo();
             if (Clase.Exito)
             {
@@ -48,7 +48,7 @@ namespace ShellPest
 
             if (Clase.Exito)
             {
-                CargarCultivo();
+                CargarCultivo("1");
                 XtraMessageBox.Show("Se ha Insertado el registro con exito");
                 LimpiarCampos();
             }
@@ -62,10 +62,26 @@ namespace ShellPest
         {
             CLS_Cultivo Clase = new CLS_Cultivo();
             Clase.Id_Cultivo = textId.Text.Trim();
+            Clase.Id_Usuario = Id_Usuario;
+            if (check_Activo.Checked)
+            {
+                Clase.Activo = "1";
+            }
+            else
+            {
+                Clase.Activo = "0";
+            }
             Clase.MtdEliminarCultivo();
             if (Clase.Exito)
             {
-                CargarCultivo();
+                if (check_Activo.Checked)
+                {
+                    CargarCultivo("0");
+                }
+                else
+                {
+                    CargarCultivo("1");
+                }
                 XtraMessageBox.Show("Se ha Eliminado el registro con exito");
                 LimpiarCampos();
             }
@@ -108,7 +124,8 @@ namespace ShellPest
             {
                 btnSeleccionar.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
             }
-            CargarCultivo();
+            CargarCultivo("1");
+            LimpiarCampos();
         }
 
         private void btnGuardar_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -150,6 +167,20 @@ namespace ShellPest
             IdCultivo = textId.Text.Trim();
             Cultivo = textNombre.Text.Trim();
             this.Close();
+        }
+
+        private void check_Activo_CheckedChanged(object sender, EventArgs e)
+        {
+            if (check_Activo.Checked)
+            {
+                CargarCultivo("0");
+                btnEliminar.Caption = "Habilitar";
+            }
+            else
+            {
+                CargarCultivo("1");
+                btnEliminar.Caption = "Inhabilitar";
+            }
         }
     }
 }
