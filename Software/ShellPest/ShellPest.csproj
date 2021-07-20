@@ -109,6 +109,12 @@
     <Compile Include="Catalogos\Frm_IngredienteActivo.Designer.cs">
       <DependentUpon>Frm_IngredienteActivo.cs</DependentUpon>
     </Compile>
+    <Compile Include="Catalogos\Frm_NombreComercial.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Catalogos\Frm_NombreComercial.Designer.cs">
+      <DependentUpon>Frm_NombreComercial.cs</DependentUpon>
+    </Compile>
     <Compile Include="Catalogos\Frm_Presentacion.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -234,6 +240,18 @@
     <Compile Include="Configuracion\Frm_ParametrosEstacion.Designer.cs">
       <DependentUpon>Frm_ParametrosEstacion.cs</DependentUpon>
     </Compile>
+    <Compile Include="Control\Frm_AbrirMonitoreoPE.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Control\Frm_AbrirMonitoreoPE.Designer.cs">
+      <DependentUpon>Frm_AbrirMonitoreoPE.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Control\Frm_AbrirReceta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Control\Frm_AbrirReceta.Designer.cs">
+      <DependentUpon>Frm_AbrirReceta.cs</DependentUpon>
+    </Compile>
     <Compile Include="Control\Frm_Recetas.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -299,6 +317,9 @@
     <EmbeddedResource Include="Catalogos\Frm_IngredienteActivo.resx">
       <DependentUpon>Frm_IngredienteActivo.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Catalogos\Frm_NombreComercial.resx">
+      <DependentUpon>Frm_NombreComercial.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Catalogos\Frm_Presentacion.resx">
       <DependentUpon>Frm_Presentacion.cs</DependentUpon>
     </EmbeddedResource>
@@ -358,6 +379,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Configuracion\Frm_ParametrosEstacion.resx">
       <DependentUpon>Frm_ParametrosEstacion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Control\Frm_AbrirMonitoreoPE.resx">
+      <DependentUpon>Frm_AbrirMonitoreoPE.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Control\Frm_AbrirReceta.resx">
+      <DependentUpon>Frm_AbrirReceta.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Control\Frm_Recetas.resx">
       <DependentUpon>Frm_Recetas.cs</DependentUpon>

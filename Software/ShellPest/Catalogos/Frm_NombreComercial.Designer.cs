@@ -1,6 +1,6 @@
 ﻿namespace ShellPest
 {
-    partial class Frm_IngredienteActivo
+    partial class Frm_NombreComercial
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_IngredienteActivo));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_NombreComercial));
             this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
             this.bIconos = new DevExpress.XtraBars.Bar();
             this.btnSeleccionar = new DevExpress.XtraBars.BarLargeButtonItem();
@@ -43,8 +43,9 @@
             this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
             this.dtgControl = new DevExpress.XtraGrid.GridControl();
             this.dtgValControl = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.c_codigo_cac = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.v_nombre_cac = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.c_codigo_pro = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.v_nombre_pro = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.c_codigo_uni = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).BeginInit();
@@ -100,7 +101,6 @@
             this.btnSeleccionar.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnSeleccionar.ImageOptions.Image")));
             this.btnSeleccionar.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnSeleccionar.ImageOptions.LargeImage")));
             this.btnSeleccionar.Name = "btnSeleccionar";
-            this.btnSeleccionar.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnSeleccionar_ItemClick);
             // 
             // btnSalir
             // 
@@ -117,15 +117,15 @@
             this.barDockControlTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.barDockControlTop.Location = new System.Drawing.Point(0, 0);
             this.barDockControlTop.Manager = this.barManager1;
-            this.barDockControlTop.Size = new System.Drawing.Size(607, 0);
+            this.barDockControlTop.Size = new System.Drawing.Size(633, 0);
             // 
             // barDockControlBottom
             // 
             this.barDockControlBottom.CausesValidation = false;
             this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.barDockControlBottom.Location = new System.Drawing.Point(0, 453);
+            this.barDockControlBottom.Location = new System.Drawing.Point(0, 500);
             this.barDockControlBottom.Manager = this.barManager1;
-            this.barDockControlBottom.Size = new System.Drawing.Size(607, 0);
+            this.barDockControlBottom.Size = new System.Drawing.Size(633, 0);
             // 
             // barDockControlLeft
             // 
@@ -133,15 +133,15 @@
             this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
             this.barDockControlLeft.Location = new System.Drawing.Point(0, 0);
             this.barDockControlLeft.Manager = this.barManager1;
-            this.barDockControlLeft.Size = new System.Drawing.Size(71, 453);
+            this.barDockControlLeft.Size = new System.Drawing.Size(71, 500);
             // 
             // barDockControlRight
             // 
             this.barDockControlRight.CausesValidation = false;
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
-            this.barDockControlRight.Location = new System.Drawing.Point(607, 0);
+            this.barDockControlRight.Location = new System.Drawing.Point(633, 0);
             this.barDockControlRight.Manager = this.barManager1;
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 453);
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 500);
             // 
             // lblProveedor
             // 
@@ -160,8 +160,8 @@
             this.panelControl2.Location = new System.Drawing.Point(71, 0);
             this.panelControl2.Name = "panelControl2";
             this.panelControl2.Padding = new System.Windows.Forms.Padding(10);
-            this.panelControl2.Size = new System.Drawing.Size(536, 453);
-            this.panelControl2.TabIndex = 17;
+            this.panelControl2.Size = new System.Drawing.Size(562, 500);
+            this.panelControl2.TabIndex = 18;
             // 
             // dtgControl
             // 
@@ -170,7 +170,7 @@
             this.dtgControl.MainView = this.dtgValControl;
             this.dtgControl.MenuManager = this.barManager1;
             this.dtgControl.Name = "dtgControl";
-            this.dtgControl.Size = new System.Drawing.Size(512, 429);
+            this.dtgControl.Size = new System.Drawing.Size(538, 476);
             this.dtgControl.TabIndex = 0;
             this.dtgControl.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.dtgValControl});
@@ -180,8 +180,9 @@
             // dtgValControl
             // 
             this.dtgValControl.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.c_codigo_cac,
-            this.v_nombre_cac});
+            this.c_codigo_pro,
+            this.v_nombre_pro,
+            this.c_codigo_uni});
             this.dtgValControl.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
             this.dtgValControl.GridControl = this.dtgControl;
             this.dtgValControl.Name = "dtgValControl";
@@ -190,36 +191,42 @@
             this.dtgValControl.OptionsSelection.EnableAppearanceFocusedCell = false;
             this.dtgValControl.OptionsView.ShowGroupPanel = false;
             // 
-            // c_codigo_cac
+            // c_codigo_pro
             // 
-            this.c_codigo_cac.Caption = "Id_IngredienteActivo";
-            this.c_codigo_cac.FieldName = "c_codigo_cac";
-            this.c_codigo_cac.Name = "c_codigo_cac";
-            this.c_codigo_cac.OptionsColumn.AllowEdit = false;
-            this.c_codigo_cac.Visible = true;
-            this.c_codigo_cac.VisibleIndex = 1;
+            this.c_codigo_pro.Caption = "Id Nombre Comercial";
+            this.c_codigo_pro.FieldName = "c_codigo_pro";
+            this.c_codigo_pro.Name = "c_codigo_pro";
+            this.c_codigo_pro.OptionsColumn.AllowEdit = false;
+            this.c_codigo_pro.Visible = true;
+            this.c_codigo_pro.VisibleIndex = 1;
             // 
-            // v_nombre_cac
+            // v_nombre_pro
             // 
-            this.v_nombre_cac.Caption = "Ingrediente Activo";
-            this.v_nombre_cac.FieldName = "v_nombre_cac";
-            this.v_nombre_cac.Name = "v_nombre_cac";
-            this.v_nombre_cac.Visible = true;
-            this.v_nombre_cac.VisibleIndex = 0;
+            this.v_nombre_pro.Caption = "Nombre comercial";
+            this.v_nombre_pro.FieldName = "v_nombre_pro";
+            this.v_nombre_pro.Name = "v_nombre_pro";
+            this.v_nombre_pro.Visible = true;
+            this.v_nombre_pro.VisibleIndex = 0;
             // 
-            // Frm_IngredienteActivo
+            // c_codigo_uni
+            // 
+            this.c_codigo_uni.Caption = "Unidad";
+            this.c_codigo_uni.FieldName = "c_codigo_uni";
+            this.c_codigo_uni.Name = "c_codigo_uni";
+            // 
+            // Frm_NombreComercial
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(607, 453);
+            this.ClientSize = new System.Drawing.Size(633, 500);
             this.Controls.Add(this.panelControl2);
             this.Controls.Add(this.barDockControlLeft);
             this.Controls.Add(this.barDockControlRight);
             this.Controls.Add(this.barDockControlBottom);
             this.Controls.Add(this.barDockControlTop);
-            this.Name = "Frm_IngredienteActivo";
-            this.Text = "Ingrediente Activo";
-            this.Load += new System.EventHandler(this.Frm_IngredienteActivo_Load);
+            this.Name = "Frm_NombreComercial";
+            this.Text = "Frm_NombreComercial";
+            this.Load += new System.EventHandler(this.Frm_NombreComercial_Load);
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).EndInit();
@@ -235,8 +242,8 @@
 
         public DevExpress.XtraBars.BarManager barManager1;
         public DevExpress.XtraBars.Bar bIconos;
-        private DevExpress.XtraBars.BarLargeButtonItem btnSalir;
         private DevExpress.XtraBars.BarLargeButtonItem btnSeleccionar;
+        private DevExpress.XtraBars.BarLargeButtonItem btnSalir;
         private DevExpress.XtraBars.BarDockControl barDockControlTop;
         private DevExpress.XtraBars.BarDockControl barDockControlBottom;
         private DevExpress.XtraBars.BarDockControl barDockControlLeft;
@@ -246,7 +253,8 @@
         private DevExpress.XtraEditors.PanelControl panelControl2;
         private DevExpress.XtraGrid.GridControl dtgControl;
         private DevExpress.XtraGrid.Views.Grid.GridView dtgValControl;
-        private DevExpress.XtraGrid.Columns.GridColumn c_codigo_cac;
-        private DevExpress.XtraGrid.Columns.GridColumn v_nombre_cac;
+        private DevExpress.XtraGrid.Columns.GridColumn c_codigo_pro;
+        private DevExpress.XtraGrid.Columns.GridColumn v_nombre_pro;
+        private DevExpress.XtraGrid.Columns.GridColumn c_codigo_uni;
     }
 }

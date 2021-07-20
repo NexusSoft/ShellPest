@@ -15,17 +15,17 @@ SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
-IF  EXISTS (SELECT * FROM SYS.OBJECTS WHERE TYPE = 'P' AND NAME = 'SP_Presentacion_Select')
-DROP PROCEDURE SP_Presentacion_Select
+IF  EXISTS (SELECT * FROM SYS.OBJECTS WHERE TYPE = 'P' AND NAME = 'SP_RecetaDet_Select')
+DROP PROCEDURE SP_RecetaDet_Select
 GO
 -- =============================================
 -- Author:		<Author,,Name>
 -- Create date: <Create Date,,>
 -- Description:	<Description,,>
 -- =============================================
-CREATE PROCEDURE SP_Presentacion_Select
+CREATE PROCEDURE SP_RecetaDet_Select
 	-- Add the parameters for the stored procedure here
-	@Activo char(1)
+	@Id_Receta char(7)
 AS
 BEGIN
 	-- SET NOCOUNT ON added to prevent extra result sets from
@@ -34,22 +34,26 @@ BEGIN
 
     -- Insert statements for procedure here
 	
-		select dt.Id_Presentacion
-	      ,dt.Nombre_Presentacion
-		  ,dt.Id_TipoAplicacion
-		  ,t.Nombre_TipoAplicacion
-		  ,dt.Id_Unidad
-		  ,uni.Nombre_Unidad
+		select dt.Id_Receta
+	      ,dt.Secuencia
+		  ,dt.c_codigo_pro
+		  ,dt.v_nombre_pro
+		  ,dt.c_codigo_cac
+		  ,dt.v_nombre_cac
+		  ,dt.c_codigo_uni
+          ,uni.v_nombre_uni
+		  ,dt.Dosis
+		  ,dt.Cantidad_Unitaria
+		  ,dt.Descripcion
 	      ,dt.Id_Usuario_Crea
 	      ,us.Nombre_Usuario as Creador
 	      ,dt.Id_Usuario_Mod 
 	      ,usm.Nombre_Usuario as Modificador
-		from t_Presentacion as dt
-		inner join t_TipoAplicacion as t on t.Id_TipoAplicacion=dt.Id_TipoAplicacion
-		inner join t_Unidad as uni on uni.Id_Unidad=dt.Id_Unidad
+		from t_RecetaDet as dt
 		inner join t_Usuarios as us on us.Id_Usuario=dt.Id_Usuario_Crea 
 		left join t_Usuarios as usm on usm.Id_Usuario=dt.Id_Usuario_Mod 
-		where dt.Activo=@Activo and dt.Id_TipoAplicacion like '%'+@Id_TipoAplicacion+'%'
+		left join agv.dbo.invunidad as uni on uni.c_codigo_uni=dt.c_codigo_uni
+		where dt.Id_Receta=@Id_Receta
 
 END
 GO

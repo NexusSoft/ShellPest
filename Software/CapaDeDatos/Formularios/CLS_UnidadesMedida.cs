@@ -8,12 +8,12 @@ namespace CapaDeDatos
 {
     public class CLS_UnidadesMedida : ConexionBase
     {
-        public string Id_UnidadMedida { get; set; }
-        public string Nombre_UnidadMedida { get; set; }
-        public string Abrevia_UnidadMedida { get; set; }
+        public string Id_Unidad { get; set; }
+        public string Nombre_Unidad { get; set; }
+        public string Abreviatura { get; set; }
 
         public string Usuario { get; set; }
-
+        public string Activo { get; set; }
         public void MtdSeleccionarUnidadesMedida()
         {
             TipoDato _dato = new TipoDato();
@@ -22,8 +22,9 @@ namespace CapaDeDatos
             Exito = true;
             try
             {
-                _conexion.NombreProcedimiento = "SP_UnidadesMedida_Select";
-
+                _conexion.NombreProcedimiento = "SP_Unidad_Select";
+                _dato.CadenaTexto = Activo;
+                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Activo");
                 _conexion.EjecutarDataset();
 
                 if (_conexion.Exito)
@@ -54,13 +55,13 @@ namespace CapaDeDatos
             Exito = true;
             try
             {
-                _conexion.NombreProcedimiento = "SP_UnidadesMedida_Insert";
-                _dato.CadenaTexto = Id_UnidadMedida;
-                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Id_UnidadMedida");
-                _dato.CadenaTexto = Nombre_UnidadMedida;
-                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Nombre_UnidadMedida");
-                _dato.CadenaTexto = Abrevia_UnidadMedida;
-                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Abrevia_UnidadMedida");
+                _conexion.NombreProcedimiento = "SP_Unidad_Insert";
+                _dato.CadenaTexto = Id_Unidad;
+                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Id_Unidad");
+                _dato.CadenaTexto = Nombre_Unidad;
+                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Nombre_Unidad");
+                _dato.CadenaTexto = Abreviatura;
+                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Abreviatura");
 
                 _dato.CadenaTexto = Usuario;
                 _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Usuario");
@@ -94,8 +95,10 @@ namespace CapaDeDatos
             try
             {
                 _conexion.NombreProcedimiento = "SP_UnidadesMedida_Delete";
-                _dato.CadenaTexto = Id_UnidadMedida;
-                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Id_UnidadMedida");
+                _dato.CadenaTexto = Id_Unidad;
+                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Id_Unidad");
+                _dato.CadenaTexto = Activo;
+                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Activo");
                 _conexion.EjecutarDataset();
 
                 if (_conexion.Exito)

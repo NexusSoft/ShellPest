@@ -23,6 +23,10 @@ namespace ShellPest
 
         public string IdPresentacion { get; set; }
         public string Presentacion { get; set; }
+        public string IdTipo { get; set; }
+        public string Tipo { get; set; }
+        public string IdUnidad { get; set; }
+        public string Unidad { get; set; }
         public string Id_Usuario { get; set; }
 
         private void Frm_Presentacion_Load(object sender, EventArgs e)
@@ -52,6 +56,7 @@ namespace ShellPest
             dtgPresentacion.DataSource = null;
             CLS_Presentacion Clase = new CLS_Presentacion();
             Clase.Activo = Activo;
+            Clase.Id_TipoAplicacion = IdTipo;
             Clase.MtdSeleccionarPresentacion();
             if (Clase.Exito)
             {
@@ -123,7 +128,7 @@ namespace ShellPest
             glue_Unidad.Properties.DisplayMember = "Nombre_Unidad";
             glue_Unidad.Properties.ValueMember = "Id_Unidad";
             CLS_UnidadesMedida Clase = new CLS_UnidadesMedida();
-            //Clase.Activo = "1";
+            Clase.Activo = "1";
             Clase.MtdSeleccionarUnidadesMedida();
             if (Clase.Exito)
             {
@@ -140,7 +145,11 @@ namespace ShellPest
                     DataRow row = this.dtgVal.GetDataRow(i);
                     txtId.Text = row["Id_Presentacion"].ToString();
                     txtNombre.Text = row["Nombre_Presentacion"].ToString();
+                    Tipo= row["Nombre_TipoAplicacion"].ToString();
+                    Presentacion = row["Nombre_Presentacion"].ToString();
                     text_Tipo.Tag= row["Id_TipoAplicacion"].ToString();
+                    IdUnidad= row["Id_Unidad"].ToString();
+                    Unidad = row["Nombre_Unidad"].ToString();
                     text_Tipo.Text= row["Nombre_TipoAplicacion"].ToString();
                     glue_Unidad.EditValue = row["Id_Unidad"].ToString();
                     
@@ -184,7 +193,7 @@ namespace ShellPest
         private void btnSeleccionar_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             IdPresentacion = txtId.Text.Trim();
-            Presentacion = txtNombre.Text.Trim();
+            Presentacion =txtNombre.Text.Trim(); 
 
             this.Close();
         }

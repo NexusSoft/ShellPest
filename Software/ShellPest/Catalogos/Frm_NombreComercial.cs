@@ -12,35 +12,32 @@ using CapaDeDatos;
 
 namespace ShellPest
 {
-    public partial class Frm_IngredienteActivo : DevExpress.XtraEditors.XtraForm
+    public partial class Frm_NombreComercial : DevExpress.XtraEditors.XtraForm
     {
-        public Frm_IngredienteActivo()
+        public Frm_NombreComercial()
         {
             InitializeComponent();
         }
-        public string IdIngrediente { get; set; }
-        public string Ingrediente { get; set; }
 
-        private void Frm_IngredienteActivo_Load(object sender, EventArgs e)
+        public string IdNombreComercial { get; set; }
+        public string NombreComercial { get; set; }
+        public string IdUnidad { get; set; }
+
+        private void Frm_NombreComercial_Load(object sender, EventArgs e)
         {
-            CargarIngrediente();
+            CargarNombreComercial();
         }
 
-        private void CargarIngrediente()
+        private void CargarNombreComercial()
         {
             dtgControl.DataSource = null;
-            CLS_IngredienteActivo Clase = new CLS_IngredienteActivo();
-            
-            Clase.MtdSeleccionarIngrediente();
+            CLS_NombreComercial Clase = new CLS_NombreComercial();
+
+            Clase.MtdSeleccionarNombreComercial();
             if (Clase.Exito)
             {
                 dtgControl.DataSource = Clase.Datos;
             }
-        }
-
-        private void btnSalir_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
-        {
-            this.Close();
         }
 
         private void dtgControl_Click(object sender, EventArgs e)
@@ -50,9 +47,10 @@ namespace ShellPest
                 foreach (int i in this.dtgValControl.GetSelectedRows())
                 {
                     DataRow row = this.dtgValControl.GetDataRow(i);
-           
-                    IdIngrediente = row["c_codigo_cac"].ToString();
-                    Ingrediente = row["v_nombre_cac"].ToString();
+
+                    IdNombreComercial = row["c_codigo_pro"].ToString();
+                    NombreComercial = row["v_nombre_pro"].ToString();
+                    IdUnidad= row["c_codigo_uni"].ToString();
                 }
             }
             catch (Exception ex)
@@ -61,12 +59,12 @@ namespace ShellPest
             }
         }
 
-        private void dtgControl_DoubleClick(object sender, EventArgs e)
+        private void btnSalir_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             this.Close();
         }
 
-        private void btnSeleccionar_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        private void dtgControl_DoubleClick(object sender, EventArgs e)
         {
             this.Close();
         }
