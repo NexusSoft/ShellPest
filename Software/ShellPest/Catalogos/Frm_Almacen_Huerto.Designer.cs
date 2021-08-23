@@ -1,6 +1,6 @@
 ﻿namespace ShellPest
 {
-    partial class Frm_Plagas
+    partial class Frm_Almacen_Huerto
     {
         /// <summary>
         /// Required designer variable.
@@ -29,14 +29,12 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_Plagas));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_Almacen_Huerto));
             this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
             this.bIconos = new DevExpress.XtraBars.Bar();
-            this.btnLimpiar = new DevExpress.XtraBars.BarLargeButtonItem();
             this.btnGuardar = new DevExpress.XtraBars.BarLargeButtonItem();
             this.btnEliminar = new DevExpress.XtraBars.BarLargeButtonItem();
             this.btnSalir = new DevExpress.XtraBars.BarLargeButtonItem();
-            this.btnSeleccionar = new DevExpress.XtraBars.BarLargeButtonItem();
             this.bEstado = new DevExpress.XtraBars.Bar();
             this.lblProveedor = new DevExpress.XtraBars.BarStaticItem();
             this.barDockControlTop = new DevExpress.XtraBars.BarDockControl();
@@ -45,32 +43,34 @@
             this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
             this.repositoryItemTextEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemTextEdit();
             this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
-            this.dtgPlaga = new DevExpress.XtraGrid.GridControl();
-            this.dtgValPlaga = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.Id_Plagas = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.Nombre_Plagas = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.Id_Usuario_Crea = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.Creador = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.Id_Usuario_Mod = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.Modificador = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridControl1 = new DevExpress.XtraGrid.GridControl();
+            this.gridValue = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.v_nombre_alm = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.v_nombre_hue = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.c_codigo_alm = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.c_codigo_hue = new DevExpress.XtraGrid.Columns.GridColumn();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
-            this.txtNombre = new DevExpress.XtraEditors.TextEdit();
+            this.glue_Huerto = new DevExpress.XtraEditors.GridLookUpEdit();
+            this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.glue_Almacen = new DevExpress.XtraEditors.GridLookUpEdit();
+            this.gridLookUpEdit1View = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
-            this.txtId = new DevExpress.XtraEditors.TextEdit();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).BeginInit();
             this.panelControl2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dtgPlaga)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dtgValPlaga)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridValue)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.txtNombre.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtId.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.glue_Huerto.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.glue_Almacen.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit1View)).BeginInit();
             this.SuspendLayout();
             // 
             // barManager1
@@ -85,11 +85,9 @@
             this.barManager1.Form = this;
             this.barManager1.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
             this.lblProveedor,
-            this.btnLimpiar,
             this.btnGuardar,
             this.btnEliminar,
-            this.btnSalir,
-            this.btnSeleccionar});
+            this.btnSalir});
             this.barManager1.MainMenu = this.bIconos;
             this.barManager1.MaxItemId = 65;
             this.barManager1.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
@@ -105,11 +103,9 @@
             this.bIconos.FloatLocation = new System.Drawing.Point(42, 184);
             this.bIconos.FloatSize = new System.Drawing.Size(1106, 535);
             this.bIconos.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
-            new DevExpress.XtraBars.LinkPersistInfo(this.btnLimpiar),
             new DevExpress.XtraBars.LinkPersistInfo(this.btnGuardar),
             new DevExpress.XtraBars.LinkPersistInfo(this.btnEliminar),
-            new DevExpress.XtraBars.LinkPersistInfo(this.btnSalir),
-            new DevExpress.XtraBars.LinkPersistInfo(this.btnSeleccionar)});
+            new DevExpress.XtraBars.LinkPersistInfo(this.btnSalir)});
             this.bIconos.OptionsBar.AllowCollapse = true;
             this.bIconos.OptionsBar.AllowQuickCustomization = false;
             this.bIconos.OptionsBar.AutoPopupMode = DevExpress.XtraBars.BarAutoPopupMode.None;
@@ -120,15 +116,6 @@
             this.bIconos.OptionsBar.RotateWhenVertical = false;
             this.bIconos.OptionsBar.UseWholeRow = true;
             this.bIconos.Text = "Menú principal";
-            // 
-            // btnLimpiar
-            // 
-            this.btnLimpiar.Caption = "Limpiar";
-            this.btnLimpiar.Id = 50;
-            this.btnLimpiar.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnLimpiar.ImageOptions.Image")));
-            this.btnLimpiar.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnLimpiar.ImageOptions.LargeImage")));
-            this.btnLimpiar.Name = "btnLimpiar";
-            this.btnLimpiar.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnLimpiar_ItemClick);
             // 
             // btnGuardar
             // 
@@ -157,15 +144,6 @@
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnSalir_ItemClick);
             // 
-            // btnSeleccionar
-            // 
-            this.btnSeleccionar.Caption = "Seleccionar";
-            this.btnSeleccionar.Id = 64;
-            this.btnSeleccionar.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnSeleccionar.ImageOptions.Image")));
-            this.btnSeleccionar.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnSeleccionar.ImageOptions.LargeImage")));
-            this.btnSeleccionar.Name = "btnSeleccionar";
-            this.btnSeleccionar.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnSeleccionar_ItemClick);
-            // 
             // bEstado
             // 
             this.bEstado.BarName = "Barra de estado";
@@ -179,6 +157,7 @@
             this.bEstado.OptionsBar.DrawDragBorder = false;
             this.bEstado.OptionsBar.UseWholeRow = true;
             this.bEstado.Text = "Barra de estado";
+            this.bEstado.Visible = false;
             // 
             // lblProveedor
             // 
@@ -192,15 +171,15 @@
             this.barDockControlTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.barDockControlTop.Location = new System.Drawing.Point(0, 0);
             this.barDockControlTop.Manager = this.barManager1;
-            this.barDockControlTop.Size = new System.Drawing.Size(687, 0);
+            this.barDockControlTop.Size = new System.Drawing.Size(613, 0);
             // 
             // barDockControlBottom
             // 
             this.barDockControlBottom.CausesValidation = false;
             this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.barDockControlBottom.Location = new System.Drawing.Point(0, 391);
+            this.barDockControlBottom.Location = new System.Drawing.Point(0, 429);
             this.barDockControlBottom.Manager = this.barManager1;
-            this.barDockControlBottom.Size = new System.Drawing.Size(687, 27);
+            this.barDockControlBottom.Size = new System.Drawing.Size(613, 27);
             // 
             // barDockControlLeft
             // 
@@ -208,15 +187,15 @@
             this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
             this.barDockControlLeft.Location = new System.Drawing.Point(0, 0);
             this.barDockControlLeft.Manager = this.barManager1;
-            this.barDockControlLeft.Size = new System.Drawing.Size(69, 391);
+            this.barDockControlLeft.Size = new System.Drawing.Size(54, 429);
             // 
             // barDockControlRight
             // 
             this.barDockControlRight.CausesValidation = false;
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
-            this.barDockControlRight.Location = new System.Drawing.Point(687, 0);
+            this.barDockControlRight.Location = new System.Drawing.Point(613, 0);
             this.barDockControlRight.Manager = this.barManager1;
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 391);
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 429);
             // 
             // repositoryItemTextEdit1
             // 
@@ -224,170 +203,180 @@
             // 
             // panelControl2
             // 
-            this.panelControl2.Controls.Add(this.dtgPlaga);
+            this.panelControl2.Controls.Add(this.gridControl1);
             this.panelControl2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelControl2.Location = new System.Drawing.Point(69, 106);
+            this.panelControl2.Location = new System.Drawing.Point(54, 106);
             this.panelControl2.Name = "panelControl2";
-            this.panelControl2.Padding = new System.Windows.Forms.Padding(10);
-            this.panelControl2.Size = new System.Drawing.Size(618, 285);
-            this.panelControl2.TabIndex = 15;
+            this.panelControl2.Padding = new System.Windows.Forms.Padding(5);
+            this.panelControl2.Size = new System.Drawing.Size(559, 323);
+            this.panelControl2.TabIndex = 23;
             // 
-            // dtgPlaga
+            // gridControl1
             // 
-            this.dtgPlaga.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dtgPlaga.Location = new System.Drawing.Point(12, 12);
-            this.dtgPlaga.MainView = this.dtgValPlaga;
-            this.dtgPlaga.MenuManager = this.barManager1;
-            this.dtgPlaga.Name = "dtgPlaga";
-            this.dtgPlaga.Size = new System.Drawing.Size(594, 261);
-            this.dtgPlaga.TabIndex = 0;
-            this.dtgPlaga.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.dtgValPlaga});
-            this.dtgPlaga.Click += new System.EventHandler(this.dtgPlaga_Click);
+            this.gridControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gridControl1.Location = new System.Drawing.Point(7, 7);
+            this.gridControl1.MainView = this.gridValue;
+            this.gridControl1.Name = "gridControl1";
+            this.gridControl1.Size = new System.Drawing.Size(545, 309);
+            this.gridControl1.TabIndex = 0;
+            this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gridValue});
+            this.gridControl1.Click += new System.EventHandler(this.gridControl1_Click);
+            this.gridControl1.KeyUp += new System.Windows.Forms.KeyEventHandler(this.gridControl1_KeyUp);
             // 
-            // dtgValPlaga
+            // gridValue
             // 
-            this.dtgValPlaga.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.Id_Plagas,
-            this.Nombre_Plagas,
-            this.Id_Usuario_Crea,
-            this.Creador,
-            this.Id_Usuario_Mod,
-            this.Modificador});
-            this.dtgValPlaga.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
-            this.dtgValPlaga.GridControl = this.dtgPlaga;
-            this.dtgValPlaga.Name = "dtgValPlaga";
-            this.dtgValPlaga.OptionsFind.AlwaysVisible = true;
-            this.dtgValPlaga.OptionsSelection.EnableAppearanceFocusedCell = false;
-            this.dtgValPlaga.OptionsView.ShowGroupPanel = false;
+            this.gridValue.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.v_nombre_alm,
+            this.v_nombre_hue,
+            this.c_codigo_alm,
+            this.c_codigo_hue});
+            this.gridValue.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
+            this.gridValue.GridControl = this.gridControl1;
+            this.gridValue.Name = "gridValue";
+            this.gridValue.OptionsBehavior.Editable = false;
+            this.gridValue.OptionsFind.AlwaysVisible = true;
+            this.gridValue.OptionsSelection.EnableAppearanceFocusedCell = false;
+            this.gridValue.OptionsView.ShowGroupPanel = false;
             // 
-            // Id_Plagas
+            // v_nombre_alm
             // 
-            this.Id_Plagas.Caption = "Id Plaga";
-            this.Id_Plagas.FieldName = "Id_Plagas";
-            this.Id_Plagas.Name = "Id_Plagas";
-            this.Id_Plagas.OptionsColumn.AllowEdit = false;
-            this.Id_Plagas.Visible = true;
-            this.Id_Plagas.VisibleIndex = 0;
+            this.v_nombre_alm.Caption = "Almacen";
+            this.v_nombre_alm.FieldName = "v_nombre_alm";
+            this.v_nombre_alm.Name = "v_nombre_alm";
+            this.v_nombre_alm.Visible = true;
+            this.v_nombre_alm.VisibleIndex = 0;
             // 
-            // Nombre_Plagas
+            // v_nombre_hue
             // 
-            this.Nombre_Plagas.Caption = "Plaga";
-            this.Nombre_Plagas.FieldName = "Nombre_Plagas";
-            this.Nombre_Plagas.Name = "Nombre_Plagas";
-            this.Nombre_Plagas.Visible = true;
-            this.Nombre_Plagas.VisibleIndex = 1;
+            this.v_nombre_hue.Caption = "Huerto";
+            this.v_nombre_hue.FieldName = "v_nombre_hue";
+            this.v_nombre_hue.Name = "v_nombre_hue";
+            this.v_nombre_hue.Visible = true;
+            this.v_nombre_hue.VisibleIndex = 1;
             // 
-            // Id_Usuario_Crea
+            // c_codigo_alm
             // 
-            this.Id_Usuario_Crea.Caption = "Id Creador";
-            this.Id_Usuario_Crea.FieldName = "Id_Usuario_Crea";
-            this.Id_Usuario_Crea.Name = "Id_Usuario_Crea";
+            this.c_codigo_alm.Caption = "c_codigo_alm";
+            this.c_codigo_alm.FieldName = "c_codigo_alm";
+            this.c_codigo_alm.Name = "c_codigo_alm";
+            this.c_codigo_alm.Visible = true;
+            this.c_codigo_alm.VisibleIndex = 2;
             // 
-            // Creador
+            // c_codigo_hue
             // 
-            this.Creador.Caption = "Creador";
-            this.Creador.FieldName = "Creador";
-            this.Creador.Name = "Creador";
-            // 
-            // Id_Usuario_Mod
-            // 
-            this.Id_Usuario_Mod.Caption = "Id Modificador";
-            this.Id_Usuario_Mod.FieldName = "Id_Usuario_Mod";
-            this.Id_Usuario_Mod.Name = "Id_Usuario_Mod";
-            // 
-            // Modificador
-            // 
-            this.Modificador.Caption = "Modificador";
-            this.Modificador.FieldName = "Modificador";
-            this.Modificador.Name = "Modificador";
+            this.c_codigo_hue.Caption = "c_codigo_hue";
+            this.c_codigo_hue.FieldName = "c_codigo_hue";
+            this.c_codigo_hue.Name = "c_codigo_hue";
+            this.c_codigo_hue.Visible = true;
+            this.c_codigo_hue.VisibleIndex = 3;
             // 
             // panelControl1
             // 
             this.panelControl1.Controls.Add(this.groupControl1);
             this.panelControl1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelControl1.Location = new System.Drawing.Point(69, 0);
+            this.panelControl1.Location = new System.Drawing.Point(54, 0);
             this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Padding = new System.Windows.Forms.Padding(10);
-            this.panelControl1.Size = new System.Drawing.Size(618, 106);
-            this.panelControl1.TabIndex = 14;
+            this.panelControl1.Padding = new System.Windows.Forms.Padding(5);
+            this.panelControl1.Size = new System.Drawing.Size(559, 106);
+            this.panelControl1.TabIndex = 22;
             // 
             // groupControl1
             // 
-            this.groupControl1.Controls.Add(this.txtNombre);
+            this.groupControl1.Controls.Add(this.glue_Huerto);
+            this.groupControl1.Controls.Add(this.glue_Almacen);
             this.groupControl1.Controls.Add(this.labelControl2);
-            this.groupControl1.Controls.Add(this.txtId);
             this.groupControl1.Controls.Add(this.labelControl1);
             this.groupControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupControl1.Location = new System.Drawing.Point(12, 12);
+            this.groupControl1.Location = new System.Drawing.Point(7, 7);
             this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(594, 82);
+            this.groupControl1.Size = new System.Drawing.Size(545, 92);
             this.groupControl1.TabIndex = 0;
-            this.groupControl1.Text = "Plaga";
+            this.groupControl1.Text = "Almacen - Huerta";
             // 
-            // txtNombre
+            // glue_Huerto
             // 
-            this.txtNombre.Location = new System.Drawing.Point(98, 54);
-            this.txtNombre.MenuManager = this.barManager1;
-            this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Size = new System.Drawing.Size(231, 20);
-            this.txtNombre.TabIndex = 3;
+            this.glue_Huerto.Location = new System.Drawing.Point(85, 56);
+            this.glue_Huerto.Name = "glue_Huerto";
+            this.glue_Huerto.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.glue_Huerto.Properties.DisplayMember = "v_nombre_hue";
+            this.glue_Huerto.Properties.PopupView = this.gridView1;
+            this.glue_Huerto.Properties.ValueMember = "c_codigo_hue";
+            this.glue_Huerto.Size = new System.Drawing.Size(194, 20);
+            this.glue_Huerto.TabIndex = 4;
+            // 
+            // gridView1
+            // 
+            this.gridView1.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
+            this.gridView1.Name = "gridView1";
+            this.gridView1.OptionsSelection.EnableAppearanceFocusedCell = false;
+            this.gridView1.OptionsView.ShowGroupPanel = false;
+            // 
+            // glue_Almacen
+            // 
+            this.glue_Almacen.Location = new System.Drawing.Point(85, 30);
+            this.glue_Almacen.Name = "glue_Almacen";
+            this.glue_Almacen.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.glue_Almacen.Properties.DisplayMember = "v_nombre_alm";
+            this.glue_Almacen.Properties.PopupView = this.gridLookUpEdit1View;
+            this.glue_Almacen.Properties.ValueMember = "c_codigo_alm";
+            this.glue_Almacen.Size = new System.Drawing.Size(194, 20);
+            this.glue_Almacen.TabIndex = 3;
+            // 
+            // gridLookUpEdit1View
+            // 
+            this.gridLookUpEdit1View.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
+            this.gridLookUpEdit1View.Name = "gridLookUpEdit1View";
+            this.gridLookUpEdit1View.OptionsSelection.EnableAppearanceFocusedCell = false;
+            this.gridLookUpEdit1View.OptionsView.ShowGroupPanel = false;
             // 
             // labelControl2
             // 
             this.labelControl2.Location = new System.Drawing.Point(19, 61);
             this.labelControl2.Name = "labelControl2";
-            this.labelControl2.Size = new System.Drawing.Size(30, 13);
+            this.labelControl2.Size = new System.Drawing.Size(50, 13);
             this.labelControl2.TabIndex = 2;
-            this.labelControl2.Text = "Plaga:";
-            // 
-            // txtId
-            // 
-            this.txtId.Enabled = false;
-            this.txtId.Location = new System.Drawing.Point(98, 28);
-            this.txtId.MenuManager = this.barManager1;
-            this.txtId.Name = "txtId";
-            this.txtId.Size = new System.Drawing.Size(100, 20);
-            this.txtId.TabIndex = 1;
+            this.labelControl2.Text = "Id Huerto:";
             // 
             // labelControl1
             // 
             this.labelControl1.Location = new System.Drawing.Point(19, 34);
             this.labelControl1.Name = "labelControl1";
-            this.labelControl1.Size = new System.Drawing.Size(46, 13);
+            this.labelControl1.Size = new System.Drawing.Size(60, 13);
             this.labelControl1.TabIndex = 0;
-            this.labelControl1.Text = "Id Plaga: ";
+            this.labelControl1.Text = "Id Almacen: ";
             // 
-            // Frm_Plagas
+            // Frm_Almacen_Huerto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(687, 418);
+            this.ClientSize = new System.Drawing.Size(613, 456);
             this.Controls.Add(this.panelControl2);
             this.Controls.Add(this.panelControl1);
             this.Controls.Add(this.barDockControlLeft);
             this.Controls.Add(this.barDockControlRight);
             this.Controls.Add(this.barDockControlBottom);
             this.Controls.Add(this.barDockControlTop);
-            this.MaximizeBox = false;
-            this.MinimizeBox = false;
-            this.Name = "Frm_Plagas";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Plagas";
-            this.Load += new System.EventHandler(this.Frm_Plagas_Load);
+            this.Name = "Frm_Almacen_Huerto";
+            this.Text = "Almacen - Huerto";
+            this.Load += new System.EventHandler(this.Frm_Almacen_Huerto_Load);
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).EndInit();
             this.panelControl2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dtgPlaga)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dtgValPlaga)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridValue)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
             this.panelControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
             this.groupControl1.ResumeLayout(false);
             this.groupControl1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.txtNombre.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtId.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.glue_Huerto.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.glue_Almacen.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit1View)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -397,32 +386,30 @@
 
         public DevExpress.XtraBars.BarManager barManager1;
         public DevExpress.XtraBars.Bar bIconos;
-        private DevExpress.XtraBars.BarLargeButtonItem btnLimpiar;
         private DevExpress.XtraBars.BarLargeButtonItem btnGuardar;
         private DevExpress.XtraBars.BarLargeButtonItem btnEliminar;
         private DevExpress.XtraBars.BarLargeButtonItem btnSalir;
-        private DevExpress.XtraBars.BarLargeButtonItem btnSeleccionar;
         private DevExpress.XtraBars.Bar bEstado;
         private DevExpress.XtraBars.BarStaticItem lblProveedor;
         private DevExpress.XtraBars.BarDockControl barDockControlTop;
         private DevExpress.XtraBars.BarDockControl barDockControlBottom;
         private DevExpress.XtraBars.BarDockControl barDockControlLeft;
         private DevExpress.XtraBars.BarDockControl barDockControlRight;
-        private DevExpress.XtraEditors.Repository.RepositoryItemTextEdit repositoryItemTextEdit1;
         private DevExpress.XtraEditors.PanelControl panelControl2;
-        private DevExpress.XtraGrid.GridControl dtgPlaga;
-        private DevExpress.XtraGrid.Views.Grid.GridView dtgValPlaga;
-        private DevExpress.XtraGrid.Columns.GridColumn Id_Plagas;
-        private DevExpress.XtraGrid.Columns.GridColumn Nombre_Plagas;
-        private DevExpress.XtraGrid.Columns.GridColumn Id_Usuario_Crea;
-        private DevExpress.XtraGrid.Columns.GridColumn Creador;
-        private DevExpress.XtraGrid.Columns.GridColumn Id_Usuario_Mod;
-        private DevExpress.XtraGrid.Columns.GridColumn Modificador;
+        private DevExpress.XtraGrid.GridControl gridControl1;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridValue;
+        private DevExpress.XtraGrid.Columns.GridColumn v_nombre_alm;
+        private DevExpress.XtraGrid.Columns.GridColumn v_nombre_hue;
+        private DevExpress.XtraGrid.Columns.GridColumn c_codigo_alm;
+        private DevExpress.XtraGrid.Columns.GridColumn c_codigo_hue;
         private DevExpress.XtraEditors.PanelControl panelControl1;
         private DevExpress.XtraEditors.GroupControl groupControl1;
-        private DevExpress.XtraEditors.TextEdit txtNombre;
+        private DevExpress.XtraEditors.GridLookUpEdit glue_Huerto;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
+        private DevExpress.XtraEditors.GridLookUpEdit glue_Almacen;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridLookUpEdit1View;
         private DevExpress.XtraEditors.LabelControl labelControl2;
-        private DevExpress.XtraEditors.TextEdit txtId;
         private DevExpress.XtraEditors.LabelControl labelControl1;
+        private DevExpress.XtraEditors.Repository.RepositoryItemTextEdit repositoryItemTextEdit1;
     }
 }

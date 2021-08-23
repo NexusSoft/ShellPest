@@ -336,6 +336,108 @@ namespace ShellPest_WebService
                 return Json(cadena, JsonRequestBehavior.AllowGet);
             }
         }
+        [System.Web.Mvc.HttpGet]
+        public ActionResult Productos(string Fecha)
+        {
+            string cadena = string.Empty;
+            WS_Catalogos_Productos sel = new WS_Catalogos_Productos();
+            sel.Fecha = Fecha;
+            sel.MtdSeleccionarProductos();
+            if (sel.Exito)
+            {
+                GetJson(sel.Datos);
+                return Json(rows, JsonRequestBehavior.AllowGet);
+            }
+            else
+            {
+                return Json(cadena, JsonRequestBehavior.AllowGet);
+            }
+        }
+        [System.Web.Mvc.HttpGet]
+        public ActionResult Unidades(string Fecha)
+        {
+            string cadena = string.Empty;
+            WS_Catalogos_Unidades sel = new WS_Catalogos_Unidades();
+            sel.Fecha = Fecha;
+            sel.MtdSeleccionarUnidades();
+            if (sel.Exito)
+            {
+                GetJson(sel.Datos);
+                return Json(rows, JsonRequestBehavior.AllowGet);
+            }
+            else
+            {
+                return Json(cadena, JsonRequestBehavior.AllowGet);
+            }
+        }
+        [System.Web.Mvc.HttpGet]
+        public ActionResult Presentasiones(string Fecha)
+        {
+            string cadena = string.Empty;
+            WS_Catalogos_Presentasiones sel = new WS_Catalogos_Presentasiones();
+            sel.Fecha = Fecha;
+            sel.MtdSeleccionarPresentasion();
+            if (sel.Exito)
+            {
+                GetJson(sel.Datos);
+                return Json(rows, JsonRequestBehavior.AllowGet);
+            }
+            else
+            {
+                return Json(cadena, JsonRequestBehavior.AllowGet);
+            }
+        }
+        [System.Web.Mvc.HttpGet]
+        public ActionResult TipoAplicaciones(string Fecha)
+        {
+            string cadena = string.Empty;
+            WS_Catalogos_TipoAplicaciones sel = new WS_Catalogos_TipoAplicaciones();
+            sel.Fecha = Fecha;
+            sel.MtdSeleccionarTipoAplicaciones();
+            if (sel.Exito)
+            {
+                GetJson(sel.Datos);
+                return Json(rows, JsonRequestBehavior.AllowGet);
+            }
+            else
+            {
+                return Json(cadena, JsonRequestBehavior.AllowGet);
+            }
+        }
+        [System.Web.Mvc.HttpGet]
+        public ActionResult Almacenes(string Fecha)
+        {
+            string cadena = string.Empty;
+            CLS_Almacen_Huerto sel = new CLS_Almacen_Huerto();
+            
+            sel.MtdSeleccionarAlmHue();
+            if (sel.Exito)
+            {
+                GetJson(sel.Datos);
+                return Json(rows, JsonRequestBehavior.AllowGet);
+            }
+            else
+            {
+                return Json(cadena, JsonRequestBehavior.AllowGet);
+            }
+        }
+        [System.Web.Mvc.HttpGet]
+        public ActionResult Empresas(string Fecha)
+        {
+            string cadena = string.Empty;
+            WS_Catalogos_Empresas sel = new WS_Catalogos_Empresas();
+            sel.Fecha = Fecha;
+            sel.MtdSeleccionarEmpresa();
+            if (sel.Exito)
+            {
+                GetJson(sel.Datos);
+                return Json(rows, JsonRequestBehavior.AllowGet);
+            }
+            else
+            {
+                return Json(cadena, JsonRequestBehavior.AllowGet);
+            }
+        }
 
         public void GetJson(DataTable dt)
         {

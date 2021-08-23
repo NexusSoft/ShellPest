@@ -324,6 +324,77 @@ namespace ShellPest_WebService
                 return Json(rows, JsonRequestBehavior.AllowGet);
             }
         }
+
+        [HttpGet]
+        public ActionResult Aplicaciones(string Id_Aplicacion, string Id_Huerta, string Observaciones,
+                               string Id_TipoAplicacion, string Id_Presentacion, string Id_Usuario, string F_Creacion,string Anio)
+        {
+            string cadena = string.Empty;
+            WS_Control_Aplicaciones CLS = new WS_Control_Aplicaciones();
+            CLS.Id_Aplicacion = Id_Aplicacion;
+            CLS.Id_Huerta = Id_Huerta;
+            CLS.Observaciones = Observaciones;
+            CLS.Id_TipoAplicacion = Id_TipoAplicacion;
+            CLS.Id_Presentacion = Id_Presentacion;
+            CLS.Id_Usuario = Id_Usuario;
+            CLS.F_Creacion = F_Creacion;
+            CLS.Fecha = Anio.Substring(2);
+            CLS.MtdInsertarAplicacion();
+            DataTable dt = new DataTable();
+            dt.Clear();
+            dt.Columns.Add("Mensaje", typeof(string));
+            DataRow _ravi = dt.NewRow();
+            if (CLS.Exito)
+            {
+                _ravi["Mensaje"] = CLS.Datos.Rows[0][0].ToString();
+                dt.Rows.Add(_ravi);
+                GetJson(dt);
+                return Json(rows, JsonRequestBehavior.AllowGet);
+            }
+            else
+            {
+                _ravi["Mensaje"] = CLS.Mensaje;
+                dt.Rows.Add(_ravi);
+                GetJson(dt);
+                return Json(rows, JsonRequestBehavior.AllowGet);
+            }
+        }
+
+        [HttpGet]
+        public ActionResult Aplicaciones_Det(string Id_Aplicacion, string Fecha, string c_codigo_pro,
+                               string Dosis, string Unidades_aplicadas, string Id_Usuario, string F_Creacion)
+        {
+            string cadena = string.Empty;
+            WS_Control_Aplicaciones CLS = new WS_Control_Aplicaciones();
+            CLS.Id_Aplicacion = Id_Aplicacion;
+            CLS.Fecha = Fecha;
+            CLS.c_codigo_pro = c_codigo_pro;
+            CLS.Dosis = decimal.Parse(Dosis);
+            CLS.Unidades_aplicadas = decimal.Parse(Unidades_aplicadas);
+
+            CLS.Id_Usuario = Id_Usuario;
+            CLS.F_Creacion = F_Creacion;
+            CLS.MtdInsertarAplicacion_Det();
+            DataTable dt = new DataTable();
+            dt.Clear();
+            dt.Columns.Add("Mensaje", typeof(string));
+            DataRow _ravi = dt.NewRow();
+            if (CLS.Exito)
+            {
+                _ravi["Mensaje"] = "1";
+                dt.Rows.Add(_ravi);
+                GetJson(dt);
+                return Json(rows, JsonRequestBehavior.AllowGet);
+            }
+            else
+            {
+                _ravi["Mensaje"] = CLS.Mensaje;
+                dt.Rows.Add(_ravi);
+                GetJson(dt);
+                return Json(rows, JsonRequestBehavior.AllowGet);
+            }
+        }
+
         public void GetJson(DataTable dt)
         {
             Dictionary<string, object> row;

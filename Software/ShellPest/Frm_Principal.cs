@@ -365,5 +365,19 @@ namespace ShellPest
                 XtraMessageBox.Show("No Cuentas con acceso a esta Opcion [020]");
             }
         }
+
+        private void btnAlmacen_Huerta_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            if (TieneAcceso("019"))
+            {
+                Frm_Almacen_Huerto Ventana = new Frm_Almacen_Huerto();
+                
+                Ventana.ShowDialog();
+            }
+            else
+            {
+                XtraMessageBox.Show("No Cuentas con acceso a esta Opcion [019]");
+            }
+        }
     }
 }

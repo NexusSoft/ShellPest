@@ -220,16 +220,20 @@ namespace ShellPest
 
         private void btn_Presentacion_Click(object sender, EventArgs e)
         {
-            Frm_Presentacion Frm = new Frm_Presentacion();
-            Frm.PaSel = true;
-            Frm.IdTipo = glue_Tipo.EditValue.ToString();
-            Frm.Id_Usuario = Id_Usuario;
-            Frm.ShowDialog();
-            text_Presentacion.Tag = Frm.IdPresentacion;
-            text_Presentacion.Text = Frm.Tipo+" de "+ Frm.Presentacion+" "+Frm.Unidad;
-            PresentacionConvercion = Frm.Presentacion;
-            IdUnidadConvercion = Frm.IdUnidad;
-            label_Unitario.Text = "Cantidad Por " + Frm.Unidad;
+            if (glue_Tipo.EditValue != null)
+            {
+                Frm_Presentacion Frm = new Frm_Presentacion();
+                Frm.PaSel = true;
+                Frm.IdTipo = glue_Tipo.EditValue.ToString();
+                Frm.Id_Usuario = Id_Usuario;
+                Frm.ShowDialog();
+                text_Presentacion.Tag = Frm.IdPresentacion;
+                text_Presentacion.Text = Frm.Tipo + " de " + Frm.Presentacion + " " + Frm.Unidad;
+                PresentacionConvercion = Frm.Presentacion;
+                IdUnidadConvercion = Frm.IdUnidad;
+                label_Unitario.Text = "Cantidad Por " + Frm.Unidad;
+            }
+            
         }
 
         private void btn_Ingrediente_Click(object sender, EventArgs e)

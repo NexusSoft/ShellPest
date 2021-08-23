@@ -54,6 +54,7 @@
             this.btnIndividuos = new DevExpress.XtraBars.BarCheckItem();
             this.btnZonasClima = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
+            this.btn_Recetas = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup5 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -67,7 +68,8 @@
             this.ribbonPage2 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.xtraTabbedMdiManager1 = new DevExpress.XtraTabbedMdi.XtraTabbedMdiManager(this.components);
             this.SkinForm = new DevExpress.LookAndFeel.DefaultLookAndFeel(this.components);
-            this.btn_Recetas = new DevExpress.XtraBars.BarButtonItem();
+            this.ribbonPageGroup4 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.btnAlmacen_Huerta = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabbedMdiManager1)).BeginInit();
             this.SuspendLayout();
@@ -100,9 +102,10 @@
             this.btnIndividuos,
             this.btnZonasClima,
             this.barButtonItem1,
-            this.btn_Recetas});
+            this.btn_Recetas,
+            this.btnAlmacen_Huerta});
             this.ribbonControl1.Location = new System.Drawing.Point(0, 0);
-            this.ribbonControl1.MaxItemId = 25;
+            this.ribbonControl1.MaxItemId = 27;
             this.ribbonControl1.Name = "ribbonControl1";
             this.ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage1,
@@ -110,7 +113,7 @@
             this.ribbonPage4,
             this.ribbonPage5});
             this.ribbonControl1.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonControlStyle.Office2007;
-            this.ribbonControl1.Size = new System.Drawing.Size(893, 147);
+            this.ribbonControl1.Size = new System.Drawing.Size(1084, 147);
             this.ribbonControl1.StatusBar = this.ribbonStatusBar1;
             // 
             // skinRibbonGalleryBarItem1
@@ -313,12 +316,22 @@
             this.barButtonItem1.Id = 23;
             this.barButtonItem1.Name = "barButtonItem1";
             // 
+            // btn_Recetas
+            // 
+            this.btn_Recetas.Caption = "Recetas";
+            this.btn_Recetas.Id = 24;
+            this.btn_Recetas.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_Recetas.ImageOptions.Image")));
+            this.btn_Recetas.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btn_Recetas.ImageOptions.LargeImage")));
+            this.btn_Recetas.Name = "btn_Recetas";
+            this.btn_Recetas.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_Recetas_ItemClick);
+            // 
             // ribbonPage1
             // 
             this.ribbonPage1.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
             this.ribbonPageGroup5,
             this.ribbonPageGroup1,
-            this.ribbonPageGroup2});
+            this.ribbonPageGroup2,
+            this.ribbonPageGroup4});
             this.ribbonPage1.ImageOptions.Image = global::ShellPest.Properties.Resources.grandtotalsoffrowscolumnspivottable_16x16;
             this.ribbonPage1.Name = "ribbonPage1";
             this.ribbonPage1.Text = "Catalogos";
@@ -400,10 +413,10 @@
             // ribbonStatusBar1
             // 
             this.ribbonStatusBar1.ItemLinks.Add(this.skinRibbonGalleryBarItem1);
-            this.ribbonStatusBar1.Location = new System.Drawing.Point(0, 389);
+            this.ribbonStatusBar1.Location = new System.Drawing.Point(0, 489);
             this.ribbonStatusBar1.Name = "ribbonStatusBar1";
             this.ribbonStatusBar1.Ribbon = this.ribbonControl1;
-            this.ribbonStatusBar1.Size = new System.Drawing.Size(893, 32);
+            this.ribbonStatusBar1.Size = new System.Drawing.Size(1084, 32);
             // 
             // ribbonPage2
             // 
@@ -420,20 +433,26 @@
             this.SkinForm.EnableBonusSkins = true;
             this.SkinForm.LookAndFeel.SkinName = "Office 2010 Silver";
             // 
-            // btn_Recetas
+            // ribbonPageGroup4
             // 
-            this.btn_Recetas.Caption = "Recetas";
-            this.btn_Recetas.Id = 24;
-            this.btn_Recetas.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem2.ImageOptions.Image")));
-            this.btn_Recetas.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem2.ImageOptions.LargeImage")));
-            this.btn_Recetas.Name = "btn_Recetas";
-            this.btn_Recetas.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_Recetas_ItemClick);
+            this.ribbonPageGroup4.ItemLinks.Add(this.btnAlmacen_Huerta);
+            this.ribbonPageGroup4.Name = "ribbonPageGroup4";
+            this.ribbonPageGroup4.Text = "Inventario";
+            // 
+            // btnAlmacen_Huerta
+            // 
+            this.btnAlmacen_Huerta.Caption = "Almacen - Huerta";
+            this.btnAlmacen_Huerta.Id = 25;
+            this.btnAlmacen_Huerta.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnAlmacen_Huerta.ImageOptions.Image")));
+            this.btnAlmacen_Huerta.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnAlmacen_Huerta.ImageOptions.LargeImage")));
+            this.btnAlmacen_Huerta.Name = "btnAlmacen_Huerta";
+            this.btnAlmacen_Huerta.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnAlmacen_Huerta_ItemClick);
             // 
             // Frm_Principal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(893, 421);
+            this.ClientSize = new System.Drawing.Size(1084, 521);
             this.Controls.Add(this.ribbonStatusBar1);
             this.Controls.Add(this.ribbonControl1);
             this.IsMdiContainer = true;
@@ -491,6 +510,8 @@
         private DevExpress.XtraBars.Ribbon.RibbonPage ribbonPage5;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup6;
         private DevExpress.XtraBars.BarButtonItem btn_Recetas;
+        private DevExpress.XtraBars.BarButtonItem btnAlmacen_Huerta;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup4;
     }
 }
 
