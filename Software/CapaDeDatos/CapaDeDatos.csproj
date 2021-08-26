@@ -110,6 +110,7 @@
     <Compile Include="WebService\WS_Catalogos_Calidad.cs" />
     <Compile Include="WebService\WS_Catalogos_Bloque.cs" />
     <Compile Include="WebService\WS_Control_Aplicaciones.cs" />
+    <Compile Include="WebService\WS_Control_Salidas.cs" />
   </ItemGroup>
   <ItemGroup>
     <COMReference Include="Microsoft.Office.Core">

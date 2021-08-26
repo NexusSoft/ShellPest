@@ -395,6 +395,79 @@ namespace ShellPest_WebService
             }
         }
 
+        [HttpGet]
+        public ActionResult Salidas(string c_codigo_sal, string c_codigo_ent, string c_codigo_tmv,
+                               string c_codigo_tra, string d_documento_sal,string c_codigo_alm,string c_codigo_eps,string Id_Responsable,string Id_Aplicacion, string Id_Usuario, string F_Creacion)
+        {
+            string cadena = string.Empty;
+            WS_Control_Salidas CLS = new WS_Control_Salidas();
+            CLS.c_codigo_sal = c_codigo_sal;
+            CLS.c_codigo_ent = c_codigo_ent;
+            CLS.c_codigo_tmv = c_codigo_tmv;
+            CLS.c_codigo_tra = c_codigo_tra;
+            CLS.d_documento_sal = d_documento_sal;
+            CLS.c_codigo_alm = c_codigo_alm;
+            CLS.c_codigo_eps = c_codigo_eps;
+            CLS.Id_Responsable = Id_Responsable;
+            CLS.Id_Aplicacion = Id_Aplicacion;
+            CLS.Id_Usuario = Id_Usuario;
+            CLS.F_Creacion = F_Creacion;
+            CLS.MtdInsertarSalida();
+            DataTable dt = new DataTable();
+            dt.Clear();
+            dt.Columns.Add("Mensaje", typeof(string));
+            DataRow _ravi = dt.NewRow();
+            if (CLS.Exito)
+            {
+                _ravi["Mensaje"] = CLS.Datos.Rows[0][0].ToString();
+                dt.Rows.Add(_ravi);
+                GetJson(dt);
+                return Json(rows, JsonRequestBehavior.AllowGet);
+            }
+            else
+            {
+                _ravi["Mensaje"] = CLS.Mensaje;
+                dt.Rows.Add(_ravi);
+                GetJson(dt);
+                return Json(rows, JsonRequestBehavior.AllowGet);
+            }
+        }
+
+        [HttpGet]
+        public ActionResult Salidas_Det(string c_tipodoc_mov, string c_coddoc_mov, string c_codigo_pro,
+                               string n_movipro_mov, string n_exiant_mov, string n_cantidad_mov, string Id_Bloque)
+        {
+            string cadena = string.Empty;
+            WS_Control_Salidas CLS = new WS_Control_Salidas();
+            CLS.c_tipodoc_mov = c_tipodoc_mov;
+            CLS.c_coddoc_mov = c_coddoc_mov;
+            CLS.c_codigo_pro = c_codigo_pro;
+            CLS.n_movipro_mov = n_movipro_mov;
+            CLS.n_exiant_mov = n_exiant_mov;
+
+            CLS.n_cantidad_mov = n_cantidad_mov;
+            CLS.Id_Bloque = Id_Bloque;
+            CLS.MtdInsertarSalida_Det();
+            DataTable dt = new DataTable();
+            dt.Clear();
+            dt.Columns.Add("Mensaje", typeof(string));
+            DataRow _ravi = dt.NewRow();
+            if (CLS.Exito)
+            {
+                _ravi["Mensaje"] = "1";
+                dt.Rows.Add(_ravi);
+                GetJson(dt);
+                return Json(rows, JsonRequestBehavior.AllowGet);
+            }
+            else
+            {
+                _ravi["Mensaje"] = CLS.Mensaje;
+                dt.Rows.Add(_ravi);
+                GetJson(dt);
+                return Json(rows, JsonRequestBehavior.AllowGet);
+            }
+        }
+
         public void GetJson(DataTable dt)
         {
             Dictionary<string, object> row;
