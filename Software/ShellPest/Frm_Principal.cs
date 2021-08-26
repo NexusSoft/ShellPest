@@ -379,5 +379,32 @@ namespace ShellPest
                 XtraMessageBox.Show("No Cuentas con acceso a esta Opcion [019]");
             }
         }
+
+        private void btn_ImpInv_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            if (TieneAcceso("019"))
+            {
+                ImportarMovimientos();
+            }
+            else
+            {
+                XtraMessageBox.Show("No Cuentas con acceso a esta Opcion [019]");
+            }
+        }
+
+        private void ImportarMovimientos()
+        {
+            CLS_Inventum Clase = new CLS_Inventum();
+            Clase.Id_Usuario = UsuariosLogin;
+            Clase.MtdInsertMovimientos();
+            if (Clase.Exito)
+            {
+                XtraMessageBox.Show("Movimientos importados Correctamente.");
+            }
+            else
+            {
+                XtraMessageBox.Show("¡ERROR!, Ocurrio un problema al intentar comunicarnos con la BD de INVENTUM");
+            }
+        }
     }
 }

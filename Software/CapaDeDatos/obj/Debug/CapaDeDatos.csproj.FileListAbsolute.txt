@@ -30,3 +30,4 @@ G:\JORGE\Documents\GitHub\ShellPest\Software\CapaDeDatos\bin\Debug\CapaDeDatos.d
 G:\JORGE\Documents\GitHub\ShellPest\Software\CapaDeDatos\bin\Debug\CapaDeDatos.pdb
 G:\JORGE\Documents\GitHub\ShellPest\Software\CapaDeDatos\obj\Debug\CapaDeDatos.dll
 G:\JORGE\Documents\GitHub\ShellPest\Software\CapaDeDatos\obj\Debug\CapaDeDatos.pdb
+G:\JORGE\Documents\GitHub\ShellPest\Software\CapaDeDatos\obj\Debug\CapaDeDatos.csprojAssemblyReference.cache
