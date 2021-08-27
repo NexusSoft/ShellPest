@@ -468,6 +468,24 @@ namespace ShellPest_WebService
             }
         }
 
+        [System.Web.Mvc.HttpGet]
+        public ActionResult ExistenciaPro()
+        {
+            string cadena = string.Empty;
+            CLS_Inventum sel = new CLS_Inventum();
+            
+            sel.MtdExistenciasProSelect();
+            if (sel.Exito)
+            {
+                GetJson(sel.Datos);
+                return Json(rows, JsonRequestBehavior.AllowGet);
+            }
+            else
+            {
+                return Json(cadena, JsonRequestBehavior.AllowGet);
+            }
+        }
+
         public void GetJson(DataTable dt)
         {
             Dictionary<string, object> row;

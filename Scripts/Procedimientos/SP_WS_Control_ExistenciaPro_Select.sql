@@ -5,17 +5,17 @@ SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
-IF  EXISTS (SELECT * FROM SYS.OBJECTS WHERE TYPE = 'P' AND NAME = 'WS_Control_ExistenciaPro_Select')
-DROP PROCEDURE WS_Control_ExistenciaPro_Select
+IF  EXISTS (SELECT * FROM SYS.OBJECTS WHERE TYPE = 'P' AND NAME = 'SP_WS_Control_ExistenciaPro_Select')
+DROP PROCEDURE SP_WS_Control_ExistenciaPro_Select
 GO
 -- =============================================
 -- Author:		<Author,,Name>
 -- Create date: <Create Date,,>
 -- Description:	<Description,,>
 -- =============================================
-create PROCEDURE [dbo].[WS_Control_ExistenciaPro_Select] 
+create PROCEDURE [dbo].[SP_WS_Control_ExistenciaPro_Select] 
 	-- Add the parameters for the stored procedure here
-	@Id_Usuario varchar(10)
+	
 AS
 BEGIN
 	-- SET NOCOUNT ON added to prevent extra result sets from
