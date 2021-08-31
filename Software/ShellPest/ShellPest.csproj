@@ -270,6 +270,12 @@
     <Compile Include="Control\Frm_Recetas.Designer.cs">
       <DependentUpon>Frm_Recetas.cs</DependentUpon>
     </Compile>
+    <Compile Include="Control\Frm_Rpt_Salidas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Control\Frm_Rpt_Salidas.Designer.cs">
+      <DependentUpon>Frm_Rpt_Salidas.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formularios\Frm_ImportarEstacion.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -406,6 +412,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Control\Frm_Recetas.resx">
       <DependentUpon>Frm_Recetas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Control\Frm_Rpt_Salidas.resx">
+      <DependentUpon>Frm_Rpt_Salidas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Frm_ImportarEstacion.resx">
       <DependentUpon>Frm_ImportarEstacion.cs</DependentUpon>

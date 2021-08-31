@@ -18,6 +18,7 @@ namespace CapaDeDatos
 
         public string Id_Usuario_Crea { get; set; }
         public string Id_Huerta { get; set; }
+        public string c_codigo_eps { get; set; }
 
         public void MtdSeleccionarUsuarios()
         {
@@ -59,6 +60,38 @@ namespace CapaDeDatos
             try
             {
                 _conexion.NombreProcedimiento = "SP_Usuarios_Huerta_Select";
+                _dato.CadenaTexto = Id_Usuario;
+                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Id_Usuario");
+                _conexion.EjecutarDataset();
+
+                if (_conexion.Exito)
+                {
+                    Datos = _conexion.Datos;
+                }
+                else
+                {
+                    Mensaje = _conexion.Mensaje;
+                    Exito = false;
+                }
+            }
+            catch (Exception e)
+            {
+                Mensaje = e.Message;
+                Exito = false;
+            }
+
+        }
+
+
+        public void MtdSeleccionarUsuariosEmpresa()
+        {
+            TipoDato _dato = new TipoDato();
+            Conexion _conexion = new Conexion(cadenaConexion);
+
+            Exito = true;
+            try
+            {
+                _conexion.NombreProcedimiento = "SP_Usuario_Empresas_Select";
                 _dato.CadenaTexto = Id_Usuario;
                 _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Id_Usuario");
                 _conexion.EjecutarDataset();
@@ -152,6 +185,40 @@ namespace CapaDeDatos
             }
         }
 
+        public void MtdInsertarUsuariosEmpresa()
+        {
+            TipoDato _dato = new TipoDato();
+            Conexion _conexion = new Conexion(cadenaConexion);
+
+            Exito = true;
+            try
+            {
+                _conexion.NombreProcedimiento = "SP_Usuarios_Empresa_Insert";
+                _dato.CadenaTexto = Id_Usuario;
+                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Id_Usuario2");
+                _dato.CadenaTexto = c_codigo_eps;
+                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "c_codigo_eps");
+                _dato.CadenaTexto = Id_Usuario_Crea;
+                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Id_Usuario");
+                _conexion.EjecutarDataset();
+
+                if (_conexion.Exito)
+                {
+                    Datos = _conexion.Datos;
+                }
+                else
+                {
+                    Mensaje = _conexion.Mensaje;
+                    Exito = false;
+                }
+            }
+            catch (Exception e)
+            {
+                Mensaje = e.Message;
+                Exito = false;
+            }
+        }
+
         public void MtdEliminarUsuarios()
         {
             TipoDato _dato = new TipoDato();
@@ -212,5 +279,39 @@ namespace CapaDeDatos
                 Exito = false;
             }
         }
+
+        public void MtdEliminarUsuariosEmpresa()
+        {
+            TipoDato _dato = new TipoDato();
+            Conexion _conexion = new Conexion(cadenaConexion);
+
+            Exito = true;
+            try
+            {
+                _conexion.NombreProcedimiento = "SP_Usuarios_Empresa_Delete";
+                _dato.CadenaTexto = Id_Usuario;
+                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Id_Usuario");
+                _dato.CadenaTexto = c_codigo_eps;
+                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "c_codigo_eps");
+                _conexion.EjecutarDataset();
+
+                if (_conexion.Exito)
+                {
+                    Datos = _conexion.Datos;
+                }
+                else
+                {
+                    Mensaje = _conexion.Mensaje;
+                    Exito = false;
+                }
+            }
+            catch (Exception e)
+            {
+                Mensaje = e.Message;
+                Exito = false;
+            }
+        }
+
+
     }
 }

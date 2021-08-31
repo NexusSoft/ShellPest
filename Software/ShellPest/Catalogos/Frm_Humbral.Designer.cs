@@ -264,12 +264,12 @@
             this.Id_Usuario_Mod,
             this.Modificador,
             this.Color_Humbral});
+            this.dtgValHumbral.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
             this.dtgValHumbral.GridControl = this.dtgHumbral;
             this.dtgValHumbral.Name = "dtgValHumbral";
             this.dtgValHumbral.OptionsBehavior.Editable = false;
-            this.dtgValHumbral.OptionsView.ShowGroupPanel = false;
-            this.dtgValHumbral.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
             this.dtgValHumbral.OptionsSelection.EnableAppearanceFocusedCell = false;
+            this.dtgValHumbral.OptionsView.ShowGroupPanel = false;
             // 
             // Id_Humbral
             // 
@@ -373,7 +373,7 @@
             // 
             // labelControl4
             // 
-            this.labelControl4.Location = new System.Drawing.Point(332, 57);
+            this.labelControl4.Location = new System.Drawing.Point(332, 58);
             this.labelControl4.Name = "labelControl4";
             this.labelControl4.Size = new System.Drawing.Size(28, 13);
             this.labelControl4.TabIndex = 6;
@@ -389,7 +389,7 @@
             // 
             // labelControl3
             // 
-            this.labelControl3.Location = new System.Drawing.Point(444, 57);
+            this.labelControl3.Location = new System.Drawing.Point(444, 58);
             this.labelControl3.Name = "labelControl3";
             this.labelControl3.Size = new System.Drawing.Size(29, 13);
             this.labelControl3.TabIndex = 4;
@@ -405,7 +405,7 @@
             // 
             // labelControl2
             // 
-            this.labelControl2.Location = new System.Drawing.Point(19, 59);
+            this.labelControl2.Location = new System.Drawing.Point(19, 60);
             this.labelControl2.Name = "labelControl2";
             this.labelControl2.Size = new System.Drawing.Size(43, 13);
             this.labelControl2.TabIndex = 2;
@@ -422,7 +422,7 @@
             // 
             // labelControl1
             // 
-            this.labelControl1.Location = new System.Drawing.Point(19, 32);
+            this.labelControl1.Location = new System.Drawing.Point(19, 33);
             this.labelControl1.Name = "labelControl1";
             this.labelControl1.Size = new System.Drawing.Size(59, 13);
             this.labelControl1.TabIndex = 0;

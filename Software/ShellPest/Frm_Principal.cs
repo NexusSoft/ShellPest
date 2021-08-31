@@ -406,5 +406,20 @@ namespace ShellPest
                 XtraMessageBox.Show("¡ERROR!, Ocurrio un problema al intentar comunicarnos con la BD de INVENTUM");
             }
         }
+
+        private void btn_Salidas_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            if (TieneAcceso("019"))
+            {
+                Frm_Rpt_Salidas Ventana = new Frm_Rpt_Salidas();
+                Frm_Rpt_Salidas.DefInstance.MdiParent = this;
+                //Frm_Rpt_Salidas.DefInstance.Id_Usuario = UsuariosLogin;
+                Frm_Rpt_Salidas.DefInstance.Show();
+            }
+            else
+            {
+                XtraMessageBox.Show("No Cuentas con acceso a esta Opcion [019]");
+            }
+        }
     }
 }

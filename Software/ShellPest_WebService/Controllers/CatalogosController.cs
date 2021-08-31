@@ -439,6 +439,24 @@ namespace ShellPest_WebService
             }
         }
 
+        [System.Web.Mvc.HttpGet]
+        public ActionResult UsuarioEmpresa()
+        {
+            string cadena = string.Empty;
+            WS_Catalogos_Empresas sel = new WS_Catalogos_Empresas();
+            
+            sel.MtdSeleccionarUsuarioEmpresa();
+            if (sel.Exito)
+            {
+                GetJson(sel.Datos);
+                return Json(rows, JsonRequestBehavior.AllowGet);
+            }
+            else
+            {
+                return Json(cadena, JsonRequestBehavior.AllowGet);
+            }
+        }
+
         public void GetJson(DataTable dt)
         {
             Dictionary<string, object> row;
