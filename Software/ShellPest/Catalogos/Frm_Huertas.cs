@@ -185,6 +185,7 @@ namespace ShellPest
         private void btnLimpiar_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             LimpiarCampos();
+            glue_Empresa.Enabled = true;
         }
 
         private void LimpiarCampos()
@@ -330,11 +331,18 @@ namespace ShellPest
             dtgHuertas.DataSource = null;
             CLS_Huerta Clase = new CLS_Huerta();
             Clase.Activo = Activo;
-            Clase.MtdSeleccionarHuerta();
-            if (Clase.Exito)
+            if (glue_Empresa.EditValue != null)
             {
-                dtgHuertas.DataSource = Clase.Datos;
+                Clase.c_codigo_eps = glue_Empresa.EditValue.ToString();
+                Clase.MtdSeleccionarHuerta();
+                if (Clase.Exito)
+                {
+                    dtgHuertas.DataSource = Clase.Datos;
+                }
             }
+           
+            
+           
         }
         private void InsertarHuerta()
         {
@@ -357,6 +365,7 @@ namespace ShellPest
             Clase.latitud_Huerta = Convert.ToDecimal(txtLatitud.Text);
             Clase.longitud_Huerta = Convert.ToDecimal(txtLonguitud.Text);
             Clase.Id_Usuario = Id_Usuario;
+            Clase.c_codigo_eps = glue_Empresa.EditValue.ToString();
             Clase.MtdInsertarHuerta();
 
             if (Clase.Exito)
@@ -418,6 +427,7 @@ namespace ShellPest
             txtLatitud.Enabled = value;
             txtLonguitud.Enabled = value;
             btnGuardar.Enabled = value;
+            
             //btnEliminar.Enabled = value;
             if (PaSel == true)
             {
@@ -473,6 +483,14 @@ namespace ShellPest
                         btnEliminar.Caption = "Dar de Alta";
                         labelActivo.ForeColor = System.Drawing.Color.Maroon;
                         bloquear(false);
+                    }
+                    if (txtCodigo.Text.Trim().Length > 0)
+                    {
+                        glue_Empresa.Enabled = false;
+                    }
+                    else
+                    {
+                        glue_Empresa.Enabled = true;
                     }
                 }
             }
@@ -531,6 +549,42 @@ namespace ShellPest
                 CargarHuertas("1");
             }
 
+        }
+
+        private void Frm_Huertas_Load(object sender, EventArgs e)
+        {
+            WS_Catalogos_Empresas Clase = new WS_Catalogos_Empresas();
+            Clase.Id_Usuario = Id_Usuario;
+            Clase.MtdSeleccionarEmpresaXUsuario();
+            if (Clase.Exito)
+            {
+                glue_Empresa.Properties.DisplayMember = "v_nombre_eps";
+                glue_Empresa.Properties.ValueMember = "c_codigo_eps";
+                glue_Empresa.EditValue = null;
+                glue_Empresa.Properties.DataSource = Clase.Datos;
+              
+                if (Clase.Datos.Rows.Count > 0)
+                {
+
+
+                    glue_Empresa.EditValue = Clase.Datos.Rows[0][0].ToString();
+                }
+            }
+
+            
+        }
+
+        private void glue_Empresa_EditValueChanged(object sender, EventArgs e)
+        {
+            if (chkInactiva.Checked)
+            {
+                CargarHuertas("0");
+            }
+            else
+            {
+                CargarHuertas("1");
+            }
+            
         }
     }
 }

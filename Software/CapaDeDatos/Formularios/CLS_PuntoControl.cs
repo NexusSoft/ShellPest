@@ -15,6 +15,7 @@ namespace CapaDeDatos
         public string n_coordenadaX { get; set; }
         public string n_coordenadaY { get; set; }
         public string Id_Usuario { get; set; }
+        public string c_codigo_eps { get; set; }
 
         public void MtdSeleccionarPuntoControl()
         {
@@ -25,7 +26,8 @@ namespace CapaDeDatos
             try
             {
                 _conexion.NombreProcedimiento = "SP_PuntoControl_Select";
-
+                _dato.CadenaTexto = c_codigo_eps;
+                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "c_codigo_eps");
                 _conexion.EjecutarDataset();
 
                 if (_conexion.Exito)
@@ -66,6 +68,8 @@ namespace CapaDeDatos
                 _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "n_coordenadaY");
                 _dato.CadenaTexto = Id_Usuario;
                 _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Id_Usuario");
+                _dato.CadenaTexto = c_codigo_eps;
+                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "c_codigo_eps");
                 _conexion.EjecutarDataset();
 
                 if (_conexion.Exito)

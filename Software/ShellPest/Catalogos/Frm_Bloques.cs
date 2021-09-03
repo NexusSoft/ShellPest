@@ -50,11 +50,17 @@ namespace ShellPest
             dtgBloque.DataSource = null;
             CLS_Bloque Clase = new CLS_Bloque();
 
-            Clase.MtdSeleccionarBloque();
-            if (Clase.Exito)
+            if (glue_Empresa.EditValue != null)
             {
-                dtgBloque.DataSource = Clase.Datos;
+                Clase.c_codigo_eps = glue_Empresa.EditValue.ToString();
+                Clase.MtdSeleccionarBloque();
+                if (Clase.Exito)
+                {
+                    dtgBloque.DataSource = Clase.Datos;
+                }
             }
+
+            
         }
 
         private void InsertarBloque()
@@ -66,18 +72,24 @@ namespace ShellPest
             Clase.Id_Huerta = cboHuerta.EditValue.ToString();
             Clase.Id_Usuario = Id_Usuario;
 
-            Clase.MtdInsertarBloque();
+            if (glue_Empresa.EditValue != null)
+            {
+                Clase.c_codigo_eps = glue_Empresa.EditValue.ToString();
+                Clase.MtdInsertarBloque();
 
-            if (Clase.Exito)
-            {
-                CargarBloque();
-                XtraMessageBox.Show("Se ha Insertado el registro con exito");
-                LimpiarCampos();
+                if (Clase.Exito)
+                {
+                    CargarBloque();
+                    XtraMessageBox.Show("Se ha Insertado el registro con exito");
+                    LimpiarCampos();
+                }
+                else
+                {
+                    XtraMessageBox.Show(Clase.Mensaje);
+                }
             }
-            else
-            {
-                XtraMessageBox.Show(Clase.Mensaje);
-            }
+
+           
         }
 
         private void EliminarBloque()
@@ -108,6 +120,14 @@ namespace ShellPest
                     txtNombre.Text = row["Nombre_Bloque"].ToString();
                     CargarHuertas(row["Id_Huerta"].ToString());
                 }
+                if (txtId.Text.Trim().Length > 0)
+                {
+                    glue_Empresa.Enabled = false;
+                }
+                else
+                {
+                    glue_Empresa.Enabled = true;
+                }
             }
             catch (Exception ex)
             {
@@ -126,6 +146,25 @@ namespace ShellPest
             {
                 btnSeleccionar.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
             }
+
+            WS_Catalogos_Empresas Clase = new WS_Catalogos_Empresas();
+            Clase.Id_Usuario = Id_Usuario;
+            Clase.MtdSeleccionarEmpresaXUsuario();
+            if (Clase.Exito)
+            {
+                glue_Empresa.Properties.DisplayMember = "v_nombre_eps";
+                glue_Empresa.Properties.ValueMember = "c_codigo_eps";
+                glue_Empresa.EditValue = null;
+                glue_Empresa.Properties.DataSource = Clase.Datos;
+
+                if (Clase.Datos.Rows.Count > 0)
+                {
+
+
+                    glue_Empresa.EditValue = Clase.Datos.Rows[0][0].ToString();
+                }
+            }
+
             CargarBloque();
             LimpiarCampos();
         }
@@ -164,6 +203,7 @@ namespace ShellPest
         private void btnLimpiar_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             LimpiarCampos();
+            glue_Empresa.Enabled = true;
         }
 
         private void btnSalir_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -198,14 +238,20 @@ namespace ShellPest
         {
             CLS_Huerta Clase = new CLS_Huerta();
             Clase.Activo = "1";
-            Clase.MtdSeleccionarHuerta();
-            if (Clase.Exito)
+            if (glue_Empresa.EditValue != null)
             {
-                cboHuerta.Properties.DisplayMember = "Nombre_Huerta";
-                cboHuerta.Properties.ValueMember = "Id_Huerta";
-                cboHuerta.EditValue = Valor;
-                cboHuerta.Properties.DataSource = Clase.Datos;
+                Clase.c_codigo_eps = glue_Empresa.EditValue.ToString();
+                Clase.MtdSeleccionarHuerta();
+                if (Clase.Exito)
+                {
+                    cboHuerta.Properties.DisplayMember = "Nombre_Huerta";
+                    cboHuerta.Properties.ValueMember = "Id_Huerta";
+                    cboHuerta.EditValue = Valor;
+                    cboHuerta.Properties.DataSource = Clase.Datos;
+                }
             }
+
+            
         }
 
         private void cboHuerta_EditValueChanged(object sender, EventArgs e)
@@ -216,6 +262,12 @@ namespace ShellPest
         private void labelControl3_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void glue_Empresa_EditValueChanged(object sender, EventArgs e)
+        {
+            CargarBloque();
+            CargarHuertas(null);
         }
     }
 }

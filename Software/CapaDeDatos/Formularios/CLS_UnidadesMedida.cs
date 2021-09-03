@@ -14,6 +14,8 @@ namespace CapaDeDatos
 
         public string Usuario { get; set; }
         public string Activo { get; set; }
+        public string c_codigo_eps { get; set; }
+
         public void MtdSeleccionarUnidadesMedida()
         {
             TipoDato _dato = new TipoDato();
@@ -25,6 +27,8 @@ namespace CapaDeDatos
                 _conexion.NombreProcedimiento = "SP_Unidad_Select";
                 _dato.CadenaTexto = Activo;
                 _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Activo");
+                _dato.CadenaTexto = c_codigo_eps;
+                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "c_codigo_eps");
                 _conexion.EjecutarDataset();
 
                 if (_conexion.Exito)

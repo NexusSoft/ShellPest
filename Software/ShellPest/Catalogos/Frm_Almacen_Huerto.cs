@@ -18,9 +18,27 @@ namespace ShellPest
         {
             InitializeComponent();
         }
+        public string Id_Usuario { get; set; }
 
         private void Frm_Almacen_Huerto_Load(object sender, EventArgs e)
         {
+            WS_Catalogos_Empresas Clase = new WS_Catalogos_Empresas();
+            Clase.Id_Usuario = Id_Usuario;
+            Clase.MtdSeleccionarEmpresaXUsuario();
+            if (Clase.Exito)
+            {
+                glue_Empresa.Properties.DisplayMember = "v_nombre_eps";
+                glue_Empresa.Properties.ValueMember = "c_codigo_eps";
+                glue_Empresa.EditValue = null;
+                glue_Empresa.Properties.DataSource = Clase.Datos;
+
+                if (Clase.Datos.Rows.Count > 0)
+                {
+
+
+                    glue_Empresa.EditValue = Clase.Datos.Rows[0][0].ToString();
+                }
+            }
             CargarAlmacenHuerta();
             CargarAlmacen();
             CargarHuerta();
@@ -30,11 +48,18 @@ namespace ShellPest
         {
             gridControl1.DataSource = null;
             CLS_Almacen_Huerto Clase = new CLS_Almacen_Huerto();
-            Clase.MtdSeleccionarAlmHue();
-            if (Clase.Exito)
+
+            if (glue_Empresa.EditValue != null)
             {
-                gridControl1.DataSource = Clase.Datos;
+                Clase.c_codigo_eps = glue_Empresa.EditValue.ToString();
+                Clase.MtdSeleccionarAlmHue();
+                if (Clase.Exito)
+                {
+                    gridControl1.DataSource = Clase.Datos;
+                }
             }
+
+            
         }
 
 
@@ -42,11 +67,19 @@ namespace ShellPest
         {
             glue_Almacen.Properties.DataSource = null;
             CLS_Almacen_Huerto Clase = new CLS_Almacen_Huerto();
-            Clase.MtdSeleccionarAlmacen();
-            if (Clase.Exito)
+            
+
+            if (glue_Empresa.EditValue != null)
             {
-                glue_Almacen.Properties.DataSource = Clase.Datos;
+                Clase.c_codigo_eps = glue_Empresa.EditValue.ToString();
+                Clase.MtdSeleccionarAlmacen();
+                if (Clase.Exito)
+                {
+                    glue_Almacen.Properties.DataSource = Clase.Datos;
+                }
             }
+
+            
         }
 
         private void CargarHuerta()
@@ -86,19 +119,24 @@ namespace ShellPest
                 Clase.c_codigo_alm = glue_Almacen.EditValue.ToString();
                 Clase.c_codigo_hue = glue_Huerto.EditValue.ToString();
 
-
-                Clase.MtdInsertarAlmHue();
-
-                if (Clase.Exito)
+                if (glue_Empresa.EditValue != null)
                 {
-                    CargarAlmacenHuerta();
-                    XtraMessageBox.Show("Se ha Insertado el registro con exito");
+                    Clase.c_codigo_eps = glue_Empresa.EditValue.ToString();
+                    Clase.MtdInsertarAlmHue();
 
+                    if (Clase.Exito)
+                    {
+                        CargarAlmacenHuerta();
+                        XtraMessageBox.Show("Se ha Insertado el registro con exito");
+
+                    }
+                    else
+                    {
+                        XtraMessageBox.Show(Clase.Mensaje);
+                    }
                 }
-                else
-                {
-                    XtraMessageBox.Show(Clase.Mensaje);
-                }
+
+                
             }
             else
             {
@@ -112,17 +150,24 @@ namespace ShellPest
             CLS_Almacen_Huerto Clase = new CLS_Almacen_Huerto();
             Clase.c_codigo_alm = glue_Almacen.EditValue.ToString();
             Clase.c_codigo_hue = glue_Huerto.EditValue.ToString();
-            Clase.MtdInsertarAlmHue();
-            if (Clase.Exito)
+
+            if (glue_Empresa.EditValue != null)
             {
-                CargarAlmacenHuerta();
-                XtraMessageBox.Show("Se ha Eliminado el registro con exito");
-               
+                Clase.c_codigo_eps = glue_Empresa.EditValue.ToString();
+                Clase.MtdEliminarAlmhue();
+                if (Clase.Exito)
+                {
+                    CargarAlmacenHuerta();
+                    XtraMessageBox.Show("Se ha Eliminado el registro con exito");
+
+                }
+                else
+                {
+                    XtraMessageBox.Show(Clase.Mensaje);
+                }
             }
-            else
-            {
-                XtraMessageBox.Show(Clase.Mensaje);
-            }
+
+            
         }
 
         private void gridControl1_Click(object sender, EventArgs e)
@@ -159,7 +204,7 @@ namespace ShellPest
         {
             if (glue_Almacen.EditValue != null && glue_Huerto.EditValue != null)
             {
-                InsertarAlmacenHuerta();
+                EliminarAlmacenHuerta();
             }
             else
             {
@@ -213,6 +258,13 @@ namespace ShellPest
                     XtraMessageBox.Show(ex.Message);
                 }
             }
+        }
+
+        private void glue_Empresa_EditValueChanged(object sender, EventArgs e)
+        {
+            CargarAlmacenHuerta();
+            CargarAlmacen();
+            CargarHuerta();
         }
     }
 }

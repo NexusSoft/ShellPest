@@ -13,6 +13,7 @@ namespace CapaDeDatos
         public string Nombre_Bloque { get; set; }
         public string Id_Huerta { get; set; }
         public string Id_Usuario { get; set; }
+        public string c_codigo_eps { get; set; }
 
         public void MtdSeleccionarBloque()
         {
@@ -23,7 +24,8 @@ namespace CapaDeDatos
             try
             {
                 _conexion.NombreProcedimiento = "SP_Bloque_Select";
-
+                _dato.CadenaTexto = c_codigo_eps;
+                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "c_codigo_eps");
                 _conexion.EjecutarDataset();
 
                 if (_conexion.Exito)
@@ -92,6 +94,8 @@ namespace CapaDeDatos
                 _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Id_Huerta");
                 _dato.CadenaTexto = Id_Usuario;
                 _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Id_Usuario");
+                _dato.CadenaTexto = c_codigo_eps;
+                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "c_codigo_eps");
                 _conexion.EjecutarDataset();
 
                 if (_conexion.Exito)

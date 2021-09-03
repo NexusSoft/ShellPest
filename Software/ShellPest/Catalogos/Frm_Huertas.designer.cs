@@ -46,6 +46,18 @@
             this.repositoryItemTextEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemTextEdit();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
+            this.glue_Empresa = new DevExpress.XtraEditors.GridLookUpEdit();
+            this.gridView6 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.c_codigo_eps = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn10 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn34 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.labelControl18 = new DevExpress.XtraEditors.LabelControl();
+            this.cboTratamiento = new DevExpress.XtraEditors.GridLookUpEdit();
+            this.gridView5 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.gridColumn30 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn31 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.btnTratamiento = new DevExpress.XtraEditors.SimpleButton();
+            this.labelControl17 = new DevExpress.XtraEditors.LabelControl();
             this.btnZona = new DevExpress.XtraEditors.SimpleButton();
             this.cboZona = new DevExpress.XtraEditors.GridLookUpEdit();
             this.gridView4 = new DevExpress.XtraGrid.Views.Grid.GridView();
@@ -56,8 +68,8 @@
             this.separatorControl1 = new DevExpress.XtraEditors.SeparatorControl();
             this.cboEstado = new DevExpress.XtraEditors.GridLookUpEdit();
             this.gridView3 = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.gridColumn9 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn10 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Nombre_Estado = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Id_Estado = new DevExpress.XtraGrid.Columns.GridColumn();
             this.cboCultivo = new DevExpress.XtraEditors.GridLookUpEdit();
             this.gridView2 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.gridColumn15 = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -104,6 +116,7 @@
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.btnProductor = new DevExpress.XtraEditors.SimpleButton();
             this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
+            this.chkInactiva = new DevExpress.XtraEditors.CheckEdit();
             this.dtgHuertas = new DevExpress.XtraGrid.GridControl();
             this.dtgValHuertas = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -119,6 +132,7 @@
             this.gridColumn7 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn21 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn8 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn33 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn22 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn23 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn24 = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -129,21 +143,17 @@
             this.gridColumn29 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Id_Zona = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Zona_Clima = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.cboTratamiento = new DevExpress.XtraEditors.GridLookUpEdit();
-            this.gridView5 = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.gridColumn30 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn31 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.btnTratamiento = new DevExpress.XtraEditors.SimpleButton();
-            this.labelControl17 = new DevExpress.XtraEditors.LabelControl();
             this.gridColumn32 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn33 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.chkInactiva = new DevExpress.XtraEditors.CheckEdit();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.glue_Empresa.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cboTratamiento.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cboZona.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.separatorControl1)).BeginInit();
@@ -172,11 +182,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtCodigo.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).BeginInit();
             this.panelControl2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.chkInactiva.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtgHuertas)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtgValHuertas)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cboTratamiento.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chkInactiva.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // barManager1
@@ -298,15 +306,15 @@
             this.barDockControlTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.barDockControlTop.Location = new System.Drawing.Point(0, 0);
             this.barDockControlTop.Manager = this.barManager1;
-            this.barDockControlTop.Size = new System.Drawing.Size(1012, 0);
+            this.barDockControlTop.Size = new System.Drawing.Size(1023, 0);
             // 
             // barDockControlBottom
             // 
             this.barDockControlBottom.CausesValidation = false;
             this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.barDockControlBottom.Location = new System.Drawing.Point(0, 634);
+            this.barDockControlBottom.Location = new System.Drawing.Point(0, 636);
             this.barDockControlBottom.Manager = this.barManager1;
-            this.barDockControlBottom.Size = new System.Drawing.Size(1012, 27);
+            this.barDockControlBottom.Size = new System.Drawing.Size(1023, 25);
             // 
             // barDockControlLeft
             // 
@@ -314,15 +322,15 @@
             this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
             this.barDockControlLeft.Location = new System.Drawing.Point(0, 0);
             this.barDockControlLeft.Manager = this.barManager1;
-            this.barDockControlLeft.Size = new System.Drawing.Size(69, 634);
+            this.barDockControlLeft.Size = new System.Drawing.Size(71, 636);
             // 
             // barDockControlRight
             // 
             this.barDockControlRight.CausesValidation = false;
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
-            this.barDockControlRight.Location = new System.Drawing.Point(1012, 0);
+            this.barDockControlRight.Location = new System.Drawing.Point(1023, 0);
             this.barDockControlRight.Manager = this.barManager1;
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 634);
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 636);
             // 
             // repositoryItemTextEdit1
             // 
@@ -332,14 +340,16 @@
             // 
             this.panelControl1.Controls.Add(this.groupControl1);
             this.panelControl1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelControl1.Location = new System.Drawing.Point(69, 0);
+            this.panelControl1.Location = new System.Drawing.Point(71, 0);
             this.panelControl1.Name = "panelControl1";
             this.panelControl1.Padding = new System.Windows.Forms.Padding(5);
-            this.panelControl1.Size = new System.Drawing.Size(943, 327);
+            this.panelControl1.Size = new System.Drawing.Size(952, 327);
             this.panelControl1.TabIndex = 4;
             // 
             // groupControl1
             // 
+            this.groupControl1.Controls.Add(this.glue_Empresa);
+            this.groupControl1.Controls.Add(this.labelControl18);
             this.groupControl1.Controls.Add(this.cboTratamiento);
             this.groupControl1.Controls.Add(this.btnTratamiento);
             this.groupControl1.Controls.Add(this.labelControl17);
@@ -374,9 +384,120 @@
             this.groupControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupControl1.Location = new System.Drawing.Point(7, 7);
             this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(929, 313);
+            this.groupControl1.Size = new System.Drawing.Size(938, 313);
             this.groupControl1.TabIndex = 0;
             this.groupControl1.Text = "Datos";
+            // 
+            // glue_Empresa
+            // 
+            this.glue_Empresa.EditValue = "-Seleccionar-";
+            this.glue_Empresa.Location = new System.Drawing.Point(737, 41);
+            this.glue_Empresa.MenuManager = this.barManager1;
+            this.glue_Empresa.Name = "glue_Empresa";
+            this.glue_Empresa.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.glue_Empresa.Properties.NullText = "-Seleccionar-";
+            this.glue_Empresa.Properties.PopupView = this.gridView6;
+            this.glue_Empresa.Size = new System.Drawing.Size(195, 20);
+            this.glue_Empresa.TabIndex = 44;
+            this.glue_Empresa.EditValueChanged += new System.EventHandler(this.glue_Empresa_EditValueChanged);
+            // 
+            // gridView6
+            // 
+            this.gridView6.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.c_codigo_eps,
+            this.gridColumn10,
+            this.gridColumn34});
+            this.gridView6.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
+            this.gridView6.Name = "gridView6";
+            this.gridView6.OptionsSelection.EnableAppearanceFocusedCell = false;
+            this.gridView6.OptionsView.ShowGroupPanel = false;
+            // 
+            // c_codigo_eps
+            // 
+            this.c_codigo_eps.Caption = "c_codigo_eps";
+            this.c_codigo_eps.FieldName = "c_codigo_eps";
+            this.c_codigo_eps.Name = "c_codigo_eps";
+            // 
+            // gridColumn10
+            // 
+            this.gridColumn10.Caption = "Empresa";
+            this.gridColumn10.FieldName = "v_nombre_eps";
+            this.gridColumn10.Name = "gridColumn10";
+            this.gridColumn10.Visible = true;
+            this.gridColumn10.VisibleIndex = 0;
+            // 
+            // gridColumn34
+            // 
+            this.gridColumn34.Caption = "BD";
+            this.gridColumn34.FieldName = "v_basedatos_coi";
+            this.gridColumn34.Name = "gridColumn34";
+            this.gridColumn34.Visible = true;
+            this.gridColumn34.VisibleIndex = 1;
+            // 
+            // labelControl18
+            // 
+            this.labelControl18.Location = new System.Drawing.Point(690, 44);
+            this.labelControl18.Name = "labelControl18";
+            this.labelControl18.Size = new System.Drawing.Size(45, 13);
+            this.labelControl18.TabIndex = 43;
+            this.labelControl18.Text = "Empresa:";
+            // 
+            // cboTratamiento
+            // 
+            this.cboTratamiento.EditValue = "-Seleccionar-";
+            this.cboTratamiento.Location = new System.Drawing.Point(97, 254);
+            this.cboTratamiento.MenuManager = this.barManager1;
+            this.cboTratamiento.Name = "cboTratamiento";
+            this.cboTratamiento.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.cboTratamiento.Properties.NullText = "-Seleccionar-";
+            this.cboTratamiento.Properties.PopupView = this.gridView5;
+            this.cboTratamiento.Size = new System.Drawing.Size(195, 20);
+            this.cboTratamiento.TabIndex = 42;
+            // 
+            // gridView5
+            // 
+            this.gridView5.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.gridColumn30,
+            this.gridColumn31});
+            this.gridView5.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
+            this.gridView5.Name = "gridView5";
+            this.gridView5.OptionsSelection.EnableAppearanceFocusedCell = false;
+            this.gridView5.OptionsView.ShowGroupPanel = false;
+            // 
+            // gridColumn30
+            // 
+            this.gridColumn30.Caption = "Id Tratamiento";
+            this.gridColumn30.FieldName = "Id_Tratamiento";
+            this.gridColumn30.Name = "gridColumn30";
+            this.gridColumn30.Visible = true;
+            this.gridColumn30.VisibleIndex = 0;
+            // 
+            // gridColumn31
+            // 
+            this.gridColumn31.Caption = "Nombre Tratamiento";
+            this.gridColumn31.FieldName = "Nombre_Tratamiento";
+            this.gridColumn31.Name = "gridColumn31";
+            this.gridColumn31.Visible = true;
+            this.gridColumn31.VisibleIndex = 1;
+            // 
+            // btnTratamiento
+            // 
+            this.btnTratamiento.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnTratamiento.ImageOptions.Image")));
+            this.btnTratamiento.Location = new System.Drawing.Point(300, 253);
+            this.btnTratamiento.Name = "btnTratamiento";
+            this.btnTratamiento.Size = new System.Drawing.Size(24, 23);
+            this.btnTratamiento.TabIndex = 41;
+            this.btnTratamiento.Click += new System.EventHandler(this.btnTratamiento_Click);
+            // 
+            // labelControl17
+            // 
+            this.labelControl17.Location = new System.Drawing.Point(21, 258);
+            this.labelControl17.Name = "labelControl17";
+            this.labelControl17.Size = new System.Drawing.Size(62, 13);
+            this.labelControl17.TabIndex = 40;
+            this.labelControl17.Text = "Tratamiento:";
             // 
             // btnZona
             // 
@@ -457,7 +578,7 @@
             // cboEstado
             // 
             this.cboEstado.EditValue = "-Seleccionar-";
-            this.cboEstado.Location = new System.Drawing.Point(97, 150);
+            this.cboEstado.Location = new System.Drawing.Point(97, 151);
             this.cboEstado.MenuManager = this.barManager1;
             this.cboEstado.Name = "cboEstado";
             this.cboEstado.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
@@ -470,28 +591,28 @@
             // gridView3
             // 
             this.gridView3.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.gridColumn9,
-            this.gridColumn10});
+            this.Nombre_Estado,
+            this.Id_Estado});
             this.gridView3.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
             this.gridView3.Name = "gridView3";
             this.gridView3.OptionsSelection.EnableAppearanceFocusedCell = false;
             this.gridView3.OptionsView.ShowGroupPanel = false;
             // 
-            // gridColumn9
+            // Nombre_Estado
             // 
-            this.gridColumn9.Caption = "Id Estado";
-            this.gridColumn9.FieldName = "Id_Estado";
-            this.gridColumn9.Name = "gridColumn9";
-            this.gridColumn9.Visible = true;
-            this.gridColumn9.VisibleIndex = 0;
+            this.Nombre_Estado.Caption = "Estado";
+            this.Nombre_Estado.FieldName = "Nombre_Estado";
+            this.Nombre_Estado.Name = "Nombre_Estado";
+            this.Nombre_Estado.Visible = true;
+            this.Nombre_Estado.VisibleIndex = 0;
             // 
-            // gridColumn10
+            // Id_Estado
             // 
-            this.gridColumn10.Caption = "Nombre Estado";
-            this.gridColumn10.FieldName = "Nombre_Estado";
-            this.gridColumn10.Name = "gridColumn10";
-            this.gridColumn10.Visible = true;
-            this.gridColumn10.VisibleIndex = 1;
+            this.Id_Estado.Caption = "Id Estado";
+            this.Id_Estado.FieldName = "Id_Estado";
+            this.Id_Estado.Name = "Id_Estado";
+            this.Id_Estado.Visible = true;
+            this.Id_Estado.VisibleIndex = 1;
             // 
             // cboCultivo
             // 
@@ -912,11 +1033,21 @@
             this.panelControl2.Controls.Add(this.chkInactiva);
             this.panelControl2.Controls.Add(this.dtgHuertas);
             this.panelControl2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelControl2.Location = new System.Drawing.Point(69, 327);
+            this.panelControl2.Location = new System.Drawing.Point(71, 327);
             this.panelControl2.Name = "panelControl2";
             this.panelControl2.Padding = new System.Windows.Forms.Padding(5, 25, 5, 5);
-            this.panelControl2.Size = new System.Drawing.Size(943, 307);
+            this.panelControl2.Size = new System.Drawing.Size(952, 309);
             this.panelControl2.TabIndex = 9;
+            // 
+            // chkInactiva
+            // 
+            this.chkInactiva.Location = new System.Drawing.Point(8, 6);
+            this.chkInactiva.MenuManager = this.barManager1;
+            this.chkInactiva.Name = "chkInactiva";
+            this.chkInactiva.Properties.Caption = "Inactiva";
+            this.chkInactiva.Size = new System.Drawing.Size(75, 19);
+            this.chkInactiva.TabIndex = 1;
+            this.chkInactiva.CheckedChanged += new System.EventHandler(this.chkInactiva_CheckedChanged);
             // 
             // dtgHuertas
             // 
@@ -925,7 +1056,7 @@
             this.dtgHuertas.MainView = this.dtgValHuertas;
             this.dtgHuertas.MenuManager = this.barManager1;
             this.dtgHuertas.Name = "dtgHuertas";
-            this.dtgHuertas.Size = new System.Drawing.Size(929, 273);
+            this.dtgHuertas.Size = new System.Drawing.Size(938, 275);
             this.dtgHuertas.TabIndex = 0;
             this.dtgHuertas.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.dtgValHuertas});
@@ -1068,6 +1199,15 @@
             this.gridColumn8.VisibleIndex = 7;
             this.gridColumn8.Width = 37;
             // 
+            // gridColumn33
+            // 
+            this.gridColumn33.Caption = "Tratamiento";
+            this.gridColumn33.FieldName = "Nombre_Tratamiento";
+            this.gridColumn33.Name = "gridColumn33";
+            this.gridColumn33.Visible = true;
+            this.gridColumn33.VisibleIndex = 8;
+            this.gridColumn33.Width = 37;
+            // 
             // gridColumn22
             // 
             this.gridColumn22.Caption = "zona_Huerta";
@@ -1155,92 +1295,17 @@
             this.Zona_Clima.VisibleIndex = 17;
             this.Zona_Clima.Width = 66;
             // 
-            // cboTratamiento
-            // 
-            this.cboTratamiento.EditValue = "-Seleccionar-";
-            this.cboTratamiento.Location = new System.Drawing.Point(97, 254);
-            this.cboTratamiento.MenuManager = this.barManager1;
-            this.cboTratamiento.Name = "cboTratamiento";
-            this.cboTratamiento.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.cboTratamiento.Properties.NullText = "-Seleccionar-";
-            this.cboTratamiento.Properties.PopupView = this.gridView5;
-            this.cboTratamiento.Size = new System.Drawing.Size(195, 20);
-            this.cboTratamiento.TabIndex = 42;
-            // 
-            // gridView5
-            // 
-            this.gridView5.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.gridColumn30,
-            this.gridColumn31});
-            this.gridView5.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
-            this.gridView5.Name = "gridView5";
-            this.gridView5.OptionsSelection.EnableAppearanceFocusedCell = false;
-            this.gridView5.OptionsView.ShowGroupPanel = false;
-            // 
-            // gridColumn30
-            // 
-            this.gridColumn30.Caption = "Id Tratamiento";
-            this.gridColumn30.FieldName = "Id_Tratamiento";
-            this.gridColumn30.Name = "gridColumn30";
-            this.gridColumn30.Visible = true;
-            this.gridColumn30.VisibleIndex = 0;
-            // 
-            // gridColumn31
-            // 
-            this.gridColumn31.Caption = "Nombre Tratamiento";
-            this.gridColumn31.FieldName = "Nombre_Tratamiento";
-            this.gridColumn31.Name = "gridColumn31";
-            this.gridColumn31.Visible = true;
-            this.gridColumn31.VisibleIndex = 1;
-            // 
-            // btnTratamiento
-            // 
-            this.btnTratamiento.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.ImageOptions.Image")));
-            this.btnTratamiento.Location = new System.Drawing.Point(300, 253);
-            this.btnTratamiento.Name = "btnTratamiento";
-            this.btnTratamiento.Size = new System.Drawing.Size(24, 23);
-            this.btnTratamiento.TabIndex = 41;
-            this.btnTratamiento.Click += new System.EventHandler(this.btnTratamiento_Click);
-            // 
-            // labelControl17
-            // 
-            this.labelControl17.Location = new System.Drawing.Point(21, 258);
-            this.labelControl17.Name = "labelControl17";
-            this.labelControl17.Size = new System.Drawing.Size(62, 13);
-            this.labelControl17.TabIndex = 40;
-            this.labelControl17.Text = "Tratamiento:";
-            // 
             // gridColumn32
             // 
             this.gridColumn32.Caption = "Id_Tratamiento";
             this.gridColumn32.FieldName = "Id_Tratamiento";
             this.gridColumn32.Name = "gridColumn32";
             // 
-            // gridColumn33
-            // 
-            this.gridColumn33.Caption = "Tratamiento";
-            this.gridColumn33.FieldName = "Nombre_Tratamiento";
-            this.gridColumn33.Name = "gridColumn33";
-            this.gridColumn33.Visible = true;
-            this.gridColumn33.VisibleIndex = 8;
-            this.gridColumn33.Width = 37;
-            // 
-            // chkInactiva
-            // 
-            this.chkInactiva.Location = new System.Drawing.Point(8, 6);
-            this.chkInactiva.MenuManager = this.barManager1;
-            this.chkInactiva.Name = "chkInactiva";
-            this.chkInactiva.Properties.Caption = "Inactiva";
-            this.chkInactiva.Size = new System.Drawing.Size(75, 19);
-            this.chkInactiva.TabIndex = 1;
-            this.chkInactiva.CheckedChanged += new System.EventHandler(this.chkInactiva_CheckedChanged);
-            // 
             // Frm_Huertas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1012, 661);
+            this.ClientSize = new System.Drawing.Size(1023, 661);
             this.Controls.Add(this.panelControl2);
             this.Controls.Add(this.panelControl1);
             this.Controls.Add(this.barDockControlLeft);
@@ -1249,6 +1314,7 @@
             this.Controls.Add(this.barDockControlTop);
             this.Name = "Frm_Huertas";
             this.Text = "Huertas";
+            this.Load += new System.EventHandler(this.Frm_Huertas_Load);
             this.Shown += new System.EventHandler(this.Frm_Huertas_Shown);
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit1)).EndInit();
@@ -1257,6 +1323,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
             this.groupControl1.ResumeLayout(false);
             this.groupControl1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.glue_Empresa.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cboTratamiento.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cboZona.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.separatorControl1)).EndInit();
@@ -1287,11 +1357,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtCodigo.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).EndInit();
             this.panelControl2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.chkInactiva.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtgHuertas)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtgValHuertas)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cboTratamiento.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chkInactiva.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1367,8 +1435,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn6;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn7;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn8;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn9;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn10;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn11;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn12;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn13;
@@ -1407,5 +1473,13 @@
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn33;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn32;
         private DevExpress.XtraEditors.CheckEdit chkInactiva;
+        private DevExpress.XtraEditors.LabelControl labelControl18;
+        private DevExpress.XtraEditors.GridLookUpEdit glue_Empresa;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridView6;
+        private DevExpress.XtraGrid.Columns.GridColumn c_codigo_eps;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn10;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn34;
+        private DevExpress.XtraGrid.Columns.GridColumn Nombre_Estado;
+        private DevExpress.XtraGrid.Columns.GridColumn Id_Estado;
     }
 }

@@ -8,6 +8,7 @@ namespace CapaDeDatos
 {
     public class CLS_IngredienteActivo : ConexionBase
     {
+        public string c_codigo_eps { get; set; }
 
         public void MtdSeleccionarIngrediente()
         {
@@ -18,7 +19,8 @@ namespace CapaDeDatos
             try
             {
                 _conexion.NombreProcedimiento = "SP_IngredienteActivo_Select";
-                
+                _dato.CadenaTexto = c_codigo_eps;
+                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "c_codigo_eps");
                 _conexion.EjecutarDataset();
 
                 if (_conexion.Exito)

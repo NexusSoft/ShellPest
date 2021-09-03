@@ -16,12 +16,12 @@ namespace ShellPest_WebService
         public List<Dictionary<string, object>> rows = new List<Dictionary<string, object>>();
         // GET: api/Pedidos
         [System.Web.Mvc.HttpGet]
-        public ActionResult Bloques(string Fecha)
+        public ActionResult Bloques(string Fecha,string Id_Usuario)
         {
             string cadena = string.Empty;
             WS_Catalogos_Bloque sel = new WS_Catalogos_Bloque();
             sel.Fecha = Fecha;
-
+            sel.Id_Usuario = Id_Usuario;
             sel.MtdSeleccionarBloque();
             if (sel.Exito)
             {
@@ -177,12 +177,12 @@ namespace ShellPest_WebService
             }
         }
         [System.Web.Mvc.HttpGet]
-        public ActionResult Huerta(string Fecha)
+        public ActionResult Huerta(string Fecha,string Id_Usuario)
         {
             string cadena = string.Empty;
             WS_Catalogos_Huerta sel = new WS_Catalogos_Huerta();
             sel.Fecha = Fecha;
-
+            sel.Id_Usuario = Id_Usuario;
             sel.MtdSeleccionarHuerta();
             if (sel.Exito)
             {
@@ -195,10 +195,11 @@ namespace ShellPest_WebService
             }
         }
         [System.Web.Mvc.HttpGet]
-        public ActionResult Huerta_Usuarios()
+        public ActionResult Huerta_Usuarios(string Id_Usuario)
         {
             string cadena = string.Empty;
             WS_Catalogos_Huerta sel = new WS_Catalogos_Huerta();
+            sel.Id_Usuario = Id_Usuario;
             sel.MtdSeleccionarHuertaUsuario();
             if (sel.Exito)
             {
@@ -265,12 +266,12 @@ namespace ShellPest_WebService
             }
         }
         [System.Web.Mvc.HttpGet]
-        public ActionResult Productor(string Fecha)
+        public ActionResult Productor(string Fecha,string Id_Usuario)
         {
             string cadena = string.Empty;
             WS_Catalogos_Productor sel = new WS_Catalogos_Productor();
             sel.Fecha = Fecha;
-
+            sel.Id_Usuario = Id_Usuario;
             sel.MtdSeleccionarProductor();
             if (sel.Exito)
             {
@@ -283,7 +284,7 @@ namespace ShellPest_WebService
             }
         }
         [System.Web.Mvc.HttpGet]
-        public ActionResult PuntoControl(string Fecha)
+        public ActionResult PuntoControl(string Fecha,string Id_Usuario)
         {
             string cadena = string.Empty;
             WS_Catalogos_PuntoControl sel = new WS_Catalogos_PuntoControl();

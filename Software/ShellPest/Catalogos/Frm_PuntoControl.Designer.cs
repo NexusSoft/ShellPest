@@ -77,6 +77,12 @@
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.textId = new DevExpress.XtraEditors.TextEdit();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
+            this.glue_Empresa = new DevExpress.XtraEditors.GridLookUpEdit();
+            this.gridView6 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.c_codigo_eps = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn10 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn34 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.labelControl18 = new DevExpress.XtraEditors.LabelControl();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).BeginInit();
@@ -95,6 +101,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtX.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textNombre.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textId.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.glue_Empresa.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView6)).BeginInit();
             this.SuspendLayout();
             // 
             // barManager1
@@ -360,6 +368,8 @@
             // 
             // groupControl1
             // 
+            this.groupControl1.Controls.Add(this.glue_Empresa);
+            this.groupControl1.Controls.Add(this.labelControl18);
             this.groupControl1.Controls.Add(this.btnBloque);
             this.groupControl1.Controls.Add(this.cboBloque);
             this.groupControl1.Controls.Add(this.labelControl7);
@@ -563,6 +573,61 @@
             this.labelControl1.TabIndex = 0;
             this.labelControl1.Text = "Id punto: ";
             // 
+            // glue_Empresa
+            // 
+            this.glue_Empresa.EditValue = "-Seleccionar-";
+            this.glue_Empresa.Location = new System.Drawing.Point(249, 27);
+            this.glue_Empresa.MenuManager = this.barManager1;
+            this.glue_Empresa.Name = "glue_Empresa";
+            this.glue_Empresa.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.glue_Empresa.Properties.NullText = "-Seleccionar-";
+            this.glue_Empresa.Properties.PopupView = this.gridView6;
+            this.glue_Empresa.Size = new System.Drawing.Size(195, 20);
+            this.glue_Empresa.TabIndex = 46;
+            this.glue_Empresa.EditValueChanged += new System.EventHandler(this.glue_Empresa_EditValueChanged);
+            // 
+            // gridView6
+            // 
+            this.gridView6.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.c_codigo_eps,
+            this.gridColumn10,
+            this.gridColumn34});
+            this.gridView6.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
+            this.gridView6.Name = "gridView6";
+            this.gridView6.OptionsSelection.EnableAppearanceFocusedCell = false;
+            this.gridView6.OptionsView.ShowGroupPanel = false;
+            // 
+            // c_codigo_eps
+            // 
+            this.c_codigo_eps.Caption = "c_codigo_eps";
+            this.c_codigo_eps.FieldName = "c_codigo_eps";
+            this.c_codigo_eps.Name = "c_codigo_eps";
+            // 
+            // gridColumn10
+            // 
+            this.gridColumn10.Caption = "Empresa";
+            this.gridColumn10.FieldName = "v_nombre_eps";
+            this.gridColumn10.Name = "gridColumn10";
+            this.gridColumn10.Visible = true;
+            this.gridColumn10.VisibleIndex = 0;
+            // 
+            // gridColumn34
+            // 
+            this.gridColumn34.Caption = "BD";
+            this.gridColumn34.FieldName = "v_basedatos_coi";
+            this.gridColumn34.Name = "gridColumn34";
+            this.gridColumn34.Visible = true;
+            this.gridColumn34.VisibleIndex = 1;
+            // 
+            // labelControl18
+            // 
+            this.labelControl18.Location = new System.Drawing.Point(202, 30);
+            this.labelControl18.Name = "labelControl18";
+            this.labelControl18.Size = new System.Drawing.Size(45, 13);
+            this.labelControl18.TabIndex = 45;
+            this.labelControl18.Text = "Empresa:";
+            // 
             // Frm_PuntoControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -600,6 +665,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtX.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textNombre.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textId.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.glue_Empresa.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView6)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -654,5 +721,11 @@
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn1;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn2;
         private DevExpress.XtraEditors.LabelControl labelControl6;
+        private DevExpress.XtraEditors.GridLookUpEdit glue_Empresa;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridView6;
+        private DevExpress.XtraGrid.Columns.GridColumn c_codigo_eps;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn10;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn34;
+        private DevExpress.XtraEditors.LabelControl labelControl18;
     }
 }

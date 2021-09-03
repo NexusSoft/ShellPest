@@ -10,6 +10,7 @@ namespace CapaDeDatos
     {
 
         public string Id_Usuario { get; set; }
+        public string c_codigo_eps { get; set; }
 
         public void MtdInsertInvInicial()
         {
@@ -52,6 +53,8 @@ namespace CapaDeDatos
                 _conexion.NombreProcedimiento = "SP_Impor_Mov_Inventum_Insert";
                 _dato.CadenaTexto = Id_Usuario;
                 _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Id_Usuario");
+                _dato.CadenaTexto = c_codigo_eps;
+                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "c_codigo_eps");
                 _conexion.EjecutarDataset();
 
                 if (_conexion.Exito)

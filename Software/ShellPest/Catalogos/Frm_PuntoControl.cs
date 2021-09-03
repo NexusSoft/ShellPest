@@ -44,13 +44,19 @@ namespace ShellPest
         private void CargarPuntoControl()
         {
             dtgPuntoControl.DataSource = null;
-            CLS_PuntoControl PuntoControl = new CLS_PuntoControl();
+            CLS_PuntoControl Clase = new CLS_PuntoControl();
 
-            PuntoControl.MtdSeleccionarPuntoControl();
-            if (PuntoControl.Exito)
+            if (glue_Empresa.EditValue != null)
             {
-                dtgPuntoControl.DataSource = PuntoControl.Datos;
+                Clase.c_codigo_eps = glue_Empresa.EditValue.ToString();
+                Clase.MtdSeleccionarPuntoControl();
+                if (Clase.Exito)
+                {
+                    dtgPuntoControl.DataSource = Clase.Datos;
+                }
             }
+
+            
         }
 
 
@@ -64,17 +70,25 @@ namespace ShellPest
             PuntoControl.n_coordenadaX = txtX.Text;
             PuntoControl.n_coordenadaY = txtY.Text;
             PuntoControl.Id_Usuario = Id_Usuario;
-            PuntoControl.MtdInsertarPuntoControl();
-            if (PuntoControl.Exito)
+
+            if (glue_Empresa.EditValue != null)
             {
-                CargarPuntoControl();
-                XtraMessageBox.Show("Se ha Insertado el registro con exito");
-                LimpiarCampos();
+                PuntoControl.c_codigo_eps = glue_Empresa.EditValue.ToString();
+                PuntoControl.MtdInsertarPuntoControl();
+                if (PuntoControl.Exito)
+                {
+                    CargarPuntoControl();
+                    XtraMessageBox.Show("Se ha Insertado el registro con exito");
+                    LimpiarCampos();
+                }
+                else
+                {
+                    XtraMessageBox.Show(PuntoControl.Mensaje);
+                }
             }
-            else
-            {
-                XtraMessageBox.Show(PuntoControl.Mensaje);
-            }
+
+
+           
         }
         private void EliminarPuntoControl()
         {
@@ -117,6 +131,14 @@ namespace ShellPest
                     txtX.Text = row["n_coordenadaX"].ToString();
                     txtY.Text = row["n_coordenadaY"].ToString();
                 }
+                if (textId.Text.Trim().Length > 0)
+                {
+                    glue_Empresa.Enabled = false;
+                }
+                else
+                {
+                    glue_Empresa.Enabled = true;
+                }
             }
             catch (Exception ex)
             {
@@ -134,6 +156,25 @@ namespace ShellPest
             {
                 btnSeleccionar.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
             }
+
+            WS_Catalogos_Empresas Clase = new WS_Catalogos_Empresas();
+            Clase.Id_Usuario = Id_Usuario;
+            Clase.MtdSeleccionarEmpresaXUsuario();
+            if (Clase.Exito)
+            {
+                glue_Empresa.Properties.DisplayMember = "v_nombre_eps";
+                glue_Empresa.Properties.ValueMember = "c_codigo_eps";
+                glue_Empresa.EditValue = null;
+                glue_Empresa.Properties.DataSource = Clase.Datos;
+
+                if (Clase.Datos.Rows.Count > 0)
+                {
+
+
+                    glue_Empresa.EditValue = Clase.Datos.Rows[0][0].ToString();
+                }
+            }
+
             CargarPuntoControl();
         }
 
@@ -164,6 +205,7 @@ namespace ShellPest
         private void btnLimpiar_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             LimpiarCampos();
+            glue_Empresa.Enabled = true;
         }
 
         private void btnSalir_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -258,6 +300,11 @@ namespace ShellPest
             {
                 CargarBloques(cboHuerta.EditValue.ToString(), null);
             }
+        }
+
+        private void glue_Empresa_EditValueChanged(object sender, EventArgs e)
+        {
+            CargarPuntoControl();
         }
     }
 }

@@ -13,6 +13,7 @@ namespace CapaDeDatos
         public string Nombre_AsesorTecnico { get; set; }
         public string Usuario { get; set; }
         public string Activo { get; set; }
+        public string c_codigo_eps { get; set; }
 
         public void MtdSeleccionarAsesor()
         {
@@ -25,6 +26,8 @@ namespace CapaDeDatos
                 _conexion.NombreProcedimiento = "SP_AsesorTecnico_Select";
                 _dato.CadenaTexto = Activo;
                 _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Activo");
+                _dato.CadenaTexto = c_codigo_eps;
+                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "c_codigo_eps");
                 _conexion.EjecutarDataset();
 
                 if (_conexion.Exito)
@@ -62,6 +65,8 @@ namespace CapaDeDatos
                 _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Nombre_AsesorTecnico");
                 _dato.CadenaTexto = Usuario;
                 _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Usuario");
+                _dato.CadenaTexto = c_codigo_eps;
+                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "c_codigo_eps");
                 _conexion.EjecutarDataset();
 
                 if (_conexion.Exito)

@@ -81,18 +81,25 @@ namespace ShellPest
                 cmbPerfil.Properties.DataSource = Clase.Datos;
             }
         }
-        private void CargarHuerta(string Usuario)
+        private void CargarHuerta(string Usuario, string c_codigo_eps)
         {
             CLS_Huerta Clase = new CLS_Huerta();
             Clase.Id_Usuario = Usuario;
-            Clase.MtdSeleccionarHuertaUsuarios();
-            if (Clase.Exito)
+
+            if (c_codigo_eps.Trim().Length > 0)
             {
-                cmbHuerta.Properties.DisplayMember = "Nombre_Huerta";
-                cmbHuerta.Properties.ValueMember = "Id_Huerta";
-                cmbHuerta.EditValue = null;
-                cmbHuerta.Properties.DataSource = Clase.Datos;
+                Clase.c_codigo_eps=c_codigo_eps;
+                Clase.MtdSeleccionarHuertaUsuarios();
+                if (Clase.Exito)
+                {
+                    cmbHuerta.Properties.DisplayMember = "Nombre_Huerta";
+                    cmbHuerta.Properties.ValueMember = "Id_Huerta";
+                    cmbHuerta.EditValue = null;
+                    cmbHuerta.Properties.DataSource = Clase.Datos;
+                }
             }
+
+                
         }
         private void InsertarUsuarios()
         {
@@ -175,9 +182,10 @@ namespace ShellPest
         {
             CargarPerfiles(null);
             CargarUsuarios();
-            CargarHuerta(null);
+            
             CargarEmpresas();
-
+            
+           // CargarHuerta(null);
 
         }
 
@@ -229,9 +237,26 @@ namespace ShellPest
                         labelActivo.Text = "Activo";
                         btnEliminar.Caption = "Inabilitar";
                         inabilitar(true);
-                        CargarGridHuertas(row["Id_Usuario"].ToString());
-                        CargarHuerta(row["Id_Usuario"].ToString());
+                        
                         CargarGridEmpresas(row["Id_Usuario"].ToString());
+
+                        if (gridView3.RowCount > 0)
+                        {
+                            gridView3.SelectRow(gridView3.GetRowHandle(0));
+
+                            foreach (int j in gridView3.GetSelectedRows())
+                            {
+                                Crypto desencryp2 = new Crypto();
+                                DataRow row2 = this.gridView3.GetDataRow(j);
+                                CargarGridHuertas(row["Id_Usuario"].ToString(), row2["c_codigo_eps"].ToString());
+                                CargarHuerta(row["Id_Usuario"].ToString(), row2["c_codigo_eps"].ToString());
+                            }
+
+                        }
+
+                        
+                        
+
                         BloquearSecHuertas(true);
                     }
                 }
@@ -242,15 +267,22 @@ namespace ShellPest
             }
         }
 
-        private void CargarGridHuertas(string id_usuario)
+        private void CargarGridHuertas(string id_usuario,string c_codigo_eps)
         {
             CLS_Usuarios sel = new CLS_Usuarios();
             sel.Id_Usuario = id_usuario;
-            sel.MtdSeleccionarUsuariosHuerta();
-            if(sel.Exito)
+
+            if (c_codigo_eps.Trim().Length>0)
             {
-                dtgHuertas.DataSource = sel.Datos;
+                sel.c_codigo_eps = c_codigo_eps;
+                sel.MtdSeleccionarUsuariosHuerta();
+                if (sel.Exito)
+                {
+                    dtgHuertas.DataSource = sel.Datos;
+                }
             }
+
+           
         }
 
 
@@ -325,7 +357,7 @@ namespace ShellPest
             Frm_Huertas frm = new Frm_Huertas();
             frm.PaSel = true;
             frm.ShowDialog();
-            CargarHuerta(textUsuario.Text);
+            CargarHuerta(textUsuario.Text, vCodigoEmpresa);
         }
 
         private void btnAgregar_Click(object sender, EventArgs e)
@@ -334,17 +366,22 @@ namespace ShellPest
             Clase.Id_Usuario = textUsuario.Text.Trim();
             Clase.Id_Huerta = cmbHuerta.EditValue.ToString();
             Clase.Id_Usuario_Crea = UsuariosLogin;
-            Clase.MtdInsertarUsuariosHuerta();
-            if (Clase.Exito)
+            if (vCodigoEmpresa.Trim().Length > 0)
             {
-                XtraMessageBox.Show("Se ha Insertado la huerta con exito");
-                CargarGridHuertas(textUsuario.Text.Trim());
-                CargarHuerta(textUsuario.Text.Trim());
+                Clase.c_codigo_eps = vCodigoEmpresa;
+                Clase.MtdInsertarUsuariosHuerta();
+                if (Clase.Exito)
+                {
+                    XtraMessageBox.Show("Se ha Insertado la huerta con exito");
+                    CargarGridHuertas(textUsuario.Text.Trim(), vCodigoEmpresa);
+                    CargarHuerta(textUsuario.Text.Trim(), vCodigoEmpresa);
+                }
+                else
+                {
+                    XtraMessageBox.Show(Clase.Mensaje);
+                }
             }
-            else
-            {
-                XtraMessageBox.Show(Clase.Mensaje);
-            }
+            
         }
 
         private void btnEliminarHue_Click(object sender, EventArgs e)
@@ -352,17 +389,22 @@ namespace ShellPest
             CLS_Usuarios Clase = new CLS_Usuarios();
             Clase.Id_Usuario = textUsuario.Text.Trim();
             Clase.Id_Huerta = vCodigoHuerta;
-            Clase.MtdEliminarUsuariosHuerta();
-            if (Clase.Exito)
+            if (vCodigoEmpresa.Trim().Length > 0)
             {
-                XtraMessageBox.Show("Se ha Eliminado la huerta con exito");
-                CargarGridHuertas(textUsuario.Text.Trim());
-                CargarHuerta(textUsuario.Text.Trim());
+                Clase.c_codigo_eps = vCodigoEmpresa;
+                Clase.MtdEliminarUsuariosHuerta();
+                if (Clase.Exito)
+                {
+                    XtraMessageBox.Show("Se ha Eliminado la huerta con exito");
+                    CargarGridHuertas(textUsuario.Text.Trim(), vCodigoEmpresa);
+                    CargarHuerta(textUsuario.Text.Trim(), vCodigoEmpresa);
+                }
+                else
+                {
+                    XtraMessageBox.Show(Clase.Mensaje);
+                }
             }
-            else
-            {
-                XtraMessageBox.Show(Clase.Mensaje);
-            }
+                
         }
 
         private void dtgHuertas_Click(object sender, EventArgs e)
@@ -392,7 +434,7 @@ namespace ShellPest
             {
                 XtraMessageBox.Show("Se ha Insertado la empresa con exito");
                 CargarGridEmpresas(textUsuario.Text.Trim());
-                CargarHuerta(textUsuario.Text.Trim());
+                CargarHuerta(textUsuario.Text.Trim(), vCodigoEmpresa);
             }
             else
             {
@@ -426,6 +468,8 @@ namespace ShellPest
                 {
                     DataRow row = this.gridView3.GetDataRow(i);
                     vCodigoEmpresa = row["c_codigo_eps"].ToString();
+                    CargarHuerta(textUsuario.Text.Trim(), vCodigoEmpresa);
+                    CargarGridHuertas(textUsuario.Text.Trim(), vCodigoEmpresa);
                 }
             }
             catch (Exception ex)

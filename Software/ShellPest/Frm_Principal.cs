@@ -371,7 +371,7 @@ namespace ShellPest
             if (TieneAcceso("019"))
             {
                 Frm_Almacen_Huerto Ventana = new Frm_Almacen_Huerto();
-                
+                Ventana.Id_Usuario = UsuariosLogin;
                 Ventana.ShowDialog();
             }
             else
@@ -384,7 +384,9 @@ namespace ShellPest
         {
             if (TieneAcceso("019"))
             {
-                ImportarMovimientos();
+                Frm_ImportarMovimientos Ventana = new Frm_ImportarMovimientos();
+                Ventana.Id_Usuario = UsuariosLogin;
+                Ventana.ShowDialog();
             }
             else
             {
@@ -392,20 +394,7 @@ namespace ShellPest
             }
         }
 
-        private void ImportarMovimientos()
-        {
-            CLS_Inventum Clase = new CLS_Inventum();
-            Clase.Id_Usuario = UsuariosLogin;
-            Clase.MtdInsertMovimientos();
-            if (Clase.Exito)
-            {
-                XtraMessageBox.Show("Movimientos importados Correctamente.");
-            }
-            else
-            {
-                XtraMessageBox.Show("¡ERROR!, Ocurrio un problema al intentar comunicarnos con la BD de INVENTUM");
-            }
-        }
+        
 
         private void btn_Salidas_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
@@ -413,7 +402,7 @@ namespace ShellPest
             {
                 Frm_Rpt_Salidas Ventana = new Frm_Rpt_Salidas();
                 Frm_Rpt_Salidas.DefInstance.MdiParent = this;
-                //Frm_Rpt_Salidas.DefInstance.Id_Usuario = UsuariosLogin;
+                Frm_Rpt_Salidas.DefInstance.Id_Usuario = UsuariosLogin;
                 Frm_Rpt_Salidas.DefInstance.Show();
             }
             else

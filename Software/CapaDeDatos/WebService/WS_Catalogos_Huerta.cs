@@ -9,6 +9,7 @@ namespace CapaDeDatos
     public class WS_Catalogos_Huerta:ConexionBase
     {
         public string Fecha { get;  set; }
+        public string Id_Usuario { get; set; }
 
         public void MtdSeleccionarHuerta()
         {
@@ -21,6 +22,8 @@ namespace CapaDeDatos
                 _conexion.NombreProcedimiento = "SP_WS_Catalogos_Huerta_Select";
                 _dato.CadenaTexto = Fecha;
                 _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Fecha");
+                _dato.CadenaTexto = Id_Usuario;
+                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Id_Usuario");
                 _conexion.EjecutarDataset();
 
                 if (_conexion.Exito)
@@ -49,7 +52,8 @@ namespace CapaDeDatos
             try
             {
                 _conexion.NombreProcedimiento = "SP_WS_Catalogos_Huerta_Usuario_Select";
-                
+                _dato.CadenaTexto = Id_Usuario;
+                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Id_Usuario");
                 _conexion.EjecutarDataset();
 
                 if (_conexion.Exito)

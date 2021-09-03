@@ -18,6 +18,7 @@ namespace ShellPest
         {
             InitializeComponent();
         }
+        public string Id_Usuario { get; set; }
 
         private static Frm_Rpt_Salidas m_FormDefInstance;
         public static Frm_Rpt_Salidas DefInstance
@@ -36,18 +37,47 @@ namespace ShellPest
 
         private void Frm_Rpt_Salidas_Load(object sender, EventArgs e)
         {
+            btnSeleccionar.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
+            date_Fin.EditValue = DateTime.Today;
+            date_Ini.EditValue = DateTime.Today.AddDays(-7);
+
+            WS_Catalogos_Empresas Clase = new WS_Catalogos_Empresas();
+            Clase.Id_Usuario = Id_Usuario;
+            Clase.MtdSeleccionarEmpresaXUsuario();
+            if (Clase.Exito)
+            {
+                glue_Empresa.Properties.DisplayMember = "v_nombre_eps";
+                glue_Empresa.Properties.ValueMember = "c_codigo_eps";
+                glue_Empresa.EditValue = null;
+                glue_Empresa.Properties.DataSource = Clase.Datos;
+
+                if (Clase.Datos.Rows.Count > 0)
+                {
+
+
+                    glue_Empresa.EditValue = Clase.Datos.Rows[0][0].ToString();
+                }
+            }
             CargarAlmacen();
+         
         }
 
         private void CargarAlmacen()
         {
             glue_Almacen.Properties.DataSource = null;
             CLS_Almacen_Huerto Clase = new CLS_Almacen_Huerto();
-            Clase.MtdSeleccionarAlmacen();
-            if (Clase.Exito)
+
+            if (glue_Empresa.EditValue != null)
             {
-                glue_Almacen.Properties.DataSource = Clase.Datos;
+                Clase.c_codigo_eps = glue_Empresa.EditValue.ToString();
+                Clase.MtdSeleccionarAlmacen();
+                if (Clase.Exito)
+                {
+                    glue_Almacen.Properties.DataSource = Clase.Datos;
+                }
             }
+
+           
         }
 
         private void CargarSalidas()
@@ -67,11 +97,18 @@ namespace ShellPest
             Clase.Fini = Fecha.Year.ToString() + DosCero(Fecha.Month.ToString()) + DosCero(Fecha.Day.ToString());
             Fecha = Convert.ToDateTime(date_Fin.EditValue.ToString());
             Clase.Ffin= Fecha.Year.ToString() + DosCero(Fecha.Month.ToString()) + DosCero(Fecha.Day.ToString());
-            Clase.MtdSeleccionarSalidas();
-            if (Clase.Exito)
+
+            if (glue_Empresa.EditValue != null)
             {
-                gridControl1.DataSource = Clase.Datos;
+                Clase.c_codigo_eps = glue_Empresa.EditValue.ToString();
+                Clase.MtdSeleccionarSalidas();
+                if (Clase.Exito)
+                {
+                    gridControl1.DataSource = Clase.Datos;
+                }
             }
+
+            
         }
 
         private string DosCero(string sVal)
@@ -105,5 +142,16 @@ namespace ShellPest
                 glue_Almacen.Enabled = true;
             }
         }
+
+        private void glue_Empresa_EditValueChanged(object sender, EventArgs e)
+        {
+            CargarAlmacen();
+            
+
+            CargarSalidas();
+            
+        }
+
+        
     }
 }

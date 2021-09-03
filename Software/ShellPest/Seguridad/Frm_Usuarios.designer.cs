@@ -235,7 +235,7 @@
             this.barDockControlTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.barDockControlTop.Location = new System.Drawing.Point(0, 0);
             this.barDockControlTop.Manager = this.barManager1;
-            this.barDockControlTop.Size = new System.Drawing.Size(1271, 0);
+            this.barDockControlTop.Size = new System.Drawing.Size(1269, 0);
             // 
             // barDockControlBottom
             // 
@@ -243,7 +243,7 @@
             this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.barDockControlBottom.Location = new System.Drawing.Point(0, 547);
             this.barDockControlBottom.Manager = this.barManager1;
-            this.barDockControlBottom.Size = new System.Drawing.Size(1271, 27);
+            this.barDockControlBottom.Size = new System.Drawing.Size(1269, 27);
             // 
             // barDockControlLeft
             // 
@@ -257,7 +257,7 @@
             // 
             this.barDockControlRight.CausesValidation = false;
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
-            this.barDockControlRight.Location = new System.Drawing.Point(1271, 0);
+            this.barDockControlRight.Location = new System.Drawing.Point(1269, 0);
             this.barDockControlRight.Manager = this.barManager1;
             this.barDockControlRight.Size = new System.Drawing.Size(0, 547);
             // 
@@ -273,7 +273,7 @@
             this.panelControl2.Location = new System.Drawing.Point(57, 211);
             this.panelControl2.Name = "panelControl2";
             this.panelControl2.Padding = new System.Windows.Forms.Padding(5, 30, 5, 5);
-            this.panelControl2.Size = new System.Drawing.Size(1214, 336);
+            this.panelControl2.Size = new System.Drawing.Size(1212, 336);
             this.panelControl2.TabIndex = 23;
             // 
             // checkActivo
@@ -295,7 +295,7 @@
             this.gridControl1.Name = "gridControl1";
             this.gridControl1.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItemTextEdit2});
-            this.gridControl1.Size = new System.Drawing.Size(1200, 297);
+            this.gridControl1.Size = new System.Drawing.Size(1198, 297);
             this.gridControl1.TabIndex = 0;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -387,7 +387,7 @@
             this.panelControl1.Location = new System.Drawing.Point(57, 0);
             this.panelControl1.Name = "panelControl1";
             this.panelControl1.Padding = new System.Windows.Forms.Padding(10);
-            this.panelControl1.Size = new System.Drawing.Size(1214, 211);
+            this.panelControl1.Size = new System.Drawing.Size(1212, 211);
             this.panelControl1.TabIndex = 22;
             // 
             // groupControl1
@@ -418,14 +418,14 @@
             this.groupControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupControl1.Location = new System.Drawing.Point(12, 12);
             this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(1190, 187);
+            this.groupControl1.Size = new System.Drawing.Size(1188, 187);
             this.groupControl1.TabIndex = 0;
             this.groupControl1.Text = "Perfil - Pantalla";
             // 
             // gridControl2
             // 
             this.gridControl2.Enabled = false;
-            this.gridControl2.Location = new System.Drawing.Point(783, 64);
+            this.gridControl2.Location = new System.Drawing.Point(342, 67);
             this.gridControl2.MainView = this.gridView3;
             this.gridControl2.MenuManager = this.barManager1;
             this.gridControl2.Name = "gridControl2";
@@ -465,8 +465,8 @@
             // btnEliminarE
             // 
             this.btnEliminarE.Enabled = false;
-            this.btnEliminarE.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.ImageOptions.Image")));
-            this.btnEliminarE.Location = new System.Drawing.Point(1094, 29);
+            this.btnEliminarE.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnEliminarE.ImageOptions.Image")));
+            this.btnEliminarE.Location = new System.Drawing.Point(653, 32);
             this.btnEliminarE.Name = "btnEliminarE";
             this.btnEliminarE.Size = new System.Drawing.Size(79, 23);
             this.btnEliminarE.TabIndex = 41;
@@ -477,8 +477,8 @@
             // btnAgregarE
             // 
             this.btnAgregarE.Enabled = false;
-            this.btnAgregarE.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton2.ImageOptions.Image")));
-            this.btnAgregarE.Location = new System.Drawing.Point(1009, 29);
+            this.btnAgregarE.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnAgregarE.ImageOptions.Image")));
+            this.btnAgregarE.Location = new System.Drawing.Point(568, 32);
             this.btnAgregarE.Name = "btnAgregarE";
             this.btnAgregarE.Size = new System.Drawing.Size(79, 23);
             this.btnAgregarE.TabIndex = 40;
@@ -489,7 +489,7 @@
             // glue_Empresas
             // 
             this.glue_Empresas.Enabled = false;
-            this.glue_Empresas.Location = new System.Drawing.Point(783, 30);
+            this.glue_Empresas.Location = new System.Drawing.Point(342, 33);
             this.glue_Empresas.MenuManager = this.barManager1;
             this.glue_Empresas.Name = "glue_Empresas";
             this.glue_Empresas.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
@@ -534,7 +534,7 @@
             // dtgHuertas
             // 
             this.dtgHuertas.Enabled = false;
-            this.dtgHuertas.Location = new System.Drawing.Point(342, 65);
+            this.dtgHuertas.Location = new System.Drawing.Point(753, 67);
             this.dtgHuertas.MainView = this.dtgValHuertas;
             this.dtgHuertas.MenuManager = this.barManager1;
             this.dtgHuertas.Name = "dtgHuertas";
@@ -575,7 +575,7 @@
             // 
             this.btnEliminarHue.Enabled = false;
             this.btnEliminarHue.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnEliminarHue.ImageOptions.Image")));
-            this.btnEliminarHue.Location = new System.Drawing.Point(682, 30);
+            this.btnEliminarHue.Location = new System.Drawing.Point(1093, 32);
             this.btnEliminarHue.Name = "btnEliminarHue";
             this.btnEliminarHue.Size = new System.Drawing.Size(79, 23);
             this.btnEliminarHue.TabIndex = 36;
@@ -587,7 +587,7 @@
             // 
             this.btnAgregar.Enabled = false;
             this.btnAgregar.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnAgregar.ImageOptions.Image")));
-            this.btnAgregar.Location = new System.Drawing.Point(597, 30);
+            this.btnAgregar.Location = new System.Drawing.Point(1008, 32);
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(79, 23);
             this.btnAgregar.TabIndex = 35;
@@ -599,7 +599,7 @@
             // 
             this.btnHuerta.Enabled = false;
             this.btnHuerta.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnHuerta.ImageOptions.Image")));
-            this.btnHuerta.Location = new System.Drawing.Point(567, 30);
+            this.btnHuerta.Location = new System.Drawing.Point(978, 32);
             this.btnHuerta.Name = "btnHuerta";
             this.btnHuerta.Size = new System.Drawing.Size(24, 23);
             this.btnHuerta.TabIndex = 32;
@@ -743,7 +743,7 @@
             // cmbHuerta
             // 
             this.cmbHuerta.Enabled = false;
-            this.cmbHuerta.Location = new System.Drawing.Point(342, 31);
+            this.cmbHuerta.Location = new System.Drawing.Point(753, 33);
             this.cmbHuerta.MenuManager = this.barManager1;
             this.cmbHuerta.Name = "cmbHuerta";
             this.cmbHuerta.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
@@ -794,7 +794,7 @@
             // separatorControl2
             // 
             this.separatorControl2.LineOrientation = System.Windows.Forms.Orientation.Vertical;
-            this.separatorControl2.Location = new System.Drawing.Point(760, 19);
+            this.separatorControl2.Location = new System.Drawing.Point(730, 19);
             this.separatorControl2.Name = "separatorControl2";
             this.separatorControl2.Size = new System.Drawing.Size(22, 158);
             this.separatorControl2.TabIndex = 44;
@@ -803,7 +803,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1271, 574);
+            this.ClientSize = new System.Drawing.Size(1269, 574);
             this.Controls.Add(this.panelControl2);
             this.Controls.Add(this.panelControl1);
             this.Controls.Add(this.barDockControlLeft);

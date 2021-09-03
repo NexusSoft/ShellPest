@@ -35,6 +35,25 @@ namespace ShellPest
             {
                 btnSeleccionar.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
             }
+
+            WS_Catalogos_Empresas Clase = new WS_Catalogos_Empresas();
+            Clase.Id_Usuario = Id_Usuario;
+            Clase.MtdSeleccionarEmpresaXUsuario();
+            if (Clase.Exito)
+            {
+                glue_Empresa.Properties.DisplayMember = "v_nombre_eps";
+                glue_Empresa.Properties.ValueMember = "c_codigo_eps";
+                glue_Empresa.EditValue = null;
+                glue_Empresa.Properties.DataSource = Clase.Datos;
+
+                if (Clase.Datos.Rows.Count > 0)
+                {
+
+
+                    glue_Empresa.EditValue = Clase.Datos.Rows[0][0].ToString();
+                }
+            }
+
             CargarAsesor("1");
             LimpiarCampos();
         }
@@ -51,11 +70,18 @@ namespace ShellPest
             dtgAsesor.DataSource = null;
             CLS_Asesor_Tecnico Clase = new CLS_Asesor_Tecnico();
             Clase.Activo = Activo;
-            Clase.MtdSeleccionarAsesor();
-            if (Clase.Exito)
+
+            if (glue_Empresa.EditValue != null)
             {
-                dtgAsesor.DataSource = Clase.Datos;
+                Clase.c_codigo_eps = glue_Empresa.EditValue.ToString();
+                Clase.MtdSeleccionarAsesor();
+                if (Clase.Exito)
+                {
+                    dtgAsesor.DataSource = Clase.Datos;
+                }
             }
+
+            
         }
 
         private void InsertarAsesor()
@@ -66,18 +92,24 @@ namespace ShellPest
             Clase.Nombre_AsesorTecnico = txtNombre.Text.Trim();
             Clase.Usuario = Id_Usuario;
 
-            Clase.MtdInsertarAsesor();
+            if (glue_Empresa.EditValue != null)
+            {
+                Clase.c_codigo_eps = glue_Empresa.EditValue.ToString();
+                Clase.MtdInsertarAsesor();
 
-            if (Clase.Exito)
-            {
-                CargarAsesor("1");
-                XtraMessageBox.Show("Se ha Insertado el registro con exito");
-                LimpiarCampos();
+                if (Clase.Exito)
+                {
+                    CargarAsesor("1");
+                    XtraMessageBox.Show("Se ha Insertado el registro con exito");
+                    LimpiarCampos();
+                }
+                else
+                {
+                    XtraMessageBox.Show(Clase.Mensaje);
+                }
             }
-            else
-            {
-                XtraMessageBox.Show(Clase.Mensaje);
-            }
+
+           
         }
 
         private void EliminarAsesor()
@@ -125,6 +157,14 @@ namespace ShellPest
                     txtNombre.Text = row["Nombre_AsesorTecnico"].ToString();
 
                 }
+                if (txtId.Text.Trim().Length > 0)
+                {
+                    glue_Empresa.Enabled = false;
+                }
+                else
+                {
+                    glue_Empresa.Enabled = true;
+                }
             }
             catch (Exception ex)
             {
@@ -159,6 +199,7 @@ namespace ShellPest
         private void btnLimpiar_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             LimpiarCampos();
+            glue_Empresa.Enabled = true;
         }
 
         private void btnSalir_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -185,6 +226,18 @@ namespace ShellPest
             {
                 CargarAsesor("1");
                 btnEliminar.Caption = "Inhabilitar";
+            }
+        }
+
+        private void glue_Empresa_EditValueChanged(object sender, EventArgs e)
+        {
+            if (check_Activo.Checked)
+            {
+                CargarAsesor("0");
+            }
+            else
+            {
+                CargarAsesor("1");
             }
         }
     }

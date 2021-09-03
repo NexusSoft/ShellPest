@@ -47,6 +47,23 @@ namespace ShellPest
         private void Frm_Recetas_Load(object sender, EventArgs e)
         {
             txt_Monitoreo.Visible = false;
+
+            WS_Catalogos_Empresas Clase = new WS_Catalogos_Empresas();
+            Clase.Id_Usuario = Id_Usuario;
+            Clase.MtdSeleccionarEmpresaXUsuario();
+            if (Clase.Exito)
+            {
+                glue_Empresa.Properties.DisplayMember = "v_nombre_eps";
+                glue_Empresa.Properties.ValueMember = "c_codigo_eps";
+                glue_Empresa.EditValue = null;
+                glue_Empresa.Properties.DataSource = Clase.Datos;
+
+                if (Clase.Datos.Rows.Count > 0)
+                {
+                    glue_Empresa.EditValue = Clase.Datos.Rows[0][0].ToString();
+                }
+            }
+
             CargarAsesor();
             CargarCultivo();
             CargarTipo();
@@ -91,11 +108,18 @@ namespace ShellPest
             glue_Asesor.Properties.ValueMember = "Id_AsesorTecnico";
             CLS_Asesor_Tecnico Clase = new CLS_Asesor_Tecnico();
             Clase.Activo = "1";
-            Clase.MtdSeleccionarAsesor();
-            if (Clase.Exito)
+
+            if (glue_Empresa.EditValue != null)
             {
-                glue_Asesor.Properties.DataSource = Clase.Datos;
+                Clase.c_codigo_eps = glue_Empresa.EditValue.ToString();
+                Clase.MtdSeleccionarAsesor();
+                if (Clase.Exito)
+                {
+                    glue_Asesor.Properties.DataSource = Clase.Datos;
+                }
             }
+
+            
         }
 
         private void CargarUnidad()
@@ -105,11 +129,18 @@ namespace ShellPest
             glue_Unidad.Properties.ValueMember = "Id_Unidad";
             CLS_UnidadesMedida Clase = new CLS_UnidadesMedida();
             Clase.Activo = "1";
-            Clase.MtdSeleccionarUnidadesMedida();
-            if (Clase.Exito)
+
+            if (glue_Empresa.EditValue != null)
             {
-                glue_Unidad.Properties.DataSource = Clase.Datos;
+                Clase.c_codigo_eps = glue_Empresa.EditValue.ToString();
+                Clase.MtdSeleccionarUnidadesMedida();
+                if (Clase.Exito)
+                {
+                    glue_Unidad.Properties.DataSource = Clase.Datos;
+                }
             }
+
+            
         }
 
         private void btn_Cultivo_Click(object sender, EventArgs e)
@@ -188,18 +219,24 @@ namespace ShellPest
             Clase.Intervalo_Reingreso = Convert.ToDecimal(text_IReingreso.Text);
             Clase.Usuario = Id_Usuario;
 
-            Clase.MtdInsertarReceta();
+            if (glue_Empresa.EditValue != null)
+            {
+                Clase.c_codigo_eps = glue_Empresa.EditValue.ToString();
+                Clase.MtdInsertarReceta();
 
-            if (Clase.Exito)
-            {
-                //groupControl2.Enabled = true;
-                XtraMessageBox.Show("Se ha Insertado el registro con exito");
-                //LimpiarCampos();
+                if (Clase.Exito)
+                {
+                    //groupControl2.Enabled = true;
+                    XtraMessageBox.Show("Se ha Insertado el registro con exito");
+                    //LimpiarCampos();
+                }
+                else
+                {
+                    XtraMessageBox.Show(Clase.Mensaje);
+                }
             }
-            else
-            {
-                XtraMessageBox.Show(Clase.Mensaje);
-            }
+
+            
         }
 
         private void LimpiarCampos()
@@ -239,6 +276,7 @@ namespace ShellPest
         private void btn_Ingrediente_Click(object sender, EventArgs e)
         {
             Frm_NombreComercial Frm = new Frm_NombreComercial();
+            Frm.Id_Usuario = Id_Usuario;
             Frm.ShowDialog();
             text_Comercial.Tag = Frm.IdNombreComercial;
             text_Comercial.Text = Frm.NombreComercial;
@@ -269,6 +307,7 @@ namespace ShellPest
         private void btn_Abrir_Click(object sender, EventArgs e)
         {
             Frm_AbrirReceta Frm = new Frm_AbrirReceta();
+            Frm.Id_Usuario = Id_Usuario;
             Frm.ShowDialog();
             if (!Frm.vId_Receta.Equals(""))
             {
@@ -325,11 +364,17 @@ namespace ShellPest
             CLS_RecetaDet Clase = new CLS_RecetaDet();
             Clase.Id_Receta = Receta;
 
-            Clase.MtdSeleccionarReceta();
-            if (Clase.Exito)
+            if (glue_Empresa.EditValue != null)
             {
-                dtgBloque.DataSource = Clase.Datos;
+                Clase.c_codigo_eps = glue_Empresa.EditValue.ToString();
+                Clase.MtdSeleccionarReceta();
+                if (Clase.Exito)
+                {
+                    dtgBloque.DataSource = Clase.Datos;
+                }
             }
+
+           
         }
 
         private void InsertarRecetaDet()
@@ -523,9 +568,20 @@ namespace ShellPest
             }
         }
 
+        private void glue_Empresa_EditValueChanged(object sender, EventArgs e)
+        {
+            CargarAsesor();
+            CargarCultivo();
+            CargarTipo();
+            CargarUnidad();
+        }
+
+       
+
         private void btn_Ingrediente_Click_1(object sender, EventArgs e)
         {
             Frm_IngredienteActivo Frm = new Frm_IngredienteActivo();
+            Frm.Id_Usuario = Id_Usuario;
             Frm.ShowDialog();
             text_Ingrediente.Tag = Frm.IdIngrediente;
             text_Ingrediente.Text = Frm.Ingrediente;

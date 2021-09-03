@@ -264,6 +264,12 @@
     <Compile Include="Control\Frm_Entradas.Designer.cs">
       <DependentUpon>Frm_Entradas.cs</DependentUpon>
     </Compile>
+    <Compile Include="Control\Frm_ImportarMovimientos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Control\Frm_ImportarMovimientos.Designer.cs">
+      <DependentUpon>Frm_ImportarMovimientos.cs</DependentUpon>
+    </Compile>
     <Compile Include="Control\Frm_Recetas.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -409,6 +415,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Control\Frm_Entradas.resx">
       <DependentUpon>Frm_Entradas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Control\Frm_ImportarMovimientos.resx">
+      <DependentUpon>Frm_ImportarMovimientos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Control\Frm_Recetas.resx">
       <DependentUpon>Frm_Recetas.cs</DependentUpon>

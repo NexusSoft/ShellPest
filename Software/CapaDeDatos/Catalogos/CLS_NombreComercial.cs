@@ -8,6 +8,7 @@ namespace CapaDeDatos
 {
     public class CLS_NombreComercial : ConexionBase
     {
+        public string c_codigo_eps { get; set; }
 
         public void MtdSeleccionarNombreComercial()
         {
@@ -18,7 +19,8 @@ namespace CapaDeDatos
             try
             {
                 _conexion.NombreProcedimiento = "SP_NombreComercial_Select";
-
+                _dato.CadenaTexto = c_codigo_eps;
+                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "c_codigo_eps");
                 _conexion.EjecutarDataset();
 
                 if (_conexion.Exito)

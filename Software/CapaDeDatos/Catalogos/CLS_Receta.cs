@@ -21,6 +21,7 @@ namespace CapaDeDatos
         public decimal Intervalo_Reingreso { get; set; }
         public string Usuario { get; set; }
         public string Activo { get; set; }
+        public string c_codigo_eps { get; set; }
 
         public void MtdSeleccionarReceta()
         {
@@ -31,7 +32,8 @@ namespace CapaDeDatos
             try
             {
                 _conexion.NombreProcedimiento = "SP_Receta_Select";
-               
+                _dato.CadenaTexto = c_codigo_eps;
+                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "c_codigo_eps");
                 _conexion.EjecutarDataset();
 
                 if (_conexion.Exito)
@@ -85,6 +87,8 @@ namespace CapaDeDatos
                 _conexion.agregarParametro(EnumTipoDato.Tipodecimal, _dato, "Intervalo_Reingreso");
                 _dato.CadenaTexto = Usuario;
                 _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Id_Usuario");
+                _dato.CadenaTexto = c_codigo_eps;
+                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "c_codigo_eps");
                 _conexion.EjecutarDataset();
 
                 if (_conexion.Exito)
