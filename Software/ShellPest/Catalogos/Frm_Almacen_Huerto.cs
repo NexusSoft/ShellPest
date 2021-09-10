@@ -86,11 +86,18 @@ namespace ShellPest
         {
             glue_Huerto.Properties.DataSource = null;
             CLS_Almacen_Huerto Clase = new CLS_Almacen_Huerto();
-            Clase.MtdSeleccionarHuerta();
-            if (Clase.Exito)
+
+            if (glue_Empresa.EditValue != null)
             {
-                glue_Huerto.Properties.DataSource = Clase.Datos;
+                Clase.c_codigo_eps = glue_Empresa.EditValue.ToString();
+                Clase.MtdSeleccionarHuerta();
+                if (Clase.Exito)
+                {
+                    glue_Huerto.Properties.DataSource = Clase.Datos;
+                }
             }
+
+           
 
         }
 

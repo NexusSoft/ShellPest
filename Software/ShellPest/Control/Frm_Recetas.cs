@@ -182,11 +182,18 @@ namespace ShellPest
             glue_Tipo.Properties.ValueMember = "Id_TipoAplicacion";
             CLS_TipoAplicacion Clase = new CLS_TipoAplicacion();
             Clase.Activo = "1";
-            Clase.MtdSeleccionarTipo();
-            if (Clase.Exito)
+
+            if (glue_Empresa.EditValue != null)
             {
-                glue_Tipo.Properties.DataSource = Clase.Datos;
+                Clase.c_codigo_eps = glue_Empresa.EditValue.ToString();
+                Clase.MtdSeleccionarTipo();
+                if (Clase.Exito)
+                {
+                    glue_Tipo.Properties.DataSource = Clase.Datos;
+                }
             }
+
+            
         }
 
        
@@ -429,6 +436,14 @@ namespace ShellPest
                     memo_Descripcion.Text = row["Descripcion"].ToString();
                     
                 }
+                if (txtId.Text.Trim().Length > 0)
+                {
+                    glue_Empresa.Enabled = false;
+                }
+                else
+                {
+                    glue_Empresa.Enabled = true;
+                }
             }
             catch (Exception ex)
             {
@@ -443,6 +458,7 @@ namespace ShellPest
             dtgBloque.DataSource = null;
             groupControl1.Enabled = true;
             btnGuardar.Enabled = true;
+            glue_Empresa.Enabled = true;
         }
 
         private void LimpiarCamposDet()

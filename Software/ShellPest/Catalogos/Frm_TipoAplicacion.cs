@@ -35,6 +35,23 @@ namespace ShellPest
             {
                 btnSeleccionar.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
             }
+
+            WS_Catalogos_Empresas Clase = new WS_Catalogos_Empresas();
+            Clase.Id_Usuario = Id_Usuario;
+            Clase.MtdSeleccionarEmpresaXUsuario();
+            if (Clase.Exito)
+            {
+                glue_Empresa.Properties.DisplayMember = "v_nombre_eps";
+                glue_Empresa.Properties.ValueMember = "c_codigo_eps";
+                glue_Empresa.EditValue = null;
+                glue_Empresa.Properties.DataSource = Clase.Datos;
+
+                if (Clase.Datos.Rows.Count > 0)
+                {
+                    glue_Empresa.EditValue = Clase.Datos.Rows[0][0].ToString();
+                }
+            }
+
             CargarTipo("1");
             LimpiarCampos();
         }
@@ -50,11 +67,16 @@ namespace ShellPest
             dtgTipo.DataSource = null;
             CLS_TipoAplicacion Clase = new CLS_TipoAplicacion();
             Clase.Activo = Activo;
-            Clase.MtdSeleccionarTipo();
-            if (Clase.Exito)
+
+            if (glue_Empresa.EditValue != null)
             {
-                dtgTipo.DataSource = Clase.Datos;
-            }
+                Clase.c_codigo_eps = glue_Empresa.EditValue.ToString();
+                Clase.MtdSeleccionarTipo();
+                if (Clase.Exito)
+                {
+                    dtgTipo.DataSource = Clase.Datos;
+                }
+            }          
         }
 
         private void InsertarTipo()
@@ -65,17 +87,21 @@ namespace ShellPest
             Clase.Nombre_TipoAplicacion = txtNombre.Text.Trim();
             Clase.Usuario = Id_Usuario;
 
-            Clase.MtdInsertarTipo();
+            if (glue_Empresa.EditValue != null)
+            {
+                Clase.c_codigo_eps = glue_Empresa.EditValue.ToString();
+                Clase.MtdInsertarTipo();
 
-            if (Clase.Exito)
-            {
-                CargarTipo("1");
-                XtraMessageBox.Show("Se ha Insertado el registro con exito");
-                LimpiarCampos();
-            }
-            else
-            {
-                XtraMessageBox.Show(Clase.Mensaje);
+                if (Clase.Exito)
+                {
+                    CargarTipo("1");
+                    XtraMessageBox.Show("Se ha Insertado el registro con exito");
+                    LimpiarCampos();
+                }
+                else
+                {
+                    XtraMessageBox.Show(Clase.Mensaje);
+                }
             }
         }
 
@@ -185,6 +211,19 @@ namespace ShellPest
         private void btnSalir_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             this.Close();
+        }
+
+        private void glue_Empresa_EditValueChanged(object sender, EventArgs e)
+        {
+            if (check_Activo.Checked)
+            {
+                CargarTipo("0");
+            }
+            else
+            {
+                CargarTipo("1");
+            }
+            
         }
     }
 }

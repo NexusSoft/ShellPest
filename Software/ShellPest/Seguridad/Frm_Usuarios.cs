@@ -364,23 +364,28 @@ namespace ShellPest
         {
             CLS_Usuarios Clase = new CLS_Usuarios();
             Clase.Id_Usuario = textUsuario.Text.Trim();
-            Clase.Id_Huerta = cmbHuerta.EditValue.ToString();
-            Clase.Id_Usuario_Crea = UsuariosLogin;
-            if (vCodigoEmpresa.Trim().Length > 0)
+            if (cmbHuerta.EditValue != null)
             {
-                Clase.c_codigo_eps = vCodigoEmpresa;
-                Clase.MtdInsertarUsuariosHuerta();
-                if (Clase.Exito)
+                Clase.Id_Huerta = cmbHuerta.EditValue.ToString();
+                Clase.Id_Usuario_Crea = UsuariosLogin;
+                if (vCodigoEmpresa.Trim().Length > 0)
                 {
-                    XtraMessageBox.Show("Se ha Insertado la huerta con exito");
-                    CargarGridHuertas(textUsuario.Text.Trim(), vCodigoEmpresa);
-                    CargarHuerta(textUsuario.Text.Trim(), vCodigoEmpresa);
-                }
-                else
-                {
-                    XtraMessageBox.Show(Clase.Mensaje);
+                    Clase.c_codigo_eps = vCodigoEmpresa;
+                    Clase.MtdInsertarUsuariosHuerta();
+                    if (Clase.Exito)
+                    {
+                        XtraMessageBox.Show("Se ha Insertado la huerta con exito");
+                        CargarGridHuertas(textUsuario.Text.Trim(), vCodigoEmpresa);
+                        CargarHuerta(textUsuario.Text.Trim(), vCodigoEmpresa);
+                    }
+                    else
+                    {
+                        XtraMessageBox.Show(Clase.Mensaje);
+                    }
                 }
             }
+            
+            
             
         }
 
@@ -427,19 +432,31 @@ namespace ShellPest
         {
             CLS_Usuarios Clase = new CLS_Usuarios();
             Clase.Id_Usuario = textUsuario.Text.Trim();
-            Clase.c_codigo_eps = glue_Empresas.EditValue.ToString();
-            Clase.Id_Usuario_Crea = UsuariosLogin;
-            Clase.MtdInsertarUsuariosEmpresa();
-            if (Clase.Exito)
+            if (glue_Empresas.EditValue != null)
             {
-                XtraMessageBox.Show("Se ha Insertado la empresa con exito");
-                CargarGridEmpresas(textUsuario.Text.Trim());
-                CargarHuerta(textUsuario.Text.Trim(), vCodigoEmpresa);
+                Clase.c_codigo_eps = glue_Empresas.EditValue.ToString();
+                Clase.Id_Usuario_Crea = UsuariosLogin;
+                Clase.MtdInsertarUsuariosEmpresa();
+                if (Clase.Exito)
+                {
+                    XtraMessageBox.Show("Se ha Insertado la empresa con exito");
+                    CargarGridEmpresas(textUsuario.Text.Trim());
+                    if (vCodigoEmpresa == String.Empty || vCodigoEmpresa == null)
+                    {
+                        CargarHuerta(textUsuario.Text.Trim(), glue_Empresas.EditValue.ToString());
+                    }
+                    else
+                    {
+                        CargarHuerta(textUsuario.Text.Trim(), vCodigoEmpresa);
+                    }
+
+                }
+                else
+                {
+                    XtraMessageBox.Show(Clase.Mensaje);
+                }
             }
-            else
-            {
-                XtraMessageBox.Show(Clase.Mensaje);
-            }
+            
         }
 
         private void btnEliminarE_Click(object sender, EventArgs e)

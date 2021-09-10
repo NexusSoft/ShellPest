@@ -16,7 +16,7 @@ namespace ShellPest_WebService
         [HttpGet]
         public ActionResult MonitoreoPE(string Fecha,string Hora,string Id_Huerta,string Id_Plagas,string Id_Enfermedad,
                                 string Id_Deteccion,string Id_Individuo,string Id_Humbral,string Id_PuntoControl,
-                                string Id_Usuario,string n_CoordenadaX,string n_CoordenadaY)
+                                string Id_Usuario,string n_CoordenadaX,string n_CoordenadaY,string c_codigo_eps)
         {
             string cadena = string.Empty;
             CLS_Monitoreo sel = new CLS_Monitoreo();
@@ -32,7 +32,7 @@ namespace ShellPest_WebService
             sel.Id_Usuario = Id_Usuario;
             sel.n_CoordenadaX =decimal.Parse(n_CoordenadaX);
             sel.n_CoordenadaY =decimal.Parse(n_CoordenadaY);
-
+            sel.c_codigo_eps = c_codigo_eps;
 
             sel.MtdInsertarMonitoreoPE();
             DataTable dt = new DataTable();
@@ -475,6 +475,24 @@ namespace ShellPest_WebService
             CLS_Inventum sel = new CLS_Inventum();
             
             sel.MtdExistenciasProSelect();
+            if (sel.Exito)
+            {
+                GetJson(sel.Datos);
+                return Json(rows, JsonRequestBehavior.AllowGet);
+            }
+            else
+            {
+                return Json(cadena, JsonRequestBehavior.AllowGet);
+            }
+        }
+
+        [System.Web.Mvc.HttpGet]
+        public ActionResult ExistenciaProAlm()
+        {
+            string cadena = string.Empty;
+            CLS_Inventum sel = new CLS_Inventum();
+
+            sel.MtdExistenciasProAlmSelect();
             if (sel.Exito)
             {
                 GetJson(sel.Datos);

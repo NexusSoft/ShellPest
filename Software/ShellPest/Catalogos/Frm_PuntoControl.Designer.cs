@@ -645,7 +645,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Puntos de Control";
             this.Load += new System.EventHandler(this.Frm_PuntoControl_Load);
-            this.Shown += new System.EventHandler(this.Frm_PuntoControl_Shown);
+           
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).EndInit();

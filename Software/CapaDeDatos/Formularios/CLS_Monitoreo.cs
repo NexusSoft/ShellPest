@@ -23,6 +23,7 @@ namespace CapaDeDatos
         public decimal? n_CoordenadaX { get; set; }
         public decimal? n_CoordenadaY { get;  set; }
         public decimal? n_DistanciaPuntoControl { get; set; }
+        public string c_codigo_eps { get; set; }
 
         public void MtdSeleccionarMonitoreo()
         {
@@ -188,6 +189,8 @@ namespace CapaDeDatos
                 _conexion.agregarParametro(EnumTipoDato.Tipodecimal, _dato, "n_CoordenadaX");
                 _dato.DecimalValor = n_CoordenadaY;
                 _conexion.agregarParametro(EnumTipoDato.Tipodecimal, _dato, "n_CoordenadaY");
+                _dato.CadenaTexto = c_codigo_eps;
+                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "c_codigo_eps");
                 _conexion.EjecutarDataset();
 
                 if (_conexion.Exito)

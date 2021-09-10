@@ -175,7 +175,12 @@ namespace ShellPest
                 }
             }
 
+            
+
             CargarPuntoControl();
+
+            CargarHuertas(null);
+            cboBloque.Properties.DataSource = null;
         }
 
         private void btnGuardar_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -236,23 +241,24 @@ namespace ShellPest
             }
         }
 
-        private void Frm_PuntoControl_Shown(object sender, EventArgs e)
-        {
-            CargarHuertas(null);
-            cboBloque.Properties.DataSource = null;
-        }
+        
         private void CargarHuertas(string Valor)
         {
             CLS_Huerta Clase = new CLS_Huerta();
             Clase.Activo = "1";
-            Clase.MtdSeleccionarHuerta();
-            if (Clase.Exito)
+
+            if (glue_Empresa.EditValue != null)
             {
-                cboHuerta.Properties.DisplayMember = "Nombre_Huerta";
-                cboHuerta.Properties.ValueMember = "Id_Huerta";
-                cboHuerta.EditValue = Valor;
-                cboHuerta.Properties.DataSource = Clase.Datos;
-            }
+                Clase.c_codigo_eps = glue_Empresa.EditValue.ToString();
+                Clase.MtdSeleccionarHuerta();
+                if (Clase.Exito)
+                {
+                    cboHuerta.Properties.DisplayMember = "Nombre_Huerta";
+                    cboHuerta.Properties.ValueMember = "Id_Huerta";
+                    cboHuerta.EditValue = Valor;
+                    cboHuerta.Properties.DataSource = Clase.Datos;
+                }
+            } 
         }
         private void CargarBloques(string Id_Huerta,string Valor)
         {
@@ -305,6 +311,8 @@ namespace ShellPest
         private void glue_Empresa_EditValueChanged(object sender, EventArgs e)
         {
             CargarPuntoControl();
+            CargarHuertas(null);
+
         }
     }
 }

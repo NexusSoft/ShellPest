@@ -15,6 +15,7 @@ namespace CapaDeDatos
         public string Id_Unidad { get; set; }
         public string Usuario { get; set; }
         public string Activo { get; set; }
+        public string c_codigo_eps { get; set; }
 
         public void MtdSeleccionarPresentacion()
         {
@@ -29,6 +30,8 @@ namespace CapaDeDatos
                 _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Activo");
                 _dato.CadenaTexto = Id_TipoAplicacion;
                 _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Id_TipoAplicacion");
+                _dato.CadenaTexto = c_codigo_eps;
+                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "c_codigo_eps");
                 _conexion.EjecutarDataset();
 
                 if (_conexion.Exito)
@@ -70,6 +73,8 @@ namespace CapaDeDatos
                 _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Id_Unidad");
                 _dato.CadenaTexto = Usuario;
                 _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Id_Usuario");
+                _dato.CadenaTexto = c_codigo_eps;
+                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "c_codigo_eps");
                 _conexion.EjecutarDataset();
 
                 if (_conexion.Exito)

@@ -289,7 +289,7 @@ namespace ShellPest_WebService
             string cadena = string.Empty;
             WS_Catalogos_PuntoControl sel = new WS_Catalogos_PuntoControl();
             sel.Fecha = Fecha;
-
+            sel.Id_Usuario = Id_Usuario;
             sel.MtdSeleccionarPuntoControl();
             if (sel.Exito)
             {
@@ -338,11 +338,12 @@ namespace ShellPest_WebService
             }
         }
         [System.Web.Mvc.HttpGet]
-        public ActionResult Productos(string Fecha)
+        public ActionResult Productos(string Fecha,string Id_Usuario)
         {
             string cadena = string.Empty;
             WS_Catalogos_Productos sel = new WS_Catalogos_Productos();
             sel.Fecha = Fecha;
+            sel.Id_Usuario = Id_Usuario;
             sel.MtdSeleccionarProductos();
             if (sel.Exito)
             {
@@ -355,11 +356,12 @@ namespace ShellPest_WebService
             }
         }
         [System.Web.Mvc.HttpGet]
-        public ActionResult Unidades(string Fecha)
+        public ActionResult Unidades(string Fecha,string Id_Usuario)
         {
             string cadena = string.Empty;
             WS_Catalogos_Unidades sel = new WS_Catalogos_Unidades();
             sel.Fecha = Fecha;
+            sel.Id_Usuario = Id_Usuario;
             sel.MtdSeleccionarUnidades();
             if (sel.Exito)
             {
@@ -372,11 +374,12 @@ namespace ShellPest_WebService
             }
         }
         [System.Web.Mvc.HttpGet]
-        public ActionResult Presentasiones(string Fecha)
+        public ActionResult Presentasiones(string Fecha,string Id_Usuario)
         {
             string cadena = string.Empty;
             WS_Catalogos_Presentasiones sel = new WS_Catalogos_Presentasiones();
             sel.Fecha = Fecha;
+            sel.Id_Usuario = Id_Usuario;
             sel.MtdSeleccionarPresentasion();
             if (sel.Exito)
             {
@@ -389,11 +392,12 @@ namespace ShellPest_WebService
             }
         }
         [System.Web.Mvc.HttpGet]
-        public ActionResult TipoAplicaciones(string Fecha)
+        public ActionResult TipoAplicaciones(string Fecha, string Id_Usuario)
         {
             string cadena = string.Empty;
             WS_Catalogos_TipoAplicaciones sel = new WS_Catalogos_TipoAplicaciones();
             sel.Fecha = Fecha;
+            sel.Id_Usuario = Id_Usuario;
             sel.MtdSeleccionarTipoAplicaciones();
             if (sel.Exito)
             {
@@ -406,12 +410,12 @@ namespace ShellPest_WebService
             }
         }
         [System.Web.Mvc.HttpGet]
-        public ActionResult Almacenes(string Fecha)
+        public ActionResult Almacenes(string Id_Usuario)
         {
             string cadena = string.Empty;
             CLS_Almacen_Huerto sel = new CLS_Almacen_Huerto();
-            
-            sel.MtdSeleccionarAlmHue();
+            sel.Id_Usuario = Id_Usuario;
+            sel.MtdSeleccionarWebAlmHue();
             if (sel.Exito)
             {
                 GetJson(sel.Datos);
