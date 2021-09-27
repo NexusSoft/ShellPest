@@ -38,6 +38,7 @@ namespace ShellPest
         private void Frm_Rpt_Salidas_Load(object sender, EventArgs e)
         {
             btnSeleccionar.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
+            radioGroup1.EditValue = "S";
             date_Fin.EditValue = DateTime.Today;
             date_Ini.EditValue = DateTime.Today.AddDays(-7);
 

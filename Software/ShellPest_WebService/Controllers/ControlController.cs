@@ -435,7 +435,7 @@ namespace ShellPest_WebService
 
         [HttpGet]
         public ActionResult Salidas_Det(string c_tipodoc_mov, string c_coddoc_mov, string c_codigo_pro,
-                               string n_movipro_mov, string n_exiant_mov, string n_cantidad_mov, string Id_Bloque)
+                               string n_movipro_mov, string n_exiant_mov, string n_cantidad_mov, string Id_Bloque,string c_codigo_eps)
         {
             string cadena = string.Empty;
             WS_Control_Salidas CLS = new WS_Control_Salidas();
@@ -447,6 +447,7 @@ namespace ShellPest_WebService
 
             CLS.n_cantidad_mov = n_cantidad_mov;
             CLS.Id_Bloque = Id_Bloque;
+            CLS.c_codigo_eps = c_codigo_eps;
             CLS.MtdInsertarSalida_Det();
             DataTable dt = new DataTable();
             dt.Clear();

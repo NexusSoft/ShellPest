@@ -105,7 +105,8 @@ namespace CapaDeDatos
                 _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "n_cantidad_mov");
                 _dato.CadenaTexto = Id_Bloque;
                 _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Id_Bloque");
-
+                _dato.CadenaTexto = c_codigo_eps;
+                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "c_codigo_eps");
                 _conexion.EjecutarDataset();
 
                 if (_conexion.Exito)
