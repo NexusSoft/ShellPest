@@ -59,6 +59,7 @@
     <Compile Include="Conexion\TipoDato.cs" />
     <Compile Include="Conexion\UtileriasCodigo.cs" />
     <Compile Include="Configuracion\CLS_ParametrosEstacion.cs" />
+    <Compile Include="Control\CLS_InventarioAlaFecha.cs" />
     <Compile Include="Control\CLS_Inventum.cs" />
     <Compile Include="Control\CLS_Movimientos.cs" />
     <Compile Include="Formularios\CLS_Bloque.cs" />

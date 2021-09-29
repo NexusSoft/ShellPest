@@ -57,6 +57,7 @@
             this.btn_Recetas = new DevExpress.XtraBars.BarButtonItem();
             this.btnAlmacen_Huerta = new DevExpress.XtraBars.BarButtonItem();
             this.btn_ImpInv = new DevExpress.XtraBars.BarButtonItem();
+            this.btn_Salidas = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup5 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -66,14 +67,14 @@
             this.ribbonPageGroup3 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPage4 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup7 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.ribbonPageGroup8 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPage5 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup6 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonStatusBar1 = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
             this.ribbonPage2 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.xtraTabbedMdiManager1 = new DevExpress.XtraTabbedMdi.XtraTabbedMdiManager(this.components);
             this.SkinForm = new DevExpress.LookAndFeel.DefaultLookAndFeel(this.components);
-            this.ribbonPageGroup8 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.btn_Salidas = new DevExpress.XtraBars.BarButtonItem();
+            this.btn_rpt_invXfecha = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabbedMdiManager1)).BeginInit();
             this.SuspendLayout();
@@ -109,9 +110,10 @@
             this.btn_Recetas,
             this.btnAlmacen_Huerta,
             this.btn_ImpInv,
-            this.btn_Salidas});
+            this.btn_Salidas,
+            this.btn_rpt_invXfecha});
             this.ribbonControl1.Location = new System.Drawing.Point(0, 0);
-            this.ribbonControl1.MaxItemId = 29;
+            this.ribbonControl1.MaxItemId = 30;
             this.ribbonControl1.Name = "ribbonControl1";
             this.ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage1,
@@ -349,6 +351,15 @@
             this.btn_ImpInv.Name = "btn_ImpInv";
             this.btn_ImpInv.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_ImpInv_ItemClick);
             // 
+            // btn_Salidas
+            // 
+            this.btn_Salidas.Caption = "Reporte\r\nSalidas";
+            this.btn_Salidas.Id = 28;
+            this.btn_Salidas.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_Salidas.ImageOptions.Image")));
+            this.btn_Salidas.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btn_Salidas.ImageOptions.LargeImage")));
+            this.btn_Salidas.Name = "btn_Salidas";
+            this.btn_Salidas.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_Salidas_ItemClick);
+            // 
             // ribbonPage1
             // 
             this.ribbonPage1.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
@@ -435,6 +446,13 @@
             this.ribbonPageGroup7.Name = "ribbonPageGroup7";
             this.ribbonPageGroup7.Text = "Inventum";
             // 
+            // ribbonPageGroup8
+            // 
+            this.ribbonPageGroup8.ItemLinks.Add(this.btn_Salidas);
+            this.ribbonPageGroup8.ItemLinks.Add(this.btn_rpt_invXfecha);
+            this.ribbonPageGroup8.Name = "ribbonPageGroup8";
+            this.ribbonPageGroup8.Text = "ribbonPageGroup8";
+            // 
             // ribbonPage5
             // 
             this.ribbonPage5.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
@@ -472,20 +490,12 @@
             this.SkinForm.EnableBonusSkins = true;
             this.SkinForm.LookAndFeel.SkinName = "Office 2010 Silver";
             // 
-            // ribbonPageGroup8
+            // btn_rpt_invXfecha
             // 
-            this.ribbonPageGroup8.ItemLinks.Add(this.btn_Salidas);
-            this.ribbonPageGroup8.Name = "ribbonPageGroup8";
-            this.ribbonPageGroup8.Text = "ribbonPageGroup8";
-            // 
-            // btn_Salidas
-            // 
-            this.btn_Salidas.Caption = "Reporte\r\nSalidas";
-            this.btn_Salidas.Id = 28;
-            this.btn_Salidas.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem2.ImageOptions.Image")));
-            this.btn_Salidas.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem2.ImageOptions.LargeImage")));
-            this.btn_Salidas.Name = "btn_Salidas";
-            this.btn_Salidas.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_Salidas_ItemClick);
+            this.btn_rpt_invXfecha.Caption = "barButtonItem2";
+            this.btn_rpt_invXfecha.Id = 29;
+            this.btn_rpt_invXfecha.Name = "btn_rpt_invXfecha";
+            this.btn_rpt_invXfecha.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_rpt_invXfecha_ItemClick);
             // 
             // Frm_Principal
             // 
@@ -555,6 +565,7 @@
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup7;
         private DevExpress.XtraBars.BarButtonItem btn_Salidas;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup8;
+        private DevExpress.XtraBars.BarButtonItem btn_rpt_invXfecha;
     }
 }
 

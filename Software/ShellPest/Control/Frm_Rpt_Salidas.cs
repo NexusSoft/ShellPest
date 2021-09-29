@@ -98,7 +98,7 @@ namespace ShellPest
             Clase.Fini = Fecha.Year.ToString() + DosCero(Fecha.Month.ToString()) + DosCero(Fecha.Day.ToString());
             Fecha = Convert.ToDateTime(date_Fin.EditValue.ToString());
             Clase.Ffin= Fecha.Year.ToString() + DosCero(Fecha.Month.ToString()) + DosCero(Fecha.Day.ToString());
-
+            Clase.TipoMov = radioGroup1.EditValue.ToString();
             if (glue_Empresa.EditValue != null)
             {
                 Clase.c_codigo_eps = glue_Empresa.EditValue.ToString();

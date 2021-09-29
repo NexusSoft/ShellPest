@@ -12,6 +12,7 @@ namespace CapaDeDatos
         public string Fini { get; set; }
         public string Ffin { get; set; }
         public string c_codigo_eps { get; set; }
+        public string TipoMov { get; set; }
 
         public void MtdSeleccionarSalidas()
         {
@@ -30,6 +31,8 @@ namespace CapaDeDatos
                 _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Ffin");
                 _dato.CadenaTexto = c_codigo_eps;
                 _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "c_codigo_eps");
+                _dato.CadenaTexto = TipoMov;
+                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "TipoMov");
                 _conexion.EjecutarDataset();
 
                 if (_conexion.Exito)

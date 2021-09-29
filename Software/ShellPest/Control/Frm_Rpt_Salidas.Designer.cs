@@ -45,7 +45,7 @@
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
             this.dtgValHuertas = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.c_codigo_sal = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.d_documento_sal = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.d_documento_mov = new DevExpress.XtraGrid.Columns.GridColumn();
             this.c_codigo_pro = new DevExpress.XtraGrid.Columns.GridColumn();
             this.v_nombre_pro = new DevExpress.XtraGrid.Columns.GridColumn();
             this.n_cantidad_mov = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -59,6 +59,8 @@
             this.c_codigo_tra = new DevExpress.XtraGrid.Columns.GridColumn();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
+            this.radioGroup1 = new DevExpress.XtraEditors.RadioGroup();
+            this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.glue_Empresa = new DevExpress.XtraEditors.GridLookUpEdit();
             this.gridView6 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.c_codigo_eps = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -75,8 +77,6 @@
             this.date_Ini = new DevExpress.XtraEditors.DateEdit();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
-            this.radioGroup1 = new DevExpress.XtraEditors.RadioGroup();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).BeginInit();
@@ -87,6 +87,7 @@
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.radioGroup1.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.glue_Empresa.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.checkEdit1.Properties)).BeginInit();
@@ -96,7 +97,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.date_Fin.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.date_Ini.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.date_Ini.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radioGroup1.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // barManager1
@@ -241,8 +241,9 @@
             // dtgValHuertas
             // 
             this.dtgValHuertas.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.d_documento_mov,
             this.c_codigo_sal,
-            this.d_documento_sal,
+            this.c_codigo_ent,
             this.c_codigo_pro,
             this.v_nombre_pro,
             this.n_cantidad_mov,
@@ -251,15 +252,20 @@
             this.v_nombre_alm,
             this.Id_Bloque,
             this.Nombre_Usuario,
-            this.c_codigo_ent,
             this.v_nombre_tmv,
             this.c_codigo_tra});
             this.dtgValHuertas.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFullFocus;
             this.dtgValHuertas.GridControl = this.gridControl1;
+            this.dtgValHuertas.GroupCount = 3;
+            this.dtgValHuertas.GroupSummary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
+            new DevExpress.XtraGrid.GridGroupSummaryItem(DevExpress.Data.SummaryItemType.Sum, "n_cantidad_mov", this.n_cantidad_mov, "( Cant. Material={0:#.##})")});
             this.dtgValHuertas.Name = "dtgValHuertas";
             this.dtgValHuertas.OptionsBehavior.Editable = false;
             this.dtgValHuertas.OptionsFind.AlwaysVisible = true;
-            this.dtgValHuertas.OptionsView.ShowGroupPanel = false;
+            this.dtgValHuertas.SortInfo.AddRange(new DevExpress.XtraGrid.Columns.GridColumnSortInfo[] {
+            new DevExpress.XtraGrid.Columns.GridColumnSortInfo(this.v_nombre_alm, DevExpress.Data.ColumnSortOrder.Ascending),
+            new DevExpress.XtraGrid.Columns.GridColumnSortInfo(this.d_documento_mov, DevExpress.Data.ColumnSortOrder.Ascending),
+            new DevExpress.XtraGrid.Columns.GridColumnSortInfo(this.v_nombre_tmv, DevExpress.Data.ColumnSortOrder.Ascending)});
             // 
             // c_codigo_sal
             // 
@@ -268,14 +274,15 @@
             this.c_codigo_sal.Name = "c_codigo_sal";
             this.c_codigo_sal.Visible = true;
             this.c_codigo_sal.VisibleIndex = 0;
+            this.c_codigo_sal.Width = 83;
             // 
-            // d_documento_sal
+            // d_documento_mov
             // 
-            this.d_documento_sal.Caption = "Fecha";
-            this.d_documento_sal.FieldName = "d_documento_sal";
-            this.d_documento_sal.Name = "d_documento_sal";
-            this.d_documento_sal.Visible = true;
-            this.d_documento_sal.VisibleIndex = 1;
+            this.d_documento_mov.Caption = "Fecha";
+            this.d_documento_mov.FieldName = "d_documento_mov";
+            this.d_documento_mov.Name = "d_documento_mov";
+            this.d_documento_mov.Visible = true;
+            this.d_documento_mov.VisibleIndex = 0;
             // 
             // c_codigo_pro
             // 
@@ -321,7 +328,7 @@
             this.v_nombre_alm.FieldName = "v_nombre_alm";
             this.v_nombre_alm.Name = "v_nombre_alm";
             this.v_nombre_alm.Visible = true;
-            this.v_nombre_alm.VisibleIndex = 6;
+            this.v_nombre_alm.VisibleIndex = 7;
             // 
             // Id_Bloque
             // 
@@ -329,7 +336,7 @@
             this.Id_Bloque.FieldName = "Id_Bloque";
             this.Id_Bloque.Name = "Id_Bloque";
             this.Id_Bloque.Visible = true;
-            this.Id_Bloque.VisibleIndex = 7;
+            this.Id_Bloque.VisibleIndex = 6;
             // 
             // Nombre_Usuario
             // 
@@ -337,7 +344,7 @@
             this.Nombre_Usuario.FieldName = "Nombre_Usuario";
             this.Nombre_Usuario.Name = "Nombre_Usuario";
             this.Nombre_Usuario.Visible = true;
-            this.Nombre_Usuario.VisibleIndex = 8;
+            this.Nombre_Usuario.VisibleIndex = 7;
             // 
             // c_codigo_ent
             // 
@@ -345,7 +352,7 @@
             this.c_codigo_ent.FieldName = "c_codigo_ent";
             this.c_codigo_ent.Name = "c_codigo_ent";
             this.c_codigo_ent.Visible = true;
-            this.c_codigo_ent.VisibleIndex = 9;
+            this.c_codigo_ent.VisibleIndex = 1;
             // 
             // v_nombre_tmv
             // 
@@ -353,7 +360,7 @@
             this.v_nombre_tmv.FieldName = "v_nombre_tmv";
             this.v_nombre_tmv.Name = "v_nombre_tmv";
             this.v_nombre_tmv.Visible = true;
-            this.v_nombre_tmv.VisibleIndex = 10;
+            this.v_nombre_tmv.VisibleIndex = 8;
             // 
             // c_codigo_tra
             // 
@@ -361,7 +368,7 @@
             this.c_codigo_tra.FieldName = "c_codigo_tra";
             this.c_codigo_tra.Name = "c_codigo_tra";
             this.c_codigo_tra.Visible = true;
-            this.c_codigo_tra.VisibleIndex = 11;
+            this.c_codigo_tra.VisibleIndex = 8;
             // 
             // panelControl1
             // 
@@ -392,6 +399,26 @@
             this.groupControl1.Size = new System.Drawing.Size(678, 91);
             this.groupControl1.TabIndex = 0;
             this.groupControl1.Text = "Datos";
+            // 
+            // radioGroup1
+            // 
+            this.radioGroup1.Location = new System.Drawing.Point(456, 60);
+            this.radioGroup1.MenuManager = this.barManager1;
+            this.radioGroup1.Name = "radioGroup1";
+            this.radioGroup1.Properties.Items.AddRange(new DevExpress.XtraEditors.Controls.RadioGroupItem[] {
+            new DevExpress.XtraEditors.Controls.RadioGroupItem("S", "Salidas", true, "Salidas"),
+            new DevExpress.XtraEditors.Controls.RadioGroupItem("E", "Entradas", true, "Entradas"),
+            new DevExpress.XtraEditors.Controls.RadioGroupItem("", "Todos", true, "")});
+            this.radioGroup1.Size = new System.Drawing.Size(200, 26);
+            this.radioGroup1.TabIndex = 50;
+            // 
+            // labelControl3
+            // 
+            this.labelControl3.Location = new System.Drawing.Point(387, 63);
+            this.labelControl3.Name = "labelControl3";
+            this.labelControl3.Size = new System.Drawing.Size(63, 13);
+            this.labelControl3.TabIndex = 49;
+            this.labelControl3.Text = "Movimientos:";
             // 
             // glue_Empresa
             // 
@@ -551,26 +578,6 @@
             this.labelControl4.TabIndex = 15;
             this.labelControl4.Text = "Almacen:";
             // 
-            // labelControl3
-            // 
-            this.labelControl3.Location = new System.Drawing.Point(387, 63);
-            this.labelControl3.Name = "labelControl3";
-            this.labelControl3.Size = new System.Drawing.Size(63, 13);
-            this.labelControl3.TabIndex = 49;
-            this.labelControl3.Text = "Movimientos:";
-            // 
-            // radioGroup1
-            // 
-            this.radioGroup1.Location = new System.Drawing.Point(456, 60);
-            this.radioGroup1.MenuManager = this.barManager1;
-            this.radioGroup1.Name = "radioGroup1";
-            this.radioGroup1.Properties.Items.AddRange(new DevExpress.XtraEditors.Controls.RadioGroupItem[] {
-            new DevExpress.XtraEditors.Controls.RadioGroupItem("S", "Salidas", true, "Salidas"),
-            new DevExpress.XtraEditors.Controls.RadioGroupItem("E", "Entradas", true, "Entradas"),
-            new DevExpress.XtraEditors.Controls.RadioGroupItem("", "Todos", true, "")});
-            this.radioGroup1.Size = new System.Drawing.Size(200, 26);
-            this.radioGroup1.TabIndex = 50;
-            // 
             // Frm_Rpt_Salidas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -596,6 +603,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
             this.groupControl1.ResumeLayout(false);
             this.groupControl1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.radioGroup1.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.glue_Empresa.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.checkEdit1.Properties)).EndInit();
@@ -605,7 +613,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.date_Fin.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.date_Ini.Properties.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.date_Ini.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radioGroup1.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -635,7 +642,7 @@
         private DevExpress.XtraEditors.LabelControl labelControl1;
         private DevExpress.XtraEditors.LabelControl labelControl4;
         private DevExpress.XtraGrid.Columns.GridColumn c_codigo_sal;
-        private DevExpress.XtraGrid.Columns.GridColumn d_documento_sal;
+        private DevExpress.XtraGrid.Columns.GridColumn d_documento_mov;
         private DevExpress.XtraGrid.Columns.GridColumn c_codigo_pro;
         private DevExpress.XtraGrid.Columns.GridColumn v_nombre_pro;
         private DevExpress.XtraGrid.Columns.GridColumn n_cantidad_mov;
