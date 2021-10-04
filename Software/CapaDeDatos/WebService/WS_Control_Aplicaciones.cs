@@ -15,6 +15,7 @@ namespace CapaDeDatos
         public string Id_Presentacion { get; set; }
         public string Id_Usuario { get; set; }
         public string F_Creacion { get; set; }
+        public string c_codigo_eps { get; set; }
 
         public string Fecha { get; set; }
         public string c_codigo_pro { get; set; }
@@ -49,6 +50,8 @@ namespace CapaDeDatos
                 _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "F_Usuario_Crea");
                 _dato.CadenaTexto = Fecha;
                 _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Anio");
+                _dato.CadenaTexto = c_codigo_eps;
+                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "c_codigo_eps");
                 _conexion.EjecutarDataset();
 
                 if (_conexion.Exito)
@@ -91,7 +94,8 @@ namespace CapaDeDatos
                 _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Id_Usuario");
                 _dato.CadenaTexto = F_Creacion;
                 _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "F_Usuario_Crea");
-
+                _dato.CadenaTexto = c_codigo_eps;
+                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "c_codigo_eps");
                 _conexion.EjecutarDataset();
 
                 if (_conexion.Exito)

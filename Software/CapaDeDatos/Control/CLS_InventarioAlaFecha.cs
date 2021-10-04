@@ -8,16 +8,23 @@ namespace CapaDeDatos
 {
     public class CLS_InventarioAlaFecha : ConexionBase
     {
-        public string Fecha,Empresa,FamIni,FamFin,SubIni,SubFin, IncluyeCero;
 
-        public CLS_InventarioAlaFecha()
+        public string Fecha, Empresa, FamIni, FamFin, SubIni, SubFin, IncluyeCero;
+
+        public CLS_InventarioAlaFecha(string Fecha, string Empresa, string FamIni, string FamFin, string SubIni, string SubFin, string IncluyeCero)
         {
-           
+            this.Fecha = Fecha;
+            this.Empresa = Empresa;
+            this.FamIni = FamIni;
+            this.FamFin = FamFin;
+            this.SubIni = SubIni;
+            this.SubFin = SubFin;
+            this.IncluyeCero = IncluyeCero;
 
-            MtdInventarioAlaFechaSelect( "20210927",  "12",  "01",  "99",  "0001",  "9999",  "N");
+            MtdInventarioAlaFechaSelect();
         }
 
-        public void MtdInventarioAlaFechaSelect(string Fecha, string Empresa, string FamIni, string FamFin, string SubIni, string SubFin, string IncluyeCero)
+        public void MtdInventarioAlaFechaSelect()
         {
            
             TipoDato _dato = new TipoDato();

@@ -327,7 +327,7 @@ namespace ShellPest_WebService
 
         [HttpGet]
         public ActionResult Aplicaciones(string Id_Aplicacion, string Id_Huerta, string Observaciones,
-                               string Id_TipoAplicacion, string Id_Presentacion, string Id_Usuario, string F_Creacion,string Anio)
+                               string Id_TipoAplicacion, string Id_Presentacion, string Id_Usuario, string F_Creacion,string Anio,string c_codigo_eps)
         {
             string cadena = string.Empty;
             WS_Control_Aplicaciones CLS = new WS_Control_Aplicaciones();
@@ -339,6 +339,7 @@ namespace ShellPest_WebService
             CLS.Id_Usuario = Id_Usuario;
             CLS.F_Creacion = F_Creacion;
             CLS.Fecha = Anio.Substring(2);
+            CLS.c_codigo_eps = c_codigo_eps;
             CLS.MtdInsertarAplicacion();
             DataTable dt = new DataTable();
             dt.Clear();
@@ -362,7 +363,7 @@ namespace ShellPest_WebService
 
         [HttpGet]
         public ActionResult Aplicaciones_Det(string Id_Aplicacion, string Fecha, string c_codigo_pro,
-                               string Dosis, string Unidades_aplicadas, string Id_Usuario, string F_Creacion)
+                               string Dosis, string Unidades_aplicadas, string Id_Usuario, string F_Creacion,string c_codigo_eps)
         {
             string cadena = string.Empty;
             WS_Control_Aplicaciones CLS = new WS_Control_Aplicaciones();
@@ -374,6 +375,7 @@ namespace ShellPest_WebService
 
             CLS.Id_Usuario = Id_Usuario;
             CLS.F_Creacion = F_Creacion;
+            CLS.c_codigo_eps = c_codigo_eps;
             CLS.MtdInsertarAplicacion_Det();
             DataTable dt = new DataTable();
             dt.Clear();

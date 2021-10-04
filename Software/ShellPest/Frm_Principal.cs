@@ -8,9 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using CapaDeDatos;
-using DevExpress.XtraReports;
-using DevExpress.XtraPrinting;
-using DevExpress.LookAndFeel;
+
 
 namespace ShellPest
 {
@@ -416,9 +414,11 @@ namespace ShellPest
 
         private void btn_rpt_invXfecha_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            Rpt_Inventario R = new Rpt_Inventario();
-            DevExpress.XtraReports.UI.ReportPrintTool Rpt = new DevExpress.XtraReports.UI.ReportPrintTool(R);
-            Rpt.ShowPreviewDialog();
+            Frm_Rpt_InvalaFecha V = new Frm_Rpt_InvalaFecha();
+            V.UsuariosLogin = UsuariosLogin;
+            V.ShowDialog();
+
+           
         }
     }
 }

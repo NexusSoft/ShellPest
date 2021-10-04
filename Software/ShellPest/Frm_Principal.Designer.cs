@@ -58,6 +58,7 @@
             this.btnAlmacen_Huerta = new DevExpress.XtraBars.BarButtonItem();
             this.btn_ImpInv = new DevExpress.XtraBars.BarButtonItem();
             this.btn_Salidas = new DevExpress.XtraBars.BarButtonItem();
+            this.btn_rpt_invXfecha = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup5 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -74,7 +75,6 @@
             this.ribbonPage2 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.xtraTabbedMdiManager1 = new DevExpress.XtraTabbedMdi.XtraTabbedMdiManager(this.components);
             this.SkinForm = new DevExpress.LookAndFeel.DefaultLookAndFeel(this.components);
-            this.btn_rpt_invXfecha = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabbedMdiManager1)).BeginInit();
             this.SuspendLayout();
@@ -353,12 +353,21 @@
             // 
             // btn_Salidas
             // 
-            this.btn_Salidas.Caption = "Reporte\r\nSalidas";
+            this.btn_Salidas.Caption = "Consultar\r\nMovimientos";
             this.btn_Salidas.Id = 28;
             this.btn_Salidas.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_Salidas.ImageOptions.Image")));
             this.btn_Salidas.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btn_Salidas.ImageOptions.LargeImage")));
             this.btn_Salidas.Name = "btn_Salidas";
             this.btn_Salidas.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_Salidas_ItemClick);
+            // 
+            // btn_rpt_invXfecha
+            // 
+            this.btn_rpt_invXfecha.Caption = "Reporte\r\nInventario";
+            this.btn_rpt_invXfecha.Id = 29;
+            this.btn_rpt_invXfecha.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_rpt_invXfecha.ImageOptions.Image")));
+            this.btn_rpt_invXfecha.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btn_rpt_invXfecha.ImageOptions.LargeImage")));
+            this.btn_rpt_invXfecha.Name = "btn_rpt_invXfecha";
+            this.btn_rpt_invXfecha.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_rpt_invXfecha_ItemClick);
             // 
             // ribbonPage1
             // 
@@ -489,13 +498,6 @@
             // 
             this.SkinForm.EnableBonusSkins = true;
             this.SkinForm.LookAndFeel.SkinName = "Office 2010 Silver";
-            // 
-            // btn_rpt_invXfecha
-            // 
-            this.btn_rpt_invXfecha.Caption = "barButtonItem2";
-            this.btn_rpt_invXfecha.Id = 29;
-            this.btn_rpt_invXfecha.Name = "btn_rpt_invXfecha";
-            this.btn_rpt_invXfecha.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_rpt_invXfecha_ItemClick);
             // 
             // Frm_Principal
             // 

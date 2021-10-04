@@ -303,6 +303,12 @@
     <Compile Include="Control\Frm_Recetas.Designer.cs">
       <DependentUpon>Frm_Recetas.cs</DependentUpon>
     </Compile>
+    <Compile Include="Control\Frm_Rpt_InvalaFecha.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Control\Frm_Rpt_InvalaFecha.Designer.cs">
+      <DependentUpon>Frm_Rpt_InvalaFecha.cs</DependentUpon>
+    </Compile>
     <Compile Include="Control\Frm_Rpt_Salidas.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -454,6 +460,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Control\Frm_Recetas.resx">
       <DependentUpon>Frm_Recetas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Control\Frm_Rpt_InvalaFecha.resx">
+      <DependentUpon>Frm_Rpt_InvalaFecha.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Control\Frm_Rpt_Salidas.resx">
       <DependentUpon>Frm_Rpt_Salidas.cs</DependentUpon>
