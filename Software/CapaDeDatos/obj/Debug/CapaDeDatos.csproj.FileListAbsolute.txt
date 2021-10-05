@@ -37,3 +37,4 @@ C:\Users\SKYLINE\Documents\GitHub\ShellPest\Software\CapaDeDatos\obj\Debug\CapaD
 C:\Users\SKYLINE\Documents\GitHub\ShellPest\Software\CapaDeDatos\obj\Debug\CapaDeDatos.csproj.CoreCompileInputs.cache
 C:\Users\SKYLINE\Documents\GitHub\ShellPest\Software\CapaDeDatos\obj\Debug\CapaDeDatos.dll
 C:\Users\SKYLINE\Documents\GitHub\ShellPest\Software\CapaDeDatos\obj\Debug\CapaDeDatos.pdb
+G:\JORGE\Documents\GitHub\ShellPest\Software\CapaDeDatos\obj\Debug\CapaDeDatos.csprojAssemblyReference.cache

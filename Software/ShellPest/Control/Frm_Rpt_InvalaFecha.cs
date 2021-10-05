@@ -23,23 +23,62 @@ namespace ShellPest
 
         private void btnSeleccionar_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            Rpt_Inventario R = new Rpt_Inventario();
-            DateTime Fecha = Convert.ToDateTime(date_Fecha.Text.Trim());
-            
-            R.SFecha= Fecha.Year.ToString() + DosCero(Fecha.Month.ToString()) + DosCero(Fecha.Day.ToString());
-            R.SEmpresa = glue_Empresas.EditValue.ToString();
-            R.SFamIni = glue_FamIni.EditValue.ToString();
-            R.SFamFin = glue_FamFin.EditValue.ToString();
-            R.SSubIni = glue_SubIni.EditValue.ToString();
-            R.SSubFin = glue_SubFin.EditValue.ToString();
-            if (check_Cero.Checked)
+            DateTime Fecha = Convert.ToDateTime(date_Fecha.EditValue.ToString());
+            string tfamini, tfamfin, tsubini, tsubfin, tincluyecero;
+            if (glue_FamIni.EditValue == null)
             {
-                R.SIncluyeCero = "S";
+               
+                tfamini = "";
             }
             else
             {
-                R.SIncluyeCero = "N";
+               
+                tfamini= glue_FamIni.EditValue.ToString();
             }
+            if (glue_FamFin.EditValue == null)
+            {
+              
+                tfamfin = "";
+            }
+            else
+            {
+               
+                tfamfin= glue_FamFin.EditValue.ToString();
+            }
+            if (glue_SubIni.EditValue == null)
+            {
+             
+                tsubini = "";
+            }
+            else
+            {
+                tsubini= glue_SubIni.EditValue.ToString();
+
+            }
+            if (glue_SubFin.EditValue == null)
+            {
+                tsubfin = "";
+            }
+            else
+            {
+                tsubfin = glue_SubFin.EditValue.ToString();
+            }
+
+
+            if (check_Cero.Checked)
+            {
+                tincluyecero = "S";
+            }
+            else
+            {
+                tincluyecero = "N";
+            }
+            Rpt_Inventario R = new Rpt_Inventario(Fecha.Year.ToString() + DosCero(Fecha.Month.ToString()) + DosCero(Fecha.Day.ToString()), glue_Empresas.EditValue.ToString(), tfamini, tfamfin, tsubini, tsubfin, tincluyecero);
+
+           
+          
+            
+          
             DevExpress.XtraReports.UI.ReportPrintTool Rpt = new DevExpress.XtraReports.UI.ReportPrintTool(R);
             Rpt.ShowPreviewDialog();
         }
@@ -121,7 +160,7 @@ namespace ShellPest
 
         private void glue_FamIni_EditValueChanged(object sender, EventArgs e)
         {
-            if (glue_FamIni.EditValue != null)
+            if (glue_FamIni.EditValue != null && glue_FamFin.EditValue != null)
             {
                 CargarSubfamilias();
             }

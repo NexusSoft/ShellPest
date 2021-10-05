@@ -394,7 +394,7 @@
             // 
             parameter1.Name = "Fecha";
             parameter1.Type = typeof(string);
-            parameter1.ValueInfo = "20210930";
+            parameter1.ValueInfo = "20211005";
             parameter2.Name = "Empresa";
             parameter2.Type = typeof(string);
             parameter2.ValueInfo = "01";

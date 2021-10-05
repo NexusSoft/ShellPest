@@ -44,8 +44,9 @@
             this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
             this.dtgValHuertas = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.c_codigo_sal = new DevExpress.XtraGrid.Columns.GridColumn();
             this.d_documento_mov = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.c_codigo_sal = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.c_codigo_ent = new DevExpress.XtraGrid.Columns.GridColumn();
             this.c_codigo_pro = new DevExpress.XtraGrid.Columns.GridColumn();
             this.v_nombre_pro = new DevExpress.XtraGrid.Columns.GridColumn();
             this.n_cantidad_mov = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -54,7 +55,6 @@
             this.v_nombre_alm = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Id_Bloque = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Nombre_Usuario = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.c_codigo_ent = new DevExpress.XtraGrid.Columns.GridColumn();
             this.v_nombre_tmv = new DevExpress.XtraGrid.Columns.GridColumn();
             this.c_codigo_tra = new DevExpress.XtraGrid.Columns.GridColumn();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
@@ -256,16 +256,23 @@
             this.c_codigo_tra});
             this.dtgValHuertas.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFullFocus;
             this.dtgValHuertas.GridControl = this.gridControl1;
-            this.dtgValHuertas.GroupCount = 3;
+            this.dtgValHuertas.GroupCount = 1;
             this.dtgValHuertas.GroupSummary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
             new DevExpress.XtraGrid.GridGroupSummaryItem(DevExpress.Data.SummaryItemType.Sum, "n_cantidad_mov", this.n_cantidad_mov, "( Cant. Material={0:#.##})")});
             this.dtgValHuertas.Name = "dtgValHuertas";
+            this.dtgValHuertas.OptionsBehavior.AutoExpandAllGroups = true;
             this.dtgValHuertas.OptionsBehavior.Editable = false;
             this.dtgValHuertas.OptionsFind.AlwaysVisible = true;
             this.dtgValHuertas.SortInfo.AddRange(new DevExpress.XtraGrid.Columns.GridColumnSortInfo[] {
-            new DevExpress.XtraGrid.Columns.GridColumnSortInfo(this.v_nombre_alm, DevExpress.Data.ColumnSortOrder.Ascending),
-            new DevExpress.XtraGrid.Columns.GridColumnSortInfo(this.d_documento_mov, DevExpress.Data.ColumnSortOrder.Ascending),
-            new DevExpress.XtraGrid.Columns.GridColumnSortInfo(this.v_nombre_tmv, DevExpress.Data.ColumnSortOrder.Ascending)});
+            new DevExpress.XtraGrid.Columns.GridColumnSortInfo(this.d_documento_mov, DevExpress.Data.ColumnSortOrder.Ascending)});
+            // 
+            // d_documento_mov
+            // 
+            this.d_documento_mov.Caption = "Fecha";
+            this.d_documento_mov.FieldName = "d_documento_mov";
+            this.d_documento_mov.Name = "d_documento_mov";
+            this.d_documento_mov.Visible = true;
+            this.d_documento_mov.VisibleIndex = 0;
             // 
             // c_codigo_sal
             // 
@@ -276,13 +283,13 @@
             this.c_codigo_sal.VisibleIndex = 0;
             this.c_codigo_sal.Width = 83;
             // 
-            // d_documento_mov
+            // c_codigo_ent
             // 
-            this.d_documento_mov.Caption = "Fecha";
-            this.d_documento_mov.FieldName = "d_documento_mov";
-            this.d_documento_mov.Name = "d_documento_mov";
-            this.d_documento_mov.Visible = true;
-            this.d_documento_mov.VisibleIndex = 0;
+            this.c_codigo_ent.Caption = "Entrada";
+            this.c_codigo_ent.FieldName = "c_codigo_ent";
+            this.c_codigo_ent.Name = "c_codigo_ent";
+            this.c_codigo_ent.Visible = true;
+            this.c_codigo_ent.VisibleIndex = 2;
             // 
             // c_codigo_pro
             // 
@@ -290,7 +297,7 @@
             this.c_codigo_pro.FieldName = "c_codigo_pro";
             this.c_codigo_pro.Name = "c_codigo_pro";
             this.c_codigo_pro.Visible = true;
-            this.c_codigo_pro.VisibleIndex = 2;
+            this.c_codigo_pro.VisibleIndex = 3;
             // 
             // v_nombre_pro
             // 
@@ -298,7 +305,7 @@
             this.v_nombre_pro.FieldName = "v_nombre_pro";
             this.v_nombre_pro.Name = "v_nombre_pro";
             this.v_nombre_pro.Visible = true;
-            this.v_nombre_pro.VisibleIndex = 3;
+            this.v_nombre_pro.VisibleIndex = 4;
             // 
             // n_cantidad_mov
             // 
@@ -306,7 +313,7 @@
             this.n_cantidad_mov.FieldName = "n_cantidad_mov";
             this.n_cantidad_mov.Name = "n_cantidad_mov";
             this.n_cantidad_mov.Visible = true;
-            this.n_cantidad_mov.VisibleIndex = 4;
+            this.n_cantidad_mov.VisibleIndex = 6;
             // 
             // v_abrevia_uni
             // 
@@ -314,7 +321,7 @@
             this.v_abrevia_uni.FieldName = "v_abrevia_uni";
             this.v_abrevia_uni.Name = "v_abrevia_uni";
             this.v_abrevia_uni.Visible = true;
-            this.v_abrevia_uni.VisibleIndex = 5;
+            this.v_abrevia_uni.VisibleIndex = 7;
             // 
             // c_codigo_alm
             // 
@@ -328,7 +335,7 @@
             this.v_nombre_alm.FieldName = "v_nombre_alm";
             this.v_nombre_alm.Name = "v_nombre_alm";
             this.v_nombre_alm.Visible = true;
-            this.v_nombre_alm.VisibleIndex = 7;
+            this.v_nombre_alm.VisibleIndex = 1;
             // 
             // Id_Bloque
             // 
@@ -336,7 +343,7 @@
             this.Id_Bloque.FieldName = "Id_Bloque";
             this.Id_Bloque.Name = "Id_Bloque";
             this.Id_Bloque.Visible = true;
-            this.Id_Bloque.VisibleIndex = 6;
+            this.Id_Bloque.VisibleIndex = 8;
             // 
             // Nombre_Usuario
             // 
@@ -344,15 +351,7 @@
             this.Nombre_Usuario.FieldName = "Nombre_Usuario";
             this.Nombre_Usuario.Name = "Nombre_Usuario";
             this.Nombre_Usuario.Visible = true;
-            this.Nombre_Usuario.VisibleIndex = 7;
-            // 
-            // c_codigo_ent
-            // 
-            this.c_codigo_ent.Caption = "Entrada";
-            this.c_codigo_ent.FieldName = "c_codigo_ent";
-            this.c_codigo_ent.Name = "c_codigo_ent";
-            this.c_codigo_ent.Visible = true;
-            this.c_codigo_ent.VisibleIndex = 1;
+            this.Nombre_Usuario.VisibleIndex = 9;
             // 
             // v_nombre_tmv
             // 
@@ -360,7 +359,7 @@
             this.v_nombre_tmv.FieldName = "v_nombre_tmv";
             this.v_nombre_tmv.Name = "v_nombre_tmv";
             this.v_nombre_tmv.Visible = true;
-            this.v_nombre_tmv.VisibleIndex = 8;
+            this.v_nombre_tmv.VisibleIndex = 5;
             // 
             // c_codigo_tra
             // 
@@ -368,7 +367,7 @@
             this.c_codigo_tra.FieldName = "c_codigo_tra";
             this.c_codigo_tra.Name = "c_codigo_tra";
             this.c_codigo_tra.Visible = true;
-            this.c_codigo_tra.VisibleIndex = 8;
+            this.c_codigo_tra.VisibleIndex = 10;
             // 
             // panelControl1
             // 

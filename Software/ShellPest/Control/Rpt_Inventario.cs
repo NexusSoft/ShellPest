@@ -9,15 +9,15 @@ namespace ShellPest
 {
     public partial class Rpt_Inventario : DevExpress.XtraReports.UI.XtraReport
     {
-        public String SFecha { get; set; }
-        public String SEmpresa { get; set; }
-        public String SFamIni { get; set; }
-        public String SFamFin { get; set; }
-        public String SSubIni { get; set; }
-        public String SSubFin { get; set; }
-        public String SIncluyeCero { get; set; }
+        public string SFecha { get; set; }
+        public string SEmpresa { get; set; }
+        public string SFamIni { get; set; }
+        public string SFamFin { get; set; }
+        public string SSubIni { get; set; }
+        public string SSubFin { get; set; }
+        public string SIncluyeCero { get; set; }
 
-        public Rpt_Inventario()
+        public Rpt_Inventario(string SFecha,string SEmpresa,string SFamIni,string SFamFin,string SSubIni,string SSubFin,string SIncluyeCero)
         {
             InitializeComponent();
 
