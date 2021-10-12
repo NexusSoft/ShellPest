@@ -30,27 +30,35 @@ BEGIN
 
 
 					   
+			DECLARE @table TABLE ( Almacenes CHAR(2),Columna integer)
+
+	DECLARE @Cont INT = 1;
+
+	if (@c_codigo_eps='01')
+		begin	
+
 			insert into t_Entradas (c_codigo_ent
 			    ,c_codigo_tmv
 			    ,d_documento_ent
 			    ,c_codigo_alm
 			    ,Id_Usuario_Crea
 			    ,F_Usuario_Crea
+				,c_codigo_eps
 			    )
 				(SELECT 
-				CONVERT(Varchar(50),GETDATE(),12)+inv.c_codigo_alm+'01' as c_codigo_ent,'00' as c_codigo_tmv,GETDATE() as d_documento_ent ,c_codigo_alm,'ADMIN' as Id_Usuario_Crea,GETDATE() as F_Usuario_Crea
+				CONVERT(Varchar(50),GETDATE(),12)+inv.c_codigo_alm+'01' as c_codigo_ent,'00' as c_codigo_tmv,GETDATE() as d_documento_ent ,c_codigo_alm,'ADMIN' as Id_Usuario_Crea,GETDATE() as F_Usuario_Crea,@c_codigo_eps
 			FROM agv.dbo.invmovimiento as inv
 			group by inv.c_codigo_alm) 
 			
 			
-			DECLARE @table TABLE ( Almacenes CHAR(2),Columna integer)
+			
 				
 			insert into @table (Almacenes,Columna)(SELECT 
 				c_codigo_alm,ROW_NUMBER() OVER(order by c_codigo_alm )
 			FROM agv.dbo.invmovimiento 
 			group by c_codigo_alm)
 			
-			DECLARE @Cont INT = 1;
+			set @Cont = 1;
 			WHILE(@Cont <= (SELECT count(c_codigo_alm) FROM agv.dbo.invmovimiento where c_codigo_alm=(select almacenes from @table where Columna=@Cont) group by c_codigo_alm)) BEGIN
 			    insert into t_Movimientos (c_tipodoc_mov
 			      ,c_coddoc_mov
@@ -58,7 +66,8 @@ BEGIN
 			      ,n_movipro_mov
 			      ,n_exiant_mov
 			      ,n_cantidad_mov
-				  ,ult_CodMov_Inv)
+				  ,ult_CodMov_Inv
+				  ,c_codigo_eps)
 				(SELECT 'E' as c_tipodoc_mov,
 					CONVERT(Varchar(50),GETDATE(),12)+c_codigo_alm+'01' as c_coddoc_mov, 
 					c_codigo_pro,
@@ -66,13 +75,67 @@ BEGIN
 					1 n_movipro_mov,
 					0 As Existencia,
 					sum(n_cantidad_mov) as n_cantidad_mov,
-					(select isnull(max(c_codigo_mov),'0000000001') from agv.dbo.invmovimiento where c_codigo_alm=(select almacenes from @table where Columna=@Cont))
+					(select isnull(max(c_codigo_mov),'0000000001') from agv.dbo.invmovimiento where c_codigo_alm=(select almacenes from @table where Columna=@Cont)),
+					@c_codigo_eps
 				FROM agv.dbo.invmovimiento
 				where c_codigo_alm=(select almacenes from @table where Columna=@Cont)
 				
 				group by c_codigo_alm,c_codigo_pro  HAVING  sum(n_cantidad_mov)>0)
 			    set @Cont += 1;
 			END
+
+		end 
+	if (@c_codigo_eps='12')
+		begin
+
+		insert into t_Entradas (c_codigo_ent
+			    ,c_codigo_tmv
+			    ,d_documento_ent
+			    ,c_codigo_alm
+			    ,Id_Usuario_Crea
+			    ,F_Usuario_Crea
+				,c_codigo_eps
+			    )
+				(SELECT 
+				CONVERT(Varchar(50),GETDATE(),12)+inv.c_codigo_alm+'01' as c_codigo_ent,'00' as c_codigo_tmv,GETDATE() as d_documento_ent ,c_codigo_alm,'ADMIN' as Id_Usuario_Crea,GETDATE() as F_Usuario_Crea,@c_codigo_eps
+			FROM El_Mirador.dbo.invmovimiento as inv
+			group by inv.c_codigo_alm) 
+			
+			
+			--DECLARE @table TABLE ( Almacenes CHAR(2),Columna integer)
+				
+			insert into @table (Almacenes,Columna)(SELECT 
+				c_codigo_alm,ROW_NUMBER() OVER(order by c_codigo_alm )
+			FROM El_Mirador.dbo.invmovimiento 
+			group by c_codigo_alm)
+			
+			set @Cont = 1;
+			WHILE(@Cont <= (SELECT count(c_codigo_alm) FROM El_Mirador.dbo.invmovimiento where c_codigo_alm=(select almacenes from @table where Columna=@Cont) group by c_codigo_alm)) BEGIN
+			    insert into t_Movimientos (c_tipodoc_mov
+			      ,c_coddoc_mov
+			      ,c_codigo_pro
+			      ,n_movipro_mov
+			      ,n_exiant_mov
+			      ,n_cantidad_mov
+				  ,ult_CodMov_Inv
+				  ,c_codigo_eps)
+				(SELECT 'E' as c_tipodoc_mov,
+					CONVERT(Varchar(50),GETDATE(),12)+c_codigo_alm+'01' as c_coddoc_mov, 
+					c_codigo_pro,
+					--ROW_NUMBER() OVER(order by c_codigo_alm,c_codigo_pro )  AS  Secuencia,
+					1 n_movipro_mov,
+					0 As Existencia,
+					sum(n_cantidad_mov) as n_cantidad_mov,
+					(select isnull(max(c_codigo_mov),'0000000001') from El_Mirador.dbo.invmovimiento where c_codigo_alm=(select almacenes from @table where Columna=@Cont))
+					,@c_codigo_eps
+				FROM El_Mirador.dbo.invmovimiento
+				where c_codigo_alm=(select almacenes from @table where Columna=@Cont)
+				
+				group by c_codigo_alm,c_codigo_pro  HAVING  sum(n_cantidad_mov)>0)
+			    set @Cont += 1;
+			END
+
+		end 
 			
 			commit transaction T1;
 			set @correcto=1

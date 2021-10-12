@@ -107,7 +107,7 @@ namespace ShellPest
             {
                 int xRow = gridValue.GetVisibleRowHandle(x);
 
-                if (gridValue.GetRowCellValue(xRow, gridValue.Columns["c_codigo_alm"]).ToString().Equals(glue_Almacen.EditValue.ToString()))
+                if (gridValue.GetRowCellValue(xRow, gridValue.Columns["c_codigo_alm"]).ToString().Equals(glue_Almacen.EditValue.ToString()) && gridValue.GetRowCellValue(xRow, gridValue.Columns["c_codigo_hue"]).ToString().Equals(glue_Huerto.EditValue.ToString()))
                 {
                     return false; 
                 }
@@ -203,7 +203,7 @@ namespace ShellPest
             }
             else
             {
-                XtraMessageBox.Show("Es necesario Agregar un nombre del Plagas.");
+                XtraMessageBox.Show("Es necesario seleccionar un almacen y una huerta.");
             }
         }
 
