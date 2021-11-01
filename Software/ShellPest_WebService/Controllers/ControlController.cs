@@ -490,11 +490,11 @@ namespace ShellPest_WebService
         }
 
         [System.Web.Mvc.HttpGet]
-        public ActionResult ExistenciaProAlm()
+        public ActionResult ExistenciaProAlm(string Id_Usuario)
         {
             string cadena = string.Empty;
             CLS_Inventum sel = new CLS_Inventum();
-
+            sel.Id_Usuario = Id_Usuario;
             sel.MtdExistenciasProAlmSelect();
             if (sel.Exito)
             {

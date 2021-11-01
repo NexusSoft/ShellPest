@@ -272,7 +272,7 @@
             this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
             this.barDockControlLeft.Location = new System.Drawing.Point(0, 0);
             this.barDockControlLeft.Manager = this.barManager1;
-            this.barDockControlLeft.Size = new System.Drawing.Size(69, 518);
+            this.barDockControlLeft.Size = new System.Drawing.Size(71, 518);
             // 
             // barDockControlRight
             // 
@@ -296,10 +296,10 @@
             // 
             this.panelControl2.Controls.Add(this.dtgBloque);
             this.panelControl2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelControl2.Location = new System.Drawing.Point(69, 268);
+            this.panelControl2.Location = new System.Drawing.Point(71, 268);
             this.panelControl2.Name = "panelControl2";
             this.panelControl2.Padding = new System.Windows.Forms.Padding(5);
-            this.panelControl2.Size = new System.Drawing.Size(1121, 250);
+            this.panelControl2.Size = new System.Drawing.Size(1119, 250);
             this.panelControl2.TabIndex = 15;
             // 
             // dtgBloque
@@ -309,7 +309,7 @@
             this.dtgBloque.MainView = this.dtgValBloque;
             this.dtgBloque.MenuManager = this.barManager1;
             this.dtgBloque.Name = "dtgBloque";
-            this.dtgBloque.Size = new System.Drawing.Size(1107, 236);
+            this.dtgBloque.Size = new System.Drawing.Size(1105, 236);
             this.dtgBloque.TabIndex = 0;
             this.dtgBloque.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.dtgValBloque});
@@ -423,10 +423,10 @@
             // 
             this.panelControl1.Controls.Add(this.groupControl1);
             this.panelControl1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelControl1.Location = new System.Drawing.Point(69, 0);
+            this.panelControl1.Location = new System.Drawing.Point(71, 0);
             this.panelControl1.Name = "panelControl1";
             this.panelControl1.Padding = new System.Windows.Forms.Padding(5);
-            this.panelControl1.Size = new System.Drawing.Size(1121, 268);
+            this.panelControl1.Size = new System.Drawing.Size(1119, 268);
             this.panelControl1.TabIndex = 14;
             // 
             // groupControl1
@@ -464,7 +464,7 @@
             this.groupControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupControl1.Location = new System.Drawing.Point(7, 7);
             this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(1107, 254);
+            this.groupControl1.Size = new System.Drawing.Size(1105, 254);
             this.groupControl1.TabIndex = 0;
             this.groupControl1.Text = "Receta";
             // 
@@ -741,8 +741,7 @@
             this.text_Dosis.Name = "text_Dosis";
             this.text_Dosis.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.text_Dosis.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
-            this.text_Dosis.Properties.Mask.EditMask = "n2";
-            this.text_Dosis.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
+            this.text_Dosis.Properties.Mask.EditMask = "n";
             this.text_Dosis.Size = new System.Drawing.Size(82, 20);
             this.text_Dosis.TabIndex = 64;
             this.text_Dosis.EditValueChanged += new System.EventHandler(this.text_Dosis_EditValueChanged);

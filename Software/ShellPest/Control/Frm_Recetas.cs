@@ -292,10 +292,14 @@ namespace ShellPest
 
         private void text_Dosis_EditValueChanged(object sender, EventArgs e)
         {
-            if (Convert.ToDecimal(PresentacionConvercion) > 0 && Convert.ToDecimal(text_Dosis.Text)>0)
+            if (text_Dosis.Text.Trim().Length > 0)
             {
-                text_Unitario.Text = Convert.ToString(Convert.ToDecimal(text_Dosis.Text) / Convert.ToDecimal(PresentacionConvercion));
+                if (Convert.ToDecimal(PresentacionConvercion) > 0 && Convert.ToDecimal(text_Dosis.Text) > 0)
+                {
+                    text_Unitario.Text = Convert.ToString(Convert.ToDecimal(text_Dosis.Text) / Convert.ToDecimal(PresentacionConvercion));
+                }
             }
+           
            
         }
 
@@ -402,7 +406,12 @@ namespace ShellPest
             Clase.Descripcion = memo_Descripcion.Text;
             Clase.Id_Usuario = Id_Usuario;
 
-            Clase.MtdInsertarReceta();
+            if (glue_Empresa.EditValue != null)
+            {
+                Clase.c_codigo_eps = glue_Empresa.EditValue.ToString();
+                Clase.MtdInsertarReceta();
+            }
+               
 
             if (Clase.Exito)
             {

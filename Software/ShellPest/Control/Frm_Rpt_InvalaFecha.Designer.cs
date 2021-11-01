@@ -147,6 +147,7 @@
             this.btnSalir.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnSalir.ImageOptions.Image")));
             this.btnSalir.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnSalir.ImageOptions.LargeImage")));
             this.btnSalir.Name = "btnSalir";
+            this.btnSalir.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnSalir_ItemClick);
             // 
             // bEstado
             // 
@@ -334,6 +335,7 @@
             this.glue_FamFin.Size = new System.Drawing.Size(100, 20);
             this.glue_FamFin.TabIndex = 48;
             this.glue_FamFin.UseWaitCursor = true;
+            this.glue_FamFin.EditValueChanged += new System.EventHandler(this.glue_FamFin_EditValueChanged);
             // 
             // gridView2
             // 
@@ -536,6 +538,7 @@
             this.Controls.Add(this.barDockControlBottom);
             this.Controls.Add(this.barDockControlTop);
             this.Name = "Frm_Rpt_InvalaFecha";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Filtro de Reporte";
             this.Load += new System.EventHandler(this.Frm_Rpt_InvalaFecha_Load);
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();

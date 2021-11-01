@@ -28,7 +28,7 @@ namespace ShellPest
             if (glue_FamIni.EditValue == null)
             {
                
-                tfamini = "";
+                tfamini = "00";
             }
             else
             {
@@ -38,7 +38,7 @@ namespace ShellPest
             if (glue_FamFin.EditValue == null)
             {
               
-                tfamfin = "";
+                tfamfin = "99";
             }
             else
             {
@@ -48,7 +48,7 @@ namespace ShellPest
             if (glue_SubIni.EditValue == null)
             {
              
-                tsubini = "";
+                tsubini = "0000";
             }
             else
             {
@@ -57,7 +57,7 @@ namespace ShellPest
             }
             if (glue_SubFin.EditValue == null)
             {
-                tsubfin = "";
+                tsubfin = "9999";
             }
             else
             {
@@ -150,6 +150,8 @@ namespace ShellPest
         private void Frm_Rpt_InvalaFecha_Load(object sender, EventArgs e)
         {
             CargarEmpresas();
+            date_Fecha.EditValue = DateTime.Today;
+
         }
 
         private void date_Fecha_EditValueChanged(object sender, EventArgs e)
@@ -172,6 +174,19 @@ namespace ShellPest
             {
                 CargarFamilias();
             }
+        }
+
+        private void glue_FamFin_EditValueChanged(object sender, EventArgs e)
+        {
+            if (glue_FamIni.EditValue != null && glue_FamFin.EditValue != null)
+            {
+                CargarSubfamilias();
+            }
+        }
+
+        private void btnSalir_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            this.Close();
         }
     }
 }

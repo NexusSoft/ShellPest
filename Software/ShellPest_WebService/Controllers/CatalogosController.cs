@@ -462,6 +462,42 @@ namespace ShellPest_WebService
             }
         }
 
+        [System.Web.Mvc.HttpGet]
+        public ActionResult Recetas(string Id_Usuario)
+        {
+            string cadena = string.Empty;
+            WS_Catalogos_Receta sel = new WS_Catalogos_Receta();
+            sel.Id_Usuario = Id_Usuario;
+            sel.MtdSeleccionarReceta();
+            if (sel.Exito)
+            {
+                GetJson(sel.Datos);
+                return Json(rows, JsonRequestBehavior.AllowGet);
+            }
+            else
+            {
+                return Json(cadena, JsonRequestBehavior.AllowGet);
+            }
+        }
+
+        [System.Web.Mvc.HttpGet]
+        public ActionResult RecetasDetalle(string Id_Usuario)
+        {
+            string cadena = string.Empty;
+            WS_Catalogos_Receta sel = new WS_Catalogos_Receta();
+            sel.Id_Usuario = Id_Usuario;
+            sel.MtdSeleccionarRecetaDet();
+            if (sel.Exito)
+            {
+                GetJson(sel.Datos);
+                return Json(rows, JsonRequestBehavior.AllowGet);
+            }
+            else
+            {
+                return Json(cadena, JsonRequestBehavior.AllowGet);
+            }
+        }
+
         public void GetJson(DataTable dt)
         {
             Dictionary<string, object> row;

@@ -69,6 +69,7 @@
             this.xrLine3 = new DevExpress.XtraReports.UI.XRLine();
             this.imageCollection1 = new DevExpress.Utils.ImageCollection(this.components);
             this.objectDataSource1 = new DevExpress.DataAccess.ObjectBinding.ObjectDataSource(this.components);
+            this.xrLabel9 = new DevExpress.XtraReports.UI.XRLabel();
             ((System.ComponentModel.ISupportInitialize)(this.imageCollection1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.objectDataSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
@@ -141,6 +142,7 @@
             // TopMargin
             // 
             this.TopMargin.Controls.AddRange(new DevExpress.XtraReports.UI.XRControl[] {
+            this.xrLabel9,
             this.xrLabel17,
             this.xrLabel18,
             this.xrLabel16,
@@ -224,10 +226,10 @@
             this.xrLabel3.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[v_nombre_eps]")});
             this.xrLabel3.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold);
-            this.xrLabel3.LocationFloat = new DevExpress.Utils.PointFloat(191.6667F, 10.00001F);
+            this.xrLabel3.LocationFloat = new DevExpress.Utils.PointFloat(54.1667F, 10.00001F);
             this.xrLabel3.Name = "xrLabel3";
             this.xrLabel3.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.xrLabel3.SizeF = new System.Drawing.SizeF(416.6667F, 23F);
+            this.xrLabel3.SizeF = new System.Drawing.SizeF(692.7083F, 23F);
             this.xrLabel3.StylePriority.UseFont = false;
             this.xrLabel3.StylePriority.UseTextAlignment = false;
             this.xrLabel3.Text = "xrLabel3";
@@ -235,11 +237,11 @@
             // 
             // xrLabel4
             // 
-            this.xrLabel4.LocationFloat = new DevExpress.Utils.PointFloat(239.5833F, 33.00001F);
+            this.xrLabel4.LocationFloat = new DevExpress.Utils.PointFloat(201.0416F, 33.00001F);
             this.xrLabel4.Name = "xrLabel4";
             this.xrLabel4.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.xrLabel4.SizeF = new System.Drawing.SizeF(328.125F, 18F);
-            this.xrLabel4.Text = "Reporte de inventario valorizado por familia de productos ";
+            this.xrLabel4.SizeF = new System.Drawing.SizeF(398.9584F, 18F);
+            this.xrLabel4.Text = "Reporte de inventario valorizado a la fecha por familia de productos ";
             // 
             // BottomMargin
             // 
@@ -426,6 +428,18 @@
             this.objectDataSource1.DataSource = typeof(CapaDeDatos.CLS_InventarioAlaFecha);
             this.objectDataSource1.Name = "objectDataSource1";
             // 
+            // xrLabel9
+            // 
+            this.xrLabel9.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
+            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[TFecha]")});
+            this.xrLabel9.LocationFloat = new DevExpress.Utils.PointFloat(350F, 51.00001F);
+            this.xrLabel9.Name = "xrLabel9";
+            this.xrLabel9.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 96F);
+            this.xrLabel9.SizeF = new System.Drawing.SizeF(100F, 23F);
+            this.xrLabel9.StylePriority.UseTextAlignment = false;
+            this.xrLabel9.Text = "xrLabel9";
+            this.xrLabel9.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopCenter;
+            // 
             // Rpt_Inventario
             // 
             this.Bands.AddRange(new DevExpress.XtraReports.UI.Band[] {
@@ -478,5 +492,6 @@
         private DevExpress.XtraReports.UI.XRLine xrLine3;
         private DevExpress.Utils.ImageCollection imageCollection1;
         private DevExpress.DataAccess.ObjectBinding.ObjectDataSource objectDataSource1;
+        private DevExpress.XtraReports.UI.XRLabel xrLabel9;
     }
 }
