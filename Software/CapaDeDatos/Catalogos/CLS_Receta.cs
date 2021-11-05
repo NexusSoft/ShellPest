@@ -22,6 +22,7 @@ namespace CapaDeDatos
         public string Usuario { get; set; }
         public string Activo { get; set; }
         public string c_codigo_eps { get; set; }
+        public string Id_Huerta { get; set; }
 
         public void MtdSeleccionarReceta()
         {
@@ -89,6 +90,8 @@ namespace CapaDeDatos
                 _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Id_Usuario");
                 _dato.CadenaTexto = c_codigo_eps;
                 _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "c_codigo_eps");
+                _dato.CadenaTexto = Id_Huerta;
+                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Id_Huerta");
                 _conexion.EjecutarDataset();
 
                 if (_conexion.Exito)

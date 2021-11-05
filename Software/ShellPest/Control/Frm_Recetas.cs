@@ -122,6 +122,27 @@ namespace ShellPest
             
         }
 
+        private void CargarHuertas()
+        {
+            glue_Huerta.EditValue = null;
+            glue_Huerta.Properties.DisplayMember = "v_nombre_hue";
+            glue_Huerta.Properties.ValueMember = "c_codigo_hue";
+            CLS_Huerta Clase = new CLS_Huerta();
+          
+
+            if (glue_Empresa.EditValue != null)
+            {
+                Clase.c_codigo_eps = glue_Empresa.EditValue.ToString();
+                Clase.MtdSeleccionarHuertaMasCorto();
+                if (Clase.Exito)
+                {
+                    glue_Huerta.Properties.DataSource = Clase.Datos;
+                }
+            }
+
+
+        }
+
         private void CargarUnidad()
         {
             glue_Unidad.EditValue = null;
@@ -225,7 +246,7 @@ namespace ShellPest
             Clase.Intervalo_Seguridad = Convert.ToDecimal( text_ISeguridad.Text);
             Clase.Intervalo_Reingreso = Convert.ToDecimal(text_IReingreso.Text);
             Clase.Usuario = Id_Usuario;
-
+            Clase.Id_Huerta = glue_Huerta.EditValue.ToString();
             if (glue_Empresa.EditValue != null)
             {
                 Clase.c_codigo_eps = glue_Empresa.EditValue.ToString();
@@ -599,6 +620,7 @@ namespace ShellPest
             CargarCultivo();
             CargarTipo();
             CargarUnidad();
+            CargarHuertas();
         }
 
        

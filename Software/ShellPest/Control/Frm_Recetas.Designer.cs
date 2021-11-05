@@ -122,6 +122,11 @@
             this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
             this.txtId = new DevExpress.XtraEditors.TextEdit();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
+            this.glue_Huerta = new DevExpress.XtraEditors.GridLookUpEdit();
+            this.gridView5 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.c_codigo_hue = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.v_nombre_hue = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.label_Huerta = new DevExpress.XtraEditors.LabelControl();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).BeginInit();
@@ -158,6 +163,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.date_Fecha.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.date_Fecha.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtId.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.glue_Huerta.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView5)).BeginInit();
             this.SuspendLayout();
             // 
             // barManager1
@@ -431,6 +438,8 @@
             // 
             // groupControl1
             // 
+            this.groupControl1.Controls.Add(this.glue_Huerta);
+            this.groupControl1.Controls.Add(this.label_Huerta);
             this.groupControl1.Controls.Add(this.glue_Empresa);
             this.groupControl1.Controls.Add(this.labelControl18);
             this.groupControl1.Controls.Add(this.btn_Abrir);
@@ -1061,6 +1070,53 @@
             this.labelControl1.TabIndex = 0;
             this.labelControl1.Text = "Id Receta: ";
             // 
+            // glue_Huerta
+            // 
+            this.glue_Huerta.EditValue = "-Seleccionar-";
+            this.glue_Huerta.Location = new System.Drawing.Point(904, 60);
+            this.glue_Huerta.MenuManager = this.barManager1;
+            this.glue_Huerta.Name = "glue_Huerta";
+            this.glue_Huerta.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.glue_Huerta.Properties.NullText = "-Seleccionar-";
+            this.glue_Huerta.Properties.PopupView = this.gridView5;
+            this.glue_Huerta.Size = new System.Drawing.Size(195, 20);
+            this.glue_Huerta.TabIndex = 84;
+            // 
+            // gridView5
+            // 
+            this.gridView5.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.c_codigo_hue,
+            this.v_nombre_hue});
+            this.gridView5.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
+            this.gridView5.Name = "gridView5";
+            this.gridView5.OptionsSelection.EnableAppearanceFocusedCell = false;
+            this.gridView5.OptionsView.ShowGroupPanel = false;
+            // 
+            // c_codigo_hue
+            // 
+            this.c_codigo_hue.Caption = "ID";
+            this.c_codigo_hue.FieldName = "c_codigo_hue";
+            this.c_codigo_hue.Name = "c_codigo_hue";
+            this.c_codigo_hue.Visible = true;
+            this.c_codigo_hue.VisibleIndex = 1;
+            // 
+            // v_nombre_hue
+            // 
+            this.v_nombre_hue.Caption = "Huerta";
+            this.v_nombre_hue.FieldName = "v_nombre_hue";
+            this.v_nombre_hue.Name = "v_nombre_hue";
+            this.v_nombre_hue.Visible = true;
+            this.v_nombre_hue.VisibleIndex = 0;
+            // 
+            // label_Huerta
+            // 
+            this.label_Huerta.Location = new System.Drawing.Point(857, 63);
+            this.label_Huerta.Name = "label_Huerta";
+            this.label_Huerta.Size = new System.Drawing.Size(37, 13);
+            this.label_Huerta.TabIndex = 83;
+            this.label_Huerta.Text = "Huerta:";
+            // 
             // Frm_Recetas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1113,6 +1169,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.date_Fecha.Properties.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.date_Fecha.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtId.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.glue_Huerta.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView5)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1212,5 +1270,10 @@
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn10;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn34;
         private DevExpress.XtraEditors.LabelControl labelControl18;
+        private DevExpress.XtraEditors.GridLookUpEdit glue_Huerta;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridView5;
+        private DevExpress.XtraGrid.Columns.GridColumn c_codigo_hue;
+        private DevExpress.XtraGrid.Columns.GridColumn v_nombre_hue;
+        private DevExpress.XtraEditors.LabelControl label_Huerta;
     }
 }
