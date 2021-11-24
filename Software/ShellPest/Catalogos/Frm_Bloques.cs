@@ -49,7 +49,7 @@ namespace ShellPest
         {
             dtgBloque.DataSource = null;
             CLS_Bloque Clase = new CLS_Bloque();
-
+            Clase.TipoBloque = glue_TipoBloque.EditValue.ToString().Trim();
             if (glue_Empresa.EditValue != null)
             {
                 Clase.c_codigo_eps = glue_Empresa.EditValue.ToString();
@@ -63,6 +63,24 @@ namespace ShellPest
             
         }
 
+        private void CargarTipoBloque()
+        {
+            CLS_Bloque Clase = new CLS_Bloque();
+           
+            if (glue_TipoBloque.EditValue != null)
+            {
+                Clase.c_codigo_eps = glue_Empresa.EditValue.ToString();
+                Clase.MtdSeleccionarTipoBloque();
+                if (Clase.Exito)
+                {
+                    glue_TipoBloque.Properties.DisplayMember = "Nombre_TipoBloque";
+                    glue_TipoBloque.Properties.ValueMember = "TipoBloque";
+                    glue_TipoBloque.EditValue = 'B';
+                    glue_TipoBloque.Properties.DataSource = Clase.Datos;
+                }
+            }
+        }
+
         private void InsertarBloque()
         {
             CLS_Bloque Clase = new CLS_Bloque();
@@ -71,7 +89,7 @@ namespace ShellPest
             Clase.Nombre_Bloque = txtNombre.Text.Trim();
             Clase.Id_Huerta = cboHuerta.EditValue.ToString();
             Clase.Id_Usuario = Id_Usuario;
-
+            Clase.TipoBloque = glue_TipoBloque.EditValue.ToString().Trim();
             if (glue_Empresa.EditValue != null)
             {
                 Clase.c_codigo_eps = glue_Empresa.EditValue.ToString();
@@ -119,6 +137,7 @@ namespace ShellPest
                     txtId.Text = row["Id_Bloque"].ToString();
                     txtNombre.Text = row["Nombre_Bloque"].ToString();
                     CargarHuertas(row["Id_Huerta"].ToString());
+                    glue_TipoBloque.EditValue= row["TipoBloque"].ToString();
                 }
                 if (txtId.Text.Trim().Length > 0)
                 {
@@ -147,6 +166,8 @@ namespace ShellPest
                 btnSeleccionar.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
             }
 
+            CargarTipoBloque();
+
             WS_Catalogos_Empresas Clase = new WS_Catalogos_Empresas();
             Clase.Id_Usuario = Id_Usuario;
             Clase.MtdSeleccionarEmpresaXUsuario();
@@ -159,8 +180,6 @@ namespace ShellPest
 
                 if (Clase.Datos.Rows.Count > 0)
                 {
-
-
                     glue_Empresa.EditValue = Clase.Datos.Rows[0][0].ToString();
                 }
             }
@@ -250,8 +269,6 @@ namespace ShellPest
                     cboHuerta.Properties.DataSource = Clase.Datos;
                 }
             }
-
-            
         }
 
         private void cboHuerta_EditValueChanged(object sender, EventArgs e)
@@ -268,6 +285,11 @@ namespace ShellPest
         {
             CargarBloque();
             CargarHuertas(null);
+        }
+
+        private void glue_TipoBloque_EditValueChanged(object sender, EventArgs e)
+        {
+            CargarBloque();
         }
     }
 }

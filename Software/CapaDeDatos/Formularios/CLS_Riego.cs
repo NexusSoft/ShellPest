@@ -16,8 +16,11 @@ namespace CapaDeDatos
         public decimal Caudal_Fin { get; set; }
         public decimal Horas_riego { get; set; }
         public string Id_Usuario_Crea { get; set; }
+        public string c_codigo_eps { get; set; }
+        public decimal Temperatura { get; set; }
+        public decimal ET { get; set; }
 
-        
+
         public void MtdInsertarRiego()
         {
             TipoDato _dato = new TipoDato();
@@ -43,6 +46,12 @@ namespace CapaDeDatos
                 _conexion.agregarParametro(EnumTipoDato.Tipodecimal, _dato, "Horas_riego");
                 _dato.CadenaTexto = Id_Usuario_Crea;
                 _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Id_Usuario_Crea");
+                _dato.CadenaTexto = c_codigo_eps;
+                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "c_codigo_eps");
+                _dato.DecimalValor = Temperatura;
+                _conexion.agregarParametro(EnumTipoDato.Tipodecimal, _dato, "Temperatura");
+                _dato.DecimalValor = ET;
+                _conexion.agregarParametro(EnumTipoDato.Tipodecimal, _dato, "ET");
                 _conexion.EjecutarDataset();
 
                 if (_conexion.Exito)
@@ -87,6 +96,12 @@ namespace CapaDeDatos
                 _conexion.agregarParametro(EnumTipoDato.Tipodecimal, _dato, "Horas_riego");
                 _dato.CadenaTexto = Id_Usuario_Crea;
                 _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Id_Usuario_Crea");
+                _dato.CadenaTexto = c_codigo_eps;
+                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "c_codigo_eps");
+                _dato.DecimalValor = Temperatura;
+                _conexion.agregarParametro(EnumTipoDato.Tipodecimal, _dato, "Temperatura");
+                _dato.DecimalValor = ET;
+                _conexion.agregarParametro(EnumTipoDato.Tipodecimal, _dato, "ET");
                 _conexion.EjecutarDataset();
 
                 if (_conexion.Exito)

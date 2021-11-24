@@ -376,6 +376,7 @@ namespace ShellPest
                     groupControl2.Enabled = false;
                     btnGuardar.Enabled = false;
                 }
+                glue_Huerta.EditValue = Frm.vId_Huerta;
                // groupControl2.Enabled = true;
 
                 CargarRecetaDet(Frm.vId_Receta.Trim());

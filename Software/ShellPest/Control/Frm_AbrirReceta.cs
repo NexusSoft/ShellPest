@@ -36,6 +36,7 @@ namespace ShellPest
         public string vIntervalo_Seguridad { get; set; }
         public string vIntervalo_Reingreso { get; set; }
         public Boolean vActivo { get; set; }
+        public string vId_Huerta { get; set; }
 
         public string Id_Usuario { get; set; }
 
@@ -106,6 +107,7 @@ namespace ShellPest
                     vIntervalo_Seguridad = row["Intervalo_Seguridad"].ToString();
                     vIntervalo_Reingreso = row["Intervalo_Reingreso"].ToString();
                     vActivo= Convert.ToBoolean(row["Activo"]);
+                    vId_Huerta= row["Id_Huerta"].ToString();
                 }
             }
             catch (Exception ex)

@@ -254,7 +254,7 @@ namespace ShellPest_WebService
         [HttpGet]
         public ActionResult Riego(string Fecha, string Hora
                               , string Id_Bloque, string Precipitacion_Sistema, string Caudal_Inicio,
-                               string Caudal_Fin, string Horas_riego, string Id_Usuario
+                               string Caudal_Fin, string Horas_riego, string Id_Usuario, string c_codigo_eps, string Temperatura, string ET
            )
         {
             string cadena = string.Empty;
@@ -267,7 +267,9 @@ namespace ShellPest_WebService
             sel.Caudal_Fin = decimal.Parse(Caudal_Fin);
             sel.Horas_riego = decimal.Parse(Horas_riego);
             sel.Id_Usuario_Crea = Id_Usuario;
-
+            sel.c_codigo_eps = c_codigo_eps;
+            sel.Temperatura = decimal.Parse(Temperatura);
+            sel.ET = decimal.Parse(ET);
             sel.MtdInsertarRiego();
             DataTable dt = new DataTable();
             dt.Clear();
@@ -291,7 +293,7 @@ namespace ShellPest_WebService
         [HttpGet]
         public ActionResult RiegoEliminado(string Fecha, string Hora
                               , string Id_Bloque, string Precipitacion_Sistema, string Caudal_Inicio,
-                               string Caudal_Fin, string Horas_riego, string Id_Usuario
+                               string Caudal_Fin, string Horas_riego, string Id_Usuario, string c_codigo_eps, string Temperatura, string ET
            )
         {
             string cadena = string.Empty;
@@ -304,6 +306,9 @@ namespace ShellPest_WebService
             sel.Caudal_Fin = decimal.Parse(Caudal_Fin);
             sel.Horas_riego = decimal.Parse(Horas_riego);
             sel.Id_Usuario_Crea = Id_Usuario;
+            sel.c_codigo_eps = c_codigo_eps;
+            sel.Temperatura = decimal.Parse(Temperatura);
+            sel.ET = decimal.Parse(ET);
             sel.MtdInsertarRiegoEliminado();
             DataTable dt = new DataTable();
             dt.Clear();
