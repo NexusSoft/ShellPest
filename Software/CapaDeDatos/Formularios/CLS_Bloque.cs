@@ -15,6 +15,8 @@ namespace CapaDeDatos
         public string Id_Usuario { get; set; }
         public string c_codigo_eps { get; set; }
         public string TipoBloque { get; set; }
+        public int Activo { get; set; }
+        public string c_codigo_lot { get; set; }
 
         public void MtdSeleccionarBloque()
         {
@@ -29,6 +31,8 @@ namespace CapaDeDatos
                 _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "c_codigo_eps");
                 _dato.CadenaTexto = TipoBloque;
                 _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "TipoBloque");
+                _dato.Entero = Activo;
+                _conexion.agregarParametro(EnumTipoDato.Entero, _dato, "Activo");
                 _conexion.EjecutarDataset();
 
                 if (_conexion.Exito)
@@ -89,6 +93,8 @@ namespace CapaDeDatos
                 _conexion.NombreProcedimiento = "SP_BloquesHuerta_Select";
                 _dato.CadenaTexto = Id_Huerta;
                 _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Id_Huerta");
+                _dato.CadenaTexto = TipoBloque;
+                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "TipoBloque");
                 _conexion.EjecutarDataset();
 
                 if (_conexion.Exito)
@@ -131,6 +137,8 @@ namespace CapaDeDatos
                 _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "c_codigo_eps");
                 _dato.CadenaTexto = TipoBloque;
                 _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "TipoBloque");
+                _dato.CadenaTexto = c_codigo_lot;
+                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "c_codigo_lot");
                 _conexion.EjecutarDataset();
 
                 if (_conexion.Exito)
@@ -161,6 +169,8 @@ namespace CapaDeDatos
                 _conexion.NombreProcedimiento = "SP_Bloque_Delete";
                 _dato.CadenaTexto = Id_Bloque;
                 _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Id_Bloque");
+                _dato.Entero = Activo;
+                _conexion.agregarParametro(EnumTipoDato.Entero, _dato, "Activo");
                 _conexion.EjecutarDataset();
 
                 if (_conexion.Exito)

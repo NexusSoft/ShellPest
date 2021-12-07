@@ -264,7 +264,7 @@ namespace ShellPest
         {
             CLS_Bloque Clase = new CLS_Bloque();
             Clase.Id_Huerta = Id_Huerta;
-            
+            Clase.TipoBloque = "B";
             Clase.MtdSeleccionarBloquesHuerta();
             if (Clase.Exito)
             {

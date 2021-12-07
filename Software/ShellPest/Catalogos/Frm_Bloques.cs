@@ -38,11 +38,13 @@ namespace ShellPest
         public string Bloque { get; set; }
         public string Id_Usuario { get; set; }
 
+        string vtCampo;
+
         private void LimpiarCampos()
         {
             txtId.Text = "";
             txtNombre.Text = "";
-            CargarHuertas(null);
+            CargarHuertas();
         }
 
         private void CargarBloque()
@@ -50,6 +52,20 @@ namespace ShellPest
             dtgBloque.DataSource = null;
             CLS_Bloque Clase = new CLS_Bloque();
             Clase.TipoBloque = glue_TipoBloque.EditValue.ToString().Trim();
+            if (check_Activo.Checked
+                )
+            {
+                Clase.Activo = 0;
+                btnEliminar.Caption = "Habilitar";
+                btnGuardar.Enabled = false;
+            }
+            else
+            {
+                Clase.Activo = 1;
+                btnEliminar.Caption = "Inhabilitar";
+                btnGuardar.Enabled = true;
+            }
+            
             if (glue_Empresa.EditValue != null)
             {
                 Clase.c_codigo_eps = glue_Empresa.EditValue.ToString();
@@ -58,8 +74,24 @@ namespace ShellPest
                 {
                     dtgBloque.DataSource = Clase.Datos;
                 }
-            }
+            }            
+        }
 
+        private void CargarCoslote()
+        {
+            glue_CC.Properties.DataSource = null;
+            CLS_Inventum Clase = new CLS_Inventum();
+
+            
+            Clase.c_codigo_cam = vtCampo;
+            Clase.MtdCosloteSelect();
+            if (Clase.Exito)
+            {
+                glue_CC.Properties.DisplayMember = "v_nombre_lot";
+                glue_CC.Properties.ValueMember = "c_codigo_lot";
+                glue_CC.EditValue = null;
+                glue_CC.Properties.DataSource = Clase.Datos;
+            }
             
         }
 
@@ -90,22 +122,31 @@ namespace ShellPest
             Clase.Id_Huerta = cboHuerta.EditValue.ToString();
             Clase.Id_Usuario = Id_Usuario;
             Clase.TipoBloque = glue_TipoBloque.EditValue.ToString().Trim();
-            if (glue_Empresa.EditValue != null)
+            if (glue_CC.EditValue!= null)
             {
-                Clase.c_codigo_eps = glue_Empresa.EditValue.ToString();
-                Clase.MtdInsertarBloque();
+                Clase.c_codigo_lot = glue_CC.EditValue.ToString();
+                if (glue_Empresa.EditValue != null)
+                {
+                    Clase.c_codigo_eps = glue_Empresa.EditValue.ToString();
+                    Clase.MtdInsertarBloque();
 
-                if (Clase.Exito)
-                {
-                    CargarBloque();
-                    XtraMessageBox.Show("Se ha Insertado el registro con exito");
-                    LimpiarCampos();
-                }
-                else
-                {
-                    XtraMessageBox.Show(Clase.Mensaje);
+                    if (Clase.Exito)
+                    {
+                        CargarBloque();
+                        XtraMessageBox.Show("Se ha Insertado el registro con exito");
+                        LimpiarCampos();
+                    }
+                    else
+                    {
+                        XtraMessageBox.Show(Clase.Mensaje);
+                    }
                 }
             }
+            else
+            {
+                XtraMessageBox.Show("Es necesario seleccionar un Lote para el centro de contos");
+            }
+            
 
            
         }
@@ -114,6 +155,14 @@ namespace ShellPest
         {
             CLS_Bloque Clase = new CLS_Bloque();
             Clase.Id_Bloque = txtId.Text.Trim();
+            if (check_Activo.Checked)
+            {
+                Clase.Activo = 1;
+            }
+            else
+            {
+                Clase.Activo = 0;
+            }
             Clase.MtdEliminarBloque();
             if (Clase.Exito)
             {
@@ -136,8 +185,14 @@ namespace ShellPest
                     DataRow row = this.dtgValBloque.GetDataRow(i);
                     txtId.Text = row["Id_Bloque"].ToString();
                     txtNombre.Text = row["Nombre_Bloque"].ToString();
-                    CargarHuertas(row["Id_Huerta"].ToString());
+                    
+                    cboHuerta.EditValue = row["Id_Huerta"].ToString();
+                   
                     glue_TipoBloque.EditValue= row["TipoBloque"].ToString();
+                    vtCampo= row["c_codigo_cam"].ToString();
+                    CargarCoslote();
+                    glue_CC.EditValue= row["c_codigo_lot"].ToString();
+                    
                 }
                 if (txtId.Text.Trim().Length > 0)
                 {
@@ -185,6 +240,7 @@ namespace ShellPest
             }
 
             CargarBloque();
+            CargarCoslote();
             LimpiarCampos();
         }
 
@@ -244,16 +300,16 @@ namespace ShellPest
             frm.PaSel = true;
             frm.Id_Usuario = Id_Usuario;
             frm.ShowDialog();
-            CargarHuertas(null);
+            CargarHuertas();
         }
 
         private void Frm_Bloques_Shown(object sender, EventArgs e)
         {
-            CargarHuertas(null);
+            CargarHuertas();
         }
 
         
-        private void CargarHuertas(string Valor)
+        private void CargarHuertas()
         {
             CLS_Huerta Clase = new CLS_Huerta();
             Clase.Activo = "1";
@@ -265,7 +321,7 @@ namespace ShellPest
                 {
                     cboHuerta.Properties.DisplayMember = "Nombre_Huerta";
                     cboHuerta.Properties.ValueMember = "Id_Huerta";
-                    cboHuerta.EditValue = Valor;
+                    cboHuerta.EditValue = null;
                     cboHuerta.Properties.DataSource = Clase.Datos;
                 }
             }
@@ -273,7 +329,23 @@ namespace ShellPest
 
         private void cboHuerta_EditValueChanged(object sender, EventArgs e)
         {
+           
+            try
+            {
 
+                foreach (int i in this.gridLookUpEdit1View.GetSelectedRows())
+                {
+                    DataRow row = this.gridLookUpEdit1View.GetDataRow(i);
+                    vtCampo = row["c_codigo_cam"].ToString();
+
+                }
+               
+            }
+            catch (Exception ex)
+            {
+                XtraMessageBox.Show(ex.Message);
+            }
+            CargarCoslote();
         }
 
         private void labelControl3_Click(object sender, EventArgs e)
@@ -284,12 +356,19 @@ namespace ShellPest
         private void glue_Empresa_EditValueChanged(object sender, EventArgs e)
         {
             CargarBloque();
-            CargarHuertas(null);
+            CargarHuertas();
         }
 
         private void glue_TipoBloque_EditValueChanged(object sender, EventArgs e)
         {
             CargarBloque();
         }
+
+        private void check_Activo_CheckedChanged(object sender, EventArgs e)
+        {
+            CargarBloque();
+        }
+
+        
     }
 }

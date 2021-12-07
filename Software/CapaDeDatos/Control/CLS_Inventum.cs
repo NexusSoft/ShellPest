@@ -13,6 +13,7 @@ namespace CapaDeDatos
         public string c_codigo_eps { get; set; }
         public string cFamIni { get; set; }
         public string cFamFin { get; set; }
+        public string c_codigo_cam { get; set; }
 
         public void MtdInsertInvInicial()
         {
@@ -184,6 +185,37 @@ namespace CapaDeDatos
                 _conexion.NombreProcedimiento = "SP_Familias_Select";
                 _dato.CadenaTexto = c_codigo_eps;
                 _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Empresa");
+                _conexion.EjecutarDataset();
+
+                if (_conexion.Exito)
+                {
+                    Datos = _conexion.Datos;
+                }
+                else
+                {
+                    Mensaje = _conexion.Mensaje;
+                    Exito = false;
+                }
+            }
+            catch (Exception e)
+            {
+                Mensaje = e.Message;
+                Exito = false;
+            }
+
+        }
+
+        public void MtdCosloteSelect()
+        {
+            TipoDato _dato = new TipoDato();
+            Conexion _conexion = new Conexion(cadenaConexion);
+
+            Exito = true;
+            try
+            {
+                _conexion.NombreProcedimiento = "SP_Coslote_Select";
+                _dato.CadenaTexto = c_codigo_cam;
+                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "c_codigo_cam");
                 _conexion.EjecutarDataset();
 
                 if (_conexion.Exito)
