@@ -46,6 +46,7 @@ namespace ShellPest
             CargarDeteccion(null);
             CargarIndividuo(null);
             CargarHumbral(null);
+            CargarFenologico(null);
         }
         private void CargarZonas(string Valor)
         {
@@ -120,6 +121,19 @@ namespace ShellPest
             }
         }
 
+        private void CargarFenologico(string Valor)
+        {
+            CLS_Estado_Fenologico Clase = new CLS_Estado_Fenologico();
+            Clase.MtdSeleccionarFenologico();
+            if (Clase.Exito)
+            {
+                glue_Feno.Properties.DisplayMember = "Nombre_Fenologico";
+                glue_Feno.Properties.ValueMember = "Id_Fenologico";
+                glue_Feno.EditValue = Valor;
+                glue_Feno.Properties.DataSource = Clase.Datos;
+            }
+        }
+
         private void Frm_Monitoreo_Shown(object sender, EventArgs e)
         {
             CargarZonas(null);
@@ -130,6 +144,7 @@ namespace ShellPest
             CargarHumbral(null);
             CargarMonitorieo();
             vIdMonitoreo = string.Empty;
+            CargarFenologico(null);
         }
 
         private void CargarMonitorieo()
@@ -274,6 +289,15 @@ namespace ShellPest
             Clase.Id_Individuo = cboIndoviduo.EditValue.ToString();
             Clase.Id_Humbral = cboHumbral.EditValue.ToString();
             Clase.Id_Usuario = Id_Usuario;
+            if (glue_Feno.EditValue != null)
+            {
+                Clase.Id_Fenologico = glue_Feno.EditValue.ToString();
+            }
+            else
+            {
+                Clase.Id_Fenologico = "";
+            }
+           
             Clase.MtdInsertarMonitoreo();
 
             if (Clase.Exito)
@@ -330,12 +354,18 @@ namespace ShellPest
                     cboOrgano.EditValue = row["Id_Deteccion"].ToString();
                     cboIndoviduo.EditValue = row["Id_Individuo"].ToString();
                     cboHumbral.EditValue = row["Id_Humbral"].ToString();
+                    glue_Feno.EditValue = row["Id_Fenologico"].ToString();
                 }
             }
             catch (Exception ex)
             {
                 XtraMessageBox.Show(ex.Message);
             }
+        }
+
+        private void btnSalir_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            this.Close();
         }
     }
 }

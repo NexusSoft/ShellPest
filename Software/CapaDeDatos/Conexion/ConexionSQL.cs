@@ -25,20 +25,6 @@ namespace CapaDeDatos
             string ProyectName = string.Empty;
             try
             {
-                StrConexion = string.Empty;
-                valServer = ConfigurationManager.AppSettings["ServerName"].ToString();
-                valDB = ConfigurationManager.AppSettings["DataBase"].ToString();
-                valLogin = ConfigurationManager.AppSettings["UserName"].ToString();
-                valPass = ConfigurationManager.AppSettings["Password"].ToString();
-                ProyectName = ConfigurationManager.AppSettings["ProyectName"].ToString();
-
-                StrConexion = string.Format("Data Source={0};Initial Catalog={1};Persist Security Info=True;User ID={2};Password={3}", valServer, valDB, valLogin, valPass);
-                //SqlConnection conn = new SqlConnection(StrConexion);
-                //conn.Open();
-                return StrConexion;
-            }
-            catch
-            {
                 MSRegistro RegOut = new MSRegistro();
                 Crypto DesencriptarTexto = new Crypto();
 
@@ -64,18 +50,9 @@ namespace CapaDeDatos
                     throw new Exception("Faltan datos de Conexion");
                 }
                 StrConexion = string.Format("Data Source={0};Initial Catalog={1};Persist Security Info=True;User ID={2};Password={3}", valServer, valDB, valLogin, valPass);
-                return StrConexion;
+                return StrConexion;  
             }
-        }
-        static public string LeerConexionC()
-        {
-            string StrConexion = string.Empty;
-            string valServer = string.Empty;
-            string valDB = string.Empty;
-            string valLogin = string.Empty;
-            string valPass = string.Empty;
-            string ProyectName = string.Empty;
-            try
+            catch
             {
                 StrConexion = string.Empty;
                 valServer = ConfigurationManager.AppSettings["ServerName"].ToString();
@@ -89,7 +66,16 @@ namespace CapaDeDatos
                 //conn.Open();
                 return StrConexion;
             }
-            catch
+        }
+        static public string LeerConexionC()
+        {
+            string StrConexion = string.Empty;
+            string valServer = string.Empty;
+            string valDB = string.Empty;
+            string valLogin = string.Empty;
+            string valPass = string.Empty;
+            string ProyectName = string.Empty;
+            try
             {
                 MSRegistro RegOut = new MSRegistro();
                 Crypto DesencriptarTexto = new Crypto();
@@ -118,17 +104,7 @@ namespace CapaDeDatos
                 StrConexion = string.Format("Data Source={0};Initial Catalog={1};Persist Security Info=True;User ID={2};Password={3}", valServer, valDB, valLogin, valPass);
                 return StrConexion;
             }
-
-        }
-        static public string LeerConexionR()
-        {
-            string StrConexion = string.Empty;
-            string valServer = string.Empty;
-            string valDB = string.Empty;
-            string valLogin = string.Empty;
-            string valPass = string.Empty;
-            string ProyectName = string.Empty;
-            try
+            catch
             {
                 StrConexion = string.Empty;
                 valServer = ConfigurationManager.AppSettings["ServerName"].ToString();
@@ -141,8 +117,20 @@ namespace CapaDeDatos
                 //SqlConnection conn = new SqlConnection(StrConexion);
                 //conn.Open();
                 return StrConexion;
+
+                
             }
-            catch
+
+        }
+        static public string LeerConexionR()
+        {
+            string StrConexion = string.Empty;
+            string valServer = string.Empty;
+            string valDB = string.Empty;
+            string valLogin = string.Empty;
+            string valPass = string.Empty;
+            string ProyectName = string.Empty;
+            try
             {
                 MSRegistro RegOut = new MSRegistro();
                 Crypto DesencriptarTexto = new Crypto();
@@ -170,6 +158,23 @@ namespace CapaDeDatos
                 }
                 StrConexion = string.Format("Data Source={0};Initial Catalog={1};Persist Security Info=True;User ID={2};Password={3}", valServer, valDB, valLogin, valPass);
                 return StrConexion;
+            }
+            catch
+            {
+                StrConexion = string.Empty;
+                valServer = ConfigurationManager.AppSettings["ServerName"].ToString();
+                valDB = ConfigurationManager.AppSettings["DataBase"].ToString();
+                valLogin = ConfigurationManager.AppSettings["UserName"].ToString();
+                valPass = ConfigurationManager.AppSettings["Password"].ToString();
+                ProyectName = ConfigurationManager.AppSettings["ProyectName"].ToString();
+
+                StrConexion = string.Format("Data Source={0};Initial Catalog={1};Persist Security Info=True;User ID={2};Password={3}", valServer, valDB, valLogin, valPass);
+                //SqlConnection conn = new SqlConnection(StrConexion);
+                //conn.Open();
+                return StrConexion;
+
+
+               
             }
 
         }

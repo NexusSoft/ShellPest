@@ -498,6 +498,24 @@ namespace ShellPest_WebService
             }
         }
 
+        [System.Web.Mvc.HttpGet]
+        public ActionResult Fenologicos()
+        {
+            string cadena = string.Empty;
+            CLS_Estado_Fenologico sel = new CLS_Estado_Fenologico();
+           
+            sel.MtdSeleccionarFenologico();
+            if (sel.Exito)
+            {
+                GetJson(sel.Datos);
+                return Json(rows, JsonRequestBehavior.AllowGet);
+            }
+            else
+            {
+                return Json(cadena, JsonRequestBehavior.AllowGet);
+            }
+        }
+
         public void GetJson(DataTable dt)
         {
             Dictionary<string, object> row;

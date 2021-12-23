@@ -132,7 +132,7 @@ namespace ShellPest_WebService
         }
         [HttpGet]
         public ActionResult MonitoreoPEDetalle(string Fecha, string Hora, string Id_PuntoControl, string Id_Plagas, string Id_Enfermedad,
-                                string Id_Deteccion, string Id_Individuo, string Id_Humbral)
+                                string Id_Deteccion, string Id_Individuo, string Id_Humbral,string Cant_Individuos,string Id_Fenologico)
         {
             string cadena = string.Empty;
             if (string.IsNullOrWhiteSpace(Id_Plagas))
@@ -152,6 +152,8 @@ namespace ShellPest_WebService
             sel.Id_Deteccion = Id_Deteccion;
             sel.Id_Individuo = Id_Individuo;
             sel.Id_Humbral = Id_Humbral;
+            sel.Cant_Individuos =Convert.ToInt32( Cant_Individuos);
+            sel.Id_Fenologico = Id_Fenologico;
 
             sel.MtdInsertarMonitoreoPEDetalle();
             DataTable dt = new DataTable();

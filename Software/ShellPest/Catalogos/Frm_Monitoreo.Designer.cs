@@ -60,7 +60,15 @@
             this.gridColumn10 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn11 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn12 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Id_Fenologico = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Nombre_Fenologico = new DevExpress.XtraGrid.Columns.GridColumn();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
+            this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
+            this.labelControl8 = new DevExpress.XtraEditors.LabelControl();
+            this.glue_Feno = new DevExpress.XtraEditors.GridLookUpEdit();
+            this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.Id_Fenologico2 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Nombre_Fenologico2 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.txt_IdMonitoreo = new DevExpress.XtraEditors.TextEdit();
             this.labelControl7 = new DevExpress.XtraEditors.LabelControl();
             this.btnHumbral = new DevExpress.XtraEditors.SimpleButton();
@@ -108,6 +116,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.dtgValMonitoreo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.glue_Feno.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_IdMonitoreo.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cboHumbral.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView6)).BeginInit();
@@ -205,6 +215,7 @@
             this.btnSalir.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnSalir.ImageOptions.Image")));
             this.btnSalir.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnSalir.ImageOptions.LargeImage")));
             this.btnSalir.Name = "btnSalir";
+            this.btnSalir.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnSalir_ItemClick);
             // 
             // bEstado
             // 
@@ -232,15 +243,15 @@
             this.barDockControlTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.barDockControlTop.Location = new System.Drawing.Point(0, 0);
             this.barDockControlTop.Manager = this.barManager1;
-            this.barDockControlTop.Size = new System.Drawing.Size(768, 0);
+            this.barDockControlTop.Size = new System.Drawing.Size(816, 0);
             // 
             // barDockControlBottom
             // 
             this.barDockControlBottom.CausesValidation = false;
             this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.barDockControlBottom.Location = new System.Drawing.Point(0, 437);
+            this.barDockControlBottom.Location = new System.Drawing.Point(0, 544);
             this.barDockControlBottom.Manager = this.barManager1;
-            this.barDockControlBottom.Size = new System.Drawing.Size(768, 25);
+            this.barDockControlBottom.Size = new System.Drawing.Size(816, 25);
             // 
             // barDockControlLeft
             // 
@@ -248,15 +259,15 @@
             this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
             this.barDockControlLeft.Location = new System.Drawing.Point(0, 0);
             this.barDockControlLeft.Manager = this.barManager1;
-            this.barDockControlLeft.Size = new System.Drawing.Size(56, 437);
+            this.barDockControlLeft.Size = new System.Drawing.Size(56, 544);
             // 
             // barDockControlRight
             // 
             this.barDockControlRight.CausesValidation = false;
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
-            this.barDockControlRight.Location = new System.Drawing.Point(768, 0);
+            this.barDockControlRight.Location = new System.Drawing.Point(816, 0);
             this.barDockControlRight.Manager = this.barManager1;
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 437);
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 544);
             // 
             // btnSeleccionar
             // 
@@ -274,10 +285,10 @@
             // 
             this.panelControl2.Controls.Add(this.dtgMonitoreo);
             this.panelControl2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelControl2.Location = new System.Drawing.Point(56, 240);
+            this.panelControl2.Location = new System.Drawing.Point(56, 161);
             this.panelControl2.Name = "panelControl2";
             this.panelControl2.Padding = new System.Windows.Forms.Padding(10);
-            this.panelControl2.Size = new System.Drawing.Size(712, 197);
+            this.panelControl2.Size = new System.Drawing.Size(760, 383);
             this.panelControl2.TabIndex = 7;
             // 
             // dtgMonitoreo
@@ -286,7 +297,7 @@
             this.dtgMonitoreo.Location = new System.Drawing.Point(12, 12);
             this.dtgMonitoreo.MainView = this.dtgValMonitoreo;
             this.dtgMonitoreo.Name = "dtgMonitoreo";
-            this.dtgMonitoreo.Size = new System.Drawing.Size(688, 173);
+            this.dtgMonitoreo.Size = new System.Drawing.Size(736, 359);
             this.dtgMonitoreo.TabIndex = 0;
             this.dtgMonitoreo.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.dtgValMonitoreo});
@@ -307,13 +318,16 @@
             this.gridColumn9,
             this.gridColumn10,
             this.gridColumn11,
-            this.gridColumn12});
+            this.gridColumn12,
+            this.Id_Fenologico,
+            this.Nombre_Fenologico});
+            this.dtgValMonitoreo.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
             this.dtgValMonitoreo.GridControl = this.dtgMonitoreo;
             this.dtgValMonitoreo.Name = "dtgValMonitoreo";
+            this.dtgValMonitoreo.OptionsBehavior.Editable = false;
             this.dtgValMonitoreo.OptionsFind.AlwaysVisible = true;
-            this.dtgValMonitoreo.OptionsView.ShowGroupPanel = false;
-            this.dtgValMonitoreo.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
             this.dtgValMonitoreo.OptionsSelection.EnableAppearanceFocusedCell = false;
+            this.dtgValMonitoreo.OptionsView.ShowGroupPanel = false;
             // 
             // gridColumn13
             // 
@@ -405,10 +419,27 @@
             this.gridColumn12.FieldName = "Nombre_Humbral";
             this.gridColumn12.Name = "gridColumn12";
             this.gridColumn12.Visible = true;
-            this.gridColumn12.VisibleIndex = 6;
+            this.gridColumn12.VisibleIndex = 7;
+            // 
+            // Id_Fenologico
+            // 
+            this.Id_Fenologico.Caption = "Id_Fenologico";
+            this.Id_Fenologico.FieldName = "Id_Fenologico";
+            this.Id_Fenologico.Name = "Id_Fenologico";
+            // 
+            // Nombre_Fenologico
+            // 
+            this.Nombre_Fenologico.Caption = "Estado Fenologico";
+            this.Nombre_Fenologico.FieldName = "Nombre_Fenologico";
+            this.Nombre_Fenologico.Name = "Nombre_Fenologico";
+            this.Nombre_Fenologico.Visible = true;
+            this.Nombre_Fenologico.VisibleIndex = 6;
             // 
             // panelControl1
             // 
+            this.panelControl1.Controls.Add(this.simpleButton1);
+            this.panelControl1.Controls.Add(this.labelControl8);
+            this.panelControl1.Controls.Add(this.glue_Feno);
             this.panelControl1.Controls.Add(this.txt_IdMonitoreo);
             this.panelControl1.Controls.Add(this.labelControl7);
             this.panelControl1.Controls.Add(this.btnHumbral);
@@ -433,8 +464,61 @@
             this.panelControl1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelControl1.Location = new System.Drawing.Point(56, 0);
             this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Size = new System.Drawing.Size(712, 240);
+            this.panelControl1.Size = new System.Drawing.Size(760, 161);
             this.panelControl1.TabIndex = 6;
+            // 
+            // simpleButton1
+            // 
+            this.simpleButton1.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.ImageOptions.Image")));
+            this.simpleButton1.Location = new System.Drawing.Point(580, 98);
+            this.simpleButton1.Name = "simpleButton1";
+            this.simpleButton1.Size = new System.Drawing.Size(24, 23);
+            this.simpleButton1.TabIndex = 40;
+            // 
+            // labelControl8
+            // 
+            this.labelControl8.Location = new System.Drawing.Point(345, 103);
+            this.labelControl8.Name = "labelControl8";
+            this.labelControl8.Size = new System.Drawing.Size(77, 13);
+            this.labelControl8.TabIndex = 39;
+            this.labelControl8.Text = "Est. Fenologico:";
+            // 
+            // glue_Feno
+            // 
+            this.glue_Feno.Location = new System.Drawing.Point(428, 99);
+            this.glue_Feno.Name = "glue_Feno";
+            this.glue_Feno.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.glue_Feno.Properties.NullText = "-Seleccionar-";
+            this.glue_Feno.Properties.PopupView = this.gridView1;
+            this.glue_Feno.Size = new System.Drawing.Size(146, 20);
+            this.glue_Feno.TabIndex = 38;
+            // 
+            // gridView1
+            // 
+            this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.Id_Fenologico2,
+            this.Nombre_Fenologico2});
+            this.gridView1.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
+            this.gridView1.Name = "gridView1";
+            this.gridView1.OptionsSelection.EnableAppearanceFocusedCell = false;
+            this.gridView1.OptionsView.ShowGroupPanel = false;
+            // 
+            // Id_Fenologico2
+            // 
+            this.Id_Fenologico2.Caption = "Codigo";
+            this.Id_Fenologico2.FieldName = "Id_Fenologico";
+            this.Id_Fenologico2.Name = "Id_Fenologico2";
+            this.Id_Fenologico2.Visible = true;
+            this.Id_Fenologico2.VisibleIndex = 0;
+            // 
+            // Nombre_Fenologico2
+            // 
+            this.Nombre_Fenologico2.Caption = "Est. Fenologico";
+            this.Nombre_Fenologico2.FieldName = "Nombre_Fenologico";
+            this.Nombre_Fenologico2.Name = "Nombre_Fenologico2";
+            this.Nombre_Fenologico2.Visible = true;
+            this.Nombre_Fenologico2.VisibleIndex = 1;
             // 
             // txt_IdMonitoreo
             // 
@@ -456,7 +540,7 @@
             // btnHumbral
             // 
             this.btnHumbral.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnHumbral.ImageOptions.Image")));
-            this.btnHumbral.Location = new System.Drawing.Point(285, 205);
+            this.btnHumbral.Location = new System.Drawing.Point(580, 127);
             this.btnHumbral.Name = "btnHumbral";
             this.btnHumbral.Size = new System.Drawing.Size(24, 23);
             this.btnHumbral.TabIndex = 35;
@@ -465,7 +549,7 @@
             // btnIndividuo
             // 
             this.btnIndividuo.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnIndividuo.ImageOptions.Image")));
-            this.btnIndividuo.Location = new System.Drawing.Point(285, 179);
+            this.btnIndividuo.Location = new System.Drawing.Point(580, 67);
             this.btnIndividuo.Name = "btnIndividuo";
             this.btnIndividuo.Size = new System.Drawing.Size(24, 23);
             this.btnIndividuo.TabIndex = 34;
@@ -474,7 +558,7 @@
             // btnOrgano
             // 
             this.btnOrgano.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnOrgano.ImageOptions.Image")));
-            this.btnOrgano.Location = new System.Drawing.Point(285, 153);
+            this.btnOrgano.Location = new System.Drawing.Point(580, 41);
             this.btnOrgano.Name = "btnOrgano";
             this.btnOrgano.Size = new System.Drawing.Size(24, 23);
             this.btnOrgano.TabIndex = 33;
@@ -509,7 +593,7 @@
             // 
             // labelControl6
             // 
-            this.labelControl6.Location = new System.Drawing.Point(27, 210);
+            this.labelControl6.Location = new System.Drawing.Point(345, 132);
             this.labelControl6.Name = "labelControl6";
             this.labelControl6.Size = new System.Drawing.Size(43, 13);
             this.labelControl6.TabIndex = 12;
@@ -517,7 +601,7 @@
             // 
             // cboHumbral
             // 
-            this.cboHumbral.Location = new System.Drawing.Point(103, 206);
+            this.cboHumbral.Location = new System.Drawing.Point(398, 128);
             this.cboHumbral.Name = "cboHumbral";
             this.cboHumbral.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
@@ -554,7 +638,7 @@
             // 
             // labelControl5
             // 
-            this.labelControl5.Location = new System.Drawing.Point(27, 184);
+            this.labelControl5.Location = new System.Drawing.Point(345, 72);
             this.labelControl5.Name = "labelControl5";
             this.labelControl5.Size = new System.Drawing.Size(48, 13);
             this.labelControl5.TabIndex = 10;
@@ -562,7 +646,7 @@
             // 
             // cboIndoviduo
             // 
-            this.cboIndoviduo.Location = new System.Drawing.Point(103, 180);
+            this.cboIndoviduo.Location = new System.Drawing.Point(398, 68);
             this.cboIndoviduo.Name = "cboIndoviduo";
             this.cboIndoviduo.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
@@ -599,7 +683,7 @@
             // 
             // labelControl4
             // 
-            this.labelControl4.Location = new System.Drawing.Point(27, 158);
+            this.labelControl4.Location = new System.Drawing.Point(345, 46);
             this.labelControl4.Name = "labelControl4";
             this.labelControl4.Size = new System.Drawing.Size(40, 13);
             this.labelControl4.TabIndex = 8;
@@ -607,7 +691,7 @@
             // 
             // cboOrgano
             // 
-            this.cboOrgano.Location = new System.Drawing.Point(103, 154);
+            this.cboOrgano.Location = new System.Drawing.Point(398, 42);
             this.cboOrgano.Name = "cboOrgano";
             this.cboOrgano.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
@@ -800,7 +884,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(768, 462);
+            this.ClientSize = new System.Drawing.Size(816, 569);
             this.Controls.Add(this.panelControl2);
             this.Controls.Add(this.panelControl1);
             this.Controls.Add(this.barDockControlLeft);
@@ -819,6 +903,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
             this.panelControl1.ResumeLayout(false);
             this.panelControl1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.glue_Feno.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_IdMonitoreo.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cboHumbral.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView6)).EndInit();
@@ -910,5 +996,13 @@
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn15;
         private DevExpress.XtraEditors.TextEdit txt_IdMonitoreo;
         private DevExpress.XtraEditors.LabelControl labelControl7;
+        private DevExpress.XtraGrid.Columns.GridColumn Id_Fenologico;
+        private DevExpress.XtraGrid.Columns.GridColumn Nombre_Fenologico;
+        private DevExpress.XtraEditors.SimpleButton simpleButton1;
+        private DevExpress.XtraEditors.LabelControl labelControl8;
+        private DevExpress.XtraEditors.GridLookUpEdit glue_Feno;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
+        private DevExpress.XtraGrid.Columns.GridColumn Id_Fenologico2;
+        private DevExpress.XtraGrid.Columns.GridColumn Nombre_Fenologico2;
     }
 }

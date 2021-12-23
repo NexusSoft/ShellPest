@@ -24,6 +24,8 @@ namespace CapaDeDatos
         public decimal? n_CoordenadaY { get;  set; }
         public decimal? n_DistanciaPuntoControl { get; set; }
         public string c_codigo_eps { get; set; }
+        public string Id_Fenologico { get; set; }
+        public int Cant_Individuos { get; set; }
 
         public void MtdSeleccionarMonitoreo()
         {
@@ -107,6 +109,8 @@ namespace CapaDeDatos
                 _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Id_Humbral");
                 _dato.CadenaTexto = Id_Usuario;
                 _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Id_Usuario");
+                _dato.CadenaTexto = Id_Fenologico;
+                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Id_Fenologico");
                 _conexion.EjecutarDataset();
 
                 if (_conexion.Exito)
@@ -328,6 +332,10 @@ namespace CapaDeDatos
                 _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Id_Individuo");
                 _dato.CadenaTexto = Id_Humbral;
                 _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Id_Humbral");
+                _dato.Entero = Cant_Individuos;
+                _conexion.agregarParametro(EnumTipoDato.Entero, _dato, "Cant_Individuos");
+                _dato.CadenaTexto = Id_Fenologico;
+                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Id_Fenologico");
                 _conexion.EjecutarDataset();
 
                 if (_conexion.Exito)
