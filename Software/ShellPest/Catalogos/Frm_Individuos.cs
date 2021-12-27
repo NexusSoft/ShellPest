@@ -42,7 +42,9 @@ namespace ShellPest
             CLS_Individuo Clase = new CLS_Individuo();
 
             Clase.Id_Individuo = textId.Text.Trim();
-            Clase.No_Individuo = textNombre.Text.Trim();
+            Clase.No_Individuo = "";
+            Clase.No_Inicial= Convert.ToInt32(textNombre.Text);
+            Clase.No_Final = Convert.ToInt32( text_IndMax.Text);
             Clase.Id_Usuario = Id_Usuario;
             Clase.MtdInsertarIndividuo();
 
@@ -89,7 +91,8 @@ namespace ShellPest
                 {
                     DataRow row = this.gridView1.GetDataRow(i);
                     textId.Text = row["Id_Individuo"].ToString();
-                    textNombre.Text = row["No_Individuo"].ToString();
+                    textNombre.Text = row["No_Inicial"].ToString();
+                    text_IndMax.Text = row["No_Final"].ToString();
                 }
             }
             catch (Exception ex)
@@ -109,6 +112,8 @@ namespace ShellPest
                 btnSeleccionar.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
             }
             CargarIndividuo();
+            textNombre.Text = "0";
+            text_IndMax.Text = "0";
         }
 
         private void btnGuardar_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -151,5 +156,7 @@ namespace ShellPest
             Individuo = textNombre.Text.Trim();
             this.Close();
         }
+
+       
     }
 }

@@ -12,6 +12,8 @@ namespace CapaDeDatos
         public string Id_Individuo { get; set; }
         public string No_Individuo { get; set; }
         public string Id_Usuario { get; set; }
+        public int No_Inicial { get; set; }
+        public int No_Final { get; set; }
 
         public void MtdSeleccionarIndividuo()
         {
@@ -58,6 +60,10 @@ namespace CapaDeDatos
                 _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Id_Individuo");
                 _dato.CadenaTexto = No_Individuo;
                 _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "No_Individuo");
+                _dato.Entero = No_Inicial;
+                _conexion.agregarParametro(EnumTipoDato.Entero, _dato, "No_Inicial");
+                _dato.Entero = No_Final;
+                _conexion.agregarParametro(EnumTipoDato.Entero, _dato, "No_Final");
                 _dato.CadenaTexto = Id_Usuario;
                 _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Id_Usuario");
                 _conexion.EjecutarDataset();

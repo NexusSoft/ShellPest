@@ -51,12 +51,16 @@
             this.Nombre_Individuo = new DevExpress.XtraGrid.Columns.GridColumn();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
+            this.text_IndMax = new DevExpress.XtraEditors.TextEdit();
+            this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.textNombre = new DevExpress.XtraEditors.TextEdit();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.textId = new DevExpress.XtraEditors.TextEdit();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.Id_Cultivo = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.No_Inicial = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.No_Final = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).BeginInit();
@@ -67,6 +71,7 @@
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.text_IndMax.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textNombre.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textId.Properties)).BeginInit();
             this.SuspendLayout();
@@ -247,13 +252,15 @@
             // 
             this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.Id_Individuo,
-            this.Nombre_Individuo});
+            this.Nombre_Individuo,
+            this.No_Inicial,
+            this.No_Final});
+            this.gridView1.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
             this.gridView1.GridControl = this.gridControl1;
             this.gridView1.Name = "gridView1";
             this.gridView1.OptionsFind.AlwaysVisible = true;
-            this.gridView1.OptionsView.ShowGroupPanel = false;
-            this.gridView1.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
             this.gridView1.OptionsSelection.EnableAppearanceFocusedCell = false;
+            this.gridView1.OptionsView.ShowGroupPanel = false;
             // 
             // Id_Individuo
             // 
@@ -285,6 +292,8 @@
             // 
             // groupControl1
             // 
+            this.groupControl1.Controls.Add(this.text_IndMax);
+            this.groupControl1.Controls.Add(this.labelControl3);
             this.groupControl1.Controls.Add(this.textNombre);
             this.groupControl1.Controls.Add(this.labelControl2);
             this.groupControl1.Controls.Add(this.textId);
@@ -296,21 +305,41 @@
             this.groupControl1.TabIndex = 0;
             this.groupControl1.Text = "Datos Individuo";
             // 
+            // text_IndMax
+            // 
+            this.text_IndMax.Location = new System.Drawing.Point(310, 55);
+            this.text_IndMax.MenuManager = this.barManager1;
+            this.text_IndMax.Name = "text_IndMax";
+            this.text_IndMax.Properties.Mask.EditMask = "n0";
+            this.text_IndMax.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
+            this.text_IndMax.Size = new System.Drawing.Size(94, 20);
+            this.text_IndMax.TabIndex = 5;
+            // 
+            // labelControl3
+            // 
+            this.labelControl3.Location = new System.Drawing.Point(217, 59);
+            this.labelControl3.Name = "labelControl3";
+            this.labelControl3.Size = new System.Drawing.Size(88, 13);
+            this.labelControl3.TabIndex = 4;
+            this.labelControl3.Text = "N° Individuo Final:";
+            // 
             // textNombre
             // 
-            this.textNombre.Location = new System.Drawing.Point(82, 54);
+            this.textNombre.Location = new System.Drawing.Point(115, 55);
             this.textNombre.MenuManager = this.barManager1;
             this.textNombre.Name = "textNombre";
-            this.textNombre.Size = new System.Drawing.Size(231, 20);
+            this.textNombre.Properties.Mask.EditMask = "n0";
+            this.textNombre.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
+            this.textNombre.Size = new System.Drawing.Size(94, 20);
             this.textNombre.TabIndex = 3;
             // 
             // labelControl2
             // 
             this.labelControl2.Location = new System.Drawing.Point(19, 59);
             this.labelControl2.Name = "labelControl2";
-            this.labelControl2.Size = new System.Drawing.Size(48, 13);
+            this.labelControl2.Size = new System.Drawing.Size(93, 13);
             this.labelControl2.TabIndex = 2;
-            this.labelControl2.Text = "Individuo:";
+            this.labelControl2.Text = "N° Individuo Inicial:";
             // 
             // textId
             // 
@@ -347,6 +376,22 @@
             this.gridColumn1.Visible = true;
             this.gridColumn1.VisibleIndex = 0;
             // 
+            // No_Inicial
+            // 
+            this.No_Inicial.Caption = "N° Individuos Min.";
+            this.No_Inicial.FieldName = "No_Inicial";
+            this.No_Inicial.Name = "No_Inicial";
+            this.No_Inicial.Visible = true;
+            this.No_Inicial.VisibleIndex = 1;
+            // 
+            // No_Final
+            // 
+            this.No_Final.Caption = "N° Individuos Max";
+            this.No_Final.FieldName = "No_Final";
+            this.No_Final.Name = "No_Final";
+            this.No_Final.Visible = true;
+            this.No_Final.VisibleIndex = 2;
+            // 
             // Frm_Individuos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -376,6 +421,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
             this.groupControl1.ResumeLayout(false);
             this.groupControl1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.text_IndMax.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textNombre.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textId.Properties)).EndInit();
             this.ResumeLayout(false);
@@ -412,5 +458,9 @@
         private DevExpress.XtraBars.BarLargeButtonItem btnSeleccionar;
         private DevExpress.XtraGrid.Columns.GridColumn Id_Cultivo;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn1;
+        private DevExpress.XtraEditors.TextEdit text_IndMax;
+        private DevExpress.XtraEditors.LabelControl labelControl3;
+        private DevExpress.XtraGrid.Columns.GridColumn No_Inicial;
+        private DevExpress.XtraGrid.Columns.GridColumn No_Final;
     }
 }
