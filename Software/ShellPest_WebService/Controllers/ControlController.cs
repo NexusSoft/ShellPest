@@ -98,7 +98,7 @@ namespace ShellPest_WebService
         }
         [HttpGet]
         public ActionResult MonitoreoPEEncabezado(string Fecha, string Hora, string Id_Huerta, 
-                                string Id_PuntoControl,string Id_Usuario, string n_CoordenadaX, string n_CoordenadaY)
+                                string Id_PuntoControl,string Id_Usuario, string n_CoordenadaX, string n_CoordenadaY,string c_codigo_eps)
         {
             string cadena = string.Empty;
             CLS_Monitoreo sel = new CLS_Monitoreo();
@@ -109,7 +109,7 @@ namespace ShellPest_WebService
             sel.n_CoordenadaX = decimal.Parse(n_CoordenadaX);
             sel.n_CoordenadaY = decimal.Parse(n_CoordenadaY);
             sel.Id_Usuario = Id_Usuario;
-
+            sel.c_codigo_eps = c_codigo_eps;
             sel.MtdInsertarMonitoreoPEEncabezado();
             DataTable dt = new DataTable();
             dt.Clear();
@@ -132,7 +132,7 @@ namespace ShellPest_WebService
         }
         [HttpGet]
         public ActionResult MonitoreoPEDetalle(string Fecha, string Hora, string Id_PuntoControl, string Id_Plagas, string Id_Enfermedad,
-                                string Id_Deteccion, string Id_Individuo, string Id_Humbral,string Cant_Individuos,string Id_Fenologico)
+                                string Id_Deteccion, string Id_Individuo, string Id_Humbral,string Cant_Individuos,string Id_Fenologico,string c_codigo_eps)
         {
             string cadena = string.Empty;
             if (string.IsNullOrWhiteSpace(Id_Plagas))
@@ -154,7 +154,7 @@ namespace ShellPest_WebService
             sel.Id_Humbral = Id_Humbral;
             sel.Cant_Individuos =Convert.ToInt32( Cant_Individuos);
             sel.Id_Fenologico = Id_Fenologico;
-
+            sel.c_codigo_eps = c_codigo_eps;
             sel.MtdInsertarMonitoreoPEDetalle();
             DataTable dt = new DataTable();
             dt.Clear();
@@ -177,7 +177,7 @@ namespace ShellPest_WebService
         }
         [HttpGet]
         public ActionResult MonitoreoPEEncabezadoEliminado(string Fecha, string Hora, string Id_Huerta,
-                                string Id_PuntoControl, string Id_Usuario, string n_CoordenadaX, string n_CoordenadaY)
+                                string Id_PuntoControl, string Id_Usuario, string n_CoordenadaX, string n_CoordenadaY,string c_codigo_eps)
         {
             string cadena = string.Empty;
             CLS_Monitoreo sel = new CLS_Monitoreo();
@@ -188,7 +188,7 @@ namespace ShellPest_WebService
             sel.n_CoordenadaX = decimal.Parse(n_CoordenadaX);
             sel.n_CoordenadaY = decimal.Parse(n_CoordenadaY);
             sel.Id_Usuario = Id_Usuario;
-
+            sel.c_codigo_eps = c_codigo_eps;
             sel.MtdInsertarMonitoreoPEEncabezadoEliminado();
             DataTable dt = new DataTable();
             dt.Clear();
@@ -211,7 +211,7 @@ namespace ShellPest_WebService
         }
         [HttpGet]
         public ActionResult MonitoreoPEDetalleEliminado(string Fecha, string Hora, string Id_PuntoControl, string Id_Plagas, string Id_Enfermedad,
-                                string Id_Deteccion, string Id_Individuo, string Id_Humbral, string Cant_Individuos, string Id_Fenologico)
+                                string Id_Deteccion, string Id_Individuo, string Id_Humbral, string Cant_Individuos, string Id_Fenologico,string c_codigo_eps)
         {
             string cadena = string.Empty;
             if (string.IsNullOrWhiteSpace(Id_Plagas))
@@ -233,6 +233,7 @@ namespace ShellPest_WebService
             sel.Id_Humbral = Id_Humbral;
             sel.Cant_Individuos = Convert.ToInt32(Cant_Individuos);
             sel.Id_Fenologico = Id_Fenologico;
+            sel.c_codigo_eps = c_codigo_eps;
             sel.MtdInsertarMonitoreoPEDetalleEliminado();
             DataTable dt = new DataTable();
             dt.Clear();

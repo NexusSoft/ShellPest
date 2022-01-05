@@ -86,7 +86,7 @@
             this.cboIndoviduo = new DevExpress.XtraEditors.GridLookUpEdit();
             this.gridView5 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.gridColumn22 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn23 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Mostrar = new DevExpress.XtraGrid.Columns.GridColumn();
             this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
             this.cboOrgano = new DevExpress.XtraEditors.GridLookUpEdit();
             this.gridView4 = new DevExpress.XtraGrid.Views.Grid.GridView();
@@ -659,7 +659,7 @@
             // 
             this.gridView5.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.gridColumn22,
-            this.gridColumn23});
+            this.Mostrar});
             this.gridView5.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
             this.gridView5.Name = "gridView5";
             this.gridView5.OptionsSelection.EnableAppearanceFocusedCell = false;
@@ -673,13 +673,13 @@
             this.gridColumn22.Visible = true;
             this.gridColumn22.VisibleIndex = 0;
             // 
-            // gridColumn23
+            // Mostrar
             // 
-            this.gridColumn23.Caption = "Individuo";
-            this.gridColumn23.FieldName = "No_Individuo";
-            this.gridColumn23.Name = "gridColumn23";
-            this.gridColumn23.Visible = true;
-            this.gridColumn23.VisibleIndex = 1;
+            this.Mostrar.Caption = "Mostrar";
+            this.Mostrar.FieldName = "Mostrar";
+            this.Mostrar.Name = "Mostrar";
+            this.Mostrar.Visible = true;
+            this.Mostrar.VisibleIndex = 1;
             // 
             // labelControl4
             // 
@@ -985,7 +985,7 @@
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn24;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn25;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn22;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn23;
+        private DevExpress.XtraGrid.Columns.GridColumn Mostrar;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn20;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn21;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn18;

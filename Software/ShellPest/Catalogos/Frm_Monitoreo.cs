@@ -102,7 +102,7 @@ namespace ShellPest
             Clase.MtdSeleccionarIndividuo();
             if (Clase.Exito)
             {
-                cboIndoviduo.Properties.DisplayMember = "No_Individuo";
+                cboIndoviduo.Properties.DisplayMember = "Mostrar";
                 cboIndoviduo.Properties.ValueMember = "Id_Individuo";
                 cboIndoviduo.EditValue = Valor;
                 cboIndoviduo.Properties.DataSource = Clase.Datos;
@@ -367,5 +367,7 @@ namespace ShellPest
         {
             this.Close();
         }
+
+        
     }
 }
