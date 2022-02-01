@@ -75,6 +75,7 @@
             this.ribbonPage2 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.xtraTabbedMdiManager1 = new DevExpress.XtraTabbedMdi.XtraTabbedMdiManager(this.components);
             this.SkinForm = new DevExpress.LookAndFeel.DefaultLookAndFeel(this.components);
+            this.btn_EstFenologico = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabbedMdiManager1)).BeginInit();
             this.SuspendLayout();
@@ -111,9 +112,10 @@
             this.btnAlmacen_Huerta,
             this.btn_ImpInv,
             this.btn_Salidas,
-            this.btn_rpt_invXfecha});
+            this.btn_rpt_invXfecha,
+            this.btn_EstFenologico});
             this.ribbonControl1.Location = new System.Drawing.Point(0, 0);
-            this.ribbonControl1.MaxItemId = 30;
+            this.ribbonControl1.MaxItemId = 31;
             this.ribbonControl1.Name = "ribbonControl1";
             this.ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage1,
@@ -402,6 +404,7 @@
             this.ribbonPageGroup1.ItemLinks.Add(this.btnEnfermedad);
             this.ribbonPageGroup1.ItemLinks.Add(this.btnIndividuos);
             this.ribbonPageGroup1.ItemLinks.Add(this.btnMonitoreo);
+            this.ribbonPageGroup1.ItemLinks.Add(this.btn_EstFenologico);
             this.ribbonPageGroup1.Name = "ribbonPageGroup1";
             this.ribbonPageGroup1.ShowCaptionButton = false;
             this.ribbonPageGroup1.Text = "Catalogos de Deteccion";
@@ -499,6 +502,15 @@
             this.SkinForm.EnableBonusSkins = true;
             this.SkinForm.LookAndFeel.SkinName = "Office 2010 Silver";
             // 
+            // btn_EstFenologico
+            // 
+            this.btn_EstFenologico.Caption = "Est. Fenologico";
+            this.btn_EstFenologico.Id = 30;
+            this.btn_EstFenologico.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_EstFenologico.ImageOptions.Image")));
+            this.btn_EstFenologico.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btn_EstFenologico.ImageOptions.LargeImage")));
+            this.btn_EstFenologico.Name = "btn_EstFenologico";
+            this.btn_EstFenologico.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_EstFenologico_ItemClick);
+            // 
             // Frm_Principal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -568,6 +580,7 @@
         private DevExpress.XtraBars.BarButtonItem btn_Salidas;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup8;
         private DevExpress.XtraBars.BarButtonItem btn_rpt_invXfecha;
+        private DevExpress.XtraBars.BarButtonItem btn_EstFenologico;
     }
 }
 

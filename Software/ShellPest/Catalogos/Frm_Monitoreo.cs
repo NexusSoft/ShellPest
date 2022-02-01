@@ -124,6 +124,15 @@ namespace ShellPest
         private void CargarFenologico(string Valor)
         {
             CLS_Estado_Fenologico Clase = new CLS_Estado_Fenologico();
+            if(optTipo.SelectedIndex == 0)
+            {
+                Clase.PoE = "P";
+            }
+            else
+            {
+                Clase.PoE = "E";
+            }
+           
             Clase.MtdSeleccionarFenologico();
             if (Clase.Exito)
             {
@@ -166,6 +175,7 @@ namespace ShellPest
                 CargarEnfermedad(null);
                 cboPlaga.Enabled = true;
                 cboEnfermedad.Enabled = false;
+                
             }
             else
             {
@@ -174,6 +184,7 @@ namespace ShellPest
                 cboPlaga.Enabled = false;
                 cboEnfermedad.Enabled = true;
             }
+            CargarFenologico(null);
         }
 
         private void btnzona_Click(object sender, EventArgs e)
@@ -366,6 +377,14 @@ namespace ShellPest
         private void btnSalir_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             this.Close();
+        }
+
+        private void btn_EstFen_Click(object sender, EventArgs e)
+        {
+            Frm_EstFenologico V = new Frm_EstFenologico();
+            V.PaSel = true;
+            V.ShowDialog();
+            CargarFenologico(null);
         }
 
         

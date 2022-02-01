@@ -420,5 +420,12 @@ namespace ShellPest
 
            
         }
+
+        private void btn_EstFenologico_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            Frm_EstFenologico V = new Frm_EstFenologico();
+            V.PaSel = false;
+            V.ShowDialog();
+        }
     }
 }

@@ -20,7 +20,7 @@ namespace ShellPest
         //GridCheckMarksSelection gridCheckMarksHuerta;
         //StringBuilder sb = new StringBuilder();
         string CadenaHuerta = string.Empty, vCodigoEmpresa;
-        int TotalRegHuerta = 0;
+        //int TotalRegHuerta = 0;
         string CadenaEspHuerta = string.Empty;
 
         public string UsuariosLogin { get; set; }

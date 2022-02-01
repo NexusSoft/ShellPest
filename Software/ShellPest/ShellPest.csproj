@@ -136,6 +136,12 @@
     <Compile Include="Catalogos\Frm_Ciudad.designer.cs">
       <DependentUpon>Frm_Ciudad.cs</DependentUpon>
     </Compile>
+    <Compile Include="Catalogos\Frm_EstFenologico.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Catalogos\Frm_EstFenologico.Designer.cs">
+      <DependentUpon>Frm_EstFenologico.cs</DependentUpon>
+    </Compile>
     <Compile Include="Catalogos\Frm_IngredienteActivo.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -379,6 +385,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Catalogos\Frm_Ciudad.resx">
       <DependentUpon>Frm_Ciudad.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Catalogos\Frm_EstFenologico.resx">
+      <DependentUpon>Frm_EstFenologico.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Catalogos\Frm_IngredienteActivo.resx">
       <DependentUpon>Frm_IngredienteActivo.cs</DependentUpon>

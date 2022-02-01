@@ -31,7 +31,7 @@ BEGIN
 	begin try
 
 		declare @maximo int
-		select @maximo= right(Concat('00',isnull(max(Id_Bloque),0)+1),2) from dbo.t_Est_Fenologico
+		select @maximo= right(Concat('00',isnull(max(Id_Fenologico),0)+1),2) from dbo.t_Est_Fenologico
 
 		declare @Existe int
 		select @Existe = count(Id_Fenologico) from dbo.t_Est_Fenologico a where (a.Id_Fenologico=@Id_Fenologico)
@@ -39,27 +39,21 @@ BEGIN
 		if @Existe>0 
 		
 			UPDATE dbo.t_Est_Fenologico
-		        SET Nombre_Bloque=@Nombre_Bloque,
-		        Id_Huerta=@Id_Huerta,
-		        Id_Usuario_Mod=@Id_Usuario,
-		        F_Usuario_Mod=getdate()
+		        SET Nombre_Fenologico=@Nombre_Fenologico,
+		        PoE=@PoE
 		    WHERE
-		    	Id_Bloque=@Id_Bloque
+		    	Id_Fenologico=@Id_Fenologico
 				
 		else
 		
 			INSERT INTO dbo.t_Est_Fenologico
-	           (Id_Bloque
-	           ,Nombre_Bloque
-	           ,Id_Huerta
-	           ,Id_Usuario_Crea
-	           ,F_Usuario_Crea)
+	           (Id_Fenologico
+	           ,Nombre_Fenologico
+	           ,PoE)
 	     	VALUES
 	           (@maximo
-	           ,@Nombre_Bloque
-	           ,@Id_Huerta
-	           ,@Id_Usuario
-	           ,getdate())
+	           ,@Nombre_Fenologico
+	           ,@PoE)
 		
 		commit transaction T1;
 		set @correcto=1

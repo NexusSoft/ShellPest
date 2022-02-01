@@ -63,7 +63,7 @@
             this.Id_Fenologico = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Nombre_Fenologico = new DevExpress.XtraGrid.Columns.GridColumn();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
-            this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
+            this.btn_EstFen = new DevExpress.XtraEditors.SimpleButton();
             this.labelControl8 = new DevExpress.XtraEditors.LabelControl();
             this.glue_Feno = new DevExpress.XtraEditors.GridLookUpEdit();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
@@ -249,9 +249,9 @@
             // 
             this.barDockControlBottom.CausesValidation = false;
             this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.barDockControlBottom.Location = new System.Drawing.Point(0, 544);
+            this.barDockControlBottom.Location = new System.Drawing.Point(0, 540);
             this.barDockControlBottom.Manager = this.barManager1;
-            this.barDockControlBottom.Size = new System.Drawing.Size(816, 25);
+            this.barDockControlBottom.Size = new System.Drawing.Size(816, 29);
             // 
             // barDockControlLeft
             // 
@@ -259,7 +259,7 @@
             this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
             this.barDockControlLeft.Location = new System.Drawing.Point(0, 0);
             this.barDockControlLeft.Manager = this.barManager1;
-            this.barDockControlLeft.Size = new System.Drawing.Size(56, 544);
+            this.barDockControlLeft.Size = new System.Drawing.Size(56, 540);
             // 
             // barDockControlRight
             // 
@@ -267,7 +267,7 @@
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
             this.barDockControlRight.Location = new System.Drawing.Point(816, 0);
             this.barDockControlRight.Manager = this.barManager1;
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 544);
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 540);
             // 
             // btnSeleccionar
             // 
@@ -288,7 +288,7 @@
             this.panelControl2.Location = new System.Drawing.Point(56, 161);
             this.panelControl2.Name = "panelControl2";
             this.panelControl2.Padding = new System.Windows.Forms.Padding(10);
-            this.panelControl2.Size = new System.Drawing.Size(760, 383);
+            this.panelControl2.Size = new System.Drawing.Size(760, 379);
             this.panelControl2.TabIndex = 7;
             // 
             // dtgMonitoreo
@@ -297,7 +297,7 @@
             this.dtgMonitoreo.Location = new System.Drawing.Point(12, 12);
             this.dtgMonitoreo.MainView = this.dtgValMonitoreo;
             this.dtgMonitoreo.Name = "dtgMonitoreo";
-            this.dtgMonitoreo.Size = new System.Drawing.Size(736, 359);
+            this.dtgMonitoreo.Size = new System.Drawing.Size(736, 355);
             this.dtgMonitoreo.TabIndex = 0;
             this.dtgMonitoreo.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.dtgValMonitoreo});
@@ -437,7 +437,7 @@
             // 
             // panelControl1
             // 
-            this.panelControl1.Controls.Add(this.simpleButton1);
+            this.panelControl1.Controls.Add(this.btn_EstFen);
             this.panelControl1.Controls.Add(this.labelControl8);
             this.panelControl1.Controls.Add(this.glue_Feno);
             this.panelControl1.Controls.Add(this.txt_IdMonitoreo);
@@ -467,13 +467,14 @@
             this.panelControl1.Size = new System.Drawing.Size(760, 161);
             this.panelControl1.TabIndex = 6;
             // 
-            // simpleButton1
+            // btn_EstFen
             // 
-            this.simpleButton1.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.ImageOptions.Image")));
-            this.simpleButton1.Location = new System.Drawing.Point(580, 98);
-            this.simpleButton1.Name = "simpleButton1";
-            this.simpleButton1.Size = new System.Drawing.Size(24, 23);
-            this.simpleButton1.TabIndex = 40;
+            this.btn_EstFen.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_EstFen.ImageOptions.Image")));
+            this.btn_EstFen.Location = new System.Drawing.Point(580, 98);
+            this.btn_EstFen.Name = "btn_EstFen";
+            this.btn_EstFen.Size = new System.Drawing.Size(24, 23);
+            this.btn_EstFen.TabIndex = 40;
+            this.btn_EstFen.Click += new System.EventHandler(this.btn_EstFen_Click);
             // 
             // labelControl8
             // 
@@ -893,6 +894,7 @@
             this.Controls.Add(this.barDockControlTop);
             this.Name = "Frm_Monitoreo";
             this.Text = "Monitoreo";
+           
             this.Shown += new System.EventHandler(this.Frm_Monitoreo_Shown);
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit1)).EndInit();
@@ -998,7 +1000,7 @@
         private DevExpress.XtraEditors.LabelControl labelControl7;
         private DevExpress.XtraGrid.Columns.GridColumn Id_Fenologico;
         private DevExpress.XtraGrid.Columns.GridColumn Nombre_Fenologico;
-        private DevExpress.XtraEditors.SimpleButton simpleButton1;
+        private DevExpress.XtraEditors.SimpleButton btn_EstFen;
         private DevExpress.XtraEditors.LabelControl labelControl8;
         private DevExpress.XtraEditors.GridLookUpEdit glue_Feno;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
