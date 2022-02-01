@@ -22,7 +22,7 @@ namespace CapaDeDatos
             Exito = true;
             try
             {
-                _conexion.NombreProcedimiento = "SP_Fenologico_Select";
+                _conexion.NombreProcedimiento = "SP_Fenologicos_Form_Select";
                 _dato.CadenaTexto = PoE;
                 _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "PoE");
                 _conexion.EjecutarDataset();

@@ -15,15 +15,15 @@ SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
-IF  EXISTS (SELECT * FROM SYS.OBJECTS WHERE TYPE = 'P' AND NAME = 'SP_WS_Catalogo_Fenologico_Select')
-DROP PROCEDURE SP_WS_Catalogo_Fenologico_Select
+IF  EXISTS (SELECT * FROM SYS.OBJECTS WHERE TYPE = 'P' AND NAME = 'SP_Fenologicos_Form_Select')
+DROP PROCEDURE SP_Fenologicos_Form_Select
 GO
 -- =============================================
 -- Author:		<Author,,Name>
 -- Create date: <Create Date,,>
 -- Description:	<Description,,>
 -- =============================================
-CREATE PROCEDURE SP_WS_Catalogo_Fenologico_Select
+CREATE PROCEDURE SP_Fenologicos_Form_Select
 	-- Add the parameters for the stored procedure here
 	@PoE char(1)
 AS
