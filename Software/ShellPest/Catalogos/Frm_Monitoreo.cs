@@ -1,12 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
+
 using System.Data;
-using System.Drawing;
-using System.Text;
-using System.Linq;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+
 using CapaDeDatos;
 using DevExpress.XtraEditors;
 
@@ -382,7 +377,7 @@ namespace ShellPest
         private void btn_EstFen_Click(object sender, EventArgs e)
         {
             Frm_EstFenologico V = new Frm_EstFenologico();
-            V.PaSel = true;
+            V.PaSel = false;
             V.ShowDialog();
             CargarFenologico(null);
         }
