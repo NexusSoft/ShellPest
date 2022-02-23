@@ -97,6 +97,7 @@
     <Compile Include="WebService\WS_Catalogos_Presentasiones.cs" />
     <Compile Include="WebService\WS_Catalogos_Productos.cs" />
     <Compile Include="WebService\WS_Catalogos_Receta.cs" />
+    <Compile Include="WebService\WS_Catalogos_RecetaHuerta.cs" />
     <Compile Include="WebService\WS_Catalogos_TipoAplicaciones.cs" />
     <Compile Include="WebService\WS_Catalogos_Unidades.cs" />
     <Compile Include="WebService\WS_Catalogos_Zona.cs" />

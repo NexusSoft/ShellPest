@@ -243,13 +243,16 @@ namespace ShellPest
                                 Crypto desencryp2 = new Crypto();
                                 DataRow row2 = this.gridView3.GetDataRow(j);
                                 CargarGridHuertas(row["Id_Usuario"].ToString(), row2["c_codigo_eps"].ToString());
-                                CargarHuerta(row["Id_Usuario"].ToString(), row2["c_codigo_eps"].ToString());
+                                CargarHuerta(row["Id_Usuario"].ToString().Trim(), row2["c_codigo_eps"].ToString().Trim());
+                                vCodigoEmpresa = row2["c_codigo_eps"].ToString();
                             }
 
                         }
-
-                        
-                        
+                        else
+                        {
+                            dtgHuertas.DataSource = null;
+                            cmbHuerta.Properties.DataSource = null;
+                        }
 
                         BloquearSecHuertas(true);
                     }

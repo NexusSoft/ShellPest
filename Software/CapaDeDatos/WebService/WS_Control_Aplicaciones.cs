@@ -16,6 +16,7 @@ namespace CapaDeDatos
         public string Id_Usuario { get; set; }
         public string F_Creacion { get; set; }
         public string c_codigo_eps { get; set; }
+        public string Centro_Costos { get; set; }
 
         public string Fecha { get; set; }
         public string c_codigo_pro { get; set; }
@@ -52,6 +53,10 @@ namespace CapaDeDatos
                 _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Anio");
                 _dato.CadenaTexto = c_codigo_eps;
                 _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "c_codigo_eps");
+                _dato.CadenaTexto = Centro_Costos;
+                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Centro_Costos");
+                _dato.DecimalValor = Unidades_aplicadas;
+                _conexion.agregarParametro(EnumTipoDato.Tipodecimal, _dato, "Unidades_aplicadas");
                 _conexion.EjecutarDataset();
 
                 if (_conexion.Exito)
@@ -88,8 +93,6 @@ namespace CapaDeDatos
                 _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "c_codigo_pro");
                 _dato.DecimalValor = Dosis;
                 _conexion.agregarParametro(EnumTipoDato.Tipodecimal, _dato, "Dosis");
-                _dato.DecimalValor = Unidades_aplicadas;
-                _conexion.agregarParametro(EnumTipoDato.Tipodecimal, _dato, "Unidades_aplicadas");
                 _dato.CadenaTexto = Id_Usuario;
                 _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Id_Usuario");
                 _dato.CadenaTexto = F_Creacion;

@@ -336,7 +336,7 @@ namespace ShellPest_WebService
 
         [HttpGet]
         public ActionResult Aplicaciones(string Id_Aplicacion, string Id_Huerta, string Observaciones,
-                               string Id_TipoAplicacion, string Id_Presentacion, string Id_Usuario, string F_Creacion,string Anio,string c_codigo_eps)
+                               string Id_TipoAplicacion, string Id_Presentacion, string Id_Usuario, string F_Creacion,string Anio,string c_codigo_eps,string CC, string Unidades_aplicadas)
         {
             string cadena = string.Empty;
             WS_Control_Aplicaciones CLS = new WS_Control_Aplicaciones();
@@ -349,6 +349,8 @@ namespace ShellPest_WebService
             CLS.F_Creacion = F_Creacion;
             CLS.Fecha = Anio.Substring(2);
             CLS.c_codigo_eps = c_codigo_eps;
+            CLS.Centro_Costos = CC;
+            CLS.Unidades_aplicadas = decimal.Parse(Unidades_aplicadas);
             CLS.MtdInsertarAplicacion();
             DataTable dt = new DataTable();
             dt.Clear();
@@ -372,7 +374,7 @@ namespace ShellPest_WebService
 
         [HttpGet]
         public ActionResult Aplicaciones_Det(string Id_Aplicacion, string Fecha, string c_codigo_pro,
-                               string Dosis, string Unidades_aplicadas, string Id_Usuario, string F_Creacion,string c_codigo_eps)
+                               string Dosis, string Id_Usuario, string F_Creacion,string c_codigo_eps)
         {
             string cadena = string.Empty;
             WS_Control_Aplicaciones CLS = new WS_Control_Aplicaciones();
@@ -380,7 +382,7 @@ namespace ShellPest_WebService
             CLS.Fecha = Fecha;
             CLS.c_codigo_pro = c_codigo_pro;
             CLS.Dosis = decimal.Parse(Dosis);
-            CLS.Unidades_aplicadas = decimal.Parse(Unidades_aplicadas);
+            
 
             CLS.Id_Usuario = Id_Usuario;
             CLS.F_Creacion = F_Creacion;

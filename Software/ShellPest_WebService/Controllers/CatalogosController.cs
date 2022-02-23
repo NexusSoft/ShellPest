@@ -504,7 +504,25 @@ namespace ShellPest_WebService
             string cadena = string.Empty;
             CLS_Estado_Fenologico sel = new CLS_Estado_Fenologico();
            
-            sel.MtdSeleccionarFenologico();
+            sel.MtdSeleccionarFenologicoSP();
+            if (sel.Exito)
+            {
+                GetJson(sel.Datos);
+                return Json(rows, JsonRequestBehavior.AllowGet);
+            }
+            else
+            {
+                return Json(cadena, JsonRequestBehavior.AllowGet);
+            }
+        }
+
+        [System.Web.Mvc.HttpGet]
+        public ActionResult RH()
+        {
+            string cadena = string.Empty;
+            WS_Catalogos_RecetaHuerta sel = new WS_Catalogos_RecetaHuerta();
+
+            sel.MtdSeleccionarRecetaHuerta();
             if (sel.Exito)
             {
                 GetJson(sel.Datos);

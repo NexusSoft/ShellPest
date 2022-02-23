@@ -15,6 +15,7 @@ namespace ShellPest
         public string Id_Usuario { get; set; }
 
         int IdSecuencia;
+        string VTIdHuerta;
 
         string PresentacionConvercion, IdUnidadConvercion;
 
@@ -63,6 +64,7 @@ namespace ShellPest
             CargarCultivo();
             CargarTipo();
             CargarUnidad();
+
             LimpiarCampos();
             IdSecuencia = 0;
         }
@@ -179,6 +181,21 @@ namespace ShellPest
             if (Clase.Exito)
             {
                 glue_Cultivo.Properties.DataSource = Clase.Datos;
+            }
+        }
+
+        private void CargarListHuertas()
+        {
+            glue_Cultivo.EditValue = null;
+            glue_Cultivo.Properties.DisplayMember = "Nombre_Huerta";
+            glue_Cultivo.Properties.ValueMember = "Id_Huerta";
+            CLS_Receta Clase = new CLS_Receta();
+            Clase.c_codigo_eps = glue_Empresa.EditValue.ToString();
+            Clase.Id_Receta = txtId.Text.Trim();
+            Clase.MtdSeleccionarRecetaHuerta();
+            if (Clase.Exito)
+            {
+                dtgHuertas.DataSource = Clase.Datos;
             }
         }
 
@@ -375,7 +392,7 @@ namespace ShellPest
                // groupControl2.Enabled = true;
 
                 CargarRecetaDet(Frm.vId_Receta.Trim());
-
+                CargarListHuertas();
 
             }
             
@@ -403,6 +420,33 @@ namespace ShellPest
             }
 
            
+        }
+
+        private void InsertarRecetaHuerta()
+        {
+            CLS_Receta Clase = new CLS_Receta();
+
+            Clase.Id_Receta = txtId.Text.Trim();
+            
+            Clase.Id_Huerta = glue_Huerta.EditValue.ToString();
+            
+            if (glue_Empresa.EditValue != null)
+            {
+                Clase.c_codigo_eps = glue_Empresa.EditValue.ToString();
+                Clase.MtdInsertarRecetaHuerta();
+            }
+
+
+            if (Clase.Exito)
+            {
+                //groupControl2.Enabled = true;
+
+                CargarListHuertas();
+            }
+            else
+            {
+                XtraMessageBox.Show(Clase.Mensaje);
+            }
         }
 
         private void InsertarRecetaDet()
@@ -509,10 +553,16 @@ namespace ShellPest
             if (txtId.Text.Trim().Length > 0)
             {
                 groupControl2.Enabled = true;
+                btnAgregar.Enabled = true;
+                btnEliminarHue.Enabled = true;
+                dtgHuertas.Enabled = true;
             }
             else
             {
                 groupControl2.Enabled = false;
+                btnAgregar.Enabled = false;
+                btnEliminarHue.Enabled = false;
+                dtgHuertas.Enabled = false;
             }
         }
 
@@ -619,7 +669,53 @@ namespace ShellPest
             CargarHuertas();
         }
 
-       
+        private void btnEliminarHue_Click(object sender, EventArgs e)
+        {
+            EliminarListRecetaHuerta();
+        }
+
+        private void EliminarListRecetaHuerta()
+        {
+            CLS_Receta Clase = new CLS_Receta();
+            Clase.Id_Receta = txtId.Text.Trim();
+            Clase.Id_Huerta = VTIdHuerta;
+            Clase.c_codigo_eps = glue_Empresa.EditValue.ToString();
+            Clase.MtdEliminarRecetaHuerta();
+            if (Clase.Exito)
+            {
+                CargarListHuertas();
+            }
+            else
+            {
+                XtraMessageBox.Show(Clase.Mensaje);
+            }
+        }
+
+        private void btnAgregar_Click(object sender, EventArgs e)
+        {
+            InsertarRecetaHuerta();
+        }
+
+        private void dtgHuertas_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                foreach (int i in this.dtgValHuertas.GetSelectedRows())
+                {
+                    DataRow row = this.dtgValHuertas.GetDataRow(i);
+
+                    VTIdHuerta = row["Id_Huerta"].ToString();
+                    
+                    
+
+                }
+               
+            }
+            catch (Exception ex)
+            {
+                XtraMessageBox.Show(ex.Message);
+            }
+        }
 
         private void btn_Ingrediente_Click_1(object sender, EventArgs e)
         {
