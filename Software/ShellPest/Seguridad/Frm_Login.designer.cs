@@ -183,9 +183,9 @@
             // 
             this.barDockControlBottom.CausesValidation = false;
             this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.barDockControlBottom.Location = new System.Drawing.Point(0, 140);
+            this.barDockControlBottom.Location = new System.Drawing.Point(0, 139);
             this.barDockControlBottom.Manager = this.barManager1;
-            this.barDockControlBottom.Size = new System.Drawing.Size(582, 25);
+            this.barDockControlBottom.Size = new System.Drawing.Size(582, 26);
             // 
             // barDockControlLeft
             // 
@@ -193,7 +193,7 @@
             this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
             this.barDockControlLeft.Location = new System.Drawing.Point(0, 0);
             this.barDockControlLeft.Manager = this.barManager1;
-            this.barDockControlLeft.Size = new System.Drawing.Size(0, 140);
+            this.barDockControlLeft.Size = new System.Drawing.Size(0, 139);
             // 
             // barDockControlRight
             // 
@@ -201,7 +201,7 @@
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
             this.barDockControlRight.Location = new System.Drawing.Point(582, 0);
             this.barDockControlRight.Manager = this.barManager1;
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 140);
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 139);
             // 
             // Frm_Login
             // 
@@ -221,7 +221,6 @@
             this.Controls.Add(this.barDockControlTop);
             this.Cursor = System.Windows.Forms.Cursors.Default;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "Frm_Login";

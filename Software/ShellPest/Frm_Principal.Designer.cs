@@ -59,6 +59,7 @@
             this.btn_ImpInv = new DevExpress.XtraBars.BarButtonItem();
             this.btn_Salidas = new DevExpress.XtraBars.BarButtonItem();
             this.btn_rpt_invXfecha = new DevExpress.XtraBars.BarButtonItem();
+            this.btn_EstFenologico = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup5 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -75,13 +76,13 @@
             this.ribbonPage2 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.xtraTabbedMdiManager1 = new DevExpress.XtraTabbedMdi.XtraTabbedMdiManager(this.components);
             this.SkinForm = new DevExpress.LookAndFeel.DefaultLookAndFeel(this.components);
-            this.btn_EstFenologico = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabbedMdiManager1)).BeginInit();
             this.SuspendLayout();
             // 
             // ribbonControl1
             // 
+            this.ribbonControl1.ApplicationIcon = global::ShellPest.Properties.Resources.ShellPest;
             this.ribbonControl1.ExpandCollapseItem.Id = 0;
             this.ribbonControl1.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
             this.ribbonControl1.ExpandCollapseItem,
@@ -123,7 +124,7 @@
             this.ribbonPage4,
             this.ribbonPage5});
             this.ribbonControl1.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonControlStyle.Office2007;
-            this.ribbonControl1.Size = new System.Drawing.Size(1084, 147);
+            this.ribbonControl1.Size = new System.Drawing.Size(1098, 150);
             this.ribbonControl1.StatusBar = this.ribbonStatusBar1;
             // 
             // skinRibbonGalleryBarItem1
@@ -371,6 +372,15 @@
             this.btn_rpt_invXfecha.Name = "btn_rpt_invXfecha";
             this.btn_rpt_invXfecha.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_rpt_invXfecha_ItemClick);
             // 
+            // btn_EstFenologico
+            // 
+            this.btn_EstFenologico.Caption = "Est. Fenologico";
+            this.btn_EstFenologico.Id = 30;
+            this.btn_EstFenologico.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_EstFenologico.ImageOptions.Image")));
+            this.btn_EstFenologico.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btn_EstFenologico.ImageOptions.LargeImage")));
+            this.btn_EstFenologico.Name = "btn_EstFenologico";
+            this.btn_EstFenologico.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_EstFenologico_ItemClick);
+            // 
             // ribbonPage1
             // 
             this.ribbonPage1.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
@@ -482,10 +492,10 @@
             // ribbonStatusBar1
             // 
             this.ribbonStatusBar1.ItemLinks.Add(this.skinRibbonGalleryBarItem1);
-            this.ribbonStatusBar1.Location = new System.Drawing.Point(0, 489);
+            this.ribbonStatusBar1.Location = new System.Drawing.Point(0, 498);
             this.ribbonStatusBar1.Name = "ribbonStatusBar1";
             this.ribbonStatusBar1.Ribbon = this.ribbonControl1;
-            this.ribbonStatusBar1.Size = new System.Drawing.Size(1084, 32);
+            this.ribbonStatusBar1.Size = new System.Drawing.Size(1098, 23);
             // 
             // ribbonPage2
             // 
@@ -500,22 +510,13 @@
             // SkinForm
             // 
             this.SkinForm.EnableBonusSkins = true;
-            this.SkinForm.LookAndFeel.SkinName = "Office 2010 Silver";
-            // 
-            // btn_EstFenologico
-            // 
-            this.btn_EstFenologico.Caption = "Est. Fenologico";
-            this.btn_EstFenologico.Id = 30;
-            this.btn_EstFenologico.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_EstFenologico.ImageOptions.Image")));
-            this.btn_EstFenologico.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btn_EstFenologico.ImageOptions.LargeImage")));
-            this.btn_EstFenologico.Name = "btn_EstFenologico";
-            this.btn_EstFenologico.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_EstFenologico_ItemClick);
+            this.SkinForm.LookAndFeel.SkinName = "Office 2013 Light Gray";
             // 
             // Frm_Principal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1084, 521);
+            this.ClientSize = new System.Drawing.Size(1098, 521);
             this.Controls.Add(this.ribbonStatusBar1);
             this.Controls.Add(this.ribbonControl1);
             this.IsMdiContainer = true;

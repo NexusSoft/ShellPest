@@ -32,6 +32,9 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>ShellPest.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="CapaDeDatos">
       <HintPath>..\CapaDeDatos\bin\Debug\CapaDeDatos.dll</HintPath>
@@ -572,6 +575,11 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\documentmap_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ShellPest.png" />
+    <None Include="Resources\Imagen1.png" />
+    <Content Include="ShellPest.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
