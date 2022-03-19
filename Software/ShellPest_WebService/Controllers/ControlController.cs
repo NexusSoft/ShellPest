@@ -518,6 +518,52 @@ namespace ShellPest_WebService
             }
         }
 
+        [System.Web.Mvc.HttpGet]
+        public ActionResult Podas(string Fecha, string Id_bloque, string c_codigo_eps, string N_arboles, string Observaciones, string Id_Usuario_Crea, string F_Usuario_Crea)
+        {
+            string cadena = string.Empty;
+            WS_Control_Podas sel = new WS_Control_Podas();
+            sel.Fecha = Fecha;
+            sel.Id_bloque = Id_bloque;
+            sel.c_codigo_eps = c_codigo_eps;
+            sel.N_arboles = Convert.ToInt32(N_arboles);
+            sel.Observaciones = Observaciones;
+            sel.Id_Usuario_Crea = Id_Usuario_Crea;
+            sel.F_Usuario_Crea = F_Usuario_Crea;
+            sel.MtdInsertarPoda();
+            if (sel.Exito)
+            {
+                GetJson(sel.Datos);
+                return Json(rows, JsonRequestBehavior.AllowGet);
+            }
+            else
+            {
+                return Json(cadena, JsonRequestBehavior.AllowGet);
+            }
+        }
+
+        [System.Web.Mvc.HttpGet]
+        public ActionResult PodasDet(string Fecha, string Id_bloque, string c_codigo_eps, string Actividad)
+        {
+            string cadena = string.Empty;
+            WS_Control_Podas sel = new WS_Control_Podas();
+            sel.Fecha = Fecha;
+            sel.Id_bloque = Id_bloque;
+            sel.c_codigo_eps = c_codigo_eps;
+            sel.Actividad = Actividad;
+           
+            sel.MtdInsertarPodaDet();
+            if (sel.Exito)
+            {
+                GetJson(sel.Datos);
+                return Json(rows, JsonRequestBehavior.AllowGet);
+            }
+            else
+            {
+                return Json(cadena, JsonRequestBehavior.AllowGet);
+            }
+        }
+
         public void GetJson(DataTable dt)
         {
             Dictionary<string, object> row;

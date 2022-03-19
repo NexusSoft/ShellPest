@@ -91,6 +91,8 @@
     <Compile Include="Seguridad\CLS_Usuarios.cs" />
     <Compile Include="Seguridad\SEG_Login.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="WebService\WS_Catalogos_Activos_Gasolina.cs" />
+    <Compile Include="WebService\WS_Catalogos_cosactividad.cs" />
     <Compile Include="WebService\WS_Catalogos_Empresas.cs" />
     <Compile Include="WebService\WS_Catalogos_Individuo.cs" />
     <Compile Include="WebService\WS_Catalogos_Monitoreo.cs" />
@@ -116,6 +118,7 @@
     <Compile Include="WebService\WS_Catalogos_Calidad.cs" />
     <Compile Include="WebService\WS_Catalogos_Bloque.cs" />
     <Compile Include="WebService\WS_Control_Aplicaciones.cs" />
+    <Compile Include="WebService\WS_Control_Podas.cs" />
     <Compile Include="WebService\WS_Control_Salidas.cs" />
   </ItemGroup>
   <ItemGroup>

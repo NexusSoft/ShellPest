@@ -534,6 +534,43 @@ namespace ShellPest_WebService
             }
         }
 
+        [System.Web.Mvc.HttpGet]
+        public ActionResult ActividadesPoda()
+        {
+            string cadena = string.Empty;
+            WS_Catalogos_cosactividad sel = new WS_Catalogos_cosactividad();
+
+            sel.MtdSeleccionarActividad();
+            if (sel.Exito)
+            {
+                GetJson(sel.Datos);
+                return Json(rows, JsonRequestBehavior.AllowGet);
+            }
+            else
+            {
+                return Json(cadena, JsonRequestBehavior.AllowGet);
+            }
+        }
+
+        [System.Web.Mvc.HttpGet]
+        public ActionResult ActivosGasolina(string Id_Usuario,string Fecha)
+        {
+            string cadena = string.Empty;
+            WS_Catalogos_Activos_Gasolina sel = new WS_Catalogos_Activos_Gasolina();
+            sel.Id_Usuario = Id_Usuario;
+            sel.Fecha = Fecha;
+            sel.MtdSeleccionarActivo();
+            if (sel.Exito)
+            {
+                GetJson(sel.Datos);
+                return Json(rows, JsonRequestBehavior.AllowGet);
+            }
+            else
+            {
+                return Json(cadena, JsonRequestBehavior.AllowGet);
+            }
+        }
+
         public void GetJson(DataTable dt)
         {
             Dictionary<string, object> row;
