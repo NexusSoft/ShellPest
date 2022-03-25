@@ -10,7 +10,7 @@ namespace CapaDeDatos
     {
 
         public string Id_Usuario { get; set; }
-        public string Fecha { get; set; }
+
 
         public void MtdSeleccionarEmpleados()
         {
@@ -23,8 +23,7 @@ namespace CapaDeDatos
                 _conexion.NombreProcedimiento = "SP_WS_empleados_huerta_Select";
                 _dato.CadenaTexto = Id_Usuario;
                 _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Id_Usuario");
-                _dato.CadenaTexto = Fecha;
-                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Fecha");
+              
                 _conexion.EjecutarDataset();
 
                 if (_conexion.Exito)

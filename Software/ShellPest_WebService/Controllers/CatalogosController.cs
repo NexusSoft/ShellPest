@@ -572,12 +572,11 @@ namespace ShellPest_WebService
         }
 
         [System.Web.Mvc.HttpGet]
-        public ActionResult EmpleadosHuerta(string Id_Usuario, string Fecha)
+        public ActionResult EmpleadosHuerta(string Id_Usuario)
         {
             string cadena = string.Empty;
             WS_Catalogos_empleados_huerta sel = new WS_Catalogos_empleados_huerta();
             sel.Id_Usuario = Id_Usuario;
-            sel.Fecha = Fecha;
             sel.MtdSeleccionarEmpleados();
             if (sel.Exito)
             {
