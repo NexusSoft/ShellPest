@@ -571,6 +571,25 @@ namespace ShellPest_WebService
             }
         }
 
+        [System.Web.Mvc.HttpGet]
+        public ActionResult EmpleadosHuerta(string Id_Usuario, string Fecha)
+        {
+            string cadena = string.Empty;
+            WS_Catalogos_empleados_huerta sel = new WS_Catalogos_empleados_huerta();
+            sel.Id_Usuario = Id_Usuario;
+            sel.Fecha = Fecha;
+            sel.MtdSeleccionarEmpleados();
+            if (sel.Exito)
+            {
+                GetJson(sel.Datos);
+                return Json(rows, JsonRequestBehavior.AllowGet);
+            }
+            else
+            {
+                return Json(cadena, JsonRequestBehavior.AllowGet);
+            }
+        }
+
         public void GetJson(DataTable dt)
         {
             Dictionary<string, object> row;
