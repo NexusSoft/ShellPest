@@ -564,6 +564,33 @@ namespace ShellPest_WebService
             }
         }
 
+        [System.Web.Mvc.HttpGet]
+        public ActionResult Cosecha(string Fecha, string Id_bloque, string c_codigo_eps, string BICO, string Cajas_Cosecha, string Cajas_Desecho, string Cajas_Pepena, string Cajas_RDiaria, string Id_Usuario, string F_Fecha_Crea)
+        {
+            string cadena = string.Empty;
+            WS_Control_Cosecha sel = new WS_Control_Cosecha();
+            sel.Fecha = Fecha;
+            sel.Id_bloque = Id_bloque;
+            sel.c_codigo_eps = c_codigo_eps;
+            sel.Cajas_Cosecha = Convert.ToInt32(Cajas_Cosecha);
+            sel.Cajas_Desecho = Convert.ToInt32(Cajas_Desecho);
+            sel.Cajas_Pepena = Convert.ToInt32(Cajas_Pepena);
+            sel.Cajas_RDiaria = Convert.ToInt32(Cajas_RDiaria);
+            sel.BICO = BICO;
+            sel.Id_Usuario = Id_Usuario;
+            sel.F_Fecha_Crea = F_Fecha_Crea;
+            sel.MtdInsertarCosecha();
+            if (sel.Exito)
+            {
+                GetJson(sel.Datos);
+                return Json(rows, JsonRequestBehavior.AllowGet);
+            }
+            else
+            {
+                return Json(cadena, JsonRequestBehavior.AllowGet);
+            }
+        }
+
         public void GetJson(DataTable dt)
         {
             Dictionary<string, object> row;
