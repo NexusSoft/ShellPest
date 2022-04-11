@@ -91,6 +91,7 @@
     <Compile Include="Seguridad\CLS_Usuarios.cs" />
     <Compile Include="Seguridad\SEG_Login.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="WebService\WS_Catalogos_Actividades_Huerta.cs" />
     <Compile Include="WebService\WS_Catalogos_Activos_Gasolina.cs" />
     <Compile Include="WebService\WS_Catalogos_cosactividad.cs" />
     <Compile Include="WebService\WS_Catalogos_empleados_huerta.cs" />

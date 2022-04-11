@@ -16,12 +16,13 @@ namespace ShellPest_WebService
         public List<Dictionary<string, object>> rows = new List<Dictionary<string, object>>();
         // GET: api/Pedidos
         [System.Web.Mvc.HttpGet]
-        public ActionResult Bloques(string Fecha,string Id_Usuario)
+        public ActionResult Bloques(string Fecha,string Id_Usuario,string FechaLot)
         {
             string cadena = string.Empty;
             WS_Catalogos_Bloque sel = new WS_Catalogos_Bloque();
             sel.Fecha = Fecha;
             sel.Id_Usuario = Id_Usuario;
+            sel.FechaLot = FechaLot;
             sel.MtdSeleccionarBloque();
             if (sel.Exito)
             {
@@ -578,6 +579,24 @@ namespace ShellPest_WebService
             WS_Catalogos_empleados_huerta sel = new WS_Catalogos_empleados_huerta();
             sel.Id_Usuario = Id_Usuario;
             sel.MtdSeleccionarEmpleados();
+            if (sel.Exito)
+            {
+                GetJson(sel.Datos);
+                return Json(rows, JsonRequestBehavior.AllowGet);
+            }
+            else
+            {
+                return Json(cadena, JsonRequestBehavior.AllowGet);
+            }
+        }
+
+        [System.Web.Mvc.HttpGet]
+        public ActionResult ActividadesHuerta(string Id_Usuario)
+        {
+            string cadena = string.Empty;
+            WS_Catalogos_Actividades_Huerta sel = new WS_Catalogos_Actividades_Huerta();
+            sel.Id_Usuario = Id_Usuario;
+            sel.MtdSeleccionarActividades();
             if (sel.Exito)
             {
                 GetJson(sel.Datos);

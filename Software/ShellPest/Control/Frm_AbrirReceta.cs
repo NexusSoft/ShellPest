@@ -32,6 +32,7 @@ namespace ShellPest
         public string vIntervalo_Reingreso { get; set; }
         public Boolean vActivo { get; set; }
         public string vId_Huerta { get; set; }
+        public string vPara { get; set; }
 
         public string Id_Usuario { get; set; }
 
@@ -103,6 +104,7 @@ namespace ShellPest
                     vIntervalo_Reingreso = row["Intervalo_Reingreso"].ToString();
                     vActivo= Convert.ToBoolean(row["Activo"]);
                     vId_Huerta= row["Id_Huerta"].ToString();
+                    vPara = row["Para"].ToString();
                 }
             }
             catch (Exception ex)

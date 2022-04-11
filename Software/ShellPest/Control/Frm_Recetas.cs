@@ -393,7 +393,15 @@ namespace ShellPest
 
                 CargarRecetaDet(Frm.vId_Receta.Trim());
                 CargarListHuertas();
-
+                if (Frm.vPara.Equals("A"))
+                {
+                    combo_Para.SelectedIndex = 0;
+                }
+                else
+                {
+                    combo_Para.SelectedIndex = 1;
+                }
+               
             }
             
         }

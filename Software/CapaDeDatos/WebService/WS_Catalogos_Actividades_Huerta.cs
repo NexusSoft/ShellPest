@@ -6,13 +6,13 @@ using System.Threading.Tasks;
 
 namespace CapaDeDatos
 {
-    public class WS_Catalogos_Bloque:ConexionBase
+    public class WS_Catalogos_Actividades_Huerta :ConexionBase
     {
-        public string Fecha { get;  set; }
-        public string Id_Usuario { get; set; }
-        public string FechaLot { get; set; }
 
-        public void MtdSeleccionarBloque()
+        public string Id_Usuario { get; set; }
+
+
+        public void MtdSeleccionarActividades()
         {
             TipoDato _dato = new TipoDato();
             Conexion _conexion = new Conexion(cadenaConexion);
@@ -20,13 +20,10 @@ namespace CapaDeDatos
             Exito = true;
             try
             {
-                _conexion.NombreProcedimiento = "SP_WS_Catalogos_Bloque_Select";
-                _dato.CadenaTexto = Fecha;
-                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Fecha");
+                _conexion.NombreProcedimiento = "SP_WS_Actividades_Huerta_Select";
                 _dato.CadenaTexto = Id_Usuario;
                 _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Id_Usuario");
-                _dato.CadenaTexto = FechaLot;
-                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "FechaLot");
+
                 _conexion.EjecutarDataset();
 
                 if (_conexion.Exito)
@@ -46,5 +43,6 @@ namespace CapaDeDatos
             }
 
         }
+
     }
 }

@@ -46,7 +46,7 @@ BEGIN
 		  ,dt.Id_Presentacion
 		  ,pre.Nombre_Presentacion
 		  ,pre.Id_Unidad
-		  ,uni.v_abrevia_uni
+		  ,uni.v_nombre_uni
 		  ,dt.Observaciones
 		  ,dt.Intervalo_Seguridad
 		  ,dt.Intervalo_Reingreso
@@ -54,6 +54,9 @@ BEGIN
 	      ,us.Nombre_Usuario as Creador
 	      ,dt.Id_Usuario_Mod 
 	      ,usm.Nombre_Usuario as Modificador
+		  ,dt.Activo
+		  ,dt.Id_Huerta
+		  ,dt.Para
 		from t_Receta as dt
 		inner join t_AsesorTecnico as ast on ast.Id_AsesorTecnico=dt.Id_AsesorTecnico
 		inner join t_Cultivo as cul on cul.Id_Cultivo=dt.Id_Cultivo
@@ -62,6 +65,7 @@ BEGIN
 		inner join agv.dbo.invunidad as uni on uni.c_codigo_uni=pre.Id_Unidad
 		inner join t_Usuarios as us on us.Id_Usuario=dt.Id_Usuario_Crea 
 		left join t_Usuarios as usm on usm.Id_Usuario=dt.Id_Usuario_Mod 
+		where dt.c_codigo_eps=@c_codigo_eps
 		
 
 END

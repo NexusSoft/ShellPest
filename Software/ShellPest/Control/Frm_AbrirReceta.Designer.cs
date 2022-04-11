@@ -72,6 +72,7 @@
             this.Id_Usuario_Mod = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Modificador = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Id_Huerta = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Para = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).BeginInit();
@@ -290,7 +291,8 @@
             this.Creador,
             this.Id_Usuario_Mod,
             this.Modificador,
-            this.Id_Huerta});
+            this.Id_Huerta,
+            this.Para});
             this.dtgValControl.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
             this.dtgValControl.GridControl = this.dtgControl;
             this.dtgValControl.Name = "dtgValControl";
@@ -461,6 +463,14 @@
             this.Id_Huerta.FieldName = "Id_Huerta";
             this.Id_Huerta.Name = "Id_Huerta";
             // 
+            // Para
+            // 
+            this.Para.Caption = "Para";
+            this.Para.FieldName = "Para";
+            this.Para.Name = "Para";
+            this.Para.Visible = true;
+            this.Para.VisibleIndex = 12;
+            // 
             // Frm_AbrirReceta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -533,5 +543,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn34;
         private DevExpress.XtraEditors.LabelControl labelControl18;
         private DevExpress.XtraGrid.Columns.GridColumn Id_Huerta;
+        private DevExpress.XtraGrid.Columns.GridColumn Para;
     }
 }
