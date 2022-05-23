@@ -591,6 +591,41 @@ namespace ShellPest_WebService
             }
         }
 
+        [System.Web.Mvc.HttpGet]
+        public ActionResult Gasolina(string d_fecha_crea,string c_folio_gas,string d_fechainicio_gas,string d_fechafin_gas,string c_codigo_eps,string Id_Huerta,string v_Bloques_gas,string Id_ActivosGas,string c_codigo_emp,string c_codigo_act,string v_cantingreso_gas,string v_cantsaldo_gas,string v_tipo_gas,string v_horometro_gas,string v_kminicial_gas,string v_kmfinal_gas,string v_observaciones_gas)
+        {
+            string cadena = string.Empty;
+            WS_Control_Gasolina sel = new WS_Control_Gasolina();
+            sel.d_fecha_crea = d_fecha_crea;
+            sel.c_folio_gas = c_folio_gas;
+            sel.d_fechainicio_gas = d_fechainicio_gas;
+            sel.d_fechafin_gas = d_fechafin_gas;
+            sel.c_codigo_eps = c_codigo_eps;
+            sel.Id_Huerta = Id_Huerta; 
+            sel.v_Bloques_gas = v_Bloques_gas;
+            sel.Id_ActivosGas = Id_ActivosGas;
+            sel.c_codigo_emp = c_codigo_emp;
+            sel.c_codigo_act = c_codigo_act;
+            sel.v_cantingreso_gas = v_cantingreso_gas;
+            sel.v_cantsaldo_gas = v_cantsaldo_gas;
+            sel.v_tipo_gas = v_tipo_gas;
+            sel.v_horometro_gas = v_horometro_gas;
+            sel.v_kminicial_gas = v_kminicial_gas;
+            sel.v_kmfinal_gas = v_kmfinal_gas;
+            sel.v_observaciones_gas = v_observaciones_gas;
+
+            sel.MtdInsertarGasolina();
+            if (sel.Exito)
+            {
+                GetJson(sel.Datos);
+                return Json(rows, JsonRequestBehavior.AllowGet);
+            }
+            else
+            {
+                return Json(cadena, JsonRequestBehavior.AllowGet);
+            }
+        }
+
         public void GetJson(DataTable dt)
         {
             Dictionary<string, object> row;
