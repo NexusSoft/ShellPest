@@ -14,9 +14,9 @@ namespace ShellPest_WebService
     {
         public List<Dictionary<string, object>> rows = new List<Dictionary<string, object>>();
         [HttpGet]
-        public ActionResult MonitoreoPE(string Fecha,string Hora,string Id_Huerta,string Id_Plagas,string Id_Enfermedad,
-                                string Id_Deteccion,string Id_Individuo,string Id_Humbral,string Id_PuntoControl,
-                                string Id_Usuario,string n_CoordenadaX,string n_CoordenadaY,string c_codigo_eps)
+        public ActionResult MonitoreoPE(string Fecha, string Hora, string Id_Huerta, string Id_Plagas, string Id_Enfermedad,
+                                string Id_Deteccion, string Id_Individuo, string Id_Humbral, string Id_PuntoControl,
+                                string Id_Usuario, string n_CoordenadaX, string n_CoordenadaY, string c_codigo_eps)
         {
             string cadena = string.Empty;
             CLS_Monitoreo sel = new CLS_Monitoreo();
@@ -30,8 +30,8 @@ namespace ShellPest_WebService
             sel.Id_Humbral = Id_Humbral;
             sel.Id_PuntoControl = Id_PuntoControl;
             sel.Id_Usuario = Id_Usuario;
-            sel.n_CoordenadaX =decimal.Parse(n_CoordenadaX);
-            sel.n_CoordenadaY =decimal.Parse(n_CoordenadaY);
+            sel.n_CoordenadaX = decimal.Parse(n_CoordenadaX);
+            sel.n_CoordenadaY = decimal.Parse(n_CoordenadaY);
             sel.c_codigo_eps = c_codigo_eps;
 
             sel.MtdInsertarMonitoreoPE();
@@ -97,8 +97,8 @@ namespace ShellPest_WebService
             }
         }
         [HttpGet]
-        public ActionResult MonitoreoPEEncabezado(string Fecha, string Hora, string Id_Huerta, 
-                                string Id_PuntoControl,string Id_Usuario, string n_CoordenadaX, string n_CoordenadaY,string c_codigo_eps)
+        public ActionResult MonitoreoPEEncabezado(string Fecha, string Hora, string Id_Huerta,
+                                string Id_PuntoControl, string Id_Usuario, string n_CoordenadaX, string n_CoordenadaY, string c_codigo_eps, string F_UsuCrea)
         {
             string cadena = string.Empty;
             CLS_Monitoreo sel = new CLS_Monitoreo();
@@ -110,6 +110,7 @@ namespace ShellPest_WebService
             sel.n_CoordenadaY = decimal.Parse(n_CoordenadaY);
             sel.Id_Usuario = Id_Usuario;
             sel.c_codigo_eps = c_codigo_eps;
+            sel.F_UsuCrea = F_UsuCrea;
             sel.MtdInsertarMonitoreoPEEncabezado();
             DataTable dt = new DataTable();
             dt.Clear();
@@ -132,7 +133,7 @@ namespace ShellPest_WebService
         }
         [HttpGet]
         public ActionResult MonitoreoPEDetalle(string Fecha, string Hora, string Id_PuntoControl, string Id_Plagas, string Id_Enfermedad,
-                                string Id_Deteccion, string Id_Individuo, string Id_Humbral,string Cant_Individuos,string Id_Fenologico,string c_codigo_eps)
+                                string Id_Deteccion, string Id_Individuo, string Id_Humbral, string Cant_Individuos, string Id_Fenologico, string c_codigo_eps)
         {
             string cadena = string.Empty;
             if (string.IsNullOrWhiteSpace(Id_Plagas))
@@ -152,7 +153,7 @@ namespace ShellPest_WebService
             sel.Id_Deteccion = Id_Deteccion;
             sel.Id_Individuo = Id_Individuo;
             sel.Id_Humbral = Id_Humbral;
-            sel.Cant_Individuos =Convert.ToInt32( Cant_Individuos);
+            sel.Cant_Individuos = Convert.ToInt32(Cant_Individuos);
             sel.Id_Fenologico = Id_Fenologico;
             sel.c_codigo_eps = c_codigo_eps;
             sel.MtdInsertarMonitoreoPEDetalle();
@@ -177,7 +178,7 @@ namespace ShellPest_WebService
         }
         [HttpGet]
         public ActionResult MonitoreoPEEncabezadoEliminado(string Fecha, string Hora, string Id_Huerta,
-                                string Id_PuntoControl, string Id_Usuario, string n_CoordenadaX, string n_CoordenadaY,string c_codigo_eps)
+                                string Id_PuntoControl, string Id_Usuario, string n_CoordenadaX, string n_CoordenadaY, string c_codigo_eps, string F_UsuCrea)
         {
             string cadena = string.Empty;
             CLS_Monitoreo sel = new CLS_Monitoreo();
@@ -189,6 +190,7 @@ namespace ShellPest_WebService
             sel.n_CoordenadaY = decimal.Parse(n_CoordenadaY);
             sel.Id_Usuario = Id_Usuario;
             sel.c_codigo_eps = c_codigo_eps;
+            sel.F_UsuCrea = F_UsuCrea;
             sel.MtdInsertarMonitoreoPEEncabezadoEliminado();
             DataTable dt = new DataTable();
             dt.Clear();
@@ -211,7 +213,7 @@ namespace ShellPest_WebService
         }
         [HttpGet]
         public ActionResult MonitoreoPEDetalleEliminado(string Fecha, string Hora, string Id_PuntoControl, string Id_Plagas, string Id_Enfermedad,
-                                string Id_Deteccion, string Id_Individuo, string Id_Humbral, string Cant_Individuos, string Id_Fenologico,string c_codigo_eps)
+                                string Id_Deteccion, string Id_Individuo, string Id_Humbral, string Cant_Individuos, string Id_Fenologico, string c_codigo_eps)
         {
             string cadena = string.Empty;
             if (string.IsNullOrWhiteSpace(Id_Plagas))
@@ -258,7 +260,7 @@ namespace ShellPest_WebService
         [HttpGet]
         public ActionResult Riego(string Fecha, string Hora
                               , string Id_Bloque, string Precipitacion_Sistema, string Caudal_Inicio,
-                               string Caudal_Fin, string Horas_riego, string Id_Usuario, string c_codigo_eps, string Temperatura, string ET
+                               string Caudal_Fin, string Horas_riego, string Id_Usuario, string c_codigo_eps, string Temperatura, string ET, string F_UsuCrea
            )
         {
             string cadena = string.Empty;
@@ -274,6 +276,7 @@ namespace ShellPest_WebService
             sel.c_codigo_eps = c_codigo_eps;
             sel.Temperatura = decimal.Parse(Temperatura);
             sel.ET = decimal.Parse(ET);
+            sel.F_UsuCrea = F_UsuCrea;
             sel.MtdInsertarRiego();
             DataTable dt = new DataTable();
             dt.Clear();
@@ -297,7 +300,7 @@ namespace ShellPest_WebService
         [HttpGet]
         public ActionResult RiegoEliminado(string Fecha, string Hora
                               , string Id_Bloque, string Precipitacion_Sistema, string Caudal_Inicio,
-                               string Caudal_Fin, string Horas_riego, string Id_Usuario, string c_codigo_eps, string Temperatura, string ET
+                               string Caudal_Fin, string Horas_riego, string Id_Usuario, string c_codigo_eps, string Temperatura, string ET, string F_UsuCrea
            )
         {
             string cadena = string.Empty;
@@ -305,7 +308,7 @@ namespace ShellPest_WebService
             sel.Fecha = Fecha;
             sel.Hora = Hora;
             sel.Id_Bloque = Id_Bloque;
-            sel.Precipitacion_Sistema =decimal.Parse(Precipitacion_Sistema);
+            sel.Precipitacion_Sistema = decimal.Parse(Precipitacion_Sistema);
             sel.Caudal_Inicio = decimal.Parse(Caudal_Inicio);
             sel.Caudal_Fin = decimal.Parse(Caudal_Fin);
             sel.Horas_riego = decimal.Parse(Horas_riego);
@@ -313,6 +316,7 @@ namespace ShellPest_WebService
             sel.c_codigo_eps = c_codigo_eps;
             sel.Temperatura = decimal.Parse(Temperatura);
             sel.ET = decimal.Parse(ET);
+            sel.F_UsuCrea = F_UsuCrea;
             sel.MtdInsertarRiegoEliminado();
             DataTable dt = new DataTable();
             dt.Clear();
@@ -336,7 +340,7 @@ namespace ShellPest_WebService
 
         [HttpGet]
         public ActionResult Aplicaciones(string Id_Aplicacion, string Id_Huerta, string Observaciones,
-                               string Id_TipoAplicacion, string Id_Presentacion, string Id_Usuario, string F_Creacion,string Anio,string c_codigo_eps,string CC, string Unidades_aplicadas)
+                               string Id_TipoAplicacion, string Id_Presentacion, string Id_Usuario, string F_Creacion, string Anio, string c_codigo_eps, string CC, string Unidades_aplicadas)
         {
             string cadena = string.Empty;
             WS_Control_Aplicaciones CLS = new WS_Control_Aplicaciones();
@@ -374,7 +378,7 @@ namespace ShellPest_WebService
 
         [HttpGet]
         public ActionResult Aplicaciones_Det(string Id_Aplicacion, string Fecha, string c_codigo_pro,
-                               string Dosis, string Id_Usuario, string F_Creacion,string c_codigo_eps)
+                               string Dosis, string Id_Usuario, string F_Creacion, string c_codigo_eps)
         {
             string cadena = string.Empty;
             WS_Control_Aplicaciones CLS = new WS_Control_Aplicaciones();
@@ -382,7 +386,7 @@ namespace ShellPest_WebService
             CLS.Fecha = Fecha;
             CLS.c_codigo_pro = c_codigo_pro;
             CLS.Dosis = decimal.Parse(Dosis);
-            
+
 
             CLS.Id_Usuario = Id_Usuario;
             CLS.F_Creacion = F_Creacion;
@@ -410,7 +414,7 @@ namespace ShellPest_WebService
 
         [HttpGet]
         public ActionResult Salidas(string c_codigo_sal, string c_codigo_ent, string c_codigo_tmv,
-                               string c_codigo_tra, string d_documento_sal,string c_codigo_alm,string c_codigo_eps,string Id_Responsable,string Id_Aplicacion, string Id_Usuario, string F_Creacion)
+                               string c_codigo_tra, string d_documento_sal, string c_codigo_alm, string c_codigo_eps, string Id_Responsable, string Id_Aplicacion, string Id_Usuario, string F_Creacion)
         {
             string cadena = string.Empty;
             WS_Control_Salidas CLS = new WS_Control_Salidas();
@@ -448,7 +452,7 @@ namespace ShellPest_WebService
 
         [HttpGet]
         public ActionResult Salidas_Det(string c_tipodoc_mov, string c_coddoc_mov, string c_codigo_pro,
-                               string n_movipro_mov, string n_exiant_mov, string n_cantidad_mov, string Id_Bloque,string c_codigo_eps)
+                               string n_movipro_mov, string n_exiant_mov, string n_cantidad_mov, string Id_Bloque, string c_codigo_eps)
         {
             string cadena = string.Empty;
             WS_Control_Salidas CLS = new WS_Control_Salidas();
@@ -487,7 +491,7 @@ namespace ShellPest_WebService
         {
             string cadena = string.Empty;
             CLS_Inventum sel = new CLS_Inventum();
-            
+
             sel.MtdExistenciasProSelect();
             if (sel.Exito)
             {
@@ -551,7 +555,7 @@ namespace ShellPest_WebService
             sel.Id_bloque = Id_bloque;
             sel.c_codigo_eps = c_codigo_eps;
             sel.Actividad = Actividad;
-           
+
             sel.MtdInsertarPodaDet();
             if (sel.Exito)
             {
@@ -588,6 +592,79 @@ namespace ShellPest_WebService
             else
             {
                 return Json(cadena, JsonRequestBehavior.AllowGet);
+            }
+        }
+
+        [HttpGet]
+        public ActionResult Fertiliza(string Id_Fertiliza, string Id_Huerta, string Observaciones,
+                               string Id_TipoAplicacion, string Id_Presentacion, string Id_Usuario, string F_Creacion, string Anio, string c_codigo_eps, string CC, string Ha_aplicadas)
+        {
+            string cadena = string.Empty;
+            WS_Control_Fertiliza CLS = new WS_Control_Fertiliza();
+            CLS.Id_Fertiliza = Id_Fertiliza;
+            CLS.Id_Huerta = Id_Huerta;
+            CLS.Observaciones = Observaciones;
+            CLS.Id_TipoAplicacion = Id_TipoAplicacion;
+            CLS.Id_Presentacion = Id_Presentacion;
+            CLS.Id_Usuario = Id_Usuario;
+            CLS.F_Creacion = F_Creacion;
+            CLS.Fecha = Anio.Substring(2);
+            CLS.c_codigo_eps = c_codigo_eps;
+            CLS.Centro_Costos = CC;
+            CLS.Ha_aplicadas = decimal.Parse(Ha_aplicadas);
+            CLS.MtdInsertarAplicacion();
+            DataTable dt = new DataTable();
+            dt.Clear();
+            dt.Columns.Add("Mensaje", typeof(string));
+            DataRow _ravi = dt.NewRow();
+            if (CLS.Exito)
+            {
+                _ravi["Mensaje"] = CLS.Datos.Rows[0][0].ToString();
+                dt.Rows.Add(_ravi);
+                GetJson(dt);
+                return Json(rows, JsonRequestBehavior.AllowGet);
+            }
+            else
+            {
+                _ravi["Mensaje"] = CLS.Mensaje;
+                dt.Rows.Add(_ravi);
+                GetJson(dt);
+                return Json(rows, JsonRequestBehavior.AllowGet);
+            }
+        }
+
+        [HttpGet]
+        public ActionResult Fertiliza_Det(string Id_Fertiliza, string Fecha, string c_codigo_pro,
+                               string Cantidad_Aplicada, string Id_Usuario, string F_Creacion, string c_codigo_eps)
+        {
+            string cadena = string.Empty;
+            WS_Control_Fertiliza CLS = new WS_Control_Fertiliza();
+            CLS.Id_Fertiliza = Id_Fertiliza;
+            CLS.Fecha = Fecha;
+            CLS.c_codigo_pro = c_codigo_pro;
+            CLS.Cantidad_Aplicada = decimal.Parse(Cantidad_Aplicada);
+
+            CLS.Id_Usuario = Id_Usuario;
+            CLS.F_Creacion = F_Creacion;
+            CLS.c_codigo_eps = c_codigo_eps;
+            CLS.MtdInsertarAplicacion_Det();
+            DataTable dt = new DataTable();
+            dt.Clear();
+            dt.Columns.Add("Mensaje", typeof(string));
+            DataRow _ravi = dt.NewRow();
+            if (CLS.Exito)
+            {
+                _ravi["Mensaje"] = "1";
+                dt.Rows.Add(_ravi);
+                GetJson(dt);
+                return Json(rows, JsonRequestBehavior.AllowGet);
+            }
+            else
+            {
+                _ravi["Mensaje"] = CLS.Mensaje;
+                dt.Rows.Add(_ravi);
+                GetJson(dt);
+                return Json(rows, JsonRequestBehavior.AllowGet);
             }
         }
 
