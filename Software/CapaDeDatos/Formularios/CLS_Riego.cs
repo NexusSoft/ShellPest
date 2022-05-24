@@ -19,7 +19,7 @@ namespace CapaDeDatos
         public string c_codigo_eps { get; set; }
         public decimal Temperatura { get; set; }
         public decimal ET { get; set; }
-
+        public string F_UsuCrea { get; set; }
 
         public void MtdInsertarRiego()
         {
@@ -52,6 +52,8 @@ namespace CapaDeDatos
                 _conexion.agregarParametro(EnumTipoDato.Tipodecimal, _dato, "Temperatura");
                 _dato.DecimalValor = ET;
                 _conexion.agregarParametro(EnumTipoDato.Tipodecimal, _dato, "ET");
+                _dato.CadenaTexto = F_UsuCrea;
+                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "F_UsuCrea");
                 _conexion.EjecutarDataset();
 
                 if (_conexion.Exito)
@@ -102,6 +104,8 @@ namespace CapaDeDatos
                 _conexion.agregarParametro(EnumTipoDato.Tipodecimal, _dato, "Temperatura");
                 _dato.DecimalValor = ET;
                 _conexion.agregarParametro(EnumTipoDato.Tipodecimal, _dato, "ET");
+                _dato.CadenaTexto = F_UsuCrea;
+                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "F_UsuCrea");
                 _conexion.EjecutarDataset();
 
                 if (_conexion.Exito)

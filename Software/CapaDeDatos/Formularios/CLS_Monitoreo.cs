@@ -26,6 +26,7 @@ namespace CapaDeDatos
         public string c_codigo_eps { get; set; }
         public string Id_Fenologico { get; set; }
         public int Cant_Individuos { get; set; }
+        public string F_UsuCrea { get; set; }
 
         public void MtdSeleccionarMonitoreo()
         {
@@ -289,8 +290,9 @@ namespace CapaDeDatos
                 _dato.CadenaTexto = Id_Usuario;
                 _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Id_Usuario");
                 _dato.CadenaTexto = c_codigo_eps;
-                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "c_codigo_eps");
-
+                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "c_codigo_eps"); 
+                _dato.CadenaTexto = F_UsuCrea;
+                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "F_UsuCrea");
                 _conexion.EjecutarDataset();
 
                 if (_conexion.Exito)
@@ -384,6 +386,8 @@ namespace CapaDeDatos
                 _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Id_Usuario");
                 _dato.CadenaTexto = c_codigo_eps;
                 _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "c_codigo_eps");
+                _dato.CadenaTexto = F_UsuCrea;
+                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "F_UsuCrea");
                 _conexion.EjecutarDataset();
 
                 if (_conexion.Exito)
