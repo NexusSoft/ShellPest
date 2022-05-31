@@ -21,7 +21,7 @@ namespace CapaDeDatos
             Exito = true;
             try
             {
-                _conexion.NombreProcedimiento = "Perfil_Pantallas_Disponibles_Select";
+                _conexion.NombreProcedimiento = "SP_Perfil_Pantallas_Disponibles_Select";
                 _dato.CadenaTexto = Id_Perfil;
                 _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Id_Perfil");
                 _conexion.EjecutarDataset();
@@ -51,7 +51,7 @@ namespace CapaDeDatos
             Exito = true;
             try
             {
-                _conexion.NombreProcedimiento = "Perfil_Pantallas_Asignadas_Select";
+                _conexion.NombreProcedimiento = "SP_Perfil_Pantallas_Asignadas_Select";
                 _dato.CadenaTexto = Id_Perfil;
                 _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Id_Perfil");
                 _conexion.EjecutarDataset();
