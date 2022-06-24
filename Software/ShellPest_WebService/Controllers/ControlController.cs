@@ -675,23 +675,48 @@ namespace ShellPest_WebService
             WS_Control_Gasolina sel = new WS_Control_Gasolina();
             sel.d_fecha_crea = d_fecha_crea;
             sel.c_folio_gas = c_folio_gas;
-            sel.d_fechainicio_gas = d_fechainicio_gas;
-            sel.d_fechafin_gas = d_fechafin_gas;
+            sel.d_fechaconsumo_gas = d_fechaconsumo_gas;
             sel.c_codigo_eps = c_codigo_eps;
             sel.Id_Huerta = Id_Huerta; 
             sel.v_Bloques_gas = v_Bloques_gas;
             sel.Id_ActivosGas = Id_ActivosGas;
             sel.c_codigo_emp = c_codigo_emp;
             sel.c_codigo_act = c_codigo_act;
-            sel.v_cantingreso_gas = v_cantingreso_gas;
-            sel.v_cantsaldo_gas = v_cantsaldo_gas;
             sel.v_tipo_gas = v_tipo_gas;
+            sel.v_cantutilizada_gas = v_cantutilizada_gas;
             sel.v_horometro_gas = v_horometro_gas;
             sel.v_kminicial_gas = v_kminicial_gas;
             sel.v_kmfinal_gas = v_kmfinal_gas;
             sel.v_observaciones_gas = v_observaciones_gas;
 
             sel.MtdInsertarGasolina();
+            if (sel.Exito)
+            {
+                GetJson(sel.Datos);
+                return Json(rows, JsonRequestBehavior.AllowGet);
+            }
+            else
+            {
+                return Json(cadena, JsonRequestBehavior.AllowGet);
+            }
+        }
+
+        [System.Web.Mvc.HttpGet]
+        public ActionResult GasolinaIngreso(String d_fechacrea_gas, String c_folio_gas, String d_fechaingreso_gas, String c_codigo_eps, String Id_Huerta, String c_codigo_emp, String v_tipo_gas, String v_cantingreso_gas, String v_observaciones_gas)
+        {
+            string cadena = string.Empty;
+            WS_Control_Gasolina sel = new WS_Control_Gasolina();
+            sel.d_fecha_crea = d_fecha_crea;
+            sel.c_folio_gas = c_folio_gas;
+            sel.d_fechaingreso_gas = d_fechainicio_gas;
+            sel.c_codigo_eps = c_codigo_eps;
+            sel.Id_Huerta = Id_Huerta; 
+            sel.c_codigo_emp = c_codigo_emp;
+            sel.v_tipo_gas = v_tipo_gas;
+            sel.v_cantingreso_gas = v_cantingreso_gas;
+            sel.v_observaciones_gas = v_observaciones_gas;
+
+            sel.MtdInsertarGasolinaIngreso();
             if (sel.Exito)
             {
                 GetJson(sel.Datos);
