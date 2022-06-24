@@ -669,7 +669,7 @@ namespace ShellPest_WebService
         }
 
         [System.Web.Mvc.HttpGet]
-        public ActionResult Gasolina(string d_fechacrea_gas, string c_folio_gas, string d_fechaconsumo_gas, string c_codigo_eps, string Id_Huerta, string v_Bloques_gas, string Id_ActivosGas, string c_codigo_emp, string c_codigo_act, string v_tipo_gas, string v_cantutilizada_gas, string v_horometro_gas, string v_kminicial_gas, string v_kmfinal_gas, string v_observaciones_gas)
+        public ActionResult Gasolina(string d_fecha_crea, string c_folio_gas, string d_fechaconsumo_gas, string c_codigo_eps, string Id_Huerta, string v_Bloques_gas, string Id_ActivosGas, string c_codigo_emp, string c_codigo_act, string v_tipo_gas, string v_cantutilizada_gas, string v_horometro_gas, string v_kminicial_gas, string v_kmfinal_gas, string v_observaciones_gas)
         {
             string cadena = string.Empty;
             WS_Control_Gasolina sel = new WS_Control_Gasolina();
@@ -702,10 +702,10 @@ namespace ShellPest_WebService
         }
 
         [System.Web.Mvc.HttpGet]
-        public ActionResult GasolinaIngreso(string d_fechacrea_gas, string c_folio_gas, string d_fechaingreso_gas, string c_codigo_eps, string Id_Huerta, string c_codigo_emp, string v_tipo_gas, string v_cantingreso_gas, string v_observaciones_gas)
+        public ActionResult GasolinaIngreso(string d_fecha_crea, string c_folio_gas, string d_fechainicio_gas, string c_codigo_eps, string Id_Huerta, string c_codigo_emp, string v_tipo_gas, string v_cantingreso_gas, string v_observaciones_gas)
         {
             string cadena = string.Empty;
-            WS_Control_Gasolina sel = new WS_Control_Gasolina();
+            WS_Control_Gasolina_Ingreso sel = new WS_Control_Gasolina_Ingreso();
             sel.d_fecha_crea = d_fecha_crea;
             sel.c_folio_gas = c_folio_gas;
             sel.d_fechaingreso_gas = d_fechainicio_gas;

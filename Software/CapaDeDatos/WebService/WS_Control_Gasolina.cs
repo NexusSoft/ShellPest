@@ -38,7 +38,7 @@ namespace CapaDeDatos
                 _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "d_fecha_crea");
                 _dato.CadenaTexto = c_folio_gas;
                 _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "c_folio_gas");
-                _dato.CadenaTexto = dd_fechaconsumo_gas;
+                _dato.CadenaTexto = d_fechaconsumo_gas;
                 _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "d_fechaconsumo_gas");
                 _dato.CadenaTexto = c_codigo_eps;
                 _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "c_codigo_eps");

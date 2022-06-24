@@ -123,6 +123,7 @@
     <Compile Include="WebService\WS_Control_Cosecha.cs" />
     <Compile Include="WebService\WS_Control_Fertiliza.cs" />
     <Compile Include="WebService\WS_Control_Gasolina.cs" />
+    <Compile Include="WebService\WS_Control_Gasolina_Ingreso.cs" />
     <Compile Include="WebService\WS_Control_Podas.cs" />
     <Compile Include="WebService\WS_Control_Salidas.cs" />
   </ItemGroup>
