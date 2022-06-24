@@ -702,13 +702,13 @@ namespace ShellPest_WebService
         }
 
         [System.Web.Mvc.HttpGet]
-        public ActionResult GasolinaIngreso(string d_fecha_crea, string c_folio_gas, string d_fechainicio_gas, string c_codigo_eps, string Id_Huerta, string c_codigo_emp, string v_tipo_gas, string v_cantingreso_gas, string v_observaciones_gas)
+        public ActionResult GasolinaIngreso(string d_fecha_crea, string c_folio_gas, string d_fechaingreso_gas, string c_codigo_eps, string Id_Huerta, string c_codigo_emp, string v_tipo_gas, string v_cantingreso_gas, string v_observaciones_gas)
         {
             string cadena = string.Empty;
             WS_Control_Gasolina_Ingreso sel = new WS_Control_Gasolina_Ingreso();
             sel.d_fecha_crea = d_fecha_crea;
             sel.c_folio_gas = c_folio_gas;
-            sel.d_fechaingreso_gas = d_fechainicio_gas;
+            sel.d_fechaingreso_gas = d_fechaingreso_gas;
             sel.c_codigo_eps = c_codigo_eps;
             sel.Id_Huerta = Id_Huerta; 
             sel.c_codigo_emp = c_codigo_emp;
