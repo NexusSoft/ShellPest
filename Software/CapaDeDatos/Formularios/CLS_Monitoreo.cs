@@ -28,6 +28,9 @@ namespace CapaDeDatos
         public int Cant_Individuos { get; set; }
         public string F_UsuCrea { get; set; }
 
+        public string Observaciones { get; set; }
+        public string Fumigado { get; set; }
+
         public void MtdSeleccionarMonitoreo()
         {
             TipoDato _dato = new TipoDato();
@@ -293,6 +296,10 @@ namespace CapaDeDatos
                 _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "c_codigo_eps"); 
                 _dato.CadenaTexto = F_UsuCrea;
                 _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "F_UsuCrea");
+                _dato.CadenaTexto = Observaciones;
+                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Observaciones");
+                _dato.CadenaTexto = Fumigado;
+                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Fumigado");
                 _conexion.EjecutarDataset();
 
                 if (_conexion.Exito)
@@ -388,6 +395,10 @@ namespace CapaDeDatos
                 _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "c_codigo_eps");
                 _dato.CadenaTexto = F_UsuCrea;
                 _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "F_UsuCrea");
+                _dato.CadenaTexto = Observaciones;
+                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Observaciones");
+                _dato.CadenaTexto = Fumigado;
+                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Fumigado");
                 _conexion.EjecutarDataset();
 
                 if (_conexion.Exito)

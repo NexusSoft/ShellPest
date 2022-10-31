@@ -58,8 +58,12 @@
             this.Modificador = new DevExpress.XtraGrid.Columns.GridColumn();
             this.TipoBloque = new DevExpress.XtraGrid.Columns.GridColumn();
             this.c_codigo_lot2 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.c_codigo_cam2 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.n_bloque = new DevExpress.XtraGrid.Columns.GridColumn();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
+            this.te_NumBlq = new DevExpress.XtraEditors.TextEdit();
+            this.labelControl6 = new DevExpress.XtraEditors.LabelControl();
             this.glue_CC = new DevExpress.XtraEditors.GridLookUpEdit();
             this.gridView2 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.v_nombre_lot = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -88,7 +92,6 @@
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.txtId = new DevExpress.XtraEditors.TextEdit();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
-            this.c_codigo_cam2 = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).BeginInit();
@@ -100,6 +103,7 @@
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.te_NumBlq.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.glue_CC.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.glue_TipoBloque.Properties)).BeginInit();
@@ -231,15 +235,15 @@
             this.barDockControlTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.barDockControlTop.Location = new System.Drawing.Point(0, 0);
             this.barDockControlTop.Manager = this.barManager1;
-            this.barDockControlTop.Size = new System.Drawing.Size(720, 0);
+            this.barDockControlTop.Size = new System.Drawing.Size(745, 0);
             // 
             // barDockControlBottom
             // 
             this.barDockControlBottom.CausesValidation = false;
             this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.barDockControlBottom.Location = new System.Drawing.Point(0, 404);
+            this.barDockControlBottom.Location = new System.Drawing.Point(0, 407);
             this.barDockControlBottom.Manager = this.barManager1;
-            this.barDockControlBottom.Size = new System.Drawing.Size(720, 25);
+            this.barDockControlBottom.Size = new System.Drawing.Size(745, 22);
             // 
             // barDockControlLeft
             // 
@@ -247,15 +251,15 @@
             this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
             this.barDockControlLeft.Location = new System.Drawing.Point(0, 0);
             this.barDockControlLeft.Manager = this.barManager1;
-            this.barDockControlLeft.Size = new System.Drawing.Size(71, 404);
+            this.barDockControlLeft.Size = new System.Drawing.Size(71, 407);
             // 
             // barDockControlRight
             // 
             this.barDockControlRight.CausesValidation = false;
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
-            this.barDockControlRight.Location = new System.Drawing.Point(720, 0);
+            this.barDockControlRight.Location = new System.Drawing.Point(745, 0);
             this.barDockControlRight.Manager = this.barManager1;
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 404);
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 407);
             // 
             // repositoryItemTextEdit1
             // 
@@ -269,7 +273,7 @@
             this.panelControl2.Location = new System.Drawing.Point(71, 126);
             this.panelControl2.Name = "panelControl2";
             this.panelControl2.Padding = new System.Windows.Forms.Padding(10);
-            this.panelControl2.Size = new System.Drawing.Size(649, 278);
+            this.panelControl2.Size = new System.Drawing.Size(674, 281);
             this.panelControl2.TabIndex = 13;
             // 
             // check_Activo
@@ -278,7 +282,7 @@
             this.check_Activo.MenuManager = this.barManager1;
             this.check_Activo.Name = "check_Activo";
             this.check_Activo.Properties.Caption = "Inactivos";
-            this.check_Activo.Size = new System.Drawing.Size(75, 19);
+            this.check_Activo.Size = new System.Drawing.Size(75, 20);
             this.check_Activo.TabIndex = 1;
             this.check_Activo.CheckedChanged += new System.EventHandler(this.check_Activo_CheckedChanged);
             // 
@@ -289,7 +293,7 @@
             this.dtgBloque.MainView = this.dtgValBloque;
             this.dtgBloque.MenuManager = this.barManager1;
             this.dtgBloque.Name = "dtgBloque";
-            this.dtgBloque.Size = new System.Drawing.Size(625, 254);
+            this.dtgBloque.Size = new System.Drawing.Size(650, 257);
             this.dtgBloque.TabIndex = 0;
             this.dtgBloque.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.dtgValBloque});
@@ -308,7 +312,8 @@
             this.Modificador,
             this.TipoBloque,
             this.c_codigo_lot2,
-            this.c_codigo_cam2});
+            this.c_codigo_cam2,
+            this.n_bloque});
             this.dtgValBloque.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
             this.dtgValBloque.GridControl = this.dtgBloque;
             this.dtgValBloque.Name = "dtgValBloque";
@@ -388,6 +393,20 @@
             this.c_codigo_lot2.Visible = true;
             this.c_codigo_lot2.VisibleIndex = 4;
             // 
+            // c_codigo_cam2
+            // 
+            this.c_codigo_cam2.Caption = "c_codigo_cam";
+            this.c_codigo_cam2.FieldName = "c_codigo_cam";
+            this.c_codigo_cam2.Name = "c_codigo_cam2";
+            // 
+            // n_bloque
+            // 
+            this.n_bloque.Caption = "N° Blq";
+            this.n_bloque.FieldName = "n_bloque";
+            this.n_bloque.Name = "n_bloque";
+            this.n_bloque.Visible = true;
+            this.n_bloque.VisibleIndex = 5;
+            // 
             // panelControl1
             // 
             this.panelControl1.Controls.Add(this.groupControl1);
@@ -395,11 +414,13 @@
             this.panelControl1.Location = new System.Drawing.Point(71, 0);
             this.panelControl1.Name = "panelControl1";
             this.panelControl1.Padding = new System.Windows.Forms.Padding(5);
-            this.panelControl1.Size = new System.Drawing.Size(649, 126);
+            this.panelControl1.Size = new System.Drawing.Size(674, 126);
             this.panelControl1.TabIndex = 12;
             // 
             // groupControl1
             // 
+            this.groupControl1.Controls.Add(this.te_NumBlq);
+            this.groupControl1.Controls.Add(this.labelControl6);
             this.groupControl1.Controls.Add(this.glue_CC);
             this.groupControl1.Controls.Add(this.labelControl5);
             this.groupControl1.Controls.Add(this.glue_TipoBloque);
@@ -416,9 +437,27 @@
             this.groupControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupControl1.Location = new System.Drawing.Point(7, 7);
             this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(635, 112);
+            this.groupControl1.Size = new System.Drawing.Size(660, 112);
             this.groupControl1.TabIndex = 0;
             this.groupControl1.Text = "Bloque";
+            // 
+            // te_NumBlq
+            // 
+            this.te_NumBlq.Location = new System.Drawing.Point(600, 29);
+            this.te_NumBlq.MenuManager = this.barManager1;
+            this.te_NumBlq.Name = "te_NumBlq";
+            this.te_NumBlq.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.te_NumBlq.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.te_NumBlq.Size = new System.Drawing.Size(47, 20);
+            this.te_NumBlq.TabIndex = 54;
+            // 
+            // labelControl6
+            // 
+            this.labelControl6.Location = new System.Drawing.Point(561, 32);
+            this.labelControl6.Name = "labelControl6";
+            this.labelControl6.Size = new System.Drawing.Size(33, 13);
+            this.labelControl6.TabIndex = 53;
+            this.labelControl6.Text = "N° Blq:";
             // 
             // glue_CC
             // 
@@ -679,17 +718,11 @@
             this.labelControl1.TabIndex = 0;
             this.labelControl1.Text = "Id Bloque: ";
             // 
-            // c_codigo_cam2
-            // 
-            this.c_codigo_cam2.Caption = "c_codigo_cam";
-            this.c_codigo_cam2.FieldName = "c_codigo_cam";
-            this.c_codigo_cam2.Name = "c_codigo_cam2";
-            // 
             // Frm_Bloques
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(720, 429);
+            this.ClientSize = new System.Drawing.Size(745, 429);
             this.Controls.Add(this.panelControl2);
             this.Controls.Add(this.panelControl1);
             this.Controls.Add(this.barDockControlLeft);
@@ -715,6 +748,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
             this.groupControl1.ResumeLayout(false);
             this.groupControl1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.te_NumBlq.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.glue_CC.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.glue_TipoBloque.Properties)).EndInit();
@@ -791,5 +825,8 @@
         private DevExpress.XtraGrid.Columns.GridColumn c_codigo_cam;
         private DevExpress.XtraGrid.Columns.GridColumn c_codigo_lot2;
         private DevExpress.XtraGrid.Columns.GridColumn c_codigo_cam2;
+        private DevExpress.XtraEditors.TextEdit te_NumBlq;
+        private DevExpress.XtraEditors.LabelControl labelControl6;
+        private DevExpress.XtraGrid.Columns.GridColumn n_bloque;
     }
 }

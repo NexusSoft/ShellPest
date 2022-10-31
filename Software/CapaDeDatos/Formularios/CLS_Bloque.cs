@@ -18,6 +18,8 @@ namespace CapaDeDatos
         public int Activo { get; set; }
         public string c_codigo_lot { get; set; }
 
+        public int n_bloque { get; set; }
+
         public void MtdSeleccionarBloque()
         {
             TipoDato _dato = new TipoDato();
@@ -139,6 +141,8 @@ namespace CapaDeDatos
                 _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "TipoBloque");
                 _dato.CadenaTexto = c_codigo_lot;
                 _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "c_codigo_lot");
+                _dato.Entero = n_bloque;
+                _conexion.agregarParametro(EnumTipoDato.Entero, _dato, "n_bloque");
                 _conexion.EjecutarDataset();
 
                 if (_conexion.Exito)

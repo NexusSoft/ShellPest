@@ -111,6 +111,45 @@ namespace ShellPest_WebService
             sel.Id_Usuario = Id_Usuario;
             sel.c_codigo_eps = c_codigo_eps;
             sel.F_UsuCrea = F_UsuCrea;
+            sel.Observaciones="";
+            sel.Fumigado = "";
+            sel.MtdInsertarMonitoreoPEEncabezado();
+            DataTable dt = new DataTable();
+            dt.Clear();
+            dt.Columns.Add("Mensaje", typeof(string));
+            DataRow _ravi = dt.NewRow();
+            if (sel.Exito)
+            {
+                _ravi["Mensaje"] = "1";
+                dt.Rows.Add(_ravi);
+                GetJson(dt);
+                return Json(rows, JsonRequestBehavior.AllowGet);
+            }
+            else
+            {
+                _ravi["Mensaje"] = sel.Mensaje;
+                dt.Rows.Add(_ravi);
+                GetJson(dt);
+                return Json(rows, JsonRequestBehavior.AllowGet);
+            }
+        }
+        [HttpGet]
+        public ActionResult MonitoreoPEEncabezado_new(string Fecha, string Hora, string Id_Huerta,
+                                string Id_PuntoControl, string Id_Usuario, string n_CoordenadaX, string n_CoordenadaY, string c_codigo_eps, string F_UsuCrea, string Observaciones, string Fumigado)
+        {
+            string cadena = string.Empty;
+            CLS_Monitoreo sel = new CLS_Monitoreo();
+            sel.Id_PuntoControl = Id_PuntoControl;
+            sel.Fecha = Fecha;
+            sel.Hora = Hora;
+            sel.Id_Huerta = Id_Huerta;
+            sel.n_CoordenadaX = decimal.Parse(n_CoordenadaX);
+            sel.n_CoordenadaY = decimal.Parse(n_CoordenadaY);
+            sel.Id_Usuario = Id_Usuario;
+            sel.c_codigo_eps = c_codigo_eps;
+            sel.F_UsuCrea = F_UsuCrea;
+            sel.Observaciones = Observaciones;
+            sel.Fumigado = Fumigado;
             sel.MtdInsertarMonitoreoPEEncabezado();
             DataTable dt = new DataTable();
             dt.Clear();
@@ -191,6 +230,45 @@ namespace ShellPest_WebService
             sel.Id_Usuario = Id_Usuario;
             sel.c_codigo_eps = c_codigo_eps;
             sel.F_UsuCrea = F_UsuCrea;
+            sel.Observaciones = "";
+            sel.Fumigado = "";
+            sel.MtdInsertarMonitoreoPEEncabezadoEliminado();
+            DataTable dt = new DataTable();
+            dt.Clear();
+            dt.Columns.Add("Mensaje", typeof(string));
+            DataRow _ravi = dt.NewRow();
+            if (sel.Exito)
+            {
+                _ravi["Mensaje"] = "1";
+                dt.Rows.Add(_ravi);
+                GetJson(dt);
+                return Json(rows, JsonRequestBehavior.AllowGet);
+            }
+            else
+            {
+                _ravi["Mensaje"] = sel.Mensaje;
+                dt.Rows.Add(_ravi);
+                GetJson(dt);
+                return Json(rows, JsonRequestBehavior.AllowGet);
+            }
+        }
+        [HttpGet]
+        public ActionResult MonitoreoPEEncabezadoEliminado_new(string Fecha, string Hora, string Id_Huerta,
+                                string Id_PuntoControl, string Id_Usuario, string n_CoordenadaX, string n_CoordenadaY, string c_codigo_eps, string F_UsuCrea, string Observaciones, string Fumigado)
+        {
+            string cadena = string.Empty;
+            CLS_Monitoreo sel = new CLS_Monitoreo();
+            sel.Id_PuntoControl = Id_PuntoControl;
+            sel.Fecha = Fecha;
+            sel.Hora = Hora;
+            sel.Id_Huerta = Id_Huerta;
+            sel.n_CoordenadaX = decimal.Parse(n_CoordenadaX);
+            sel.n_CoordenadaY = decimal.Parse(n_CoordenadaY);
+            sel.Id_Usuario = Id_Usuario;
+            sel.c_codigo_eps = c_codigo_eps;
+            sel.F_UsuCrea = F_UsuCrea;
+            sel.Observaciones = Observaciones;
+            sel.Fumigado = Fumigado;
             sel.MtdInsertarMonitoreoPEEncabezadoEliminado();
             DataTable dt = new DataTable();
             dt.Clear();
@@ -717,6 +795,44 @@ namespace ShellPest_WebService
             sel.v_observaciones_gas = v_observaciones_gas;
 
             sel.MtdInsertarGasolinaIngreso();
+            if (sel.Exito)
+            {
+                GetJson(sel.Datos);
+                return Json(rows, JsonRequestBehavior.AllowGet);
+            }
+            else
+            {
+                return Json(cadena, JsonRequestBehavior.AllowGet);
+            }
+        }
+
+        [System.Web.Mvc.HttpGet]
+        public ActionResult Cant_Combustible(string c_codigo_eps, string Id_Huerta, string v_tipo_gas)
+        {
+            string cadena = string.Empty;
+            WS_Control_Gasolina sel = new WS_Control_Gasolina();
+            sel.c_codigo_eps = c_codigo_eps;
+            sel.Id_Huerta = Id_Huerta;
+            sel.v_tipo_gas = v_tipo_gas;
+            sel.MtdConsultaCantidadCombustible();
+            if (sel.Exito)
+            {
+                GetJson(sel.Datos);
+                return Json(rows, JsonRequestBehavior.AllowGet);
+            }
+            else
+            {
+                return Json(cadena, JsonRequestBehavior.AllowGet);
+            }
+        }
+
+        [System.Web.Mvc.HttpGet]
+        public ActionResult Version()
+        {
+            string cadena = string.Empty;
+            WS_Control_Version sel = new WS_Control_Version();
+
+            sel.MtdSeleccionarVersion();
             if (sel.Exito)
             {
                 GetJson(sel.Datos);

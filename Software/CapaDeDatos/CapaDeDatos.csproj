@@ -126,6 +126,7 @@
     <Compile Include="WebService\WS_Control_Gasolina_Ingreso.cs" />
     <Compile Include="WebService\WS_Control_Podas.cs" />
     <Compile Include="WebService\WS_Control_Salidas.cs" />
+    <Compile Include="WebService\WS_Control_Version.cs" />
   </ItemGroup>
   <ItemGroup>
     <COMReference Include="Microsoft.Office.Core">

@@ -15,9 +15,14 @@ GO
 -- =============================================
 create PROCEDURE [dbo].[SP_EstFenologico_Insert] 
 	-- Add the parameters for the stored procedure here
-	@Id_Fenologico char(2),
-	@Nombre_Fenologico varchar(50),
-	@PoE varchar(1)
+	@Id_Bloque char(4),
+	@Id_Huerta char(5),
+	@Nombre_Bloque varchar(70),
+	@Id_Usuario varchar(10),
+	@c_codigo_eps char(2),
+	@TipoBloque char(1),
+	@c_codigo_lot char(4),
+	@n_bloque numeric(10,0)
 AS
 BEGIN
 	-- SET NOCOUNT ON added to prevent extra result sets from
@@ -30,36 +35,49 @@ BEGIN
 	begin transaction T1;
 	begin try
 
-		declare @maximo int
-		select @maximo= right(Concat('00',isnull(max(Id_Bloque),0)+1),2) from dbo.t_Est_Fenologico
+		declare @maximo varchar(4)
+		select @maximo= right(Concat('0000',isnull(max(Id_Bloque),0)+1),4) from dbo.t_Bloque
 
 		declare @Existe int
-		select @Existe = count(Id_Fenologico) from dbo.t_Est_Fenologico a where (a.Id_Fenologico=@Id_Fenologico)
+		select @Existe = count(Id_Bloque) from dbo.t_Bloque a where (a.Id_Bloque=@Id_Bloque)
 
 		if @Existe>0 
 		
-			UPDATE dbo.t_Est_Fenologico
+			UPDATE dbo.t_Bloque
 		        SET Nombre_Bloque=@Nombre_Bloque,
 		        Id_Huerta=@Id_Huerta,
 		        Id_Usuario_Mod=@Id_Usuario,
-		        F_Usuario_Mod=getdate()
+		        F_Usuario_Mod=getdate(),
+				TipoBloque=@TipoBloque,
+				c_codigo_lot=@c_codigo_lot,
+				n_bloque=@n_bloque
 		    WHERE
 		    	Id_Bloque=@Id_Bloque
 				
 		else
 		
-			INSERT INTO dbo.t_Est_Fenologico
+			INSERT INTO dbo.t_Bloque
 	           (Id_Bloque
 	           ,Nombre_Bloque
 	           ,Id_Huerta
 	           ,Id_Usuario_Crea
-	           ,F_Usuario_Crea)
+	           ,F_Usuario_Crea
+			   ,c_codigo_eps
+			   ,TipoBloque
+			   ,Activo
+			   ,c_codigo_lot
+			   ,n_bloque)
 	     	VALUES
 	           (@maximo
 	           ,@Nombre_Bloque
 	           ,@Id_Huerta
 	           ,@Id_Usuario
-	           ,getdate())
+	           ,getdate()
+			   ,@c_codigo_eps
+			   ,@TipoBloque
+			   ,1
+			   ,@c_codigo_lot
+			   ,@n_bloque)
 		
 		commit transaction T1;
 		set @correcto=1

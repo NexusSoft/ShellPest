@@ -37,6 +37,7 @@ namespace ShellPest
         {
             txtId.Text = "";
             txtNombre.Text = "";
+            te_NumBlq.Text = "";
             CargarHuertas();
         }
 
@@ -115,6 +116,11 @@ namespace ShellPest
             Clase.Id_Huerta = cboHuerta.EditValue.ToString();
             Clase.Id_Usuario = Id_Usuario;
             Clase.TipoBloque = glue_TipoBloque.EditValue.ToString().Trim();
+            if (te_NumBlq.Text.Trim().Equals(""))
+            {
+                te_NumBlq.Text = "0";
+            }
+            Clase.n_bloque = int.Parse(te_NumBlq.Text);
             if (glue_CC.EditValue!= null)
             {
                 Clase.c_codigo_lot = glue_CC.EditValue.ToString();
@@ -185,7 +191,9 @@ namespace ShellPest
                     vtCampo= row["c_codigo_cam"].ToString();
                     CargarCoslote();
                     glue_CC.EditValue= row["c_codigo_lot"].ToString();
-                    
+
+                    te_NumBlq.Text= row["n_bloque"].ToString();
+
                 }
                 if (txtId.Text.Trim().Length > 0)
                 {
@@ -260,7 +268,14 @@ namespace ShellPest
         {
             if (txtId.Text.Trim().Length > 0)
             {
-                EliminarBloque();
+                if (System.Windows.Forms.MessageBox.Show("¿Desea inhabilitar el bloque seleccionado?", "Esta seguro", System.Windows.Forms.MessageBoxButtons.YesNo) == System.Windows.Forms.DialogResult.Yes)
+                {
+                    EliminarBloque();
+                }
+                else
+                {
+                    System.Windows.Forms.MessageBox.Show("Se cancelo el proceso");
+                }
             }
             else
             {

@@ -15,19 +15,16 @@ SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
-IF  EXISTS (SELECT * FROM SYS.OBJECTS WHERE TYPE = 'P' AND NAME = 'SP_Bloque_Select')
-DROP PROCEDURE SP_Bloque_Select
+IF  EXISTS (SELECT * FROM SYS.OBJECTS WHERE TYPE = 'P' AND NAME = 'SP_WS_Version_Select')
+DROP PROCEDURE SP_WS_Version_Select
 GO
 -- =============================================
 -- Author:		<Author,,Name>
 -- Create date: <Create Date,,>
 -- Description:	<Description,,>
 -- =============================================
-CREATE PROCEDURE SP_Bloque_Select
+CREATE PROCEDURE SP_WS_Version_Select
 	-- Add the parameters for the stored procedure here
-	@c_codigo_eps char(2),
-	@TipoBloque char(1),
-	@Activo bit
 AS
 BEGIN
 	-- SET NOCOUNT ON added to prevent extra result sets from
@@ -36,23 +33,10 @@ BEGIN
 
     -- Insert statements for procedure here
 	
-		select dt.Id_Bloque
-	      ,dt.Nombre_Bloque
-	      ,dt.Id_Huerta
-	      ,hue.Nombre_Huerta
-	      ,dt.Id_Usuario_Crea
-	      ,us.Nombre_Usuario as Creador
-	      ,dt.Id_Usuario_Mod 
-	      ,usm.Nombre_Usuario as Modificador
-		  ,dt.TipoBloque
-		  ,c_codigo_lot
-		  ,hue.c_codigo_cam
-		  ,n_bloque
-		from t_Bloque as dt
-		left join t_Usuarios as us on us.Id_Usuario=dt.Id_Usuario_Crea 
-		left join t_Usuarios as usm on usm.Id_Usuario=dt.Id_Usuario_Mod 
-		left join t_huerta as hue on hue.Id_huerta=dt.Id_huerta
-		where dt.c_codigo_eps=@c_codigo_eps and TipoBloque=@TipoBloque and dt.Activo=@Activo
+		select top 1 Version  
+		from dbo.t_Version 
+		
+		
 
 END
 GO
