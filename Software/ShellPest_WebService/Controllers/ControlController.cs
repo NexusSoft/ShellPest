@@ -844,6 +844,31 @@ namespace ShellPest_WebService
             }
         }
 
+        [System.Web.Mvc.HttpGet]
+        public ActionResult Revision(string Fecha, string Id_bloque, string Fruta, string Floracion,int N_Arboles,string Observaciones,decimal Nivel_Humedad)
+        {
+            string cadena = string.Empty;
+            WS_Control_Revision sel = new WS_Control_Revision();
+            sel.Fecha = Fecha;
+            sel.Id_bloque = Id_bloque;
+            sel.Fruta = Fruta;
+            sel.Floracion = Floracion;
+            sel.N_Arboles = N_Arboles;
+            sel.Observaciones = Observaciones;
+            sel.Nivel_Humedad = Nivel_Humedad;
+
+            sel.MtdInsertarRevision();
+            if (sel.Exito)
+            {
+                GetJson(sel.Datos);
+                return Json(rows, JsonRequestBehavior.AllowGet);
+            }
+            else
+            {
+                return Json(cadena, JsonRequestBehavior.AllowGet);
+            }
+        }
+
         public void GetJson(DataTable dt)
         {
             Dictionary<string, object> row;
