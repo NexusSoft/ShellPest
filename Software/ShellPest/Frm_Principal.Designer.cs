@@ -60,6 +60,8 @@
             this.btn_Salidas = new DevExpress.XtraBars.BarButtonItem();
             this.btn_rpt_invXfecha = new DevExpress.XtraBars.BarButtonItem();
             this.btn_EstFenologico = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem2 = new DevExpress.XtraBars.BarButtonItem();
+            this.btn_Podas = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup5 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -70,15 +72,15 @@
             this.ribbonPage4 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup7 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup8 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.ribbonPageGroup9 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPage5 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup6 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonStatusBar1 = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
             this.ribbonPage2 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.xtraTabbedMdiManager1 = new DevExpress.XtraTabbedMdi.XtraTabbedMdiManager(this.components);
             this.SkinForm = new DevExpress.LookAndFeel.DefaultLookAndFeel(this.components);
-            this.ribbonPageGroup9 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.barButtonItem2 = new DevExpress.XtraBars.BarButtonItem();
-            this.btn_Podas = new DevExpress.XtraBars.BarButtonItem();
+            this.ribbonPageGroup10 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.btn_Aplicaciones = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabbedMdiManager1)).BeginInit();
             this.SuspendLayout();
@@ -89,6 +91,7 @@
             this.ribbonControl1.ExpandCollapseItem.Id = 0;
             this.ribbonControl1.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
             this.ribbonControl1.ExpandCollapseItem,
+            this.ribbonControl1.SearchEditItem,
             this.skinRibbonGalleryBarItem1,
             this.btnPlagas,
             this.btnNivelPresencia,
@@ -118,11 +121,11 @@
             this.btn_Salidas,
             this.btn_rpt_invXfecha,
             this.btn_EstFenologico,
-            this.ribbonControl1.SearchEditItem,
             this.barButtonItem2,
-            this.btn_Podas});
+            this.btn_Podas,
+            this.btn_Aplicaciones});
             this.ribbonControl1.Location = new System.Drawing.Point(0, 0);
-            this.ribbonControl1.MaxItemId = 33;
+            this.ribbonControl1.MaxItemId = 34;
             this.ribbonControl1.Name = "ribbonControl1";
             this.ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage1,
@@ -387,6 +390,21 @@
             this.btn_EstFenologico.Name = "btn_EstFenologico";
             this.btn_EstFenologico.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_EstFenologico_ItemClick);
             // 
+            // barButtonItem2
+            // 
+            this.barButtonItem2.Caption = "barButtonItem2";
+            this.barButtonItem2.Id = 31;
+            this.barButtonItem2.Name = "barButtonItem2";
+            // 
+            // btn_Podas
+            // 
+            this.btn_Podas.Caption = "Podas";
+            this.btn_Podas.Id = 32;
+            this.btn_Podas.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_Podas.ImageOptions.Image")));
+            this.btn_Podas.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btn_Podas.ImageOptions.LargeImage")));
+            this.btn_Podas.Name = "btn_Podas";
+            this.btn_Podas.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_Podas_ItemClick);
+            // 
             // ribbonPage1
             // 
             this.ribbonPage1.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
@@ -464,7 +482,8 @@
             this.ribbonPage4.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
             this.ribbonPageGroup7,
             this.ribbonPageGroup8,
-            this.ribbonPageGroup9});
+            this.ribbonPageGroup9,
+            this.ribbonPageGroup10});
             this.ribbonPage4.ImageOptions.Image = global::ShellPest.Properties.Resources.documentmap_16x16;
             this.ribbonPage4.Name = "ribbonPage4";
             this.ribbonPage4.Text = "Control";
@@ -480,7 +499,13 @@
             this.ribbonPageGroup8.ItemLinks.Add(this.btn_Salidas);
             this.ribbonPageGroup8.ItemLinks.Add(this.btn_rpt_invXfecha);
             this.ribbonPageGroup8.Name = "ribbonPageGroup8";
-            this.ribbonPageGroup8.Text = "ribbonPageGroup8";
+            this.ribbonPageGroup8.Text = "Inventarios";
+            // 
+            // ribbonPageGroup9
+            // 
+            this.ribbonPageGroup9.ItemLinks.Add(this.btn_Podas);
+            this.ribbonPageGroup9.Name = "ribbonPageGroup9";
+            this.ribbonPageGroup9.Text = "Podas";
             // 
             // ribbonPage5
             // 
@@ -499,10 +524,10 @@
             // ribbonStatusBar1
             // 
             this.ribbonStatusBar1.ItemLinks.Add(this.skinRibbonGalleryBarItem1);
-            this.ribbonStatusBar1.Location = new System.Drawing.Point(0, 498);
+            this.ribbonStatusBar1.Location = new System.Drawing.Point(0, 496);
             this.ribbonStatusBar1.Name = "ribbonStatusBar1";
             this.ribbonStatusBar1.Ribbon = this.ribbonControl1;
-            this.ribbonStatusBar1.Size = new System.Drawing.Size(1098, 23);
+            this.ribbonStatusBar1.Size = new System.Drawing.Size(1098, 25);
             // 
             // ribbonPage2
             // 
@@ -519,26 +544,20 @@
             this.SkinForm.EnableBonusSkins = true;
             this.SkinForm.LookAndFeel.SkinName = "Office 2013 Light Gray";
             // 
-            // ribbonPageGroup9
+            // ribbonPageGroup10
             // 
-            this.ribbonPageGroup9.ItemLinks.Add(this.btn_Podas);
-            this.ribbonPageGroup9.Name = "ribbonPageGroup9";
-            this.ribbonPageGroup9.Text = "ribbonPageGroup9";
+            this.ribbonPageGroup10.ItemLinks.Add(this.btn_Aplicaciones);
+            this.ribbonPageGroup10.Name = "ribbonPageGroup10";
+            this.ribbonPageGroup10.Text = "Aplicaciones";
             // 
-            // barButtonItem2
+            // btn_Aplicaciones
             // 
-            this.barButtonItem2.Caption = "barButtonItem2";
-            this.barButtonItem2.Id = 31;
-            this.barButtonItem2.Name = "barButtonItem2";
-            // 
-            // btn_Podas
-            // 
-            this.btn_Podas.Caption = "Podas";
-            this.btn_Podas.Id = 32;
-            this.btn_Podas.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem3.ImageOptions.Image")));
-            this.btn_Podas.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem3.ImageOptions.LargeImage")));
-            this.btn_Podas.Name = "btn_Podas";
-            this.btn_Podas.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_Podas_ItemClick);
+            this.btn_Aplicaciones.Caption = "Aplicaciones";
+            this.btn_Aplicaciones.Id = 33;
+            this.btn_Aplicaciones.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem3.ImageOptions.Image")));
+            this.btn_Aplicaciones.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem3.ImageOptions.LargeImage")));
+            this.btn_Aplicaciones.Name = "btn_Aplicaciones";
+            this.btn_Aplicaciones.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_Aplicaciones_ItemClick);
             // 
             // Frm_Principal
             // 
@@ -613,6 +632,8 @@
         private DevExpress.XtraBars.BarButtonItem barButtonItem2;
         private DevExpress.XtraBars.BarButtonItem btn_Podas;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup9;
+        private DevExpress.XtraBars.BarButtonItem btn_Aplicaciones;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup10;
     }
 }
 

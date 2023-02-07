@@ -18,8 +18,8 @@ namespace ShellPest
         {
             InitializeComponent();
         }
-        
-        
+
+
         private Boolean TieneAcceso(String valor)
         {
             foreach (string x in Lista)
@@ -50,7 +50,7 @@ namespace ShellPest
                 XtraMessageBox.Show(Clase.Mensaje);
             }
         }
-        
+
 
         private void btn_Perfiles_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
@@ -136,7 +136,7 @@ namespace ShellPest
             {
                 XtraMessageBox.Show("No Cuentas con acceso a esta Opcion [006]");
             }
-    
+
         }
 
         private void btn_Plagas_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -144,8 +144,8 @@ namespace ShellPest
             if (TieneAcceso("007"))
             {
                 Frm_Plagas Ventana = new Frm_Plagas();
-            Ventana.Id_Usuario = UsuariosLogin;
-            Ventana.ShowDialog();
+                Ventana.Id_Usuario = UsuariosLogin;
+                Ventana.ShowDialog();
             }
             else
             {
@@ -216,8 +216,8 @@ namespace ShellPest
             if (TieneAcceso("010"))
             {
                 Frm_Cultivo Ventana = new Frm_Cultivo();
-            Ventana.Id_Usuario = UsuariosLogin;
-            Ventana.ShowDialog();
+                Ventana.Id_Usuario = UsuariosLogin;
+                Ventana.ShowDialog();
             }
             else
             {
@@ -391,7 +391,7 @@ namespace ShellPest
             }
         }
 
-        
+
 
         private void btn_Salidas_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
@@ -414,7 +414,7 @@ namespace ShellPest
             V.UsuariosLogin = UsuariosLogin;
             V.ShowDialog();
 
-           
+
         }
 
         private void btn_EstFenologico_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -432,5 +432,22 @@ namespace ShellPest
             Frm_Podas.DefInstance.Show();
 
         }
+
+        private void btn_Aplicaciones_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            if (TieneAcceso("022"))
+            {
+                Frm_Aplicaciones Ventana = new Frm_Aplicaciones();
+                Frm_Aplicaciones.DefInstance.MdiParent = this;
+                Frm_Aplicaciones.DefInstance.Id_Usuario = UsuariosLogin;
+                Frm_Aplicaciones.DefInstance.Show();
+            }
+
+            else
+            {
+                XtraMessageBox.Show("No Cuentas con acceso a esta Opcion [022]");
+            }
+        }
     }
+
 }

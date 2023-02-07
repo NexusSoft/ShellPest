@@ -296,6 +296,12 @@
     <Compile Include="Control\Frm_AbrirReceta.Designer.cs">
       <DependentUpon>Frm_AbrirReceta.cs</DependentUpon>
     </Compile>
+    <Compile Include="Control\Frm_Aplicaciones.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Control\Frm_Aplicaciones.Designer.cs">
+      <DependentUpon>Frm_Aplicaciones.cs</DependentUpon>
+    </Compile>
     <Compile Include="Control\Frm_Entradas.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -471,6 +477,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Control\Frm_AbrirReceta.resx">
       <DependentUpon>Frm_AbrirReceta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Control\Frm_Aplicaciones.resx">
+      <DependentUpon>Frm_Aplicaciones.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Control\Frm_Entradas.resx">
       <DependentUpon>Frm_Entradas.cs</DependentUpon>
