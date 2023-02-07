@@ -125,6 +125,7 @@
     <Compile Include="WebService\WS_Control_Gasolina.cs" />
     <Compile Include="WebService\WS_Control_Gasolina_Ingreso.cs" />
     <Compile Include="WebService\WS_Control_Podas.cs" />
+    <Compile Include="WebService\WS_Control_Podas_Insert.cs" />
     <Compile Include="WebService\WS_Control_Revision.cs" />
     <Compile Include="WebService\WS_Control_Salidas.cs" />
     <Compile Include="WebService\WS_Control_Version.cs" />

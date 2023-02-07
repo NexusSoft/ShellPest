@@ -423,5 +423,14 @@ namespace ShellPest
             V.PaSel = false;
             V.ShowDialog();
         }
+
+        private void btn_Podas_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            Frm_Podas Ventana = new Frm_Podas();
+            Frm_Podas.DefInstance.MdiParent = this;
+            Frm_Podas.DefInstance.Id_Usuario = UsuariosLogin;
+            Frm_Podas.DefInstance.Show();
+
+        }
     }
 }

@@ -76,13 +76,16 @@
             this.ribbonPage2 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.xtraTabbedMdiManager1 = new DevExpress.XtraTabbedMdi.XtraTabbedMdiManager(this.components);
             this.SkinForm = new DevExpress.LookAndFeel.DefaultLookAndFeel(this.components);
+            this.ribbonPageGroup9 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.barButtonItem2 = new DevExpress.XtraBars.BarButtonItem();
+            this.btn_Podas = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabbedMdiManager1)).BeginInit();
             this.SuspendLayout();
             // 
             // ribbonControl1
             // 
-            this.ribbonControl1.ApplicationIcon = global::ShellPest.Properties.Resources.ShellPest;
+            this.ribbonControl1.ApplicationButtonImageOptions.Image = global::ShellPest.Properties.Resources.ShellPest;
             this.ribbonControl1.ExpandCollapseItem.Id = 0;
             this.ribbonControl1.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
             this.ribbonControl1.ExpandCollapseItem,
@@ -114,9 +117,12 @@
             this.btn_ImpInv,
             this.btn_Salidas,
             this.btn_rpt_invXfecha,
-            this.btn_EstFenologico});
+            this.btn_EstFenologico,
+            this.ribbonControl1.SearchEditItem,
+            this.barButtonItem2,
+            this.btn_Podas});
             this.ribbonControl1.Location = new System.Drawing.Point(0, 0);
-            this.ribbonControl1.MaxItemId = 31;
+            this.ribbonControl1.MaxItemId = 33;
             this.ribbonControl1.Name = "ribbonControl1";
             this.ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage1,
@@ -408,6 +414,7 @@
             // ribbonPageGroup1
             // 
             this.ribbonPageGroup1.AllowTextClipping = false;
+            this.ribbonPageGroup1.CaptionButtonVisible = DevExpress.Utils.DefaultBoolean.False;
             this.ribbonPageGroup1.ItemLinks.Add(this.btnPlagas);
             this.ribbonPageGroup1.ItemLinks.Add(this.btnNivelPresencia);
             this.ribbonPageGroup1.ItemLinks.Add(this.btnDeteccion);
@@ -416,7 +423,6 @@
             this.ribbonPageGroup1.ItemLinks.Add(this.btnMonitoreo);
             this.ribbonPageGroup1.ItemLinks.Add(this.btn_EstFenologico);
             this.ribbonPageGroup1.Name = "ribbonPageGroup1";
-            this.ribbonPageGroup1.ShowCaptionButton = false;
             this.ribbonPageGroup1.Text = "Catalogos de Deteccion";
             // 
             // ribbonPageGroup2
@@ -445,19 +451,20 @@
             // ribbonPageGroup3
             // 
             this.ribbonPageGroup3.AllowTextClipping = false;
+            this.ribbonPageGroup3.CaptionButtonVisible = DevExpress.Utils.DefaultBoolean.False;
             this.ribbonPageGroup3.ItemLinks.Add(this.btnPerfiles);
             this.ribbonPageGroup3.ItemLinks.Add(this.btnPantallas);
             this.ribbonPageGroup3.ItemLinks.Add(this.btnPermisos);
             this.ribbonPageGroup3.ItemLinks.Add(this.btnUsuarios);
             this.ribbonPageGroup3.Name = "ribbonPageGroup3";
-            this.ribbonPageGroup3.ShowCaptionButton = false;
             this.ribbonPageGroup3.Text = "Asignacion de Permisos";
             // 
             // ribbonPage4
             // 
             this.ribbonPage4.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
             this.ribbonPageGroup7,
-            this.ribbonPageGroup8});
+            this.ribbonPageGroup8,
+            this.ribbonPageGroup9});
             this.ribbonPage4.ImageOptions.Image = global::ShellPest.Properties.Resources.documentmap_16x16;
             this.ribbonPage4.Name = "ribbonPage4";
             this.ribbonPage4.Text = "Control";
@@ -511,6 +518,27 @@
             // 
             this.SkinForm.EnableBonusSkins = true;
             this.SkinForm.LookAndFeel.SkinName = "Office 2013 Light Gray";
+            // 
+            // ribbonPageGroup9
+            // 
+            this.ribbonPageGroup9.ItemLinks.Add(this.btn_Podas);
+            this.ribbonPageGroup9.Name = "ribbonPageGroup9";
+            this.ribbonPageGroup9.Text = "ribbonPageGroup9";
+            // 
+            // barButtonItem2
+            // 
+            this.barButtonItem2.Caption = "barButtonItem2";
+            this.barButtonItem2.Id = 31;
+            this.barButtonItem2.Name = "barButtonItem2";
+            // 
+            // btn_Podas
+            // 
+            this.btn_Podas.Caption = "Podas";
+            this.btn_Podas.Id = 32;
+            this.btn_Podas.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem3.ImageOptions.Image")));
+            this.btn_Podas.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem3.ImageOptions.LargeImage")));
+            this.btn_Podas.Name = "btn_Podas";
+            this.btn_Podas.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_Podas_ItemClick);
             // 
             // Frm_Principal
             // 
@@ -582,6 +610,9 @@
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup8;
         private DevExpress.XtraBars.BarButtonItem btn_rpt_invXfecha;
         private DevExpress.XtraBars.BarButtonItem btn_EstFenologico;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem2;
+        private DevExpress.XtraBars.BarButtonItem btn_Podas;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup9;
     }
 }
 

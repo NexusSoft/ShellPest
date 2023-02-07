@@ -98,5 +98,72 @@ namespace CapaDeDatos
             }
         }
 
+        public void PodasSelect()
+        {
+            TipoDato _dato = new TipoDato();
+            Conexion _conexion = new Conexion(cadenaConexion);
+
+            Exito = true;
+            try
+            {
+
+                _conexion.NombreProcedimiento = "SP_Podas_Select";
+                _dato.CadenaTexto = Fecha;
+                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Fecha");
+               
+
+                _conexion.EjecutarDataset();
+
+                if (_conexion.Exito)
+                {
+                    Datos = _conexion.Datos;
+                }
+                else
+                {
+                    Mensaje = _conexion.Mensaje;
+                    Exito = false;
+                }
+            }
+            catch (Exception e)
+            {
+                Mensaje = e.Message;
+                Exito = false;
+            }
+        }
+
+        public void PodasDetSelect()
+        {
+            TipoDato _dato = new TipoDato();
+            Conexion _conexion = new Conexion(cadenaConexion);
+
+            Exito = true;
+            try
+            {
+
+                _conexion.NombreProcedimiento = "SP_PodasDet_Select";
+                _dato.CadenaTexto = Fecha;
+                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Fecha");
+                _dato.CadenaTexto = Id_bloque;
+                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Id_bloque");
+
+                _conexion.EjecutarDataset();
+
+                if (_conexion.Exito)
+                {
+                    Datos = _conexion.Datos;
+                }
+                else
+                {
+                    Mensaje = _conexion.Mensaje;
+                    Exito = false;
+                }
+            }
+            catch (Exception e)
+            {
+                Mensaje = e.Message;
+                Exito = false;
+            }
+        }
+
     }
 }
