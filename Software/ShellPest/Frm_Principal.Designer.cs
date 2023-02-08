@@ -63,6 +63,7 @@
             this.barButtonItem2 = new DevExpress.XtraBars.BarButtonItem();
             this.btn_Podas = new DevExpress.XtraBars.BarButtonItem();
             this.btn_Aplicaciones = new DevExpress.XtraBars.BarButtonItem();
+            this.btn_Combustibles = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup5 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -75,14 +76,13 @@
             this.ribbonPageGroup8 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup9 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup10 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.ribbonPageGroup11 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPage5 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup6 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonStatusBar1 = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
             this.ribbonPage2 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.xtraTabbedMdiManager1 = new DevExpress.XtraTabbedMdi.XtraTabbedMdiManager(this.components);
             this.SkinForm = new DevExpress.LookAndFeel.DefaultLookAndFeel(this.components);
-            this.ribbonPageGroup11 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.btn_Combustibles = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabbedMdiManager1)).BeginInit();
             this.SuspendLayout();
@@ -417,6 +417,15 @@
             this.btn_Aplicaciones.Name = "btn_Aplicaciones";
             this.btn_Aplicaciones.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_Aplicaciones_ItemClick);
             // 
+            // btn_Combustibles
+            // 
+            this.btn_Combustibles.Caption = "Combustibles";
+            this.btn_Combustibles.Id = 34;
+            this.btn_Combustibles.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_Combustibles.ImageOptions.Image")));
+            this.btn_Combustibles.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btn_Combustibles.ImageOptions.LargeImage")));
+            this.btn_Combustibles.Name = "btn_Combustibles";
+            this.btn_Combustibles.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_Combustibles_ItemClick);
+            // 
             // ribbonPage1
             // 
             this.ribbonPage1.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
@@ -526,6 +535,12 @@
             this.ribbonPageGroup10.Name = "ribbonPageGroup10";
             this.ribbonPageGroup10.Text = "Aplicaciones";
             // 
+            // ribbonPageGroup11
+            // 
+            this.ribbonPageGroup11.ItemLinks.Add(this.btn_Combustibles);
+            this.ribbonPageGroup11.Name = "ribbonPageGroup11";
+            this.ribbonPageGroup11.Text = "ribbonPageGroup11";
+            // 
             // ribbonPage5
             // 
             this.ribbonPage5.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
@@ -562,20 +577,6 @@
             // 
             this.SkinForm.EnableBonusSkins = true;
             this.SkinForm.LookAndFeel.SkinName = "Office 2013 Light Gray";
-            // 
-            // ribbonPageGroup11
-            // 
-            this.ribbonPageGroup11.ItemLinks.Add(this.btn_Combustibles);
-            this.ribbonPageGroup11.Name = "ribbonPageGroup11";
-            this.ribbonPageGroup11.Text = "ribbonPageGroup11";
-            // 
-            // btn_Combustibles
-            // 
-            this.btn_Combustibles.Caption = "Combustibles";
-            this.btn_Combustibles.Id = 34;
-            this.btn_Combustibles.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem3.ImageOptions.Image")));
-            this.btn_Combustibles.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem3.ImageOptions.LargeImage")));
-            this.btn_Combustibles.Name = "btn_Combustibles";
             // 
             // Frm_Principal
             // 

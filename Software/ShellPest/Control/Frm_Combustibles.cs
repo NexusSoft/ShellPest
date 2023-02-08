@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using CapaDeDatos;
 
-namespace ShellPest.Control
+namespace ShellPest
 {
     public partial class Frm_Combustibles : DevExpress.XtraEditors.XtraForm
     {
@@ -19,12 +19,29 @@ namespace ShellPest.Control
             InitializeComponent();
         }
 
+        public string Id_Usuario { get; set; }
+
+        private static Frm_Combustibles m_FormDefInstance;
+        public static Frm_Combustibles DefInstance
+        {
+            get
+            {
+                if (m_FormDefInstance == null || m_FormDefInstance.IsDisposed)
+                    m_FormDefInstance = new Frm_Combustibles();
+                return m_FormDefInstance;
+            }
+            set
+            {
+                m_FormDefInstance = value;
+            }
+        }
+
         private void Frm_Combustibles_Load(object sender, EventArgs e)
         {
             WS_Catalogos_Empresas Clase = new WS_Catalogos_Empresas();
-            //Clase.Id_Usuario = Id_Usuario;
+            Clase.Id_Usuario = Id_Usuario;
 
-            rg_IoS.EditValue = "S";
+            
             Clase.MtdSeleccionarEmpresaXUsuario();
             if (Clase.Exito)
             {
@@ -44,6 +61,8 @@ namespace ShellPest.Control
                 
                 //CargarGridPodas(false);
             }
+
+            rg_IoS.EditValue = 'S';
         }
 
         private void CargarHuertas()
@@ -126,6 +145,11 @@ namespace ShellPest.Control
                     glue_Bloques.Properties.DataSource = Clase.Datos;
                 }
             }
+        }
+
+        private void btn_Salir_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            this.Close();
         }
     }
 }

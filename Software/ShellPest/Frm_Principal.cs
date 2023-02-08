@@ -448,6 +448,14 @@ namespace ShellPest
                 XtraMessageBox.Show("No Cuentas con acceso a esta Opcion [022]");
             }
         }
+
+        private void btn_Combustibles_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            Frm_Combustibles Ventana = new Frm_Combustibles();
+            Frm_Combustibles.DefInstance.MdiParent = this;
+            Frm_Combustibles.DefInstance.Id_Usuario = UsuariosLogin;
+            Frm_Combustibles.DefInstance.Show();
+        }
     }
 
 }
