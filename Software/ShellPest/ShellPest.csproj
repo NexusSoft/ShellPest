@@ -10,8 +10,9 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>ShellPest</RootNamespace>
     <AssemblyName>ShellPest</AssemblyName>
-    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -302,6 +303,18 @@
     <Compile Include="Control\Frm_Aplicaciones.Designer.cs">
       <DependentUpon>Frm_Aplicaciones.cs</DependentUpon>
     </Compile>
+    <Compile Include="Control\Frm_Combustibles.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Control\Frm_Combustibles.Designer.cs">
+      <DependentUpon>Frm_Combustibles.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Control\Frm_Combustibles2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Control\Frm_Combustibles2.Designer.cs">
+      <DependentUpon>Frm_Combustibles2.cs</DependentUpon>
+    </Compile>
     <Compile Include="Control\Frm_Entradas.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -480,6 +493,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Control\Frm_Aplicaciones.resx">
       <DependentUpon>Frm_Aplicaciones.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Control\Frm_Combustibles.resx">
+      <DependentUpon>Frm_Combustibles.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Control\Frm_Entradas.resx">
       <DependentUpon>Frm_Entradas.cs</DependentUpon>
