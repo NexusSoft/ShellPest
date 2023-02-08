@@ -62,6 +62,7 @@
             this.btn_EstFenologico = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem2 = new DevExpress.XtraBars.BarButtonItem();
             this.btn_Podas = new DevExpress.XtraBars.BarButtonItem();
+            this.btn_Aplicaciones = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup5 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -73,14 +74,15 @@
             this.ribbonPageGroup7 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup8 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup9 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.ribbonPageGroup10 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPage5 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup6 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonStatusBar1 = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
             this.ribbonPage2 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.xtraTabbedMdiManager1 = new DevExpress.XtraTabbedMdi.XtraTabbedMdiManager(this.components);
             this.SkinForm = new DevExpress.LookAndFeel.DefaultLookAndFeel(this.components);
-            this.ribbonPageGroup10 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.btn_Aplicaciones = new DevExpress.XtraBars.BarButtonItem();
+            this.ribbonPageGroup11 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.btn_Combustibles = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabbedMdiManager1)).BeginInit();
             this.SuspendLayout();
@@ -123,9 +125,10 @@
             this.btn_EstFenologico,
             this.barButtonItem2,
             this.btn_Podas,
-            this.btn_Aplicaciones});
+            this.btn_Aplicaciones,
+            this.btn_Combustibles});
             this.ribbonControl1.Location = new System.Drawing.Point(0, 0);
-            this.ribbonControl1.MaxItemId = 34;
+            this.ribbonControl1.MaxItemId = 35;
             this.ribbonControl1.Name = "ribbonControl1";
             this.ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage1,
@@ -405,6 +408,15 @@
             this.btn_Podas.Name = "btn_Podas";
             this.btn_Podas.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_Podas_ItemClick);
             // 
+            // btn_Aplicaciones
+            // 
+            this.btn_Aplicaciones.Caption = "Aplicaciones";
+            this.btn_Aplicaciones.Id = 33;
+            this.btn_Aplicaciones.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_Aplicaciones.ImageOptions.Image")));
+            this.btn_Aplicaciones.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btn_Aplicaciones.ImageOptions.LargeImage")));
+            this.btn_Aplicaciones.Name = "btn_Aplicaciones";
+            this.btn_Aplicaciones.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_Aplicaciones_ItemClick);
+            // 
             // ribbonPage1
             // 
             this.ribbonPage1.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
@@ -483,7 +495,8 @@
             this.ribbonPageGroup7,
             this.ribbonPageGroup8,
             this.ribbonPageGroup9,
-            this.ribbonPageGroup10});
+            this.ribbonPageGroup10,
+            this.ribbonPageGroup11});
             this.ribbonPage4.ImageOptions.Image = global::ShellPest.Properties.Resources.documentmap_16x16;
             this.ribbonPage4.Name = "ribbonPage4";
             this.ribbonPage4.Text = "Control";
@@ -507,6 +520,12 @@
             this.ribbonPageGroup9.Name = "ribbonPageGroup9";
             this.ribbonPageGroup9.Text = "Podas";
             // 
+            // ribbonPageGroup10
+            // 
+            this.ribbonPageGroup10.ItemLinks.Add(this.btn_Aplicaciones);
+            this.ribbonPageGroup10.Name = "ribbonPageGroup10";
+            this.ribbonPageGroup10.Text = "Aplicaciones";
+            // 
             // ribbonPage5
             // 
             this.ribbonPage5.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
@@ -524,10 +543,10 @@
             // ribbonStatusBar1
             // 
             this.ribbonStatusBar1.ItemLinks.Add(this.skinRibbonGalleryBarItem1);
-            this.ribbonStatusBar1.Location = new System.Drawing.Point(0, 496);
+            this.ribbonStatusBar1.Location = new System.Drawing.Point(0, 498);
             this.ribbonStatusBar1.Name = "ribbonStatusBar1";
             this.ribbonStatusBar1.Ribbon = this.ribbonControl1;
-            this.ribbonStatusBar1.Size = new System.Drawing.Size(1098, 25);
+            this.ribbonStatusBar1.Size = new System.Drawing.Size(1098, 23);
             // 
             // ribbonPage2
             // 
@@ -544,20 +563,19 @@
             this.SkinForm.EnableBonusSkins = true;
             this.SkinForm.LookAndFeel.SkinName = "Office 2013 Light Gray";
             // 
-            // ribbonPageGroup10
+            // ribbonPageGroup11
             // 
-            this.ribbonPageGroup10.ItemLinks.Add(this.btn_Aplicaciones);
-            this.ribbonPageGroup10.Name = "ribbonPageGroup10";
-            this.ribbonPageGroup10.Text = "Aplicaciones";
+            this.ribbonPageGroup11.ItemLinks.Add(this.btn_Combustibles);
+            this.ribbonPageGroup11.Name = "ribbonPageGroup11";
+            this.ribbonPageGroup11.Text = "ribbonPageGroup11";
             // 
-            // btn_Aplicaciones
+            // btn_Combustibles
             // 
-            this.btn_Aplicaciones.Caption = "Aplicaciones";
-            this.btn_Aplicaciones.Id = 33;
-            this.btn_Aplicaciones.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem3.ImageOptions.Image")));
-            this.btn_Aplicaciones.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem3.ImageOptions.LargeImage")));
-            this.btn_Aplicaciones.Name = "btn_Aplicaciones";
-            this.btn_Aplicaciones.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_Aplicaciones_ItemClick);
+            this.btn_Combustibles.Caption = "Combustibles";
+            this.btn_Combustibles.Id = 34;
+            this.btn_Combustibles.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem3.ImageOptions.Image")));
+            this.btn_Combustibles.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem3.ImageOptions.LargeImage")));
+            this.btn_Combustibles.Name = "btn_Combustibles";
             // 
             // Frm_Principal
             // 
@@ -634,6 +652,8 @@
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup9;
         private DevExpress.XtraBars.BarButtonItem btn_Aplicaciones;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup10;
+        private DevExpress.XtraBars.BarButtonItem btn_Combustibles;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup11;
     }
 }
 

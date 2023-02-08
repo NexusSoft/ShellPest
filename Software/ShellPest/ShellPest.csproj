@@ -309,12 +309,6 @@
     <Compile Include="Control\Frm_Combustibles.Designer.cs">
       <DependentUpon>Frm_Combustibles.cs</DependentUpon>
     </Compile>
-    <Compile Include="Control\Frm_Combustibles2.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Control\Frm_Combustibles2.Designer.cs">
-      <DependentUpon>Frm_Combustibles2.cs</DependentUpon>
-    </Compile>
     <Compile Include="Control\Frm_Entradas.cs">
       <SubType>Form</SubType>
     </Compile>
