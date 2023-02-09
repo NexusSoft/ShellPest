@@ -58,7 +58,7 @@ namespace ShellPest
                 }
                 de_Fecha.EditValue = DateTime.Today;
                 CargarHuertas();
-                
+                CargarResponsables();
                 //CargarGridPodas(false);
             }
 
@@ -81,6 +81,46 @@ namespace ShellPest
             }
         }
 
+        private void CargarResponsables()
+        {
+            glue_Responsables.Properties.DataSource = null;
+            WS_Catalogos_empleados_huerta sel = new WS_Catalogos_empleados_huerta();
+            sel.Id_Usuario = Id_Usuario;
+            sel.MtdSeleccionarEmpleados();
+                   
+            if (sel.Exito)
+            {
+                glue_Responsables.Properties.DataSource = sel.Datos;
+            }
+            
+        }
+
+        private void CargarActivosGas()
+        {
+            glue_Activos.Properties.DataSource = null;
+            WS_Catalogos_Activos_Gasolina sel = new WS_Catalogos_Activos_Gasolina();
+            sel.Id_Usuario = Id_Usuario;
+           
+            sel.Fecha = "19000101";
+            
+           
+            sel.MtdSeleccionarActivo();
+            if (sel.Exito)
+            {
+                glue_Activos.Properties.DataSource = sel.Datos;
+            }
+        }
+
+        private string DosCero(string sVal)
+        {
+            string str = "";
+            if (sVal.Length == 1)
+            {
+                return (str = "0" + sVal);
+            }
+            return sVal;
+        }
+
         private void rg_IoS_EditValueChanged(object sender, EventArgs e)
         {
             if (rg_IoS.EditValue.ToString() == "S")
@@ -93,6 +133,7 @@ namespace ShellPest
                 label_Actividad.Visible = true;
                 glue_Actividades.Visible = true;
                 CargarActividades();
+                CargarActivosGas();
             }
             else
             {
@@ -108,11 +149,14 @@ namespace ShellPest
         private void CargarActividades()
         {
             glue_Actividades.Properties.DataSource = null;
-            WS_Catalogos_cosactividad Clase = new WS_Catalogos_cosactividad();
-
+           
+            
             if (glue_Empresas.EditValue != null)
             {
-                Clase.MtdSeleccionarActividad();
+                WS_Catalogos_Actividades_Huerta Clase = new WS_Catalogos_Actividades_Huerta();
+
+                Clase.Id_Usuario = Id_Usuario;
+                Clase.MtdSeleccionarActividades();
                 if (Clase.Exito)
                 {
                     glue_Actividades.Properties.DataSource = Clase.Datos;
