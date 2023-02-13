@@ -1,23 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using CapaDeDatos;
-using System.Web.Mvc;
-using System.Data;
+﻿using CapaDeDatos;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
 using System.Data;
-using System.IO;
-using System.Linq;
-using System.Net;
-using System.Net.Http;
-using System.Net.Http.Headers;
 using System.Security.Cryptography;
 using System.Text;
-using System.Web;
 using System.Web.Mvc;
-using System.ServiceModel;
-using CapaDeDatos;
 
 
 

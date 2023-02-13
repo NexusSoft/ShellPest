@@ -45,3 +45,10 @@ D:\JORGE\Documents\GitHub\ShellPest\Software\CapaDeDatos\obj\Debug\CapaDeDatos.c
 D:\JORGE\Documents\GitHub\ShellPest\Software\CapaDeDatos\obj\Debug\CapaDeDatos.csproj.CoreCompileInputs.cache
 D:\JORGE\Documents\GitHub\ShellPest\Software\CapaDeDatos\obj\Debug\CapaDeDatos.dll
 D:\JORGE\Documents\GitHub\ShellPest\Software\CapaDeDatos\obj\Debug\CapaDeDatos.pdb
+C:\Users\Sistemas\Documents\GitHub\ShellPest\Software\CapaDeDatos\bin\Debug\CapaDeDatos.dll
+C:\Users\Sistemas\Documents\GitHub\ShellPest\Software\CapaDeDatos\bin\Debug\CapaDeDatos.pdb
+C:\Users\Sistemas\Documents\GitHub\ShellPest\Software\CapaDeDatos\obj\Debug\CapaDeDatos.csproj.AssemblyReference.cache
+C:\Users\Sistemas\Documents\GitHub\ShellPest\Software\CapaDeDatos\obj\Debug\CapaDeDatos.csproj.ResolveComReference.cache
+C:\Users\Sistemas\Documents\GitHub\ShellPest\Software\CapaDeDatos\obj\Debug\CapaDeDatos.csproj.CoreCompileInputs.cache
+C:\Users\Sistemas\Documents\GitHub\ShellPest\Software\CapaDeDatos\obj\Debug\CapaDeDatos.dll
+C:\Users\Sistemas\Documents\GitHub\ShellPest\Software\CapaDeDatos\obj\Debug\CapaDeDatos.pdb

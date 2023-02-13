@@ -1,4 +1,5 @@
-﻿using DevExpress.XtraEditors;
+﻿using CapaDeDatos;
+using DevExpress.XtraEditors;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -30,6 +31,30 @@ namespace ShellPest
             set
             {
                 m_FormDefInstance = value;
+            }
+        }
+
+        private void Frm_Aplicaciones_Shown(object sender, EventArgs e)
+        {
+            CargarEmpresa();
+        }
+
+        private void CargarEmpresa()
+        {
+            WS_Catalogos_Empresas Clase = new WS_Catalogos_Empresas();
+            Clase.Id_Usuario = Id_Usuario;
+            Clase.MtdSeleccionarEmpresaXUsuario();
+            if (Clase.Exito)
+            {
+                cmb_Empresas.Properties.DisplayMember = "v_nombre_usuemp";
+                cmb_Empresas.Properties.ValueMember = "c_codigo_eps";
+                cmb_Empresas.EditValue = null;
+                cmb_Empresas.Properties.DataSource = Clase.Datos;
+
+                if (Clase.Datos.Rows.Count > 0)
+                {
+                    cmb_Empresas.EditValue = Clase.Datos.Rows[0][0].ToString();
+                }
             }
         }
     }
