@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CapaDeDatos.Control
 {
-    internal class CLS_Aplicaciones : ConexionBase
+    public class CLS_Aplicaciones : ConexionBase
     {
         public string Id_Usuario { get; set; }
         public void MtdSeleccionarEmpresaXUsuario()

@@ -1,4 +1,5 @@
 ﻿using CapaDeDatos;
+using CapaDeDatos.Control;
 using DevExpress.XtraEditors;
 using System;
 using System.Collections.Generic;
@@ -41,7 +42,7 @@ namespace ShellPest
 
         private void CargarEmpresa()
         {
-            WS_Catalogos_Empresas Clase = new WS_Catalogos_Empresas();
+            CLS_Aplicaciones Clase = new CLS_Aplicaciones();
             Clase.Id_Usuario = Id_Usuario;
             Clase.MtdSeleccionarEmpresaXUsuario();
             if (Clase.Exito)
