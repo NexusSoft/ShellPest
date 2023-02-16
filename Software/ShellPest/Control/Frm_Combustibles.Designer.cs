@@ -41,9 +41,39 @@
             this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.Id_Cultivo = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.Nombre_Cultivo = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.d_fechaconsumo_gas = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Id_ActivosGasG = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.v_descripcorta_actG = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.v_Bloques_gas = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.c_codigo_actG = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.v_nombre_actG = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.c_folio_gas = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.d_fecha_crea = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.c_codigo_epsG = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Id_HuertaG = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Nombre_Huerta = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.c_codigo_empG = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Operador = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.v_tipo_gas = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.v_cantutilizada_gas = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Saldo = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.v_observaciones_gas = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.n_rendimiento_act = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.c_unidad_act = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Abreviatura = new DevExpress.XtraGrid.Columns.GridColumn();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
+            this.glue_Unidades = new DevExpress.XtraEditors.GridLookUpEdit();
+            this.gridView9 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.textEdit2 = new DevExpress.XtraEditors.TextEdit();
+            this.label_Rendimiento = new DevExpress.XtraEditors.LabelControl();
+            this.btn_Quitar = new DevExpress.XtraEditors.SimpleButton();
+            this.btn_Agregar = new DevExpress.XtraEditors.SimpleButton();
+            this.glue_TipoCombustible = new DevExpress.XtraEditors.GridLookUpEdit();
+            this.gridView8 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.Tipo = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
             this.glue_Actividades = new DevExpress.XtraEditors.GridLookUpEdit();
             this.gridView7 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.v_nombre_act = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -94,6 +124,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.glue_Unidades.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView9)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEdit2.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.glue_TipoCombustible.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.glue_Actividades.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.glue_Bloques.Properties)).BeginInit();
@@ -126,7 +161,7 @@
             this.barManager1.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
             this.btn_Salir});
             this.barManager1.MainMenu = this.bar1;
-            this.barManager1.MaxItemId = 68;
+            this.barManager1.MaxItemId = 72;
             this.barManager1.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItemTextEdit1});
             // 
@@ -166,7 +201,7 @@
             this.barDockControlTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.barDockControlTop.Location = new System.Drawing.Point(0, 0);
             this.barDockControlTop.Manager = this.barManager1;
-            this.barDockControlTop.Size = new System.Drawing.Size(831, 0);
+            this.barDockControlTop.Size = new System.Drawing.Size(936, 0);
             // 
             // barDockControlBottom
             // 
@@ -174,7 +209,7 @@
             this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.barDockControlBottom.Location = new System.Drawing.Point(0, 450);
             this.barDockControlBottom.Manager = this.barManager1;
-            this.barDockControlBottom.Size = new System.Drawing.Size(831, 0);
+            this.barDockControlBottom.Size = new System.Drawing.Size(936, 0);
             // 
             // barDockControlLeft
             // 
@@ -188,7 +223,7 @@
             // 
             this.barDockControl1.CausesValidation = false;
             this.barDockControl1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.barDockControl1.Location = new System.Drawing.Point(831, 0);
+            this.barDockControl1.Location = new System.Drawing.Point(936, 0);
             this.barDockControl1.Manager = this.barManager1;
             this.barDockControl1.Size = new System.Drawing.Size(0, 450);
             // 
@@ -200,10 +235,10 @@
             // 
             this.panelControl2.Controls.Add(this.gridControl1);
             this.panelControl2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelControl2.Location = new System.Drawing.Point(50, 134);
+            this.panelControl2.Location = new System.Drawing.Point(50, 197);
             this.panelControl2.Name = "panelControl2";
             this.panelControl2.Padding = new System.Windows.Forms.Padding(5, 20, 5, 5);
-            this.panelControl2.Size = new System.Drawing.Size(781, 316);
+            this.panelControl2.Size = new System.Drawing.Size(886, 253);
             this.panelControl2.TabIndex = 9;
             // 
             // gridControl1
@@ -213,7 +248,7 @@
             this.gridControl1.MainView = this.gridView1;
             this.gridControl1.MenuManager = this.barManager1;
             this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(767, 287);
+            this.gridControl1.Size = new System.Drawing.Size(872, 224);
             this.gridControl1.TabIndex = 0;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -221,8 +256,26 @@
             // gridView1
             // 
             this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.Id_Cultivo,
-            this.Nombre_Cultivo});
+            this.d_fechaconsumo_gas,
+            this.Id_ActivosGasG,
+            this.v_descripcorta_actG,
+            this.v_Bloques_gas,
+            this.c_codigo_actG,
+            this.v_nombre_actG,
+            this.c_folio_gas,
+            this.d_fecha_crea,
+            this.c_codigo_epsG,
+            this.Id_HuertaG,
+            this.Nombre_Huerta,
+            this.c_codigo_empG,
+            this.Operador,
+            this.v_tipo_gas,
+            this.v_cantutilizada_gas,
+            this.Saldo,
+            this.v_observaciones_gas,
+            this.n_rendimiento_act,
+            this.c_unidad_act,
+            this.Abreviatura});
             this.gridView1.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
             this.gridView1.GridControl = this.gridControl1;
             this.gridView1.Name = "gridView1";
@@ -230,26 +283,165 @@
             this.gridView1.OptionsSelection.EnableAppearanceFocusedCell = false;
             this.gridView1.OptionsView.ShowGroupPanel = false;
             // 
-            // Id_Cultivo
+            // d_fechaconsumo_gas
             // 
-            this.Id_Cultivo.Caption = "Id Cultivo";
-            this.Id_Cultivo.FieldName = "Id_Cultivo";
-            this.Id_Cultivo.Name = "Id_Cultivo";
-            this.Id_Cultivo.OptionsColumn.AllowEdit = false;
-            this.Id_Cultivo.Visible = true;
-            this.Id_Cultivo.VisibleIndex = 0;
+            this.d_fechaconsumo_gas.Caption = "d_fechaconsumo_gas";
+            this.d_fechaconsumo_gas.FieldName = "d_fechaconsumo_gas";
+            this.d_fechaconsumo_gas.Name = "d_fechaconsumo_gas";
+            this.d_fechaconsumo_gas.OptionsColumn.AllowEdit = false;
+            this.d_fechaconsumo_gas.Visible = true;
+            this.d_fechaconsumo_gas.VisibleIndex = 0;
             // 
-            // Nombre_Cultivo
+            // Id_ActivosGasG
             // 
-            this.Nombre_Cultivo.Caption = "Cultivo";
-            this.Nombre_Cultivo.FieldName = "Nombre_Cultivo";
-            this.Nombre_Cultivo.Name = "Nombre_Cultivo";
-            this.Nombre_Cultivo.OptionsColumn.AllowEdit = false;
-            this.Nombre_Cultivo.Visible = true;
-            this.Nombre_Cultivo.VisibleIndex = 1;
+            this.Id_ActivosGasG.Caption = "Id_ActivosGas";
+            this.Id_ActivosGasG.FieldName = "Id_ActivosGas";
+            this.Id_ActivosGasG.Name = "Id_ActivosGasG";
+            this.Id_ActivosGasG.OptionsColumn.AllowEdit = false;
+            // 
+            // v_descripcorta_actG
+            // 
+            this.v_descripcorta_actG.Caption = "v_descripcorta_act";
+            this.v_descripcorta_actG.FieldName = "v_descripcorta_act";
+            this.v_descripcorta_actG.Name = "v_descripcorta_actG";
+            this.v_descripcorta_actG.Visible = true;
+            this.v_descripcorta_actG.VisibleIndex = 1;
+            // 
+            // v_Bloques_gas
+            // 
+            this.v_Bloques_gas.Caption = "v_Bloques_gas";
+            this.v_Bloques_gas.FieldName = "v_Bloques_gas";
+            this.v_Bloques_gas.Name = "v_Bloques_gas";
+            this.v_Bloques_gas.Visible = true;
+            this.v_Bloques_gas.VisibleIndex = 2;
+            // 
+            // c_codigo_actG
+            // 
+            this.c_codigo_actG.Caption = "c_codigo_act";
+            this.c_codigo_actG.FieldName = "c_codigo_act";
+            this.c_codigo_actG.Name = "c_codigo_actG";
+            // 
+            // v_nombre_actG
+            // 
+            this.v_nombre_actG.Caption = "v_nombre_act";
+            this.v_nombre_actG.FieldName = "v_nombre_act";
+            this.v_nombre_actG.Name = "v_nombre_actG";
+            this.v_nombre_actG.Visible = true;
+            this.v_nombre_actG.VisibleIndex = 3;
+            // 
+            // c_folio_gas
+            // 
+            this.c_folio_gas.Caption = "c_folio_gas";
+            this.c_folio_gas.FieldName = "c_folio_gas";
+            this.c_folio_gas.Name = "c_folio_gas";
+            this.c_folio_gas.Visible = true;
+            this.c_folio_gas.VisibleIndex = 4;
+            // 
+            // d_fecha_crea
+            // 
+            this.d_fecha_crea.Caption = "d_fecha_crea";
+            this.d_fecha_crea.FieldName = "d_fecha_crea";
+            this.d_fecha_crea.Name = "d_fecha_crea";
+            this.d_fecha_crea.Visible = true;
+            this.d_fecha_crea.VisibleIndex = 5;
+            // 
+            // c_codigo_epsG
+            // 
+            this.c_codigo_epsG.Caption = "c_codigo_eps";
+            this.c_codigo_epsG.FieldName = "c_codigo_eps";
+            this.c_codigo_epsG.Name = "c_codigo_epsG";
+            // 
+            // Id_HuertaG
+            // 
+            this.Id_HuertaG.Caption = "Id_Huerta";
+            this.Id_HuertaG.FieldName = "Id_Huerta";
+            this.Id_HuertaG.Name = "Id_HuertaG";
+            // 
+            // Nombre_Huerta
+            // 
+            this.Nombre_Huerta.Caption = "Nombre_Huerta";
+            this.Nombre_Huerta.FieldName = "Nombre_Huerta";
+            this.Nombre_Huerta.Name = "Nombre_Huerta";
+            this.Nombre_Huerta.Visible = true;
+            this.Nombre_Huerta.VisibleIndex = 6;
+            // 
+            // c_codigo_empG
+            // 
+            this.c_codigo_empG.Caption = "c_codigo_emp";
+            this.c_codigo_empG.FieldName = "c_codigo_emp";
+            this.c_codigo_empG.Name = "c_codigo_empG";
+            // 
+            // Operador
+            // 
+            this.Operador.Caption = "Operador";
+            this.Operador.FieldName = "Operador";
+            this.Operador.Name = "Operador";
+            this.Operador.Visible = true;
+            this.Operador.VisibleIndex = 7;
+            // 
+            // v_tipo_gas
+            // 
+            this.v_tipo_gas.Caption = "v_tipo_gas";
+            this.v_tipo_gas.FieldName = "v_tipo_gas";
+            this.v_tipo_gas.Name = "v_tipo_gas";
+            this.v_tipo_gas.Visible = true;
+            this.v_tipo_gas.VisibleIndex = 8;
+            // 
+            // v_cantutilizada_gas
+            // 
+            this.v_cantutilizada_gas.Caption = "v_cantutilizada_gas";
+            this.v_cantutilizada_gas.FieldName = "v_cantutilizada_gas";
+            this.v_cantutilizada_gas.Name = "v_cantutilizada_gas";
+            this.v_cantutilizada_gas.Visible = true;
+            this.v_cantutilizada_gas.VisibleIndex = 10;
+            // 
+            // Saldo
+            // 
+            this.Saldo.Caption = "Saldo";
+            this.Saldo.FieldName = "Saldo";
+            this.Saldo.Name = "Saldo";
+            this.Saldo.Visible = true;
+            this.Saldo.VisibleIndex = 9;
+            // 
+            // v_observaciones_gas
+            // 
+            this.v_observaciones_gas.Caption = "v_observaciones_gas";
+            this.v_observaciones_gas.FieldName = "v_observaciones_gas";
+            this.v_observaciones_gas.Name = "v_observaciones_gas";
+            this.v_observaciones_gas.Visible = true;
+            this.v_observaciones_gas.VisibleIndex = 11;
+            // 
+            // n_rendimiento_act
+            // 
+            this.n_rendimiento_act.Caption = "n_rendimiento_act";
+            this.n_rendimiento_act.FieldName = "n_rendimiento_act";
+            this.n_rendimiento_act.Name = "n_rendimiento_act";
+            this.n_rendimiento_act.Visible = true;
+            this.n_rendimiento_act.VisibleIndex = 12;
+            // 
+            // c_unidad_act
+            // 
+            this.c_unidad_act.Caption = "c_unidad_act";
+            this.c_unidad_act.FieldName = "c_unidad_act";
+            this.c_unidad_act.Name = "c_unidad_act";
+            // 
+            // Abreviatura
+            // 
+            this.Abreviatura.Caption = "Abreviatura";
+            this.Abreviatura.FieldName = "Abreviatura";
+            this.Abreviatura.Name = "Abreviatura";
+            this.Abreviatura.Visible = true;
+            this.Abreviatura.VisibleIndex = 13;
             // 
             // panelControl1
             // 
+            this.panelControl1.Controls.Add(this.glue_Unidades);
+            this.panelControl1.Controls.Add(this.textEdit2);
+            this.panelControl1.Controls.Add(this.label_Rendimiento);
+            this.panelControl1.Controls.Add(this.btn_Quitar);
+            this.panelControl1.Controls.Add(this.btn_Agregar);
+            this.panelControl1.Controls.Add(this.glue_TipoCombustible);
+            this.panelControl1.Controls.Add(this.labelControl4);
             this.panelControl1.Controls.Add(this.glue_Actividades);
             this.panelControl1.Controls.Add(this.label_Actividad);
             this.panelControl1.Controls.Add(this.glue_Bloques);
@@ -275,13 +467,130 @@
             this.panelControl1.Location = new System.Drawing.Point(50, 0);
             this.panelControl1.Name = "panelControl1";
             this.panelControl1.Padding = new System.Windows.Forms.Padding(10);
-            this.panelControl1.Size = new System.Drawing.Size(781, 134);
+            this.panelControl1.Size = new System.Drawing.Size(886, 197);
             this.panelControl1.TabIndex = 8;
+            // 
+            // glue_Unidades
+            // 
+            this.glue_Unidades.EditValue = "-Seleccionar-";
+            this.glue_Unidades.Location = new System.Drawing.Point(189, 165);
+            this.glue_Unidades.Name = "glue_Unidades";
+            this.glue_Unidades.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.glue_Unidades.Properties.DisplayMember = "Nombre_Bloque";
+            this.glue_Unidades.Properties.NullText = "-Seleccionar-";
+            this.glue_Unidades.Properties.PopupView = this.gridView9;
+            this.glue_Unidades.Properties.ValueMember = "Id_Bloque";
+            this.glue_Unidades.Size = new System.Drawing.Size(138, 20);
+            this.glue_Unidades.TabIndex = 65;
+            // 
+            // gridView9
+            // 
+            this.gridView9.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.gridColumn1,
+            this.gridColumn2});
+            this.gridView9.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
+            this.gridView9.Name = "gridView9";
+            this.gridView9.OptionsSelection.EnableAppearanceFocusedCell = false;
+            this.gridView9.OptionsSelection.MultiSelect = true;
+            this.gridView9.OptionsSelection.MultiSelectMode = DevExpress.XtraGrid.Views.Grid.GridMultiSelectMode.CheckBoxRowSelect;
+            this.gridView9.OptionsView.ShowGroupPanel = false;
+            // 
+            // gridColumn1
+            // 
+            this.gridColumn1.Caption = "Bloque";
+            this.gridColumn1.FieldName = "Nombre_Bloque";
+            this.gridColumn1.Name = "gridColumn1";
+            this.gridColumn1.Visible = true;
+            this.gridColumn1.VisibleIndex = 1;
+            // 
+            // gridColumn2
+            // 
+            this.gridColumn2.Caption = "Codigo";
+            this.gridColumn2.FieldName = "Id_Bloque";
+            this.gridColumn2.Name = "gridColumn2";
+            this.gridColumn2.Visible = true;
+            this.gridColumn2.VisibleIndex = 2;
+            // 
+            // textEdit2
+            // 
+            this.textEdit2.Location = new System.Drawing.Point(83, 165);
+            this.textEdit2.MenuManager = this.barManager1;
+            this.textEdit2.Name = "textEdit2";
+            this.textEdit2.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.textEdit2.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.NumericMaskManager));
+            this.textEdit2.Properties.MaskSettings.Set("mask", "n");
+            this.textEdit2.Size = new System.Drawing.Size(100, 20);
+            this.textEdit2.TabIndex = 64;
+            // 
+            // label_Rendimiento
+            // 
+            this.label_Rendimiento.Location = new System.Drawing.Point(14, 168);
+            this.label_Rendimiento.Name = "label_Rendimiento";
+            this.label_Rendimiento.Size = new System.Drawing.Size(63, 13);
+            this.label_Rendimiento.TabIndex = 63;
+            this.label_Rendimiento.Text = "Rendimiento:";
+            // 
+            // btn_Quitar
+            // 
+            this.btn_Quitar.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_Quitar.ImageOptions.Image")));
+            this.btn_Quitar.Location = new System.Drawing.Point(399, 161);
+            this.btn_Quitar.Name = "btn_Quitar";
+            this.btn_Quitar.Size = new System.Drawing.Size(38, 34);
+            this.btn_Quitar.TabIndex = 62;
+            // 
+            // btn_Agregar
+            // 
+            this.btn_Agregar.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_Agregar.ImageOptions.Image")));
+            this.btn_Agregar.Location = new System.Drawing.Point(355, 161);
+            this.btn_Agregar.Name = "btn_Agregar";
+            this.btn_Agregar.Size = new System.Drawing.Size(38, 34);
+            this.btn_Agregar.TabIndex = 61;
+            this.btn_Agregar.Click += new System.EventHandler(this.btn_Agregar_Click);
+            // 
+            // glue_TipoCombustible
+            // 
+            this.glue_TipoCombustible.EditValue = "-Seleccionar-";
+            this.glue_TipoCombustible.Location = new System.Drawing.Point(105, 70);
+            this.glue_TipoCombustible.Name = "glue_TipoCombustible";
+            this.glue_TipoCombustible.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.glue_TipoCombustible.Properties.DisplayMember = "Tipo";
+            this.glue_TipoCombustible.Properties.NullText = "-Seleccionar-";
+            this.glue_TipoCombustible.Properties.PopupView = this.gridView8;
+            this.glue_TipoCombustible.Properties.ValueMember = "Tipo";
+            this.glue_TipoCombustible.Size = new System.Drawing.Size(222, 20);
+            this.glue_TipoCombustible.TabIndex = 60;
+            // 
+            // gridView8
+            // 
+            this.gridView8.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.Tipo});
+            this.gridView8.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
+            this.gridView8.Name = "gridView8";
+            this.gridView8.OptionsSelection.EnableAppearanceFocusedCell = false;
+            this.gridView8.OptionsView.ShowGroupPanel = false;
+            // 
+            // Tipo
+            // 
+            this.Tipo.Caption = "Tipo";
+            this.Tipo.FieldName = "Tipo";
+            this.Tipo.Name = "Tipo";
+            this.Tipo.Visible = true;
+            this.Tipo.VisibleIndex = 0;
+            // 
+            // labelControl4
+            // 
+            this.labelControl4.Location = new System.Drawing.Point(14, 73);
+            this.labelControl4.Name = "labelControl4";
+            this.labelControl4.Size = new System.Drawing.Size(85, 13);
+            this.labelControl4.TabIndex = 59;
+            this.labelControl4.Text = "Tipo Combustible:";
             // 
             // glue_Actividades
             // 
             this.glue_Actividades.EditValue = "-Seleccionar-";
-            this.glue_Actividades.Location = new System.Drawing.Point(583, 106);
+            this.glue_Actividades.Location = new System.Drawing.Point(583, 136);
             this.glue_Actividades.Name = "glue_Actividades";
             this.glue_Actividades.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
@@ -320,7 +629,7 @@
             // 
             // label_Actividad
             // 
-            this.label_Actividad.Location = new System.Drawing.Point(514, 109);
+            this.label_Actividad.Location = new System.Drawing.Point(514, 139);
             this.label_Actividad.Name = "label_Actividad";
             this.label_Actividad.Size = new System.Drawing.Size(48, 13);
             this.label_Actividad.TabIndex = 57;
@@ -329,7 +638,7 @@
             // glue_Bloques
             // 
             this.glue_Bloques.EditValue = "-Seleccionar-";
-            this.glue_Bloques.Location = new System.Drawing.Point(307, 105);
+            this.glue_Bloques.Location = new System.Drawing.Point(307, 135);
             this.glue_Bloques.Name = "glue_Bloques";
             this.glue_Bloques.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
@@ -339,6 +648,7 @@
             this.glue_Bloques.Properties.ValueMember = "Id_Bloque";
             this.glue_Bloques.Size = new System.Drawing.Size(193, 20);
             this.glue_Bloques.TabIndex = 56;
+            this.glue_Bloques.Closed += new DevExpress.XtraEditors.Controls.ClosedEventHandler(this.glue_Bloques_Closed);
             // 
             // gridView5
             // 
@@ -348,6 +658,8 @@
             this.gridView5.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
             this.gridView5.Name = "gridView5";
             this.gridView5.OptionsSelection.EnableAppearanceFocusedCell = false;
+            this.gridView5.OptionsSelection.MultiSelect = true;
+            this.gridView5.OptionsSelection.MultiSelectMode = DevExpress.XtraGrid.Views.Grid.GridMultiSelectMode.CheckBoxRowSelect;
             this.gridView5.OptionsView.ShowGroupPanel = false;
             // 
             // Nombre_Bloque
@@ -356,7 +668,7 @@
             this.Nombre_Bloque.FieldName = "Nombre_Bloque";
             this.Nombre_Bloque.Name = "Nombre_Bloque";
             this.Nombre_Bloque.Visible = true;
-            this.Nombre_Bloque.VisibleIndex = 0;
+            this.Nombre_Bloque.VisibleIndex = 1;
             // 
             // Id_Bloque
             // 
@@ -364,11 +676,11 @@
             this.Id_Bloque.FieldName = "Id_Bloque";
             this.Id_Bloque.Name = "Id_Bloque";
             this.Id_Bloque.Visible = true;
-            this.Id_Bloque.VisibleIndex = 1;
+            this.Id_Bloque.VisibleIndex = 2;
             // 
             // label_Bloque
             // 
-            this.label_Bloque.Location = new System.Drawing.Point(264, 108);
+            this.label_Bloque.Location = new System.Drawing.Point(264, 138);
             this.label_Bloque.Name = "label_Bloque";
             this.label_Bloque.Size = new System.Drawing.Size(36, 13);
             this.label_Bloque.TabIndex = 55;
@@ -377,7 +689,7 @@
             // glue_Responsables
             // 
             this.glue_Responsables.EditValue = "-Seleccionar-";
-            this.glue_Responsables.Location = new System.Drawing.Point(582, 74);
+            this.glue_Responsables.Location = new System.Drawing.Point(582, 103);
             this.glue_Responsables.Name = "glue_Responsables";
             this.glue_Responsables.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
@@ -423,7 +735,7 @@
             // 
             // label_Responsable
             // 
-            this.label_Responsable.Location = new System.Drawing.Point(513, 76);
+            this.label_Responsable.Location = new System.Drawing.Point(513, 105);
             this.label_Responsable.Name = "label_Responsable";
             this.label_Responsable.Size = new System.Drawing.Size(65, 13);
             this.label_Responsable.TabIndex = 53;
@@ -432,7 +744,7 @@
             // glue_Activos
             // 
             this.glue_Activos.EditValue = "-Seleccionar-";
-            this.glue_Activos.Location = new System.Drawing.Point(57, 104);
+            this.glue_Activos.Location = new System.Drawing.Point(57, 134);
             this.glue_Activos.Name = "glue_Activos";
             this.glue_Activos.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
@@ -480,7 +792,7 @@
             // 
             // label_Activo
             // 
-            this.label_Activo.Location = new System.Drawing.Point(14, 107);
+            this.label_Activo.Location = new System.Drawing.Point(14, 137);
             this.label_Activo.Name = "label_Activo";
             this.label_Activo.Size = new System.Drawing.Size(34, 13);
             this.label_Activo.TabIndex = 51;
@@ -488,7 +800,7 @@
             // 
             // textEdit1
             // 
-            this.textEdit1.Location = new System.Drawing.Point(268, 74);
+            this.textEdit1.Location = new System.Drawing.Point(268, 103);
             this.textEdit1.MenuManager = this.barManager1;
             this.textEdit1.Name = "textEdit1";
             this.textEdit1.Size = new System.Drawing.Size(231, 20);
@@ -496,7 +808,7 @@
             // 
             // labelControl5
             // 
-            this.labelControl5.Location = new System.Drawing.Point(189, 76);
+            this.labelControl5.Location = new System.Drawing.Point(189, 105);
             this.labelControl5.Name = "labelControl5";
             this.labelControl5.Size = new System.Drawing.Size(75, 13);
             this.labelControl5.TabIndex = 49;
@@ -620,6 +932,7 @@
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.de_Fecha.Size = new System.Drawing.Size(100, 20);
             this.de_Fecha.TabIndex = 7;
+            this.de_Fecha.EditValueChanged += new System.EventHandler(this.de_Fecha_EditValueChanged);
             // 
             // labelControl3
             // 
@@ -643,16 +956,18 @@
             // 
             // textNombre
             // 
-            this.textNombre.Location = new System.Drawing.Point(74, 74);
+            this.textNombre.Location = new System.Drawing.Point(74, 103);
             this.textNombre.MenuManager = this.barManager1;
             this.textNombre.Name = "textNombre";
             this.textNombre.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.textNombre.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.NumericMaskManager));
+            this.textNombre.Properties.MaskSettings.Set("mask", "n");
             this.textNombre.Size = new System.Drawing.Size(100, 20);
             this.textNombre.TabIndex = 3;
             // 
             // labelControl2
             // 
-            this.labelControl2.Location = new System.Drawing.Point(15, 76);
+            this.labelControl2.Location = new System.Drawing.Point(15, 105);
             this.labelControl2.Name = "labelControl2";
             this.labelControl2.Size = new System.Drawing.Size(47, 13);
             this.labelControl2.TabIndex = 2;
@@ -678,7 +993,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(831, 450);
+            this.ClientSize = new System.Drawing.Size(936, 450);
             this.Controls.Add(this.panelControl2);
             this.Controls.Add(this.panelControl1);
             this.Controls.Add(this.barDockControlLeft);
@@ -697,6 +1012,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
             this.panelControl1.ResumeLayout(false);
             this.panelControl1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.glue_Unidades.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView9)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEdit2.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.glue_TipoCombustible.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView8)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.glue_Actividades.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.glue_Bloques.Properties)).EndInit();
@@ -733,8 +1053,8 @@
         private DevExpress.XtraEditors.PanelControl panelControl2;
         private DevExpress.XtraGrid.GridControl gridControl1;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
-        private DevExpress.XtraGrid.Columns.GridColumn Id_Cultivo;
-        private DevExpress.XtraGrid.Columns.GridColumn Nombre_Cultivo;
+        private DevExpress.XtraGrid.Columns.GridColumn d_fechaconsumo_gas;
+        private DevExpress.XtraGrid.Columns.GridColumn Id_ActivosGasG;
         private DevExpress.XtraEditors.PanelControl panelControl1;
         private DevExpress.XtraEditors.TextEdit textNombre;
         private DevExpress.XtraEditors.LabelControl labelControl2;
@@ -778,5 +1098,35 @@
         private DevExpress.XtraGrid.Columns.GridColumn Id_Huerta;
         private DevExpress.XtraGrid.Columns.GridColumn Nombre_Completo;
         private DevExpress.XtraGrid.Columns.GridColumn v_serie_act;
+        private DevExpress.XtraEditors.LabelControl labelControl4;
+        private DevExpress.XtraEditors.GridLookUpEdit glue_TipoCombustible;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridView8;
+        private DevExpress.XtraGrid.Columns.GridColumn Tipo;
+        private DevExpress.XtraEditors.SimpleButton btn_Quitar;
+        private DevExpress.XtraEditors.SimpleButton btn_Agregar;
+        private DevExpress.XtraGrid.Columns.GridColumn v_descripcorta_actG;
+        private DevExpress.XtraGrid.Columns.GridColumn v_Bloques_gas;
+        private DevExpress.XtraGrid.Columns.GridColumn c_codigo_actG;
+        private DevExpress.XtraGrid.Columns.GridColumn v_nombre_actG;
+        private DevExpress.XtraGrid.Columns.GridColumn c_folio_gas;
+        private DevExpress.XtraGrid.Columns.GridColumn d_fecha_crea;
+        private DevExpress.XtraGrid.Columns.GridColumn c_codigo_epsG;
+        private DevExpress.XtraGrid.Columns.GridColumn Id_HuertaG;
+        private DevExpress.XtraGrid.Columns.GridColumn Nombre_Huerta;
+        private DevExpress.XtraGrid.Columns.GridColumn c_codigo_empG;
+        private DevExpress.XtraGrid.Columns.GridColumn Operador;
+        private DevExpress.XtraGrid.Columns.GridColumn v_tipo_gas;
+        private DevExpress.XtraGrid.Columns.GridColumn v_cantutilizada_gas;
+        private DevExpress.XtraGrid.Columns.GridColumn v_observaciones_gas;
+        private DevExpress.XtraGrid.Columns.GridColumn Saldo;
+        private DevExpress.XtraGrid.Columns.GridColumn n_rendimiento_act;
+        private DevExpress.XtraGrid.Columns.GridColumn c_unidad_act;
+        private DevExpress.XtraGrid.Columns.GridColumn Abreviatura;
+        private DevExpress.XtraEditors.GridLookUpEdit glue_Unidades;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridView9;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn1;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn2;
+        private DevExpress.XtraEditors.TextEdit textEdit2;
+        private DevExpress.XtraEditors.LabelControl label_Rendimiento;
     }
 }

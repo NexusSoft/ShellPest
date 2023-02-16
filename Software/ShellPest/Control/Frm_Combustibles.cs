@@ -20,6 +20,7 @@ namespace ShellPest
         }
 
         public string Id_Usuario { get; set; }
+        string Gbloques;
 
         private static Frm_Combustibles m_FormDefInstance;
         public static Frm_Combustibles DefInstance
@@ -59,6 +60,7 @@ namespace ShellPest
                 de_Fecha.EditValue = DateTime.Today;
                 CargarHuertas();
                 CargarResponsables();
+                CargarTipoGas();
                 //CargarGridPodas(false);
             }
 
@@ -164,6 +166,25 @@ namespace ShellPest
             }
         }
 
+        private void CargarTipoGas()
+        {
+            DataTable Datos;
+            Datos = new DataTable();
+
+            Datos.Columns.Add("Tipo");
+            DataRow row = Datos.NewRow();
+            row["Tipo"] = Convert.ToString("Magna  87  octanos");
+            Datos.Rows.Add(row);
+            DataRow row2 = Datos.NewRow();
+            row2["Tipo"] = Convert.ToString("Premium  92  octanos");
+            Datos.Rows.Add(row2);
+            DataRow row3 = Datos.NewRow();
+            row3["Tipo"] = Convert.ToString("Diesel");
+            Datos.Rows.Add(row3);
+
+            glue_TipoCombustible.Properties.DataSource = Datos;
+        }
+
         private void glue_Huertas_EditValueChanged(object sender, EventArgs e)
         {
             CargarBloques();
@@ -191,9 +212,153 @@ namespace ShellPest
             }
         }
 
+        private void CargarGrid()
+        {
+            gridControl1.DataSource = null;
+            WS_Control_Gasolina Clase = new WS_Control_Gasolina();
+
+            DateTime Fecha = Convert.ToDateTime(de_Fecha.EditValue.ToString());
+            Clase.d_fechaconsumo_gas = Fecha.Year.ToString() + DosCero(Fecha.Month.ToString()) + DosCero(Fecha.Day.ToString());
+            Clase.MtdConsultaCombustiblexFecha();
+                if (Clase.Exito)
+                {
+                gridControl1.DataSource = Clase.Datos;
+                }
+            if (gridView1.RowCount > 0)
+            {
+                double saldoM = 0,saldoP=0,saldoD=0;
+                DataRow row;
+                for (int i = 0; i < gridView1.RowCount; i++)
+                {
+                    row = this.gridView1.GetDataRow(i);
+                    if (row["v_tipo_gas"].ToString().Equals("Magna  87  octanos"))
+                    {
+                        saldoM = double.Parse(row["Saldo"].ToString());
+                       
+                    }
+                    if (row["v_tipo_gas"].ToString().Equals("Premium  92  octanos"))
+                    {
+                        saldoP = double.Parse(row["Saldo"].ToString());
+                      
+                    }
+                    if (row["v_tipo_gas"].ToString().Equals("Diesel"))
+                    {
+                        saldoD = double.Parse(row["Saldo"].ToString());
+                       
+                    }
+
+                }
+
+                for (int i = 0; i < gridView1.RowCount; i++)
+                {
+                    row = this.gridView1.GetDataRow(i);
+                    if (row["v_tipo_gas"].ToString().Equals("Magna  87  octanos"))
+                    {
+                        
+                        saldoM = saldoM + double.Parse(row["v_cantutilizada_gas"].ToString());
+                        gridView1.SetRowCellValue(i, "Saldo", saldoM);
+                    }
+                    if (row["v_tipo_gas"].ToString().Equals("Premium  92  octanos"))
+                    {
+                        
+                        saldoP = saldoP + double.Parse(row["v_cantutilizada_gas"].ToString());
+                        gridView1.SetRowCellValue(i, "Saldo", saldoP);
+                    }
+                    if (row["v_tipo_gas"].ToString().Equals("Diesel"))
+                    {
+                        
+                        saldoD = saldoD + double.Parse(row["v_cantutilizada_gas"].ToString());
+                        gridView1.SetRowCellValue(i, "Saldo", saldoD);
+                    }
+
+                }
+                gridControl1.RefreshDataSource();
+            }
+            
+        }
+
         private void btn_Salir_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             this.Close();
+        }
+
+        private void btn_Agregar_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void InsertarGasConsumo()
+        {
+            WS_Control_Gasolina Clase = new WS_Control_Gasolina();
+            Clase.d_fecha_crea = de_Fecha.EditValue.ToString();
+            Clase.c_folio_gas = textId.Text.Trim();
+            DateTime Fecha = Convert.ToDateTime(de_Fecha.EditValue.ToString());
+            Clase.d_fechaconsumo_gas = Fecha.Year.ToString() + DosCero(Fecha.Month.ToString()) + DosCero(Fecha.Day.ToString());
+            Clase.c_codigo_eps = glue_Empresas.EditValue.ToString().Trim();
+            Clase.Id_Huerta = glue_Huertas.EditValue.ToString();
+            Clase.v_Bloques_gas = glue_Bloques.EditValue.ToString(); 
+            Clase.Id_ActivosGas = glue_Activos.EditValue.ToString();
+            Clase.MtdInsertarGasolina();
+        }
+
+       
+
+        private void ConcatenaBloques(string Bloques )
+        {
+            if (Gbloques.Trim().Length == 0)
+            {
+                Gbloques = Bloques;
+            }
+            else
+            {
+                Gbloques = Gbloques + ", " + Bloques;
+            }
+            
+            //MessageBox.Show(Gbloques, "Bloques");
+        }
+
+       
+
+        private void glue_Bloques_Closed(object sender, DevExpress.XtraEditors.Controls.ClosedEventArgs e)
+        {
+            Gbloques = "";
+            System.Collections.ArrayList rows = new System.Collections.ArrayList();
+
+            // Add the selected rows to the list.
+            Int32[] selectedRowHandles = gridView5.GetSelectedRows();
+            for (int i = 0; i < selectedRowHandles.Length; i++)
+            {
+                DataRow row = this.gridView5.GetDataRow(selectedRowHandles[i]);
+                // MessageBox.Show(selectedRowHandles[i].ToString(), "handles");
+                ConcatenaBloques(row[0].ToString());
+                // int selectedRowHandle = selectedRowHandles[i];
+
+                /* if (selectedRowHandle >= 0)
+                     rows.Add(gridView5.GetDataRow(selectedRowHandle));*/
+            }
+            try
+            {
+                // gridView5.BeginUpdate();
+                for (int j = 0; j < rows.Count; j++)
+                {
+                    DataRow row = rows[j] as DataRow;
+                    MessageBox.Show(rows[j].ToString(), "rows");
+                    // Change the field value.
+                    // row["Discontinued"] = true;
+                }
+            }
+            finally
+            {
+                //gridView5.EndUpdate();
+            }
+
+            //MessageBox.Show(gridView5.GetSelectedRows(), "") ;
+            
+        }
+
+        private void de_Fecha_EditValueChanged(object sender, EventArgs e)
+        {
+            CargarGrid();
         }
     }
 }
