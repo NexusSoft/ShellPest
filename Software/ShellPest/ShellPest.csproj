@@ -256,6 +256,7 @@
     <Compile Include="Catalogos\Frm_PuntoControl.Designer.cs">
       <DependentUpon>Frm_PuntoControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="Clases\AcumulaSaldoCombustible.cs" />
     <Compile Include="Clases\Crypto.cs" />
     <Compile Include="Clases\GridCheckMarksSelection.cs" />
     <Compile Include="Clases\GridMarksSelecioncs.cs" />
