@@ -134,8 +134,12 @@ namespace ShellPest
                 glue_Bloques.Visible = true;
                 label_Actividad.Visible = true;
                 glue_Actividades.Visible = true;
+                label_Rendimiento.Visible = true;
+                text_Rendimiento.Visible=true;
+                glue_Unidades.Visible = true;
                 CargarActividades();
                 CargarActivosGas();
+                CargarUnidades();
             }
             else
             {
@@ -145,6 +149,9 @@ namespace ShellPest
                 glue_Bloques.Visible = false;
                 label_Actividad.Visible = false;
                 glue_Actividades.Visible = false;
+                label_Rendimiento.Visible = false;
+                text_Rendimiento.Visible = false;
+                glue_Unidades.Visible = false;
             }
         }
 
@@ -212,6 +219,19 @@ namespace ShellPest
             }
         }
 
+        private void CargarUnidades()
+        {
+            glue_Unidades.Properties.DataSource = null;
+            WS_Catalogos_Unidades Clase = new WS_Catalogos_Unidades();
+
+            Clase.MtdSeleccionarUnidadesLocal();
+            if (Clase.Exito)
+            {
+            glue_Unidades.Properties.DataSource = Clase.Datos;
+            }
+            
+        }
+
         private void CargarGrid()
         {
 
@@ -227,134 +247,75 @@ namespace ShellPest
                 }
             if (gridView1.RowCount > 0)
             {
-                double saldoM = 0,saldoP=0,saldoD=0;
-
-
-                CalculaSaldos();
-
-
-                DataRow row;
-                for (int i = 0; i < gridView1.RowCount; i++)
-                {
-                    row = this.gridView1.GetDataRow(i);
-                    if (row["v_tipo_gas"].ToString().Equals("Magna  87  octanos"))
-                    {
-                        saldoM = double.Parse(row["Saldo"].ToString());
-                       
-                    }
-                    if (row["v_tipo_gas"].ToString().Equals("Premium  92  octanos"))
-                    {
-                        saldoP = double.Parse(row["Saldo"].ToString());
-                      
-                    }
-                    if (row["v_tipo_gas"].ToString().Equals("Diesel"))
-                    {
-                        saldoD = double.Parse(row["Saldo"].ToString());
-                       
-                    }
-
-                }
-
-                for (int i = 0; i < gridView1.RowCount; i++)
-                {
-                    row = this.gridView1.GetDataRow(i);
-                    int rowHandle = gridView1.GetRowHandle(i);
-                    if (row["v_tipo_gas"].ToString().Trim().Equals("Magna  87  octanos"))
-                    {
-                        
-                        saldoM = saldoM + double.Parse(row["v_cantutilizada_gas"].ToString());
-                        gridView1.SetRowCellValue(rowHandle, gridView1.Columns["Saldo"], saldoM);
-                    }
-                    if (row["v_tipo_gas"].ToString().Trim().Equals("Premium  92  octanos"))
-                    {
-                        
-                        saldoP = saldoP + double.Parse(row["v_cantutilizada_gas"].ToString());
-                        gridView1.SetRowCellValue(rowHandle, gridView1.Columns["Saldo"], saldoP);
-                    }
-                    if (row["v_tipo_gas"].ToString().Trim().Equals("Diesel"))
-                    {
-                        
-                        saldoD = saldoD + double.Parse(row["v_cantutilizada_gas"].ToString());
-                        gridView1.SetRowCellValue(rowHandle, gridView1.Columns["Saldo"], saldoD);
-                    }
-
-                }
-               
+                CalculaSaldos(); 
             }
             
         }
 
         private void CalculaSaldos()
         {
-             ;
+             
             List<AcumulaSaldoCombustible> Matriz = new List<AcumulaSaldoCombustible>();
 
-            DataRow row,row2;
-            for (int i = 0; i < glue_Huertas.Controls.Count; i++)
+            DataRow row2;
+
+            for (int j = 0; j < gridView1.RowCount; j++)
             {
-                row = gridView3.GetDataRow(i);
+                row2 = this.gridView1.GetDataRow(j);
+                //MessageBox.Show("", row["c_codigo_hue"].ToString());
 
-                for (int j = 0; j < gridView1.RowCount; i++)
+                if (Matriz.Count == 0)
                 {
-                    row2 = this.gridView1.GetDataRow(j);
-                    MessageBox.Show("", row["c_codigo_hue"].ToString());
-                    if (row2["v_tipo_gas"].ToString().Trim().Equals("Magna  87  octanos"))
+                    Matriz.Add(new AcumulaSaldoCombustible() { Id_Huerta = row2["Id_Huerta"].ToString(), TipoGas = row2["v_tipo_gas"].ToString().Trim(), Saldo = double.Parse(row2["Saldo"].ToString()), Linea=j });
+                }
+                else
+                {
+                    Boolean existe = false;
+                    for (int k = 0; k < Matriz.Count; k++)
                     {
-                        if (row["c_codigo_hue"].ToString().Equals(row2["Id_Huerta"].ToString()))
+                        
+                        if (Matriz[k].getHuerta().Equals(row2["Id_Huerta"].ToString()) && Matriz[k].getTipoGas().Trim().Equals(row2["v_tipo_gas"].ToString().Trim()))
                         {
-                            Matriz.Add(new AcumulaSaldoCombustible() { Id_Huerta= row["c_codigo_hue"].ToString(), TipoGas="Magna  87  octanos", Saldo=double.Parse(row2["Saldo"].ToString()) });
+                            existe = true;
                         }
-                        break;
-
                     }
-                    if (row2["v_tipo_gas"].ToString().Trim().Equals("Premium  92  octanos"))
+                    if (!existe)
                     {
-                        if (row["c_codigo_hue"].ToString().Equals(row2["Id_Huerta"].ToString()))
-                        {
-                            Matriz.Add(new AcumulaSaldoCombustible() { Id_Huerta = row["c_codigo_hue"].ToString(), TipoGas = "Premium  92  octanos", Saldo = double.Parse(row2["Saldo"].ToString()) });
-                            
-                        }
-                        break;
-
-                    }
-                    if (row2["v_tipo_gas"].ToString().Trim().Equals("Diesel"))
-                    {
-
-                        if (row["c_codigo_hue"].ToString().Equals(row2["Id_Huerta"].ToString()))
-                        {
-                            Matriz.Add(new AcumulaSaldoCombustible() { Id_Huerta = row["c_codigo_hue"].ToString(), TipoGas = "Diesel", Saldo = double.Parse(row2["Saldo"].ToString()) });
-                           
-                        }
-                        break;
+                        Matriz.Add(new AcumulaSaldoCombustible() { Id_Huerta = row2["Id_Huerta"].ToString(), TipoGas = row2["v_tipo_gas"].ToString().Trim(), Saldo = double.Parse(row2["Saldo"].ToString()), Linea = j });
                     }
                 }
-
+ 
             }
 
-            
-            foreach (AcumulaSaldoCombustible aPart in Matriz)
-            {
-                MessageBox.Show("",aPart.Id_Huerta.ToString()+aPart.Saldo.ToString()+aPart.TipoGas.ToString());
-            }
 
-            /*for (int i = 0; i < gridView1.RowCount; i++)
+            for (int i = 0; i < gridView1.RowCount; i++)
             {
-                row = this.gridView1.GetDataRow(i);
+                row2 = this.gridView1.GetDataRow(i);
                 int rowHandle = gridView1.GetRowHandle(i);
-                
-                for(int j=0; j< Matriz.Count; j++)
+
+                for (int k = 0; k < Matriz.Count; k++)
                 {
-                    if (row["Id_Huerta"].ToString().Equals(Matriz[j].getHuerta()) && row["v_tipo_gas"].ToString().Equals(Matriz[j].getTipoGas()))
+                    if (i == 0 && k==0)
                     {
-                        Matriz[j].updateSaldo(Matriz[j].getSaldo()+ double.Parse(row["v_cantutilizada_gas"].ToString()));
+                        Matriz[k].updateSaldo(Matriz[k].getSaldo()+ double.Parse(row2["v_cantutilizada_gas"].ToString()));
+                        gridView1.SetRowCellValue(rowHandle, gridView1.Columns["Saldo"], Matriz[k].getSaldo());
+                        break;
+                    }
+                    else
+                    {
+                        if(row2["Id_Huerta"].ToString().Equals(Matriz[k].getHuerta()) && row2["v_tipo_gas"].ToString().Trim().Equals(Matriz[k].getTipoGas().Trim()))
+                        {
+                            Matriz[k].updateSaldo(Matriz[k].getSaldo() + double.Parse(row2["v_cantutilizada_gas"].ToString()));
+                            gridView1.SetRowCellValue(rowHandle, gridView1.Columns["Saldo"], Matriz[k].getSaldo());
+                            break;
+                        }
                     }
                 }
+                
 
-                  
+               
 
-            }*/
-
-
+            }
 
         }
 
@@ -367,21 +328,58 @@ namespace ShellPest
 
         private void btn_Agregar_Click(object sender, EventArgs e)
         {
-
+            InsertarGasConsumo();
         }
 
         private void InsertarGasConsumo()
         {
             WS_Control_Gasolina Clase = new WS_Control_Gasolina();
-            Clase.d_fecha_crea = de_Fecha.EditValue.ToString();
+            DateTime Fecha;
+            
             Clase.c_folio_gas = textId.Text.Trim();
-            DateTime Fecha = Convert.ToDateTime(de_Fecha.EditValue.ToString());
+            Fecha = Convert.ToDateTime(de_Fecha.EditValue.ToString());
             Clase.d_fechaconsumo_gas = Fecha.Year.ToString() + DosCero(Fecha.Month.ToString()) + DosCero(Fecha.Day.ToString());
             Clase.c_codigo_eps = glue_Empresas.EditValue.ToString().Trim();
             Clase.Id_Huerta = glue_Huertas.EditValue.ToString();
-            Clase.v_Bloques_gas = glue_Bloques.EditValue.ToString(); 
-            Clase.Id_ActivosGas = glue_Activos.EditValue.ToString();
-            Clase.MtdInsertarGasolina();
+            
+            if (Char.Parse(rg_IoS.EditValue.ToString()).Equals('S'))
+            {
+                Clase.Id_ActivosGas = glue_Activos.EditValue.ToString();
+                Clase.v_Bloques_gas = Gbloques;
+            }
+            else
+            {
+                Clase.Id_ActivosGas = "0000";
+                Clase.v_Bloques_gas = "";
+            }
+           
+            Clase.c_codigo_emp=glue_Responsables.EditValue.ToString().Trim();
+            if (Char.Parse(rg_IoS.EditValue.ToString()).Equals('S'))
+            {
+                Clase.c_codigo_act = glue_Actividades.EditValue.ToString();
+            }
+            else
+            {
+                Clase.c_codigo_act = "0000";
+            }
+            Clase.v_tipo_gas=glue_TipoCombustible.EditValue.ToString();
+            Clase.v_cantutilizada_gas = text_Cant.Text;
+            Clase.v_horometro_gas = "0";
+            Clase.v_kminicial_gas = "0";
+            Clase.v_kmfinal_gas = "0";
+            Clase.v_observaciones_gas = text_Observaciones.Text.ToString();
+            if (Char.Parse(rg_IoS.EditValue.ToString()).Equals('S'))
+            {
+                Clase.n_rendimiento_act = Decimal.Parse(text_Rendimiento.Text);
+                Clase.c_unidad_act = glue_Unidades.EditValue.ToString();
+            }
+            else
+            {
+                Clase.n_rendimiento_act = 0;
+                Clase.c_unidad_act = "";
+            }
+                    Clase.EntOSal = rg_IoS.EditValue.ToString();
+            Clase.MtdInsertarRCombustibleLocal();
         }
 
        

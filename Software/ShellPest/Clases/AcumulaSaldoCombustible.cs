@@ -12,7 +12,7 @@ namespace ShellPest
         public  string Id_Huerta { get; set; }
         public string TipoGas { get; set; }
         public double Saldo { get; set; }
-
+        public int Linea { get; set; }
 
         public string getHuerta()
         {
@@ -27,6 +27,11 @@ namespace ShellPest
         public string getTipoGas()
         {
             return TipoGas;
+        }
+
+        public int getLinea()
+        {
+            return Linea;
         }
 
         public void updateSaldo(double saldo)
