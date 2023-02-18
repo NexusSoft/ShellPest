@@ -440,5 +440,79 @@ namespace ShellPest
         {
             CargarGrid();
         }
+
+        private void btn_Quitar_Click(object sender, EventArgs e)
+        {
+            WS_Control_Gasolina Clase = new WS_Control_Gasolina();
+            DateTime Fecha;
+
+            Clase.c_folio_gas = textId.Text.Trim();
+            Fecha = Convert.ToDateTime(de_Fecha.EditValue.ToString());
+            Clase.d_fechaconsumo_gas = Fecha.Year.ToString() + DosCero(Fecha.Month.ToString()) + DosCero(Fecha.Day.ToString());
+            Clase.c_codigo_eps = glue_Empresas.EditValue.ToString().Trim();
+            Clase.Id_Huerta = glue_Huertas.EditValue.ToString();
+
+            if (Char.Parse(rg_IoS.EditValue.ToString()).Equals('S'))
+            {
+                Clase.Id_ActivosGas = glue_Activos.EditValue.ToString();
+                Clase.v_Bloques_gas = Gbloques;
+            }
+            else
+            {
+                Clase.Id_ActivosGas = "0000";
+                Clase.v_Bloques_gas = "";
+            }
+
+            Clase.c_codigo_emp = glue_Responsables.EditValue.ToString().Trim();
+            if (Char.Parse(rg_IoS.EditValue.ToString()).Equals('S'))
+            {
+                Clase.c_codigo_act = glue_Actividades.EditValue.ToString();
+            }
+            else
+            {
+                Clase.c_codigo_act = "0000";
+            }
+            Clase.v_tipo_gas = glue_TipoCombustible.EditValue.ToString();
+            
+            Clase.EntOSal = rg_IoS.EditValue.ToString();
+            Clase.MtdEliminaCombustibleLocal();
+        }
+
+        private void gridControl1_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                foreach (int i in this.gridView1.GetSelectedRows())
+                {
+                    DataRow row = this.gridView1.GetDataRow(i);
+                    textId.Text = row["c_folio_gas"].ToString();
+                    de_Fecha.Text = row["d_fechaconsumo_gas"].ToString();
+                    if (decimal.Parse(row["v_cantutilizada_gas"].ToString()) > 0)
+                    {
+                        rg_IoS.EditValue = 'I';
+                        
+                    }
+                    else
+                    {
+                        rg_IoS.EditValue = 'S';
+                    }
+                    glue_Huertas.EditValue= row["Id_Huerta"].ToString();
+                    glue_TipoCombustible.EditValue= row["v_tipo_gas"].ToString();
+                    text_Cant.Text= row["v_cantutilizada_gas"].ToString();
+                    text_Observaciones.Text= row["v_cantutilizada_gas"].ToString();
+                    glue_Responsables.EditValue= row["c_codigo_emp"].ToString();
+                    glue_Activos.EditValue= row["Id_ActivosGas"].ToString();
+                    Gbloques= row["v_Bloques_gas"].ToString();
+                    glue_Actividades.EditValue= row["c_codigo_act"].ToString();
+                    text_Rendimiento.Text= row["n_rendimiento_act"].ToString();
+                    glue_Unidades.EditValue= row["c_unidad_act"].ToString();
+                    glue_Empresas.EditValue = row["c_codigo_eps"].ToString();
+                }
+            }
+            catch (Exception ex)
+            {
+                XtraMessageBox.Show(ex.Message);
+            }
+        }
     }
 }

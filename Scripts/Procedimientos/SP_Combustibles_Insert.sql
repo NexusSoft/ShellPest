@@ -44,6 +44,8 @@ BEGIN
 
 	begin transaction T1;
 	begin try
+	
+	exec SP_Combustibles_Delete @c_folio_gas,@d_fecha_gas,@c_codigo_eps,@Id_Huerta,@v_Bloques_gas,@Id_ActivosGas,@c_codigo_emp,@c_codigo_act,@v_tipo_gas,@EntOSal;
 
 	if @EntOSal='S' 
 
@@ -84,7 +86,7 @@ BEGIN
 				   @v_observaciones_gas,
 				   @n_rendimiento_act,
 				   @c_unidad_act)
-		else
+	else
 		
 		INSERT INTO dbo.t_Gasolina_Ingreso
 		           (d_fecha_crea,

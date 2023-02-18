@@ -253,6 +253,7 @@
             this.gridControl1.TabIndex = 0;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
+            this.gridControl1.Click += new System.EventHandler(this.gridControl1_Click);
             // 
             // gridView1
             // 
@@ -546,6 +547,7 @@
             this.btn_Quitar.Name = "btn_Quitar";
             this.btn_Quitar.Size = new System.Drawing.Size(38, 34);
             this.btn_Quitar.TabIndex = 62;
+            this.btn_Quitar.Click += new System.EventHandler(this.btn_Quitar_Click);
             // 
             // btn_Agregar
             // 
