@@ -117,6 +117,7 @@
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.textId = new DevExpress.XtraEditors.TextEdit();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
+            this.label_BloquesView = new DevExpress.XtraEditors.LabelControl();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).BeginInit();
@@ -437,6 +438,7 @@
             // 
             // panelControl1
             // 
+            this.panelControl1.Controls.Add(this.label_BloquesView);
             this.panelControl1.Controls.Add(this.glue_Unidades);
             this.panelControl1.Controls.Add(this.text_Rendimiento);
             this.panelControl1.Controls.Add(this.label_Rendimiento);
@@ -761,7 +763,7 @@
             this.glue_Activos.Properties.DisplayMember = "v_descripcorta_act";
             this.glue_Activos.Properties.NullText = "-Seleccionar-";
             this.glue_Activos.Properties.PopupView = this.gridView2;
-            this.glue_Activos.Properties.ValueMember = "Id_ActivoGas";
+            this.glue_Activos.Properties.ValueMember = "Id_ActivosGas";
             this.glue_Activos.Size = new System.Drawing.Size(193, 20);
             this.glue_Activos.TabIndex = 52;
             // 
@@ -999,6 +1001,13 @@
             this.labelControl1.TabIndex = 0;
             this.labelControl1.Text = "Folio Vale: ";
             // 
+            // label_BloquesView
+            // 
+            this.label_BloquesView.Location = new System.Drawing.Point(315, 138);
+            this.label_BloquesView.Name = "label_BloquesView";
+            this.label_BloquesView.Size = new System.Drawing.Size(0, 13);
+            this.label_BloquesView.TabIndex = 66;
+            // 
             // Frm_Combustibles
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1139,5 +1148,6 @@
         private DevExpress.XtraEditors.TextEdit text_Rendimiento;
         private DevExpress.XtraEditors.LabelControl label_Rendimiento;
         private DevExpress.XtraGrid.Columns.GridColumn AbreviaturaU;
+        private DevExpress.XtraEditors.LabelControl label_BloquesView;
     }
 }

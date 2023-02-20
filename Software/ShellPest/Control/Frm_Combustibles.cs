@@ -132,6 +132,7 @@ namespace ShellPest
                 glue_Activos.Visible = true;
                 label_Bloque.Visible = true;
                 glue_Bloques.Visible = true;
+                label_BloquesView.Visible = true;
                 label_Actividad.Visible = true;
                 glue_Actividades.Visible = true;
                 label_Rendimiento.Visible = true;
@@ -147,6 +148,7 @@ namespace ShellPest
                 glue_Activos.Visible = false;
                 label_Bloque.Visible = false;
                 glue_Bloques.Visible = false;
+                label_BloquesView.Visible = false;
                 label_Actividad.Visible = false;
                 glue_Actividades.Visible = false;
                 label_Rendimiento.Visible = false;
@@ -329,6 +331,7 @@ namespace ShellPest
         private void btn_Agregar_Click(object sender, EventArgs e)
         {
             InsertarGasConsumo();
+            CargarGrid();
         }
 
         private void InsertarGasConsumo()
@@ -394,6 +397,7 @@ namespace ShellPest
             {
                 Gbloques = Gbloques + ", " + Bloques;
             }
+            label_BloquesView.Text = Gbloques;
             //MessageBox.Show(Gbloques, "Bloques");
         }
 
@@ -402,6 +406,7 @@ namespace ShellPest
         private void glue_Bloques_Closed(object sender, DevExpress.XtraEditors.Controls.ClosedEventArgs e)
         {
             Gbloques = "";
+            label_BloquesView.Text = Gbloques;
             System.Collections.ArrayList rows = new System.Collections.ArrayList();
 
             // Add the selected rows to the list.
@@ -476,6 +481,7 @@ namespace ShellPest
             
             Clase.EntOSal = rg_IoS.EditValue.ToString();
             Clase.MtdEliminaCombustibleLocal();
+            CargarGrid();
         }
 
         private void gridControl1_Click(object sender, EventArgs e)
@@ -486,7 +492,7 @@ namespace ShellPest
                 {
                     DataRow row = this.gridView1.GetDataRow(i);
                     textId.Text = row["c_folio_gas"].ToString();
-                    de_Fecha.Text = row["d_fechaconsumo_gas"].ToString();
+                    //de_Fecha.Text = row["d_fechaconsumo_gas"].ToString();
                     if (decimal.Parse(row["v_cantutilizada_gas"].ToString()) > 0)
                     {
                         rg_IoS.EditValue = 'I';
@@ -499,11 +505,13 @@ namespace ShellPest
                     glue_Huertas.EditValue= row["Id_Huerta"].ToString();
                     glue_TipoCombustible.EditValue= row["v_tipo_gas"].ToString();
                     text_Cant.Text= row["v_cantutilizada_gas"].ToString();
-                    text_Observaciones.Text= row["v_cantutilizada_gas"].ToString();
-                    glue_Responsables.EditValue= row["c_codigo_emp"].ToString();
-                    glue_Activos.EditValue= row["Id_ActivosGas"].ToString();
+                    text_Observaciones.Text= row["v_observaciones_gas"].ToString();
+                    glue_Responsables.EditValue= row["c_codigo_emp"].ToString().Trim();
+                    glue_Activos.EditValue= row["Id_ActivosGas"].ToString().Trim();
+
                     Gbloques= row["v_Bloques_gas"].ToString();
-                    glue_Actividades.EditValue= row["c_codigo_act"].ToString();
+                    label_BloquesView.Text = Gbloques;
+                    glue_Actividades.EditValue= row["c_codigo_act"].ToString().Trim();
                     text_Rendimiento.Text= row["n_rendimiento_act"].ToString();
                     glue_Unidades.EditValue= row["c_unidad_act"].ToString();
                     glue_Empresas.EditValue = row["c_codigo_eps"].ToString();
