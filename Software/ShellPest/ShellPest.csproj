@@ -435,6 +435,9 @@
     <EmbeddedResource Include="Catalogos\Frm_IngredienteActivo.resx">
       <DependentUpon>Frm_IngredienteActivo.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Catalogos\Frm_Lugar_Campo.resx">
+      <DependentUpon>Frm_Lugar_Campo.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Catalogos\Frm_NombreComercial.resx">
       <DependentUpon>Frm_NombreComercial.cs</DependentUpon>
     </EmbeddedResource>

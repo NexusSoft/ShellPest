@@ -47,6 +47,7 @@
     <Compile Include="Catalogos\CLS_Asesor_Tecnico.cs" />
     <Compile Include="Catalogos\CLS_Estado_Fenologico.cs" />
     <Compile Include="Catalogos\CLS_IngredienteActivo.cs" />
+    <Compile Include="Catalogos\CLS_Lugar_Campo.cs" />
     <Compile Include="Catalogos\CLS_NombreComercial.cs" />
     <Compile Include="Catalogos\CLS_Presentacion.cs" />
     <Compile Include="Catalogos\CLS_Receta.cs" />
