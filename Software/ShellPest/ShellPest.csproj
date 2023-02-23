@@ -154,6 +154,12 @@
     <Compile Include="Catalogos\Frm_IngredienteActivo.Designer.cs">
       <DependentUpon>Frm_IngredienteActivo.cs</DependentUpon>
     </Compile>
+    <Compile Include="Catalogos\Frm_Lugar_Campo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Catalogos\Frm_Lugar_Campo.Designer.cs">
+      <DependentUpon>Frm_Lugar_Campo.cs</DependentUpon>
+    </Compile>
     <Compile Include="Catalogos\Frm_NombreComercial.cs">
       <SubType>Form</SubType>
     </Compile>

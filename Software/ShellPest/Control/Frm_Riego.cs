@@ -21,6 +21,22 @@ namespace ShellPest
             InitializeComponent();
         }
 
+        private static Frm_Riego m_FormDefInstance;
+        public static Frm_Riego DefInstance
+        {
+            get
+            {
+                if (m_FormDefInstance == null || m_FormDefInstance.IsDisposed)
+                    m_FormDefInstance = new Frm_Riego();
+                return m_FormDefInstance;
+            }
+            set
+            {
+                m_FormDefInstance = value;
+            }
+        }
+
+
         private void Frm_Riego_Load(object sender, EventArgs e)
         {
             WS_Catalogos_Empresas Clase = new WS_Catalogos_Empresas();

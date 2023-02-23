@@ -76,13 +76,15 @@
             this.ribbonPageGroup8 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup9 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup10 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.ribbonPageGroup11 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPage5 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup6 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonStatusBar1 = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
             this.ribbonPage2 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.xtraTabbedMdiManager1 = new DevExpress.XtraTabbedMdi.XtraTabbedMdiManager(this.components);
             this.SkinForm = new DevExpress.LookAndFeel.DefaultLookAndFeel(this.components);
+            this.barButtonItem3 = new DevExpress.XtraBars.BarButtonItem();
+            this.btn_LugarCampo = new DevExpress.XtraBars.BarButtonItem();
+            this.btn_Riego = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabbedMdiManager1)).BeginInit();
             this.SuspendLayout();
@@ -126,9 +128,12 @@
             this.barButtonItem2,
             this.btn_Podas,
             this.btn_Aplicaciones,
-            this.btn_Combustibles});
+            this.btn_Combustibles,
+            this.barButtonItem3,
+            this.btn_LugarCampo,
+            this.btn_Riego});
             this.ribbonControl1.Location = new System.Drawing.Point(0, 0);
-            this.ribbonControl1.MaxItemId = 35;
+            this.ribbonControl1.MaxItemId = 38;
             this.ribbonControl1.Name = "ribbonControl1";
             this.ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage1,
@@ -136,7 +141,7 @@
             this.ribbonPage4,
             this.ribbonPage5});
             this.ribbonControl1.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonControlStyle.Office2007;
-            this.ribbonControl1.Size = new System.Drawing.Size(1098, 150);
+            this.ribbonControl1.Size = new System.Drawing.Size(1142, 150);
             this.ribbonControl1.StatusBar = this.ribbonStatusBar1;
             // 
             // skinRibbonGalleryBarItem1
@@ -475,6 +480,7 @@
             // ribbonPageGroup4
             // 
             this.ribbonPageGroup4.ItemLinks.Add(this.btnAlmacen_Huerta);
+            this.ribbonPageGroup4.ItemLinks.Add(this.btn_LugarCampo);
             this.ribbonPageGroup4.Name = "ribbonPageGroup4";
             this.ribbonPageGroup4.Text = "Inventario";
             // 
@@ -504,8 +510,7 @@
             this.ribbonPageGroup7,
             this.ribbonPageGroup8,
             this.ribbonPageGroup9,
-            this.ribbonPageGroup10,
-            this.ribbonPageGroup11});
+            this.ribbonPageGroup10});
             this.ribbonPage4.ImageOptions.Image = global::ShellPest.Properties.Resources.documentmap_16x16;
             this.ribbonPage4.Name = "ribbonPage4";
             this.ribbonPage4.Text = "Control";
@@ -526,6 +531,8 @@
             // ribbonPageGroup9
             // 
             this.ribbonPageGroup9.ItemLinks.Add(this.btn_Podas);
+            this.ribbonPageGroup9.ItemLinks.Add(this.btn_Combustibles);
+            this.ribbonPageGroup9.ItemLinks.Add(this.btn_Riego);
             this.ribbonPageGroup9.Name = "ribbonPageGroup9";
             this.ribbonPageGroup9.Text = "Podas";
             // 
@@ -534,12 +541,6 @@
             this.ribbonPageGroup10.ItemLinks.Add(this.btn_Aplicaciones);
             this.ribbonPageGroup10.Name = "ribbonPageGroup10";
             this.ribbonPageGroup10.Text = "Aplicaciones";
-            // 
-            // ribbonPageGroup11
-            // 
-            this.ribbonPageGroup11.ItemLinks.Add(this.btn_Combustibles);
-            this.ribbonPageGroup11.Name = "ribbonPageGroup11";
-            this.ribbonPageGroup11.Text = "ribbonPageGroup11";
             // 
             // ribbonPage5
             // 
@@ -561,7 +562,7 @@
             this.ribbonStatusBar1.Location = new System.Drawing.Point(0, 498);
             this.ribbonStatusBar1.Name = "ribbonStatusBar1";
             this.ribbonStatusBar1.Ribbon = this.ribbonControl1;
-            this.ribbonStatusBar1.Size = new System.Drawing.Size(1098, 23);
+            this.ribbonStatusBar1.Size = new System.Drawing.Size(1142, 23);
             // 
             // ribbonPage2
             // 
@@ -578,11 +579,35 @@
             this.SkinForm.EnableBonusSkins = true;
             this.SkinForm.LookAndFeel.SkinName = "Office 2013 Light Gray";
             // 
+            // barButtonItem3
+            // 
+            this.barButtonItem3.Caption = "barButtonItem3";
+            this.barButtonItem3.Id = 35;
+            this.barButtonItem3.Name = "barButtonItem3";
+            // 
+            // btn_LugarCampo
+            // 
+            this.btn_LugarCampo.Caption = "Lugar-Campo";
+            this.btn_LugarCampo.Id = 36;
+            this.btn_LugarCampo.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_LugarCampo.ImageOptions.Image")));
+            this.btn_LugarCampo.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btn_LugarCampo.ImageOptions.LargeImage")));
+            this.btn_LugarCampo.Name = "btn_LugarCampo";
+            this.btn_LugarCampo.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_LugarCampo_ItemClick);
+            // 
+            // btn_Riego
+            // 
+            this.btn_Riego.Caption = "Riego";
+            this.btn_Riego.Id = 37;
+            this.btn_Riego.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem4.ImageOptions.Image")));
+            this.btn_Riego.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem4.ImageOptions.LargeImage")));
+            this.btn_Riego.Name = "btn_Riego";
+            this.btn_Riego.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_Riego_ItemClick);
+            // 
             // Frm_Principal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1098, 521);
+            this.ClientSize = new System.Drawing.Size(1142, 521);
             this.Controls.Add(this.ribbonStatusBar1);
             this.Controls.Add(this.ribbonControl1);
             this.IsMdiContainer = true;
@@ -654,7 +679,9 @@
         private DevExpress.XtraBars.BarButtonItem btn_Aplicaciones;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup10;
         private DevExpress.XtraBars.BarButtonItem btn_Combustibles;
-        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup11;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem3;
+        private DevExpress.XtraBars.BarButtonItem btn_LugarCampo;
+        private DevExpress.XtraBars.BarButtonItem btn_Riego;
     }
 }
 

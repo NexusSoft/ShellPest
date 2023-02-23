@@ -456,6 +456,20 @@ namespace ShellPest
             Frm_Combustibles.DefInstance.Id_Usuario = UsuariosLogin;
             Frm_Combustibles.DefInstance.Show();
         }
+
+        private void btn_LugarCampo_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            Frm_Lugar_Campo Ventana = new Frm_Lugar_Campo();
+            Ventana.ShowDialog();
+        }
+
+        private void btn_Riego_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            Frm_Riego Ventana = new Frm_Riego();
+            Frm_Riego.DefInstance.MdiParent = this;
+            Frm_Riego.DefInstance.Id_Usuario = UsuariosLogin;
+            Frm_Riego.DefInstance.Show();
+        }
     }
 
 }
