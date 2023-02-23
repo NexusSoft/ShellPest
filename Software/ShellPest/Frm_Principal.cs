@@ -437,10 +437,10 @@ namespace ShellPest
         {
             if (TieneAcceso("022"))
             {
-                Frm_Aplicaciones Ventana = new Frm_Aplicaciones();
-                Frm_Aplicaciones.DefInstance.MdiParent = this;
-                Frm_Aplicaciones.DefInstance.Id_Usuario = UsuariosLogin;
-                Frm_Aplicaciones.DefInstance.Show();
+                Frm_AplicacionHue Ventana = new Frm_AplicacionHue();
+                Frm_AplicacionHue.DefInstance.MdiParent = this;
+                Frm_AplicacionHue.DefInstance.Id_Usuario = UsuariosLogin;
+                Frm_AplicacionHue.DefInstance.Show();
             }
 
             else

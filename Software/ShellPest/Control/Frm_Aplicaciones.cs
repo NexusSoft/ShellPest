@@ -1,5 +1,4 @@
 ﻿using CapaDeDatos;
-using CapaDeDatos.Control;
 using DevExpress.XtraEditors;
 using System;
 using System.Collections.Generic;
@@ -18,7 +17,20 @@ namespace ShellPest
     public partial class Frm_Aplicaciones : DevExpress.XtraEditors.XtraForm
     {
         public string Id_Usuario { get; set; }
-        public string v_huerta { get; set; }
+        private static Frm_Aplicaciones m_FormDefInstance;
+        public static Frm_Aplicaciones DefInstance
+        {
+            get
+            {
+                if (m_FormDefInstance == null || m_FormDefInstance.IsDisposed)
+                    m_FormDefInstance = new Frm_Aplicaciones();
+                return m_FormDefInstance;
+            }
+            set
+            {
+                m_FormDefInstance = value;
+            }
+        }
         public Frm_Aplicaciones()
         {
             InitializeComponent();
@@ -28,7 +40,7 @@ namespace ShellPest
         StringBuilder sb = new StringBuilder();
         string CadenaBloques = string.Empty;
         string CadenaEspBloques= string.Empty;
-        int TotalRegFloracion = 0;
+        int TotalRegBloques = 0;
         //Variables Bloques Fin
         
         private void InicializaGrigCombos()
@@ -61,7 +73,7 @@ namespace ShellPest
                     }
                 }
                 int TotalSelect = gridCheckMarksBloques.SelectedCount;
-                if (TotalSelect == TotalRegFloracion)
+                if (TotalSelect == TotalRegBloques)
                 {
                     CadenaEspBloques = "Todas";
                 }
@@ -88,47 +100,26 @@ namespace ShellPest
         }
         private void CargarBloques()
         {
-            try
-            {
-                v_huerta = cmb_Huerta.EditValue.ToString();
-            }
-            catch (Exception)
-            {
-                v_huerta = string.Empty;
-            }
             CLS_Aplicaciones Clase = new CLS_Aplicaciones();
-            Clase.Id_Huerta = v_huerta;
+            Clase.Id_Huerta = cmb_Huertas.EditValue.ToString();
             Clase.MtdSeleccionarBloquesXHuerta();
             if (Clase.Exito)
             {
-                gridCheckMarksBloques.ClearSelection(cmb_BloquesView);
-                TotalRegFloracion = Clase.Datos.Rows.Count;
-                cmb_Bloques.Properties.DataSource = Clase.Datos;
+                if (Clase.Datos.Rows.Count > 0)
+                {
+                    gridCheckMarksBloques.ClearSelection(cmb_BloquesView);
+                    TotalRegBloques = Clase.Datos.Rows.Count;
+                    cmb_Bloques.Properties.DataSource = Clase.Datos;
+                }
             }
         }
         //Bloques Eventos Fin
-        private static Frm_Aplicaciones m_FormDefInstance;
-        public static Frm_Aplicaciones DefInstance
-        {
-            get
-            {
-                if (m_FormDefInstance == null || m_FormDefInstance.IsDisposed)
-                    m_FormDefInstance = new Frm_Aplicaciones();
-                return m_FormDefInstance;
-            }
-            set
-            {
-                m_FormDefInstance = value;
-            }
-        }
-
         
         private void Frm_Aplicaciones_Shown(object sender, EventArgs e)
         {
-            v_huerta=string.Empty;
+            InicializaGrigCombos();
             CargarEmpresa();
             CargarHuerta();
-            InicializaGrigCombos();
         }
 
         private void CargarEmpresa()
@@ -142,51 +133,42 @@ namespace ShellPest
                 cmb_Empresas.Properties.ValueMember = "c_codigo_eps";
                 cmb_Empresas.EditValue = null;
                 cmb_Empresas.Properties.DataSource = Clase.Datos;
-
-                if (Clase.Datos.Rows.Count > 0)
-                {
-                    cmb_Empresas.EditValue = Clase.Datos.Rows[0][0].ToString();
-                }
             }
         }
         private void CargarHuerta()
         {
-            CLS_Aplicaciones Clase = new CLS_Aplicaciones();
-            Clase.Id_Usuario = Id_Usuario;
-            Clase.MtdSeleccionarHuertaXUsuario();
-            if (Clase.Exito)
+            CLS_Aplicaciones Clase2 = new CLS_Aplicaciones();
+            Clase2.Id_Usuario = Id_Usuario;
+            Clase2.MtdSeleccionarHuertaXUsuario();
+            if (Clase2.Exito)
             {
-                cmb_Huerta.Properties.DisplayMember = "Nombre_Huerta";
-                cmb_Huerta.Properties.ValueMember = "Id_Huerta";
-                cmb_Huerta.EditValue = null;
-                cmb_Huerta.Properties.DataSource = Clase.Datos;
-
-                if (Clase.Datos.Rows.Count > 0)
-                {
-                    cmb_Huerta.EditValue = Clase.Datos.Rows[0][0].ToString();
-                }
-               
+                cmb_Huertas.Properties.DisplayMember = "Nombre_Huerta";
+                cmb_Huertas.Properties.ValueMember = "Id_Huerta";
+                cmb_Huertas.EditValue = null;
+                cmb_Huertas.Properties.DataSource = Clase2.Datos;
             }
         }
         private void cmb_Huerta_EditValueChanged(object sender, EventArgs e)
         {
-            try
+            CargarBloques();
+            CargarReceta();
+        }
+        private void cmb_Empresas_EditValueChanged(object sender, EventArgs e)
+        {
+            CargarReceta();
+        }
+        private void CargarReceta()
+        {
+            CLS_Aplicaciones Clase1 = new CLS_Aplicaciones();
+            Clase1.Id_Huerta = cmb_Huertas.EditValue.ToString();
+            Clase1.c_codigo_eps = cmb_Empresas.EditValue.ToString();
+            Clase1.MtdSeleccionarRecetas();
+            if (Clase1.Exito)
             {
-                v_huerta = cmb_Huerta.EditValue.ToString();
-            }
-            catch (Exception)
-            {
-                v_huerta = string.Empty;
-            }
-            CLS_Aplicaciones Clase = new CLS_Aplicaciones();
-            Clase.Id_Huerta = v_huerta;
-            Clase.MtdSeleccionarBloquesXHuerta();
-            if (Clase.Exito)
-            {
-                cmb_Bloques.Properties.DisplayMember = "Nombre_Bloque";
-                cmb_Bloques.Properties.ValueMember = "Id_Bloque";
-                cmb_Bloques.EditValue = null;
-                cmb_Bloques.Properties.DataSource = Clase.Datos;
+                cmb_Receta.Properties.DisplayMember = "Receta_Fecha";
+                cmb_Receta.Properties.ValueMember = "Id_Receta";
+                cmb_Receta.EditValue = null;
+                cmb_Receta.Properties.DataSource = Clase1.Datos;
             }
         }
     }
