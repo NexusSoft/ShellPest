@@ -59,7 +59,7 @@ namespace ShellPest
                 }
                 de_Fecha.EditValue = DateTime.Today;
                 CargarHuertas();
-                CargarResponsables();
+                
                 CargarTipoGas();
                 //CargarGridPodas(false);
             }
@@ -88,7 +88,8 @@ namespace ShellPest
             glue_Responsables.Properties.DataSource = null;
             WS_Catalogos_empleados_huerta sel = new WS_Catalogos_empleados_huerta();
             sel.Id_Usuario = Id_Usuario;
-            sel.MtdSeleccionarEmpleados();
+            sel.Id_Huerta = glue_Huertas.EditValue.ToString().Trim();
+            sel.MtdSeleccionarEmpleadosLocal();
                    
             if (sel.Exito)
             {
@@ -197,6 +198,7 @@ namespace ShellPest
         private void glue_Huertas_EditValueChanged(object sender, EventArgs e)
         {
             CargarBloques();
+            CargarResponsables();
         }
 
         private void glue_Empresas_EditValueChanged(object sender, EventArgs e)

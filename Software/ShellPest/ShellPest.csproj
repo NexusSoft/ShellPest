@@ -166,6 +166,12 @@
     <Compile Include="Catalogos\Frm_Presentacion.Designer.cs">
       <DependentUpon>Frm_Presentacion.cs</DependentUpon>
     </Compile>
+    <Compile Include="Control\Frm_Riego.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Control\Frm_Riego.Designer.cs">
+      <DependentUpon>Frm_Riego.cs</DependentUpon>
+    </Compile>
     <Compile Include="Catalogos\Frm_TipoAplicacion.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -422,6 +428,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Catalogos\Frm_Presentacion.resx">
       <DependentUpon>Frm_Presentacion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Control\Frm_Riego.resx">
+      <DependentUpon>Frm_Riego.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Catalogos\Frm_TipoAplicacion.resx">
       <DependentUpon>Frm_TipoAplicacion.cs</DependentUpon>
