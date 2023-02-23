@@ -401,7 +401,7 @@ namespace ShellPest
             if(ValidaProducto())
             {
 
-                CreatNewRowCorte(Fecha, Producto, Medida, Dosis);
+                //CreatNewRowCorte(Fecha, Producto, Medida, Dosis);
             }
         }
     }
