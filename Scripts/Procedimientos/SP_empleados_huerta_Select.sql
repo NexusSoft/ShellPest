@@ -26,7 +26,7 @@ GO
 CREATE PROCEDURE SP_empleados_huerta_Select
 	-- Add the parameters for the stored procedure here
 	@id_usuario varchar(10),
-	@Id_Huerta char(5)
+	@c_codigo_cam char(2)
 	
 AS
 BEGIN
@@ -36,10 +36,9 @@ BEGIN
 
     -- Insert statements for procedure here
 	
-		select	N.c_codigo_emp , 
-			h.Id_Huerta ,
-			CONCAT_WS(' ',N.v_nombre_emp,' ',N.v_apellidomat_emp, ' ',
-			N.v_apellidopat_emp,' ' ) Nombre_Completo
+		select	distinct N.c_codigo_emp , 
+			CONCAT_WS(' ',N.v_nombre_emp,' ',N.v_apellidopat_emp , ' ',
+			N.v_apellidomat_emp,' ' ) Nombre_Completo
 		from GrupoAGV.dbo.nomempleados as N
 		left join ShellPest.dbo.t_lugar_campo as L on L.c_codigo_lug = N.c_codigo_lug
 		left join GrupoAGV.dbo.coscampo as C on C.c_codigo_cam = L.c_codigo_cam
@@ -62,7 +61,7 @@ BEGIN
 				'0021',
 				'0022',
 				'0027')
-			and U.Id_Huerta=@Id_Huerta
+			and H.c_codigo_cam=@c_codigo_cam
 
 END
 GO

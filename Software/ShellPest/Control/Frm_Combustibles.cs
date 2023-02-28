@@ -69,13 +69,14 @@ namespace ShellPest
 
         private void CargarHuertas()
         {
+            /*Este dato es basado en el codigo de campo de costos, no en Huertas de Shellpest*/
             glue_Huertas.Properties.DataSource = null;
-            CLS_Almacen_Huerto Clase = new CLS_Almacen_Huerto();
+            CLS_Inventum Clase = new CLS_Inventum();
 
             if (glue_Empresas.EditValue != null)
             {
                 Clase.c_codigo_eps = glue_Empresas.EditValue.ToString();
-                Clase.MtdSeleccionarHuerta();
+                Clase.MtdCosCampoSelect();
                 if (Clase.Exito)
                 {
                     glue_Huertas.Properties.DataSource = Clase.Datos;
@@ -88,7 +89,7 @@ namespace ShellPest
             glue_Responsables.Properties.DataSource = null;
             WS_Catalogos_empleados_huerta sel = new WS_Catalogos_empleados_huerta();
             sel.Id_Usuario = Id_Usuario;
-            sel.Id_Huerta = glue_Huertas.EditValue.ToString().Trim();
+            sel.c_codigo_cam = glue_Huertas.EditValue.ToString().Trim();
             sel.MtdSeleccionarEmpleadosLocal();
                    
             if (sel.Exito)
@@ -209,13 +210,13 @@ namespace ShellPest
         private void CargarBloques()
         {
             glue_Bloques.Properties.DataSource = null;
-            CLS_Bloque Clase = new CLS_Bloque();
+            CLS_Inventum Clase = new CLS_Inventum();
 
             if (glue_Empresas.EditValue != null)
             {
-                Clase.Id_Huerta = glue_Huertas.EditValue.ToString();
-                Clase.TipoBloque = "B";
-                Clase.MtdSeleccionarBloquesHuerta();
+                Clase.c_codigo_cam = glue_Huertas.EditValue.ToString();
+                
+                Clase.MtdCosloteSelect();
                 if (Clase.Exito)
                 {
                     glue_Bloques.Properties.DataSource = Clase.Datos;
@@ -248,7 +249,8 @@ namespace ShellPest
                 if (Clase.Exito)
                 {
                 gridControl1.DataSource = Clase.Datos;
-                }
+                //gridView1.Columns["v_cantutilizada_gas"].SortOrder = DevExpress.Data.ColumnSortOrder.Descending;
+            }
             if (gridView1.RowCount > 0)
             {
                 CalculaSaldos(); 

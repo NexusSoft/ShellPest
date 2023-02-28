@@ -126,6 +126,7 @@
             this.btnSalir.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnSalir.ImageOptions.Image")));
             this.btnSalir.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnSalir.ImageOptions.LargeImage")));
             this.btnSalir.Name = "btnSalir";
+            this.btnSalir.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnSalir_ItemClick);
             // 
             // btnSeleccionar
             // 
@@ -134,6 +135,7 @@
             this.btnSeleccionar.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnSeleccionar.ImageOptions.Image")));
             this.btnSeleccionar.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnSeleccionar.ImageOptions.LargeImage")));
             this.btnSeleccionar.Name = "btnSeleccionar";
+            this.btnSeleccionar.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
             // 
             // bEstado
             // 
@@ -153,15 +155,15 @@
             this.barDockControlTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.barDockControlTop.Location = new System.Drawing.Point(0, 0);
             this.barDockControlTop.Manager = this.barManager1;
-            this.barDockControlTop.Size = new System.Drawing.Size(586, 0);
+            this.barDockControlTop.Size = new System.Drawing.Size(605, 0);
             // 
             // barDockControlBottom
             // 
             this.barDockControlBottom.CausesValidation = false;
             this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.barDockControlBottom.Location = new System.Drawing.Point(0, 345);
+            this.barDockControlBottom.Location = new System.Drawing.Point(0, 347);
             this.barDockControlBottom.Manager = this.barManager1;
-            this.barDockControlBottom.Size = new System.Drawing.Size(586, 22);
+            this.barDockControlBottom.Size = new System.Drawing.Size(605, 20);
             // 
             // barDockControlLeft
             // 
@@ -169,15 +171,15 @@
             this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
             this.barDockControlLeft.Location = new System.Drawing.Point(0, 0);
             this.barDockControlLeft.Manager = this.barManager1;
-            this.barDockControlLeft.Size = new System.Drawing.Size(69, 345);
+            this.barDockControlLeft.Size = new System.Drawing.Size(71, 347);
             // 
             // barDockControlRight
             // 
             this.barDockControlRight.CausesValidation = false;
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
-            this.barDockControlRight.Location = new System.Drawing.Point(586, 0);
+            this.barDockControlRight.Location = new System.Drawing.Point(605, 0);
             this.barDockControlRight.Manager = this.barManager1;
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 345);
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 347);
             // 
             // repositoryItemTextEdit1
             // 
@@ -187,10 +189,10 @@
             // 
             this.panelControl2.Controls.Add(this.gridControl1);
             this.panelControl2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelControl2.Location = new System.Drawing.Point(69, 104);
+            this.panelControl2.Location = new System.Drawing.Point(71, 104);
             this.panelControl2.Name = "panelControl2";
             this.panelControl2.Padding = new System.Windows.Forms.Padding(5);
-            this.panelControl2.Size = new System.Drawing.Size(517, 241);
+            this.panelControl2.Size = new System.Drawing.Size(534, 243);
             this.panelControl2.TabIndex = 21;
             // 
             // gridControl1
@@ -200,10 +202,11 @@
             this.gridControl1.MainView = this.gridView1;
             this.gridControl1.MenuManager = this.barManager1;
             this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(503, 227);
+            this.gridControl1.Size = new System.Drawing.Size(520, 229);
             this.gridControl1.TabIndex = 0;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
+            this.gridControl1.Click += new System.EventHandler(this.gridControl1_Click);
             // 
             // gridView1
             // 
@@ -251,10 +254,10 @@
             // 
             this.panelControl1.Controls.Add(this.groupControl1);
             this.panelControl1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelControl1.Location = new System.Drawing.Point(69, 0);
+            this.panelControl1.Location = new System.Drawing.Point(71, 0);
             this.panelControl1.Name = "panelControl1";
             this.panelControl1.Padding = new System.Windows.Forms.Padding(6);
-            this.panelControl1.Size = new System.Drawing.Size(517, 104);
+            this.panelControl1.Size = new System.Drawing.Size(534, 104);
             this.panelControl1.TabIndex = 20;
             // 
             // groupControl1
@@ -269,7 +272,7 @@
             this.groupControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupControl1.Location = new System.Drawing.Point(8, 8);
             this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(501, 88);
+            this.groupControl1.Size = new System.Drawing.Size(518, 88);
             this.groupControl1.TabIndex = 0;
             this.groupControl1.Text = "Riego";
             // 
@@ -320,6 +323,7 @@
             this.btn_Quitar.Name = "btn_Quitar";
             this.btn_Quitar.Size = new System.Drawing.Size(38, 34);
             this.btn_Quitar.TabIndex = 83;
+            this.btn_Quitar.Click += new System.EventHandler(this.btn_Quitar_Click);
             // 
             // btn_Agregar
             // 
@@ -328,6 +332,7 @@
             this.btn_Agregar.Name = "btn_Agregar";
             this.btn_Agregar.Size = new System.Drawing.Size(38, 34);
             this.btn_Agregar.TabIndex = 82;
+            this.btn_Agregar.Click += new System.EventHandler(this.btn_Agregar_Click);
             // 
             // label_BloquesView
             // 
@@ -396,7 +401,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(586, 367);
+            this.ClientSize = new System.Drawing.Size(605, 367);
             this.Controls.Add(this.panelControl2);
             this.Controls.Add(this.panelControl1);
             this.Controls.Add(this.barDockControlLeft);
@@ -404,7 +409,8 @@
             this.Controls.Add(this.barDockControlBottom);
             this.Controls.Add(this.barDockControlTop);
             this.Name = "Frm_Lugar_Campo";
-            this.Text = "Frm_Lugar_Campo";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Lugar - Campo";
             this.Load += new System.EventHandler(this.Frm_Lugar_Campo_Load);
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit1)).EndInit();

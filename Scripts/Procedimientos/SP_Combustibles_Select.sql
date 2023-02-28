@@ -45,7 +45,7 @@ BEGIN
 			S.d_fecha_crea,
 			S.c_codigo_eps,
 			S.Id_Huerta,
-			H.Nombre_Huerta ,
+			v_nombre_cam as Nombre_Huerta ,
 			S.c_codigo_emp,
 			E.v_nombre_emp +' '+E.v_apellidopat_emp +' '+E.v_apellidomat_emp as Operador,
 			S.v_tipo_gas,
@@ -71,7 +71,7 @@ BEGIN
 			S.c_unidad_act,
 			U.Abreviatura
 		from ShellPest.dbo.t_Gasolina_Consumo as S 
-		left join ShellPest.dbo.t_Huerta as H on H.Id_Huerta =S.Id_Huerta 
+		left join GrupoAGV.dbo.coscampo as H on H.c_codigo_cam =S.Id_Huerta 
 		left join AGV.dbo.afiactivo as A on A.c_codigo_act =S.Id_ActivosGas 
 		left join GrupoAGV.dbo.cosactividad as ACT on ACt.c_codigo_act =S.c_codigo_act 
 		left join GrupoAGV.dbo.nomempleados as E on E.c_codigo_emp =S.c_codigo_emp 
@@ -90,7 +90,7 @@ BEGIN
 			I.d_fecha_crea ,
 			I.c_codigo_eps ,
 			I.Id_Huerta ,
-			H.Nombre_Huerta ,
+			v_nombre_cam as Nombre_Huerta ,
 			I.c_codigo_emp ,
 			E.v_nombre_emp +' '+E.v_apellidopat_emp +' '+E.v_apellidomat_emp as Operador,
 			I.v_tipo_gas ,
@@ -116,7 +116,7 @@ BEGIN
 			'N/A' as Unidad ,
 			'N/A' as Abrevia
 		from ShellPest.dbo.t_Gasolina_Ingreso as I 
-		left join ShellPest.dbo.t_Huerta as H on H.Id_Huerta =I.Id_Huerta 
+		left join GrupoAGV.dbo.coscampo as H on H.c_codigo_cam =I.Id_Huerta 
 		left join GrupoAGV.dbo.nomempleados as E on E.c_codigo_emp =I.c_codigo_emp 
 		where I.d_fechaingreso_gas=@Fecha
 END

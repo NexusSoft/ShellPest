@@ -75,5 +75,49 @@ namespace ShellPest
             }
         }
 
+        private void btn_Agregar_Click(object sender, EventArgs e)
+        {
+            CLS_Lugar_Campo Clase = new CLS_Lugar_Campo();
+            
+            Clase.c_codigo_cam = glue_Campo.EditValue.ToString();
+            Clase.c_codigo_lug = glue_Lugar.EditValue.ToString();
+            
+            Clase.MtdInsertarLugarCampo();
+            CargarGrid();
+        }
+
+        private void btn_Quitar_Click(object sender, EventArgs e)
+        {
+            CLS_Lugar_Campo Clase = new CLS_Lugar_Campo();
+
+            Clase.c_codigo_cam = glue_Campo.EditValue.ToString();
+            Clase.c_codigo_lug = glue_Lugar.EditValue.ToString();
+
+            Clase.MtdEliminarLugarCampo();
+            CargarGrid();
+        }
+
+        private void gridControl1_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                foreach (int i in this.gridView1.GetSelectedRows())
+                {
+                    DataRow row = this.gridView1.GetDataRow(i);
+                    glue_Lugar.EditValue = row["c_codigo_lug"].ToString();
+                    glue_Campo.EditValue = row["c_codigo_cam"].ToString();
+                    
+                }
+            }
+            catch (Exception ex)
+            {
+                XtraMessageBox.Show(ex.Message);
+            }
+        }
+
+        private void btnSalir_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            this.Close();
+        }
     }
 }

@@ -10,7 +10,7 @@ namespace CapaDeDatos
     {
 
         public string Id_Usuario { get; set; }
-        public string Id_Huerta { get; set; }
+        public string c_codigo_cam { get; set; }
 
         public void MtdSeleccionarEmpleados()
         {
@@ -55,8 +55,8 @@ namespace CapaDeDatos
                 _conexion.NombreProcedimiento = "SP_empleados_huerta_Select";
                 _dato.CadenaTexto = Id_Usuario;
                 _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Id_Usuario");
-                _dato.CadenaTexto = Id_Huerta;
-                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Id_Huerta");
+                _dato.CadenaTexto = c_codigo_cam;
+                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "c_codigo_cam");
                 _conexion.EjecutarDataset();
 
                 if (_conexion.Exito)
