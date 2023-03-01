@@ -405,7 +405,7 @@
             // 
             // v_observaciones_gas
             // 
-            this.v_observaciones_gas.Caption = "Observaciones";
+            this.v_observaciones_gas.Caption = "Concepto";
             this.v_observaciones_gas.FieldName = "v_observaciones_gas";
             this.v_observaciones_gas.Name = "v_observaciones_gas";
             this.v_observaciones_gas.Visible = true;
@@ -490,7 +490,7 @@
             this.glue_Unidades.Properties.PopupView = this.gridView9;
             this.glue_Unidades.Properties.ValueMember = "Id_Unidad";
             this.glue_Unidades.Size = new System.Drawing.Size(138, 20);
-            this.glue_Unidades.TabIndex = 65;
+            this.glue_Unidades.TabIndex = 13;
             // 
             // gridView9
             // 
@@ -536,7 +536,7 @@
             this.text_Rendimiento.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.NumericMaskManager));
             this.text_Rendimiento.Properties.MaskSettings.Set("mask", "n");
             this.text_Rendimiento.Size = new System.Drawing.Size(100, 20);
-            this.text_Rendimiento.TabIndex = 64;
+            this.text_Rendimiento.TabIndex = 12;
             // 
             // label_Rendimiento
             // 
@@ -576,7 +576,7 @@
             this.glue_TipoCombustible.Properties.PopupView = this.gridView8;
             this.glue_TipoCombustible.Properties.ValueMember = "Tipo";
             this.glue_TipoCombustible.Size = new System.Drawing.Size(222, 20);
-            this.glue_TipoCombustible.TabIndex = 60;
+            this.glue_TipoCombustible.TabIndex = 5;
             // 
             // gridView8
             // 
@@ -615,7 +615,7 @@
             this.glue_Actividades.Properties.PopupView = this.gridView7;
             this.glue_Actividades.Properties.ValueMember = "c_codigo_act";
             this.glue_Actividades.Size = new System.Drawing.Size(193, 20);
-            this.glue_Actividades.TabIndex = 58;
+            this.glue_Actividades.TabIndex = 11;
             // 
             // gridView7
             // 
@@ -663,7 +663,7 @@
             this.glue_Bloques.Properties.PopupView = this.gridView5;
             this.glue_Bloques.Properties.ValueMember = "c_codigo_lot";
             this.glue_Bloques.Size = new System.Drawing.Size(193, 20);
-            this.glue_Bloques.TabIndex = 56;
+            this.glue_Bloques.TabIndex = 10;
             this.glue_Bloques.Closed += new DevExpress.XtraEditors.Controls.ClosedEventHandler(this.glue_Bloques_Closed);
             // 
             // gridView5
@@ -714,7 +714,7 @@
             this.glue_Responsables.Properties.PopupView = this.gridView4;
             this.glue_Responsables.Properties.ValueMember = "c_codigo_emp";
             this.glue_Responsables.Size = new System.Drawing.Size(193, 20);
-            this.glue_Responsables.TabIndex = 54;
+            this.glue_Responsables.TabIndex = 8;
             // 
             // gridView4
             // 
@@ -762,7 +762,7 @@
             this.glue_Activos.Properties.PopupView = this.gridView2;
             this.glue_Activos.Properties.ValueMember = "Id_ActivosGas";
             this.glue_Activos.Size = new System.Drawing.Size(193, 20);
-            this.glue_Activos.TabIndex = 52;
+            this.glue_Activos.TabIndex = 9;
             // 
             // gridView2
             // 
@@ -813,15 +813,15 @@
             this.text_Observaciones.MenuManager = this.barManager1;
             this.text_Observaciones.Name = "text_Observaciones";
             this.text_Observaciones.Size = new System.Drawing.Size(231, 20);
-            this.text_Observaciones.TabIndex = 50;
+            this.text_Observaciones.TabIndex = 7;
             // 
             // labelControl5
             // 
             this.labelControl5.Location = new System.Drawing.Point(189, 105);
             this.labelControl5.Name = "labelControl5";
-            this.labelControl5.Size = new System.Drawing.Size(75, 13);
+            this.labelControl5.Size = new System.Drawing.Size(50, 13);
             this.labelControl5.TabIndex = 49;
-            this.labelControl5.Text = "Observaciones:";
+            this.labelControl5.Text = "Concepto:";
             // 
             // glue_Huertas
             // 
@@ -835,7 +835,7 @@
             this.glue_Huertas.Properties.PopupView = this.gridView3;
             this.glue_Huertas.Properties.ValueMember = "c_codigo_cam";
             this.glue_Huertas.Size = new System.Drawing.Size(193, 20);
-            this.glue_Huertas.TabIndex = 48;
+            this.glue_Huertas.TabIndex = 4;
             this.glue_Huertas.EditValueChanged += new System.EventHandler(this.glue_Huertas_EditValueChanged);
             // 
             // gridView3
@@ -940,7 +940,7 @@
             this.de_Fecha.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.de_Fecha.Size = new System.Drawing.Size(100, 20);
-            this.de_Fecha.TabIndex = 7;
+            this.de_Fecha.TabIndex = 2;
             this.de_Fecha.EditValueChanged += new System.EventHandler(this.de_Fecha_EditValueChanged);
             // 
             // labelControl3
@@ -960,7 +960,7 @@
             new DevExpress.XtraEditors.Controls.RadioGroupItem('I', "Ingreso", true, "Ingreso"),
             new DevExpress.XtraEditors.Controls.RadioGroupItem('S', "Consumo", true, "Consumo")});
             this.rg_IoS.Size = new System.Drawing.Size(154, 29);
-            this.rg_IoS.TabIndex = 4;
+            this.rg_IoS.TabIndex = 3;
             this.rg_IoS.EditValueChanged += new System.EventHandler(this.rg_IoS_EditValueChanged);
             // 
             // text_Cant
@@ -972,7 +972,7 @@
             this.text_Cant.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.NumericMaskManager));
             this.text_Cant.Properties.MaskSettings.Set("mask", "n");
             this.text_Cant.Size = new System.Drawing.Size(100, 20);
-            this.text_Cant.TabIndex = 3;
+            this.text_Cant.TabIndex = 6;
             // 
             // labelControl2
             // 

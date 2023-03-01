@@ -112,6 +112,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Catalogos\Frm_Actividad_Campo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Catalogos\Frm_Actividad_Campo.Designer.cs">
+      <DependentUpon>Frm_Actividad_Campo.cs</DependentUpon>
+    </Compile>
     <Compile Include="Catalogos\Frm_Almacen_Huerto.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -414,6 +420,9 @@
     <Compile Include="Seguridad\Frm_Usuarios.designer.cs">
       <DependentUpon>Frm_Usuarios.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Catalogos\Frm_Actividad_Campo.resx">
+      <DependentUpon>Frm_Actividad_Campo.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Catalogos\Frm_Almacen_Huerto.resx">
       <DependentUpon>Frm_Almacen_Huerto.cs</DependentUpon>
     </EmbeddedResource>

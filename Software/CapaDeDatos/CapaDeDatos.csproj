@@ -43,6 +43,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Catalogos\CLS_Actividad_Campo.cs" />
     <Compile Include="Catalogos\CLS_Almacen_Huerto.cs" />
     <Compile Include="Catalogos\CLS_Asesor_Tecnico.cs" />
     <Compile Include="Catalogos\CLS_Estado_Fenologico.cs" />

@@ -506,7 +506,7 @@ namespace ShellPest
                     {
                         rg_IoS.EditValue = 'S';
                     }
-                    glue_Huertas.EditValue= row["Id_Huerta"].ToString();
+                    glue_Huertas.EditValue= row["Id_Huerta"].ToString().Trim();
                     glue_TipoCombustible.EditValue= row["v_tipo_gas"].ToString();
                     text_Cant.Text= row["v_cantutilizada_gas"].ToString();
                     text_Observaciones.Text= row["v_observaciones_gas"].ToString();

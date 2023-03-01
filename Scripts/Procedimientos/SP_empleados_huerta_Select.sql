@@ -40,7 +40,8 @@ BEGIN
 			CONCAT_WS(' ',N.v_nombre_emp,' ',N.v_apellidopat_emp , ' ',
 			N.v_apellidomat_emp,' ' ) Nombre_Completo
 		from GrupoAGV.dbo.nomempleados as N
-		left join ShellPest.dbo.t_lugar_campo as L on L.c_codigo_lug = N.c_codigo_lug
+		/* Quite para que muestre todos todos los empleados
+		 * left join ShellPest.dbo.t_lugar_campo as L on L.c_codigo_lug = N.c_codigo_lug
 		left join GrupoAGV.dbo.coscampo as C on C.c_codigo_cam = L.c_codigo_cam
 		left join ShellPest.dbo.t_Huerta as H on H.c_codigo_cam = C.c_codigo_cam
 		inner join ShellPest.dbo.t_Usuario_Huerta as U on U.Id_Huerta = H.Id_Huerta
@@ -61,7 +62,8 @@ BEGIN
 				'0021',
 				'0022',
 				'0027')
-			and H.c_codigo_cam=@c_codigo_cam
+			and H.c_codigo_cam=@c_codigo_cam*/
+			where N.c_activo_emp='1'
 
 END
 GO
