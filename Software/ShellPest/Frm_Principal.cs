@@ -470,6 +470,14 @@ namespace ShellPest
             Frm_Riego.DefInstance.Id_Usuario = UsuariosLogin;
             Frm_Riego.DefInstance.Show();
         }
+
+        private void btn_Actuvidad_Campo_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            Frm_Actividad_Campo Ventana = new Frm_Actividad_Campo();
+            Frm_Actividad_Campo.DefInstance.MdiParent = this;
+            //Frm_Actividad_Campo.DefInstance.Id_Usuario = UsuariosLogin;
+            Frm_Actividad_Campo.DefInstance.Show();
+        }
     }
 
 }

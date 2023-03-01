@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using CapaDeDatos;
 
-namespace ShellPest.Catalogos
+namespace ShellPest
 {
     public partial class Frm_Actividad_Campo : DevExpress.XtraEditors.XtraForm
     {
@@ -19,6 +19,21 @@ namespace ShellPest.Catalogos
             InitializeComponent();
         }
 
+
+        private static Frm_Actividad_Campo m_FormDefInstance;
+        public static Frm_Actividad_Campo DefInstance
+        {
+            get
+            {
+                if (m_FormDefInstance == null || m_FormDefInstance.IsDisposed)
+                    m_FormDefInstance = new Frm_Actividad_Campo();
+                return m_FormDefInstance;
+            }
+            set
+            {
+                m_FormDefInstance = value;
+            }
+        }
 
         private void CargarGrid()
         {

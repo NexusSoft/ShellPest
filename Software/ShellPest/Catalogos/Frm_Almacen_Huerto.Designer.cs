@@ -51,18 +51,18 @@
             this.c_codigo_hue = new DevExpress.XtraGrid.Columns.GridColumn();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
-            this.glue_Huerto = new DevExpress.XtraEditors.GridLookUpEdit();
-            this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.glue_Almacen = new DevExpress.XtraEditors.GridLookUpEdit();
-            this.gridLookUpEdit1View = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.glue_Empresa = new DevExpress.XtraEditors.GridLookUpEdit();
             this.gridView6 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.c_codigo_eps = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn10 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn34 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.labelControl18 = new DevExpress.XtraEditors.LabelControl();
+            this.glue_Huerto = new DevExpress.XtraEditors.GridLookUpEdit();
+            this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.glue_Almacen = new DevExpress.XtraEditors.GridLookUpEdit();
+            this.gridLookUpEdit1View = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).BeginInit();
@@ -73,12 +73,12 @@
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.glue_Empresa.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.glue_Huerto.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.glue_Almacen.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit1View)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.glue_Empresa.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView6)).BeginInit();
             this.SuspendLayout();
             // 
             // barManager1
@@ -179,15 +179,15 @@
             this.barDockControlTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.barDockControlTop.Location = new System.Drawing.Point(0, 0);
             this.barDockControlTop.Manager = this.barManager1;
-            this.barDockControlTop.Size = new System.Drawing.Size(613, 0);
+            this.barDockControlTop.Size = new System.Drawing.Size(599, 0);
             // 
             // barDockControlBottom
             // 
             this.barDockControlBottom.CausesValidation = false;
             this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.barDockControlBottom.Location = new System.Drawing.Point(0, 429);
+            this.barDockControlBottom.Location = new System.Drawing.Point(0, 425);
             this.barDockControlBottom.Manager = this.barManager1;
-            this.barDockControlBottom.Size = new System.Drawing.Size(613, 27);
+            this.barDockControlBottom.Size = new System.Drawing.Size(599, 24);
             // 
             // barDockControlLeft
             // 
@@ -195,15 +195,15 @@
             this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
             this.barDockControlLeft.Location = new System.Drawing.Point(0, 0);
             this.barDockControlLeft.Manager = this.barManager1;
-            this.barDockControlLeft.Size = new System.Drawing.Size(54, 429);
+            this.barDockControlLeft.Size = new System.Drawing.Size(54, 425);
             // 
             // barDockControlRight
             // 
             this.barDockControlRight.CausesValidation = false;
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
-            this.barDockControlRight.Location = new System.Drawing.Point(613, 0);
+            this.barDockControlRight.Location = new System.Drawing.Point(599, 0);
             this.barDockControlRight.Manager = this.barManager1;
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 429);
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 425);
             // 
             // repositoryItemTextEdit1
             // 
@@ -216,7 +216,7 @@
             this.panelControl2.Location = new System.Drawing.Point(54, 106);
             this.panelControl2.Name = "panelControl2";
             this.panelControl2.Padding = new System.Windows.Forms.Padding(5);
-            this.panelControl2.Size = new System.Drawing.Size(559, 323);
+            this.panelControl2.Size = new System.Drawing.Size(545, 319);
             this.panelControl2.TabIndex = 23;
             // 
             // gridControl1
@@ -225,7 +225,7 @@
             this.gridControl1.Location = new System.Drawing.Point(7, 7);
             this.gridControl1.MainView = this.gridValue;
             this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(545, 309);
+            this.gridControl1.Size = new System.Drawing.Size(531, 305);
             this.gridControl1.TabIndex = 0;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridValue});
@@ -286,7 +286,7 @@
             this.panelControl1.Location = new System.Drawing.Point(54, 0);
             this.panelControl1.Name = "panelControl1";
             this.panelControl1.Padding = new System.Windows.Forms.Padding(5);
-            this.panelControl1.Size = new System.Drawing.Size(559, 106);
+            this.panelControl1.Size = new System.Drawing.Size(545, 106);
             this.panelControl1.TabIndex = 22;
             // 
             // groupControl1
@@ -300,63 +300,9 @@
             this.groupControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupControl1.Location = new System.Drawing.Point(7, 7);
             this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(545, 92);
+            this.groupControl1.Size = new System.Drawing.Size(531, 92);
             this.groupControl1.TabIndex = 0;
             this.groupControl1.Text = "Almacen - Huerta";
-            // 
-            // glue_Huerto
-            // 
-            this.glue_Huerto.Location = new System.Drawing.Point(85, 56);
-            this.glue_Huerto.Name = "glue_Huerto";
-            this.glue_Huerto.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.glue_Huerto.Properties.DisplayMember = "v_nombre_hue";
-            this.glue_Huerto.Properties.PopupView = this.gridView1;
-            this.glue_Huerto.Properties.ValueMember = "c_codigo_hue";
-            this.glue_Huerto.Size = new System.Drawing.Size(194, 20);
-            this.glue_Huerto.TabIndex = 4;
-            // 
-            // gridView1
-            // 
-            this.gridView1.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
-            this.gridView1.Name = "gridView1";
-            this.gridView1.OptionsSelection.EnableAppearanceFocusedCell = false;
-            this.gridView1.OptionsView.ShowGroupPanel = false;
-            // 
-            // glue_Almacen
-            // 
-            this.glue_Almacen.Location = new System.Drawing.Point(85, 30);
-            this.glue_Almacen.Name = "glue_Almacen";
-            this.glue_Almacen.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.glue_Almacen.Properties.DisplayMember = "v_nombre_alm";
-            this.glue_Almacen.Properties.PopupView = this.gridLookUpEdit1View;
-            this.glue_Almacen.Properties.ValueMember = "c_codigo_alm";
-            this.glue_Almacen.Size = new System.Drawing.Size(194, 20);
-            this.glue_Almacen.TabIndex = 3;
-            // 
-            // gridLookUpEdit1View
-            // 
-            this.gridLookUpEdit1View.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
-            this.gridLookUpEdit1View.Name = "gridLookUpEdit1View";
-            this.gridLookUpEdit1View.OptionsSelection.EnableAppearanceFocusedCell = false;
-            this.gridLookUpEdit1View.OptionsView.ShowGroupPanel = false;
-            // 
-            // labelControl2
-            // 
-            this.labelControl2.Location = new System.Drawing.Point(19, 62);
-            this.labelControl2.Name = "labelControl2";
-            this.labelControl2.Size = new System.Drawing.Size(50, 13);
-            this.labelControl2.TabIndex = 2;
-            this.labelControl2.Text = "Id Huerto:";
-            // 
-            // labelControl1
-            // 
-            this.labelControl1.Location = new System.Drawing.Point(19, 35);
-            this.labelControl1.Name = "labelControl1";
-            this.labelControl1.Size = new System.Drawing.Size(60, 13);
-            this.labelControl1.TabIndex = 0;
-            this.labelControl1.Text = "Id Almacen: ";
             // 
             // glue_Empresa
             // 
@@ -407,17 +353,71 @@
             // 
             // labelControl18
             // 
-            this.labelControl18.Location = new System.Drawing.Point(296, 35);
+            this.labelControl18.Location = new System.Drawing.Point(296, 33);
             this.labelControl18.Name = "labelControl18";
             this.labelControl18.Size = new System.Drawing.Size(45, 13);
             this.labelControl18.TabIndex = 47;
             this.labelControl18.Text = "Empresa:";
             // 
+            // glue_Huerto
+            // 
+            this.glue_Huerto.Location = new System.Drawing.Point(85, 56);
+            this.glue_Huerto.Name = "glue_Huerto";
+            this.glue_Huerto.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.glue_Huerto.Properties.DisplayMember = "v_nombre_hue";
+            this.glue_Huerto.Properties.PopupView = this.gridView1;
+            this.glue_Huerto.Properties.ValueMember = "c_codigo_hue";
+            this.glue_Huerto.Size = new System.Drawing.Size(194, 20);
+            this.glue_Huerto.TabIndex = 4;
+            // 
+            // gridView1
+            // 
+            this.gridView1.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
+            this.gridView1.Name = "gridView1";
+            this.gridView1.OptionsSelection.EnableAppearanceFocusedCell = false;
+            this.gridView1.OptionsView.ShowGroupPanel = false;
+            // 
+            // glue_Almacen
+            // 
+            this.glue_Almacen.Location = new System.Drawing.Point(85, 30);
+            this.glue_Almacen.Name = "glue_Almacen";
+            this.glue_Almacen.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.glue_Almacen.Properties.DisplayMember = "v_nombre_alm";
+            this.glue_Almacen.Properties.PopupView = this.gridLookUpEdit1View;
+            this.glue_Almacen.Properties.ValueMember = "c_codigo_alm";
+            this.glue_Almacen.Size = new System.Drawing.Size(194, 20);
+            this.glue_Almacen.TabIndex = 3;
+            // 
+            // gridLookUpEdit1View
+            // 
+            this.gridLookUpEdit1View.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
+            this.gridLookUpEdit1View.Name = "gridLookUpEdit1View";
+            this.gridLookUpEdit1View.OptionsSelection.EnableAppearanceFocusedCell = false;
+            this.gridLookUpEdit1View.OptionsView.ShowGroupPanel = false;
+            // 
+            // labelControl2
+            // 
+            this.labelControl2.Location = new System.Drawing.Point(19, 60);
+            this.labelControl2.Name = "labelControl2";
+            this.labelControl2.Size = new System.Drawing.Size(50, 13);
+            this.labelControl2.TabIndex = 2;
+            this.labelControl2.Text = "Id Huerto:";
+            // 
+            // labelControl1
+            // 
+            this.labelControl1.Location = new System.Drawing.Point(19, 33);
+            this.labelControl1.Name = "labelControl1";
+            this.labelControl1.Size = new System.Drawing.Size(60, 13);
+            this.labelControl1.TabIndex = 0;
+            this.labelControl1.Text = "Id Almacen: ";
+            // 
             // Frm_Almacen_Huerto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(613, 456);
+            this.ClientSize = new System.Drawing.Size(599, 449);
             this.Controls.Add(this.panelControl2);
             this.Controls.Add(this.panelControl1);
             this.Controls.Add(this.barDockControlLeft);
@@ -438,12 +438,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
             this.groupControl1.ResumeLayout(false);
             this.groupControl1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.glue_Empresa.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.glue_Huerto.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.glue_Almacen.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit1View)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.glue_Empresa.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView6)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

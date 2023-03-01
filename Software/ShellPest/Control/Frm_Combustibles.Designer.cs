@@ -202,15 +202,15 @@
             this.barDockControlTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.barDockControlTop.Location = new System.Drawing.Point(0, 0);
             this.barDockControlTop.Manager = this.barManager1;
-            this.barDockControlTop.Size = new System.Drawing.Size(936, 0);
+            this.barDockControlTop.Size = new System.Drawing.Size(922, 0);
             // 
             // barDockControlBottom
             // 
             this.barDockControlBottom.CausesValidation = false;
             this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.barDockControlBottom.Location = new System.Drawing.Point(0, 537);
+            this.barDockControlBottom.Location = new System.Drawing.Point(0, 530);
             this.barDockControlBottom.Manager = this.barManager1;
-            this.barDockControlBottom.Size = new System.Drawing.Size(936, 0);
+            this.barDockControlBottom.Size = new System.Drawing.Size(922, 0);
             // 
             // barDockControlLeft
             // 
@@ -218,15 +218,15 @@
             this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
             this.barDockControlLeft.Location = new System.Drawing.Point(0, 0);
             this.barDockControlLeft.Manager = this.barManager1;
-            this.barDockControlLeft.Size = new System.Drawing.Size(50, 537);
+            this.barDockControlLeft.Size = new System.Drawing.Size(48, 530);
             // 
             // barDockControl1
             // 
             this.barDockControl1.CausesValidation = false;
             this.barDockControl1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.barDockControl1.Location = new System.Drawing.Point(936, 0);
+            this.barDockControl1.Location = new System.Drawing.Point(922, 0);
             this.barDockControl1.Manager = this.barManager1;
-            this.barDockControl1.Size = new System.Drawing.Size(0, 537);
+            this.barDockControl1.Size = new System.Drawing.Size(0, 530);
             // 
             // repositoryItemTextEdit1
             // 
@@ -236,10 +236,10 @@
             // 
             this.panelControl2.Controls.Add(this.gridControl1);
             this.panelControl2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelControl2.Location = new System.Drawing.Point(50, 197);
+            this.panelControl2.Location = new System.Drawing.Point(48, 197);
             this.panelControl2.Name = "panelControl2";
             this.panelControl2.Padding = new System.Windows.Forms.Padding(5, 20, 5, 5);
-            this.panelControl2.Size = new System.Drawing.Size(886, 340);
+            this.panelControl2.Size = new System.Drawing.Size(874, 333);
             this.panelControl2.TabIndex = 9;
             // 
             // gridControl1
@@ -249,7 +249,7 @@
             this.gridControl1.MainView = this.gridView1;
             this.gridControl1.MenuManager = this.barManager1;
             this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(872, 311);
+            this.gridControl1.Size = new System.Drawing.Size(860, 304);
             this.gridControl1.TabIndex = 0;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -465,10 +465,10 @@
             this.panelControl1.Controls.Add(this.textId);
             this.panelControl1.Controls.Add(this.labelControl1);
             this.panelControl1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelControl1.Location = new System.Drawing.Point(50, 0);
+            this.panelControl1.Location = new System.Drawing.Point(48, 0);
             this.panelControl1.Name = "panelControl1";
             this.panelControl1.Padding = new System.Windows.Forms.Padding(10);
-            this.panelControl1.Size = new System.Drawing.Size(886, 197);
+            this.panelControl1.Size = new System.Drawing.Size(874, 197);
             this.panelControl1.TabIndex = 8;
             // 
             // label_BloquesView
@@ -1002,7 +1002,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(936, 537);
+            this.ClientSize = new System.Drawing.Size(922, 530);
             this.Controls.Add(this.panelControl2);
             this.Controls.Add(this.panelControl1);
             this.Controls.Add(this.barDockControlLeft);
