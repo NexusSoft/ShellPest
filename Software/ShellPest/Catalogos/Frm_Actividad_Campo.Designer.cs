@@ -49,28 +49,28 @@
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.c_codigo_actG = new DevExpress.XtraGrid.Columns.GridColumn();
             this.v_nombre_actG = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
-            this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
-            this.glue_Huertas = new DevExpress.XtraEditors.GridLookUpEdit();
-            this.gridView3 = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.v_nombre_cam = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.c_codigo_cam = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridLookUpEdit1 = new DevExpress.XtraEditors.GridLookUpEdit();
-            this.gridView2 = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridLookUpEdit2 = new DevExpress.XtraEditors.GridLookUpEdit();
-            this.gridView4 = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn4 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.btn_Quitar = new DevExpress.XtraEditors.SimpleButton();
-            this.btn_Agregar = new DevExpress.XtraEditors.SimpleButton();
             this.c_codigo_camG = new DevExpress.XtraGrid.Columns.GridColumn();
             this.v_nombre_camG = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Id_UnidadG = new DevExpress.XtraGrid.Columns.GridColumn();
             this.AbreviaturaG = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
+            this.btn_Quitar = new DevExpress.XtraEditors.SimpleButton();
+            this.btn_Agregar = new DevExpress.XtraEditors.SimpleButton();
+            this.glue_Unidades = new DevExpress.XtraEditors.GridLookUpEdit();
+            this.gridView4 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn4 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.glue_Actividades = new DevExpress.XtraEditors.GridLookUpEdit();
+            this.gridView2 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.glue_Campos = new DevExpress.XtraEditors.GridLookUpEdit();
+            this.gridView3 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.v_nombre_cam = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.c_codigo_cam = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).BeginInit();
@@ -79,12 +79,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.glue_Huertas.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit1.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit2.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.glue_Unidades.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.glue_Actividades.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.glue_Campos.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView3)).BeginInit();
             this.SuspendLayout();
             // 
             // barManager1
@@ -287,183 +287,6 @@
             this.v_nombre_actG.Visible = true;
             this.v_nombre_actG.VisibleIndex = 1;
             // 
-            // panelControl1
-            // 
-            this.panelControl1.Controls.Add(this.btn_Quitar);
-            this.panelControl1.Controls.Add(this.btn_Agregar);
-            this.panelControl1.Controls.Add(this.gridLookUpEdit2);
-            this.panelControl1.Controls.Add(this.gridLookUpEdit1);
-            this.panelControl1.Controls.Add(this.glue_Huertas);
-            this.panelControl1.Controls.Add(this.labelControl3);
-            this.panelControl1.Controls.Add(this.labelControl2);
-            this.panelControl1.Controls.Add(this.labelControl1);
-            this.panelControl1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelControl1.Location = new System.Drawing.Point(69, 0);
-            this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Padding = new System.Windows.Forms.Padding(10);
-            this.panelControl1.Size = new System.Drawing.Size(755, 79);
-            this.panelControl1.TabIndex = 8;
-            // 
-            // labelControl2
-            // 
-            this.labelControl2.Location = new System.Drawing.Point(262, 16);
-            this.labelControl2.Name = "labelControl2";
-            this.labelControl2.Size = new System.Drawing.Size(48, 13);
-            this.labelControl2.TabIndex = 2;
-            this.labelControl2.Text = "Actividad:";
-            // 
-            // labelControl1
-            // 
-            this.labelControl1.Location = new System.Drawing.Point(9, 14);
-            this.labelControl1.Name = "labelControl1";
-            this.labelControl1.Size = new System.Drawing.Size(37, 13);
-            this.labelControl1.TabIndex = 0;
-            this.labelControl1.Text = "Campo:";
-            // 
-            // labelControl3
-            // 
-            this.labelControl3.Location = new System.Drawing.Point(513, 16);
-            this.labelControl3.Name = "labelControl3";
-            this.labelControl3.Size = new System.Drawing.Size(37, 13);
-            this.labelControl3.TabIndex = 4;
-            this.labelControl3.Text = "Unidad:";
-            // 
-            // glue_Huertas
-            // 
-            this.glue_Huertas.EditValue = "-Seleccionar-";
-            this.glue_Huertas.Location = new System.Drawing.Point(52, 11);
-            this.glue_Huertas.Name = "glue_Huertas";
-            this.glue_Huertas.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.glue_Huertas.Properties.DisplayMember = "v_nombre_cam";
-            this.glue_Huertas.Properties.NullText = "-Seleccionar-";
-            this.glue_Huertas.Properties.PopupView = this.gridView3;
-            this.glue_Huertas.Properties.ValueMember = "c_codigo_cam";
-            this.glue_Huertas.Size = new System.Drawing.Size(193, 20);
-            this.glue_Huertas.TabIndex = 5;
-            // 
-            // gridView3
-            // 
-            this.gridView3.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.v_nombre_cam,
-            this.c_codigo_cam});
-            this.gridView3.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
-            this.gridView3.Name = "gridView3";
-            this.gridView3.OptionsSelection.EnableAppearanceFocusedCell = false;
-            this.gridView3.OptionsView.ShowGroupPanel = false;
-            // 
-            // v_nombre_cam
-            // 
-            this.v_nombre_cam.Caption = "Huerta";
-            this.v_nombre_cam.FieldName = "v_nombre_cam";
-            this.v_nombre_cam.Name = "v_nombre_cam";
-            this.v_nombre_cam.Visible = true;
-            this.v_nombre_cam.VisibleIndex = 0;
-            // 
-            // c_codigo_cam
-            // 
-            this.c_codigo_cam.Caption = "Codigo";
-            this.c_codigo_cam.FieldName = "c_codigo_cam";
-            this.c_codigo_cam.Name = "c_codigo_cam";
-            this.c_codigo_cam.Visible = true;
-            this.c_codigo_cam.VisibleIndex = 1;
-            // 
-            // gridLookUpEdit1
-            // 
-            this.gridLookUpEdit1.EditValue = "-Seleccionar-";
-            this.gridLookUpEdit1.Location = new System.Drawing.Point(309, 13);
-            this.gridLookUpEdit1.Name = "gridLookUpEdit1";
-            this.gridLookUpEdit1.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.gridLookUpEdit1.Properties.DisplayMember = "v_nombre_cam";
-            this.gridLookUpEdit1.Properties.NullText = "-Seleccionar-";
-            this.gridLookUpEdit1.Properties.PopupView = this.gridView2;
-            this.gridLookUpEdit1.Properties.ValueMember = "c_codigo_cam";
-            this.gridLookUpEdit1.Size = new System.Drawing.Size(193, 20);
-            this.gridLookUpEdit1.TabIndex = 6;
-            // 
-            // gridView2
-            // 
-            this.gridView2.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.gridColumn1,
-            this.gridColumn2});
-            this.gridView2.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
-            this.gridView2.Name = "gridView2";
-            this.gridView2.OptionsSelection.EnableAppearanceFocusedCell = false;
-            this.gridView2.OptionsView.ShowGroupPanel = false;
-            // 
-            // gridColumn1
-            // 
-            this.gridColumn1.Caption = "Huerta";
-            this.gridColumn1.FieldName = "v_nombre_cam";
-            this.gridColumn1.Name = "gridColumn1";
-            this.gridColumn1.Visible = true;
-            this.gridColumn1.VisibleIndex = 0;
-            // 
-            // gridColumn2
-            // 
-            this.gridColumn2.Caption = "Codigo";
-            this.gridColumn2.FieldName = "c_codigo_cam";
-            this.gridColumn2.Name = "gridColumn2";
-            this.gridColumn2.Visible = true;
-            this.gridColumn2.VisibleIndex = 1;
-            // 
-            // gridLookUpEdit2
-            // 
-            this.gridLookUpEdit2.EditValue = "-Seleccionar-";
-            this.gridLookUpEdit2.Location = new System.Drawing.Point(556, 13);
-            this.gridLookUpEdit2.Name = "gridLookUpEdit2";
-            this.gridLookUpEdit2.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.gridLookUpEdit2.Properties.DisplayMember = "v_nombre_cam";
-            this.gridLookUpEdit2.Properties.NullText = "-Seleccionar-";
-            this.gridLookUpEdit2.Properties.PopupView = this.gridView4;
-            this.gridLookUpEdit2.Properties.ValueMember = "c_codigo_cam";
-            this.gridLookUpEdit2.Size = new System.Drawing.Size(193, 20);
-            this.gridLookUpEdit2.TabIndex = 7;
-            // 
-            // gridView4
-            // 
-            this.gridView4.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.gridColumn3,
-            this.gridColumn4});
-            this.gridView4.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
-            this.gridView4.Name = "gridView4";
-            this.gridView4.OptionsSelection.EnableAppearanceFocusedCell = false;
-            this.gridView4.OptionsView.ShowGroupPanel = false;
-            // 
-            // gridColumn3
-            // 
-            this.gridColumn3.Caption = "Huerta";
-            this.gridColumn3.FieldName = "v_nombre_cam";
-            this.gridColumn3.Name = "gridColumn3";
-            this.gridColumn3.Visible = true;
-            this.gridColumn3.VisibleIndex = 0;
-            // 
-            // gridColumn4
-            // 
-            this.gridColumn4.Caption = "Codigo";
-            this.gridColumn4.FieldName = "c_codigo_cam";
-            this.gridColumn4.Name = "gridColumn4";
-            this.gridColumn4.Visible = true;
-            this.gridColumn4.VisibleIndex = 1;
-            // 
-            // btn_Quitar
-            // 
-            this.btn_Quitar.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_Quitar.ImageOptions.Image")));
-            this.btn_Quitar.Location = new System.Drawing.Point(59, 37);
-            this.btn_Quitar.Name = "btn_Quitar";
-            this.btn_Quitar.Size = new System.Drawing.Size(38, 34);
-            this.btn_Quitar.TabIndex = 64;
-            // 
-            // btn_Agregar
-            // 
-            this.btn_Agregar.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_Agregar.ImageOptions.Image")));
-            this.btn_Agregar.Location = new System.Drawing.Point(15, 37);
-            this.btn_Agregar.Name = "btn_Agregar";
-            this.btn_Agregar.Size = new System.Drawing.Size(38, 34);
-            this.btn_Agregar.TabIndex = 63;
-            // 
             // c_codigo_camG
             // 
             this.c_codigo_camG.Caption = "c_codigo_cam";
@@ -496,6 +319,183 @@
             this.AbreviaturaG.Visible = true;
             this.AbreviaturaG.VisibleIndex = 5;
             // 
+            // panelControl1
+            // 
+            this.panelControl1.Controls.Add(this.btn_Quitar);
+            this.panelControl1.Controls.Add(this.btn_Agregar);
+            this.panelControl1.Controls.Add(this.glue_Unidades);
+            this.panelControl1.Controls.Add(this.glue_Actividades);
+            this.panelControl1.Controls.Add(this.glue_Campos);
+            this.panelControl1.Controls.Add(this.labelControl3);
+            this.panelControl1.Controls.Add(this.labelControl2);
+            this.panelControl1.Controls.Add(this.labelControl1);
+            this.panelControl1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelControl1.Location = new System.Drawing.Point(69, 0);
+            this.panelControl1.Name = "panelControl1";
+            this.panelControl1.Padding = new System.Windows.Forms.Padding(10);
+            this.panelControl1.Size = new System.Drawing.Size(755, 79);
+            this.panelControl1.TabIndex = 8;
+            // 
+            // btn_Quitar
+            // 
+            this.btn_Quitar.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_Quitar.ImageOptions.Image")));
+            this.btn_Quitar.Location = new System.Drawing.Point(59, 37);
+            this.btn_Quitar.Name = "btn_Quitar";
+            this.btn_Quitar.Size = new System.Drawing.Size(38, 34);
+            this.btn_Quitar.TabIndex = 64;
+            // 
+            // btn_Agregar
+            // 
+            this.btn_Agregar.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_Agregar.ImageOptions.Image")));
+            this.btn_Agregar.Location = new System.Drawing.Point(15, 37);
+            this.btn_Agregar.Name = "btn_Agregar";
+            this.btn_Agregar.Size = new System.Drawing.Size(38, 34);
+            this.btn_Agregar.TabIndex = 63;
+            // 
+            // glue_Unidades
+            // 
+            this.glue_Unidades.EditValue = "-Seleccionar-";
+            this.glue_Unidades.Location = new System.Drawing.Point(556, 13);
+            this.glue_Unidades.Name = "glue_Unidades";
+            this.glue_Unidades.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.glue_Unidades.Properties.DisplayMember = "Nombre_Unidad";
+            this.glue_Unidades.Properties.NullText = "-Seleccionar-";
+            this.glue_Unidades.Properties.PopupView = this.gridView4;
+            this.glue_Unidades.Properties.ValueMember = "Id_Unidad";
+            this.glue_Unidades.Size = new System.Drawing.Size(193, 20);
+            this.glue_Unidades.TabIndex = 7;
+            // 
+            // gridView4
+            // 
+            this.gridView4.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.gridColumn3,
+            this.gridColumn4});
+            this.gridView4.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
+            this.gridView4.Name = "gridView4";
+            this.gridView4.OptionsSelection.EnableAppearanceFocusedCell = false;
+            this.gridView4.OptionsView.ShowGroupPanel = false;
+            // 
+            // gridColumn3
+            // 
+            this.gridColumn3.Caption = "Unidad";
+            this.gridColumn3.FieldName = "Nombre_Unidad";
+            this.gridColumn3.Name = "gridColumn3";
+            this.gridColumn3.Visible = true;
+            this.gridColumn3.VisibleIndex = 0;
+            // 
+            // gridColumn4
+            // 
+            this.gridColumn4.Caption = "Codigo";
+            this.gridColumn4.FieldName = "Id_Unidad";
+            this.gridColumn4.Name = "gridColumn4";
+            this.gridColumn4.Visible = true;
+            this.gridColumn4.VisibleIndex = 1;
+            // 
+            // glue_Actividades
+            // 
+            this.glue_Actividades.EditValue = "-Seleccionar-";
+            this.glue_Actividades.Location = new System.Drawing.Point(309, 13);
+            this.glue_Actividades.Name = "glue_Actividades";
+            this.glue_Actividades.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.glue_Actividades.Properties.DisplayMember = "v_nombre_act";
+            this.glue_Actividades.Properties.NullText = "-Seleccionar-";
+            this.glue_Actividades.Properties.PopupView = this.gridView2;
+            this.glue_Actividades.Properties.ValueMember = "c_codigo_act";
+            this.glue_Actividades.Size = new System.Drawing.Size(193, 20);
+            this.glue_Actividades.TabIndex = 6;
+            // 
+            // gridView2
+            // 
+            this.gridView2.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.gridColumn1,
+            this.gridColumn2});
+            this.gridView2.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
+            this.gridView2.Name = "gridView2";
+            this.gridView2.OptionsSelection.EnableAppearanceFocusedCell = false;
+            this.gridView2.OptionsView.ShowGroupPanel = false;
+            // 
+            // gridColumn1
+            // 
+            this.gridColumn1.Caption = "Actividad";
+            this.gridColumn1.FieldName = "v_nombre_act";
+            this.gridColumn1.Name = "gridColumn1";
+            this.gridColumn1.Visible = true;
+            this.gridColumn1.VisibleIndex = 0;
+            // 
+            // gridColumn2
+            // 
+            this.gridColumn2.Caption = "Codigo";
+            this.gridColumn2.FieldName = "c_codigo_act";
+            this.gridColumn2.Name = "gridColumn2";
+            this.gridColumn2.Visible = true;
+            this.gridColumn2.VisibleIndex = 1;
+            // 
+            // glue_Campos
+            // 
+            this.glue_Campos.EditValue = "-Seleccionar-";
+            this.glue_Campos.Location = new System.Drawing.Point(52, 11);
+            this.glue_Campos.Name = "glue_Campos";
+            this.glue_Campos.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.glue_Campos.Properties.DisplayMember = "v_nombre_cam";
+            this.glue_Campos.Properties.NullText = "-Seleccionar-";
+            this.glue_Campos.Properties.PopupView = this.gridView3;
+            this.glue_Campos.Properties.ValueMember = "c_codigo_cam";
+            this.glue_Campos.Size = new System.Drawing.Size(193, 20);
+            this.glue_Campos.TabIndex = 5;
+            // 
+            // gridView3
+            // 
+            this.gridView3.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.v_nombre_cam,
+            this.c_codigo_cam});
+            this.gridView3.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
+            this.gridView3.Name = "gridView3";
+            this.gridView3.OptionsSelection.EnableAppearanceFocusedCell = false;
+            this.gridView3.OptionsView.ShowGroupPanel = false;
+            // 
+            // v_nombre_cam
+            // 
+            this.v_nombre_cam.Caption = "Huerta";
+            this.v_nombre_cam.FieldName = "v_nombre_cam";
+            this.v_nombre_cam.Name = "v_nombre_cam";
+            this.v_nombre_cam.Visible = true;
+            this.v_nombre_cam.VisibleIndex = 0;
+            // 
+            // c_codigo_cam
+            // 
+            this.c_codigo_cam.Caption = "Codigo";
+            this.c_codigo_cam.FieldName = "c_codigo_cam";
+            this.c_codigo_cam.Name = "c_codigo_cam";
+            this.c_codigo_cam.Visible = true;
+            this.c_codigo_cam.VisibleIndex = 1;
+            // 
+            // labelControl3
+            // 
+            this.labelControl3.Location = new System.Drawing.Point(513, 16);
+            this.labelControl3.Name = "labelControl3";
+            this.labelControl3.Size = new System.Drawing.Size(37, 13);
+            this.labelControl3.TabIndex = 4;
+            this.labelControl3.Text = "Unidad:";
+            // 
+            // labelControl2
+            // 
+            this.labelControl2.Location = new System.Drawing.Point(262, 16);
+            this.labelControl2.Name = "labelControl2";
+            this.labelControl2.Size = new System.Drawing.Size(48, 13);
+            this.labelControl2.TabIndex = 2;
+            this.labelControl2.Text = "Actividad:";
+            // 
+            // labelControl1
+            // 
+            this.labelControl1.Location = new System.Drawing.Point(9, 14);
+            this.labelControl1.Name = "labelControl1";
+            this.labelControl1.Size = new System.Drawing.Size(37, 13);
+            this.labelControl1.TabIndex = 0;
+            this.labelControl1.Text = "Campo:";
+            // 
             // Frm_Actividad_Campo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -519,12 +519,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
             this.panelControl1.ResumeLayout(false);
             this.panelControl1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.glue_Huertas.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit1.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit2.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.glue_Unidades.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.glue_Actividades.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.glue_Campos.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView3)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -555,15 +555,15 @@
         private DevExpress.XtraEditors.LabelControl labelControl3;
         private DevExpress.XtraEditors.LabelControl labelControl2;
         private DevExpress.XtraEditors.LabelControl labelControl1;
-        private DevExpress.XtraEditors.GridLookUpEdit gridLookUpEdit2;
+        private DevExpress.XtraEditors.GridLookUpEdit glue_Unidades;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView4;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn3;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn4;
-        private DevExpress.XtraEditors.GridLookUpEdit gridLookUpEdit1;
+        private DevExpress.XtraEditors.GridLookUpEdit glue_Actividades;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView2;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn1;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn2;
-        private DevExpress.XtraEditors.GridLookUpEdit glue_Huertas;
+        private DevExpress.XtraEditors.GridLookUpEdit glue_Campos;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView3;
         private DevExpress.XtraGrid.Columns.GridColumn v_nombre_cam;
         private DevExpress.XtraGrid.Columns.GridColumn c_codigo_cam;

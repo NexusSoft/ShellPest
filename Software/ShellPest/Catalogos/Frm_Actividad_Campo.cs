@@ -45,11 +45,53 @@ namespace ShellPest
                 {
                     gridControl1.DataSource = Clase.Datos;
                 }
+        }
+
+        private void CargarCampos()
+        {
+            glue_Campos.Properties.DataSource = null;
+            CLS_Inventum Clase = new CLS_Inventum();
+            Clase.c_codigo_eps = "01";
+            Clase.MtdCosCampoSelect();
+            if (Clase.Exito)
+            {
+                glue_Campos.Properties.DataSource = Clase.Datos;
             }
+
+        }
+
+        private void CargarActividades()
+        {
+            glue_Actividades.Properties.DataSource = null;
+            CLS_Inventum Clase = new CLS_Inventum();
+            Clase.c_codigo_eps = "01";
+            Clase.MtdCosActividadSelect();
+            if (Clase.Exito)
+            {
+                glue_Actividades.Properties.DataSource = Clase.Datos;
+            }
+
+        }
+
+        private void CargarUnidades()
+        {
+            glue_Unidades.Properties.DataSource = null;
+            CLS_UnidadesMedida Clase = new CLS_UnidadesMedida();
+            
+            Clase.MtdSeleccionarUnidadesLocalShell();
+            if (Clase.Exito)
+            {
+                glue_Unidades.Properties.DataSource = Clase.Datos;
+            }
+
+        }
 
         private void Frm_Actividad_Campo_Load(object sender, EventArgs e)
         {
             CargarGrid();
+            CargarCampos();
+            CargarActividades();
+            CargarUnidades();
         }
     
     }
