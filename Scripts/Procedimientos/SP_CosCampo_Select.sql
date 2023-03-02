@@ -30,12 +30,14 @@ BEGIN
 	begin try
 
 		
-			select cam.v_nombre_cam ,
+			select 'Indirecto' as v_nombre_cam,'00' as c_codigo_cam 
+				union
+			select distinct cam.v_nombre_cam ,
 				hue.c_codigo_cam  
 			from ShellPest.dbo.t_Huerta as hue 
 			inner join GrupoAGV.dbo.coscampo as cam on hue.c_codigo_cam =cam.c_codigo_cam 
 			WHERE hue.c_codigo_eps =@c_codigo_eps
-			group by cam.v_nombre_cam ,hue.c_codigo_cam
+			group by cam.v_nombre_cam,hue.c_codigo_cam 
 		
 		commit transaction T1;
 		set @correcto=1

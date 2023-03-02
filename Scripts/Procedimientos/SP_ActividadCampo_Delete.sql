@@ -5,16 +5,19 @@ SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
-IF  EXISTS (SELECT * FROM SYS.OBJECTS WHERE TYPE = 'P' AND NAME = 'SP_CosActividad_Select')
-DROP PROCEDURE SP_CosActividad_Select
+IF  EXISTS (SELECT * FROM SYS.OBJECTS WHERE TYPE = 'P' AND NAME = 'SP_ActividadCampo_Delete')
+DROP PROCEDURE SP_ActividadCampo_Delete
 GO
 -- =============================================
 -- Author:		<Author,,Name>
 -- Create date: <Create Date,,>
 -- Description:	<Description,,>
 -- =============================================
-create PROCEDURE [dbo].[SP_CosActividad_Select] 
+create PROCEDURE [dbo].[SP_ActividadCampo_Delete] 
 	-- Add the parameters for the stored procedure here
+	@c_codigo_act char(4),
+	@c_codigo_cam char(2)
+
 	
 AS
 BEGIN
@@ -29,10 +32,12 @@ BEGIN
 	begin try
 
 		
-			select act.c_codigo_act ,
-				act.v_nombre_act  
-			from GrupoAGV.dbo.cosactividad as act 
-			where act.c_activo_act='1' 
+			DELETE  from dbo.t_Actividad_Campo   
+		    WHERE
+		    	c_codigo_act=@c_codigo_act
+				and c_codigo_cam=@c_codigo_cam
+				
+		
 		
 		commit transaction T1;
 		set @correcto=1

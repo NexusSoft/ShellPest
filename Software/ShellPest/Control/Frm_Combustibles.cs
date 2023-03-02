@@ -140,7 +140,11 @@ namespace ShellPest
                 label_Rendimiento.Visible = true;
                 text_Rendimiento.Visible=true;
                 glue_Unidades.Visible = true;
-                CargarActividades();
+                if (glue_Huertas.EditValue.ToString().Trim().Length > 0)
+                {
+                    CargarActividades();
+                }
+                
                 CargarActivosGas();
                 CargarUnidades();
             }
@@ -168,8 +172,8 @@ namespace ShellPest
             {
                 WS_Catalogos_Actividades_Huerta Clase = new WS_Catalogos_Actividades_Huerta();
 
-                Clase.Id_Usuario = Id_Usuario;
-                Clase.MtdSeleccionarActividades();
+                Clase.c_codigo_cam = glue_Huertas.EditValue.ToString().Trim();
+                Clase.MtdSeleccionarActividadesCombustible();
                 if (Clase.Exito)
                 {
                     glue_Actividades.Properties.DataSource = Clase.Datos;
@@ -200,6 +204,10 @@ namespace ShellPest
         {
             CargarBloques();
             CargarResponsables();
+            if (rg_IoS.EditValue.ToString() == "S")
+            {
+                CargarActividades();
+            }
         }
 
         private void glue_Empresas_EditValueChanged(object sender, EventArgs e)

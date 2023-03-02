@@ -99,7 +99,58 @@ namespace ShellPest
         {
             if (e.KeyValue == 13 && txtPass.Text != string.Empty)
             {
-                btnAcceso.Focus();
+                //btnAcceso.Focus();
+                if (btnAcceso.Text == "Acceso")
+                {
+                    if (txtUser.Text != string.Empty && txtPass.Text != string.Empty)
+                    {
+                        Crypto claseencripta = new Crypto();
+                        SEG_Login sLogin = new SEG_Login() { Id_Usuario = txtUser.Text, Contrasena = claseencripta.Encriptar(txtPass.Text) };
+                        sLogin.MtdSeleccionarUsuarioLogin();
+                        if (sLogin.Exito)
+                        {
+                            if (sLogin.Datos.Rows.Count > 0)
+                            {
+                                vIdUsuario = sLogin.Datos.Rows[0]["Id_Usuario"].ToString();
+                                if (sLogin.Datos.Rows[0]["Activo"].ToString() == "True")
+                                {
+                                    vIdActivo = 1;
+                                }
+                                else
+                                {
+                                    vIdActivo = 0;
+                                }
+                                IdPerfil = sLogin.Datos.Rows[0]["Id_Perfil"].ToString();
+                                Frm_Principal frmP = new Frm_Principal();
+                                MSRegistro RegIn = new MSRegistro();
+
+                                if (vIdActivo == 1)
+                                {
+                                    frmP.IdPerfil = IdPerfil;
+                                    frmP.UsuariosLogin = txtUser.Text;
+                                    frmP.Show();
+                                    this.Hide();
+                                }
+                                else
+                                {
+                                    XtraMessageBox.Show("Este usuario esta inactivo en el sistema");
+                                }
+                            }
+                            else
+                            {
+                                XtraMessageBox.Show("Usuario o Contraseña Incorrectos o El Usuario Esta Inactivo");
+                            }
+                        }
+                        else
+                        {
+                            XtraMessageBox.Show(sLogin.Mensaje);
+                        }
+                    }
+                    else
+                    {
+                        XtraMessageBox.Show("Faltan Datos por Capturar Usuario y/o Password");
+                    }
+                }
             }
         }
         

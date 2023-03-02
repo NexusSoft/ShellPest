@@ -117,6 +117,7 @@
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.textId = new DevExpress.XtraEditors.TextEdit();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
+            this.btn_Limpiar = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).BeginInit();
@@ -160,9 +161,10 @@
             this.barManager1.DockControls.Add(this.barDockControl1);
             this.barManager1.Form = this;
             this.barManager1.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
-            this.btn_Salir});
+            this.btn_Salir,
+            this.btn_Limpiar});
             this.barManager1.MainMenu = this.bar1;
-            this.barManager1.MaxItemId = 72;
+            this.barManager1.MaxItemId = 73;
             this.barManager1.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItemTextEdit1});
             // 
@@ -175,6 +177,7 @@
             this.bar1.FloatLocation = new System.Drawing.Point(42, 184);
             this.bar1.FloatSize = new System.Drawing.Size(1106, 535);
             this.bar1.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
+            new DevExpress.XtraBars.LinkPersistInfo(this.btn_Limpiar),
             new DevExpress.XtraBars.LinkPersistInfo(this.btn_Salir)});
             this.bar1.OptionsBar.AllowCollapse = true;
             this.bar1.OptionsBar.AllowQuickCustomization = false;
@@ -281,6 +284,7 @@
             this.gridView1.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
             this.gridView1.GridControl = this.gridControl1;
             this.gridView1.Name = "gridView1";
+            this.gridView1.OptionsBehavior.Editable = false;
             this.gridView1.OptionsFind.AlwaysVisible = true;
             this.gridView1.OptionsSelection.EnableAppearanceFocusedCell = false;
             this.gridView1.OptionsView.ShowGroupPanel = false;
@@ -825,7 +829,7 @@
             // 
             // glue_Huertas
             // 
-            this.glue_Huertas.EditValue = "-Seleccionar-";
+            this.glue_Huertas.EditValue = "";
             this.glue_Huertas.Location = new System.Drawing.Point(582, 39);
             this.glue_Huertas.Name = "glue_Huertas";
             this.glue_Huertas.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
@@ -998,6 +1002,14 @@
             this.labelControl1.TabIndex = 0;
             this.labelControl1.Text = "Folio Vale: ";
             // 
+            // btn_Limpiar
+            // 
+            this.btn_Limpiar.Caption = "Limpiar";
+            this.btn_Limpiar.Id = 72;
+            this.btn_Limpiar.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_Limpiar.ImageOptions.Image")));
+            this.btn_Limpiar.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btn_Limpiar.ImageOptions.LargeImage")));
+            this.btn_Limpiar.Name = "btn_Limpiar";
+            // 
             // Frm_Combustibles
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1138,5 +1150,6 @@
         private DevExpress.XtraEditors.LabelControl label_Rendimiento;
         private DevExpress.XtraGrid.Columns.GridColumn AbreviaturaU;
         private DevExpress.XtraEditors.LabelControl label_BloquesView;
+        private DevExpress.XtraBars.BarButtonItem btn_Limpiar;
     }
 }

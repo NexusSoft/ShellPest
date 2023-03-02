@@ -19,6 +19,7 @@ namespace ShellPest
             InitializeComponent();
         }
 
+       
 
         private static Frm_Actividad_Campo m_FormDefInstance;
         public static Frm_Actividad_Campo DefInstance
@@ -93,6 +94,77 @@ namespace ShellPest
             CargarActividades();
             CargarUnidades();
         }
-    
+
+        private void btnSalir_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            this.Close();
+        }
+
+        private void btn_Agregar_Click(object sender, EventArgs e)
+        {
+
+            CLS_Actividad_Campo Clase = new CLS_Actividad_Campo();
+               
+            Clase.c_codigo_cam = glue_Campos.EditValue.ToString().Trim();
+            Clase.c_codigo_act = glue_Actividades.EditValue.ToString().Trim();
+            Clase.Id_Unidad = glue_Unidades.EditValue.ToString().Trim();
+
+            Clase.MtdInsertarActividadCampo();
+
+            CargarGrid();
+        }
+
+        private void btn_Quitar_Click(object sender, EventArgs e)
+        {
+            CLS_Actividad_Campo Clase = new CLS_Actividad_Campo();
+
+            Clase.c_codigo_cam = glue_Campos.EditValue.ToString().Trim();
+            Clase.c_codigo_act = glue_Actividades.EditValue.ToString().Trim();
+            Clase.Id_Unidad = glue_Unidades.EditValue.ToString().Trim();
+
+            Clase.MtdDeleteActividadCampo();
+
+            CargarGrid();
+        }
+
+        private void glue_Campos_EditValueChanged(object sender, EventArgs e)
+        {
+            if (!check_LimpiaFiltro.Checked)
+            {
+                DevExpress.XtraGrid.Columns.ColumnFilterInfo FilterInfo;
+                //DevExpress.XtraGrid.Columns.GridColumn columnCustomer = gridView1.Columns["c_codigo_cam"];
+                gridView1.Columns["c_codigo_cam"].FilterInfo = new DevExpress.XtraGrid.Columns.ColumnFilterInfo("[c_codigo_cam] = '" + glue_Campos.EditValue.ToString() + "'");
+            }
+               
+        }
+
+        private void check_LimpiaFiltro_CheckedChanged(object sender, EventArgs e)
+        {
+            if (check_LimpiaFiltro.Checked)
+            {
+                gridView1.ClearColumnsFilter();
+            }
+        }
+
+        private void gridControl1_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                foreach (int i in this.gridView1.GetSelectedRows())
+                {
+                    DataRow row = this.gridView1.GetDataRow(i);
+                   
+                    glue_Campos.EditValue = row["c_codigo_cam"].ToString().Trim();
+                    glue_Actividades.EditValue = row["c_codigo_act"].ToString();
+                   
+                    glue_Unidades.EditValue = row["Id_Unidad"].ToString().Trim();
+                   
+                }
+            }
+            catch (Exception ex)
+            {
+                XtraMessageBox.Show(ex.Message);
+            }
+        }
     }
 }
