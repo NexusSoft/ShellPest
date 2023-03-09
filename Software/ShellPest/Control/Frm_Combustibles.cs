@@ -132,14 +132,18 @@ namespace ShellPest
                 
                 label_Activo.Visible = true;
                 glue_Activos.Visible = true;
+                btn_RefreshAc.Visible=true;
                 label_Bloque.Visible = true;
                 glue_Bloques.Visible = true;
+                btn_RefreshB.Visible = true;
                 label_BloquesView.Visible = true;
                 label_Actividad.Visible = true;
                 glue_Actividades.Visible = true;
+                btn_RefreshA.Visible = true;
                 label_Rendimiento.Visible = true;
                 text_Rendimiento.Visible=true;
                 glue_Unidades.Visible = true;
+                btn_RefreshU.Visible = true;
                 if (glue_Huertas.EditValue.ToString().Trim().Length > 0)
                 {
                     CargarActividades();
@@ -152,14 +156,18 @@ namespace ShellPest
             {
                 label_Activo.Visible = false;
                 glue_Activos.Visible = false;
+                btn_RefreshAc.Visible = false;
                 label_Bloque.Visible = false;
                 glue_Bloques.Visible = false;
+                btn_RefreshB.Visible=false;
                 label_BloquesView.Visible = false;
                 label_Actividad.Visible = false;
                 glue_Actividades.Visible = false;
+                btn_RefreshA.Visible=false;
                 label_Rendimiento.Visible = false;
                 text_Rendimiento.Visible = false;
                 glue_Unidades.Visible = false;
+                btn_RefreshU.Visible=false;
             }
         }
 
@@ -378,7 +386,15 @@ namespace ShellPest
                 Clase.c_codigo_act = "0000";
             }
             Clase.v_tipo_gas=glue_TipoCombustible.EditValue.ToString();
-            Clase.v_cantutilizada_gas = text_Cant.Text;
+            if (Double.Parse(text_Cant.Text) < 0)
+            {
+                Clase.v_cantutilizada_gas = (Double.Parse(text_Cant.Text) * -1).ToString();
+            }
+            else
+            {
+                Clase.v_cantutilizada_gas = text_Cant.Text;
+            }
+            
             Clase.v_horometro_gas = "0";
             Clase.v_kminicial_gas = "0";
             Clase.v_kmfinal_gas = "0";
@@ -505,7 +521,7 @@ namespace ShellPest
                     DataRow row = this.gridView1.GetDataRow(i);
                     textId.Text = row["c_folio_gas"].ToString();
                     //de_Fecha.Text = row["d_fechaconsumo_gas"].ToString();
-                    if (decimal.Parse(row["v_cantutilizada_gas"].ToString()) > 0)
+                    if (row["Id_ActivosGas"].ToString().Equals("0000"))
                     {
                         rg_IoS.EditValue = 'I';
                         
@@ -516,7 +532,15 @@ namespace ShellPest
                     }
                     glue_Huertas.EditValue= row["Id_Huerta"].ToString().Trim();
                     glue_TipoCombustible.EditValue= row["v_tipo_gas"].ToString();
-                    text_Cant.Text= row["v_cantutilizada_gas"].ToString();
+                    if (Double.Parse(row["v_cantutilizada_gas"].ToString()) < 0)
+                    {
+                        text_Cant.Text = (Double.Parse(row["v_cantutilizada_gas"].ToString()) * -1).ToString();
+                    }
+                    else
+                    {
+                        text_Cant.Text = row["v_cantutilizada_gas"].ToString();
+                    }
+                    
                     text_Observaciones.Text= row["v_observaciones_gas"].ToString();
                     glue_Responsables.EditValue= row["c_codigo_emp"].ToString().Trim();
                     glue_Activos.EditValue= row["Id_ActivosGas"].ToString().Trim();
@@ -532,6 +556,45 @@ namespace ShellPest
             catch (Exception ex)
             {
                 XtraMessageBox.Show(ex.Message);
+            }
+        }
+
+        private void btn_RefreshB_Click(object sender, EventArgs e)
+        {
+            CargarBloques();
+        }
+
+        private void btn_RefreshU_Click(object sender, EventArgs e)
+        {
+            CargarUnidades();
+        }
+
+        private void btn_RefreshA_Click(object sender, EventArgs e)
+        {
+            CargarActividades();
+        }
+
+        private void btn_RefreshAc_Click(object sender, EventArgs e)
+        {
+            CargarActivosGas();
+        }
+
+        private void glue_Actividades_EditValueChanged(object sender, EventArgs e)
+        {
+            CLS_Actividad_Campo sel = new CLS_Actividad_Campo();
+            sel.c_codigo_cam = glue_Huertas.EditValue.ToString();
+
+            sel.c_codigo_act = glue_Actividades.EditValue.ToString();
+
+
+            sel.MtdSeleccionarUnidad_X_ActividadCampo();
+            if (sel.Exito)
+            {
+                if (sel.Datos.Rows.Count > 0)
+                {
+                    glue_Unidades.EditValue = sel.Datos.Rows[0][0].ToString();
+                }
+                
             }
         }
     }

@@ -19,7 +19,7 @@ namespace CapaDeDatos
             Exito = true;
             try
             {
-                _conexion.NombreProcedimiento = "SP_WS_Activos_Gasolina_Select";
+                _conexion.NombreProcedimiento = "SP_AcivosTemporal_Select";
                 _dato.CadenaTexto = Id_Usuario;
                 _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Id_Usuario");
                 _dato.CadenaTexto = Fecha;

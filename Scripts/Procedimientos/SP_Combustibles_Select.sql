@@ -37,7 +37,7 @@ BEGIN
 	
 		select S.d_fechaconsumo_gas,
 			S.Id_ActivosGas,
-			A.v_descripcorta_act ,
+			case when isnull(A.v_descripcorta_act,'')='' then ATT.v_nombre_act else A.v_descripcorta_act end as v_descripcorta_act  ,
 			S.v_Bloques_gas,
 			S.c_codigo_act ,
 			ACT.v_nombre_act ,
@@ -73,6 +73,7 @@ BEGIN
 		from ShellPest.dbo.t_Gasolina_Consumo as S 
 		left join GrupoAGV.dbo.coscampo as H on H.c_codigo_cam =S.Id_Huerta 
 		left join AGV.dbo.afiactivo as A on A.c_codigo_act =S.Id_ActivosGas 
+		left join ShellPest.dbo.t_Activos_Temporal as ATT on ATT.c_codigo_act=S.Id_ActivosGas
 		left join GrupoAGV.dbo.cosactividad as ACT on ACt.c_codigo_act =S.c_codigo_act 
 		left join GrupoAGV.dbo.nomempleados as E on E.c_codigo_emp =S.c_codigo_emp 
 		left join t_Unidad as U on U.Id_Unidad=S.c_unidad_act

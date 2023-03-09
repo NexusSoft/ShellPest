@@ -43,6 +43,39 @@ namespace CapaDeDatos
 
         }
 
+        public void MtdSeleccionarUnidad_X_ActividadCampo()
+        {
+            TipoDato _dato = new TipoDato();
+            Conexion _conexion = new Conexion(cadenaConexion);
+
+            Exito = true;
+            try
+            {
+                _conexion.NombreProcedimiento = "SP_Unidad_x_ActividadHuerta_Select";
+                _dato.CadenaTexto = c_codigo_cam;
+                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "c_codigo_cam");
+                _dato.CadenaTexto = c_codigo_act;
+                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "c_codigo_act");
+                _conexion.EjecutarDataset();
+
+                if (_conexion.Exito)
+                {
+                    Datos = _conexion.Datos;
+                }
+                else
+                {
+                    Mensaje = _conexion.Mensaje;
+                    Exito = false;
+                }
+            }
+            catch (Exception e)
+            {
+                Mensaje = e.Message;
+                Exito = false;
+            }
+
+        }
+
         public void MtdInsertarActividadCampo()
         {
             TipoDato _dato = new TipoDato();

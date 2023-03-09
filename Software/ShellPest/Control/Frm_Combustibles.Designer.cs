@@ -32,6 +32,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_Combustibles));
             this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
             this.bar1 = new DevExpress.XtraBars.Bar();
+            this.btn_Limpiar = new DevExpress.XtraBars.BarButtonItem();
             this.btn_Salir = new DevExpress.XtraBars.BarLargeButtonItem();
             this.barDockControlTop = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
@@ -117,7 +118,10 @@
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.textId = new DevExpress.XtraEditors.TextEdit();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
-            this.btn_Limpiar = new DevExpress.XtraBars.BarButtonItem();
+            this.btn_RefreshA = new DevExpress.XtraEditors.SimpleButton();
+            this.btn_RefreshB = new DevExpress.XtraEditors.SimpleButton();
+            this.btn_RefreshAc = new DevExpress.XtraEditors.SimpleButton();
+            this.btn_RefreshU = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).BeginInit();
@@ -190,6 +194,14 @@
             this.bar1.OptionsBar.UseWholeRow = true;
             this.bar1.Text = "Menú principal";
             // 
+            // btn_Limpiar
+            // 
+            this.btn_Limpiar.Caption = "Limpiar";
+            this.btn_Limpiar.Id = 72;
+            this.btn_Limpiar.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_Limpiar.ImageOptions.Image")));
+            this.btn_Limpiar.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btn_Limpiar.ImageOptions.LargeImage")));
+            this.btn_Limpiar.Name = "btn_Limpiar";
+            // 
             // btn_Salir
             // 
             this.btn_Salir.Caption = "Salir";
@@ -205,7 +217,7 @@
             this.barDockControlTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.barDockControlTop.Location = new System.Drawing.Point(0, 0);
             this.barDockControlTop.Manager = this.barManager1;
-            this.barDockControlTop.Size = new System.Drawing.Size(922, 0);
+            this.barDockControlTop.Size = new System.Drawing.Size(941, 0);
             // 
             // barDockControlBottom
             // 
@@ -213,7 +225,7 @@
             this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.barDockControlBottom.Location = new System.Drawing.Point(0, 530);
             this.barDockControlBottom.Manager = this.barManager1;
-            this.barDockControlBottom.Size = new System.Drawing.Size(922, 0);
+            this.barDockControlBottom.Size = new System.Drawing.Size(941, 0);
             // 
             // barDockControlLeft
             // 
@@ -221,13 +233,13 @@
             this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
             this.barDockControlLeft.Location = new System.Drawing.Point(0, 0);
             this.barDockControlLeft.Manager = this.barManager1;
-            this.barDockControlLeft.Size = new System.Drawing.Size(48, 530);
+            this.barDockControlLeft.Size = new System.Drawing.Size(50, 530);
             // 
             // barDockControl1
             // 
             this.barDockControl1.CausesValidation = false;
             this.barDockControl1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.barDockControl1.Location = new System.Drawing.Point(922, 0);
+            this.barDockControl1.Location = new System.Drawing.Point(941, 0);
             this.barDockControl1.Manager = this.barManager1;
             this.barDockControl1.Size = new System.Drawing.Size(0, 530);
             // 
@@ -239,10 +251,10 @@
             // 
             this.panelControl2.Controls.Add(this.gridControl1);
             this.panelControl2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelControl2.Location = new System.Drawing.Point(48, 197);
+            this.panelControl2.Location = new System.Drawing.Point(50, 213);
             this.panelControl2.Name = "panelControl2";
             this.panelControl2.Padding = new System.Windows.Forms.Padding(5, 20, 5, 5);
-            this.panelControl2.Size = new System.Drawing.Size(874, 333);
+            this.panelControl2.Size = new System.Drawing.Size(891, 317);
             this.panelControl2.TabIndex = 9;
             // 
             // gridControl1
@@ -252,7 +264,7 @@
             this.gridControl1.MainView = this.gridView1;
             this.gridControl1.MenuManager = this.barManager1;
             this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(860, 304);
+            this.gridControl1.Size = new System.Drawing.Size(877, 288);
             this.gridControl1.TabIndex = 0;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -439,6 +451,10 @@
             // 
             // panelControl1
             // 
+            this.panelControl1.Controls.Add(this.btn_RefreshU);
+            this.panelControl1.Controls.Add(this.btn_RefreshAc);
+            this.panelControl1.Controls.Add(this.btn_RefreshB);
+            this.panelControl1.Controls.Add(this.btn_RefreshA);
             this.panelControl1.Controls.Add(this.label_BloquesView);
             this.panelControl1.Controls.Add(this.glue_Unidades);
             this.panelControl1.Controls.Add(this.text_Rendimiento);
@@ -469,15 +485,15 @@
             this.panelControl1.Controls.Add(this.textId);
             this.panelControl1.Controls.Add(this.labelControl1);
             this.panelControl1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelControl1.Location = new System.Drawing.Point(48, 0);
+            this.panelControl1.Location = new System.Drawing.Point(50, 0);
             this.panelControl1.Name = "panelControl1";
             this.panelControl1.Padding = new System.Windows.Forms.Padding(10);
-            this.panelControl1.Size = new System.Drawing.Size(874, 197);
+            this.panelControl1.Size = new System.Drawing.Size(891, 213);
             this.panelControl1.TabIndex = 8;
             // 
             // label_BloquesView
             // 
-            this.label_BloquesView.Location = new System.Drawing.Point(315, 138);
+            this.label_BloquesView.Location = new System.Drawing.Point(336, 138);
             this.label_BloquesView.Name = "label_BloquesView";
             this.label_BloquesView.Size = new System.Drawing.Size(0, 13);
             this.label_BloquesView.TabIndex = 66;
@@ -485,7 +501,7 @@
             // glue_Unidades
             // 
             this.glue_Unidades.EditValue = "-Seleccionar-";
-            this.glue_Unidades.Location = new System.Drawing.Point(190, 165);
+            this.glue_Unidades.Location = new System.Drawing.Point(184, 165);
             this.glue_Unidades.Name = "glue_Unidades";
             this.glue_Unidades.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
@@ -533,7 +549,7 @@
             // 
             // text_Rendimiento
             // 
-            this.text_Rendimiento.Location = new System.Drawing.Point(83, 165);
+            this.text_Rendimiento.Location = new System.Drawing.Point(77, 165);
             this.text_Rendimiento.MenuManager = this.barManager1;
             this.text_Rendimiento.Name = "text_Rendimiento";
             this.text_Rendimiento.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
@@ -544,7 +560,7 @@
             // 
             // label_Rendimiento
             // 
-            this.label_Rendimiento.Location = new System.Drawing.Point(14, 168);
+            this.label_Rendimiento.Location = new System.Drawing.Point(8, 168);
             this.label_Rendimiento.Name = "label_Rendimiento";
             this.label_Rendimiento.Size = new System.Drawing.Size(63, 13);
             this.label_Rendimiento.TabIndex = 63;
@@ -553,7 +569,7 @@
             // btn_Quitar
             // 
             this.btn_Quitar.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_Quitar.ImageOptions.Image")));
-            this.btn_Quitar.Location = new System.Drawing.Point(399, 161);
+            this.btn_Quitar.Location = new System.Drawing.Point(461, 173);
             this.btn_Quitar.Name = "btn_Quitar";
             this.btn_Quitar.Size = new System.Drawing.Size(38, 34);
             this.btn_Quitar.TabIndex = 62;
@@ -562,7 +578,7 @@
             // btn_Agregar
             // 
             this.btn_Agregar.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_Agregar.ImageOptions.Image")));
-            this.btn_Agregar.Location = new System.Drawing.Point(355, 161);
+            this.btn_Agregar.Location = new System.Drawing.Point(417, 173);
             this.btn_Agregar.Name = "btn_Agregar";
             this.btn_Agregar.Size = new System.Drawing.Size(38, 34);
             this.btn_Agregar.TabIndex = 61;
@@ -571,7 +587,7 @@
             // glue_TipoCombustible
             // 
             this.glue_TipoCombustible.EditValue = "-Seleccionar-";
-            this.glue_TipoCombustible.Location = new System.Drawing.Point(105, 70);
+            this.glue_TipoCombustible.Location = new System.Drawing.Point(99, 70);
             this.glue_TipoCombustible.Name = "glue_TipoCombustible";
             this.glue_TipoCombustible.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
@@ -601,7 +617,7 @@
             // 
             // labelControl4
             // 
-            this.labelControl4.Location = new System.Drawing.Point(14, 73);
+            this.labelControl4.Location = new System.Drawing.Point(8, 73);
             this.labelControl4.Name = "labelControl4";
             this.labelControl4.Size = new System.Drawing.Size(85, 13);
             this.labelControl4.TabIndex = 59;
@@ -610,7 +626,7 @@
             // glue_Actividades
             // 
             this.glue_Actividades.EditValue = "-Seleccionar-";
-            this.glue_Actividades.Location = new System.Drawing.Point(583, 136);
+            this.glue_Actividades.Location = new System.Drawing.Point(638, 136);
             this.glue_Actividades.Name = "glue_Actividades";
             this.glue_Actividades.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
@@ -620,6 +636,7 @@
             this.glue_Actividades.Properties.ValueMember = "c_codigo_act";
             this.glue_Actividades.Size = new System.Drawing.Size(193, 20);
             this.glue_Actividades.TabIndex = 11;
+            this.glue_Actividades.EditValueChanged += new System.EventHandler(this.glue_Actividades_EditValueChanged);
             // 
             // gridView7
             // 
@@ -649,7 +666,7 @@
             // 
             // label_Actividad
             // 
-            this.label_Actividad.Location = new System.Drawing.Point(514, 139);
+            this.label_Actividad.Location = new System.Drawing.Point(570, 139);
             this.label_Actividad.Name = "label_Actividad";
             this.label_Actividad.Size = new System.Drawing.Size(48, 13);
             this.label_Actividad.TabIndex = 57;
@@ -658,7 +675,7 @@
             // glue_Bloques
             // 
             this.glue_Bloques.EditValue = "-Seleccionar-";
-            this.glue_Bloques.Location = new System.Drawing.Point(307, 135);
+            this.glue_Bloques.Location = new System.Drawing.Point(332, 135);
             this.glue_Bloques.Name = "glue_Bloques";
             this.glue_Bloques.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
@@ -700,7 +717,7 @@
             // 
             // label_Bloque
             // 
-            this.label_Bloque.Location = new System.Drawing.Point(264, 138);
+            this.label_Bloque.Location = new System.Drawing.Point(289, 138);
             this.label_Bloque.Name = "label_Bloque";
             this.label_Bloque.Size = new System.Drawing.Size(36, 13);
             this.label_Bloque.TabIndex = 55;
@@ -709,7 +726,7 @@
             // glue_Responsables
             // 
             this.glue_Responsables.EditValue = "-Seleccionar-";
-            this.glue_Responsables.Location = new System.Drawing.Point(582, 103);
+            this.glue_Responsables.Location = new System.Drawing.Point(637, 103);
             this.glue_Responsables.Name = "glue_Responsables";
             this.glue_Responsables.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
@@ -748,7 +765,7 @@
             // 
             // label_Responsable
             // 
-            this.label_Responsable.Location = new System.Drawing.Point(513, 105);
+            this.label_Responsable.Location = new System.Drawing.Point(570, 105);
             this.label_Responsable.Name = "label_Responsable";
             this.label_Responsable.Size = new System.Drawing.Size(65, 13);
             this.label_Responsable.TabIndex = 53;
@@ -757,7 +774,7 @@
             // glue_Activos
             // 
             this.glue_Activos.EditValue = "-Seleccionar-";
-            this.glue_Activos.Location = new System.Drawing.Point(57, 134);
+            this.glue_Activos.Location = new System.Drawing.Point(51, 134);
             this.glue_Activos.Name = "glue_Activos";
             this.glue_Activos.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
@@ -805,7 +822,7 @@
             // 
             // label_Activo
             // 
-            this.label_Activo.Location = new System.Drawing.Point(14, 137);
+            this.label_Activo.Location = new System.Drawing.Point(8, 137);
             this.label_Activo.Name = "label_Activo";
             this.label_Activo.Size = new System.Drawing.Size(34, 13);
             this.label_Activo.TabIndex = 51;
@@ -813,7 +830,7 @@
             // 
             // text_Observaciones
             // 
-            this.text_Observaciones.Location = new System.Drawing.Point(268, 103);
+            this.text_Observaciones.Location = new System.Drawing.Point(293, 103);
             this.text_Observaciones.MenuManager = this.barManager1;
             this.text_Observaciones.Name = "text_Observaciones";
             this.text_Observaciones.Size = new System.Drawing.Size(231, 20);
@@ -821,7 +838,7 @@
             // 
             // labelControl5
             // 
-            this.labelControl5.Location = new System.Drawing.Point(189, 105);
+            this.labelControl5.Location = new System.Drawing.Point(240, 105);
             this.labelControl5.Name = "labelControl5";
             this.labelControl5.Size = new System.Drawing.Size(50, 13);
             this.labelControl5.TabIndex = 49;
@@ -830,7 +847,7 @@
             // glue_Huertas
             // 
             this.glue_Huertas.EditValue = "";
-            this.glue_Huertas.Location = new System.Drawing.Point(582, 39);
+            this.glue_Huertas.Location = new System.Drawing.Point(637, 39);
             this.glue_Huertas.Name = "glue_Huertas";
             this.glue_Huertas.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
@@ -870,7 +887,7 @@
             // 
             // label_Huerta
             // 
-            this.label_Huerta.Location = new System.Drawing.Point(513, 42);
+            this.label_Huerta.Location = new System.Drawing.Point(570, 42);
             this.label_Huerta.Name = "label_Huerta";
             this.label_Huerta.Size = new System.Drawing.Size(37, 13);
             this.label_Huerta.TabIndex = 47;
@@ -937,7 +954,7 @@
             // de_Fecha
             // 
             this.de_Fecha.EditValue = null;
-            this.de_Fecha.Location = new System.Drawing.Point(227, 39);
+            this.de_Fecha.Location = new System.Drawing.Point(221, 39);
             this.de_Fecha.Name = "de_Fecha";
             this.de_Fecha.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
@@ -949,7 +966,7 @@
             // 
             // labelControl3
             // 
-            this.labelControl3.Location = new System.Drawing.Point(188, 42);
+            this.labelControl3.Location = new System.Drawing.Point(182, 42);
             this.labelControl3.Name = "labelControl3";
             this.labelControl3.Size = new System.Drawing.Size(33, 13);
             this.labelControl3.TabIndex = 6;
@@ -957,7 +974,7 @@
             // 
             // rg_IoS
             // 
-            this.rg_IoS.Location = new System.Drawing.Point(341, 35);
+            this.rg_IoS.Location = new System.Drawing.Point(358, 35);
             this.rg_IoS.MenuManager = this.barManager1;
             this.rg_IoS.Name = "rg_IoS";
             this.rg_IoS.Properties.Items.AddRange(new DevExpress.XtraEditors.Controls.RadioGroupItem[] {
@@ -969,7 +986,7 @@
             // 
             // text_Cant
             // 
-            this.text_Cant.Location = new System.Drawing.Point(74, 103);
+            this.text_Cant.Location = new System.Drawing.Point(68, 103);
             this.text_Cant.MenuManager = this.barManager1;
             this.text_Cant.Name = "text_Cant";
             this.text_Cant.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
@@ -980,7 +997,7 @@
             // 
             // labelControl2
             // 
-            this.labelControl2.Location = new System.Drawing.Point(15, 105);
+            this.labelControl2.Location = new System.Drawing.Point(9, 105);
             this.labelControl2.Name = "labelControl2";
             this.labelControl2.Size = new System.Drawing.Size(47, 13);
             this.labelControl2.TabIndex = 2;
@@ -988,7 +1005,7 @@
             // 
             // textId
             // 
-            this.textId.Location = new System.Drawing.Point(74, 39);
+            this.textId.Location = new System.Drawing.Point(68, 39);
             this.textId.MenuManager = this.barManager1;
             this.textId.Name = "textId";
             this.textId.Size = new System.Drawing.Size(100, 20);
@@ -996,25 +1013,57 @@
             // 
             // labelControl1
             // 
-            this.labelControl1.Location = new System.Drawing.Point(15, 42);
+            this.labelControl1.Location = new System.Drawing.Point(9, 42);
             this.labelControl1.Name = "labelControl1";
             this.labelControl1.Size = new System.Drawing.Size(52, 13);
             this.labelControl1.TabIndex = 0;
             this.labelControl1.Text = "Folio Vale: ";
             // 
-            // btn_Limpiar
+            // btn_RefreshA
             // 
-            this.btn_Limpiar.Caption = "Limpiar";
-            this.btn_Limpiar.Id = 72;
-            this.btn_Limpiar.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_Limpiar.ImageOptions.Image")));
-            this.btn_Limpiar.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btn_Limpiar.ImageOptions.LargeImage")));
-            this.btn_Limpiar.Name = "btn_Limpiar";
+            this.btn_RefreshA.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.ImageOptions.Image")));
+            this.btn_RefreshA.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
+            this.btn_RefreshA.Location = new System.Drawing.Point(833, 130);
+            this.btn_RefreshA.Name = "btn_RefreshA";
+            this.btn_RefreshA.Size = new System.Drawing.Size(33, 30);
+            this.btn_RefreshA.TabIndex = 67;
+            this.btn_RefreshA.Click += new System.EventHandler(this.btn_RefreshA_Click);
+            // 
+            // btn_RefreshB
+            // 
+            this.btn_RefreshB.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton2.ImageOptions.Image")));
+            this.btn_RefreshB.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
+            this.btn_RefreshB.Location = new System.Drawing.Point(528, 131);
+            this.btn_RefreshB.Name = "btn_RefreshB";
+            this.btn_RefreshB.Size = new System.Drawing.Size(33, 30);
+            this.btn_RefreshB.TabIndex = 68;
+            this.btn_RefreshB.Click += new System.EventHandler(this.btn_RefreshB_Click);
+            // 
+            // btn_RefreshAc
+            // 
+            this.btn_RefreshAc.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton3.ImageOptions.Image")));
+            this.btn_RefreshAc.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
+            this.btn_RefreshAc.Location = new System.Drawing.Point(246, 129);
+            this.btn_RefreshAc.Name = "btn_RefreshAc";
+            this.btn_RefreshAc.Size = new System.Drawing.Size(33, 30);
+            this.btn_RefreshAc.TabIndex = 69;
+            this.btn_RefreshAc.Click += new System.EventHandler(this.btn_RefreshAc_Click);
+            // 
+            // btn_RefreshU
+            // 
+            this.btn_RefreshU.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton4.ImageOptions.Image")));
+            this.btn_RefreshU.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
+            this.btn_RefreshU.Location = new System.Drawing.Point(324, 160);
+            this.btn_RefreshU.Name = "btn_RefreshU";
+            this.btn_RefreshU.Size = new System.Drawing.Size(33, 30);
+            this.btn_RefreshU.TabIndex = 70;
+            this.btn_RefreshU.Click += new System.EventHandler(this.btn_RefreshU_Click);
             // 
             // Frm_Combustibles
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(922, 530);
+            this.ClientSize = new System.Drawing.Size(941, 530);
             this.Controls.Add(this.panelControl2);
             this.Controls.Add(this.panelControl1);
             this.Controls.Add(this.barDockControlLeft);
@@ -1151,5 +1200,9 @@
         private DevExpress.XtraGrid.Columns.GridColumn AbreviaturaU;
         private DevExpress.XtraEditors.LabelControl label_BloquesView;
         private DevExpress.XtraBars.BarButtonItem btn_Limpiar;
+        private DevExpress.XtraEditors.SimpleButton btn_RefreshU;
+        private DevExpress.XtraEditors.SimpleButton btn_RefreshAc;
+        private DevExpress.XtraEditors.SimpleButton btn_RefreshB;
+        private DevExpress.XtraEditors.SimpleButton btn_RefreshA;
     }
 }
