@@ -59,6 +59,8 @@
             this.Descripcion = new DevExpress.XtraGrid.Columns.GridColumn();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
+            this.labelControl16 = new DevExpress.XtraEditors.LabelControl();
+            this.combo_Para = new DevExpress.XtraEditors.ComboBoxEdit();
             this.btnEliminarHue = new DevExpress.XtraEditors.SimpleButton();
             this.btnAgregar = new DevExpress.XtraEditors.SimpleButton();
             this.dtgHuertas = new DevExpress.XtraGrid.GridControl();
@@ -133,8 +135,8 @@
             this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
             this.txtId = new DevExpress.XtraEditors.TextEdit();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
-            this.combo_Para = new DevExpress.XtraEditors.ComboBoxEdit();
-            this.labelControl16 = new DevExpress.XtraEditors.LabelControl();
+            this.label_Modificacion = new DevExpress.XtraEditors.LabelControl();
+            this.btn_LimpiaMezcla = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).BeginInit();
@@ -145,6 +147,7 @@
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.combo_Para.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtgHuertas)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtgValHuertas)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.glue_Huerta.Properties)).BeginInit();
@@ -172,10 +175,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.glue_Tipo.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.date_Fecha.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.date_Fecha.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.date_Fecha.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtId.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.combo_Para.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // barManager1
@@ -290,7 +292,7 @@
             this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
             this.barDockControlLeft.Location = new System.Drawing.Point(0, 0);
             this.barDockControlLeft.Manager = this.barManager1;
-            this.barDockControlLeft.Size = new System.Drawing.Size(71, 518);
+            this.barDockControlLeft.Size = new System.Drawing.Size(69, 518);
             // 
             // barDockControlRight
             // 
@@ -314,10 +316,10 @@
             // 
             this.panelControl2.Controls.Add(this.dtgBloque);
             this.panelControl2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelControl2.Location = new System.Drawing.Point(71, 268);
+            this.panelControl2.Location = new System.Drawing.Point(69, 268);
             this.panelControl2.Name = "panelControl2";
-            this.panelControl2.Padding = new System.Windows.Forms.Padding(5, 5, 5, 5);
-            this.panelControl2.Size = new System.Drawing.Size(1119, 250);
+            this.panelControl2.Padding = new System.Windows.Forms.Padding(5);
+            this.panelControl2.Size = new System.Drawing.Size(1121, 250);
             this.panelControl2.TabIndex = 15;
             // 
             // dtgBloque
@@ -327,7 +329,7 @@
             this.dtgBloque.MainView = this.dtgValBloque;
             this.dtgBloque.MenuManager = this.barManager1;
             this.dtgBloque.Name = "dtgBloque";
-            this.dtgBloque.Size = new System.Drawing.Size(1105, 236);
+            this.dtgBloque.Size = new System.Drawing.Size(1107, 236);
             this.dtgBloque.TabIndex = 0;
             this.dtgBloque.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.dtgValBloque});
@@ -441,10 +443,10 @@
             // 
             this.panelControl1.Controls.Add(this.groupControl1);
             this.panelControl1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelControl1.Location = new System.Drawing.Point(71, 0);
+            this.panelControl1.Location = new System.Drawing.Point(69, 0);
             this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Padding = new System.Windows.Forms.Padding(5, 5, 5, 5);
-            this.panelControl1.Size = new System.Drawing.Size(1119, 268);
+            this.panelControl1.Padding = new System.Windows.Forms.Padding(5);
+            this.panelControl1.Size = new System.Drawing.Size(1121, 268);
             this.panelControl1.TabIndex = 14;
             // 
             // groupControl1
@@ -489,9 +491,32 @@
             this.groupControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupControl1.Location = new System.Drawing.Point(7, 7);
             this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(1105, 254);
+            this.groupControl1.Size = new System.Drawing.Size(1107, 254);
             this.groupControl1.TabIndex = 0;
             this.groupControl1.Text = "Receta";
+            // 
+            // labelControl16
+            // 
+            this.labelControl16.Location = new System.Drawing.Point(75, 3);
+            this.labelControl16.Name = "labelControl16";
+            this.labelControl16.Size = new System.Drawing.Size(26, 13);
+            this.labelControl16.TabIndex = 88;
+            this.labelControl16.Text = "Para:";
+            // 
+            // combo_Para
+            // 
+            this.combo_Para.EditValue = "Fumigación o Aplicación";
+            this.combo_Para.Location = new System.Drawing.Point(106, 2);
+            this.combo_Para.MenuManager = this.barManager1;
+            this.combo_Para.Name = "combo_Para";
+            this.combo_Para.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.combo_Para.Properties.Items.AddRange(new object[] {
+            "Fumigación o Aplicación",
+            "Fertilización"});
+            this.combo_Para.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
+            this.combo_Para.Size = new System.Drawing.Size(155, 20);
+            this.combo_Para.TabIndex = 1;
             // 
             // btnEliminarHue
             // 
@@ -777,6 +802,8 @@
             // 
             // groupControl2
             // 
+            this.groupControl2.Controls.Add(this.btn_LimpiaMezcla);
+            this.groupControl2.Controls.Add(this.label_Modificacion);
             this.groupControl2.Controls.Add(this.text_Unitario);
             this.groupControl2.Controls.Add(this.label_Unitario);
             this.groupControl2.Controls.Add(this.btn_Ingrediente);
@@ -878,7 +905,8 @@
             this.text_Dosis.Name = "text_Dosis";
             this.text_Dosis.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.text_Dosis.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
-            this.text_Dosis.Properties.Mask.EditMask = "n";
+            this.text_Dosis.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.NumericMaskManager));
+            this.text_Dosis.Properties.MaskSettings.Set("MaskManagerSignature", "allowNull=False");
             this.text_Dosis.Size = new System.Drawing.Size(82, 20);
             this.text_Dosis.TabIndex = 64;
             this.text_Dosis.EditValueChanged += new System.EventHandler(this.text_Dosis_EditValueChanged);
@@ -1198,28 +1226,26 @@
             this.labelControl1.TabIndex = 0;
             this.labelControl1.Text = "Id Receta: ";
             // 
-            // combo_Para
+            // label_Modificacion
             // 
-            this.combo_Para.EditValue = "Fumigación o Aplicación";
-            this.combo_Para.Location = new System.Drawing.Point(106, 2);
-            this.combo_Para.MenuManager = this.barManager1;
-            this.combo_Para.Name = "combo_Para";
-            this.combo_Para.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.combo_Para.Properties.Items.AddRange(new object[] {
-            "Fumigación o Aplicación",
-            "Fertilización"});
-            this.combo_Para.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
-            this.combo_Para.Size = new System.Drawing.Size(155, 20);
-            this.combo_Para.TabIndex = 1;
+            this.label_Modificacion.Appearance.FontStyleDelta = System.Drawing.FontStyle.Bold;
+            this.label_Modificacion.Appearance.ForeColor = System.Drawing.Color.YellowGreen;
+            this.label_Modificacion.Appearance.Options.UseFont = true;
+            this.label_Modificacion.Appearance.Options.UseForeColor = true;
+            this.label_Modificacion.Location = new System.Drawing.Point(710, 56);
+            this.label_Modificacion.Name = "label_Modificacion";
+            this.label_Modificacion.Size = new System.Drawing.Size(84, 13);
+            this.label_Modificacion.TabIndex = 73;
+            this.label_Modificacion.Text = "MODIFICACIÓN";
             // 
-            // labelControl16
+            // btn_LimpiaMezcla
             // 
-            this.labelControl16.Location = new System.Drawing.Point(75, 3);
-            this.labelControl16.Name = "labelControl16";
-            this.labelControl16.Size = new System.Drawing.Size(26, 13);
-            this.labelControl16.TabIndex = 88;
-            this.labelControl16.Text = "Para:";
+            this.btn_LimpiaMezcla.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.ImageOptions.Image")));
+            this.btn_LimpiaMezcla.Location = new System.Drawing.Point(623, 58);
+            this.btn_LimpiaMezcla.Name = "btn_LimpiaMezcla";
+            this.btn_LimpiaMezcla.Size = new System.Drawing.Size(39, 39);
+            this.btn_LimpiaMezcla.TabIndex = 74;
+            this.btn_LimpiaMezcla.Click += new System.EventHandler(this.btn_LimpiaMezcla_Click);
             // 
             // Frm_Recetas
             // 
@@ -1246,6 +1272,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
             this.groupControl1.ResumeLayout(false);
             this.groupControl1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.combo_Para.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtgHuertas)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtgValHuertas)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.glue_Huerta.Properties)).EndInit();
@@ -1277,7 +1304,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.date_Fecha.Properties.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.date_Fecha.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtId.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.combo_Para.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1390,5 +1416,7 @@
         private DevExpress.XtraEditors.SimpleButton btnAgregar;
         private DevExpress.XtraEditors.LabelControl labelControl16;
         private DevExpress.XtraEditors.ComboBoxEdit combo_Para;
+        private DevExpress.XtraEditors.SimpleButton btn_LimpiaMezcla;
+        private DevExpress.XtraEditors.LabelControl label_Modificacion;
     }
 }

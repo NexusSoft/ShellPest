@@ -25,7 +25,8 @@ create PROCEDURE [dbo].[SP_Receta_Insert]
 	@Observaciones varchar(150),
 	@Intervalo_Seguridad numeric(15,1),
 	@Intervalo_Reingreso numeric(15,1),
-	@Id_Usuario varchar(10)
+	@Id_Usuario varchar(10),
+	@Para char(1)
 AS
 BEGIN
 	-- SET NOCOUNT ON added to prevent extra result sets from
@@ -57,8 +58,10 @@ BEGIN
 					Observaciones=@Observaciones,
 					Intervalo_Seguridad=@Intervalo_Seguridad,
 					Intervalo_Reingreso=@Intervalo_Reingreso,
+					Id_Huerta=@Id_Huerta,
 			        Id_Usuario_Mod=@Id_Usuario,
-		       		F_Usuario_Mod=getdate()
+		       		F_Usuario_Mod=getdate(),
+					Para=@Para
 			    WHERE
 			    	Id_Receta=@Id_Receta
 					
@@ -77,7 +80,10 @@ BEGIN
 				   ,Intervalo_Reingreso
 		           ,Id_Usuario_Crea
 	           		,F_Usuario_Crea
-					,Activo)
+					,Activo
+					,c_codigo_eps
+					,Id_Huerta
+					,Para)
 		     	VALUES
 		           (@Id_AsesorTecnico+@maximo
 		           ,@Fecha_Receta
@@ -91,7 +97,10 @@ BEGIN
 				   ,@Intervalo_Reingreso
 		           ,@Id_Usuario
 	           		,getdate()
-					,'1')
+					,'1'
+					,@c_codigo_eps
+					,@Id_Huerta
+					,@Para)
 			
 			commit transaction T1;
 			set @correcto=1

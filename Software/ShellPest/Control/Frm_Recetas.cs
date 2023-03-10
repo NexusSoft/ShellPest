@@ -43,6 +43,8 @@ namespace ShellPest
         private void Frm_Recetas_Load(object sender, EventArgs e)
         {
             txt_Monitoreo.Visible = false;
+            label_Modificacion.Visible = false;
+            btn_LimpiaMezcla.Visible = false;
 
             WS_Catalogos_Empresas Clase = new WS_Catalogos_Empresas();
             Clase.Id_Usuario = Id_Usuario;
@@ -259,6 +261,15 @@ namespace ShellPest
             Clase.Intervalo_Reingreso = Convert.ToDecimal(text_IReingreso.Text);
             Clase.Usuario = Id_Usuario;
             Clase.Id_Huerta = glue_Huerta.EditValue.ToString();
+            if(combo_Para.SelectedIndex == 0)
+            {
+                Clase.Para = 'A';
+            }
+            else
+            {
+                Clase.Para = 'F';
+            }
+            
             if (glue_Empresa.EditValue != null)
             {
                 Clase.c_codigo_eps = glue_Empresa.EditValue.ToString();
@@ -267,8 +278,68 @@ namespace ShellPest
                 if (Clase.Exito)
                 {
                     //groupControl2.Enabled = true;
-                    XtraMessageBox.Show("Se ha Insertado el registro con exito");
-                    //LimpiarCampos();
+                    XtraMessageBox.Show("Se ha Insertado el registro con exito, Vuelva a Abrir para agregar detalle");
+                    if (txtId.Text.Trim().Length == 0)
+                    {
+                        LimpiarCampos();
+
+                        //Todo esto es del boton de abrir, si se cambia algo del evento Abrir cambiarlo aqui tambien
+                        Frm_AbrirReceta Frm = new Frm_AbrirReceta();
+                        Frm.Id_Usuario = Id_Usuario;
+                        Frm.ShowDialog();
+                        if (!Frm.vId_Receta.Equals(""))
+                        {
+                            txtId.Text = Frm.vId_Receta;
+                            date_Fecha.EditValue = Frm.vFecha_Receta;
+                            glue_Asesor.EditValue = Frm.vId_AsesorTecnico;
+                            if (Frm.vId_MonitoreoPE.Trim().Length > 0)
+                            {
+                                txt_Monitoreo.Text = Frm.vId_MonitoreoPE.Trim();
+                                txt_Monitoreo.Visible = true;
+                                btn_Monitoreo.Visible = true;
+                            }
+
+                            glue_Cultivo.EditValue = Frm.vId_Cultivo;
+                            glue_Tipo.EditValue = Frm.vId_TipoAplicacion;
+                            text_Presentacion.Tag = Frm.vId_Presentacion;
+                            text_Presentacion.Text = Frm.vNombre_TipoAplicacion + " de " + Frm.vNombre_Presentacion + " " + Frm.vv_nombre_uni; ;
+                            memo_Observaciones.Text = Frm.vObservaciones;
+                            text_ISeguridad.Text = Frm.vIntervalo_Seguridad;
+                            text_IReingreso.Text = Frm.vIntervalo_Reingreso;
+                            IdUnidadConvercion = Frm.vId_Unidad;
+                            PresentacionConvercion = Frm.vNombre_Presentacion;
+                            if (Frm.vActivo)
+                            {
+                                btnEliminar.Caption = "Inhabilitar";
+                                groupControl1.Enabled = true;
+                                groupControl2.Enabled = true;
+                                btnGuardar.Enabled = true;
+                            }
+                            else
+                            {
+                                btnEliminar.Caption = "Habilitar";
+                                groupControl1.Enabled = false;
+                                groupControl2.Enabled = false;
+                                btnGuardar.Enabled = false;
+                            }
+                            glue_Huerta.EditValue = Frm.vId_Huerta;
+                            // groupControl2.Enabled = true;
+
+                            CargarRecetaDet(Frm.vId_Receta.Trim());
+                            CargarListHuertas();
+                            if (Frm.vPara.Equals("A"))
+                            {
+                                combo_Para.SelectedIndex = 0;
+                            }
+                            else
+                            {
+                                combo_Para.SelectedIndex = 1;
+                            }
+
+                        }
+
+                    }
+                   
                 }
                 else
                 {
@@ -350,6 +421,7 @@ namespace ShellPest
 
         private void btn_Abrir_Click(object sender, EventArgs e)
         {
+            //Se copio todo este codigo en una parte del guardado de receta, al final, si se cambia algo aqui reemplazarlo alla tambien
             Frm_AbrirReceta Frm = new Frm_AbrirReceta();
             Frm.Id_Usuario = Id_Usuario;
             Frm.ShowDialog();
@@ -504,6 +576,16 @@ namespace ShellPest
                     DataRow row = this.dtgValBloque.GetDataRow(i);
 
                     IdSecuencia = Convert.ToInt32(row["Secuencia"]);
+                    if (IdSecuencia > 0)
+                    {
+                        label_Modificacion.Visible = true;
+                        btn_LimpiaMezcla.Visible = true;
+                    }
+                    else
+                    {
+                        label_Modificacion.Visible = false;
+                        btn_LimpiaMezcla.Visible = false;
+                    }
                     text_Comercial.Tag = row["c_codigo_pro"].ToString();
                     text_Comercial.Text = row["v_nombre_pro"].ToString();
                     text_Ingrediente.Tag = row["c_codigo_cac"].ToString();
@@ -549,6 +631,8 @@ namespace ShellPest
             text_Unitario.Text = "0";
             memo_Descripcion.Text = "";
             IdSecuencia = 0;
+            label_Modificacion.Visible = false;
+            btn_LimpiaMezcla.Visible = false;
         }
 
         private void btn_Cancelar_Click(object sender, EventArgs e)
@@ -723,6 +807,11 @@ namespace ShellPest
             {
                 XtraMessageBox.Show(ex.Message);
             }
+        }
+
+        private void btn_LimpiaMezcla_Click(object sender, EventArgs e)
+        {
+            LimpiarCamposDet();
         }
 
         private void btn_Ingrediente_Click_1(object sender, EventArgs e)
