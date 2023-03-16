@@ -67,6 +67,7 @@
             this.barButtonItem3 = new DevExpress.XtraBars.BarButtonItem();
             this.btn_LugarCampo = new DevExpress.XtraBars.BarButtonItem();
             this.btn_Riego = new DevExpress.XtraBars.BarButtonItem();
+            this.btn_Actuvidad_Campo = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup5 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -85,7 +86,7 @@
             this.ribbonPage2 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.xtraTabbedMdiManager1 = new DevExpress.XtraTabbedMdi.XtraTabbedMdiManager(this.components);
             this.SkinForm = new DevExpress.LookAndFeel.DefaultLookAndFeel(this.components);
-            this.btn_Actuvidad_Campo = new DevExpress.XtraBars.BarButtonItem();
+            this.btn_Unidades = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabbedMdiManager1)).BeginInit();
             this.SuspendLayout();
@@ -133,9 +134,10 @@
             this.barButtonItem3,
             this.btn_LugarCampo,
             this.btn_Riego,
-            this.btn_Actuvidad_Campo});
+            this.btn_Actuvidad_Campo,
+            this.btn_Unidades});
             this.ribbonControl1.Location = new System.Drawing.Point(0, 0);
-            this.ribbonControl1.MaxItemId = 39;
+            this.ribbonControl1.MaxItemId = 40;
             this.ribbonControl1.Name = "ribbonControl1";
             this.ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage1,
@@ -457,6 +459,15 @@
             this.btn_Riego.Name = "btn_Riego";
             this.btn_Riego.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_Riego_ItemClick);
             // 
+            // btn_Actuvidad_Campo
+            // 
+            this.btn_Actuvidad_Campo.Caption = "Actividades - Campo";
+            this.btn_Actuvidad_Campo.Id = 38;
+            this.btn_Actuvidad_Campo.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_Actuvidad_Campo.ImageOptions.Image")));
+            this.btn_Actuvidad_Campo.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btn_Actuvidad_Campo.ImageOptions.LargeImage")));
+            this.btn_Actuvidad_Campo.Name = "btn_Actuvidad_Campo";
+            this.btn_Actuvidad_Campo.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_Actuvidad_Campo_ItemClick);
+            // 
             // ribbonPage1
             // 
             this.ribbonPage1.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
@@ -478,6 +489,7 @@
             this.ribbonPageGroup5.ItemLinks.Add(this.btnCalidades);
             this.ribbonPageGroup5.ItemLinks.Add(this.btnZonasClima);
             this.ribbonPageGroup5.ItemLinks.Add(this.btn_Recetas);
+            this.ribbonPageGroup5.ItemLinks.Add(this.btn_Unidades);
             this.ribbonPageGroup5.Name = "ribbonPageGroup5";
             this.ribbonPageGroup5.Text = "Catalogos de Ubicacion";
             // 
@@ -606,14 +618,14 @@
             this.SkinForm.EnableBonusSkins = true;
             this.SkinForm.LookAndFeel.SkinName = "Office 2013 Light Gray";
             // 
-            // btn_Actuvidad_Campo
+            // btn_Unidades
             // 
-            this.btn_Actuvidad_Campo.Caption = "Actividades - Campo";
-            this.btn_Actuvidad_Campo.Id = 38;
-            this.btn_Actuvidad_Campo.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_Actuvidad_Campo.ImageOptions.Image")));
-            this.btn_Actuvidad_Campo.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btn_Actuvidad_Campo.ImageOptions.LargeImage")));
-            this.btn_Actuvidad_Campo.Name = "btn_Actuvidad_Campo";
-            this.btn_Actuvidad_Campo.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_Actuvidad_Campo_ItemClick);
+            this.btn_Unidades.Caption = "Unidades\r\n Medida";
+            this.btn_Unidades.Id = 39;
+            this.btn_Unidades.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_Unidades.ImageOptions.Image")));
+            this.btn_Unidades.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btn_Unidades.ImageOptions.LargeImage")));
+            this.btn_Unidades.Name = "btn_Unidades";
+            this.btn_Unidades.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_Unidades_ItemClick);
             // 
             // Frm_Principal
             // 
@@ -695,6 +707,7 @@
         private DevExpress.XtraBars.BarButtonItem btn_LugarCampo;
         private DevExpress.XtraBars.BarButtonItem btn_Riego;
         private DevExpress.XtraBars.BarButtonItem btn_Actuvidad_Campo;
+        private DevExpress.XtraBars.BarButtonItem btn_Unidades;
     }
 }
 

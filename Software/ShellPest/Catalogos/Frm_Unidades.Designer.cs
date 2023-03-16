@@ -1,6 +1,6 @@
 ﻿namespace ShellPest
 {
-    partial class Frm_Ciudad
+    partial class Frm_Unidades
     {
         /// <summary>
         /// Required designer variable.
@@ -29,14 +29,13 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_Ciudad));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_Unidades));
             this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
             this.bIconos = new DevExpress.XtraBars.Bar();
             this.btnLimpiar = new DevExpress.XtraBars.BarLargeButtonItem();
             this.btnGuardar = new DevExpress.XtraBars.BarLargeButtonItem();
             this.btnEliminar = new DevExpress.XtraBars.BarLargeButtonItem();
             this.btnSalir = new DevExpress.XtraBars.BarLargeButtonItem();
-            this.btnSeleccionar = new DevExpress.XtraBars.BarLargeButtonItem();
             this.bEstado = new DevExpress.XtraBars.Bar();
             this.lblProveedor = new DevExpress.XtraBars.BarStaticItem();
             this.barDockControlTop = new DevExpress.XtraBars.BarDockControl();
@@ -47,18 +46,15 @@
             this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.Id_Ciudad = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.Id_Estado = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.Nombre_Estado = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Id_UnidadG = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Nombre_UnidadG = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.AbreviaturaG = new DevExpress.XtraGrid.Columns.GridColumn();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
-            this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
-            this.btnbuscar = new DevExpress.XtraEditors.SimpleButton();
-            this.textEstado = new DevExpress.XtraEditors.TextEdit();
-            this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.textNombre = new DevExpress.XtraEditors.TextEdit();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.textId = new DevExpress.XtraEditors.TextEdit();
+            this.label_Unidad = new DevExpress.XtraEditors.LabelControl();
+            this.textAbrevia = new DevExpress.XtraEditors.TextEdit();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit1)).BeginInit();
@@ -68,11 +64,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
-            this.groupControl1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.textEstado.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textNombre.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textId.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textAbrevia.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // barManager1
@@ -90,8 +84,7 @@
             this.btnLimpiar,
             this.btnGuardar,
             this.btnEliminar,
-            this.btnSalir,
-            this.btnSeleccionar});
+            this.btnSalir});
             this.barManager1.MainMenu = this.bIconos;
             this.barManager1.MaxItemId = 65;
             this.barManager1.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
@@ -110,8 +103,7 @@
             new DevExpress.XtraBars.LinkPersistInfo(this.btnLimpiar),
             new DevExpress.XtraBars.LinkPersistInfo(this.btnGuardar),
             new DevExpress.XtraBars.LinkPersistInfo(this.btnEliminar),
-            new DevExpress.XtraBars.LinkPersistInfo(this.btnSalir),
-            new DevExpress.XtraBars.LinkPersistInfo(this.btnSeleccionar)});
+            new DevExpress.XtraBars.LinkPersistInfo(this.btnSalir)});
             this.bIconos.OptionsBar.AllowCollapse = true;
             this.bIconos.OptionsBar.AllowQuickCustomization = false;
             this.bIconos.OptionsBar.AutoPopupMode = DevExpress.XtraBars.BarAutoPopupMode.None;
@@ -130,7 +122,6 @@
             this.btnLimpiar.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnLimpiar.ImageOptions.Image")));
             this.btnLimpiar.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnLimpiar.ImageOptions.LargeImage")));
             this.btnLimpiar.Name = "btnLimpiar";
-            this.btnLimpiar.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnLimpiar_ItemClick);
             // 
             // btnGuardar
             // 
@@ -157,16 +148,6 @@
             this.btnSalir.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnSalir.ImageOptions.Image")));
             this.btnSalir.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnSalir.ImageOptions.LargeImage")));
             this.btnSalir.Name = "btnSalir";
-            this.btnSalir.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnSalir_ItemClick);
-            // 
-            // btnSeleccionar
-            // 
-            this.btnSeleccionar.Caption = "Seleccionar";
-            this.btnSeleccionar.Id = 64;
-            this.btnSeleccionar.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnSeleccionar.ImageOptions.Image")));
-            this.btnSeleccionar.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnSeleccionar.ImageOptions.LargeImage")));
-            this.btnSeleccionar.Name = "btnSeleccionar";
-            this.btnSeleccionar.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnSeleccionar_ItemClick);
             // 
             // bEstado
             // 
@@ -194,15 +175,15 @@
             this.barDockControlTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.barDockControlTop.Location = new System.Drawing.Point(0, 0);
             this.barDockControlTop.Manager = this.barManager1;
-            this.barDockControlTop.Size = new System.Drawing.Size(579, 0);
+            this.barDockControlTop.Size = new System.Drawing.Size(680, 0);
             // 
             // barDockControlBottom
             // 
             this.barDockControlBottom.CausesValidation = false;
             this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.barDockControlBottom.Location = new System.Drawing.Point(0, 379);
+            this.barDockControlBottom.Location = new System.Drawing.Point(0, 398);
             this.barDockControlBottom.Manager = this.barManager1;
-            this.barDockControlBottom.Size = new System.Drawing.Size(579, 24);
+            this.barDockControlBottom.Size = new System.Drawing.Size(680, 24);
             // 
             // barDockControlLeft
             // 
@@ -210,15 +191,15 @@
             this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
             this.barDockControlLeft.Location = new System.Drawing.Point(0, 0);
             this.barDockControlLeft.Manager = this.barManager1;
-            this.barDockControlLeft.Size = new System.Drawing.Size(69, 379);
+            this.barDockControlLeft.Size = new System.Drawing.Size(54, 398);
             // 
             // barDockControlRight
             // 
             this.barDockControlRight.CausesValidation = false;
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
-            this.barDockControlRight.Location = new System.Drawing.Point(579, 0);
+            this.barDockControlRight.Location = new System.Drawing.Point(680, 0);
             this.barDockControlRight.Manager = this.barManager1;
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 379);
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 398);
             // 
             // repositoryItemTextEdit1
             // 
@@ -228,11 +209,11 @@
             // 
             this.panelControl2.Controls.Add(this.gridControl1);
             this.panelControl2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelControl2.Location = new System.Drawing.Point(69, 136);
+            this.panelControl2.Location = new System.Drawing.Point(54, 85);
             this.panelControl2.Name = "panelControl2";
             this.panelControl2.Padding = new System.Windows.Forms.Padding(10);
-            this.panelControl2.Size = new System.Drawing.Size(510, 243);
-            this.panelControl2.TabIndex = 7;
+            this.panelControl2.Size = new System.Drawing.Size(626, 313);
+            this.panelControl2.TabIndex = 9;
             // 
             // gridControl1
             // 
@@ -241,7 +222,7 @@
             this.gridControl1.MainView = this.gridView1;
             this.gridControl1.MenuManager = this.barManager1;
             this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(486, 219);
+            this.gridControl1.Size = new System.Drawing.Size(602, 289);
             this.gridControl1.TabIndex = 0;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -250,10 +231,9 @@
             // gridView1
             // 
             this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.Id_Ciudad,
-            this.gridColumn1,
-            this.Id_Estado,
-            this.Nombre_Estado});
+            this.Id_UnidadG,
+            this.Nombre_UnidadG,
+            this.AbreviaturaG});
             this.gridView1.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
             this.gridView1.GridControl = this.gridControl1;
             this.gridView1.Name = "gridView1";
@@ -262,94 +242,49 @@
             this.gridView1.OptionsSelection.EnableAppearanceFocusedCell = false;
             this.gridView1.OptionsView.ShowGroupPanel = false;
             // 
-            // Id_Ciudad
+            // Id_UnidadG
             // 
-            this.Id_Ciudad.Caption = "Id Ciudad";
-            this.Id_Ciudad.FieldName = "Id_Ciudad";
-            this.Id_Ciudad.Name = "Id_Ciudad";
-            this.Id_Ciudad.OptionsColumn.AllowEdit = false;
-            this.Id_Ciudad.Visible = true;
-            this.Id_Ciudad.VisibleIndex = 0;
+            this.Id_UnidadG.Caption = "Id_Unidad";
+            this.Id_UnidadG.FieldName = "Id_Unidad";
+            this.Id_UnidadG.Name = "Id_UnidadG";
+            this.Id_UnidadG.OptionsColumn.AllowEdit = false;
+            this.Id_UnidadG.Visible = true;
+            this.Id_UnidadG.VisibleIndex = 0;
             // 
-            // gridColumn1
+            // Nombre_UnidadG
             // 
-            this.gridColumn1.Caption = "Nombre Ciudad";
-            this.gridColumn1.FieldName = "Nombre_Ciudad";
-            this.gridColumn1.Name = "gridColumn1";
-            this.gridColumn1.Visible = true;
-            this.gridColumn1.VisibleIndex = 1;
+            this.Nombre_UnidadG.Caption = "Unidad";
+            this.Nombre_UnidadG.FieldName = "Nombre_Unidad";
+            this.Nombre_UnidadG.Name = "Nombre_UnidadG";
+            this.Nombre_UnidadG.Visible = true;
+            this.Nombre_UnidadG.VisibleIndex = 1;
             // 
-            // Id_Estado
+            // AbreviaturaG
             // 
-            this.Id_Estado.Caption = "Id Estado";
-            this.Id_Estado.FieldName = "Id_Estado";
-            this.Id_Estado.Name = "Id_Estado";
-            this.Id_Estado.Visible = true;
-            this.Id_Estado.VisibleIndex = 2;
-            // 
-            // Nombre_Estado
-            // 
-            this.Nombre_Estado.Caption = "Estado";
-            this.Nombre_Estado.FieldName = "Nombre_Estado";
-            this.Nombre_Estado.Name = "Nombre_Estado";
-            this.Nombre_Estado.Visible = true;
-            this.Nombre_Estado.VisibleIndex = 3;
+            this.AbreviaturaG.Caption = "Abreviatura";
+            this.AbreviaturaG.FieldName = "Abreviatura";
+            this.AbreviaturaG.Name = "AbreviaturaG";
+            this.AbreviaturaG.Visible = true;
+            this.AbreviaturaG.VisibleIndex = 2;
             // 
             // panelControl1
             // 
-            this.panelControl1.Controls.Add(this.groupControl1);
+            this.panelControl1.Controls.Add(this.textAbrevia);
+            this.panelControl1.Controls.Add(this.labelControl1);
+            this.panelControl1.Controls.Add(this.textNombre);
+            this.panelControl1.Controls.Add(this.labelControl2);
+            this.panelControl1.Controls.Add(this.textId);
+            this.panelControl1.Controls.Add(this.label_Unidad);
             this.panelControl1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelControl1.Location = new System.Drawing.Point(69, 0);
+            this.panelControl1.Location = new System.Drawing.Point(54, 0);
             this.panelControl1.Name = "panelControl1";
             this.panelControl1.Padding = new System.Windows.Forms.Padding(10);
-            this.panelControl1.Size = new System.Drawing.Size(510, 136);
-            this.panelControl1.TabIndex = 6;
-            // 
-            // groupControl1
-            // 
-            this.groupControl1.Controls.Add(this.btnbuscar);
-            this.groupControl1.Controls.Add(this.textEstado);
-            this.groupControl1.Controls.Add(this.labelControl3);
-            this.groupControl1.Controls.Add(this.textNombre);
-            this.groupControl1.Controls.Add(this.labelControl2);
-            this.groupControl1.Controls.Add(this.textId);
-            this.groupControl1.Controls.Add(this.labelControl1);
-            this.groupControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupControl1.Location = new System.Drawing.Point(12, 12);
-            this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(486, 112);
-            this.groupControl1.TabIndex = 0;
-            this.groupControl1.Text = "Ciudad";
-            // 
-            // btnbuscar
-            // 
-            this.btnbuscar.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnbuscar.ImageOptions.Image")));
-            this.btnbuscar.Location = new System.Drawing.Point(307, 79);
-            this.btnbuscar.Name = "btnbuscar";
-            this.btnbuscar.Size = new System.Drawing.Size(24, 23);
-            this.btnbuscar.TabIndex = 8;
-            this.btnbuscar.Click += new System.EventHandler(this.btnbuscar_Click);
-            // 
-            // textEstado
-            // 
-            this.textEstado.Enabled = false;
-            this.textEstado.Location = new System.Drawing.Point(100, 80);
-            this.textEstado.MenuManager = this.barManager1;
-            this.textEstado.Name = "textEstado";
-            this.textEstado.Size = new System.Drawing.Size(201, 20);
-            this.textEstado.TabIndex = 5;
-            // 
-            // labelControl3
-            // 
-            this.labelControl3.Location = new System.Drawing.Point(19, 82);
-            this.labelControl3.Name = "labelControl3";
-            this.labelControl3.Size = new System.Drawing.Size(37, 13);
-            this.labelControl3.TabIndex = 4;
-            this.labelControl3.Text = "Estado:";
+            this.panelControl1.Size = new System.Drawing.Size(626, 85);
+            this.panelControl1.TabIndex = 8;
             // 
             // textNombre
             // 
-            this.textNombre.Location = new System.Drawing.Point(100, 54);
+            this.textNombre.Location = new System.Drawing.Point(93, 34);
             this.textNombre.MenuManager = this.barManager1;
             this.textNombre.Name = "textNombre";
             this.textNombre.Size = new System.Drawing.Size(231, 20);
@@ -357,47 +292,59 @@
             // 
             // labelControl2
             // 
-            this.labelControl2.Location = new System.Drawing.Point(19, 57);
+            this.labelControl2.Location = new System.Drawing.Point(12, 39);
             this.labelControl2.Name = "labelControl2";
             this.labelControl2.Size = new System.Drawing.Size(77, 13);
             this.labelControl2.TabIndex = 2;
-            this.labelControl2.Text = "Nombre Ciudad:";
+            this.labelControl2.Text = "Nombre Unidad:";
             // 
             // textId
             // 
             this.textId.Enabled = false;
-            this.textId.Location = new System.Drawing.Point(100, 28);
+            this.textId.Location = new System.Drawing.Point(93, 8);
             this.textId.MenuManager = this.barManager1;
             this.textId.Name = "textId";
-            this.textId.Size = new System.Drawing.Size(100, 20);
+            this.textId.Size = new System.Drawing.Size(67, 20);
             this.textId.TabIndex = 1;
+            // 
+            // label_Unidad
+            // 
+            this.label_Unidad.Location = new System.Drawing.Point(12, 12);
+            this.label_Unidad.Name = "label_Unidad";
+            this.label_Unidad.Size = new System.Drawing.Size(53, 13);
+            this.label_Unidad.TabIndex = 0;
+            this.label_Unidad.Text = "Id Unidad: ";
+            // 
+            // textAbrevia
+            // 
+            this.textAbrevia.Location = new System.Drawing.Point(93, 60);
+            this.textAbrevia.MenuManager = this.barManager1;
+            this.textAbrevia.Name = "textAbrevia";
+            this.textAbrevia.Size = new System.Drawing.Size(67, 20);
+            this.textAbrevia.TabIndex = 5;
             // 
             // labelControl1
             // 
-            this.labelControl1.Location = new System.Drawing.Point(19, 30);
+            this.labelControl1.Location = new System.Drawing.Point(12, 65);
             this.labelControl1.Name = "labelControl1";
-            this.labelControl1.Size = new System.Drawing.Size(53, 13);
-            this.labelControl1.TabIndex = 0;
-            this.labelControl1.Text = "Id Ciudad: ";
+            this.labelControl1.Size = new System.Drawing.Size(61, 13);
+            this.labelControl1.TabIndex = 4;
+            this.labelControl1.Text = "Abreviatura:";
             // 
-            // Frm_Ciudad
+            // Frm_Unidades
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(579, 403);
+            this.ClientSize = new System.Drawing.Size(680, 422);
             this.Controls.Add(this.panelControl2);
             this.Controls.Add(this.panelControl1);
             this.Controls.Add(this.barDockControlLeft);
             this.Controls.Add(this.barDockControlRight);
             this.Controls.Add(this.barDockControlBottom);
             this.Controls.Add(this.barDockControlTop);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
-            this.MaximizeBox = false;
-            this.MinimizeBox = false;
-            this.Name = "Frm_Ciudad";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Ciudades";
-            this.Load += new System.EventHandler(this.Frm_Ciudad_Load);
+            this.Name = "Frm_Unidades";
+            this.Text = "Unidades";
+            this.Load += new System.EventHandler(this.Frm_Unidades_Load);
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).EndInit();
@@ -406,12 +353,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
             this.panelControl1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
-            this.groupControl1.ResumeLayout(false);
-            this.groupControl1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.textEstado.Properties)).EndInit();
+            this.panelControl1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.textNombre.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textId.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textAbrevia.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -435,19 +380,15 @@
         private DevExpress.XtraEditors.PanelControl panelControl2;
         private DevExpress.XtraGrid.GridControl gridControl1;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
-        private DevExpress.XtraGrid.Columns.GridColumn Id_Ciudad;
+        private DevExpress.XtraGrid.Columns.GridColumn Id_UnidadG;
+        private DevExpress.XtraGrid.Columns.GridColumn Nombre_UnidadG;
         private DevExpress.XtraEditors.PanelControl panelControl1;
-        private DevExpress.XtraEditors.GroupControl groupControl1;
         private DevExpress.XtraEditors.TextEdit textNombre;
         private DevExpress.XtraEditors.LabelControl labelControl2;
         private DevExpress.XtraEditors.TextEdit textId;
+        private DevExpress.XtraEditors.LabelControl label_Unidad;
+        private DevExpress.XtraGrid.Columns.GridColumn AbreviaturaG;
+        private DevExpress.XtraEditors.TextEdit textAbrevia;
         private DevExpress.XtraEditors.LabelControl labelControl1;
-        private DevExpress.XtraBars.BarLargeButtonItem btnSeleccionar;
-        private DevExpress.XtraEditors.TextEdit textEstado;
-        private DevExpress.XtraEditors.LabelControl labelControl3;
-        private DevExpress.XtraEditors.SimpleButton btnbuscar;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn1;
-        private DevExpress.XtraGrid.Columns.GridColumn Id_Estado;
-        private DevExpress.XtraGrid.Columns.GridColumn Nombre_Estado;
     }
 }

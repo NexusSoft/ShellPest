@@ -96,9 +96,8 @@ namespace CapaDeDatos
                 _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Nombre_Unidad");
                 _dato.CadenaTexto = Abreviatura;
                 _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Abreviatura");
-
                 _dato.CadenaTexto = Usuario;
-                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Usuario");
+                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Id_Usuario");
 
 
                 _conexion.EjecutarDataset();
@@ -128,9 +127,11 @@ namespace CapaDeDatos
             Exito = true;
             try
             {
-                _conexion.NombreProcedimiento = "SP_UnidadesMedida_Delete";
+                _conexion.NombreProcedimiento = "SP_Unidad_Delete";
                 _dato.CadenaTexto = Id_Unidad;
                 _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Id_Unidad");
+                _dato.CadenaTexto = Usuario;
+                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Usuario");
                 _dato.CadenaTexto = Activo;
                 _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Activo");
                 _conexion.EjecutarDataset();

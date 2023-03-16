@@ -478,6 +478,13 @@ namespace ShellPest
             //Frm_Actividad_Campo.DefInstance.Id_Usuario = UsuariosLogin;
             Frm_Actividad_Campo.DefInstance.Show();
         }
+
+        private void btn_Unidades_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            Frm_Unidades Ventana = new Frm_Unidades();
+            Ventana.Id_Usuario = UsuariosLogin;
+            Ventana.ShowDialog();
+        }
     }
 
 }

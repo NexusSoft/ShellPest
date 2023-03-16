@@ -184,6 +184,12 @@
     <Compile Include="Catalogos\Frm_Presentacion.Designer.cs">
       <DependentUpon>Frm_Presentacion.cs</DependentUpon>
     </Compile>
+    <Compile Include="Catalogos\Frm_Unidades.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Catalogos\Frm_Unidades.Designer.cs">
+      <DependentUpon>Frm_Unidades.cs</DependentUpon>
+    </Compile>
     <Compile Include="Control\Frm_AplicacionHue.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -461,6 +467,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Catalogos\Frm_Presentacion.resx">
       <DependentUpon>Frm_Presentacion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Catalogos\Frm_Unidades.resx">
+      <DependentUpon>Frm_Unidades.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Control\Frm_AplicacionHue.resx">
       <DependentUpon>Frm_AplicacionHue.cs</DependentUpon>
