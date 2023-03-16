@@ -190,6 +190,12 @@
     <Compile Include="Catalogos\Frm_Unidades.Designer.cs">
       <DependentUpon>Frm_Unidades.cs</DependentUpon>
     </Compile>
+    <Compile Include="Catalogos\Frm_Valvulas_Riego.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Catalogos\Frm_Valvulas_Riego.Designer.cs">
+      <DependentUpon>Frm_Valvulas_Riego.cs</DependentUpon>
+    </Compile>
     <Compile Include="Control\Frm_AplicacionHue.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -470,6 +476,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Catalogos\Frm_Unidades.resx">
       <DependentUpon>Frm_Unidades.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Catalogos\Frm_Valvulas_Riego.resx">
+      <DependentUpon>Frm_Valvulas_Riego.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Control\Frm_AplicacionHue.resx">
       <DependentUpon>Frm_AplicacionHue.cs</DependentUpon>

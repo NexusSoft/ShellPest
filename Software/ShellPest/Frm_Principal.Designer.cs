@@ -68,6 +68,8 @@
             this.btn_LugarCampo = new DevExpress.XtraBars.BarButtonItem();
             this.btn_Riego = new DevExpress.XtraBars.BarButtonItem();
             this.btn_Actuvidad_Campo = new DevExpress.XtraBars.BarButtonItem();
+            this.btn_Unidades = new DevExpress.XtraBars.BarButtonItem();
+            this.btn_Valvulas = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup5 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -86,7 +88,6 @@
             this.ribbonPage2 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.xtraTabbedMdiManager1 = new DevExpress.XtraTabbedMdi.XtraTabbedMdiManager(this.components);
             this.SkinForm = new DevExpress.LookAndFeel.DefaultLookAndFeel(this.components);
-            this.btn_Unidades = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabbedMdiManager1)).BeginInit();
             this.SuspendLayout();
@@ -135,9 +136,10 @@
             this.btn_LugarCampo,
             this.btn_Riego,
             this.btn_Actuvidad_Campo,
-            this.btn_Unidades});
+            this.btn_Unidades,
+            this.btn_Valvulas});
             this.ribbonControl1.Location = new System.Drawing.Point(0, 0);
-            this.ribbonControl1.MaxItemId = 40;
+            this.ribbonControl1.MaxItemId = 41;
             this.ribbonControl1.Name = "ribbonControl1";
             this.ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage1,
@@ -468,6 +470,24 @@
             this.btn_Actuvidad_Campo.Name = "btn_Actuvidad_Campo";
             this.btn_Actuvidad_Campo.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_Actuvidad_Campo_ItemClick);
             // 
+            // btn_Unidades
+            // 
+            this.btn_Unidades.Caption = "Unidades\r\n Medida";
+            this.btn_Unidades.Id = 39;
+            this.btn_Unidades.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_Unidades.ImageOptions.Image")));
+            this.btn_Unidades.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btn_Unidades.ImageOptions.LargeImage")));
+            this.btn_Unidades.Name = "btn_Unidades";
+            this.btn_Unidades.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_Unidades_ItemClick);
+            // 
+            // btn_Valvulas
+            // 
+            this.btn_Valvulas.Caption = "Valvulas riego";
+            this.btn_Valvulas.Id = 40;
+            this.btn_Valvulas.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_Valvulas.ImageOptions.Image")));
+            this.btn_Valvulas.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btn_Valvulas.ImageOptions.LargeImage")));
+            this.btn_Valvulas.Name = "btn_Valvulas";
+            this.btn_Valvulas.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_Valvulas_ItemClick);
+            // 
             // ribbonPage1
             // 
             this.ribbonPage1.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
@@ -520,6 +540,7 @@
             this.ribbonPageGroup4.ItemLinks.Add(this.btnAlmacen_Huerta);
             this.ribbonPageGroup4.ItemLinks.Add(this.btn_LugarCampo);
             this.ribbonPageGroup4.ItemLinks.Add(this.btn_Actuvidad_Campo);
+            this.ribbonPageGroup4.ItemLinks.Add(this.btn_Valvulas);
             this.ribbonPageGroup4.Name = "ribbonPageGroup4";
             this.ribbonPageGroup4.Text = "Inventario";
             // 
@@ -618,15 +639,6 @@
             this.SkinForm.EnableBonusSkins = true;
             this.SkinForm.LookAndFeel.SkinName = "Office 2013 Light Gray";
             // 
-            // btn_Unidades
-            // 
-            this.btn_Unidades.Caption = "Unidades\r\n Medida";
-            this.btn_Unidades.Id = 39;
-            this.btn_Unidades.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_Unidades.ImageOptions.Image")));
-            this.btn_Unidades.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btn_Unidades.ImageOptions.LargeImage")));
-            this.btn_Unidades.Name = "btn_Unidades";
-            this.btn_Unidades.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_Unidades_ItemClick);
-            // 
             // Frm_Principal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -708,6 +720,7 @@
         private DevExpress.XtraBars.BarButtonItem btn_Riego;
         private DevExpress.XtraBars.BarButtonItem btn_Actuvidad_Campo;
         private DevExpress.XtraBars.BarButtonItem btn_Unidades;
+        private DevExpress.XtraBars.BarButtonItem btn_Valvulas;
     }
 }
 

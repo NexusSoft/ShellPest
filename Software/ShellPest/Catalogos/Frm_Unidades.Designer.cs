@@ -50,12 +50,12 @@
             this.Nombre_UnidadG = new DevExpress.XtraGrid.Columns.GridColumn();
             this.AbreviaturaG = new DevExpress.XtraGrid.Columns.GridColumn();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
+            this.textAbrevia = new DevExpress.XtraEditors.TextEdit();
+            this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.textNombre = new DevExpress.XtraEditors.TextEdit();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.textId = new DevExpress.XtraEditors.TextEdit();
             this.label_Unidad = new DevExpress.XtraEditors.LabelControl();
-            this.textAbrevia = new DevExpress.XtraEditors.TextEdit();
-            this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).BeginInit();
@@ -64,9 +64,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.textAbrevia.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textNombre.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textId.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textAbrevia.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // barManager1
@@ -282,6 +282,22 @@
             this.panelControl1.Size = new System.Drawing.Size(626, 85);
             this.panelControl1.TabIndex = 8;
             // 
+            // textAbrevia
+            // 
+            this.textAbrevia.Location = new System.Drawing.Point(93, 60);
+            this.textAbrevia.MenuManager = this.barManager1;
+            this.textAbrevia.Name = "textAbrevia";
+            this.textAbrevia.Size = new System.Drawing.Size(67, 20);
+            this.textAbrevia.TabIndex = 5;
+            // 
+            // labelControl1
+            // 
+            this.labelControl1.Location = new System.Drawing.Point(12, 65);
+            this.labelControl1.Name = "labelControl1";
+            this.labelControl1.Size = new System.Drawing.Size(61, 13);
+            this.labelControl1.TabIndex = 4;
+            this.labelControl1.Text = "Abreviatura:";
+            // 
             // textNombre
             // 
             this.textNombre.Location = new System.Drawing.Point(93, 34);
@@ -315,22 +331,6 @@
             this.label_Unidad.TabIndex = 0;
             this.label_Unidad.Text = "Id Unidad: ";
             // 
-            // textAbrevia
-            // 
-            this.textAbrevia.Location = new System.Drawing.Point(93, 60);
-            this.textAbrevia.MenuManager = this.barManager1;
-            this.textAbrevia.Name = "textAbrevia";
-            this.textAbrevia.Size = new System.Drawing.Size(67, 20);
-            this.textAbrevia.TabIndex = 5;
-            // 
-            // labelControl1
-            // 
-            this.labelControl1.Location = new System.Drawing.Point(12, 65);
-            this.labelControl1.Name = "labelControl1";
-            this.labelControl1.Size = new System.Drawing.Size(61, 13);
-            this.labelControl1.TabIndex = 4;
-            this.labelControl1.Text = "Abreviatura:";
-            // 
             // Frm_Unidades
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -354,9 +354,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
             this.panelControl1.ResumeLayout(false);
             this.panelControl1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.textAbrevia.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textNombre.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textId.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textAbrevia.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
