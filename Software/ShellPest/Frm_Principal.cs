@@ -490,7 +490,7 @@ namespace ShellPest
         {
             Frm_Valvulas_Riego Ventana = new Frm_Valvulas_Riego();
             Frm_Valvulas_Riego.DefInstance.MdiParent = this;
-            //Frm_Valvulas_Riego.DefInstance.Id_Usuario = UsuariosLogin;
+            Frm_Valvulas_Riego.DefInstance.Id_Usuario = UsuariosLogin;
             Frm_Valvulas_Riego.DefInstance.Show();
         }
     }

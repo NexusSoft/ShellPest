@@ -55,6 +55,7 @@
     <Compile Include="Catalogos\CLS_Receta.cs" />
     <Compile Include="Catalogos\CLS_RecetaDet.cs" />
     <Compile Include="Catalogos\CLS_TipoAplicacion.cs" />
+    <Compile Include="Catalogos\CLS_Valvulas.cs" />
     <Compile Include="Class1.cs" />
     <Compile Include="Conexion\Conexion.cs" />
     <Compile Include="Conexion\ConexionBase.cs" />
