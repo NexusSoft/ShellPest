@@ -48,11 +48,13 @@
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.Id_BloqueG = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Nombre_BloqueG = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.N_ValvulaG = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Id_ValvulaG = new DevExpress.XtraGrid.Columns.GridColumn();
             this.N_MicrosG = new DevExpress.XtraGrid.Columns.GridColumn();
             this.N_CaudalesG = new DevExpress.XtraGrid.Columns.GridColumn();
             this.M3G = new DevExpress.XtraGrid.Columns.GridColumn();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
+            this.label_Id = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl10 = new DevExpress.XtraEditors.LabelControl();
             this.glue_Empresa = new DevExpress.XtraEditors.GridLookUpEdit();
             this.gridView6 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.c_codigo_eps = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -165,6 +167,7 @@
             this.btnLimpiar.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnLimpiar.ImageOptions.Image")));
             this.btnLimpiar.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnLimpiar.ImageOptions.LargeImage")));
             this.btnLimpiar.Name = "btnLimpiar";
+            this.btnLimpiar.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnLimpiar_ItemClick);
             // 
             // btnGuardar
             // 
@@ -173,6 +176,7 @@
             this.btnGuardar.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnGuardar.ImageOptions.Image")));
             this.btnGuardar.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnGuardar.ImageOptions.LargeImage")));
             this.btnGuardar.Name = "btnGuardar";
+            this.btnGuardar.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnGuardar_ItemClick);
             // 
             // btnEliminar
             // 
@@ -181,6 +185,7 @@
             this.btnEliminar.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnEliminar.ImageOptions.Image")));
             this.btnEliminar.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnEliminar.ImageOptions.LargeImage")));
             this.btnEliminar.Name = "btnEliminar";
+            this.btnEliminar.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnEliminar_ItemClick);
             // 
             // btnSalir
             // 
@@ -189,6 +194,7 @@
             this.btnSalir.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnSalir.ImageOptions.Image")));
             this.btnSalir.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnSalir.ImageOptions.LargeImage")));
             this.btnSalir.Name = "btnSalir";
+            this.btnSalir.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnSalir_ItemClick);
             // 
             // bEstado
             // 
@@ -222,9 +228,9 @@
             // 
             this.barDockControlBottom.CausesValidation = false;
             this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.barDockControlBottom.Location = new System.Drawing.Point(0, 433);
+            this.barDockControlBottom.Location = new System.Drawing.Point(0, 435);
             this.barDockControlBottom.Manager = this.barManager1;
-            this.barDockControlBottom.Size = new System.Drawing.Size(695, 24);
+            this.barDockControlBottom.Size = new System.Drawing.Size(695, 22);
             // 
             // barDockControlLeft
             // 
@@ -232,7 +238,7 @@
             this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
             this.barDockControlLeft.Location = new System.Drawing.Point(0, 0);
             this.barDockControlLeft.Manager = this.barManager1;
-            this.barDockControlLeft.Size = new System.Drawing.Size(54, 433);
+            this.barDockControlLeft.Size = new System.Drawing.Size(56, 435);
             // 
             // barDockControlRight
             // 
@@ -240,7 +246,7 @@
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
             this.barDockControlRight.Location = new System.Drawing.Point(695, 0);
             this.barDockControlRight.Manager = this.barManager1;
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 433);
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 435);
             // 
             // repositoryItemTextEdit1
             // 
@@ -250,10 +256,10 @@
             // 
             this.panelControl2.Controls.Add(this.gridControl1);
             this.panelControl2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelControl2.Location = new System.Drawing.Point(54, 162);
+            this.panelControl2.Location = new System.Drawing.Point(56, 162);
             this.panelControl2.Name = "panelControl2";
             this.panelControl2.Padding = new System.Windows.Forms.Padding(10);
-            this.panelControl2.Size = new System.Drawing.Size(641, 271);
+            this.panelControl2.Size = new System.Drawing.Size(639, 273);
             this.panelControl2.TabIndex = 11;
             // 
             // gridControl1
@@ -263,17 +269,18 @@
             this.gridControl1.MainView = this.gridView1;
             this.gridControl1.MenuManager = this.barManager1;
             this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(617, 247);
+            this.gridControl1.Size = new System.Drawing.Size(615, 249);
             this.gridControl1.TabIndex = 0;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
+            this.gridControl1.Click += new System.EventHandler(this.gridControl1_Click);
             // 
             // gridView1
             // 
             this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.Id_BloqueG,
             this.Nombre_BloqueG,
-            this.N_ValvulaG,
+            this.Id_ValvulaG,
             this.N_MicrosG,
             this.N_CaudalesG,
             this.M3G});
@@ -302,13 +309,13 @@
             this.Nombre_BloqueG.Visible = true;
             this.Nombre_BloqueG.VisibleIndex = 5;
             // 
-            // N_ValvulaG
+            // Id_ValvulaG
             // 
-            this.N_ValvulaG.Caption = "N_Valvula";
-            this.N_ValvulaG.FieldName = "N_Valvula";
-            this.N_ValvulaG.Name = "N_ValvulaG";
-            this.N_ValvulaG.Visible = true;
-            this.N_ValvulaG.VisibleIndex = 1;
+            this.Id_ValvulaG.Caption = "Id_Valvula";
+            this.Id_ValvulaG.FieldName = "Id_Valvula";
+            this.Id_ValvulaG.Name = "Id_ValvulaG";
+            this.Id_ValvulaG.Visible = true;
+            this.Id_ValvulaG.VisibleIndex = 1;
             // 
             // N_MicrosG
             // 
@@ -336,6 +343,8 @@
             // 
             // panelControl1
             // 
+            this.panelControl1.Controls.Add(this.label_Id);
+            this.panelControl1.Controls.Add(this.labelControl10);
             this.panelControl1.Controls.Add(this.glue_Empresa);
             this.panelControl1.Controls.Add(this.labelControl9);
             this.panelControl1.Controls.Add(this.groupControl1);
@@ -353,11 +362,28 @@
             this.panelControl1.Controls.Add(this.textValvula);
             this.panelControl1.Controls.Add(this.label_Unidad);
             this.panelControl1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelControl1.Location = new System.Drawing.Point(54, 0);
+            this.panelControl1.Location = new System.Drawing.Point(56, 0);
             this.panelControl1.Name = "panelControl1";
             this.panelControl1.Padding = new System.Windows.Forms.Padding(10);
-            this.panelControl1.Size = new System.Drawing.Size(641, 162);
+            this.panelControl1.Size = new System.Drawing.Size(639, 162);
             this.panelControl1.TabIndex = 10;
+            // 
+            // label_Id
+            // 
+            this.label_Id.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
+            this.label_Id.Appearance.Options.UseFont = true;
+            this.label_Id.Location = new System.Drawing.Point(321, 9);
+            this.label_Id.Name = "label_Id";
+            this.label_Id.Size = new System.Drawing.Size(0, 13);
+            this.label_Id.TabIndex = 48;
+            // 
+            // labelControl10
+            // 
+            this.labelControl10.Location = new System.Drawing.Point(292, 9);
+            this.labelControl10.Name = "labelControl10";
+            this.labelControl10.Size = new System.Drawing.Size(14, 13);
+            this.labelControl10.TabIndex = 47;
+            this.labelControl10.Text = "Id:";
             // 
             // glue_Empresa
             // 
@@ -505,6 +531,7 @@
             this.btn_Quitar.Name = "btn_Quitar";
             this.btn_Quitar.Size = new System.Drawing.Size(38, 34);
             this.btn_Quitar.TabIndex = 14;
+            this.btn_Quitar.Click += new System.EventHandler(this.btn_Quitar_Click);
             // 
             // simpleButton1
             // 
@@ -673,6 +700,8 @@
             this.textValvula.Location = new System.Drawing.Point(527, 36);
             this.textValvula.MenuManager = this.barManager1;
             this.textValvula.Name = "textValvula";
+            this.textValvula.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.NumericMaskManager));
+            this.textValvula.Properties.MaskSettings.Set("mask", "###,##0");
             this.textValvula.Size = new System.Drawing.Size(67, 20);
             this.textValvula.TabIndex = 1;
             this.textValvula.EditValueChanged += new System.EventHandler(this.textValvula_EditValueChanged);
@@ -748,7 +777,7 @@
         private DevExpress.XtraGrid.GridControl gridControl1;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
         private DevExpress.XtraGrid.Columns.GridColumn Id_BloqueG;
-        private DevExpress.XtraGrid.Columns.GridColumn N_ValvulaG;
+        private DevExpress.XtraGrid.Columns.GridColumn Id_ValvulaG;
         private DevExpress.XtraGrid.Columns.GridColumn N_MicrosG;
         private DevExpress.XtraEditors.PanelControl panelControl1;
         private DevExpress.XtraEditors.TextEdit text_Morras;
@@ -788,5 +817,7 @@
         private DevExpress.XtraGrid.Columns.GridColumn v_nombre_eps;
         private DevExpress.XtraGrid.Columns.GridColumn v_basedatos_coi;
         private DevExpress.XtraEditors.LabelControl labelControl9;
+        private DevExpress.XtraEditors.LabelControl label_Id;
+        private DevExpress.XtraEditors.LabelControl labelControl10;
     }
 }

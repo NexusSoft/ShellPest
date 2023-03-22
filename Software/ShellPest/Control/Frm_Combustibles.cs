@@ -333,9 +333,6 @@ namespace ShellPest
                         }
                     }
                 }
-                
-
-               
 
             }
 
@@ -471,7 +468,13 @@ namespace ShellPest
 
         private void de_Fecha_EditValueChanged(object sender, EventArgs e)
         {
+            String Filtro;
+            Filtro = gridView1.ActiveFilterString;
+            gridView1.ClearSorting();
+            gridView1.ClearColumnsFilter();
+            
             CargarGrid();
+            gridView1.ActiveFilterString = Filtro; //Guardo filtros, despues los quito, calculo saldos y despues vuelvo a aplicar los filtros 
         }
 
         private void btn_Quitar_Click(object sender, EventArgs e)
