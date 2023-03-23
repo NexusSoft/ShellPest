@@ -1,33 +1,18 @@
 USE [ShellPest]
 GO
--- ================================================
--- Template generated from Template Explorer using:
--- Create Procedure (New Menu).SQL
---
--- Use the Specify Values for Template Parameters 
--- command (Ctrl-Shift-M) to fill in the parameter 
--- values below.
---
--- This block of comments will not be included in
--- the definition of the procedure.
--- ================================================
+/****** Object:  StoredProcedure [dbo].[SP_Combustibles_Select]    Script Date: 23/03/2023 02:46:14 p. m. ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
-GO
-IF  EXISTS (SELECT * FROM SYS.OBJECTS WHERE TYPE = 'P' AND NAME = 'SP_Combustibles_Select')
-DROP PROCEDURE SP_Combustibles_Select
 GO
 -- =============================================
 -- Author:		<Author,,Name>
 -- Create date: <Create Date,,>
 -- Description:	<Description,,>
 -- =============================================
-CREATE PROCEDURE SP_Combustibles_Select
+ALTER PROCEDURE [dbo].[SP_Combustibles_Select]
 	-- Add the parameters for the stored procedure here
-	@Fecha date,
-	@Id_Huerta char(5),
-	@v_tipo_gas varchar(50)
+	@Fecha date
 	
 AS
 BEGIN
@@ -79,7 +64,7 @@ BEGIN
 		left join GrupoAGV.dbo.cosactividad as ACT on ACt.c_codigo_act =S.c_codigo_act 
 		left join GrupoAGV.dbo.nomempleados as E on E.c_codigo_emp =S.c_codigo_emp 
 		left join t_Unidad as U on U.Id_Unidad=S.c_unidad_act
-		where S.d_fechaconsumo_gas=@Fecha and S.Id_Huerta=@Id_Huerta and S.v_tipo_gas=@v_tipo_gas
+		where S.d_fechaconsumo_gas=@Fecha
 
 		UNION all
 		
@@ -121,7 +106,6 @@ BEGIN
 		from ShellPest.dbo.t_Gasolina_Ingreso as I 
 		left join GrupoAGV.dbo.coscampo as H on H.c_codigo_cam =I.Id_Huerta 
 		left join GrupoAGV.dbo.nomempleados as E on E.c_codigo_emp =I.c_codigo_emp 
-		where I.d_fechaingreso_gas=@Fecha and I.Id_Huerta=@Id_Huerta and I.v_tipo_gas=@v_tipo_gas
+		where I.d_fechaingreso_gas=@Fecha
 		order by 1,11,4,14
 END
-GO

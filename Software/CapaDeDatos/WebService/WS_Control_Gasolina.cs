@@ -133,7 +133,10 @@ namespace CapaDeDatos
                 _conexion.NombreProcedimiento = "SP_Combustibles_Select";
                 _dato.CadenaTexto = d_fechaconsumo_gas;
                 _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Fecha");
-               
+                _dato.CadenaTexto = Id_Huerta;
+                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Id_Huerta");
+                _dato.CadenaTexto = v_tipo_gas;
+                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "v_tipo_gas");
                 _conexion.EjecutarDataset();
 
                 if (_conexion.Exito)

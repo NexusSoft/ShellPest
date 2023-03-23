@@ -63,6 +63,10 @@
             this.c_unidad_act = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Abreviatura = new DevExpress.XtraGrid.Columns.GridColumn();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
+            this.btn_RefreshU = new DevExpress.XtraEditors.SimpleButton();
+            this.btn_RefreshAc = new DevExpress.XtraEditors.SimpleButton();
+            this.btn_RefreshB = new DevExpress.XtraEditors.SimpleButton();
+            this.btn_RefreshA = new DevExpress.XtraEditors.SimpleButton();
             this.label_BloquesView = new DevExpress.XtraEditors.LabelControl();
             this.glue_Unidades = new DevExpress.XtraEditors.GridLookUpEdit();
             this.gridView9 = new DevExpress.XtraGrid.Views.Grid.GridView();
@@ -118,10 +122,6 @@
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.textId = new DevExpress.XtraEditors.TextEdit();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
-            this.btn_RefreshA = new DevExpress.XtraEditors.SimpleButton();
-            this.btn_RefreshB = new DevExpress.XtraEditors.SimpleButton();
-            this.btn_RefreshAc = new DevExpress.XtraEditors.SimpleButton();
-            this.btn_RefreshU = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).BeginInit();
@@ -491,6 +491,46 @@
             this.panelControl1.Size = new System.Drawing.Size(891, 213);
             this.panelControl1.TabIndex = 8;
             // 
+            // btn_RefreshU
+            // 
+            this.btn_RefreshU.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_RefreshU.ImageOptions.Image")));
+            this.btn_RefreshU.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
+            this.btn_RefreshU.Location = new System.Drawing.Point(324, 160);
+            this.btn_RefreshU.Name = "btn_RefreshU";
+            this.btn_RefreshU.Size = new System.Drawing.Size(33, 30);
+            this.btn_RefreshU.TabIndex = 70;
+            this.btn_RefreshU.Click += new System.EventHandler(this.btn_RefreshU_Click);
+            // 
+            // btn_RefreshAc
+            // 
+            this.btn_RefreshAc.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_RefreshAc.ImageOptions.Image")));
+            this.btn_RefreshAc.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
+            this.btn_RefreshAc.Location = new System.Drawing.Point(246, 129);
+            this.btn_RefreshAc.Name = "btn_RefreshAc";
+            this.btn_RefreshAc.Size = new System.Drawing.Size(33, 30);
+            this.btn_RefreshAc.TabIndex = 69;
+            this.btn_RefreshAc.Click += new System.EventHandler(this.btn_RefreshAc_Click);
+            // 
+            // btn_RefreshB
+            // 
+            this.btn_RefreshB.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_RefreshB.ImageOptions.Image")));
+            this.btn_RefreshB.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
+            this.btn_RefreshB.Location = new System.Drawing.Point(528, 131);
+            this.btn_RefreshB.Name = "btn_RefreshB";
+            this.btn_RefreshB.Size = new System.Drawing.Size(33, 30);
+            this.btn_RefreshB.TabIndex = 68;
+            this.btn_RefreshB.Click += new System.EventHandler(this.btn_RefreshB_Click);
+            // 
+            // btn_RefreshA
+            // 
+            this.btn_RefreshA.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_RefreshA.ImageOptions.Image")));
+            this.btn_RefreshA.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
+            this.btn_RefreshA.Location = new System.Drawing.Point(833, 130);
+            this.btn_RefreshA.Name = "btn_RefreshA";
+            this.btn_RefreshA.Size = new System.Drawing.Size(33, 30);
+            this.btn_RefreshA.TabIndex = 67;
+            this.btn_RefreshA.Click += new System.EventHandler(this.btn_RefreshA_Click);
+            // 
             // label_BloquesView
             // 
             this.label_BloquesView.Location = new System.Drawing.Point(336, 138);
@@ -597,6 +637,7 @@
             this.glue_TipoCombustible.Properties.ValueMember = "Tipo";
             this.glue_TipoCombustible.Size = new System.Drawing.Size(222, 20);
             this.glue_TipoCombustible.TabIndex = 5;
+            this.glue_TipoCombustible.EditValueChanged += new System.EventHandler(this.glue_TipoCombustible_EditValueChanged);
             // 
             // gridView8
             // 
@@ -1018,46 +1059,6 @@
             this.labelControl1.Size = new System.Drawing.Size(52, 13);
             this.labelControl1.TabIndex = 0;
             this.labelControl1.Text = "Folio Vale: ";
-            // 
-            // btn_RefreshA
-            // 
-            this.btn_RefreshA.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.ImageOptions.Image")));
-            this.btn_RefreshA.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
-            this.btn_RefreshA.Location = new System.Drawing.Point(833, 130);
-            this.btn_RefreshA.Name = "btn_RefreshA";
-            this.btn_RefreshA.Size = new System.Drawing.Size(33, 30);
-            this.btn_RefreshA.TabIndex = 67;
-            this.btn_RefreshA.Click += new System.EventHandler(this.btn_RefreshA_Click);
-            // 
-            // btn_RefreshB
-            // 
-            this.btn_RefreshB.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton2.ImageOptions.Image")));
-            this.btn_RefreshB.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
-            this.btn_RefreshB.Location = new System.Drawing.Point(528, 131);
-            this.btn_RefreshB.Name = "btn_RefreshB";
-            this.btn_RefreshB.Size = new System.Drawing.Size(33, 30);
-            this.btn_RefreshB.TabIndex = 68;
-            this.btn_RefreshB.Click += new System.EventHandler(this.btn_RefreshB_Click);
-            // 
-            // btn_RefreshAc
-            // 
-            this.btn_RefreshAc.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton3.ImageOptions.Image")));
-            this.btn_RefreshAc.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
-            this.btn_RefreshAc.Location = new System.Drawing.Point(246, 129);
-            this.btn_RefreshAc.Name = "btn_RefreshAc";
-            this.btn_RefreshAc.Size = new System.Drawing.Size(33, 30);
-            this.btn_RefreshAc.TabIndex = 69;
-            this.btn_RefreshAc.Click += new System.EventHandler(this.btn_RefreshAc_Click);
-            // 
-            // btn_RefreshU
-            // 
-            this.btn_RefreshU.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton4.ImageOptions.Image")));
-            this.btn_RefreshU.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
-            this.btn_RefreshU.Location = new System.Drawing.Point(324, 160);
-            this.btn_RefreshU.Name = "btn_RefreshU";
-            this.btn_RefreshU.Size = new System.Drawing.Size(33, 30);
-            this.btn_RefreshU.TabIndex = 70;
-            this.btn_RefreshU.Click += new System.EventHandler(this.btn_RefreshU_Click);
             // 
             // Frm_Combustibles
             // 

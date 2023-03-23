@@ -216,7 +216,17 @@ namespace ShellPest
             {
                 CargarActividades();
             }
-        }
+            if (glue_Huertas.EditValue.ToString().Trim().Length > 0 && glue_TipoCombustible.EditValue.ToString().Trim().Length > 0)
+            {
+                String Filtro;
+                Filtro = gridView1.ActiveFilterString;
+                gridView1.ClearSorting();
+                gridView1.ClearColumnsFilter();
+
+                CargarGrid();
+                gridView1.ActiveFilterString = Filtro; //Guardo filtros, despues los quito, calculo saldos y despues vuelvo a aplicar los filtros
+            }
+           }
 
         private void glue_Empresas_EditValueChanged(object sender, EventArgs e)
         {
@@ -261,6 +271,8 @@ namespace ShellPest
 
             DateTime Fecha = Convert.ToDateTime(de_Fecha.EditValue.ToString());
             Clase.d_fechaconsumo_gas = Fecha.Year.ToString() + DosCero(Fecha.Month.ToString()) + DosCero(Fecha.Day.ToString());
+            Clase.Id_Huerta=glue_Huertas.EditValue.ToString().Trim();
+            Clase.v_tipo_gas=glue_TipoCombustible.EditValue.ToString().Trim();
             Clase.MtdConsultaCombustiblexFecha();
                 if (Clase.Exito)
                 {
@@ -348,7 +360,16 @@ namespace ShellPest
         private void btn_Agregar_Click(object sender, EventArgs e)
         {
             InsertarGasConsumo();
+
+            String Filtro;
+            Filtro = gridView1.ActiveFilterString;
+            gridView1.ClearSorting();
+            gridView1.ClearColumnsFilter();
+
             CargarGrid();
+            gridView1.ActiveFilterString = Filtro; //Guardo filtros, despues los quito, calculo saldos y despues vuelvo a aplicar los filtros
+
+            //CargarGrid();
         }
 
         private void InsertarGasConsumo()
@@ -468,13 +489,17 @@ namespace ShellPest
 
         private void de_Fecha_EditValueChanged(object sender, EventArgs e)
         {
-            String Filtro;
-            Filtro = gridView1.ActiveFilterString;
-            gridView1.ClearSorting();
-            gridView1.ClearColumnsFilter();
-            
-            CargarGrid();
-            gridView1.ActiveFilterString = Filtro; //Guardo filtros, despues los quito, calculo saldos y despues vuelvo a aplicar los filtros 
+            if(glue_Huertas.EditValue.ToString().Trim().Length>0 && glue_TipoCombustible.EditValue.ToString().Trim().Length > 0)
+            {
+                String Filtro;
+                Filtro = gridView1.ActiveFilterString;
+                gridView1.ClearSorting();
+                gridView1.ClearColumnsFilter();
+
+                CargarGrid();
+                gridView1.ActiveFilterString = Filtro; //Guardo filtros, despues los quito, calculo saldos y despues vuelvo a aplicar los filtros
+            }
+ 
         }
 
         private void btn_Quitar_Click(object sender, EventArgs e)
@@ -600,5 +625,19 @@ namespace ShellPest
                 
             }
         }
+
+        private void glue_TipoCombustible_EditValueChanged(object sender, EventArgs e)
+        {
+            if (glue_Huertas.EditValue.ToString().Trim().Length > 0 && glue_TipoCombustible.EditValue.ToString().Trim().Length > 0)
+            {
+                String Filtro;
+                Filtro = gridView1.ActiveFilterString;
+                gridView1.ClearSorting();
+                gridView1.ClearColumnsFilter();
+
+                CargarGrid();
+                gridView1.ActiveFilterString = Filtro; //Guardo filtros, despues los quito, calculo saldos y despues vuelvo a aplicar los filtros
+            }
+         }
     }
 }
