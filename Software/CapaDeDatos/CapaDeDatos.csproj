@@ -47,6 +47,7 @@
     <Compile Include="Catalogos\CLS_Activos_Generales.cs" />
     <Compile Include="Catalogos\CLS_Almacen_Huerto.cs" />
     <Compile Include="Catalogos\CLS_Asesor_Tecnico.cs" />
+    <Compile Include="Catalogos\CLS_Cambios_Riego.cs" />
     <Compile Include="Catalogos\CLS_Estado_Fenologico.cs" />
     <Compile Include="Catalogos\CLS_IngredienteActivo.cs" />
     <Compile Include="Catalogos\CLS_Lugar_Campo.cs" />

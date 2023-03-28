@@ -112,6 +112,13 @@ namespace ShellPest
                 {
                     gridControl1.DataSource = Clase.Datos;
                 }
+                if (gridView1.RowCount > 0)
+                {
+                    if (label_Id.Text.Trim().Length == 0)
+                    {
+                        label_Id.Text =Clase.Datos.Rows[0][2].ToString();
+                    }
+                }
             }
 
         }
@@ -170,7 +177,7 @@ namespace ShellPest
         private void btn_Agregar_Click(object sender, EventArgs e)
         {
             Guardar(false);
-
+            text_Micros.Focus();
 
         }
 
@@ -245,6 +252,7 @@ namespace ShellPest
                     if (Clase.Exito)
                     {
                         CargarGrid();
+
                         MessageBox.Show("Datos Guardados correctamente", "GUARDADO", MessageBoxButtons.OK);
                     }
 
@@ -375,6 +383,11 @@ namespace ShellPest
         private void btnSalir_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             this.Close();
+        }
+
+        private void text_M3_Properties_Enter(object sender, EventArgs e)
+        {
+            text_M3.SelectAll();
         }
     }
 }

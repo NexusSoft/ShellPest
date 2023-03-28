@@ -88,6 +88,7 @@
             this.ribbonPage2 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.xtraTabbedMdiManager1 = new DevExpress.XtraTabbedMdi.XtraTabbedMdiManager(this.components);
             this.SkinForm = new DevExpress.LookAndFeel.DefaultLookAndFeel(this.components);
+            this.btn_Cambios = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabbedMdiManager1)).BeginInit();
             this.SuspendLayout();
@@ -137,9 +138,10 @@
             this.btn_Riego,
             this.btn_Actuvidad_Campo,
             this.btn_Unidades,
-            this.btn_Valvulas});
+            this.btn_Valvulas,
+            this.btn_Cambios});
             this.ribbonControl1.Location = new System.Drawing.Point(0, 0);
-            this.ribbonControl1.MaxItemId = 41;
+            this.ribbonControl1.MaxItemId = 42;
             this.ribbonControl1.Name = "ribbonControl1";
             this.ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage1,
@@ -399,8 +401,7 @@
             // 
             this.btn_EstFenologico.Caption = "Est. Fenologico";
             this.btn_EstFenologico.Id = 30;
-            this.btn_EstFenologico.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_EstFenologico.ImageOptions.Image")));
-            this.btn_EstFenologico.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btn_EstFenologico.ImageOptions.LargeImage")));
+            this.btn_EstFenologico.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btn_EstFenologico.ImageOptions.SvgImage")));
             this.btn_EstFenologico.Name = "btn_EstFenologico";
             this.btn_EstFenologico.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_EstFenologico_ItemClick);
             // 
@@ -541,6 +542,7 @@
             this.ribbonPageGroup4.ItemLinks.Add(this.btn_LugarCampo);
             this.ribbonPageGroup4.ItemLinks.Add(this.btn_Actuvidad_Campo);
             this.ribbonPageGroup4.ItemLinks.Add(this.btn_Valvulas);
+            this.ribbonPageGroup4.ItemLinks.Add(this.btn_Cambios);
             this.ribbonPageGroup4.Name = "ribbonPageGroup4";
             this.ribbonPageGroup4.Text = "Inventario";
             // 
@@ -639,6 +641,15 @@
             this.SkinForm.EnableBonusSkins = true;
             this.SkinForm.LookAndFeel.SkinName = "Office 2013 Light Gray";
             // 
+            // btn_Cambios
+            // 
+            this.btn_Cambios.Caption = "Cambios";
+            this.btn_Cambios.Id = 41;
+            this.btn_Cambios.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem4.ImageOptions.Image")));
+            this.btn_Cambios.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem4.ImageOptions.LargeImage")));
+            this.btn_Cambios.Name = "btn_Cambios";
+            this.btn_Cambios.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_Cambios_ItemClick);
+            // 
             // Frm_Principal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -721,6 +732,7 @@
         private DevExpress.XtraBars.BarButtonItem btn_Actuvidad_Campo;
         private DevExpress.XtraBars.BarButtonItem btn_Unidades;
         private DevExpress.XtraBars.BarButtonItem btn_Valvulas;
+        private DevExpress.XtraBars.BarButtonItem btn_Cambios;
     }
 }
 

@@ -493,6 +493,14 @@ namespace ShellPest
             Frm_Valvulas_Riego.DefInstance.Id_Usuario = UsuariosLogin;
             Frm_Valvulas_Riego.DefInstance.Show();
         }
+
+        private void btn_Cambios_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            Frm_Cambios_Riego Ventana = new Frm_Cambios_Riego();
+            Frm_Cambios_Riego.DefInstance.MdiParent = this;
+            Frm_Cambios_Riego.DefInstance.Id_Usuario = UsuariosLogin;
+            Frm_Cambios_Riego.DefInstance.Show();
+        }
     }
 
 }
