@@ -118,5 +118,41 @@ namespace CapaDeDatos
             }
         }
 
+        public void MtdEliminarCambiosRiego()
+        {
+            TipoDato _dato = new TipoDato();
+            Conexion _conexion = new Conexion(cadenaConexion);
+
+            Exito = true;
+            try
+            {
+                _conexion.NombreProcedimiento = "SP_Cambios_Riego_Delete";
+                _dato.CadenaTexto = Id_Bloque;
+                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Id_Bloque");
+                _dato.CadenaTexto = Id_Valvula;
+                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Id_Valvula");
+                _dato.CadenaTexto = Id_Cambio;
+                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Id_Cambio");
+                _dato.BoleanoValor = SinDet;
+                _conexion.agregarParametro(EnumTipoDato.Boleano, _dato, "SinDet");
+                _conexion.EjecutarDataset();
+
+                if (_conexion.Exito)
+                {
+                    Datos = _conexion.Datos;
+                }
+                else
+                {
+                    Mensaje = _conexion.Mensaje;
+                    Exito = false;
+                }
+            }
+            catch (Exception e)
+            {
+                Mensaje = e.Message;
+                Exito = false;
+            }
+        }
+
     }
 }

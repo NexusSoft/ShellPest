@@ -36,6 +36,8 @@ namespace ShellPest
 
         public String Id_Usuario;
 
+        int RenglonSel = 0;
+
         private void Frm_Cambios_Riego_Load(object sender, EventArgs e)
         {
             WS_Catalogos_Empresas Clase = new WS_Catalogos_Empresas();
@@ -127,9 +129,14 @@ namespace ShellPest
                 {
                     if (label_Id.Text.Trim().Length == 0)
                     {
-                        label_Id.Text = Clase.Datos.Rows[0][2].ToString();
+                        label_Id.Text = Clase.Datos.Rows[0][0].ToString();
                     }
                 }
+                else
+                {
+                    label_Id.Text = "";
+                }
+                
             }
 
         }
@@ -142,6 +149,8 @@ namespace ShellPest
         private void textCambio_EditValueChanged(object sender, EventArgs e)
         {
             CargarGrid();
+
+
         }
 
         private void glue_Bloque_EditValueChanged(object sender, EventArgs e)
@@ -198,6 +207,98 @@ namespace ShellPest
         private void btnGuardar_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             Guardar(true);
+        }
+
+        private void btn_Quitar_Click(object sender, EventArgs e)
+        {
+            Eliminar(false);
+        }
+
+        private void Eliminar(Boolean SinDet)
+        {
+            CLS_Cambios_Riego Clase = new CLS_Cambios_Riego();
+            if (glue_Bloque.EditValue.ToString().Trim().Length > 0)
+            {
+                try
+                {
+                    Clase.Id_Bloque = glue_Bloque.EditValue.ToString();
+
+                    if (label_Id.Text.Trim().Length > 0)
+                    {
+                        Clase.Id_Cambio = label_Id.Text.Trim();
+                    }
+                    else
+                    {
+                        Clase.Id_Cambio = "";
+                    }
+
+                    
+                        
+                   
+                    if (!SinDet)
+                    {
+                       
+
+                        foreach (int i in this.gridView1.GetSelectedRows())
+                        {
+                            RenglonSel = i;
+                        }
+                        DataRow row = this.gridView1.GetDataRow(RenglonSel);
+
+                        Clase.Id_Valvula = row["Id_Valvula"].ToString();
+
+                        
+                    }
+                   
+
+
+
+                    Clase.SinDet = SinDet;
+                    Clase.MtdEliminarCambiosRiego();
+                    if (Clase.Exito)
+                    {
+                        if (!SinDet)
+                        {
+                            CargarGrid();
+                        }
+                        else
+                        {
+                            LimpiarCampos();
+                        }
+
+                    }
+
+                }
+                catch (FormatException FE)
+                {
+
+                }
+            }
+        }
+
+        private void LimpiarCampos()
+        {
+            label_Id.Text = "";
+            RenglonSel = 0;
+            textCambio.Text = "";
+        }
+
+        private void btnEliminar_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            if (MessageBox.Show("Quieres eliminar este Cambio?", "Advertencia", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+                Eliminar(true);
+            }
+        }
+
+        private void btnSalir_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            this.Close();
+        }
+
+        private void btnLimpiar_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            LimpiarCampos();
         }
     }
 }
