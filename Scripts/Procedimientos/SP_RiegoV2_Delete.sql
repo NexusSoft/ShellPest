@@ -19,7 +19,7 @@ GO
 create PROCEDURE [dbo].[SP_RiegoV2_Delete] 
 	-- Add the parameters for the stored procedure here
 	@Id_Bloque char(4),
-	@Fecha_Riego datetime,
+	@Fecha datetime,
 	@Hora time
 AS
 BEGIN
@@ -33,8 +33,8 @@ BEGIN
 	begin transaction T2;
 	begin try
 		
-		delete from dbo.t_Riego where Id_Bloque=@Id_Bloque and Fecha_Riego=@Fecha and Hora=@Hora
-		delete from dbo.t_Riego_Valvulas where Id_Bloque=@Id_Bloque and Fecha_Riego=@Fecha and Hora=@Hora
+		delete from dbo.t_Riego where Id_Bloque=@Id_Bloque and Fecha=@Fecha and Hora=@Hora
+		delete from dbo.t_Riego_Valvulas where Id_Bloque=@Id_Bloque and Fecha=@Fecha and Hora=@Hora
 
 		commit transaction T2;
 		set @correcto=1

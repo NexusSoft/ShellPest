@@ -111,6 +111,7 @@
     <Compile Include="WebService\WS_Catalogos_RecetaHuerta.cs" />
     <Compile Include="WebService\WS_Catalogos_TipoAplicaciones.cs" />
     <Compile Include="WebService\WS_Catalogos_Unidades.cs" />
+    <Compile Include="WebService\WS_Catalogos_ValvulasYCambio.cs" />
     <Compile Include="WebService\WS_Catalogos_Zona.cs" />
     <Compile Include="WebService\WS_Catalogos_PuntoControl.cs" />
     <Compile Include="WebService\WS_Catalogos_Productor.cs" />
