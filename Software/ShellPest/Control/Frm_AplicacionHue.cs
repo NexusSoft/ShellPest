@@ -20,11 +20,13 @@ namespace ShellPest
     public partial class Frm_AplicacionHue : DevExpress.XtraEditors.XtraForm
     {
         public string Id_Usuario { get; set; }
+        public string Id_Receta{ get; set; }
         public string Codigo_Hue { get; set; }
         public string Codigo_Emp { get; set; }
         public string Codigo_Apl { get; set; }
         public string Codigo_Pro { get; set; }
         public string Fecha { get; set; }
+        public bool CambioReceta { get; set; }
 
         GridCheckMarksSelection gridCheckMarksBloques;
         StringBuilder sb = new StringBuilder();
@@ -46,11 +48,13 @@ namespace ShellPest
                 m_FormDefInstance = value;
             }
         }
+        
         public Frm_AplicacionHue()
         {
             InitializeComponent();
         }
-        private void MakeTablaProductos()
+
+        private void MakeTablaAplicacion()
         {
             DataTable table = new DataTable("FirstTable");
             DataColumn column;
@@ -59,49 +63,65 @@ namespace ShellPest
             // DataRow row;
             column = new DataColumn();
             column.DataType = typeof(DateTime);
-            column.ColumnName = "RecepcionFecha";
+            column.ColumnName = "Fecha_Aplicada";
             column.AutoIncrement = false;
-            column.Caption = "RecepcionFecha";
+            column.Caption = "Fecha_Aplicada";
             column.ReadOnly = false;
             column.Unique = false;
 
             table.Columns.Add(column);
 
             column = new DataColumn();
-            column.DataType = typeof(string);
-            column.ColumnName = "Producto";
+            column.DataType = typeof(decimal);
+            column.ColumnName = "Calibracion";
             column.AutoIncrement = false;
-            column.Caption = "Producto";
+            column.Caption = "Calibracion";
             column.ReadOnly = false;
             column.Unique = false;
 
             table.Columns.Add(column);
 
             column = new DataColumn();
-            column.DataType = typeof(string);
-            column.ColumnName = "Dosis";
+            column.DataType = typeof(decimal);
+            column.ColumnName = "Presion";
             column.AutoIncrement = false;
-            column.Caption = "Dosis";
+            column.Caption = "Presion";
             column.ReadOnly = false;
             column.Unique = false;
 
             table.Columns.Add(column);
 
             column = new DataColumn();
-            column.DataType = typeof(string);
-            column.ColumnName = "Unidad";
+            column.DataType = typeof(int);
+            column.ColumnName = "NArboles";
             column.AutoIncrement = false;
-            column.Caption = "Unidad";
+            column.Caption = "NArboles";
             column.ReadOnly = false;
             column.Unique = false;
 
             table.Columns.Add(column);
 
-            
+            column = new DataColumn();
+            column.DataType = typeof(decimal);
+            column.ColumnName = "Unidades_aplicadas";
+            column.AutoIncrement = false;
+            column.Caption = "Unidades_aplicadas";
+            column.ReadOnly = false;
+            column.Unique = false;
 
             table.Columns.Add(column);
 
-            dtgProductos.DataSource = table;
+            column = new DataColumn();
+            column.DataType = typeof(decimal);
+            column.ColumnName = "Centro_Costos";
+            column.AutoIncrement = false;
+            column.Caption = "Centro_Costos";
+            column.ReadOnly = false;
+            column.Unique = false;
+
+            table.Columns.Add(column);
+
+            dtgAplicacionesD.DataSource = table;
         }
         private string DosCero(string sVal)
         {
@@ -111,6 +131,10 @@ namespace ShellPest
                 return (str = "0" + sVal);
             }
             return sVal;
+        }
+        private void Habilita_diarias(Boolean Valor)
+        {
+            groupControl2.Enabled = Valor;
         }
         private void ValidaDatos()
         {
@@ -140,11 +164,11 @@ namespace ShellPest
             }
             try
             {
-                Codigo_Pro = cmb_Productos.EditValue.ToString();
+                Id_Receta = cmb_Recetas.EditValue.ToString();
             }
             catch (Exception)
             {
-                Codigo_Pro = string.Empty;
+                Id_Receta = string.Empty;
             }
         }
         private void CargarEmpresa()
@@ -228,49 +252,34 @@ namespace ShellPest
                 cmb_Presentacion.Properties.DataSource = Clase1.Datos;
             }
         }
-        private void CargaProductos()
+        private void CargaRecetaDetalles()
         {
             CLS_Aplicaciones Clase1 = new CLS_Aplicaciones();
-            Clase1.Fecha = "20000101";
-            Clase1.Id_Usuario = Id_Usuario;
-            Clase1.c_codigo_eps = Codigo_Emp;
-            Clase1.MtdSeleccionarProductos();
+            Clase1.Id_Huerta = Codigo_Hue;
+            Clase1.Id_Receta = Id_Receta;
+            Clase1.MtdSeleccionarRecetasDetalle();
             if (Clase1.Exito)
             {
-                cmb_Productos.Properties.DisplayMember = "v_nombre_pro";
-                cmb_Productos.Properties.ValueMember = "c_codigo_pro";
-                cmb_Productos.EditValue = null;
-                cmb_Productos.Properties.DataSource = Clase1.Datos;
+                dtgProductos.DataSource = Clase1.Datos;
+                CambioReceta = true;
             }
         }
-        private void CargaUnidades()
-        {
-            CLS_Aplicaciones Clase1 = new CLS_Aplicaciones();
-            Clase1.c_codigo_pro = Codigo_Pro;
-            Clase1.c_codigo_eps = Codigo_Emp;
-            Clase1.MtdSeleccionarUnidades();
-            if (Clase1.Exito)
-            {
-                if(Clase1.Datos.Rows.Count > 0)
-                {
-                    txtUnidad.Text = Clase1.Datos.Rows[0]["v_nombre_uni"].ToString();
-                    txtUnidad.Tag = Clase1.Datos.Rows[0]["c_codigo_uni"].ToString();
-                }
-            }
-        }
+
         private void Frm_AplicacionHue_Shown(object sender, EventArgs e)
         {
-            dt_Fecha.DateTime = DateTime.Now;
+            MakeTablaAplicacion();
+            dt_FechaD.DateTime = DateTime.Now;
+            dt_FechaA.DateTime = DateTime.Now;
             CargarEmpresa();
             CargarHuerta();
             InicializaGrigCombos();
+            Habilita_diarias(false);
         }
         private void cmb_Empresas_EditValueChanged(object sender, EventArgs e)
         {
             ValidaDatos();
             CargarReceta();
             CargaTipoAplicacion();
-            CargaProductos();
         }
         private void cmb_Huerta_EditValueChanged(object sender, EventArgs e)
         {
@@ -343,65 +352,212 @@ namespace ShellPest
                 e.DisplayText = "-Seleccionar-";
             }
         }
-        private void CreatNewRowCorte(string Fecha, string Producto, string Medida, string Dosis)
+        private void CreatNewRowAplicacion(string Fecha_Aplicada, string Calibracion, string Presion, string NArboles,string Unidades_aplicadas, string Centro_Costos)
+        {
+            dtgValAplicacionesD.AddNewRow();
+            int rowHandle = dtgValAplicacionesD.GetRowHandle(dtgValAplicacionesD.DataRowCount);
+            if (dtgValAplicacionesD.IsNewItemRow(rowHandle))
+            {
+                dtgValAplicacionesD.SetRowCellValue(rowHandle, dtgValAplicacionesD.Columns["Fecha_Aplicada"], Fecha_Aplicada);
+                dtgValAplicacionesD.SetRowCellValue(rowHandle, dtgValAplicacionesD.Columns["Calibracion"], Calibracion);
+                dtgValAplicacionesD.SetRowCellValue(rowHandle, dtgValAplicacionesD.Columns["Presion"], Presion);
+                dtgValAplicacionesD.SetRowCellValue(rowHandle, dtgValAplicacionesD.Columns["NArboles"], NArboles);
+                dtgValAplicacionesD.SetRowCellValue(rowHandle, dtgValAplicacionesD.Columns["Unidades_aplicadas"], Unidades_aplicadas);
+                dtgValAplicacionesD.SetRowCellValue(rowHandle, dtgValAplicacionesD.Columns["Centro_Costos"], Centro_Costos);
+            }
+        }
+        private void CreatNewRowProducto(string Fecha, string Producto, string Dosis, string Unidad)
         {
             dtgValProductos.AddNewRow();
             int rowHandle = dtgValProductos.GetRowHandle(dtgValProductos.DataRowCount);
             if (dtgValProductos.IsNewItemRow(rowHandle))
             {
-                dtgValProductos.SetRowCellValue(rowHandle, dtgValProductos.Columns["Id_Cosecha"], Fecha);
-                dtgValProductos.SetRowCellValue(rowHandle, dtgValProductos.Columns["EstibadeSeleccion"], Producto);
-                dtgValProductos.SetRowCellValue(rowHandle, dtgValProductos.Columns["Huerta"], Medida);
-                dtgValProductos.SetRowCellValue(rowHandle, dtgValProductos.Columns["Semana"], Dosis);
+                dtgValProductos.SetRowCellValue(rowHandle, dtgValProductos.Columns["Fecha"], Fecha);
+                dtgValProductos.SetRowCellValue(rowHandle, dtgValProductos.Columns["Producto"], Producto);
+                dtgValProductos.SetRowCellValue(rowHandle, dtgValProductos.Columns["Dosis"], Dosis);
+                dtgValProductos.SetRowCellValue(rowHandle, dtgValProductos.Columns["Unidad"], Unidad);
             }
         }
 
         private void cmb_Productos_EditValueChanged(object sender, EventArgs e)
         {
             ValidaDatos();
-            CargaUnidades();
         }
-
-        Boolean ValidaProducto()
+        bool ValidarCamposD()
         {
-            Boolean valida = false;
-            if(!string.IsNullOrEmpty(dt_Fecha.EditValue.ToString()))
+            Boolean Valor = false;
+            if(!string.IsNullOrEmpty(txtCalibracion.Text))
             {
-                if(!string.IsNullOrEmpty(cmb_Productos.EditValue.ToString()))
+                if (!string.IsNullOrEmpty(txt_Presion.Text))
                 {
-                    if (!string.IsNullOrEmpty(dt_Fecha.EditValue.ToString()))
+                    if (!string.IsNullOrEmpty(txt_NArboles.Text))
                     {
-                        if(Convert.ToDouble(txtDosis.Text)>0)
+                        if (!string.IsNullOrEmpty(txt_UAplicadas.Text))
                         {
-                            valida = true;
+                            Valor = true;
                         }
                         else
                         {
-                            XtraMessageBox.Show("La dosis a aplicar debe ser mayor a 0");
+                            XtraMessageBox.Show("no se ha capturado Volumen aplicado");
                         }
                     }
                     else
                     {
-                        XtraMessageBox.Show("No se ha capturado una unidad");
+                        XtraMessageBox.Show("no se ha capturado Numero de Arboles");
                     }
                 }
                 else
                 {
-                    XtraMessageBox.Show("No se ha capturado un producto");
+                    XtraMessageBox.Show("no se ha capturado Presion");
+                }
+            }
+            else 
+            {
+                XtraMessageBox.Show("no se ha capturado calibracion");
+            }
+            return Valor;
+        }
+        bool ValidarCamposA()
+        {
+            Boolean Valor = false;
+            try
+            {
+                if (!string.IsNullOrEmpty(cmb_Empresas.EditValue.ToString()))
+                {
+                    if (!string.IsNullOrEmpty(cmb_Huerta.EditValue.ToString()))
+                    {
+                        if (!string.IsNullOrEmpty(cmb_Recetas.EditValue.ToString()))
+                        {
+                            if (!string.IsNullOrEmpty(cmb_TipoAplicacion.EditValue.ToString()))
+                            {
+                                if (!string.IsNullOrEmpty(cmb_Presentacion.EditValue.ToString()))
+                                {
+                                    Valor = true;
+                                }
+                                else
+                                {
+                                    XtraMessageBox.Show("no se ha capturado Presentacion");
+                                }
+                            }
+                            else
+                            {
+                                XtraMessageBox.Show("no se ha capturado Tipo de Aplicaicon");
+                            }
+                        }
+                        else
+                        {
+                            XtraMessageBox.Show("no se ha capturado Receta");
+                        }
+                    }
+                    else
+                    {
+                        XtraMessageBox.Show("no se ha capturado Huerta");
+                    }
+                }
+                else
+                {
+                    XtraMessageBox.Show("no se ha capturado Empresa");
+                }
+            }
+            catch (Exception)
+            {
+                Valor = false;
+                XtraMessageBox.Show("Faltan datos por capturar");
+            }
+            return Valor;
+        }
+        private void btn_AgregarD_Click(object sender, EventArgs e)
+        {
+            if(ValidarCamposD())
+            {
+                DateTime fecha = dt_FechaD.DateTime;
+                string Fecha_Aplicada = fecha.Year.ToString() +"-"+ DosCero(fecha.Month.ToString()) +"-"+ DosCero(fecha.Day.ToString());
+                string Calibracion= txtCalibracion.Text;
+                string Presion = txt_Presion.Text;
+                string NArboles= txt_NArboles.Text;
+                string Unidades_aplicadas= txt_UAplicadas.Text;
+                string Centro_Costos = cmb_Bloques.Text;
+                CreatNewRowAplicacion(Fecha_Aplicada, Calibracion, Presion, NArboles, Unidades_aplicadas, Centro_Costos);
+            }
+        }
+
+        private void cmb_Recetas_EditValueChanged(object sender, EventArgs e)
+        {
+            ValidaDatos();
+            CargaRecetaDetalles();
+        }
+
+        void GuardarReceta()
+        {
+            CLS_Aplicaciones Clase1 = new CLS_Aplicaciones();
+            Clase1.Id_Aplicacion= txt_CodigoAplicacion.Text;
+            Clase1.Id_Huerta = Codigo_Hue;
+            Clase1.Id_Receta = Id_Receta;
+            Clase1.Id_Usuario = Id_Usuario;
+            Clase1.MtdInsertarAplicacionesReceta();
+            if (!Clase1.Exito)
+            {
+                XtraMessageBox.Show(Clase1.Mensaje);
+            }
+        }
+        private void btnGuardar_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            if (txt_CodigoAplicacion.Text == string.Empty)
+            {
+                if (ValidarCamposA())
+                {
+                    CLS_Aplicaciones ins = new CLS_Aplicaciones();
+                    ins.c_codigo_eps = cmb_Empresas.EditValue.ToString();
+                    ins.Id_Huerta = cmb_Huerta.EditValue.ToString();
+                    ins.Id_Receta = cmb_Recetas.EditValue.ToString();
+                    ins.Id_TipoAplicacion = cmb_TipoAplicacion.EditValue.ToString();
+                    ins.Id_Presentacion = cmb_Presentacion.EditValue.ToString();
+                    ins.Observaciones = txt_Observaciones.Text;
+                    ins.No_aplicaciones = Convert.ToInt32(txt_NAplicaciones.Text);
+                    DateTime FechaA = dt_FechaA.DateTime;
+                    ins.Fecha = FechaA.Year.ToString() + DosCero(FechaA.Month.ToString()) + DosCero(FechaA.Day.ToString());
+                    ins.Anio = FechaA.Year.ToString();
+                    ins.Id_Usuario = Id_Usuario;
+                    ins.MtdInsertarAplicaciones();
+                    if (ins.Exito)
+                    {
+                        if (ins.Datos.Rows.Count > 0)
+                        {
+                            txt_CodigoAplicacion.Text = ins.Datos.Rows[0]["Folio"].ToString();
+                            Habilita_diarias(true);
+                            GuardarReceta();
+                            CambioReceta=false;
+                        }
+                    }
                 }
             }
             else
             {
-                XtraMessageBox.Show("No se ha capturado un fecha");
-            }
-            return valida;
-        }
-        private void btn_Agregar_Click(object sender, EventArgs e)
-        {
-            if(ValidaProducto())
-            {
-
-                //CreatNewRowCorte(Fecha, Producto, Medida, Dosis);
+                if (ValidarCamposA())
+                {
+                    CLS_Aplicaciones ins = new CLS_Aplicaciones();
+                    ins.Id_Aplicacion = txt_CodigoAplicacion.Text;
+                    ins.c_codigo_eps = cmb_Empresas.EditValue.ToString();
+                    ins.Id_Huerta = cmb_Huerta.EditValue.ToString();
+                    ins.Id_Receta = cmb_Recetas.EditValue.ToString();
+                    ins.Id_TipoAplicacion = cmb_TipoAplicacion.EditValue.ToString();
+                    ins.Id_Presentacion = cmb_Presentacion.EditValue.ToString();
+                    ins.Observaciones = txt_Observaciones.Text;
+                    ins.No_aplicaciones = Convert.ToInt32(txt_NAplicaciones.Text);
+                    DateTime FechaA = dt_FechaA.DateTime;
+                    ins.Fecha = FechaA.Year.ToString() + DosCero(FechaA.Month.ToString()) + DosCero(FechaA.Day.ToString());
+                    ins.Anio = FechaA.Year.ToString();
+                    ins.Id_Usuario = Id_Usuario;
+                    ins.MtdUpdateAplicaciones();
+                    if (ins.Exito)
+                    {
+                        if (CambioReceta)
+                        {
+                            GuardarReceta();
+                            CambioReceta = false;
+                        }
+                    }
+                }
             }
         }
     }
