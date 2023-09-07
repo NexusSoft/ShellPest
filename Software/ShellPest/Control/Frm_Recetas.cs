@@ -175,8 +175,8 @@ namespace ShellPest
         private void CargarCultivo()
         {
             glue_Cultivo.EditValue = null;
-            glue_Cultivo.Properties.DisplayMember = "Nombre_Cultivo";
-            glue_Cultivo.Properties.ValueMember = "Id_Cultivo";
+            //glue_Cultivo.Properties.DisplayMember = "Nombre_Cultivo";
+            //glue_Cultivo.Properties.ValueMember = "Id_Cultivo";
             CLS_Cultivo Clase = new CLS_Cultivo();
             Clase.Activo = "1";
             Clase.MtdSeleccionarCultivo();
@@ -188,9 +188,9 @@ namespace ShellPest
 
         private void CargarListHuertas()
         {
-            glue_Cultivo.EditValue = null;
-            glue_Cultivo.Properties.DisplayMember = "Nombre_Huerta";
-            glue_Cultivo.Properties.ValueMember = "Id_Huerta";
+            glue_Huerta.EditValue = null;
+            glue_Huerta.Properties.DisplayMember = "Nombre_Huerta";
+            glue_Huerta.Properties.ValueMember = "Id_Huerta";
             CLS_Receta Clase = new CLS_Receta();
             Clase.c_codigo_eps = glue_Empresa.EditValue.ToString();
             Clase.Id_Receta = txtId.Text.Trim();
@@ -263,11 +263,11 @@ namespace ShellPest
             Clase.Id_Huerta = glue_Huerta.EditValue.ToString();
             if(combo_Para.SelectedIndex == 0)
             {
-                Clase.Para = 'A';
+                Clase.Para = "A";
             }
             else
             {
-                Clase.Para = 'F';
+                Clase.Para = "F";
             }
             
             if (glue_Empresa.EditValue != null)
@@ -409,13 +409,35 @@ namespace ShellPest
 
         private void btnGuardar_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            if (text_Presentacion.Text.ToString().Trim().Length > 0)
+            Boolean valida = true;
+            if (text_Presentacion.Text.ToString().Trim().Length <= 0)
+            {
+                valida = false;
+                XtraMessageBox.Show("Es necesario Agregar un nombre de la presentación.");
+            }
+            if (glue_Tipo.EditValue == null)
+            { 
+                valida = false;
+                XtraMessageBox.Show("Es necesario especificar el tipo de aplicación.");
+            }
+            if (glue_Asesor.EditValue == null)
+            {
+                valida = false;
+                XtraMessageBox.Show("Es necesario seleccionar un asesor.");
+            }
+            if (glue_Cultivo.EditValue == null)
+            {
+                valida = false;
+                XtraMessageBox.Show("Es necesario seleccionar un cultivo.");
+            }
+            if (glue_Huerta.EditValue == null)
+            { 
+                valida = false;
+                XtraMessageBox.Show("Es necesario seleccionar una huerta.");
+            }
+            if (valida)
             {
                 InsertarReceta();
-            }
-            else
-            {
-                XtraMessageBox.Show("Es necesario Agregar un nombre de la presentación.");
             }
         }
 
@@ -433,8 +455,11 @@ namespace ShellPest
                 if (Frm.vId_MonitoreoPE.Trim().Length > 0)
                 {
                     txt_Monitoreo.Text = Frm.vId_MonitoreoPE.Trim();
-                    txt_Monitoreo.Visible = true;
-                    btn_Monitoreo.Visible = true;
+                    check_Monitoreo.Checked = true;
+                }
+                else
+                {
+                    check_Monitoreo.Checked = false;
                 }
                
                 glue_Cultivo.EditValue = Frm.vId_Cultivo;
@@ -633,6 +658,7 @@ namespace ShellPest
             IdSecuencia = 0;
             label_Modificacion.Visible = false;
             btn_LimpiaMezcla.Visible = false;
+            dtgHuertas.DataSource=null;
         }
 
         private void btn_Cancelar_Click(object sender, EventArgs e)

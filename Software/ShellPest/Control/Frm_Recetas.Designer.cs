@@ -91,6 +91,8 @@
             this.labelControl11 = new DevExpress.XtraEditors.LabelControl();
             this.btn_Monitoreo = new DevExpress.XtraEditors.SimpleButton();
             this.groupControl2 = new DevExpress.XtraEditors.GroupControl();
+            this.btn_LimpiaMezcla = new DevExpress.XtraEditors.SimpleButton();
+            this.label_Modificacion = new DevExpress.XtraEditors.LabelControl();
             this.text_Unitario = new DevExpress.XtraEditors.TextEdit();
             this.label_Unitario = new DevExpress.XtraEditors.LabelControl();
             this.btn_Ingrediente = new DevExpress.XtraEditors.SimpleButton();
@@ -135,8 +137,6 @@
             this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
             this.txtId = new DevExpress.XtraEditors.TextEdit();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
-            this.label_Modificacion = new DevExpress.XtraEditors.LabelControl();
-            this.btn_LimpiaMezcla = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).BeginInit();
@@ -292,7 +292,7 @@
             this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
             this.barDockControlLeft.Location = new System.Drawing.Point(0, 0);
             this.barDockControlLeft.Manager = this.barManager1;
-            this.barDockControlLeft.Size = new System.Drawing.Size(69, 518);
+            this.barDockControlLeft.Size = new System.Drawing.Size(71, 518);
             // 
             // barDockControlRight
             // 
@@ -316,10 +316,10 @@
             // 
             this.panelControl2.Controls.Add(this.dtgBloque);
             this.panelControl2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelControl2.Location = new System.Drawing.Point(69, 268);
+            this.panelControl2.Location = new System.Drawing.Point(71, 268);
             this.panelControl2.Name = "panelControl2";
             this.panelControl2.Padding = new System.Windows.Forms.Padding(5);
-            this.panelControl2.Size = new System.Drawing.Size(1121, 250);
+            this.panelControl2.Size = new System.Drawing.Size(1119, 250);
             this.panelControl2.TabIndex = 15;
             // 
             // dtgBloque
@@ -329,7 +329,7 @@
             this.dtgBloque.MainView = this.dtgValBloque;
             this.dtgBloque.MenuManager = this.barManager1;
             this.dtgBloque.Name = "dtgBloque";
-            this.dtgBloque.Size = new System.Drawing.Size(1107, 236);
+            this.dtgBloque.Size = new System.Drawing.Size(1105, 236);
             this.dtgBloque.TabIndex = 0;
             this.dtgBloque.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.dtgValBloque});
@@ -443,10 +443,10 @@
             // 
             this.panelControl1.Controls.Add(this.groupControl1);
             this.panelControl1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelControl1.Location = new System.Drawing.Point(69, 0);
+            this.panelControl1.Location = new System.Drawing.Point(71, 0);
             this.panelControl1.Name = "panelControl1";
             this.panelControl1.Padding = new System.Windows.Forms.Padding(5);
-            this.panelControl1.Size = new System.Drawing.Size(1121, 268);
+            this.panelControl1.Size = new System.Drawing.Size(1119, 268);
             this.panelControl1.TabIndex = 14;
             // 
             // groupControl1
@@ -491,7 +491,7 @@
             this.groupControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupControl1.Location = new System.Drawing.Point(7, 7);
             this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(1107, 254);
+            this.groupControl1.Size = new System.Drawing.Size(1105, 254);
             this.groupControl1.TabIndex = 0;
             this.groupControl1.Text = "Receta";
             // 
@@ -828,6 +828,27 @@
             this.groupControl2.TabIndex = 69;
             this.groupControl2.Text = "Mezcla";
             // 
+            // btn_LimpiaMezcla
+            // 
+            this.btn_LimpiaMezcla.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_LimpiaMezcla.ImageOptions.Image")));
+            this.btn_LimpiaMezcla.Location = new System.Drawing.Point(623, 58);
+            this.btn_LimpiaMezcla.Name = "btn_LimpiaMezcla";
+            this.btn_LimpiaMezcla.Size = new System.Drawing.Size(39, 39);
+            this.btn_LimpiaMezcla.TabIndex = 74;
+            this.btn_LimpiaMezcla.Click += new System.EventHandler(this.btn_LimpiaMezcla_Click);
+            // 
+            // label_Modificacion
+            // 
+            this.label_Modificacion.Appearance.FontStyleDelta = System.Drawing.FontStyle.Bold;
+            this.label_Modificacion.Appearance.ForeColor = System.Drawing.Color.YellowGreen;
+            this.label_Modificacion.Appearance.Options.UseFont = true;
+            this.label_Modificacion.Appearance.Options.UseForeColor = true;
+            this.label_Modificacion.Location = new System.Drawing.Point(710, 56);
+            this.label_Modificacion.Name = "label_Modificacion";
+            this.label_Modificacion.Size = new System.Drawing.Size(84, 13);
+            this.label_Modificacion.TabIndex = 73;
+            this.label_Modificacion.Text = "MODIFICACIÓN";
+            // 
             // text_Unitario
             // 
             this.text_Unitario.Location = new System.Drawing.Point(107, 81);
@@ -1022,7 +1043,7 @@
             this.check_Monitoreo.MenuManager = this.barManager1;
             this.check_Monitoreo.Name = "check_Monitoreo";
             this.check_Monitoreo.Properties.Caption = "Monitoreo";
-            this.check_Monitoreo.Size = new System.Drawing.Size(69, 19);
+            this.check_Monitoreo.Size = new System.Drawing.Size(69, 20);
             this.check_Monitoreo.TabIndex = 44;
             this.check_Monitoreo.CheckedChanged += new System.EventHandler(this.check_Monitoreo_CheckedChanged);
             // 
@@ -1075,8 +1096,10 @@
             this.glue_Cultivo.Name = "glue_Cultivo";
             this.glue_Cultivo.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.glue_Cultivo.Properties.DisplayMember = "Nombre_Cultivo";
             this.glue_Cultivo.Properties.NullText = "-Seleccionar-";
             this.glue_Cultivo.Properties.PopupView = this.gridView1;
+            this.glue_Cultivo.Properties.ValueMember = "Id_Cultivo";
             this.glue_Cultivo.Size = new System.Drawing.Size(195, 20);
             this.glue_Cultivo.TabIndex = 39;
             // 
@@ -1225,27 +1248,6 @@
             this.labelControl1.Size = new System.Drawing.Size(54, 13);
             this.labelControl1.TabIndex = 0;
             this.labelControl1.Text = "Id Receta: ";
-            // 
-            // label_Modificacion
-            // 
-            this.label_Modificacion.Appearance.FontStyleDelta = System.Drawing.FontStyle.Bold;
-            this.label_Modificacion.Appearance.ForeColor = System.Drawing.Color.YellowGreen;
-            this.label_Modificacion.Appearance.Options.UseFont = true;
-            this.label_Modificacion.Appearance.Options.UseForeColor = true;
-            this.label_Modificacion.Location = new System.Drawing.Point(710, 56);
-            this.label_Modificacion.Name = "label_Modificacion";
-            this.label_Modificacion.Size = new System.Drawing.Size(84, 13);
-            this.label_Modificacion.TabIndex = 73;
-            this.label_Modificacion.Text = "MODIFICACIÓN";
-            // 
-            // btn_LimpiaMezcla
-            // 
-            this.btn_LimpiaMezcla.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.ImageOptions.Image")));
-            this.btn_LimpiaMezcla.Location = new System.Drawing.Point(623, 58);
-            this.btn_LimpiaMezcla.Name = "btn_LimpiaMezcla";
-            this.btn_LimpiaMezcla.Size = new System.Drawing.Size(39, 39);
-            this.btn_LimpiaMezcla.TabIndex = 74;
-            this.btn_LimpiaMezcla.Click += new System.EventHandler(this.btn_LimpiaMezcla_Click);
             // 
             // Frm_Recetas
             // 
