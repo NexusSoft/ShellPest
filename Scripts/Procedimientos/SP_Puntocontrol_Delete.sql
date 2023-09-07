@@ -15,7 +15,8 @@ GO
 -- =============================================
 create PROCEDURE [dbo].[SP_Puntocontrol_Delete] 
 	-- Add the parameters for the stored procedure here
-	@Id_Puntocontrol char(4)
+	@Id_Puntocontrol char(4),
+	@Activo bit
 AS
 BEGIN
 	-- SET NOCOUNT ON added to prevent extra result sets from
@@ -28,7 +29,7 @@ BEGIN
 	begin transaction T2;
 	begin try
 		
-		delete from dbo.t_Puntocontrol where Id_Puntocontrol=@Id_Puntocontrol
+		update dbo.t_Puntocontrol set Activo=@Activo where Id_Puntocontrol=@Id_Puntocontrol
 
 		commit transaction T2;
 		set @correcto=1

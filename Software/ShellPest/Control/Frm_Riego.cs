@@ -21,6 +21,8 @@ namespace ShellPest
             InitializeComponent();
         }
 
+        int[,] arreglo;
+
         private static Frm_Riego m_FormDefInstance;
         public static Frm_Riego DefInstance
         {
@@ -143,7 +145,28 @@ namespace ShellPest
             C.MtdInsertarRiegoV2();
             if (C.Exito)
             {
+                for (int n = 0; n < checkedListBox1.Items.Count; n++)
+                {
+                    if (checkedListBox1.GetItemChecked(n))
+                    {
+                        C.Id_Valvula = arreglo[n, 0];
+                        C.MtdInsertRiegoV2Valvulas();
+                        if (C.Exito)
+                        {
+
+                        }
+                        else
+                        {
+                            XtraMessageBox.Show(C.Mensaje);
+                        }
+                    }
+
+                }
+
                 CargarRiego();
+
+                
+
                 XtraMessageBox.Show("Se ha Insertado el registro con exito");
                 LimpiarCampos();
             }
@@ -299,6 +322,34 @@ namespace ShellPest
 
                 
 
+            }
+        }
+
+        private void glue_Cambios_EditValueChanged(object sender, EventArgs e)
+        {
+            CargarValvulasCambio();
+            //checkedListBox1.SetItemChecked(0, true);
+        }
+
+        private void CargarValvulasCambio()
+        {
+            checkedListBox1.Items.Clear();
+            CLS_Riego C = new CLS_Riego();
+            C.Id_Cambio = Int32.Parse(glue_Cambios.EditValue.ToString());
+            C.Id_Bloque = glue_Bloques.EditValue.ToString();
+
+            C.MtdSelectRiegoV2Valvulas();
+            if (C.Exito)
+            {
+                arreglo= new int[C.Datos.Rows.Count+1, 2];
+                for (int n=0; n< C.Datos.Rows.Count; n++)
+                {
+                    checkedListBox1.Items.Add ( C.Datos.Rows[n][1].ToString());
+                    arreglo[n, 0] = Int32.Parse(C.Datos.Rows[n][0].ToString());
+                    arreglo[n, 1] = Int32.Parse(C.Datos.Rows[n][1].ToString());
+                    checkedListBox1.SetItemChecked(n, true);
+                }
+                
             }
         }
     }

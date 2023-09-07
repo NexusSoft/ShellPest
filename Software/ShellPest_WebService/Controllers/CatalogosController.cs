@@ -608,6 +608,60 @@ namespace ShellPest_WebService
             }
         }
 
+        [System.Web.Mvc.HttpGet]
+        public ActionResult ValvulasRiego()
+        {
+            string cadena = string.Empty;
+            WS_Catalogos_ValvulasYCambio sel = new WS_Catalogos_ValvulasYCambio();
+          
+            sel.MtdSeleccionarValvulas();
+            if (sel.Exito)
+            {
+                GetJson(sel.Datos);
+                return Json(rows, JsonRequestBehavior.AllowGet);
+            }
+            else
+            {
+                return Json(cadena, JsonRequestBehavior.AllowGet);
+            }
+        }
+
+        [System.Web.Mvc.HttpGet]
+        public ActionResult ValvulasDetRiego()
+        {
+            string cadena = string.Empty;
+            WS_Catalogos_ValvulasYCambio sel = new WS_Catalogos_ValvulasYCambio();
+
+            sel.MtdSeleccionarValvulasDet();
+            if (sel.Exito)
+            {
+                GetJson(sel.Datos);
+                return Json(rows, JsonRequestBehavior.AllowGet);
+            }
+            else
+            {
+                return Json(cadena, JsonRequestBehavior.AllowGet);
+            }
+        }
+
+        [System.Web.Mvc.HttpGet]
+        public ActionResult CambiosRiego()
+        {
+            string cadena = string.Empty;
+            WS_Catalogos_ValvulasYCambio sel = new WS_Catalogos_ValvulasYCambio();
+
+            sel.MtdSeleccionarCambios();
+            if (sel.Exito)
+            {
+                GetJson(sel.Datos);
+                return Json(rows, JsonRequestBehavior.AllowGet);
+            }
+            else
+            {
+                return Json(cadena, JsonRequestBehavior.AllowGet);
+            }
+        }
+
         public void GetJson(DataTable dt)
         {
             Dictionary<string, object> row;

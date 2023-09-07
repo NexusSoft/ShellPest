@@ -70,6 +70,7 @@
             this.btn_Actuvidad_Campo = new DevExpress.XtraBars.BarButtonItem();
             this.btn_Unidades = new DevExpress.XtraBars.BarButtonItem();
             this.btn_Valvulas = new DevExpress.XtraBars.BarButtonItem();
+            this.btn_Cambios = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup5 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -88,7 +89,7 @@
             this.ribbonPage2 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.xtraTabbedMdiManager1 = new DevExpress.XtraTabbedMdi.XtraTabbedMdiManager(this.components);
             this.SkinForm = new DevExpress.LookAndFeel.DefaultLookAndFeel(this.components);
-            this.btn_Cambios = new DevExpress.XtraBars.BarButtonItem();
+            this.btn_ImpTxt = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabbedMdiManager1)).BeginInit();
             this.SuspendLayout();
@@ -139,9 +140,10 @@
             this.btn_Actuvidad_Campo,
             this.btn_Unidades,
             this.btn_Valvulas,
-            this.btn_Cambios});
+            this.btn_Cambios,
+            this.btn_ImpTxt});
             this.ribbonControl1.Location = new System.Drawing.Point(0, 0);
-            this.ribbonControl1.MaxItemId = 42;
+            this.ribbonControl1.MaxItemId = 43;
             this.ribbonControl1.Name = "ribbonControl1";
             this.ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage1,
@@ -489,6 +491,15 @@
             this.btn_Valvulas.Name = "btn_Valvulas";
             this.btn_Valvulas.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_Valvulas_ItemClick);
             // 
+            // btn_Cambios
+            // 
+            this.btn_Cambios.Caption = "Cambios";
+            this.btn_Cambios.Id = 41;
+            this.btn_Cambios.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_Cambios.ImageOptions.Image")));
+            this.btn_Cambios.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btn_Cambios.ImageOptions.LargeImage")));
+            this.btn_Cambios.Name = "btn_Cambios";
+            this.btn_Cambios.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_Cambios_ItemClick);
+            // 
             // ribbonPage1
             // 
             this.ribbonPage1.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
@@ -580,6 +591,7 @@
             // ribbonPageGroup7
             // 
             this.ribbonPageGroup7.ItemLinks.Add(this.btn_ImpInv);
+            this.ribbonPageGroup7.ItemLinks.Add(this.btn_ImpTxt);
             this.ribbonPageGroup7.Name = "ribbonPageGroup7";
             this.ribbonPageGroup7.Text = "Inventum";
             // 
@@ -641,14 +653,13 @@
             this.SkinForm.EnableBonusSkins = true;
             this.SkinForm.LookAndFeel.SkinName = "Office 2013 Light Gray";
             // 
-            // btn_Cambios
+            // btn_ImpTxt
             // 
-            this.btn_Cambios.Caption = "Cambios";
-            this.btn_Cambios.Id = 41;
-            this.btn_Cambios.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem4.ImageOptions.Image")));
-            this.btn_Cambios.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem4.ImageOptions.LargeImage")));
-            this.btn_Cambios.Name = "btn_Cambios";
-            this.btn_Cambios.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_Cambios_ItemClick);
+            this.btn_ImpTxt.Caption = "Importar\r\ntxt";
+            this.btn_ImpTxt.Id = 42;
+            this.btn_ImpTxt.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("barButtonItem4.ImageOptions.SvgImage")));
+            this.btn_ImpTxt.Name = "btn_ImpTxt";
+            this.btn_ImpTxt.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_ImpTxt_ItemClick);
             // 
             // Frm_Principal
             // 
@@ -733,6 +744,7 @@
         private DevExpress.XtraBars.BarButtonItem btn_Unidades;
         private DevExpress.XtraBars.BarButtonItem btn_Valvulas;
         private DevExpress.XtraBars.BarButtonItem btn_Cambios;
+        private DevExpress.XtraBars.BarButtonItem btn_ImpTxt;
     }
 }
 

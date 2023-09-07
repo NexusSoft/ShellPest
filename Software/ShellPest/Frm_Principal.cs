@@ -501,6 +501,13 @@ namespace ShellPest
             Frm_Cambios_Riego.DefInstance.Id_Usuario = UsuariosLogin;
             Frm_Cambios_Riego.DefInstance.Show();
         }
+
+        private void btn_ImpTxt_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            Frm_ImportarTxt Ventana = new Frm_ImportarTxt();
+            //Ventana.Id_Usuario = UsuariosLogin;
+            Ventana.ShowDialog();
+        }
     }
 
 }

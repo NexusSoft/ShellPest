@@ -111,6 +111,15 @@
             this.Precipitacion_Sistema = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Temperatura = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Horas_Riego = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.checkedListBox1 = new System.Windows.Forms.CheckedListBox();
+            this.labelControl9 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl13 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl14 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl15 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl16 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl17 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl18 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl19 = new DevExpress.XtraEditors.LabelControl();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
@@ -248,11 +257,20 @@
             this.panelControl1.Location = new System.Drawing.Point(50, 0);
             this.panelControl1.Name = "panelControl1";
             this.panelControl1.Padding = new System.Windows.Forms.Padding(6);
-            this.panelControl1.Size = new System.Drawing.Size(957, 152);
+            this.panelControl1.Size = new System.Drawing.Size(957, 157);
             this.panelControl1.TabIndex = 18;
             // 
             // groupControl1
             // 
+            this.groupControl1.Controls.Add(this.labelControl19);
+            this.groupControl1.Controls.Add(this.labelControl18);
+            this.groupControl1.Controls.Add(this.labelControl17);
+            this.groupControl1.Controls.Add(this.labelControl16);
+            this.groupControl1.Controls.Add(this.labelControl15);
+            this.groupControl1.Controls.Add(this.labelControl14);
+            this.groupControl1.Controls.Add(this.labelControl13);
+            this.groupControl1.Controls.Add(this.labelControl9);
+            this.groupControl1.Controls.Add(this.checkedListBox1);
             this.groupControl1.Controls.Add(this.glue_Cambios);
             this.groupControl1.Controls.Add(this.time_Fin);
             this.groupControl1.Controls.Add(this.time_Ini);
@@ -285,7 +303,7 @@
             this.groupControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupControl1.Location = new System.Drawing.Point(8, 8);
             this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(941, 136);
+            this.groupControl1.Size = new System.Drawing.Size(941, 141);
             this.groupControl1.TabIndex = 0;
             this.groupControl1.Text = "Riego";
             // 
@@ -302,6 +320,7 @@
             this.glue_Cambios.Properties.ValueMember = "Id_Cambio";
             this.glue_Cambios.Size = new System.Drawing.Size(80, 20);
             this.glue_Cambios.TabIndex = 92;
+            this.glue_Cambios.EditValueChanged += new System.EventHandler(this.glue_Cambios_EditValueChanged);
             // 
             // gridView1
             // 
@@ -395,7 +414,7 @@
             // btn_Quitar
             // 
             this.btn_Quitar.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_Quitar.ImageOptions.Image")));
-            this.btn_Quitar.Location = new System.Drawing.Point(595, 94);
+            this.btn_Quitar.Location = new System.Drawing.Point(704, 101);
             this.btn_Quitar.Name = "btn_Quitar";
             this.btn_Quitar.Size = new System.Drawing.Size(38, 34);
             this.btn_Quitar.TabIndex = 83;
@@ -404,7 +423,7 @@
             // btn_Agregar
             // 
             this.btn_Agregar.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_Agregar.ImageOptions.Image")));
-            this.btn_Agregar.Location = new System.Drawing.Point(551, 94);
+            this.btn_Agregar.Location = new System.Drawing.Point(660, 101);
             this.btn_Agregar.Name = "btn_Agregar";
             this.btn_Agregar.Size = new System.Drawing.Size(38, 34);
             this.btn_Agregar.TabIndex = 82;
@@ -682,10 +701,10 @@
             this.panelControl2.Controls.Add(this.sidePanel2);
             this.panelControl2.Controls.Add(this.sidePanel1);
             this.panelControl2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelControl2.Location = new System.Drawing.Point(50, 152);
+            this.panelControl2.Location = new System.Drawing.Point(50, 157);
             this.panelControl2.Name = "panelControl2";
             this.panelControl2.Padding = new System.Windows.Forms.Padding(5);
-            this.panelControl2.Size = new System.Drawing.Size(957, 288);
+            this.panelControl2.Size = new System.Drawing.Size(957, 283);
             this.panelControl2.TabIndex = 24;
             // 
             // sidePanel2
@@ -694,7 +713,7 @@
             this.sidePanel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.sidePanel2.Location = new System.Drawing.Point(777, 7);
             this.sidePanel2.Name = "sidePanel2";
-            this.sidePanel2.Size = new System.Drawing.Size(173, 274);
+            this.sidePanel2.Size = new System.Drawing.Size(173, 269);
             this.sidePanel2.TabIndex = 3;
             this.sidePanel2.Text = "sidePanel2";
             // 
@@ -704,7 +723,7 @@
             this.gridControl2.Location = new System.Drawing.Point(0, 0);
             this.gridControl2.MainView = this.gridView4;
             this.gridControl2.Name = "gridControl2";
-            this.gridControl2.Size = new System.Drawing.Size(173, 274);
+            this.gridControl2.Size = new System.Drawing.Size(173, 269);
             this.gridControl2.TabIndex = 0;
             this.gridControl2.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView4});
@@ -811,7 +830,7 @@
             this.sidePanel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.sidePanel1.Location = new System.Drawing.Point(7, 7);
             this.sidePanel1.Name = "sidePanel1";
-            this.sidePanel1.Size = new System.Drawing.Size(770, 274);
+            this.sidePanel1.Size = new System.Drawing.Size(770, 269);
             this.sidePanel1.TabIndex = 2;
             this.sidePanel1.Text = "sidePanel1";
             // 
@@ -821,7 +840,7 @@
             this.gridControl1.Location = new System.Drawing.Point(0, 0);
             this.gridControl1.MainView = this.gridView2;
             this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(769, 274);
+            this.gridControl1.Size = new System.Drawing.Size(769, 269);
             this.gridControl1.TabIndex = 1;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView2});
@@ -939,6 +958,86 @@
             this.Horas_Riego.Name = "Horas_Riego";
             this.Horas_Riego.Visible = true;
             this.Horas_Riego.VisibleIndex = 4;
+            // 
+            // checkedListBox1
+            // 
+            this.checkedListBox1.FormattingEnabled = true;
+            this.checkedListBox1.Location = new System.Drawing.Point(498, 54);
+            this.checkedListBox1.Name = "checkedListBox1";
+            this.checkedListBox1.Size = new System.Drawing.Size(120, 84);
+            this.checkedListBox1.TabIndex = 94;
+            // 
+            // labelControl9
+            // 
+            this.labelControl9.Location = new System.Drawing.Point(624, 49);
+            this.labelControl9.Name = "labelControl9";
+            this.labelControl9.Size = new System.Drawing.Size(6, 13);
+            this.labelControl9.TabIndex = 95;
+            this.labelControl9.Text = "V";
+            this.labelControl9.UseMnemonic = false;
+            // 
+            // labelControl13
+            // 
+            this.labelControl13.Location = new System.Drawing.Point(624, 60);
+            this.labelControl13.Name = "labelControl13";
+            this.labelControl13.Size = new System.Drawing.Size(6, 13);
+            this.labelControl13.TabIndex = 96;
+            this.labelControl13.Text = "a";
+            this.labelControl13.UseMnemonic = false;
+            // 
+            // labelControl14
+            // 
+            this.labelControl14.Location = new System.Drawing.Point(626, 72);
+            this.labelControl14.Name = "labelControl14";
+            this.labelControl14.Size = new System.Drawing.Size(2, 13);
+            this.labelControl14.TabIndex = 97;
+            this.labelControl14.Text = "l";
+            this.labelControl14.UseMnemonic = false;
+            // 
+            // labelControl15
+            // 
+            this.labelControl15.Location = new System.Drawing.Point(624, 83);
+            this.labelControl15.Name = "labelControl15";
+            this.labelControl15.Size = new System.Drawing.Size(6, 13);
+            this.labelControl15.TabIndex = 98;
+            this.labelControl15.Text = "v";
+            this.labelControl15.UseMnemonic = false;
+            // 
+            // labelControl16
+            // 
+            this.labelControl16.Location = new System.Drawing.Point(624, 94);
+            this.labelControl16.Name = "labelControl16";
+            this.labelControl16.Size = new System.Drawing.Size(6, 13);
+            this.labelControl16.TabIndex = 99;
+            this.labelControl16.Text = "u";
+            this.labelControl16.UseMnemonic = false;
+            // 
+            // labelControl17
+            // 
+            this.labelControl17.Location = new System.Drawing.Point(626, 106);
+            this.labelControl17.Name = "labelControl17";
+            this.labelControl17.Size = new System.Drawing.Size(2, 13);
+            this.labelControl17.TabIndex = 100;
+            this.labelControl17.Text = "l";
+            this.labelControl17.UseMnemonic = false;
+            // 
+            // labelControl18
+            // 
+            this.labelControl18.Location = new System.Drawing.Point(624, 117);
+            this.labelControl18.Name = "labelControl18";
+            this.labelControl18.Size = new System.Drawing.Size(6, 13);
+            this.labelControl18.TabIndex = 101;
+            this.labelControl18.Text = "a";
+            this.labelControl18.UseMnemonic = false;
+            // 
+            // labelControl19
+            // 
+            this.labelControl19.Location = new System.Drawing.Point(624, 128);
+            this.labelControl19.Name = "labelControl19";
+            this.labelControl19.Size = new System.Drawing.Size(5, 13);
+            this.labelControl19.TabIndex = 102;
+            this.labelControl19.Text = "s";
+            this.labelControl19.UseMnemonic = false;
             // 
             // Frm_Riego
             // 
@@ -1075,5 +1174,14 @@
         private DevExpress.XtraGrid.Columns.GridColumn N_MicrosG;
         private DevExpress.XtraGrid.Columns.GridColumn N_CaudalesG;
         private DevExpress.XtraGrid.Columns.GridColumn M3G;
+        private System.Windows.Forms.CheckedListBox checkedListBox1;
+        private DevExpress.XtraEditors.LabelControl labelControl19;
+        private DevExpress.XtraEditors.LabelControl labelControl18;
+        private DevExpress.XtraEditors.LabelControl labelControl17;
+        private DevExpress.XtraEditors.LabelControl labelControl16;
+        private DevExpress.XtraEditors.LabelControl labelControl15;
+        private DevExpress.XtraEditors.LabelControl labelControl14;
+        private DevExpress.XtraEditors.LabelControl labelControl13;
+        private DevExpress.XtraEditors.LabelControl labelControl9;
     }
 }

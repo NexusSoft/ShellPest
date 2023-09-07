@@ -41,6 +41,20 @@ namespace ShellPest
             dtgPuntoControl.DataSource = null;
             CLS_PuntoControl Clase = new CLS_PuntoControl();
 
+            if (check_Activo.Checked
+                )
+            {
+                Clase.Activo = 0;
+                btnEliminar.Caption = "Habilitar";
+                btnGuardar.Enabled = false;
+            }
+            else
+            {
+                Clase.Activo = 1;
+                btnEliminar.Caption = "Inhabilitar";
+                btnGuardar.Enabled = true;
+            }
+
             if (glue_Empresa.EditValue != null)
             {
                 Clase.c_codigo_eps = glue_Empresa.EditValue.ToString();
@@ -89,6 +103,16 @@ namespace ShellPest
         {
             CLS_PuntoControl PuntoControl = new CLS_PuntoControl();
             PuntoControl.Id_PuntoControl = textId.Text.Trim();
+
+            if (check_Activo.Checked)
+            {
+                PuntoControl.Activo = 1;
+            }
+            else
+            {
+                PuntoControl.Activo = 0;
+            }
+
             PuntoControl.MtdEliminarPuntoControl();
             if (PuntoControl.Exito)
             {
@@ -194,7 +218,18 @@ namespace ShellPest
         {
             if (textId.Text.Trim().Length > 0 && textNombre.Text.ToString().Trim().Length > 0)
             {
-                EliminarPuntoControl();
+                
+                    if (System.Windows.Forms.MessageBox.Show("¿Desea inhabilitar el Punto de control seleccionado?", "Esta seguro", System.Windows.Forms.MessageBoxButtons.YesNo) == System.Windows.Forms.DialogResult.Yes)
+                    {
+                    EliminarPuntoControl();
+                }
+                    else
+                    {
+                        System.Windows.Forms.MessageBox.Show("Se cancelo el proceso");
+                    }
+                
+
+                
             }
             else
             {
@@ -308,6 +343,11 @@ namespace ShellPest
             CargarPuntoControl();
             CargarHuertas(null);
 
+        }
+
+        private void check_Activo_CheckedChanged(object sender, EventArgs e)
+        {
+            CargarPuntoControl();
         }
     }
 }

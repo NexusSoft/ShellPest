@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CapaDeDatos
 {
-    internal class WS_Catalogos_ValvulasYCambio : ConexionBase
+    public class WS_Catalogos_ValvulasYCambio : ConexionBase
     {
 
         public void MtdSeleccionarCambios()
@@ -17,7 +17,7 @@ namespace CapaDeDatos
             Exito = true;
             try
             {
-                _conexion.NombreProcedimiento = "SP_WS_Catalogos_Cambios_Select";
+                _conexion.NombreProcedimiento = "SP_WS_Catalogos_CambiosRiegoDet_Select";
                
                 _conexion.EjecutarDataset();
 
@@ -48,6 +48,36 @@ namespace CapaDeDatos
             try
             {
                 _conexion.NombreProcedimiento = "SP_WS_Catalogos_Valvulas_Select";
+
+                _conexion.EjecutarDataset();
+
+                if (_conexion.Exito)
+                {
+                    Datos = _conexion.Datos;
+                }
+                else
+                {
+                    Mensaje = _conexion.Mensaje;
+                    Exito = false;
+                }
+            }
+            catch (Exception e)
+            {
+                Mensaje = e.Message;
+                Exito = false;
+            }
+
+        }
+
+        public void MtdSeleccionarValvulasDet()
+        {
+            TipoDato _dato = new TipoDato();
+            Conexion _conexion = new Conexion(cadenaConexion);
+
+            Exito = true;
+            try
+            {
+                _conexion.NombreProcedimiento = "SP_WS_Catalogos_ValvulasDet_Select";
 
                 _conexion.EjecutarDataset();
 

@@ -199,6 +199,32 @@ namespace CapaDeDatos
             }
         }
 
+        public void EjecutarComandoDirecto()
+        {
+            Exito = true;
+            try
+            {
+                ConectarC();
+                if (Exito == true)
+                {
+                    comando.Connection = conn;
+                    comando.CommandText = NombreProcedimiento;
+                    comando.CommandTimeout = 500000;
+                    comando.CommandType = CommandType.Text;
+                    comando.ExecuteNonQuery();
+                }
+            }
+            catch (Exception e)
+            {
+                Mensaje = e.Message;
+                Exito = false;
+            }
+            finally
+            {
+                conn.Close();
+            }
+        }
+
         public void EjecutarDataset(bool Tabla)
         {
 	        DataTable dtMyTable = new DataTable("TABLANORMEX");

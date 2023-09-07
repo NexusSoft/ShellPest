@@ -22,6 +22,7 @@ namespace CapaDeDatos
         public string F_UsuCrea { get; set; }
         public string Hora_Fin { get; set; }
         public int Id_Cambio { get; set; }
+        public int Id_Valvula { get; set; }
 
         public void MtdInsertarRiego()
         {
@@ -316,6 +317,79 @@ namespace CapaDeDatos
                 Exito = false;
             }
         }
+
+        public void MtdSelectRiegoV2Valvulas()
+        {
+            TipoDato _dato = new TipoDato();
+            Conexion _conexion = new Conexion(cadenaConexion);
+
+            Exito = true;
+            try
+            {
+                _conexion.NombreProcedimiento = "SP_RiegoV2_Valvulas_Select";
+                _dato.Entero = Id_Cambio;
+                _conexion.agregarParametro(EnumTipoDato.Entero, _dato, "Id_Cambio");
+                _dato.CadenaTexto = Id_Bloque;
+                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Id_Bloque");
+                _conexion.EjecutarDataset();
+
+                if (_conexion.Exito)
+                {
+                    Datos = _conexion.Datos;
+                }
+                else
+                {
+                    Mensaje = _conexion.Mensaje;
+                    Exito = false;
+                }
+            }
+            catch (Exception e)
+            {
+                Mensaje = e.Message;
+                Exito = false;
+            }
+
+        }
+
+        public void MtdInsertRiegoV2Valvulas()
+        {
+            TipoDato _dato = new TipoDato();
+            Conexion _conexion = new Conexion(cadenaConexion);
+
+            Exito = true;
+            try
+            {
+                _conexion.NombreProcedimiento = "SP_RiegoValvulasV2_Insert";
+                _dato.CadenaTexto = Fecha;
+                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Fecha");
+                _dato.CadenaTexto = Hora;
+                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Hora");
+                _dato.CadenaTexto = Id_Bloque;
+                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Id_Bloque");
+                _dato.Entero = Id_Valvula;
+                _conexion.agregarParametro(EnumTipoDato.Entero, _dato, "Id_Valvula");
+               
+                _conexion.EjecutarDataset();
+
+                if (_conexion.Exito)
+                {
+                    Datos = _conexion.Datos;
+                }
+                else
+                {
+                    Mensaje = _conexion.Mensaje;
+                    Exito = false;
+                }
+            }
+            catch (Exception e)
+            {
+                Mensaje = e.Message;
+                Exito = false;
+            }
+
+        }
+
+
 
 
     }
