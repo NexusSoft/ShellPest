@@ -259,15 +259,15 @@
             this.barDockControlTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.barDockControlTop.Location = new System.Drawing.Point(0, 0);
             this.barDockControlTop.Manager = this.barManager1;
-            this.barDockControlTop.Size = new System.Drawing.Size(1161, 0);
+            this.barDockControlTop.Size = new System.Drawing.Size(1079, 0);
             // 
             // barDockControlBottom
             // 
             this.barDockControlBottom.CausesValidation = false;
             this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.barDockControlBottom.Location = new System.Drawing.Point(0, 616);
+            this.barDockControlBottom.Location = new System.Drawing.Point(0, 587);
             this.barDockControlBottom.Manager = this.barManager1;
-            this.barDockControlBottom.Size = new System.Drawing.Size(1161, 20);
+            this.barDockControlBottom.Size = new System.Drawing.Size(1079, 22);
             // 
             // barDockControlLeft
             // 
@@ -275,15 +275,15 @@
             this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
             this.barDockControlLeft.Location = new System.Drawing.Point(0, 0);
             this.barDockControlLeft.Manager = this.barManager1;
-            this.barDockControlLeft.Size = new System.Drawing.Size(71, 616);
+            this.barDockControlLeft.Size = new System.Drawing.Size(69, 587);
             // 
             // barDockControlRight
             // 
             this.barDockControlRight.CausesValidation = false;
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
-            this.barDockControlRight.Location = new System.Drawing.Point(1161, 0);
+            this.barDockControlRight.Location = new System.Drawing.Point(1079, 0);
             this.barDockControlRight.Manager = this.barManager1;
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 616);
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 587);
             // 
             // lblProveedor
             // 
@@ -323,9 +323,9 @@
             this.panelControl1.Controls.Add(this.txt_CodigoAplicacion);
             this.panelControl1.Controls.Add(this.labelControl1);
             this.panelControl1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelControl1.Location = new System.Drawing.Point(71, 0);
+            this.panelControl1.Location = new System.Drawing.Point(69, 0);
             this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Size = new System.Drawing.Size(1090, 176);
+            this.panelControl1.Size = new System.Drawing.Size(1010, 176);
             this.panelControl1.TabIndex = 4;
             // 
             // labelControl8
@@ -670,7 +670,7 @@
             this.groupControl2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupControl2.Location = new System.Drawing.Point(12, 12);
             this.groupControl2.Name = "groupControl2";
-            this.groupControl2.Size = new System.Drawing.Size(551, 196);
+            this.groupControl2.Size = new System.Drawing.Size(471, 196);
             this.groupControl2.TabIndex = 68;
             this.groupControl2.Text = "Aplicaciones Diarias";
             // 
@@ -801,10 +801,10 @@
             // 
             this.panelControl2.Controls.Add(this.dtgProductos);
             this.panelControl2.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panelControl2.Location = new System.Drawing.Point(71, 176);
+            this.panelControl2.Location = new System.Drawing.Point(69, 176);
             this.panelControl2.Name = "panelControl2";
             this.panelControl2.Padding = new System.Windows.Forms.Padding(10);
-            this.panelControl2.Size = new System.Drawing.Size(515, 440);
+            this.panelControl2.Size = new System.Drawing.Size(515, 411);
             this.panelControl2.TabIndex = 5;
             // 
             // dtgProductos
@@ -814,7 +814,7 @@
             this.dtgProductos.MainView = this.dtgValProductos;
             this.dtgProductos.MenuManager = this.barManager1;
             this.dtgProductos.Name = "dtgProductos";
-            this.dtgProductos.Size = new System.Drawing.Size(491, 416);
+            this.dtgProductos.Size = new System.Drawing.Size(491, 387);
             this.dtgProductos.TabIndex = 1;
             this.dtgProductos.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.dtgValProductos});
@@ -879,20 +879,20 @@
             // 
             this.panelControl4.Controls.Add(this.groupControl2);
             this.panelControl4.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelControl4.Location = new System.Drawing.Point(586, 176);
+            this.panelControl4.Location = new System.Drawing.Point(584, 176);
             this.panelControl4.Name = "panelControl4";
             this.panelControl4.Padding = new System.Windows.Forms.Padding(10);
-            this.panelControl4.Size = new System.Drawing.Size(575, 220);
+            this.panelControl4.Size = new System.Drawing.Size(495, 220);
             this.panelControl4.TabIndex = 15;
             // 
             // panelControl3
             // 
             this.panelControl3.Controls.Add(this.dtgAplicacionesD);
             this.panelControl3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelControl3.Location = new System.Drawing.Point(586, 396);
+            this.panelControl3.Location = new System.Drawing.Point(584, 396);
             this.panelControl3.Name = "panelControl3";
             this.panelControl3.Padding = new System.Windows.Forms.Padding(10);
-            this.panelControl3.Size = new System.Drawing.Size(575, 220);
+            this.panelControl3.Size = new System.Drawing.Size(495, 191);
             this.panelControl3.TabIndex = 16;
             // 
             // dtgAplicacionesD
@@ -902,7 +902,7 @@
             this.dtgAplicacionesD.MainView = this.dtgValAplicacionesD;
             this.dtgAplicacionesD.MenuManager = this.barManager1;
             this.dtgAplicacionesD.Name = "dtgAplicacionesD";
-            this.dtgAplicacionesD.Size = new System.Drawing.Size(551, 196);
+            this.dtgAplicacionesD.Size = new System.Drawing.Size(471, 167);
             this.dtgAplicacionesD.TabIndex = 1;
             this.dtgAplicacionesD.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.dtgValAplicacionesD});
@@ -977,7 +977,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1161, 636);
+            this.ClientSize = new System.Drawing.Size(1079, 609);
             this.Controls.Add(this.panelControl3);
             this.Controls.Add(this.panelControl4);
             this.Controls.Add(this.panelControl2);
