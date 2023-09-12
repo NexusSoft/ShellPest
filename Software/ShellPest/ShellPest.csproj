@@ -208,6 +208,12 @@
     <Compile Include="Control\Frm_AplicacionHue.Designer.cs">
       <DependentUpon>Frm_AplicacionHue.cs</DependentUpon>
     </Compile>
+    <Compile Include="Control\Frm_BitacoraVisita.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Control\Frm_BitacoraVisita.Designer.cs">
+      <DependentUpon>Frm_BitacoraVisita.cs</DependentUpon>
+    </Compile>
     <Compile Include="Control\Frm_Riego.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -497,6 +503,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Control\Frm_AplicacionHue.resx">
       <DependentUpon>Frm_AplicacionHue.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Control\Frm_BitacoraVisita.resx">
+      <DependentUpon>Frm_BitacoraVisita.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Control\Frm_Riego.resx">
       <DependentUpon>Frm_Riego.cs</DependentUpon>

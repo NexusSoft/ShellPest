@@ -71,6 +71,7 @@
             this.btn_Unidades = new DevExpress.XtraBars.BarButtonItem();
             this.btn_Valvulas = new DevExpress.XtraBars.BarButtonItem();
             this.btn_Cambios = new DevExpress.XtraBars.BarButtonItem();
+            this.btn_ImpTxt = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup5 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -89,7 +90,7 @@
             this.ribbonPage2 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.xtraTabbedMdiManager1 = new DevExpress.XtraTabbedMdi.XtraTabbedMdiManager(this.components);
             this.SkinForm = new DevExpress.LookAndFeel.DefaultLookAndFeel(this.components);
-            this.btn_ImpTxt = new DevExpress.XtraBars.BarButtonItem();
+            this.btn_Bitacora = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabbedMdiManager1)).BeginInit();
             this.SuspendLayout();
@@ -100,7 +101,6 @@
             this.ribbonControl1.ExpandCollapseItem.Id = 0;
             this.ribbonControl1.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
             this.ribbonControl1.ExpandCollapseItem,
-            this.ribbonControl1.SearchEditItem,
             this.skinRibbonGalleryBarItem1,
             this.btnPlagas,
             this.btnNivelPresencia,
@@ -141,9 +141,10 @@
             this.btn_Unidades,
             this.btn_Valvulas,
             this.btn_Cambios,
-            this.btn_ImpTxt});
+            this.btn_ImpTxt,
+            this.btn_Bitacora});
             this.ribbonControl1.Location = new System.Drawing.Point(0, 0);
-            this.ribbonControl1.MaxItemId = 43;
+            this.ribbonControl1.MaxItemId = 44;
             this.ribbonControl1.Name = "ribbonControl1";
             this.ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage1,
@@ -500,6 +501,14 @@
             this.btn_Cambios.Name = "btn_Cambios";
             this.btn_Cambios.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_Cambios_ItemClick);
             // 
+            // btn_ImpTxt
+            // 
+            this.btn_ImpTxt.Caption = "Importar\r\ntxt";
+            this.btn_ImpTxt.Id = 42;
+            this.btn_ImpTxt.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btn_ImpTxt.ImageOptions.SvgImage")));
+            this.btn_ImpTxt.Name = "btn_ImpTxt";
+            this.btn_ImpTxt.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_ImpTxt_ItemClick);
+            // 
             // ribbonPage1
             // 
             this.ribbonPage1.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
@@ -613,6 +622,7 @@
             // ribbonPageGroup10
             // 
             this.ribbonPageGroup10.ItemLinks.Add(this.btn_Aplicaciones);
+            this.ribbonPageGroup10.ItemLinks.Add(this.btn_Bitacora);
             this.ribbonPageGroup10.Name = "ribbonPageGroup10";
             this.ribbonPageGroup10.Text = "Aplicaciones";
             // 
@@ -653,13 +663,13 @@
             this.SkinForm.EnableBonusSkins = true;
             this.SkinForm.LookAndFeel.SkinName = "Office 2013 Light Gray";
             // 
-            // btn_ImpTxt
+            // btn_Bitacora
             // 
-            this.btn_ImpTxt.Caption = "Importar\r\ntxt";
-            this.btn_ImpTxt.Id = 42;
-            this.btn_ImpTxt.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("barButtonItem4.ImageOptions.SvgImage")));
-            this.btn_ImpTxt.Name = "btn_ImpTxt";
-            this.btn_ImpTxt.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_ImpTxt_ItemClick);
+            this.btn_Bitacora.Caption = "Bitacora de Visita";
+            this.btn_Bitacora.Id = 43;
+            this.btn_Bitacora.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem4.ImageOptions.Image")));
+            this.btn_Bitacora.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem4.ImageOptions.LargeImage")));
+            this.btn_Bitacora.Name = "btn_Bitacora";
             // 
             // Frm_Principal
             // 
@@ -745,6 +755,7 @@
         private DevExpress.XtraBars.BarButtonItem btn_Valvulas;
         private DevExpress.XtraBars.BarButtonItem btn_Cambios;
         private DevExpress.XtraBars.BarButtonItem btn_ImpTxt;
+        private DevExpress.XtraBars.BarButtonItem btn_Bitacora;
     }
 }
 
