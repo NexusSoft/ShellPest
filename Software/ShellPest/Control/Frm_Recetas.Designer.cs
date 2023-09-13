@@ -586,13 +586,16 @@
             // glue_Huerta
             // 
             this.glue_Huerta.EditValue = "-Seleccionar-";
+            this.glue_Huerta.Enabled = false;
             this.glue_Huerta.Location = new System.Drawing.Point(904, 60);
             this.glue_Huerta.MenuManager = this.barManager1;
             this.glue_Huerta.Name = "glue_Huerta";
             this.glue_Huerta.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.glue_Huerta.Properties.DisplayMember = "v_nombre_hue";
             this.glue_Huerta.Properties.NullText = "-Seleccionar-";
             this.glue_Huerta.Properties.PopupView = this.gridView5;
+            this.glue_Huerta.Properties.ValueMember = "c_codigo_hue";
             this.glue_Huerta.Size = new System.Drawing.Size(195, 20);
             this.glue_Huerta.TabIndex = 84;
             // 

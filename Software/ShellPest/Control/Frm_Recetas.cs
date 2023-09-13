@@ -124,8 +124,7 @@ namespace ShellPest
         private void CargarHuertas()
         {
             glue_Huerta.EditValue = null;
-            glue_Huerta.Properties.DisplayMember = "v_nombre_hue";
-            glue_Huerta.Properties.ValueMember = "c_codigo_hue";
+            
             CLS_Huerta Clase = new CLS_Huerta();
           
 
@@ -188,9 +187,8 @@ namespace ShellPest
 
         private void CargarListHuertas()
         {
-            glue_Huerta.EditValue = null;
-            glue_Huerta.Properties.DisplayMember = "Nombre_Huerta";
-            glue_Huerta.Properties.ValueMember = "Id_Huerta";
+            dtgHuertas.DataSource = null;
+          
             CLS_Receta Clase = new CLS_Receta();
             Clase.c_codigo_eps = glue_Empresa.EditValue.ToString();
             Clase.Id_Receta = txtId.Text.Trim();
@@ -260,8 +258,9 @@ namespace ShellPest
             Clase.Intervalo_Seguridad = Convert.ToDecimal( text_ISeguridad.Text);
             Clase.Intervalo_Reingreso = Convert.ToDecimal(text_IReingreso.Text);
             Clase.Usuario = Id_Usuario;
-            Clase.Id_Huerta = glue_Huerta.EditValue.ToString();
-            if(combo_Para.SelectedIndex == 0)
+            Clase.Id_Huerta = "";
+            //Clase.Id_Huerta = glue_Huerta.EditValue.ToString();
+            if (combo_Para.SelectedIndex == 0)
             {
                 Clase.Para = "A";
             }
@@ -322,7 +321,7 @@ namespace ShellPest
                                 groupControl2.Enabled = false;
                                 btnGuardar.Enabled = false;
                             }
-                            glue_Huerta.EditValue = Frm.vId_Huerta;
+                           // glue_Huerta.EditValue = Frm.vId_Huerta;
                             // groupControl2.Enabled = true;
 
                             CargarRecetaDet(Frm.vId_Receta.Trim());
@@ -430,11 +429,7 @@ namespace ShellPest
                 valida = false;
                 XtraMessageBox.Show("Es necesario seleccionar un cultivo.");
             }
-            if (glue_Huerta.EditValue == null)
-            { 
-                valida = false;
-                XtraMessageBox.Show("Es necesario seleccionar una huerta.");
-            }
+            
             if (valida)
             {
                 InsertarReceta();
@@ -485,7 +480,7 @@ namespace ShellPest
                     groupControl2.Enabled = false;
                     btnGuardar.Enabled = false;
                 }
-                glue_Huerta.EditValue = Frm.vId_Huerta;
+                //glue_Huerta.EditValue = Frm.vId_Huerta;
                // groupControl2.Enabled = true;
 
                 CargarRecetaDet(Frm.vId_Receta.Trim());
@@ -522,9 +517,7 @@ namespace ShellPest
                 {
                     dtgBloque.DataSource = Clase.Datos;
                 }
-            }
-
-           
+            }  
         }
 
         private void InsertarRecetaHuerta()
@@ -658,7 +651,7 @@ namespace ShellPest
             IdSecuencia = 0;
             label_Modificacion.Visible = false;
             btn_LimpiaMezcla.Visible = false;
-            dtgHuertas.DataSource=null;
+            
         }
 
         private void btn_Cancelar_Click(object sender, EventArgs e)
@@ -674,6 +667,7 @@ namespace ShellPest
                 btnAgregar.Enabled = true;
                 btnEliminarHue.Enabled = true;
                 dtgHuertas.Enabled = true;
+                glue_Huerta.Enabled = true;
             }
             else
             {
@@ -681,6 +675,7 @@ namespace ShellPest
                 btnAgregar.Enabled = false;
                 btnEliminarHue.Enabled = false;
                 dtgHuertas.Enabled = false;
+                glue_Huerta.Enabled = false;
             }
         }
 
