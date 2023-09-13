@@ -15,6 +15,8 @@ namespace CapaDeDatos
         public string cFamFin { get; set; }
         public string c_codigo_cam { get; set; }
 
+        public string c_codigo_pro { get; set; }
+
         public void MtdInsertInvInicial()
         {
             TipoDato _dato = new TipoDato();
@@ -276,6 +278,39 @@ namespace CapaDeDatos
             try
             {
                 _conexion.NombreProcedimiento = "SP_CosActividad_Select";
+                _conexion.EjecutarDataset();
+
+                if (_conexion.Exito)
+                {
+                    Datos = _conexion.Datos;
+                }
+                else
+                {
+                    Mensaje = _conexion.Mensaje;
+                    Exito = false;
+                }
+            }
+            catch (Exception e)
+            {
+                Mensaje = e.Message;
+                Exito = false;
+            }
+
+        }
+
+        public void MtdIngredientesActSelect()
+        {
+            TipoDato _dato = new TipoDato();
+            Conexion _conexion = new Conexion(cadenaConexion);
+
+            Exito = true;
+            try
+            {
+                _conexion.NombreProcedimiento = "SP_IngredientesActivos_Select";
+                _dato.CadenaTexto = c_codigo_eps;
+                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "c_codigo_eps");
+                _dato.CadenaTexto = c_codigo_pro;
+                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "c_codigo_pro");
                 _conexion.EjecutarDataset();
 
                 if (_conexion.Exito)

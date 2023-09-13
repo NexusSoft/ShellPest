@@ -41,25 +41,27 @@
             this.lblProveedor = new DevExpress.XtraBars.BarStaticItem();
             this.repositoryItemTextEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemTextEdit();
             this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
-            this.dtgControl = new DevExpress.XtraGrid.GridControl();
-            this.dtgValControl = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.c_codigo_pro = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.v_nombre_pro = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.c_codigo_uni = new DevExpress.XtraGrid.Columns.GridColumn();
             this.glue_Empresa = new DevExpress.XtraEditors.GridLookUpEdit();
             this.gridView6 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.c_codigo_eps = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn10 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn34 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.labelControl18 = new DevExpress.XtraEditors.LabelControl();
+            this.dtgControl = new DevExpress.XtraGrid.GridControl();
+            this.dtgValControl = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.c_codigo_pro = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.v_nombre_pro = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.c_codigo_uni = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.v_intervaloseguridad_pro = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.v_perentrada_pro = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).BeginInit();
             this.panelControl2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dtgControl)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dtgValControl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.glue_Empresa.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgControl)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgValControl)).BeginInit();
             this.SuspendLayout();
             // 
             // barManager1
@@ -109,6 +111,7 @@
             this.btnSeleccionar.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnSeleccionar.ImageOptions.Image")));
             this.btnSeleccionar.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnSeleccionar.ImageOptions.LargeImage")));
             this.btnSeleccionar.Name = "btnSeleccionar";
+            this.btnSeleccionar.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnSeleccionar_ItemClick);
             // 
             // btnSalir
             // 
@@ -173,57 +176,6 @@
             this.panelControl2.Size = new System.Drawing.Size(562, 500);
             this.panelControl2.TabIndex = 18;
             // 
-            // dtgControl
-            // 
-            this.dtgControl.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dtgControl.Location = new System.Drawing.Point(7, 32);
-            this.dtgControl.MainView = this.dtgValControl;
-            this.dtgControl.MenuManager = this.barManager1;
-            this.dtgControl.Name = "dtgControl";
-            this.dtgControl.Size = new System.Drawing.Size(548, 461);
-            this.dtgControl.TabIndex = 0;
-            this.dtgControl.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.dtgValControl});
-            this.dtgControl.Click += new System.EventHandler(this.dtgControl_Click);
-            this.dtgControl.DoubleClick += new System.EventHandler(this.dtgControl_DoubleClick);
-            // 
-            // dtgValControl
-            // 
-            this.dtgValControl.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.c_codigo_pro,
-            this.v_nombre_pro,
-            this.c_codigo_uni});
-            this.dtgValControl.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
-            this.dtgValControl.GridControl = this.dtgControl;
-            this.dtgValControl.Name = "dtgValControl";
-            this.dtgValControl.OptionsBehavior.Editable = false;
-            this.dtgValControl.OptionsFind.AlwaysVisible = true;
-            this.dtgValControl.OptionsSelection.EnableAppearanceFocusedCell = false;
-            this.dtgValControl.OptionsView.ShowGroupPanel = false;
-            // 
-            // c_codigo_pro
-            // 
-            this.c_codigo_pro.Caption = "Id Nombre Comercial";
-            this.c_codigo_pro.FieldName = "c_codigo_pro";
-            this.c_codigo_pro.Name = "c_codigo_pro";
-            this.c_codigo_pro.OptionsColumn.AllowEdit = false;
-            this.c_codigo_pro.Visible = true;
-            this.c_codigo_pro.VisibleIndex = 1;
-            // 
-            // v_nombre_pro
-            // 
-            this.v_nombre_pro.Caption = "Nombre comercial";
-            this.v_nombre_pro.FieldName = "v_nombre_pro";
-            this.v_nombre_pro.Name = "v_nombre_pro";
-            this.v_nombre_pro.Visible = true;
-            this.v_nombre_pro.VisibleIndex = 0;
-            // 
-            // c_codigo_uni
-            // 
-            this.c_codigo_uni.Caption = "Unidad";
-            this.c_codigo_uni.FieldName = "c_codigo_uni";
-            this.c_codigo_uni.Name = "c_codigo_uni";
-            // 
             // glue_Empresa
             // 
             this.glue_Empresa.EditValue = "-Seleccionar-";
@@ -279,6 +231,79 @@
             this.labelControl18.TabIndex = 83;
             this.labelControl18.Text = "Empresa:";
             // 
+            // dtgControl
+            // 
+            this.dtgControl.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dtgControl.Location = new System.Drawing.Point(7, 32);
+            this.dtgControl.MainView = this.dtgValControl;
+            this.dtgControl.MenuManager = this.barManager1;
+            this.dtgControl.Name = "dtgControl";
+            this.dtgControl.Size = new System.Drawing.Size(548, 461);
+            this.dtgControl.TabIndex = 0;
+            this.dtgControl.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.dtgValControl});
+            this.dtgControl.Click += new System.EventHandler(this.dtgControl_Click);
+            this.dtgControl.DoubleClick += new System.EventHandler(this.dtgControl_DoubleClick);
+            // 
+            // dtgValControl
+            // 
+            this.dtgValControl.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.c_codigo_pro,
+            this.v_nombre_pro,
+            this.c_codigo_uni,
+            this.v_intervaloseguridad_pro,
+            this.v_perentrada_pro});
+            this.dtgValControl.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
+            this.dtgValControl.GridControl = this.dtgControl;
+            this.dtgValControl.Name = "dtgValControl";
+            this.dtgValControl.OptionsBehavior.Editable = false;
+            this.dtgValControl.OptionsFind.AlwaysVisible = true;
+            this.dtgValControl.OptionsSelection.EnableAppearanceFocusedCell = false;
+            this.dtgValControl.OptionsView.ShowGroupPanel = false;
+            // 
+            // c_codigo_pro
+            // 
+            this.c_codigo_pro.Caption = "Id Nombre Comercial";
+            this.c_codigo_pro.FieldName = "c_codigo_pro";
+            this.c_codigo_pro.Name = "c_codigo_pro";
+            this.c_codigo_pro.OptionsColumn.AllowEdit = false;
+            this.c_codigo_pro.Visible = true;
+            this.c_codigo_pro.VisibleIndex = 1;
+            this.c_codigo_pro.Width = 77;
+            // 
+            // v_nombre_pro
+            // 
+            this.v_nombre_pro.Caption = "Nombre comercial";
+            this.v_nombre_pro.FieldName = "v_nombre_pro";
+            this.v_nombre_pro.Name = "v_nombre_pro";
+            this.v_nombre_pro.Visible = true;
+            this.v_nombre_pro.VisibleIndex = 0;
+            this.v_nombre_pro.Width = 139;
+            // 
+            // c_codigo_uni
+            // 
+            this.c_codigo_uni.Caption = "Unidad";
+            this.c_codigo_uni.FieldName = "c_codigo_uni";
+            this.c_codigo_uni.Name = "c_codigo_uni";
+            // 
+            // v_intervaloseguridad_pro
+            // 
+            this.v_intervaloseguridad_pro.Caption = "Intervalo seguridad";
+            this.v_intervaloseguridad_pro.FieldName = "v_intervaloseguridad_pro";
+            this.v_intervaloseguridad_pro.Name = "v_intervaloseguridad_pro";
+            this.v_intervaloseguridad_pro.Visible = true;
+            this.v_intervaloseguridad_pro.VisibleIndex = 2;
+            this.v_intervaloseguridad_pro.Width = 151;
+            // 
+            // v_perentrada_pro
+            // 
+            this.v_perentrada_pro.Caption = "Periodo entrada";
+            this.v_perentrada_pro.FieldName = "v_perentrada_pro";
+            this.v_perentrada_pro.Name = "v_perentrada_pro";
+            this.v_perentrada_pro.Visible = true;
+            this.v_perentrada_pro.VisibleIndex = 3;
+            this.v_perentrada_pro.Width = 156;
+            // 
             // Frm_NombreComercial
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -297,10 +322,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).EndInit();
             this.panelControl2.ResumeLayout(false);
             this.panelControl2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dtgControl)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dtgValControl)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.glue_Empresa.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgControl)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgValControl)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -330,5 +355,7 @@
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn10;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn34;
         private DevExpress.XtraEditors.LabelControl labelControl18;
+        private DevExpress.XtraGrid.Columns.GridColumn v_intervaloseguridad_pro;
+        private DevExpress.XtraGrid.Columns.GridColumn v_perentrada_pro;
     }
 }

@@ -42,7 +42,7 @@ namespace ShellPest
                 {
                     DataRow row = this.dtgValControl.GetDataRow(i);
 
-                    vId_PuntoControl = row["Id_PuntoControl"].ToString();
+                    vId_PuntoControl = row["Id_Huerta"].ToString();
                     vFecha = Convert.ToDateTime(row["Fecha"]);
                    
                 }

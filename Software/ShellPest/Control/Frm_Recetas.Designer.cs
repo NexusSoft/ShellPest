@@ -67,10 +67,13 @@
             this.dtgValHuertas = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.gridColumn5 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn6 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.btn_Ingrediente = new DevExpress.XtraEditors.SimpleButton();
             this.glue_Huerta = new DevExpress.XtraEditors.GridLookUpEdit();
             this.gridView5 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.c_codigo_hue = new DevExpress.XtraGrid.Columns.GridColumn();
             this.v_nombre_hue = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.text_Ingrediente = new DevExpress.XtraEditors.TextEdit();
+            this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.label_Huerta = new DevExpress.XtraEditors.LabelControl();
             this.glue_Empresa = new DevExpress.XtraEditors.GridLookUpEdit();
             this.gridView6 = new DevExpress.XtraGrid.Views.Grid.GridView();
@@ -79,36 +82,37 @@
             this.gridColumn34 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.labelControl18 = new DevExpress.XtraEditors.LabelControl();
             this.btn_Abrir = new DevExpress.XtraEditors.SimpleButton();
-            this.labelControl8 = new DevExpress.XtraEditors.LabelControl();
             this.btn_Tipo = new DevExpress.XtraEditors.SimpleButton();
             this.glue_Asesor = new DevExpress.XtraEditors.GridLookUpEdit();
             this.gridView4 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.Nombre_AsesorTecnicoL = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Id_AsesorTecnicoL = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.text_IReingreso = new DevExpress.XtraEditors.TextEdit();
-            this.labelControl15 = new DevExpress.XtraEditors.LabelControl();
-            this.text_ISeguridad = new DevExpress.XtraEditors.TextEdit();
-            this.labelControl11 = new DevExpress.XtraEditors.LabelControl();
             this.btn_Monitoreo = new DevExpress.XtraEditors.SimpleButton();
             this.groupControl2 = new DevExpress.XtraEditors.GroupControl();
+            this.gridControl1 = new DevExpress.XtraGrid.GridControl();
+            this.gridView7 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.btn_LimpiaMezcla = new DevExpress.XtraEditors.SimpleButton();
             this.label_Modificacion = new DevExpress.XtraEditors.LabelControl();
             this.text_Unitario = new DevExpress.XtraEditors.TextEdit();
             this.label_Unitario = new DevExpress.XtraEditors.LabelControl();
-            this.btn_Ingrediente = new DevExpress.XtraEditors.SimpleButton();
-            this.text_Ingrediente = new DevExpress.XtraEditors.TextEdit();
-            this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.memo_Descripcion = new DevExpress.XtraEditors.MemoEdit();
             this.btn_Cancelar = new DevExpress.XtraEditors.SimpleButton();
             this.btn_Agregar = new DevExpress.XtraEditors.SimpleButton();
+            this.labelControl8 = new DevExpress.XtraEditors.LabelControl();
             this.text_Dosis = new DevExpress.XtraEditors.TextEdit();
             this.labelControl14 = new DevExpress.XtraEditors.LabelControl();
             this.simpleButton5 = new DevExpress.XtraEditors.SimpleButton();
+            this.text_IReingreso = new DevExpress.XtraEditors.TextEdit();
             this.glue_Unidad = new DevExpress.XtraEditors.GridLookUpEdit();
             this.gridView3 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.Nombre_UnidadL = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Id_UnidadL = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.labelControl15 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl7 = new DevExpress.XtraEditors.LabelControl();
+            this.text_ISeguridad = new DevExpress.XtraEditors.TextEdit();
+            this.labelControl11 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl13 = new DevExpress.XtraEditors.LabelControl();
             this.btn_Comercial = new DevExpress.XtraEditors.SimpleButton();
             this.text_Comercial = new DevExpress.XtraEditors.TextEdit();
@@ -152,20 +156,22 @@
             ((System.ComponentModel.ISupportInitialize)(this.dtgValHuertas)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.glue_Huerta.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.text_Ingrediente.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.glue_Empresa.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.glue_Asesor.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.text_IReingreso.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.text_ISeguridad.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).BeginInit();
             this.groupControl2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.text_Unitario.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.text_Ingrediente.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.memo_Descripcion.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.text_Dosis.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.text_IReingreso.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.glue_Unidad.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.text_ISeguridad.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.text_Comercial.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.memo_Observaciones.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.check_Monitoreo.Properties)).BeginInit();
@@ -316,10 +322,10 @@
             // 
             this.panelControl2.Controls.Add(this.dtgBloque);
             this.panelControl2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelControl2.Location = new System.Drawing.Point(71, 268);
+            this.panelControl2.Location = new System.Drawing.Point(71, 325);
             this.panelControl2.Name = "panelControl2";
             this.panelControl2.Padding = new System.Windows.Forms.Padding(5);
-            this.panelControl2.Size = new System.Drawing.Size(1119, 250);
+            this.panelControl2.Size = new System.Drawing.Size(1119, 193);
             this.panelControl2.TabIndex = 15;
             // 
             // dtgBloque
@@ -329,7 +335,7 @@
             this.dtgBloque.MainView = this.dtgValBloque;
             this.dtgBloque.MenuManager = this.barManager1;
             this.dtgBloque.Name = "dtgBloque";
-            this.dtgBloque.Size = new System.Drawing.Size(1105, 236);
+            this.dtgBloque.Size = new System.Drawing.Size(1105, 179);
             this.dtgBloque.TabIndex = 0;
             this.dtgBloque.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.dtgValBloque});
@@ -446,7 +452,7 @@
             this.panelControl1.Location = new System.Drawing.Point(71, 0);
             this.panelControl1.Name = "panelControl1";
             this.panelControl1.Padding = new System.Windows.Forms.Padding(5);
-            this.panelControl1.Size = new System.Drawing.Size(1119, 268);
+            this.panelControl1.Size = new System.Drawing.Size(1119, 325);
             this.panelControl1.TabIndex = 14;
             // 
             // groupControl1
@@ -456,18 +462,16 @@
             this.groupControl1.Controls.Add(this.btnEliminarHue);
             this.groupControl1.Controls.Add(this.btnAgregar);
             this.groupControl1.Controls.Add(this.dtgHuertas);
+            this.groupControl1.Controls.Add(this.btn_Ingrediente);
             this.groupControl1.Controls.Add(this.glue_Huerta);
+            this.groupControl1.Controls.Add(this.text_Ingrediente);
+            this.groupControl1.Controls.Add(this.labelControl3);
             this.groupControl1.Controls.Add(this.label_Huerta);
             this.groupControl1.Controls.Add(this.glue_Empresa);
             this.groupControl1.Controls.Add(this.labelControl18);
             this.groupControl1.Controls.Add(this.btn_Abrir);
-            this.groupControl1.Controls.Add(this.labelControl8);
             this.groupControl1.Controls.Add(this.btn_Tipo);
             this.groupControl1.Controls.Add(this.glue_Asesor);
-            this.groupControl1.Controls.Add(this.text_IReingreso);
-            this.groupControl1.Controls.Add(this.labelControl15);
-            this.groupControl1.Controls.Add(this.text_ISeguridad);
-            this.groupControl1.Controls.Add(this.labelControl11);
             this.groupControl1.Controls.Add(this.btn_Monitoreo);
             this.groupControl1.Controls.Add(this.groupControl2);
             this.groupControl1.Controls.Add(this.memo_Observaciones);
@@ -491,7 +495,7 @@
             this.groupControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupControl1.Location = new System.Drawing.Point(7, 7);
             this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(1105, 254);
+            this.groupControl1.Size = new System.Drawing.Size(1105, 311);
             this.groupControl1.TabIndex = 0;
             this.groupControl1.Text = "Receta";
             // 
@@ -583,6 +587,16 @@
             this.gridColumn6.VisibleIndex = 1;
             this.gridColumn6.Width = 208;
             // 
+            // btn_Ingrediente
+            // 
+            this.btn_Ingrediente.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_Ingrediente.ImageOptions.Image")));
+            this.btn_Ingrediente.Location = new System.Drawing.Point(873, 85);
+            this.btn_Ingrediente.Name = "btn_Ingrediente";
+            this.btn_Ingrediente.Size = new System.Drawing.Size(24, 23);
+            this.btn_Ingrediente.TabIndex = 70;
+            this.btn_Ingrediente.Visible = false;
+            this.btn_Ingrediente.Click += new System.EventHandler(this.btn_Ingrediente_Click_1);
+            // 
             // glue_Huerta
             // 
             this.glue_Huerta.EditValue = "-Seleccionar-";
@@ -624,6 +638,24 @@
             this.v_nombre_hue.Name = "v_nombre_hue";
             this.v_nombre_hue.Visible = true;
             this.v_nombre_hue.VisibleIndex = 0;
+            // 
+            // text_Ingrediente
+            // 
+            this.text_Ingrediente.Location = new System.Drawing.Point(695, 86);
+            this.text_Ingrediente.MenuManager = this.barManager1;
+            this.text_Ingrediente.Name = "text_Ingrediente";
+            this.text_Ingrediente.Size = new System.Drawing.Size(173, 20);
+            this.text_Ingrediente.TabIndex = 69;
+            this.text_Ingrediente.Visible = false;
+            // 
+            // labelControl3
+            // 
+            this.labelControl3.Location = new System.Drawing.Point(597, 88);
+            this.labelControl3.Name = "labelControl3";
+            this.labelControl3.Size = new System.Drawing.Size(93, 13);
+            this.labelControl3.TabIndex = 68;
+            this.labelControl3.Text = "Ingrediente Activo:";
+            this.labelControl3.Visible = false;
             // 
             // label_Huerta
             // 
@@ -697,14 +729,6 @@
             this.btn_Abrir.TabIndex = 80;
             this.btn_Abrir.Click += new System.EventHandler(this.btn_Abrir_Click);
             // 
-            // labelControl8
-            // 
-            this.labelControl8.Location = new System.Drawing.Point(819, 99);
-            this.labelControl8.Name = "labelControl8";
-            this.labelControl8.Size = new System.Drawing.Size(20, 13);
-            this.labelControl8.TabIndex = 79;
-            this.labelControl8.Text = "Dias";
-            // 
             // btn_Tipo
             // 
             this.btn_Tipo.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_Tipo.ImageOptions.Image")));
@@ -753,46 +777,6 @@
             this.Id_AsesorTecnicoL.Visible = true;
             this.Id_AsesorTecnicoL.VisibleIndex = 1;
             // 
-            // text_IReingreso
-            // 
-            this.text_IReingreso.Location = new System.Drawing.Point(713, 112);
-            this.text_IReingreso.MenuManager = this.barManager1;
-            this.text_IReingreso.Name = "text_IReingreso";
-            this.text_IReingreso.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
-            this.text_IReingreso.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
-            this.text_IReingreso.Properties.Mask.EditMask = "n2";
-            this.text_IReingreso.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
-            this.text_IReingreso.Size = new System.Drawing.Size(97, 20);
-            this.text_IReingreso.TabIndex = 76;
-            // 
-            // labelControl15
-            // 
-            this.labelControl15.Location = new System.Drawing.Point(644, 112);
-            this.labelControl15.Name = "labelControl15";
-            this.labelControl15.Size = new System.Drawing.Size(59, 26);
-            this.labelControl15.TabIndex = 75;
-            this.labelControl15.Text = "Intervalo de \r\nReingreso:";
-            // 
-            // text_ISeguridad
-            // 
-            this.text_ISeguridad.Location = new System.Drawing.Point(713, 84);
-            this.text_ISeguridad.MenuManager = this.barManager1;
-            this.text_ISeguridad.Name = "text_ISeguridad";
-            this.text_ISeguridad.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
-            this.text_ISeguridad.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
-            this.text_ISeguridad.Properties.Mask.EditMask = "n2";
-            this.text_ISeguridad.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
-            this.text_ISeguridad.Size = new System.Drawing.Size(97, 20);
-            this.text_ISeguridad.TabIndex = 74;
-            // 
-            // labelControl11
-            // 
-            this.labelControl11.Location = new System.Drawing.Point(644, 82);
-            this.labelControl11.Name = "labelControl11";
-            this.labelControl11.Size = new System.Drawing.Size(59, 26);
-            this.labelControl11.TabIndex = 73;
-            this.labelControl11.Text = "Intervalo de \r\nSeguridad:";
-            // 
             // btn_Monitoreo
             // 
             this.btn_Monitoreo.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_Monitoreo.ImageOptions.Image")));
@@ -805,21 +789,24 @@
             // 
             // groupControl2
             // 
+            this.groupControl2.Controls.Add(this.gridControl1);
             this.groupControl2.Controls.Add(this.btn_LimpiaMezcla);
             this.groupControl2.Controls.Add(this.label_Modificacion);
             this.groupControl2.Controls.Add(this.text_Unitario);
             this.groupControl2.Controls.Add(this.label_Unitario);
-            this.groupControl2.Controls.Add(this.btn_Ingrediente);
-            this.groupControl2.Controls.Add(this.text_Ingrediente);
-            this.groupControl2.Controls.Add(this.labelControl3);
             this.groupControl2.Controls.Add(this.memo_Descripcion);
             this.groupControl2.Controls.Add(this.btn_Cancelar);
             this.groupControl2.Controls.Add(this.btn_Agregar);
+            this.groupControl2.Controls.Add(this.labelControl8);
             this.groupControl2.Controls.Add(this.text_Dosis);
             this.groupControl2.Controls.Add(this.labelControl14);
             this.groupControl2.Controls.Add(this.simpleButton5);
+            this.groupControl2.Controls.Add(this.text_IReingreso);
             this.groupControl2.Controls.Add(this.glue_Unidad);
+            this.groupControl2.Controls.Add(this.labelControl15);
             this.groupControl2.Controls.Add(this.labelControl7);
+            this.groupControl2.Controls.Add(this.text_ISeguridad);
+            this.groupControl2.Controls.Add(this.labelControl11);
             this.groupControl2.Controls.Add(this.labelControl13);
             this.groupControl2.Controls.Add(this.btn_Comercial);
             this.groupControl2.Controls.Add(this.text_Comercial);
@@ -827,16 +814,57 @@
             this.groupControl2.Enabled = false;
             this.groupControl2.Location = new System.Drawing.Point(3, 140);
             this.groupControl2.Name = "groupControl2";
-            this.groupControl2.Size = new System.Drawing.Size(847, 109);
+            this.groupControl2.Size = new System.Drawing.Size(847, 166);
             this.groupControl2.TabIndex = 69;
             this.groupControl2.Text = "Mezcla";
+            // 
+            // gridControl1
+            // 
+            this.gridControl1.Location = new System.Drawing.Point(194, 55);
+            this.gridControl1.MainView = this.gridView7;
+            this.gridControl1.MenuManager = this.barManager1;
+            this.gridControl1.Name = "gridControl1";
+            this.gridControl1.Size = new System.Drawing.Size(211, 108);
+            this.gridControl1.TabIndex = 86;
+            this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gridView7});
+            // 
+            // gridView7
+            // 
+            this.gridView7.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.gridColumn1,
+            this.gridColumn2});
+            this.gridView7.GridControl = this.gridControl1;
+            this.gridView7.Name = "gridView7";
+            this.gridView7.OptionsBehavior.Editable = false;
+            this.gridView7.OptionsView.ShowGroupPanel = false;
+            // 
+            // gridColumn1
+            // 
+            this.gridColumn1.Caption = "Codigo";
+            this.gridColumn1.FieldName = "c_codigo_cac";
+            this.gridColumn1.Name = "gridColumn1";
+            this.gridColumn1.OptionsColumn.AllowEdit = false;
+            this.gridColumn1.Visible = true;
+            this.gridColumn1.VisibleIndex = 0;
+            this.gridColumn1.Width = 57;
+            // 
+            // gridColumn2
+            // 
+            this.gridColumn2.Caption = "Componente Activo";
+            this.gridColumn2.FieldName = "v_nombre_cac";
+            this.gridColumn2.Name = "gridColumn2";
+            this.gridColumn2.OptionsColumn.AllowEdit = false;
+            this.gridColumn2.Visible = true;
+            this.gridColumn2.VisibleIndex = 1;
+            this.gridColumn2.Width = 208;
             // 
             // btn_LimpiaMezcla
             // 
             this.btn_LimpiaMezcla.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_LimpiaMezcla.ImageOptions.Image")));
-            this.btn_LimpiaMezcla.Location = new System.Drawing.Point(623, 58);
+            this.btn_LimpiaMezcla.Location = new System.Drawing.Point(708, 88);
             this.btn_LimpiaMezcla.Name = "btn_LimpiaMezcla";
-            this.btn_LimpiaMezcla.Size = new System.Drawing.Size(39, 39);
+            this.btn_LimpiaMezcla.Size = new System.Drawing.Size(39, 35);
             this.btn_LimpiaMezcla.TabIndex = 74;
             this.btn_LimpiaMezcla.Click += new System.EventHandler(this.btn_LimpiaMezcla_Click);
             // 
@@ -846,7 +874,7 @@
             this.label_Modificacion.Appearance.ForeColor = System.Drawing.Color.YellowGreen;
             this.label_Modificacion.Appearance.Options.UseFont = true;
             this.label_Modificacion.Appearance.Options.UseForeColor = true;
-            this.label_Modificacion.Location = new System.Drawing.Point(710, 56);
+            this.label_Modificacion.Location = new System.Drawing.Point(753, 99);
             this.label_Modificacion.Name = "label_Modificacion";
             this.label_Modificacion.Size = new System.Drawing.Size(84, 13);
             this.label_Modificacion.TabIndex = 73;
@@ -871,42 +899,17 @@
             this.label_Unitario.TabIndex = 71;
             this.label_Unitario.Text = "Cantidad Por Litro:";
             // 
-            // btn_Ingrediente
-            // 
-            this.btn_Ingrediente.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_Ingrediente.ImageOptions.Image")));
-            this.btn_Ingrediente.Location = new System.Drawing.Point(604, 25);
-            this.btn_Ingrediente.Name = "btn_Ingrediente";
-            this.btn_Ingrediente.Size = new System.Drawing.Size(24, 23);
-            this.btn_Ingrediente.TabIndex = 70;
-            this.btn_Ingrediente.Click += new System.EventHandler(this.btn_Ingrediente_Click_1);
-            // 
-            // text_Ingrediente
-            // 
-            this.text_Ingrediente.Location = new System.Drawing.Point(426, 26);
-            this.text_Ingrediente.MenuManager = this.barManager1;
-            this.text_Ingrediente.Name = "text_Ingrediente";
-            this.text_Ingrediente.Size = new System.Drawing.Size(173, 20);
-            this.text_Ingrediente.TabIndex = 69;
-            // 
-            // labelControl3
-            // 
-            this.labelControl3.Location = new System.Drawing.Point(328, 28);
-            this.labelControl3.Name = "labelControl3";
-            this.labelControl3.Size = new System.Drawing.Size(93, 13);
-            this.labelControl3.TabIndex = 68;
-            this.labelControl3.Text = "Ingrediente Activo:";
-            // 
             // memo_Descripcion
             // 
-            this.memo_Descripcion.Location = new System.Drawing.Point(283, 55);
+            this.memo_Descripcion.Location = new System.Drawing.Point(473, 58);
             this.memo_Descripcion.MenuManager = this.barManager1;
             this.memo_Descripcion.Name = "memo_Descripcion";
-            this.memo_Descripcion.Size = new System.Drawing.Size(316, 47);
+            this.memo_Descripcion.Size = new System.Drawing.Size(196, 108);
             this.memo_Descripcion.TabIndex = 67;
             // 
             // btn_Cancelar
             // 
-            this.btn_Cancelar.Location = new System.Drawing.Point(762, 78);
+            this.btn_Cancelar.Location = new System.Drawing.Point(762, 132);
             this.btn_Cancelar.Name = "btn_Cancelar";
             this.btn_Cancelar.Size = new System.Drawing.Size(75, 23);
             this.btn_Cancelar.TabIndex = 66;
@@ -915,12 +918,20 @@
             // 
             // btn_Agregar
             // 
-            this.btn_Agregar.Location = new System.Drawing.Point(681, 78);
+            this.btn_Agregar.Location = new System.Drawing.Point(681, 132);
             this.btn_Agregar.Name = "btn_Agregar";
             this.btn_Agregar.Size = new System.Drawing.Size(75, 23);
             this.btn_Agregar.TabIndex = 65;
             this.btn_Agregar.Text = "Agregar";
             this.btn_Agregar.Click += new System.EventHandler(this.btn_Agregar_Click);
+            // 
+            // labelControl8
+            // 
+            this.labelControl8.Location = new System.Drawing.Point(618, 31);
+            this.labelControl8.Name = "labelControl8";
+            this.labelControl8.Size = new System.Drawing.Size(20, 13);
+            this.labelControl8.TabIndex = 79;
+            this.labelControl8.Text = "Dias";
             // 
             // text_Dosis
             // 
@@ -951,6 +962,18 @@
             this.simpleButton5.Size = new System.Drawing.Size(24, 23);
             this.simpleButton5.TabIndex = 62;
             this.simpleButton5.Visible = false;
+            // 
+            // text_IReingreso
+            // 
+            this.text_IReingreso.Location = new System.Drawing.Point(551, 28);
+            this.text_IReingreso.MenuManager = this.barManager1;
+            this.text_IReingreso.Name = "text_IReingreso";
+            this.text_IReingreso.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.text_IReingreso.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.text_IReingreso.Properties.Mask.EditMask = "n2";
+            this.text_IReingreso.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
+            this.text_IReingreso.Size = new System.Drawing.Size(62, 20);
+            this.text_IReingreso.TabIndex = 76;
             // 
             // glue_Unidad
             // 
@@ -991,13 +1014,41 @@
             this.Id_UnidadL.Visible = true;
             this.Id_UnidadL.VisibleIndex = 1;
             // 
+            // labelControl15
+            // 
+            this.labelControl15.Location = new System.Drawing.Point(482, 28);
+            this.labelControl15.Name = "labelControl15";
+            this.labelControl15.Size = new System.Drawing.Size(59, 26);
+            this.labelControl15.TabIndex = 75;
+            this.labelControl15.Text = "Intervalo de \r\nReingreso:";
+            // 
             // labelControl7
             // 
-            this.labelControl7.Location = new System.Drawing.Point(220, 57);
+            this.labelControl7.Location = new System.Drawing.Point(411, 89);
             this.labelControl7.Name = "labelControl7";
             this.labelControl7.Size = new System.Drawing.Size(58, 13);
             this.labelControl7.TabIndex = 47;
             this.labelControl7.Text = "Descripción:";
+            // 
+            // text_ISeguridad
+            // 
+            this.text_ISeguridad.Location = new System.Drawing.Point(399, 28);
+            this.text_ISeguridad.MenuManager = this.barManager1;
+            this.text_ISeguridad.Name = "text_ISeguridad";
+            this.text_ISeguridad.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.text_ISeguridad.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.text_ISeguridad.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.NumericMaskManager));
+            this.text_ISeguridad.Properties.MaskSettings.Set("mask", "n2");
+            this.text_ISeguridad.Size = new System.Drawing.Size(62, 20);
+            this.text_ISeguridad.TabIndex = 74;
+            // 
+            // labelControl11
+            // 
+            this.labelControl11.Location = new System.Drawing.Point(330, 26);
+            this.labelControl11.Name = "labelControl11";
+            this.labelControl11.Size = new System.Drawing.Size(59, 26);
+            this.labelControl11.TabIndex = 73;
+            this.labelControl11.Text = "Intervalo de \r\nSeguridad:";
             // 
             // labelControl13
             // 
@@ -1023,6 +1074,7 @@
             this.text_Comercial.Name = "text_Comercial";
             this.text_Comercial.Size = new System.Drawing.Size(173, 20);
             this.text_Comercial.TabIndex = 58;
+            this.text_Comercial.EditValueChanged += new System.EventHandler(this.text_Comercial_EditValueChanged);
             // 
             // labelControl12
             // 
@@ -1037,7 +1089,7 @@
             this.memo_Observaciones.Location = new System.Drawing.Point(71, 85);
             this.memo_Observaciones.MenuManager = this.barManager1;
             this.memo_Observaciones.Name = "memo_Observaciones";
-            this.memo_Observaciones.Size = new System.Drawing.Size(527, 43);
+            this.memo_Observaciones.Size = new System.Drawing.Size(527, 53);
             this.memo_Observaciones.TabIndex = 68;
             // 
             // check_Monitoreo
@@ -1282,21 +1334,23 @@
             ((System.ComponentModel.ISupportInitialize)(this.dtgValHuertas)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.glue_Huerta.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.text_Ingrediente.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.glue_Empresa.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.glue_Asesor.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.text_IReingreso.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.text_ISeguridad.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).EndInit();
             this.groupControl2.ResumeLayout(false);
             this.groupControl2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.text_Unitario.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.text_Ingrediente.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.memo_Descripcion.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.text_Dosis.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.text_IReingreso.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.glue_Unidad.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.text_ISeguridad.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.text_Comercial.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.memo_Observaciones.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.check_Monitoreo.Properties)).EndInit();
@@ -1423,5 +1477,9 @@
         private DevExpress.XtraEditors.ComboBoxEdit combo_Para;
         private DevExpress.XtraEditors.SimpleButton btn_LimpiaMezcla;
         private DevExpress.XtraEditors.LabelControl label_Modificacion;
+        private DevExpress.XtraGrid.GridControl gridControl1;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridView7;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn1;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn2;
     }
 }

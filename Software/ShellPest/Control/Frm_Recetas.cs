@@ -391,6 +391,8 @@ namespace ShellPest
             text_Comercial.Tag = Frm.IdNombreComercial;
             text_Comercial.Text = Frm.NombreComercial;
             glue_Unidad.EditValue = Frm.IdUnidad;
+            text_ISeguridad.Text = Frm.diasseguridad;
+            text_IReingreso.Text = Frm.diasingreso;
         }
 
         private void text_Dosis_EditValueChanged(object sender, EventArgs e)
@@ -462,8 +464,9 @@ namespace ShellPest
                 text_Presentacion.Tag = Frm.vId_Presentacion;
                 text_Presentacion.Text = Frm.vNombre_TipoAplicacion + " de " + Frm.vNombre_Presentacion + " " + Frm.vv_nombre_uni; ;
                 memo_Observaciones.Text = Frm.vObservaciones;
-                text_ISeguridad.Text = Frm.vIntervalo_Seguridad;
-                text_IReingreso.Text = Frm.vIntervalo_Reingreso;
+                /* Se pasan estos datos al detalle de la receta---------------------------
+                 * text_ISeguridad.Text = Frm.vIntervalo_Seguridad;
+                text_IReingreso.Text = Frm.vIntervalo_Reingreso;*/
                 IdUnidadConvercion = Frm.vId_Unidad;
                 PresentacionConvercion = Frm.vNombre_Presentacion;
                 if (Frm.vActivo)
@@ -637,6 +640,7 @@ namespace ShellPest
             groupControl1.Enabled = true;
             btnGuardar.Enabled = true;
             glue_Empresa.Enabled = true;
+            gridControl1.DataSource = null;
         }
 
         private void LimpiarCamposDet()
@@ -833,6 +837,26 @@ namespace ShellPest
         private void btn_LimpiaMezcla_Click(object sender, EventArgs e)
         {
             LimpiarCamposDet();
+            gridControl1.DataSource = null;
+        }
+
+        private void text_Comercial_EditValueChanged(object sender, EventArgs e)
+        {
+            if (text_Comercial.Tag.ToString().Trim().Length > 0)
+            {
+                gridControl1.DataSource = null;
+                CLS_Inventum Clase = new CLS_Inventum();
+                Clase.c_codigo_eps = glue_Empresa.EditValue.ToString();
+                Clase.c_codigo_pro = text_Comercial.Tag.ToString().Trim();
+                Clase.MtdIngredientesActSelect();
+                if (Clase.Exito)
+                {
+                    gridControl1.DataSource = Clase.Datos;
+                }
+
+            }
+                
+                
         }
 
         private void btn_Ingrediente_Click_1(object sender, EventArgs e)

@@ -18,6 +18,8 @@ namespace ShellPest
         public string NombreComercial { get; set; }
         public string IdUnidad { get; set; }
         public string Id_Usuario { get; set; }
+        public string diasseguridad { get; set; }
+        public string diasingreso { get; set; }
 
         private void Frm_NombreComercial_Load(object sender, EventArgs e)
         {
@@ -70,6 +72,8 @@ namespace ShellPest
                     IdNombreComercial = row["c_codigo_pro"].ToString();
                     NombreComercial = row["v_nombre_pro"].ToString();
                     IdUnidad= row["c_codigo_uni"].ToString();
+                    diasseguridad= row["v_intervaloseguridad_pro"].ToString();
+                    diasingreso= row["v_perentrada_pro"].ToString();
                 }
             }
             catch (Exception ex)
@@ -91,6 +95,11 @@ namespace ShellPest
         private void glue_Empresa_EditValueChanged(object sender, EventArgs e)
         {
             CargarNombreComercial();
+        }
+
+        private void btnSeleccionar_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            this.Close();
         }
     }
 }
