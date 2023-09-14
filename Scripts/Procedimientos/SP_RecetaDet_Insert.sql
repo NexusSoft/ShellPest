@@ -19,13 +19,14 @@ create PROCEDURE [dbo].[SP_RecetaDet_Insert]
 	@Secuencia int,
 	@c_codigo_pro char(15),
 	@v_nombre_pro varchar(100),
-	@c_codigo_cac char(3),
-    @v_nombre_cac varchar(50),
+	--@c_codigo_cac char(3),
+    --@v_nombre_cac varchar(50),
     @c_codigo_uni char(2),
-    @Dosis numeric(18,2),
-    @Cantidad_Unitaria numeric(18,2),
+    @Dosis numeric(18,3),
+    @Cantidad_Unitaria numeric(18,7),
     @Descripcion varchar(150),
-	@Id_Usuario varchar(10)
+	@Id_Usuario varchar(10),
+	@c_codigo_eps char(2)
 AS
 BEGIN
 	-- SET NOCOUNT ON added to prevent extra result sets from
@@ -40,7 +41,7 @@ BEGIN
 
 
 			declare @maximo int
-			select @maximo= isnull(max(Id_Receta),0)+1 from dbo.t_RecetaDet where Id_Receta=@Id_Receta
+			select @maximo= isnull(max(Secuencia),0)+1 from dbo.t_RecetaDet where Id_Receta=@Id_Receta
 
 			declare @Existe int
 			select @Existe = count(Id_Receta) from dbo.t_RecetaDet a where (a.Id_Receta=@Id_Receta and Secuencia=@Secuencia)
@@ -50,8 +51,8 @@ BEGIN
 				UPDATE dbo.t_RecetaDet
 			        SET c_codigo_pro=@c_codigo_pro,
 					v_nombre_pro=@v_nombre_pro,
-                     c_codigo_cac=@c_codigo_cac,
-                    v_nombre_cac=@v_nombre_cac,
+                     --c_codigo_cac=@c_codigo_cac,
+                    --v_nombre_cac=@v_nombre_cac,
                     c_codigo_uni=@c_codigo_uni,
                     Dosis=@Dosis,
                     Cantidad_Unitaria=@Cantidad_Unitaria,
@@ -59,7 +60,7 @@ BEGIN
 			        Id_Usuario_Mod=@Id_Usuario,
 		       		F_Usuario_Mod=getdate()
 			    WHERE
-			    	Id_Receta=@Id_Receta
+			    	Id_Receta=@Id_Receta and Secuencia=@Secuencia
 					
 			else
 			
@@ -68,28 +69,30 @@ BEGIN
 		           Secuencia,
 				   c_codigo_pro,
                     v_nombre_pro,
-                    c_codigo_cac,
-                    v_nombre_cac,
+                    --c_codigo_cac,
+                    --v_nombre_cac,
                     c_codigo_uni,
                     Dosis,
                     Cantidad_Unitaria,
                     Descripcion
 		           ,Id_Usuario_Crea
 	           		,F_Usuario_Crea
+					,c_codigo_eps
 				)
 		     	VALUES
 		           (@Id_Receta
 		           ,@maximo
 				   ,@c_codigo_pro
                     ,@v_nombre_pro
-                    ,@c_codigo_cac
-                    ,@v_nombre_cac
+                    --,@c_codigo_cac
+                    --,@v_nombre_cac
                     ,@c_codigo_uni
                     ,@Dosis
                     ,@Cantidad_Unitaria
                     ,@Descripcion
 		           ,@Id_Usuario
 	           		,getdate()
+					,@c_codigo_eps
 					)
 			
 			commit transaction T1;

@@ -13,8 +13,8 @@ namespace CapaDeDatos
         public int Secuencia { get; set; }
         public string c_codigo_pro { get; set; }
         public string v_nombre_pro { get; set; }
-        public string c_codigo_cac { get; set; }
-        public string v_nombre_cac { get; set; }
+        //public string c_codigo_cac { get; set; }
+        //public string v_nombre_cac { get; set; }
         public string c_codigo_uni { get; set; }
         public decimal Dosis { get; set; }
         public decimal Cantidad_Unitaria { get; set; }
@@ -74,10 +74,10 @@ namespace CapaDeDatos
                 _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "c_codigo_pro");
                 _dato.CadenaTexto = v_nombre_pro;
                 _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "v_nombre_pro");
-                _dato.CadenaTexto = c_codigo_cac;
-                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "c_codigo_cac");
-                _dato.CadenaTexto = v_nombre_cac;
-                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "v_nombre_cac");
+                //_dato.CadenaTexto = c_codigo_cac;
+                //_conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "c_codigo_cac");
+                //_dato.CadenaTexto = v_nombre_cac;
+                //_conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "v_nombre_cac");
                 _dato.CadenaTexto = c_codigo_uni;
                 _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "c_codigo_uni");
                 _dato.DecimalValor = Dosis;

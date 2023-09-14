@@ -25,7 +25,8 @@ GO
 -- =============================================
 CREATE PROCEDURE SP_RecetaDet_Select
 	-- Add the parameters for the stored procedure here
-	@Id_Receta char(7)
+	@Id_Receta char(7),
+	@c_codigo_eps char(2)
 AS
 BEGIN
 	-- SET NOCOUNT ON added to prevent extra result sets from
@@ -34,26 +35,32 @@ BEGIN
 
     -- Insert statements for procedure here
 	
-		select dt.Id_Receta
-	      ,dt.Secuencia
-		  ,dt.c_codigo_pro
-		  ,dt.v_nombre_pro
-		  ,dt.c_codigo_cac
-		  ,dt.v_nombre_cac
-		  ,dt.c_codigo_uni
-          ,uni.v_nombre_uni
-		  ,dt.Dosis
-		  ,dt.Cantidad_Unitaria
-		  ,dt.Descripcion
-	      ,dt.Id_Usuario_Crea
-	      ,us.Nombre_Usuario as Creador
-	      ,dt.Id_Usuario_Mod 
-	      ,usm.Nombre_Usuario as Modificador
-		from t_RecetaDet as dt
-		inner join t_Usuarios as us on us.Id_Usuario=dt.Id_Usuario_Crea 
-		left join t_Usuarios as usm on usm.Id_Usuario=dt.Id_Usuario_Mod 
-		left join agv.dbo.invunidad as uni on uni.c_codigo_uni=dt.c_codigo_uni
-		where dt.Id_Receta=@Id_Receta
+		declare @Consulta varchar(600)
+		set @Consulta='select dt.Id_Receta '
+	      set @Consulta=@Consulta+',dt.Secuencia '
+		  set @Consulta=@Consulta+',dt.c_codigo_pro '
+		  set @Consulta=@Consulta+',dt.v_nombre_pro '
+		  --set @Consulta=@Consulta+',dt.c_codigo_cac '
+		  --set @Consulta=@Consulta+',dt.v_nombre_cac '
+		  set @Consulta=@Consulta+',pro.v_intervaloseguridad_pro '
+		  set @Consulta=@Consulta+',pro.v_perentrada_pro '
+		  set @Consulta=@Consulta+',dt.c_codigo_uni '
+          set @Consulta=@Consulta+',uni.v_nombre_uni '
+		  set @Consulta=@Consulta+',dt.Dosis '
+		  set @Consulta=@Consulta+',dt.Cantidad_Unitaria '
+		  set @Consulta=@Consulta+',dt.Descripcion '
+	      set @Consulta=@Consulta+',dt.Id_Usuario_Crea '
+	      set @Consulta=@Consulta+',us.Nombre_Usuario as Creador '
+	      set @Consulta=@Consulta+',dt.Id_Usuario_Mod '
+	      set @Consulta=@Consulta+',usm.Nombre_Usuario as Modificador '
+		set @Consulta=@Consulta+'from t_RecetaDet as dt '
+		set @Consulta=@Consulta+'inner join t_Usuarios as us on us.Id_Usuario=dt.Id_Usuario_Crea '
+		set @Consulta=@Consulta+'left join t_Usuarios as usm on usm.Id_Usuario=dt.Id_Usuario_Mod '
+		set @Consulta=@Consulta+'left join '+(select v_basedatos_coi from vistas.dbo.conempresa where c_codigo_eps=@c_codigo_eps)+'.dbo.invunidad as uni on uni.c_codigo_uni=dt.c_codigo_uni '
+		set @Consulta=@Consulta+'left join '+(select v_basedatos_coi from vistas.dbo.conempresa where c_codigo_eps=@c_codigo_eps)+'.dbo.invproducto as pro on pro.c_codigo_pro=dt.c_codigo_pro'
+		set @Consulta=@Consulta+'where dt.Id_Receta='+char(39)+@Id_Receta+char(39)+' and dt.c_codigo_eps='+char(39)+@c_codigo_eps+char(39)
+	
+	exec (@Consulta)
 
 END
 GO

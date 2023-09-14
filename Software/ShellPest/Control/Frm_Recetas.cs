@@ -443,6 +443,7 @@ namespace ShellPest
             //Se copio todo este codigo en una parte del guardado de receta, al final, si se cambia algo aqui reemplazarlo alla tambien
             Frm_AbrirReceta Frm = new Frm_AbrirReceta();
             Frm.Id_Usuario = Id_Usuario;
+            Frm.vId_Receta = "";
             Frm.ShowDialog();
             if (!Frm.vId_Receta.Equals(""))
             {
@@ -496,6 +497,8 @@ namespace ShellPest
                 {
                     combo_Para.SelectedIndex = 1;
                 }
+
+                LimpiarCamposDet();
                
             }
             
@@ -560,8 +563,9 @@ namespace ShellPest
             Clase.Secuencia = IdSecuencia;
             Clase.c_codigo_pro = text_Comercial.Tag.ToString();
             Clase.v_nombre_pro = text_Comercial.Text.ToString();
-            Clase.c_codigo_cac = text_Ingrediente.Tag.ToString();
-            Clase.v_nombre_cac = text_Ingrediente.Text.ToString().Trim();
+            //El componente activo ya no es necesario, se toma de el catalogo invproductocactivo
+            //Clase.c_codigo_cac = text_Ingrediente.Tag.ToString();
+            //Clase.v_nombre_cac = text_Ingrediente.Text.ToString().Trim();
             Clase.c_codigo_uni = glue_Unidad.EditValue.ToString().Trim();
             Clase.Dosis = Convert.ToDecimal(text_Dosis.Text);
             Clase.Cantidad_Unitaria = Convert.ToDecimal(text_Unitario.Text);
@@ -609,8 +613,10 @@ namespace ShellPest
                     }
                     text_Comercial.Tag = row["c_codigo_pro"].ToString();
                     text_Comercial.Text = row["v_nombre_pro"].ToString();
-                    text_Ingrediente.Tag = row["c_codigo_cac"].ToString();
-                    text_Ingrediente.Text = row["v_nombre_cac"].ToString();
+                    //text_Ingrediente.Tag = row["c_codigo_cac"].ToString();
+                    //text_Ingrediente.Text = row["v_nombre_cac"].ToString();
+                    text_ISeguridad.Text = row["v_intervaloseguridad_pro"].ToString();
+                    text_IReingreso.Text = row["v_perentrada_pro"].ToString();
                     glue_Unidad.EditValue = row["c_codigo_uni"].ToString();
                     text_Dosis.Text = row["Dosis"].ToString();
                     text_Unitario.Text = row["Cantidad_Unitaria"].ToString();
@@ -655,7 +661,9 @@ namespace ShellPest
             IdSecuencia = 0;
             label_Modificacion.Visible = false;
             btn_LimpiaMezcla.Visible = false;
-            
+            text_ISeguridad.Text = "0";
+            text_IReingreso.Text = "0";
+            gridControl1.DataSource = null;
         }
 
         private void btn_Cancelar_Click(object sender, EventArgs e)
@@ -837,12 +845,16 @@ namespace ShellPest
         private void btn_LimpiaMezcla_Click(object sender, EventArgs e)
         {
             LimpiarCamposDet();
-            gridControl1.DataSource = null;
+            
         }
 
         private void text_Comercial_EditValueChanged(object sender, EventArgs e)
         {
-            if (text_Comercial.Tag.ToString().Trim().Length > 0)
+            if (text_Comercial.Tag==null)
+            {
+                text_Comercial.Tag = "";
+            }
+                if (text_Comercial.Tag.ToString().Trim().Length > 0)
             {
                 gridControl1.DataSource = null;
                 CLS_Inventum Clase = new CLS_Inventum();

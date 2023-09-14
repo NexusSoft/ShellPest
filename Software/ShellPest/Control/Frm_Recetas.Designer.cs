@@ -50,8 +50,8 @@
             this.Secuencia = new DevExpress.XtraGrid.Columns.GridColumn();
             this.c_codigo_pro = new DevExpress.XtraGrid.Columns.GridColumn();
             this.v_nombre_pro = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.c_codigo_cac = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.v_nombre_cac = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.v_intervaloseguridad_pro = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.v_perentrada_pro = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Cantidad_Unitaria = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Dosis = new DevExpress.XtraGrid.Columns.GridColumn();
             this.c_codigo_uni = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -349,8 +349,8 @@
             this.Secuencia,
             this.c_codigo_pro,
             this.v_nombre_pro,
-            this.c_codigo_cac,
-            this.v_nombre_cac,
+            this.v_intervaloseguridad_pro,
+            this.v_perentrada_pro,
             this.Cantidad_Unitaria,
             this.Dosis,
             this.c_codigo_uni,
@@ -391,21 +391,23 @@
             this.v_nombre_pro.FieldName = "v_nombre_pro";
             this.v_nombre_pro.Name = "v_nombre_pro";
             this.v_nombre_pro.Visible = true;
-            this.v_nombre_pro.VisibleIndex = 3;
+            this.v_nombre_pro.VisibleIndex = 2;
             // 
-            // c_codigo_cac
+            // v_intervaloseguridad_pro
             // 
-            this.c_codigo_cac.Caption = "c_codigo_cac";
-            this.c_codigo_cac.FieldName = "c_codigo_cac";
-            this.c_codigo_cac.Name = "c_codigo_cac";
+            this.v_intervaloseguridad_pro.Caption = "Intevalo seguridad";
+            this.v_intervaloseguridad_pro.FieldName = "v_intervaloseguridad_pro";
+            this.v_intervaloseguridad_pro.Name = "v_intervaloseguridad_pro";
+            this.v_intervaloseguridad_pro.Visible = true;
+            this.v_intervaloseguridad_pro.VisibleIndex = 7;
             // 
-            // v_nombre_cac
+            // v_perentrada_pro
             // 
-            this.v_nombre_cac.Caption = "Ingrediente Activo";
-            this.v_nombre_cac.FieldName = "v_nombre_cac";
-            this.v_nombre_cac.Name = "v_nombre_cac";
-            this.v_nombre_cac.Visible = true;
-            this.v_nombre_cac.VisibleIndex = 2;
+            this.v_perentrada_pro.Caption = "Periodo reingreso";
+            this.v_perentrada_pro.FieldName = "v_perentrada_pro";
+            this.v_perentrada_pro.Name = "v_perentrada_pro";
+            this.v_perentrada_pro.Visible = true;
+            this.v_perentrada_pro.VisibleIndex = 8;
             // 
             // Cantidad_Unitaria
             // 
@@ -413,7 +415,7 @@
             this.Cantidad_Unitaria.FieldName = "Cantidad_Unitaria";
             this.Cantidad_Unitaria.Name = "Cantidad_Unitaria";
             this.Cantidad_Unitaria.Visible = true;
-            this.Cantidad_Unitaria.VisibleIndex = 4;
+            this.Cantidad_Unitaria.VisibleIndex = 3;
             // 
             // Dosis
             // 
@@ -421,7 +423,7 @@
             this.Dosis.FieldName = "Dosis";
             this.Dosis.Name = "Dosis";
             this.Dosis.Visible = true;
-            this.Dosis.VisibleIndex = 5;
+            this.Dosis.VisibleIndex = 4;
             // 
             // c_codigo_uni
             // 
@@ -435,7 +437,7 @@
             this.v_nombre_uni.FieldName = "v_nombre_uni";
             this.v_nombre_uni.Name = "v_nombre_uni";
             this.v_nombre_uni.Visible = true;
-            this.v_nombre_uni.VisibleIndex = 6;
+            this.v_nombre_uni.VisibleIndex = 5;
             // 
             // Descripcion
             // 
@@ -443,7 +445,7 @@
             this.Descripcion.FieldName = "Descripcion";
             this.Descripcion.Name = "Descripcion";
             this.Descripcion.Visible = true;
-            this.Descripcion.VisibleIndex = 7;
+            this.Descripcion.VisibleIndex = 6;
             // 
             // panelControl1
             // 
@@ -970,8 +972,9 @@
             this.text_IReingreso.Name = "text_IReingreso";
             this.text_IReingreso.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.text_IReingreso.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
-            this.text_IReingreso.Properties.Mask.EditMask = "n2";
-            this.text_IReingreso.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
+            this.text_IReingreso.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.NumericMaskManager));
+            this.text_IReingreso.Properties.MaskSettings.Set("mask", "n2");
+            this.text_IReingreso.Properties.ReadOnly = true;
             this.text_IReingreso.Size = new System.Drawing.Size(62, 20);
             this.text_IReingreso.TabIndex = 76;
             // 
@@ -1039,6 +1042,7 @@
             this.text_ISeguridad.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.text_ISeguridad.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.NumericMaskManager));
             this.text_ISeguridad.Properties.MaskSettings.Set("mask", "n2");
+            this.text_ISeguridad.Properties.ReadOnly = true;
             this.text_ISeguridad.Size = new System.Drawing.Size(62, 20);
             this.text_ISeguridad.TabIndex = 74;
             // 
@@ -1431,8 +1435,8 @@
         private DevExpress.XtraGrid.Columns.GridColumn Id_Receta;
         private DevExpress.XtraGrid.Columns.GridColumn Secuencia;
         private DevExpress.XtraGrid.Columns.GridColumn v_nombre_pro;
-        private DevExpress.XtraGrid.Columns.GridColumn c_codigo_cac;
-        private DevExpress.XtraGrid.Columns.GridColumn v_nombre_cac;
+        private DevExpress.XtraGrid.Columns.GridColumn v_intervaloseguridad_pro;
+        private DevExpress.XtraGrid.Columns.GridColumn v_perentrada_pro;
         private DevExpress.XtraGrid.Columns.GridColumn Dosis;
         private DevExpress.XtraGrid.Columns.GridColumn c_codigo_uni;
         private DevExpress.XtraGrid.Columns.GridColumn v_nombre_uni;
