@@ -243,15 +243,15 @@
             this.barDockControlTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.barDockControlTop.Location = new System.Drawing.Point(0, 0);
             this.barDockControlTop.Manager = this.barManager1;
-            this.barDockControlTop.Size = new System.Drawing.Size(816, 0);
+            this.barDockControlTop.Size = new System.Drawing.Size(802, 0);
             // 
             // barDockControlBottom
             // 
             this.barDockControlBottom.CausesValidation = false;
             this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.barDockControlBottom.Location = new System.Drawing.Point(0, 540);
+            this.barDockControlBottom.Location = new System.Drawing.Point(0, 538);
             this.barDockControlBottom.Manager = this.barManager1;
-            this.barDockControlBottom.Size = new System.Drawing.Size(816, 29);
+            this.barDockControlBottom.Size = new System.Drawing.Size(802, 24);
             // 
             // barDockControlLeft
             // 
@@ -259,15 +259,15 @@
             this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
             this.barDockControlLeft.Location = new System.Drawing.Point(0, 0);
             this.barDockControlLeft.Manager = this.barManager1;
-            this.barDockControlLeft.Size = new System.Drawing.Size(56, 540);
+            this.barDockControlLeft.Size = new System.Drawing.Size(54, 538);
             // 
             // barDockControlRight
             // 
             this.barDockControlRight.CausesValidation = false;
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
-            this.barDockControlRight.Location = new System.Drawing.Point(816, 0);
+            this.barDockControlRight.Location = new System.Drawing.Point(802, 0);
             this.barDockControlRight.Manager = this.barManager1;
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 540);
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 538);
             // 
             // btnSeleccionar
             // 
@@ -285,10 +285,10 @@
             // 
             this.panelControl2.Controls.Add(this.dtgMonitoreo);
             this.panelControl2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelControl2.Location = new System.Drawing.Point(56, 161);
+            this.panelControl2.Location = new System.Drawing.Point(54, 161);
             this.panelControl2.Name = "panelControl2";
             this.panelControl2.Padding = new System.Windows.Forms.Padding(10);
-            this.panelControl2.Size = new System.Drawing.Size(760, 379);
+            this.panelControl2.Size = new System.Drawing.Size(748, 377);
             this.panelControl2.TabIndex = 7;
             // 
             // dtgMonitoreo
@@ -297,7 +297,7 @@
             this.dtgMonitoreo.Location = new System.Drawing.Point(12, 12);
             this.dtgMonitoreo.MainView = this.dtgValMonitoreo;
             this.dtgMonitoreo.Name = "dtgMonitoreo";
-            this.dtgMonitoreo.Size = new System.Drawing.Size(736, 355);
+            this.dtgMonitoreo.Size = new System.Drawing.Size(724, 353);
             this.dtgMonitoreo.TabIndex = 0;
             this.dtgMonitoreo.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.dtgValMonitoreo});
@@ -462,9 +462,9 @@
             this.panelControl1.Controls.Add(this.cboPlaga);
             this.panelControl1.Controls.Add(this.cboZona);
             this.panelControl1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelControl1.Location = new System.Drawing.Point(56, 0);
+            this.panelControl1.Location = new System.Drawing.Point(54, 0);
             this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Size = new System.Drawing.Size(760, 161);
+            this.panelControl1.Size = new System.Drawing.Size(748, 161);
             this.panelControl1.TabIndex = 6;
             // 
             // btn_EstFen
@@ -885,7 +885,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(816, 569);
+            this.ClientSize = new System.Drawing.Size(802, 562);
             this.Controls.Add(this.panelControl2);
             this.Controls.Add(this.panelControl1);
             this.Controls.Add(this.barDockControlLeft);
@@ -893,8 +893,7 @@
             this.Controls.Add(this.barDockControlBottom);
             this.Controls.Add(this.barDockControlTop);
             this.Name = "Frm_Monitoreo";
-            this.Text = "Monitoreo";
-           
+            this.Text = "Parametros umbrales";
             this.Shown += new System.EventHandler(this.Frm_Monitoreo_Shown);
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit1)).EndInit();

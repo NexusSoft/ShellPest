@@ -72,6 +72,7 @@
             this.btn_Valvulas = new DevExpress.XtraBars.BarButtonItem();
             this.btn_Cambios = new DevExpress.XtraBars.BarButtonItem();
             this.btn_ImpTxt = new DevExpress.XtraBars.BarButtonItem();
+            this.btn_Bitacora = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup5 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -90,7 +91,6 @@
             this.ribbonPage2 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.xtraTabbedMdiManager1 = new DevExpress.XtraTabbedMdi.XtraTabbedMdiManager(this.components);
             this.SkinForm = new DevExpress.LookAndFeel.DefaultLookAndFeel(this.components);
-            this.btn_Bitacora = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabbedMdiManager1)).BeginInit();
             this.SuspendLayout();
@@ -172,7 +172,7 @@
             // 
             // btnNivelPresencia
             // 
-            this.btnNivelPresencia.Caption = "Humbrales";
+            this.btnNivelPresencia.Caption = "Umbrales";
             this.btnNivelPresencia.Id = 3;
             this.btnNivelPresencia.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnNivelPresencia.ImageOptions.Image")));
             this.btnNivelPresencia.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnNivelPresencia.ImageOptions.LargeImage")));
@@ -324,7 +324,7 @@
             // 
             // btnMonitoreo
             // 
-            this.btnMonitoreo.Caption = "Monitoreo";
+            this.btnMonitoreo.Caption = "Parametros Umbrales";
             this.btnMonitoreo.Id = 20;
             this.btnMonitoreo.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnMonitoreo.ImageOptions.Image")));
             this.btnMonitoreo.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnMonitoreo.ImageOptions.LargeImage")));
@@ -509,6 +509,14 @@
             this.btn_ImpTxt.Name = "btn_ImpTxt";
             this.btn_ImpTxt.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_ImpTxt_ItemClick);
             // 
+            // btn_Bitacora
+            // 
+            this.btn_Bitacora.Caption = "Bitacora de Visita";
+            this.btn_Bitacora.Id = 43;
+            this.btn_Bitacora.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_Bitacora.ImageOptions.Image")));
+            this.btn_Bitacora.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btn_Bitacora.ImageOptions.LargeImage")));
+            this.btn_Bitacora.Name = "btn_Bitacora";
+            // 
             // ribbonPage1
             // 
             this.ribbonPage1.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
@@ -529,7 +537,6 @@
             this.ribbonPageGroup5.ItemLinks.Add(this.btnCultivo);
             this.ribbonPageGroup5.ItemLinks.Add(this.btnCalidades);
             this.ribbonPageGroup5.ItemLinks.Add(this.btnZonasClima);
-            this.ribbonPageGroup5.ItemLinks.Add(this.btn_Recetas);
             this.ribbonPageGroup5.ItemLinks.Add(this.btn_Unidades);
             this.ribbonPageGroup5.Name = "ribbonPageGroup5";
             this.ribbonPageGroup5.Text = "Catalogos de Ubicacion";
@@ -613,6 +620,7 @@
             // 
             // ribbonPageGroup9
             // 
+            this.ribbonPageGroup9.ItemLinks.Add(this.btn_Recetas);
             this.ribbonPageGroup9.ItemLinks.Add(this.btn_Podas);
             this.ribbonPageGroup9.ItemLinks.Add(this.btn_Combustibles);
             this.ribbonPageGroup9.ItemLinks.Add(this.btn_Riego);
@@ -662,14 +670,6 @@
             // 
             this.SkinForm.EnableBonusSkins = true;
             this.SkinForm.LookAndFeel.SkinName = "Office 2013 Light Gray";
-            // 
-            // btn_Bitacora
-            // 
-            this.btn_Bitacora.Caption = "Bitacora de Visita";
-            this.btn_Bitacora.Id = 43;
-            this.btn_Bitacora.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem4.ImageOptions.Image")));
-            this.btn_Bitacora.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem4.ImageOptions.LargeImage")));
-            this.btn_Bitacora.Name = "btn_Bitacora";
             // 
             // Frm_Principal
             // 

@@ -1320,7 +1320,7 @@
             this.Controls.Add(this.barDockControlBottom);
             this.Controls.Add(this.barDockControlTop);
             this.Name = "Frm_Recetas";
-            this.Text = "Frm_Recetas";
+            this.Text = "Recetas";
             this.Load += new System.EventHandler(this.Frm_Recetas_Load);
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit1)).EndInit();
