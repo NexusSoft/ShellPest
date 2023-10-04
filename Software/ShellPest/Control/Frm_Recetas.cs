@@ -4,6 +4,7 @@ using System.Data;
 
 using DevExpress.XtraEditors;
 using CapaDeDatos;
+using System.Windows.Forms;
 
 namespace ShellPest
 {
@@ -44,7 +45,7 @@ namespace ShellPest
         {
             txt_Monitoreo.Visible = false;
             label_Modificacion.Visible = false;
-            btn_LimpiaMezcla.Visible = false;
+            
 
             WS_Catalogos_Empresas Clase = new WS_Catalogos_Empresas();
             Clase.Id_Usuario = Id_Usuario;
@@ -604,12 +605,12 @@ namespace ShellPest
                     if (IdSecuencia > 0)
                     {
                         label_Modificacion.Visible = true;
-                        btn_LimpiaMezcla.Visible = true;
+                        
                     }
                     else
                     {
                         label_Modificacion.Visible = false;
-                        btn_LimpiaMezcla.Visible = false;
+                        
                     }
                     text_Comercial.Tag = row["c_codigo_pro"].ToString();
                     text_Comercial.Text = row["v_nombre_pro"].ToString();
@@ -660,7 +661,7 @@ namespace ShellPest
             memo_Descripcion.Text = "";
             IdSecuencia = 0;
             label_Modificacion.Visible = false;
-            btn_LimpiaMezcla.Visible = false;
+            
             text_ISeguridad.Text = "0";
             text_IReingreso.Text = "0";
             gridControl1.DataSource = null;
@@ -695,28 +696,38 @@ namespace ShellPest
         {
             Frm_AbrirMonitoreoPE Frm = new Frm_AbrirMonitoreoPE();
             Frm.ShowDialog();
-            txt_Monitoreo.Text = Frm.vId_PuntoControl+ Frm.vFecha.Year.ToString() + DosCero(Frm.vFecha.Month.ToString()) + DosCero(Frm.vFecha.Day.ToString());
-            
+            if (Frm.vId_PuntoControl != null) { 
+                if (Frm.vId_PuntoControl.Trim().Length > 0)
+                {
+                    txt_Monitoreo.Text = Frm.vId_PuntoControl + Frm.vFecha.Year.ToString() + DosCero(Frm.vFecha.Month.ToString()) + DosCero(Frm.vFecha.Day.ToString());
+                }
+            }
+
         }
 
         private void dtgBloque_DoubleClick(object sender, EventArgs e)
         {
-
-            try
+            if (MessageBox.Show("¿Estás seguro que deseas eliminar este producto?", "Confirmación", MessageBoxButtons.YesNo) == DialogResult.Yes )
             {
-                foreach (int i in this.dtgValBloque.GetSelectedRows())
+
+                try
                 {
-                    DataRow row = this.dtgValBloque.GetDataRow(i);
+                    foreach (int i in this.dtgValBloque.GetSelectedRows())
+                    {
+                        DataRow row = this.dtgValBloque.GetDataRow(i);
 
-                  
-                    Eliminardetalle(Convert.ToInt32(row["Secuencia"]));
 
+                        Eliminardetalle(Convert.ToInt32(row["Secuencia"]));
+
+                    }
+                }
+                catch (Exception ex)
+                {
+                    XtraMessageBox.Show(ex.Message);
                 }
             }
-            catch (Exception ex)
-            {
-                XtraMessageBox.Show(ex.Message);
-            }
+
+
             
         }
 

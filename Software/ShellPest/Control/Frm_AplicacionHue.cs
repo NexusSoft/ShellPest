@@ -140,7 +140,11 @@ namespace ShellPest
         {
             try
             {
-                Codigo_Emp = cmb_Empresas.EditValue.ToString();
+                if (cmb_Empresas.EditValue != null)
+                {
+                    Codigo_Emp = cmb_Empresas.EditValue.ToString();
+                }
+                
             }
             catch (Exception)
             {
@@ -148,7 +152,11 @@ namespace ShellPest
             }
             try
             {
-                Codigo_Hue = cmb_Huerta.EditValue.ToString();
+                if (cmb_Huerta.EditValue != null)
+                {
+                    Codigo_Hue = cmb_Huerta.EditValue.ToString();
+                }
+                
             }
             catch (Exception)
             {
@@ -156,7 +164,11 @@ namespace ShellPest
             }
             try
             {
-                Codigo_Apl = cmb_TipoAplicacion.EditValue.ToString();
+                if (cmb_TipoAplicacion.EditValue != null)
+                {
+                    Codigo_Apl = cmb_TipoAplicacion.EditValue.ToString();
+                }
+                
             }
             catch (Exception)
             {
@@ -164,7 +176,12 @@ namespace ShellPest
             }
             try
             {
-                Id_Receta = cmb_Recetas.EditValue.ToString();
+                if (cmb_Recetas.EditValue != null)
+                {
+                    Id_Receta = cmb_Recetas.EditValue.ToString();
+
+                }
+                
             }
             catch (Exception)
             {
@@ -267,11 +284,12 @@ namespace ShellPest
 
         private void Frm_AplicacionHue_Shown(object sender, EventArgs e)
         {
-            MakeTablaAplicacion();
+            
             dt_FechaD.DateTime = DateTime.Now;
             dt_FechaA.DateTime = DateTime.Now;
             CargarEmpresa();
             CargarHuerta();
+            MakeTablaAplicacion();
             InicializaGrigCombos();
             Habilita_diarias(false);
         }
@@ -559,6 +577,16 @@ namespace ShellPest
                     }
                 }
             }
+        }
+
+        private void btn_Cultivo_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnSalir_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            this.Close();
         }
     }
 }

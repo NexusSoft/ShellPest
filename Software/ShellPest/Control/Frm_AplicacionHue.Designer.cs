@@ -232,6 +232,7 @@
             this.btnSalir.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnSalir.ImageOptions.Image")));
             this.btnSalir.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnSalir.ImageOptions.LargeImage")));
             this.btnSalir.Name = "btnSalir";
+            this.btnSalir.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnSalir_ItemClick);
             // 
             // btnSeleccionar
             // 
@@ -579,6 +580,7 @@
             this.btn_Cultivo.Name = "btn_Cultivo";
             this.btn_Cultivo.Size = new System.Drawing.Size(24, 23);
             this.btn_Cultivo.TabIndex = 53;
+            this.btn_Cultivo.Click += new System.EventHandler(this.btn_Cultivo_Click);
             // 
             // labelControl2
             // 

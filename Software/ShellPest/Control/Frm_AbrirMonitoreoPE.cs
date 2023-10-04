@@ -58,6 +58,7 @@ namespace ShellPest
             if (vId_PuntoControl == null)
             {
                 vId_PuntoControl = "";
+                
             }
             this.Close();
         }
